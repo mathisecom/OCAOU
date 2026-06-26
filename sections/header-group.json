@@ -32,7 +32,7 @@
         "text_size": "text-xs",
         "navigation_mode": "scrolling",
         "scrolling_speed": 10,
-        "background": "#AF6C67",
+        "background": "#af6c67",
         "background_gradient": "",
         "text_color": "#ffffff"
       }
@@ -42,6 +42,7 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
+        "logo": "shopify://shop_images/logo-ocaou_56b51743-dbfb-4827-af50-88751e26e34a.svg",
         "logo_max_width": 120,
         "logo_mobile_max_width": 100,
         "menu": "main-menu",

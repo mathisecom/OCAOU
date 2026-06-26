@@ -81,7 +81,7 @@
         "heading_tag": "h6",
         "text_alignment": "center",
         "icon_spacing": "small",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": ""
       }
@@ -92,7 +92,8 @@
         "newsletter": {
           "type": "newsletter",
           "settings": {
-            "image_width": 150,
+            "image": "shopify://shop_images/logo-ocaou_56b51743-dbfb-4827-af50-88751e26e34a.svg",
+            "image_width": 120,
             "heading_size": "h3",
             "title": "Newsletter",
             "content": ""
@@ -109,7 +110,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "title": "About",
+            "title": "Contactez-Nous",
             "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
             "enable_follow_on_shop": true
           }
