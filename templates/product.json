@@ -279,6 +279,7 @@
         "review_item_QxaHeN": {
           "type": "review_item",
           "settings": {
+            "image": "shopify://shop_images/IMG_0604.jpg",
             "image_alt": "Photo client",
             "quote": "Love this product. Easy to use, clean and perfect for everyday life.",
             "author": "Jennifer M.",
@@ -289,6 +290,7 @@
         "review_item_YAT8UW": {
           "type": "review_item",
           "settings": {
+            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
             "image_alt": "Photo client",
             "quote": "Love this product. Easy to use, clean and perfect for everyday life.",
             "author": "Jennifer M.",
@@ -299,6 +301,7 @@
         "review_item_FyV4Br": {
           "type": "review_item",
           "settings": {
+            "image": "shopify://shop_images/ocaou-sac-a-dos-enfant.jpg",
             "image_alt": "Photo client",
             "quote": "Love this product. Easy to use, clean and perfect for everyday life.",
             "author": "Jennifer M.",
