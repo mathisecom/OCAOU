@@ -15,24 +15,35 @@
         "image_6zMMdX": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/biba.png",
             "url": ""
           }
         },
         "image_cEQXkh": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "url": ""
           }
         },
         "image_8n3Rnx": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "url": ""
           }
         },
         "image_Ydgfth": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "url": ""
+          }
+        },
+        "image_E6ATmJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "url": ""
           }
         }
@@ -41,7 +52,8 @@
         "image_6zMMdX",
         "image_cEQXkh",
         "image_8n3Rnx",
-        "image_Ydgfth"
+        "image_Ydgfth",
+        "image_E6ATmJ"
       ],
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
@@ -54,7 +66,7 @@
         "heading_size_mobile": 18,
         "heading_height": 130,
         "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 30,
+        "scrolling_velocity_mobile": 20,
         "scrolling_direction": "left",
         "pause_hover": false,
         "scrolling_gap": 70,
@@ -74,7 +86,7 @@
         "padding_bottom": 0,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 0,
-        "full_width": false,
+        "full_width": true,
         "content_width": 1200,
         "border_thickness": 0,
         "section_radius": 0,
