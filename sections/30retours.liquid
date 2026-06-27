@@ -1,0 +1,981 @@
+{% style %}
+  #shopify-section-{{ section.id }} .fp-guarantee-section {
+    width: 100%;
+    background: {{ section.settings.section_bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-container {
+    max-width: {% if section.settings.full_width %}none{% else %}{{ section.settings.max_width }}px{% endif %};
+    margin: 0 auto;
+    padding-left: {{ section.settings.side_padding_desktop }}px;
+    padding-right: {{ section.settings.side_padding_desktop }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-card {
+    position: relative;
+    min-height: {{ section.settings.card_height_desktop }}px;
+    border-radius: {{ section.settings.card_radius_desktop }}px;
+    background: {{ section.settings.card_bg_color }};
+    overflow: visible;
+    display: grid;
+    grid-template-columns: {{ section.settings.text_column_width }}fr {{ section.settings.image_column_width }}fr;
+    align-items: center;
+    gap: {{ section.settings.column_gap_desktop }}px;
+    padding: {{ section.settings.card_padding_y_desktop }}px {{ section.settings.card_padding_x_desktop }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: {{ section.settings.card_radius_desktop }}px;
+    overflow: hidden;
+    z-index: 1;
+    background-color: {{ section.settings.card_bg_color }};
+    {% if section.settings.bg_image != blank %}
+      background-image: url({{ section.settings.bg_image | image_url: width: 2200 }});
+      background-size: cover;
+      background-position: {{ section.settings.bg_position }};
+      background-repeat: no-repeat;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: {{ section.settings.overlay_color }};
+    opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-content {
+    position: relative;
+    z-index: 3;
+    max-width: {{ section.settings.text_max_width_desktop }}px;
+    text-align: {{ section.settings.text_alignment_desktop }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-icon {
+    width: {{ section.settings.icon_size_desktop }}px;
+    height: {{ section.settings.icon_size_desktop }}px;
+    margin-bottom: {{ section.settings.icon_margin_bottom_desktop }}px;
+    color: {{ section.settings.icon_color }};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-title {
+    margin: 0;
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size_desktop }}px;
+    font-weight: {{ section.settings.title_weight }};
+    line-height: {{ section.settings.title_line_height_desktop | divided_by: 100.0 }};
+    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-subtitle {
+    margin: {{ section.settings.subtitle_margin_top_desktop }}px 0 0;
+    color: {{ section.settings.subtitle_color }};
+    font-size: {{ section.settings.subtitle_size_desktop }}px;
+    font-weight: {{ section.settings.subtitle_weight }};
+    line-height: {{ section.settings.subtitle_line_height_desktop | divided_by: 100.0 }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-image-area {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: {{ section.settings.product_alignment_desktop }};
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-product-image {
+    width: 100%;
+    max-width: {{ section.settings.product_width_desktop }}px;
+    transform: translateY({{ section.settings.product_offset_y_desktop }}px);
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 {{ section.settings.shadow_y }}px {{ section.settings.shadow_blur }}px rgba(0,0,0,{{ section.settings.shadow_opacity | divided_by: 100.0 }}));
+  }
+
+  #shopify-section-{{ section.id }} .fp-guarantee-placeholder {
+    width: 100%;
+    max-width: {{ section.settings.product_width_desktop }}px;
+    min-height: 260px;
+    background: rgba(255,255,255,0.18);
+    border: 1px dashed rgba(255,255,255,0.5);
+    color: {{ section.settings.subtitle_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 989px) {
+    #shopify-section-{{ section.id }} .fp-guarantee-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-container {
+      padding-left: {{ section.settings.side_padding_mobile }}px;
+      padding-right: {{ section.settings.side_padding_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-card {
+      min-height: auto;
+      border-radius: {{ section.settings.card_radius_mobile }}px;
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.column_gap_mobile }}px;
+      padding: {{ section.settings.card_padding_y_mobile }}px {{ section.settings.card_padding_x_mobile }}px {{ section.settings.card_padding_bottom_mobile }}px;
+      overflow: hidden;
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-bg {
+      border-radius: {{ section.settings.card_radius_mobile }}px;
+      background-position: {{ section.settings.bg_position_mobile }};
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-content {
+      max-width: {{ section.settings.text_max_width_mobile }}px;
+      margin: 0 auto;
+      text-align: {{ section.settings.text_alignment_mobile }};
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-icon {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+      margin-bottom: {{ section.settings.icon_margin_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-title {
+      font-size: {{ section.settings.title_size_mobile }}px;
+      line-height: {{ section.settings.title_line_height_mobile | divided_by: 100.0 }};
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-subtitle {
+      margin-top: {{ section.settings.subtitle_margin_top_mobile }}px;
+      font-size: {{ section.settings.subtitle_size_mobile }}px;
+      line-height: {{ section.settings.subtitle_line_height_mobile | divided_by: 100.0 }};
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-image-area {
+      justify-content: {{ section.settings.product_alignment_mobile }};
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-product-image {
+      max-width: {{ section.settings.product_width_mobile }}px;
+      transform: translateY({{ section.settings.product_offset_y_mobile }}px);
+    }
+
+    #shopify-section-{{ section.id }} .fp-guarantee-placeholder {
+      max-width: {{ section.settings.product_width_mobile }}px;
+      min-height: 220px;
+    }
+  }
+{% endstyle %}
+
+<section class="fp-guarantee-section">
+  <div class="fp-guarantee-container">
+    <div class="fp-guarantee-card">
+
+      <div class="fp-guarantee-bg"></div>
+
+      <div class="fp-guarantee-content">
+        {% if section.settings.custom_icon != blank %}
+          <div class="fp-guarantee-icon">
+            <img
+              src="{{ section.settings.custom_icon | image_url: width: 300 }}"
+              alt="{{ section.settings.icon_alt | escape }}"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
+          </div>
+        {% elsif section.settings.show_default_icon %}
+          <div class="fp-guarantee-icon" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none">
+              <path d="M47 9C32.5 10.3 20.5 20.6 17.1 34.5C15.4 41.7 16.7 49.3 20.8 55.4" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <path d="M23 55C27.8 37.5 38.8 24.5 58 14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <path d="M47 9C61.7 13.4 68.6 25.6 65.2 38.8C62.2 50.4 51.1 57.9 39.2 55.4" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="53" cy="53" r="18" fill="currentColor"/>
+              <path d="M44.8 53L50.8 59L62.3 46.8" stroke="{{ section.settings.card_bg_color }}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="fp-guarantee-title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.subtitle != blank %}
+          <p class="fp-guarantee-subtitle">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="fp-guarantee-image-area">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fp-guarantee-product-image"
+            src="{{ section.settings.product_image | image_url: width: 1200 }}"
+            alt="{{ section.settings.product_image_alt | escape }}"
+            loading="lazy"
+            width="1200"
+            height="900"
+          >
+        {% else %}
+          <div class="fp-guarantee-placeholder">
+            Ajoute ton image produit dans les réglages de la section
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bannière garantie produit",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Textes"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Garantie 30 jours"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Votre routine doit vous faire du bien. Si ce n’est pas le cas, vous êtes couvert."
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Image produit"
+    },
+    {
+      "type": "text",
+      "id": "product_image_alt",
+      "label": "Texte alternatif image produit",
+      "default": "Image produit garantie"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Image de fond optionnelle"
+    },
+    {
+      "type": "select",
+      "id": "bg_position",
+      "label": "Position image de fond PC",
+      "default": "center center",
+      "options": [
+        {
+          "value": "center center",
+          "label": "Centre"
+        },
+        {
+          "value": "left center",
+          "label": "Gauche"
+        },
+        {
+          "value": "right center",
+          "label": "Droite"
+        },
+        {
+          "value": "top center",
+          "label": "Haut"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bas"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "bg_position_mobile",
+      "label": "Position image de fond mobile",
+      "default": "center center",
+      "options": [
+        {
+          "value": "center center",
+          "label": "Centre"
+        },
+        {
+          "value": "left center",
+          "label": "Gauche"
+        },
+        {
+          "value": "right center",
+          "label": "Droite"
+        },
+        {
+          "value": "top center",
+          "label": "Haut"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bas"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Icône"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_default_icon",
+      "label": "Afficher l’icône par défaut",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Icône personnalisée"
+    },
+    {
+      "type": "text",
+      "id": "icon_alt",
+      "label": "Texte alternatif icône",
+      "default": "Icône garantie"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Taille icône PC",
+      "min": 30,
+      "max": 120,
+      "step": 2,
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Taille icône mobile",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "default": 62
+    },
+    {
+      "type": "range",
+      "id": "icon_margin_bottom_desktop",
+      "label": "Marge sous icône PC",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "icon_margin_bottom_mobile",
+      "label": "Marge sous icône mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur icône",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Fond extérieur",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Fond du bloc",
+      "default": "#77A51A"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Couleur overlay fond",
+      "default": "#77A51A"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacité overlay fond",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur titre",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Couleur sous-titre",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typographie PC"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille titre PC",
+      "min": 20,
+      "max": 70,
+      "step": 1,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_desktop",
+      "label": "Hauteur ligne titre PC",
+      "min": 80,
+      "max": 150,
+      "step": 5,
+      "default": 105
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_desktop",
+      "label": "Taille sous-titre PC",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_line_height_desktop",
+      "label": "Hauteur ligne sous-titre PC",
+      "min": 100,
+      "max": 180,
+      "step": 5,
+      "default": 135
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Épaisseur titre",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "subtitle_weight",
+      "label": "Épaisseur sous-titre",
+      "default": "600",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "label": "Espacement lettres titre",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Typographie mobile"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 20,
+      "max": 55,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_mobile",
+      "label": "Hauteur ligne titre mobile",
+      "min": 80,
+      "max": 150,
+      "step": 5,
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "label": "Taille sous-titre mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "subtitle_line_height_mobile",
+      "label": "Hauteur ligne sous-titre mobile",
+      "min": 100,
+      "max": 180,
+      "step": 5,
+      "default": 135
+    },
+    {
+      "type": "header",
+      "content": "Disposition PC"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Prendre toute la largeur",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1800,
+      "step": 50,
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "card_height_desktop",
+      "label": "Hauteur du bloc PC",
+      "min": 220,
+      "max": 600,
+      "step": 10,
+      "default": 310
+    },
+    {
+      "type": "range",
+      "id": "card_radius_desktop",
+      "label": "Arrondi du bloc PC",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_padding_x_desktop",
+      "label": "Padding horizontal PC",
+      "min": 20,
+      "max": 160,
+      "step": 5,
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "card_padding_y_desktop",
+      "label": "Padding vertical PC",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "text_column_width",
+      "label": "Largeur colonne texte",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "image_column_width",
+      "label": "Largeur colonne image",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Espace texte / image PC",
+      "min": 10,
+      "max": 160,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_max_width_desktop",
+      "label": "Largeur max texte PC",
+      "min": 300,
+      "max": 900,
+      "step": 10,
+      "default": 620
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_desktop",
+      "label": "Alignement texte PC",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "product_width_desktop",
+      "label": "Largeur image produit PC",
+      "min": 220,
+      "max": 700,
+      "step": 10,
+      "default": 430
+    },
+    {
+      "type": "range",
+      "id": "product_offset_y_desktop",
+      "label": "Décalage vertical produit PC",
+      "min": -120,
+      "max": 160,
+      "step": 10,
+      "default": 70
+    },
+    {
+      "type": "select",
+      "id": "product_alignment_desktop",
+      "label": "Alignement image produit PC",
+      "default": "center",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "flex-end",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Disposition mobile"
+    },
+    {
+      "type": "range",
+      "id": "card_radius_mobile",
+      "label": "Arrondi du bloc mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_padding_x_mobile",
+      "label": "Padding horizontal mobile",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "card_padding_y_mobile",
+      "label": "Padding haut mobile",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "card_padding_bottom_mobile",
+      "label": "Padding bas mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Espace texte / image mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "text_max_width_mobile",
+      "label": "Largeur max texte mobile",
+      "min": 220,
+      "max": 450,
+      "step": 10,
+      "default": 350
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mobile",
+      "label": "Alignement texte mobile",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "product_width_mobile",
+      "label": "Largeur image produit mobile",
+      "min": 180,
+      "max": 420,
+      "step": 10,
+      "default": 310
+    },
+    {
+      "type": "range",
+      "id": "product_offset_y_mobile",
+      "label": "Décalage vertical produit mobile",
+      "min": -80,
+      "max": 120,
+      "step": 10,
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "product_alignment_mobile",
+      "label": "Alignement image produit mobile",
+      "default": "center",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "flex-end",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Espacements extérieurs"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Marge haut PC",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Marge bas PC",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Marge haut mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Marge bas mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "side_padding_desktop",
+      "label": "Marge côtés PC",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Marge côtés mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Ombre image produit"
+    },
+    {
+      "type": "range",
+      "id": "shadow_y",
+      "label": "Ombre verticale",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "label": "Flou ombre",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Opacité ombre",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_top_desktop",
+      "label": "Marge au-dessus sous-titre PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_top_mobile",
+      "label": "Marge au-dessus sous-titre mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bannière garantie produit"
+    }
+  ]
+}
+{% endschema %}
