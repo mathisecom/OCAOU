@@ -60,6 +60,12 @@
             "payment_button_text_color": ""
           }
         },
+        "liquid_FttJaB": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -107,6 +113,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "liquid_FttJaB",
         "description",
         "collapsible_text_QkwrFT",
         "collapsible_text_BgHqca",
