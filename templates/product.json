@@ -83,8 +83,8 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>",
+            "title": "Composition Textile",
+            "content": "<p><strong>Sac nid d'abeille Chair et Bleu Gris :</strong></p><p>Extérieur: 100% Coton</p><p>Intérieur: 80% Coton / 20% Rayon</p><p>Filet: 100% polyester</p><p><strong>Sac toile de coton Bleu-Vert Panda et Terracotta Chien :</strong></p><p>Extérieur: 80% Coton / 20% Rayon</p><p>Intérieur: 80% Coton / 20% Rayon</p><p>Filet: 100% polyester</p>",
             "page": ""
           }
         }
