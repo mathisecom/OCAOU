@@ -1,0 +1,1108 @@
+{% style %}
+  #shopify-section-{{ section.id }} .fp-follow-section {
+    width: 100%;
+    background: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-container {
+    max-width: {% if section.settings.full_width %}none{% else %}{{ section.settings.max_width }}px{% endif %};
+    margin: 0 auto;
+    padding-left: {{ section.settings.side_padding_desktop }}px;
+    padding-right: {{ section.settings.side_padding_desktop }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-header {
+    text-align: {{ section.settings.title_alignment }};
+    margin-bottom: {{ section.settings.title_margin_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-title {
+    margin: 0;
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size_desktop }}px;
+    font-weight: {{ section.settings.title_weight }};
+    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+    line-height: 1.2;
+    {% if section.settings.title_uppercase %}
+      text-transform: uppercase;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+    gap: {{ section.settings.gap_desktop }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ section.settings.image_radius }}px;
+    background: {{ section.settings.placeholder_bg }};
+    box-shadow: 0 {{ section.settings.shadow_y }}px {{ section.settings.shadow_blur }}px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-card-inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-image-wrap {
+    width: 100%;
+    position: relative;
+    aspect-ratio: {{ section.settings.image_ratio }};
+    overflow: hidden;
+  }
+
+  {% if section.settings.force_height_desktop %}
+    #shopify-section-{{ section.id }} .fp-follow-image-wrap {
+      aspect-ratio: auto;
+      height: {{ section.settings.image_height_desktop }}px;
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .fp-follow-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: {{ section.settings.image_fit }};
+    transition: transform 0.45s ease, filter 0.45s ease;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-card:hover .fp-follow-image {
+    {% if section.settings.enable_hover_zoom %}
+      transform: scale(1.05);
+    {% endif %}
+    {% if section.settings.enable_hover_darken %}
+      filter: brightness(0.85);
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    background: {{ section.settings.placeholder_bg }};
+    color: {{ section.settings.placeholder_text_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay {
+    position: absolute;
+    inset: 0;
+    padding: {{ section.settings.overlay_padding }}px;
+    display: flex;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay.is-top-left {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay.is-top-center {
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay.is-top-right {
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay.is-center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay.is-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay.is-bottom-center {
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay.is-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-overlay-text {
+    color: {{ section.settings.overlay_text_color }};
+    font-size: {{ section.settings.overlay_size_desktop }}px;
+    font-weight: {{ section.settings.overlay_weight }};
+    line-height: 1.2;
+    letter-spacing: {{ section.settings.overlay_letter_spacing }}px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, {{ section.settings.overlay_shadow_opacity | divided_by: 100.0 }});
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-bottom-link {
+    margin-top: {{ section.settings.button_margin_top }}px;
+    text-align: {{ section.settings.button_alignment }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: {{ section.settings.button_height }}px;
+    padding: 0 {{ section.settings.button_padding_x }}px;
+    border-radius: {{ section.settings.button_radius }}px;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text_color }};
+    font-size: {{ section.settings.button_font_size }}px;
+    font-weight: {{ section.settings.button_weight }};
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  #shopify-section-{{ section.id }} .fp-follow-button:hover {
+    background: {{ section.settings.button_hover_bg }};
+    color: {{ section.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    #shopify-section-{{ section.id }} .fp-follow-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-follow-container {
+      padding-left: {{ section.settings.side_padding_mobile }}px;
+      padding-right: {{ section.settings.side_padding_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-follow-header {
+      margin-bottom: {{ section.settings.title_margin_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-follow-title {
+      font-size: {{ section.settings.title_size_mobile }}px;
+      letter-spacing: {{ section.settings.title_letter_spacing_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-follow-grid {
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, minmax(0, 1fr));
+      gap: {{ section.settings.gap_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-follow-image-wrap {
+      aspect-ratio: {{ section.settings.image_ratio_mobile }};
+    }
+
+    {% if section.settings.force_height_mobile %}
+      #shopify-section-{{ section.id }} .fp-follow-image-wrap {
+        aspect-ratio: auto;
+        height: {{ section.settings.image_height_mobile }}px;
+      }
+    {% endif %}
+
+    #shopify-section-{{ section.id }} .fp-follow-overlay-text {
+      font-size: {{ section.settings.overlay_size_mobile }}px;
+    }
+
+    {% if section.settings.mobile_scroll %}
+      #shopify-section-{{ section.id }} .fp-follow-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      #shopify-section-{{ section.id }} .fp-follow-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      #shopify-section-{{ section.id }} .fp-follow-card {
+        flex: 0 0 {{ section.settings.mobile_card_width }}%;
+        scroll-snap-align: start;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<section class="fp-follow-section">
+  <div class="fp-follow-container">
+
+    {% if section.settings.show_title %}
+      <div class="fp-follow-header">
+        {% if section.settings.title != blank %}
+          <h2 class="fp-follow-title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="fp-follow-grid">
+      {% for block in section.blocks %}
+        <div class="fp-follow-card" {{ block.shopify_attributes }}>
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="fp-follow-card-inner" {% if block.settings.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {% else %}
+            <div class="fp-follow-card-inner">
+          {% endif %}
+
+            <div class="fp-follow-image-wrap">
+              {% if block.settings.image != blank %}
+                <img
+                  class="fp-follow-image"
+                  src="{{ block.settings.image | image_url: width: 1200 }}"
+                  alt="{{ block.settings.alt_text | escape }}"
+                  loading="lazy"
+                  width="1200"
+                  height="1200"
+                  style="object-position: {{ block.settings.image_position }};"
+                >
+              {% else %}
+                <div class="fp-follow-placeholder">
+                  Ajoute une image
+                </div>
+              {% endif %}
+
+              {% if block.settings.overlay_text != blank %}
+                <div class="fp-follow-overlay is-{{ block.settings.overlay_position }}">
+                  <div class="fp-follow-overlay-text">
+                    {{ block.settings.overlay_text }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+
+          {% if block.settings.link != blank %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_button and section.settings.button_text != blank %}
+      <div class="fp-follow-bottom-link">
+        <a class="fp-follow-button" href="{{ section.settings.button_link }}" {% if section.settings.button_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Follow us galerie",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Afficher le titre",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "FOLLOW US"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_uppercase",
+      "label": "Titre en majuscules",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Alignement du titre",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille titre PC",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 12,
+      "max": 38,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Épaisseur du titre",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "label": "Espacement lettres titre PC",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing_mobile",
+      "label": "Espacement lettres titre mobile",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Marge sous le titre PC",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_mobile",
+      "label": "Marge sous le titre mobile",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Largeur et colonnes"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Prendre toute la largeur",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale si pleine largeur désactivée",
+      "min": 800,
+      "max": 2400,
+      "step": 50,
+      "default": 1600
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Nombre de colonnes PC",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Nombre de colonnes mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "label": "Espace entre images PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Espace entre images mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Format image PC",
+      "default": "1 / 1",
+      "options": [
+        {
+          "value": "1 / 1",
+          "label": "Carré 1:1"
+        },
+        {
+          "value": "4 / 5",
+          "label": "Portrait 4:5"
+        },
+        {
+          "value": "3 / 4",
+          "label": "Portrait 3:4"
+        },
+        {
+          "value": "16 / 9",
+          "label": "Paysage 16:9"
+        },
+        {
+          "value": "5 / 4",
+          "label": "Paysage 5:4"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_ratio_mobile",
+      "label": "Format image mobile",
+      "default": "1 / 1",
+      "options": [
+        {
+          "value": "1 / 1",
+          "label": "Carré 1:1"
+        },
+        {
+          "value": "4 / 5",
+          "label": "Portrait 4:5"
+        },
+        {
+          "value": "3 / 4",
+          "label": "Portrait 3:4"
+        },
+        {
+          "value": "16 / 9",
+          "label": "Paysage 16:9"
+        },
+        {
+          "value": "5 / 4",
+          "label": "Paysage 5:4"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "force_height_desktop",
+      "label": "Forcer une hauteur fixe sur PC",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "Hauteur image PC",
+      "min": 180,
+      "max": 700,
+      "step": 10,
+      "default": 320
+    },
+    {
+      "type": "checkbox",
+      "id": "force_height_mobile",
+      "label": "Forcer une hauteur fixe sur mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Hauteur image mobile",
+      "min": 120,
+      "max": 500,
+      "step": 10,
+      "default": 210
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Adaptation de l’image",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Remplir la case"
+        },
+        {
+          "value": "contain",
+          "label": "Image entière"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi des images",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_zoom",
+      "label": "Zoom léger au survol",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_darken",
+      "label": "Assombrir au survol",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Défilement mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_scroll",
+      "label": "Activer le défilement horizontal mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Largeur d’une image en défilement mobile",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "Couleurs et fond"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_bg",
+      "label": "Fond image vide",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_text_color",
+      "label": "Texte image vide",
+      "default": "#777777"
+    },
+    {
+      "type": "header",
+      "content": "Espacements"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding haut PC",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bas PC",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding haut mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bas mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "side_padding_desktop",
+      "label": "Marge gauche/droite PC",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Marge gauche/droite mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Ombres"
+    },
+    {
+      "type": "range",
+      "id": "shadow_y",
+      "label": "Ombre verticale",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "label": "Flou de l’ombre",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Opacité de l’ombre",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Texte sur les images"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text_color",
+      "label": "Couleur texte image",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_size_desktop",
+      "label": "Taille texte image PC",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "overlay_size_mobile",
+      "label": "Taille texte image mobile",
+      "min": 8,
+      "max": 32,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "overlay_weight",
+      "label": "Épaisseur texte image",
+      "default": "600",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "overlay_letter_spacing",
+      "label": "Espacement lettres texte image",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "overlay_padding",
+      "label": "Marge intérieure texte image",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "overlay_shadow_opacity",
+      "label": "Ombre du texte image",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 35
+    },
+    {
+      "type": "header",
+      "content": "Bouton optionnel"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Afficher un bouton sous les images",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "Suivez-nous"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_new_tab",
+      "label": "Ouvrir le lien dans un nouvel onglet",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "button_alignment",
+      "label": "Alignement du bouton",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Marge au-dessus du bouton",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "label": "Hauteur du bouton",
+      "min": 30,
+      "max": 70,
+      "step": 1,
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Largeur intérieure bouton",
+      "min": 10,
+      "max": 70,
+      "step": 1,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Arrondi du bouton",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Taille texte bouton",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "button_weight",
+      "label": "Épaisseur texte bouton",
+      "default": "600",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fond bouton",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte bouton",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Fond bouton au survol",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Texte bouton au survol",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Texte alternatif",
+          "default": "Photo Instagram"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Lien de l’image"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_new_tab",
+          "label": "Ouvrir dans un nouvel onglet",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Position de l’image",
+          "default": "center center",
+          "options": [
+            {
+              "value": "center center",
+              "label": "Centre"
+            },
+            {
+              "value": "top center",
+              "label": "Haut"
+            },
+            {
+              "value": "bottom center",
+              "label": "Bas"
+            },
+            {
+              "value": "left center",
+              "label": "Gauche"
+            },
+            {
+              "value": "right center",
+              "label": "Droite"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "overlay_text",
+          "label": "Texte sur l’image"
+        },
+        {
+          "type": "select",
+          "id": "overlay_position",
+          "label": "Position du texte",
+          "default": "center",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Haut gauche"
+            },
+            {
+              "value": "top-center",
+              "label": "Haut centre"
+            },
+            {
+              "value": "top-right",
+              "label": "Haut droite"
+            },
+            {
+              "value": "center",
+              "label": "Centre"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Bas gauche"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Bas centre"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Bas droite"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Follow us galerie",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
