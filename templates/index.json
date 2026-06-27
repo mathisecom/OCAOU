@@ -106,7 +106,7 @@
         "show_progress_bar": true,
         "products_count": 6,
         "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
+        "products_per_row_desktop": 4,
         "subheading": "",
         "title": "Meilleures Ventes",
         "content": "",
@@ -136,6 +136,7 @@
         "image_review_RAQTpT": {
           "type": "image_review",
           "settings": {
+            "image": "shopify://shop_images/IMG_0604.jpg",
             "image_alt": "Photo client"
           }
         },
@@ -151,6 +152,7 @@
         "image_review_iGQqiF": {
           "type": "image_review",
           "settings": {
+            "image": "shopify://shop_images/IMG_5530.jpg",
             "image_alt": "Photo client"
           }
         },
@@ -166,6 +168,7 @@
         "image_review_kw7jVb": {
           "type": "image_review",
           "settings": {
+            "image": "shopify://shop_images/ocaou-sac-a-dos-enfant.jpg",
             "image_alt": "Photo client"
           }
         }
