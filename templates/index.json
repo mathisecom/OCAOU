@@ -232,6 +232,152 @@
         "arrow_hover_color": "#ffffff"
       }
     },
+    "instagram_gw8WKA": {
+      "type": "instagram",
+      "blocks": {
+        "image_CYit8M": {
+          "type": "image",
+          "settings": {
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_fHAfbM": {
+          "type": "image",
+          "settings": {
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_VQrL6Y": {
+          "type": "image",
+          "settings": {
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_EpGDJK": {
+          "type": "image",
+          "settings": {
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_hpVMVa": {
+          "type": "image",
+          "settings": {
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_nV4MxC": {
+          "type": "image",
+          "settings": {
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_CYit8M",
+        "image_fHAfbM",
+        "image_VQrL6Y",
+        "image_EpGDJK",
+        "image_hpVMVa",
+        "image_nV4MxC"
+      ],
+      "name": "Follow us galerie",
+      "settings": {
+        "show_title": true,
+        "title": "SUIVEZ NOUS",
+        "title_uppercase": true,
+        "title_alignment": "center",
+        "title_color": "#111111",
+        "title_size_desktop": 18,
+        "title_size_mobile": 18,
+        "title_weight": "700",
+        "title_letter_spacing": 2,
+        "title_letter_spacing_mobile": 2,
+        "title_margin_bottom": 24,
+        "title_margin_bottom_mobile": 14,
+        "full_width": true,
+        "max_width": 1600,
+        "columns_desktop": 6,
+        "columns_mobile": 2,
+        "gap_desktop": 4,
+        "gap_mobile": 2,
+        "image_ratio": "1 / 1",
+        "image_ratio_mobile": "1 / 1",
+        "force_height_desktop": false,
+        "image_height_desktop": 320,
+        "force_height_mobile": false,
+        "image_height_mobile": 210,
+        "image_fit": "cover",
+        "image_radius": 0,
+        "enable_hover_zoom": true,
+        "enable_hover_darken": false,
+        "mobile_scroll": true,
+        "mobile_card_width": 70,
+        "bg_color": "#ffffff",
+        "placeholder_bg": "#f2f2f2",
+        "placeholder_text_color": "#777777",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 0,
+        "side_padding_desktop": 0,
+        "side_padding_mobile": 0,
+        "shadow_y": 0,
+        "shadow_blur": 0,
+        "shadow_opacity": 0,
+        "overlay_text_color": "#ffffff",
+        "overlay_size_desktop": 14,
+        "overlay_size_mobile": 12,
+        "overlay_weight": "600",
+        "overlay_letter_spacing": 1,
+        "overlay_padding": 16,
+        "overlay_shadow_opacity": 35,
+        "show_button": false,
+        "button_text": "Suivez-nous",
+        "button_link": "",
+        "button_new_tab": true,
+        "button_alignment": "center",
+        "button_margin_top": 24,
+        "button_height": 44,
+        "button_padding_x": 28,
+        "button_radius": 30,
+        "button_font_size": 14,
+        "button_weight": "600",
+        "button_bg": "#111111",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#333333",
+        "button_hover_text_color": "#ffffff"
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -290,6 +436,7 @@
     "logoscroll_WxkMyg",
     "featured_collection_Dzf4fX",
     "avisparents_9fPrRY",
+    "instagram_gw8WKA",
     "faq"
   ]
 }
