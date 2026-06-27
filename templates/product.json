@@ -464,7 +464,7 @@
         "image_card_radius_mobile": 12,
         "show_bottom_band_desktop": false,
         "show_bottom_band_mobile": true,
-        "bottom_band_color": "#FBF6EF",
+        "bottom_band_color": "#fbf6ef",
         "bottom_band_height_desktop": 50,
         "bottom_band_height_mobile": 50,
         "placeholder_height_desktop": 460,
@@ -505,6 +505,59 @@
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
         "header_margin_bottom_mobile": 30
+      }
+    },
+    "faq_RLPihW": {
+      "type": "faq",
+      "blocks": {
+        "item_mJCRPw": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "item_e3WRir": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "item_Ukfjeg": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_mJCRPw",
+        "item_e3WRir",
+        "item_Ukfjeg"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Questions Fréquentes",
+        "content": "",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
       }
     },
     "instagram_M4jpkB": {
@@ -666,6 +719,7 @@
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
     "sectionsicones_Y3DFyV",
+    "faq_RLPihW",
     "instagram_M4jpkB"
   ]
 }
