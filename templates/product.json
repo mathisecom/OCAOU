@@ -112,31 +112,161 @@
         "input_text_color": ""
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "instagram_M4jpkB": {
+      "type": "instagram",
+      "blocks": {
+        "image_nhdWPm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/20241102_110225.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_VhqDh9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_wqqLgr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/20250711_184524.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_CtfXtG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sac-ocaou-terracotta-motif-chien_d138feb2-f1e3-4b47-b662-da4a150cec10.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_zwtFik": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_QFCYbh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ocaou-sac-enfant-poussette.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_nhdWPm",
+        "image_VhqDh9",
+        "image_wqqLgr",
+        "image_CtfXtG",
+        "image_zwtFik",
+        "image_QFCYbh"
+      ],
+      "name": "Follow us galerie",
       "settings": {
-        "recommendations_count": 6,
-        "products": [],
+        "show_title": true,
+        "title": "",
+        "title_uppercase": true,
+        "title_alignment": "center",
+        "title_color": "#111111",
+        "title_size_desktop": 18,
+        "title_size_mobile": 16,
+        "title_weight": "700",
+        "title_letter_spacing": 2,
+        "title_letter_spacing_mobile": 2,
+        "title_margin_bottom": 24,
+        "title_margin_bottom_mobile": 25,
         "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "You may also like",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
+        "max_width": 1600,
+        "columns_desktop": 6,
+        "columns_mobile": 2,
+        "gap_desktop": 4,
+        "gap_mobile": 2,
+        "image_ratio": "1 / 1",
+        "image_ratio_mobile": "1 / 1",
+        "force_height_desktop": false,
+        "image_height_desktop": 320,
+        "force_height_mobile": false,
+        "image_height_mobile": 210,
+        "image_fit": "cover",
+        "image_radius": 0,
+        "enable_hover_zoom": true,
+        "enable_hover_darken": false,
+        "mobile_scroll": true,
+        "mobile_card_width": 70,
+        "bg_color": "#ffffff",
+        "placeholder_bg": "#f2f2f2",
+        "placeholder_text_color": "#777777",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "side_padding_desktop": 0,
+        "side_padding_mobile": 0,
+        "shadow_y": 0,
+        "shadow_blur": 0,
+        "shadow_opacity": 0,
+        "overlay_text_color": "#ffffff",
+        "overlay_size_desktop": 14,
+        "overlay_size_mobile": 12,
+        "overlay_weight": "600",
+        "overlay_letter_spacing": 1,
+        "overlay_padding": 16,
+        "overlay_shadow_opacity": 35,
+        "show_button": false,
+        "button_text": "Suivez-nous",
+        "button_link": "",
+        "button_new_tab": true,
+        "button_alignment": "center",
+        "button_margin_top": 24,
+        "button_height": 44,
+        "button_padding_x": 28,
+        "button_radius": 30,
+        "button_font_size": 14,
+        "button_weight": "600",
+        "button_bg": "#111111",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#333333",
+        "button_hover_text_color": "#ffffff"
       }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "instagram_M4jpkB"
   ]
 }
