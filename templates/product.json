@@ -27,7 +27,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "heading_tag": "h2"
+            "heading_tag": "h3"
           }
         },
         "badges": {
@@ -36,6 +36,7 @@
         },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {
             "show_taxes_notice": false
           }
