@@ -93,6 +93,117 @@
         "lazy": true
       }
     },
+    "avisparents_9fPrRY": {
+      "type": "avisparents",
+      "blocks": {
+        "text_review_bgJLYT": {
+          "type": "text_review",
+          "settings": {
+            "quote": "Love this product. Easy to use, clean and perfect for everyday life.",
+            "author": "Jennifer M.",
+            "show_stars": true,
+            "stars": 5
+          }
+        },
+        "image_review_RAQTpT": {
+          "type": "image_review",
+          "settings": {
+            "image_alt": "Photo client"
+          }
+        },
+        "text_review_TaapWm": {
+          "type": "text_review",
+          "settings": {
+            "quote": "Perfect towel for newborns. They are soft and I love the colors.",
+            "author": "Lorena D.",
+            "show_stars": true,
+            "stars": 5
+          }
+        },
+        "image_review_iGQqiF": {
+          "type": "image_review",
+          "settings": {
+            "image_alt": "Photo client"
+          }
+        },
+        "text_review_HMHBFB": {
+          "type": "text_review",
+          "settings": {
+            "quote": "We love these products. They are easy to rinse off and perfect for meal time.",
+            "author": "Kytana C.",
+            "show_stars": true,
+            "stars": 5
+          }
+        },
+        "image_review_kw7jVb": {
+          "type": "image_review",
+          "settings": {
+            "image_alt": "Photo client"
+          }
+        }
+      },
+      "block_order": [
+        "text_review_bgJLYT",
+        "image_review_RAQTpT",
+        "text_review_TaapWm",
+        "image_review_iGQqiF",
+        "text_review_HMHBFB",
+        "image_review_kw7jVb"
+      ],
+      "name": "Avis parents carousel",
+      "settings": {
+        "show_header": true,
+        "show_top_stars": true,
+        "title": "FOR PARENTS, BY PARENTS",
+        "bg_color": "#ffffff",
+        "card_bg_color": "#FBF6EF",
+        "title_color": "#111111",
+        "text_color": "#696969",
+        "author_color": "#666666",
+        "star_color": "#00B67A",
+        "review_star_color": "#00B67A",
+        "max_width": 2100,
+        "columns_desktop": 6,
+        "card_height_desktop": 440,
+        "card_gap": 26,
+        "side_padding_desktop": 24,
+        "columns_mobile": 1,
+        "card_height_mobile": 380,
+        "card_gap_mobile": 16,
+        "side_padding_mobile": 16,
+        "card_radius": 18,
+        "card_radius_mobile": 18,
+        "shadow_y": 2,
+        "shadow_blur": 10,
+        "shadow_opacity": 8,
+        "title_size_desktop": 21,
+        "title_size_mobile": 17,
+        "title_weight": "700",
+        "title_letter_spacing": 2,
+        "title_letter_spacing_mobile": 1,
+        "quote_size_desktop": 20,
+        "quote_size_mobile": 18,
+        "author_size_desktop": 15,
+        "author_size_mobile": 14,
+        "top_stars_size": 16,
+        "review_stars_size": 14,
+        "text_card_padding": 34,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 32,
+        "header_margin": 28,
+        "show_arrows": true,
+        "arrow_size": 34,
+        "arrows_margin_top": 16,
+        "arrows_margin_top_mobile": 16,
+        "arrow_bg": "#ffffff",
+        "arrow_color": "#444444",
+        "arrow_border": "#d8d8d8",
+        "arrow_hover_bg": "#111111",
+        "arrow_hover_color": "#ffffff"
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -149,6 +260,7 @@
   },
   "order": [
     "logoscroll_WxkMyg",
+    "avisparents_9fPrRY",
     "faq"
   ]
 }
