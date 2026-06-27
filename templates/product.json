@@ -28,14 +28,6 @@
             "show_taxes_notice": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": true
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -61,16 +53,46 @@
             "payment_button_background": "",
             "payment_button_text_color": ""
           }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": true
+          }
+        },
+        "collapsible_text_QkwrFT": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Title",
+            "content": "<p>Share some content to your customers about your products.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_BgHqca": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Title",
+            "content": "<p>Share some content to your customers about your products.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
         "title",
         "badges",
         "price",
-        "description",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "description",
+        "collapsible_text_QkwrFT",
+        "collapsible_text_BgHqca"
       ],
       "settings": {
         "full_width": true,
