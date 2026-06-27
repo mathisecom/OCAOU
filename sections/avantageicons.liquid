@@ -1,0 +1,769 @@
+{% style %}
+  #shopify-section-{{ section.id }} .fp-benefits-section {
+    width: 100%;
+    background: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefits-container {
+    max-width: {% if section.settings.full_width %}none{% else %}{{ section.settings.max_width }}px{% endif %};
+    margin: 0 auto;
+    padding-left: {{ section.settings.side_padding_desktop }}px;
+    padding-right: {{ section.settings.side_padding_desktop }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefits-title {
+    margin: 0 0 {{ section.settings.title_margin_bottom_desktop }}px;
+    text-align: {{ section.settings.title_alignment }};
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size_desktop }}px;
+    font-weight: {{ section.settings.title_weight }};
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+    gap: {{ section.settings.row_gap_desktop }}px {{ section.settings.column_gap_desktop }}px;
+    align-items: start;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefit-icon-circle {
+    width: {{ section.settings.icon_circle_size_desktop }}px;
+    height: {{ section.settings.icon_circle_size_desktop }}px;
+    border-radius: 999px;
+    background: {{ section.settings.icon_circle_bg }};
+    color: {{ section.settings.icon_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: {{ section.settings.icon_margin_bottom_desktop }}px;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefit-icon-circle svg {
+    width: {{ section.settings.icon_size_desktop }}px;
+    height: {{ section.settings.icon_size_desktop }}px;
+    display: block;
+    stroke: currentColor;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefit-icon-circle img {
+    width: {{ section.settings.icon_size_desktop }}px;
+    height: {{ section.settings.icon_size_desktop }}px;
+    object-fit: contain;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefit-title {
+    margin: 0 0 {{ section.settings.benefit_title_margin_bottom }}px;
+    color: {{ section.settings.benefit_title_color }};
+    font-size: {{ section.settings.benefit_title_size_desktop }}px;
+    font-weight: {{ section.settings.benefit_title_weight }};
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .fp-benefit-text {
+    margin: 0;
+    max-width: {{ section.settings.text_max_width_desktop }}px;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_size_desktop }}px;
+    font-weight: {{ section.settings.text_weight }};
+    line-height: 1.35;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .fp-benefits-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-benefits-container {
+      padding-left: {{ section.settings.side_padding_mobile }}px;
+      padding-right: {{ section.settings.side_padding_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-benefits-title {
+      margin-bottom: {{ section.settings.title_margin_bottom_mobile }}px;
+      font-size: {{ section.settings.title_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-benefits-grid {
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, minmax(0, 1fr));
+      gap: {{ section.settings.row_gap_mobile }}px {{ section.settings.column_gap_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-benefit-icon-circle {
+      width: {{ section.settings.icon_circle_size_mobile }}px;
+      height: {{ section.settings.icon_circle_size_mobile }}px;
+      margin-bottom: {{ section.settings.icon_margin_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-benefit-icon-circle svg,
+    #shopify-section-{{ section.id }} .fp-benefit-icon-circle img {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-benefit-title {
+      font-size: {{ section.settings.benefit_title_size_mobile }}px;
+      margin-bottom: {{ section.settings.benefit_title_margin_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-benefit-text {
+      max-width: {{ section.settings.text_max_width_mobile }}px;
+      font-size: {{ section.settings.text_size_mobile }}px;
+      line-height: 1.35;
+    }
+  }
+{% endstyle %}
+
+<section class="fp-benefits-section">
+  <div class="fp-benefits-container">
+
+    {% if section.settings.title != blank %}
+      <h2 class="fp-benefits-title">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    <div class="fp-benefits-grid">
+      {% for block in section.blocks %}
+        <div class="fp-benefit-item" {{ block.shopify_attributes }}>
+
+          <div class="fp-benefit-icon-circle">
+            {% if block.settings.custom_icon != blank %}
+              <img
+                src="{{ block.settings.custom_icon | image_url: width: 300 }}"
+                alt="{{ block.settings.icon_alt | escape }}"
+                loading="lazy"
+                width="300"
+                height="300"
+              >
+            {% else %}
+              {% case block.settings.icon %}
+                {% when 'smile' %}
+                  <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <circle cx="32" cy="32" r="22" stroke-width="4"/>
+                    <path d="M23 26H23.1" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M41 26H41.1" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M22 36C25 43 39 43 42 36" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+
+                {% when 'wash' %}
+                  <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <path d="M32 8C23 20 18 28 18 38C18 47 24 54 32 54C40 54 46 47 46 38C46 28 41 20 32 8Z" stroke-width="4" stroke-linejoin="round"/>
+                    <circle cx="43" cy="43" r="10" stroke-width="3"/>
+                    <path d="M38.5 43L42 46.5L48 39.5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+
+                {% when 'clock' %}
+                  <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <path d="M32 10C20 10 10 20 10 32C10 44 20 54 32 54" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M32 18V33L42 39" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M51 23C54 28 55 35 53 41" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 7"/>
+                  </svg>
+
+                {% when 'truck' %}
+                  <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <path d="M10 24H36V45H10V24Z" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M36 31H47L56 39V45H36V31Z" stroke-width="4" stroke-linejoin="round"/>
+                    <circle cx="21" cy="47" r="5" stroke-width="4"/>
+                    <circle cx="47" cy="47" r="5" stroke-width="4"/>
+                    <path d="M5 32H18" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M8 39H22" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+
+                {% when 'bag' %}
+                  <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <path d="M20 25V19C20 12.9 24.9 8 31 8H33C39.1 8 44 12.9 44 19V25" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M14 25H50L47 56H17L14 25Z" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M24 37H40" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M32 29V45" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+
+                {% else %}
+                  <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <circle cx="32" cy="32" r="22" stroke-width="4"/>
+                    <path d="M22 33L29 40L43 24" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              {% endcase %}
+            {% endif %}
+          </div>
+
+          {% if block.settings.title != blank %}
+            <h3 class="fp-benefit-title">
+              {{ block.settings.title }}
+            </h3>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <p class="fp-benefit-text">
+              {{ block.settings.text }}
+            </p>
+          {% endif %}
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avantages icônes",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Vous allez adorer le sac O’CAOU parce que..."
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Alignement du titre",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille titre PC",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "default": 21
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Épaisseur titre",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_desktop",
+      "label": "Marge sous titre PC",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_mobile",
+      "label": "Marge sous titre mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 44
+    },
+    {
+      "type": "header",
+      "content": "Disposition"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Prendre toute la largeur",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1800,
+      "step": 50,
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Colonnes PC",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Colonnes mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Espace horizontal PC",
+      "min": 10,
+      "max": 120,
+      "step": 2,
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "row_gap_desktop",
+      "label": "Espace vertical PC",
+      "min": 10,
+      "max": 120,
+      "step": 2,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Espace horizontal mobile",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "row_gap_mobile",
+      "label": "Espace vertical mobile",
+      "min": 10,
+      "max": 80,
+      "step": 2,
+      "default": 44
+    },
+    {
+      "type": "header",
+      "content": "Icônes"
+    },
+    {
+      "type": "color",
+      "id": "icon_circle_bg",
+      "label": "Fond rond icône",
+      "default": "#D2B3A8"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur icône",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "icon_circle_size_desktop",
+      "label": "Taille rond PC",
+      "min": 60,
+      "max": 160,
+      "step": 2,
+      "default": 110
+    },
+    {
+      "type": "range",
+      "id": "icon_circle_size_mobile",
+      "label": "Taille rond mobile",
+      "min": 50,
+      "max": 130,
+      "step": 2,
+      "default": 108
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Taille icône PC",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "default": 54
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Taille icône mobile",
+      "min": 20,
+      "max": 90,
+      "step": 2,
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "icon_margin_bottom_desktop",
+      "label": "Marge sous icône PC",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "icon_margin_bottom_mobile",
+      "label": "Marge sous icône mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Textes bénéfices"
+    },
+    {
+      "type": "color",
+      "id": "benefit_title_color",
+      "label": "Couleur titre bénéfice",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "benefit_title_size_desktop",
+      "label": "Taille titre bénéfice PC",
+      "min": 12,
+      "max": 34,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "benefit_title_size_mobile",
+      "label": "Taille titre bénéfice mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "benefit_title_weight",
+      "label": "Épaisseur titre bénéfice",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "benefit_title_margin_bottom",
+      "label": "Marge sous titre bénéfice PC",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "benefit_title_margin_bottom_mobile",
+      "label": "Marge sous titre bénéfice mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "label": "Taille texte PC",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Taille texte mobile",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Épaisseur texte",
+      "default": "400",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "text_max_width_desktop",
+      "label": "Largeur max texte PC",
+      "min": 120,
+      "max": 360,
+      "step": 10,
+      "default": 260
+    },
+    {
+      "type": "range",
+      "id": "text_max_width_mobile",
+      "label": "Largeur max texte mobile",
+      "min": 100,
+      "max": 260,
+      "step": 10,
+      "default": 170
+    },
+    {
+      "type": "header",
+      "content": "Couleurs et marges"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fond section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding haut PC",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bas PC",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding haut mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bas mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "side_padding_desktop",
+      "label": "Marge côtés PC",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Marge côtés mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Icône personnalisée"
+        },
+        {
+          "type": "text",
+          "id": "icon_alt",
+          "label": "Texte alternatif icône",
+          "default": "Icône bénéfice"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône par défaut",
+          "default": "smile",
+          "options": [
+            {
+              "value": "smile",
+              "label": "Sourire"
+            },
+            {
+              "value": "wash",
+              "label": "Lavable"
+            },
+            {
+              "value": "clock",
+              "label": "Organisation"
+            },
+            {
+              "value": "truck",
+              "label": "Livraison"
+            },
+            {
+              "value": "bag",
+              "label": "Sac"
+            },
+            {
+              "value": "check",
+              "label": "Validation"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Pratique au quotidien"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "Un sac pensé pour simplifier les sorties, l’école et les activités."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avantages icônes",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "smile",
+            "title": "Stylé & pratique",
+            "text": "Un sac joli, utile et pensé pour tous les jours."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "wash",
+            "title": "Facile à nettoyer",
+            "text": "Un sac conçu pour accompagner les petits accidents du quotidien."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "title": "Organisation optimale",
+            "text": "Des poches étiquetées pour tout retrouver facilement."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "truck",
+            "title": "Livraison rapide",
+            "text": "Votre commande est préparée et expédiée rapidement."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
