@@ -276,62 +276,41 @@
     "avisparents_byECTe": {
       "type": "avisparents",
       "blocks": {
-        "text_review_BaR9Rw": {
-          "type": "text_review",
+        "review_item_QxaHeN": {
+          "type": "review_item",
           "settings": {
-            "quote": "Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite!",
+            "image_alt": "Photo client",
+            "quote": "Love this product. Easy to use, clean and perfect for everyday life.",
             "author": "Jennifer M.",
             "show_stars": true,
             "stars": 5
           }
         },
-        "image_review_PndmjB": {
-          "type": "image_review",
+        "review_item_YAT8UW": {
+          "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/IMG_0604.jpg",
-            "image_alt": "Photo client"
-          }
-        },
-        "text_review_YT9wzm": {
-          "type": "text_review",
-          "settings": {
-            "quote": "Perfect towel for newborns. They are soft and I love the colors.",
-            "author": "Lorena D.",
+            "image_alt": "Photo client",
+            "quote": "Love this product. Easy to use, clean and perfect for everyday life.",
+            "author": "Jennifer M.",
             "show_stars": true,
             "stars": 5
           }
         },
-        "image_review_ADYpDw": {
-          "type": "image_review",
+        "review_item_FyV4Br": {
+          "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
-            "image_alt": "Photo client"
-          }
-        },
-        "text_review_6hVfVw": {
-          "type": "text_review",
-          "settings": {
-            "quote": "We love these products. They are easy to rinse off and perfect for meal time.",
-            "author": "Kytana C.",
+            "image_alt": "Photo client",
+            "quote": "Love this product. Easy to use, clean and perfect for everyday life.",
+            "author": "Jennifer M.",
             "show_stars": true,
             "stars": 5
-          }
-        },
-        "image_review_3AagBX": {
-          "type": "image_review",
-          "settings": {
-            "image": "shopify://shop_images/P1001539-copie.jpg",
-            "image_alt": "Photo client"
           }
         }
       },
       "block_order": [
-        "text_review_BaR9Rw",
-        "image_review_PndmjB",
-        "text_review_YT9wzm",
-        "image_review_ADYpDw",
-        "text_review_6hVfVw",
-        "image_review_3AagBX"
+        "review_item_QxaHeN",
+        "review_item_YAT8UW",
+        "review_item_FyV4Br"
       ],
       "name": "Avis parents carousel",
       "settings": {
@@ -351,7 +330,8 @@
         "card_gap": 26,
         "side_padding_desktop": 24,
         "columns_mobile": 1,
-        "card_height_mobile": 380,
+        "mobile_image_height": 240,
+        "mobile_text_padding": 24,
         "card_gap_mobile": 16,
         "side_padding_mobile": 16,
         "card_radius": 18,
@@ -443,7 +423,7 @@
       ],
       "name": "Clean Omega icônes",
       "settings": {
-        "title": "Le sac intelligent <br>qui pense à tout !",
+        "title": "Le sac intelligent qui pense à tout !",
         "subtitle": "Magique, mais surtout trop pratique! Le sac O'CAOU se transforme en organiseur où tout est catégorisé. Un pense-bête étiqueté imaginé pour vous soulager.",
         "header_alignment": "center",
         "title_color": "#101010",
@@ -532,8 +512,8 @@
         "icon_margin_bottom_mobile": 10,
         "icon_color": "#ffffff",
         "section_bg_color": "#ffffff",
-        "card_bg_color": "#FBF6EF",
-        "overlay_color": "#FCFCFC",
+        "card_bg_color": "#fbf6ef",
+        "overlay_color": "#fcfcfc",
         "overlay_opacity": 30,
         "title_color": "#101010",
         "subtitle_color": "#101010",
