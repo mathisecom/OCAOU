@@ -167,7 +167,7 @@
       "settings": {
         "show_header": true,
         "show_top_stars": true,
-        "title": "FOR PARENTS, BY PARENTS",
+        "title": "+3,000 PARENTS CONQUIS",
         "bg_color": "#ffffff",
         "card_bg_color": "#fbf6ef",
         "title_color": "#111111",
@@ -190,8 +190,8 @@
         "shadow_y": 2,
         "shadow_blur": 10,
         "shadow_opacity": 8,
-        "title_size_desktop": 21,
-        "title_size_mobile": 17,
+        "title_size_desktop": 17,
+        "title_size_mobile": 16,
         "title_weight": "700",
         "title_letter_spacing": 2,
         "title_letter_spacing_mobile": 1,
@@ -304,7 +304,7 @@
       ],
       "name": "Follow us galerie",
       "settings": {
-        "show_title": false,
+        "show_title": true,
         "title": "SUIVEZ NOUS @ocaou",
         "title_uppercase": true,
         "title_alignment": "center",
