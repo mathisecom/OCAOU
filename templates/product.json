@@ -227,7 +227,7 @@
         "enable_hover_zoom": true,
         "enable_hover_darken": false,
         "mobile_scroll": true,
-        "mobile_card_width": 70,
+        "mobile_card_width": 45,
         "bg_color": "#ffffff",
         "placeholder_bg": "#f2f2f2",
         "placeholder_text_color": "#777777",
