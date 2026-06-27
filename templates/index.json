@@ -235,20 +235,10 @@
     "instagram_gw8WKA": {
       "type": "instagram",
       "blocks": {
-        "image_CYit8M": {
-          "type": "image",
-          "settings": {
-            "alt_text": "Photo Instagram",
-            "link": "",
-            "open_new_tab": true,
-            "image_position": "center center",
-            "overlay_text": "",
-            "overlay_position": "center"
-          }
-        },
         "image_fHAfbM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/20250711_184524.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -260,6 +250,7 @@
         "image_VQrL6Y": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/sac-ocaou-terracotta-motif-chien_d138feb2-f1e3-4b47-b662-da4a150cec10.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -271,6 +262,7 @@
         "image_EpGDJK": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/20241102_110225.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -282,6 +274,7 @@
         "image_hpVMVa": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/20241104_223209.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -293,6 +286,19 @@
         "image_nV4MxC": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_CYit8M": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image-video-ocaou.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -303,17 +309,17 @@
         }
       },
       "block_order": [
-        "image_CYit8M",
         "image_fHAfbM",
         "image_VQrL6Y",
         "image_EpGDJK",
         "image_hpVMVa",
-        "image_nV4MxC"
+        "image_nV4MxC",
+        "image_CYit8M"
       ],
       "name": "Follow us galerie",
       "settings": {
         "show_title": true,
-        "title": "SUIVEZ NOUS",
+        "title": "",
         "title_uppercase": true,
         "title_alignment": "center",
         "title_color": "#111111",
