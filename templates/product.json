@@ -217,6 +217,7 @@
         },
         "image_QqYbtG": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "url": ""
@@ -247,14 +248,14 @@
       "settings": {
         "layout_radius": 30,
         "layout_border_thickness": 0,
-        "heading": "",
-        "heading_custom": false,
-        "heading_font": "josefin_sans_n4",
-        "heading_size": 18,
-        "heading_size_mobile": 18,
-        "heading_height": 130,
-        "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 20,
+        "heading": "<p>RECOMMANDÉ PAR</p>",
+        "heading_custom": true,
+        "heading_font": "funnel_display_n5",
+        "heading_size": 13,
+        "heading_size_mobile": 8,
+        "heading_height": 100,
+        "scrolling_velocity": 10,
+        "scrolling_velocity_mobile": 12,
         "scrolling_direction": "left",
         "pause_hover": false,
         "scrolling_gap": 70,
