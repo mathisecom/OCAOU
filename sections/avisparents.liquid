@@ -117,6 +117,10 @@
     text-align: center;
   }
 
+  #shopify-section-{{ section.id }} .fp-reviews-mobile-track {
+    display: none;
+  }
+
   #shopify-section-{{ section.id }} .fp-reviews-arrows {
     display: flex;
     justify-content: space-between;
@@ -165,26 +169,69 @@
       letter-spacing: {{ section.settings.title_letter_spacing_mobile }}px;
     }
 
-    #shopify-section-{{ section.id }} .fp-reviews-track {
-      gap: {{ section.settings.card_gap_mobile }}px;
+    #shopify-section-{{ section.id }} .fp-reviews-desktop-track {
+      display: none;
     }
 
-    #shopify-section-{{ section.id }} .fp-review-card {
+    #shopify-section-{{ section.id }} .fp-reviews-mobile-track {
+      display: flex;
+      gap: {{ section.settings.card_gap_mobile }}px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 6px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-reviews-mobile-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-mobile-card {
       flex: 0 0 calc(
         (100% - ({{ section.settings.columns_mobile | minus: 1 }} * {{ section.settings.card_gap_mobile }}px))
         / {{ section.settings.columns_mobile }}
       );
-      height: {{ section.settings.card_height_mobile }}px;
+      background: {{ section.settings.card_bg_color }};
       border-radius: {{ section.settings.card_radius_mobile }}px;
+      overflow: hidden;
+      box-shadow: 0 {{ section.settings.shadow_y }}px {{ section.settings.shadow_blur }}px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
     }
 
-    #shopify-section-{{ section.id }} .fp-review-quote {
+    #shopify-section-{{ section.id }} .fp-review-mobile-image {
+      width: 100%;
+      height: {{ section.settings.mobile_image_height }}px;
+      background: {{ section.settings.card_bg_color }};
+      overflow: hidden;
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-mobile-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-mobile-content {
+      padding: {{ section.settings.mobile_text_padding }}px;
+      text-align: center;
+      color: {{ section.settings.text_color }};
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-mobile-card .fp-review-quote {
       font-size: {{ section.settings.quote_size_mobile }}px;
-      margin-bottom: 26px;
+      margin: 0 0 18px;
+      color: {{ section.settings.text_color }};
     }
 
-    #shopify-section-{{ section.id }} .fp-review-author {
+    #shopify-section-{{ section.id }} .fp-review-mobile-card .fp-review-author {
       font-size: {{ section.settings.author_size_mobile }}px;
+      margin: 0 0 8px;
+      color: {{ section.settings.author_color }};
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-mobile-card .fp-review-stars {
+      font-size: {{ section.settings.review_stars_size }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-reviews-arrows {
@@ -213,11 +260,12 @@
     {% endif %}
 
     <div class="fp-reviews-wrapper">
-      <div class="fp-reviews-track" id="FpReviewsTrack-{{ section.id }}">
+
+      <div class="fp-reviews-track fp-reviews-desktop-track" id="FpReviewsDesktopTrack-{{ section.id }}">
         {% for block in section.blocks %}
           {% case block.type %}
 
-            {% when 'text_review' %}
+            {% when 'review_item' %}
               <div class="fp-review-card fp-review-text-card" {{ block.shopify_attributes }}>
                 <div class="fp-review-text-inner">
                   {% if block.settings.quote != blank %}
@@ -242,8 +290,7 @@
                 </div>
               </div>
 
-            {% when 'image_review' %}
-              <div class="fp-review-card fp-review-image-card" {{ block.shopify_attributes }}>
+              <div class="fp-review-card fp-review-image-card">
                 {% if block.settings.image != blank %}
                   <img
                     src="{{ block.settings.image | image_url: width: 900 }}"
@@ -263,6 +310,54 @@
         {% endfor %}
       </div>
 
+      <div class="fp-reviews-mobile-track" id="FpReviewsMobileTrack-{{ section.id }}">
+        {% for block in section.blocks %}
+          {% if block.type == 'review_item' %}
+            <div class="fp-review-mobile-card" {{ block.shopify_attributes }}>
+
+              <div class="fp-review-mobile-image">
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 900 }}"
+                    alt="{{ block.settings.image_alt | escape }}"
+                    loading="lazy"
+                    width="900"
+                    height="900"
+                  >
+                {% else %}
+                  <div class="fp-review-placeholder">
+                    Ajoute une image dans ce bloc
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="fp-review-mobile-content">
+                {% if block.settings.quote != blank %}
+                  <p class="fp-review-quote">
+                    “{{ block.settings.quote }}”
+                  </p>
+                {% endif %}
+
+                {% if block.settings.author != blank %}
+                  <p class="fp-review-author">
+                    {{ block.settings.author }}
+                  </p>
+                {% endif %}
+
+                {% if block.settings.show_stars %}
+                  <div class="fp-review-stars">
+                    {% for i in (1..block.settings.stars) %}
+                      ★
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
       {% if section.settings.show_arrows %}
         <div class="fp-reviews-arrows">
           <button class="fp-review-arrow fp-review-prev" type="button" aria-label="Avis précédent">
@@ -278,8 +373,8 @@
           </button>
         </div>
       {% endif %}
-    </div>
 
+    </div>
   </div>
 </section>
 
@@ -288,14 +383,23 @@
     const section = document.querySelector('#shopify-section-' + sectionId);
     if (!section) return;
 
-    const track = section.querySelector('#FpReviewsTrack-' + sectionId);
+    const desktopTrack = section.querySelector('#FpReviewsDesktopTrack-' + sectionId);
+    const mobileTrack = section.querySelector('#FpReviewsMobileTrack-' + sectionId);
     const prev = section.querySelector('.fp-review-prev');
     const next = section.querySelector('.fp-review-next');
 
-    if (!track || !prev || !next) return;
+    if (!prev || !next) return;
 
-    function getScrollAmount() {
-      const card = track.querySelector('.fp-review-card');
+    function getActiveTrack() {
+      if (window.matchMedia('(max-width: 989px)').matches && mobileTrack) {
+        return mobileTrack;
+      }
+      return desktopTrack;
+    }
+
+    function getScrollAmount(track) {
+      if (!track) return 300;
+      const card = track.querySelector('.fp-review-card, .fp-review-mobile-card');
       if (!card) return 300;
 
       const gap = parseInt(window.getComputedStyle(track).gap) || 20;
@@ -303,15 +407,21 @@
     }
 
     prev.addEventListener('click', function () {
+      const track = getActiveTrack();
+      if (!track) return;
+
       track.scrollBy({
-        left: -getScrollAmount(),
+        left: -getScrollAmount(track),
         behavior: 'smooth'
       });
     });
 
     next.addEventListener('click', function () {
+      const track = getActiveTrack();
+      if (!track) return;
+
       track.scrollBy({
-        left: getScrollAmount(),
+        left: getScrollAmount(track),
         behavior: 'smooth'
       });
     });
@@ -330,7 +440,7 @@
 
 {% schema %}
 {
-  "name": "Avis parents carousel",
+  "name": "Avis image texte",
   "settings": [
     {
       "type": "header",
@@ -464,12 +574,21 @@
     },
     {
       "type": "range",
-      "id": "card_height_mobile",
-      "label": "Hauteur des cartes mobile",
-      "min": 220,
-      "max": 560,
+      "id": "mobile_image_height",
+      "label": "Hauteur image mobile",
+      "min": 160,
+      "max": 420,
       "step": 10,
-      "default": 380
+      "default": 240
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_padding",
+      "label": "Padding texte mobile",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "default": 24
     },
     {
       "type": "range",
@@ -659,7 +778,7 @@
     {
       "type": "range",
       "id": "text_card_padding",
-      "label": "Padding intérieur cartes texte",
+      "label": "Padding intérieur cartes texte PC",
       "min": 10,
       "max": 70,
       "step": 2,
@@ -784,9 +903,20 @@
   ],
   "blocks": [
     {
-      "type": "text_review",
-      "name": "Avis texte",
+      "type": "review_item",
+      "name": "Avis avec image",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image client"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Texte alternatif image",
+          "default": "Photo client"
+        },
         {
           "type": "textarea",
           "id": "quote",
@@ -815,54 +945,28 @@
           "default": 5
         }
       ]
-    },
-    {
-      "type": "image_review",
-      "name": "Image client",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "image_alt",
-          "label": "Texte alternatif",
-          "default": "Photo client"
-        }
-      ]
     }
   ],
   "presets": [
     {
-      "name": "Avis parents carousel",
+      "name": "Avis image texte",
       "blocks": [
         {
-          "type": "text_review"
+          "type": "review_item"
         },
         {
-          "type": "image_review"
-        },
-        {
-          "type": "text_review",
+          "type": "review_item",
           "settings": {
             "quote": "Perfect towel for newborns. They are soft and I love the colors.",
             "author": "Lorena D."
           }
         },
         {
-          "type": "image_review"
-        },
-        {
-          "type": "text_review",
+          "type": "review_item",
           "settings": {
             "quote": "We love these products. They are easy to rinse off and perfect for meal time.",
             "author": "Kytana C."
           }
-        },
-        {
-          "type": "image_review"
         }
       ]
     }
