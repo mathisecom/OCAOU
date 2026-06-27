@@ -239,9 +239,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -324,12 +324,12 @@
         "show_top_stars": true,
         "title": "+3,000 PARENTS SATISFAITS",
         "bg_color": "#ffffff",
-        "card_bg_color": "#FBF6EF",
+        "card_bg_color": "#fbf6ef",
         "title_color": "#111111",
         "text_color": "#696969",
         "author_color": "#666666",
-        "star_color": "#00B67A",
-        "review_star_color": "#00B67A",
+        "star_color": "#00b67a",
+        "review_star_color": "#00b67a",
         "max_width": 2100,
         "columns_desktop": 6,
         "card_height_desktop": 440,
@@ -370,6 +370,134 @@
         "arrow_border": "#d8d8d8",
         "arrow_hover_bg": "#111111",
         "arrow_hover_color": "#ffffff"
+      }
+    },
+    "sectionsicones_Y3DFyV": {
+      "type": "sectionsicones",
+      "blocks": {
+        "icon_JhiEzm": {
+          "type": "icon",
+          "settings": {
+            "icon_alt": "Icône avantage",
+            "title": "Zero Mercury"
+          }
+        },
+        "icon_d6dMpf": {
+          "type": "icon",
+          "settings": {
+            "icon_alt": "Icône avantage",
+            "title": "Zero PCBs"
+          }
+        },
+        "icon_UincGC": {
+          "type": "icon",
+          "settings": {
+            "icon_alt": "Icône avantage",
+            "title": "Zero Oxidised Oil"
+          }
+        },
+        "icon_3f9ARX": {
+          "type": "icon",
+          "settings": {
+            "icon_alt": "Icône avantage",
+            "title": "Zero Ocean Contaminants"
+          }
+        },
+        "icon_43MEdK": {
+          "type": "icon",
+          "settings": {
+            "icon_alt": "Icône avantage",
+            "title": "Zero Microplastics"
+          }
+        },
+        "icon_iNqmJ9": {
+          "type": "icon",
+          "settings": {
+            "icon_alt": "Icône avantage",
+            "title": "Zero Dioxins"
+          }
+        }
+      },
+      "block_order": [
+        "icon_JhiEzm",
+        "icon_d6dMpf",
+        "icon_UincGC",
+        "icon_3f9ARX",
+        "icon_43MEdK",
+        "icon_iNqmJ9"
+      ],
+      "name": "Clean Omega icônes",
+      "settings": {
+        "title": "Clean Omega-3 You Can Rely On",
+        "subtitle": "Grown in clean, controlled environments with none of the things that make fish oil unpleasant or inconsistent.",
+        "header_alignment": "center",
+        "title_color": "#101010",
+        "subtitle_color": "#101010",
+        "title_size_desktop": 42,
+        "title_size_mobile": 30,
+        "title_weight": "700",
+        "title_letter_spacing": 0,
+        "title_letter_spacing_mobile": 0,
+        "subtitle_size_desktop": 14,
+        "subtitle_size_mobile": 12,
+        "subtitle_weight": "400",
+        "subtitle_max_width": 780,
+        "subtitle_max_width_mobile": 360,
+        "subtitle_margin_top": 14,
+        "subtitle_margin_top_mobile": 15,
+        "main_image_alt": "Image produit",
+        "image_max_width_desktop": 720,
+        "image_max_width_mobile": 400,
+        "image_alignment_desktop": "center",
+        "image_alignment_mobile": "center",
+        "image_card_bg": "#ffffff",
+        "show_image_card_border": false,
+        "image_card_border": "#eeeeee",
+        "image_card_radius_desktop": 0,
+        "image_card_radius_mobile": 12,
+        "show_bottom_band_desktop": false,
+        "show_bottom_band_mobile": true,
+        "bottom_band_color": "#FBF6EF",
+        "bottom_band_height_desktop": 50,
+        "bottom_band_height_mobile": 50,
+        "placeholder_height_desktop": 460,
+        "placeholder_height_mobile": 320,
+        "icons_columns_desktop": 3,
+        "icons_columns_mobile": 3,
+        "icon_circle_size_desktop": 100,
+        "icon_circle_size_mobile": 62,
+        "icon_image_size_desktop": 56,
+        "icon_image_size_mobile": 34,
+        "icon_border_width": 1,
+        "icon_border_color": "#d9a5a5",
+        "icon_circle_bg": "#ffffff",
+        "icon_fallback_color": "#c67878",
+        "icon_text_color": "#101010",
+        "icon_text_size_desktop": 24,
+        "icon_text_size_mobile": 14,
+        "icon_text_weight": "500",
+        "icon_text_gap_desktop": 18,
+        "icon_text_gap_mobile": 10,
+        "icons_row_gap_desktop": 58,
+        "icons_column_gap_desktop": 52,
+        "icons_row_gap_mobile": 32,
+        "icons_column_gap_mobile": 18,
+        "full_width": false,
+        "max_width": 1500,
+        "image_column_width": 3,
+        "icons_column_width": 3,
+        "mobile_image_position": "after_icons",
+        "columns_gap_desktop": 70,
+        "columns_gap_mobile": 34,
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 52,
+        "padding_bottom_desktop": 52,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 28,
+        "side_padding_desktop": 40,
+        "side_padding_mobile": 16,
+        "header_margin_bottom_desktop": 52,
+        "header_margin_bottom_mobile": 30
       }
     },
     "instagram_M4jpkB": {
@@ -530,6 +658,7 @@
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
+    "sectionsicones_Y3DFyV",
     "instagram_M4jpkB"
   ]
 }
