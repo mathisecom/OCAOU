@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "liquid_hCXJAh": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -84,6 +90,7 @@
         }
       },
       "block_order": [
+        "liquid_hCXJAh",
         "title",
         "badges",
         "price",
