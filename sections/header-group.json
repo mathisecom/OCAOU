@@ -11,33 +11,6 @@
   "type": "header",
   "name": "Header group",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "message": {
-          "type": "message",
-          "settings": {
-            "text": "Announce something here",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "message"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_sticky": false,
-        "autoplay": false,
-        "cycle_speed": 6,
-        "text_size": "text-xs",
-        "navigation_mode": "arrows",
-        "scrolling_speed": 10,
-        "background": "#af6c67",
-        "background_gradient": "",
-        "text_color": "#ffffff"
-      }
-    },
     "barreannonce_YMpT9q": {
       "type": "barreannonce",
       "blocks": {
@@ -131,11 +104,37 @@
         "background_opacity": 100,
         "background_blur_radius": 0
       }
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "message"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "autoplay": false,
+        "cycle_speed": 6,
+        "text_size": "text-xs",
+        "navigation_mode": "arrows",
+        "scrolling_speed": 10,
+        "background": "#FBF6EF",
+        "background_gradient": "",
+        "text_color": "#333333"
+      }
     }
   },
   "order": [
-    "announcement-bar",
     "barreannonce_YMpT9q",
-    "header"
+    "header",
+    "announcement-bar"
   ]
 }
