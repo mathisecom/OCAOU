@@ -1,0 +1,871 @@
+{% style %}
+  #shopify-section-{{ section.id }} .fp-reviews-section {
+    background: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-container {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 {{ section.settings.side_padding_desktop }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-header {
+    text-align: center;
+    margin-bottom: {{ section.settings.header_margin }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-stars-top {
+    font-size: {{ section.settings.top_stars_size }}px;
+    letter-spacing: 2px;
+    color: {{ section.settings.star_color }};
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-title {
+    margin: 0;
+    font-size: {{ section.settings.title_size_desktop }}px;
+    font-weight: {{ section.settings.title_weight }};
+    color: {{ section.settings.title_color }};
+    text-transform: uppercase;
+    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-wrapper {
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-track {
+    display: flex;
+    gap: {{ section.settings.card_gap }}px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 6px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-card {
+    flex: 0 0 calc(
+      (100% - ({{ section.settings.columns_desktop | minus: 1 }} * {{ section.settings.card_gap }}px))
+      / {{ section.settings.columns_desktop }}
+    );
+    height: {{ section.settings.card_height_desktop }}px;
+    border-radius: {{ section.settings.card_radius }}px;
+    overflow: hidden;
+    background: {{ section.settings.card_bg_color }};
+    box-shadow: 0 {{ section.settings.shadow_y }}px {{ section.settings.shadow_blur }}px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-text-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: {{ section.settings.text_card_padding }}px;
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-text-inner {
+    max-width: 92%;
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-quote {
+    font-size: {{ section.settings.quote_size_desktop }}px;
+    line-height: 1.28;
+    margin: 0 0 34px;
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-author {
+    font-size: {{ section.settings.author_size_desktop }}px;
+    margin: 0 0 8px;
+    color: {{ section.settings.author_color }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-stars {
+    font-size: {{ section.settings.review_stars_size }}px;
+    letter-spacing: 4px;
+    color: {{ section.settings.review_star_color }};
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-placeholder {
+    width: 100%;
+    height: 100%;
+    background: {{ section.settings.card_bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.text_color }};
+    font-size: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .fp-reviews-arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: {{ section.settings.arrows_margin_top }}px;
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-arrow {
+    width: {{ section.settings.arrow_size }}px;
+    height: {{ section.settings.arrow_size }}px;
+    border-radius: 999px;
+    border: 1px solid {{ section.settings.arrow_border }};
+    background: {{ section.settings.arrow_bg }};
+    color: {{ section.settings.arrow_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-arrow:hover {
+    background: {{ section.settings.arrow_hover_bg }};
+    color: {{ section.settings.arrow_hover_color }};
+    border-color: {{ section.settings.arrow_hover_bg }};
+  }
+
+  #shopify-section-{{ section.id }} .fp-review-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: 989px) {
+    #shopify-section-{{ section.id }} .fp-reviews-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-reviews-container {
+      padding: 0 {{ section.settings.side_padding_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-reviews-title {
+      font-size: {{ section.settings.title_size_mobile }}px;
+      letter-spacing: {{ section.settings.title_letter_spacing_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-reviews-track {
+      gap: {{ section.settings.card_gap_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-card {
+      flex: 0 0 calc(
+        (100% - ({{ section.settings.columns_mobile | minus: 1 }} * {{ section.settings.card_gap_mobile }}px))
+        / {{ section.settings.columns_mobile }}
+      );
+      height: {{ section.settings.card_height_mobile }}px;
+      border-radius: {{ section.settings.card_radius_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-quote {
+      font-size: {{ section.settings.quote_size_mobile }}px;
+      margin-bottom: 26px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-review-author {
+      font-size: {{ section.settings.author_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .fp-reviews-arrows {
+      margin-top: {{ section.settings.arrows_margin_top_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="fp-reviews-section">
+  <div class="fp-reviews-container">
+
+    {% if section.settings.show_header %}
+      <div class="fp-reviews-header">
+        {% if section.settings.show_top_stars %}
+          <div class="fp-reviews-stars-top">
+            ★★★★★
+          </div>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="fp-reviews-title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="fp-reviews-wrapper">
+      <div class="fp-reviews-track" id="FpReviewsTrack-{{ section.id }}">
+        {% for block in section.blocks %}
+          {% case block.type %}
+
+            {% when 'text_review' %}
+              <div class="fp-review-card fp-review-text-card" {{ block.shopify_attributes }}>
+                <div class="fp-review-text-inner">
+                  {% if block.settings.quote != blank %}
+                    <p class="fp-review-quote">
+                      “{{ block.settings.quote }}”
+                    </p>
+                  {% endif %}
+
+                  {% if block.settings.author != blank %}
+                    <p class="fp-review-author">
+                      {{ block.settings.author }}
+                    </p>
+                  {% endif %}
+
+                  {% if block.settings.show_stars %}
+                    <div class="fp-review-stars">
+                      {% for i in (1..block.settings.stars) %}
+                        ★
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+
+            {% when 'image_review' %}
+              <div class="fp-review-card fp-review-image-card" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 900 }}"
+                    alt="{{ block.settings.image_alt | escape }}"
+                    loading="lazy"
+                    width="900"
+                    height="900"
+                  >
+                {% else %}
+                  <div class="fp-review-placeholder">
+                    Ajoute une image dans ce bloc
+                  </div>
+                {% endif %}
+              </div>
+
+          {% endcase %}
+        {% endfor %}
+      </div>
+
+      {% if section.settings.show_arrows %}
+        <div class="fp-reviews-arrows">
+          <button class="fp-review-arrow fp-review-prev" type="button" aria-label="Avis précédent">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <button class="fp-review-arrow fp-review-next" type="button" aria-label="Avis suivant">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function initFpReviewsCarousel(sectionId) {
+    const section = document.querySelector('#shopify-section-' + sectionId);
+    if (!section) return;
+
+    const track = section.querySelector('#FpReviewsTrack-' + sectionId);
+    const prev = section.querySelector('.fp-review-prev');
+    const next = section.querySelector('.fp-review-next');
+
+    if (!track || !prev || !next) return;
+
+    function getScrollAmount() {
+      const card = track.querySelector('.fp-review-card');
+      if (!card) return 300;
+
+      const gap = parseInt(window.getComputedStyle(track).gap) || 20;
+      return card.offsetWidth + gap;
+    }
+
+    prev.addEventListener('click', function () {
+      track.scrollBy({
+        left: -getScrollAmount(),
+        behavior: 'smooth'
+      });
+    });
+
+    next.addEventListener('click', function () {
+      track.scrollBy({
+        left: getScrollAmount(),
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initFpReviewsCarousel('{{ section.id }}');
+  });
+
+  document.addEventListener('shopify:section:load', function (event) {
+    if (event.detail.sectionId === '{{ section.id }}') {
+      initFpReviewsCarousel('{{ section.id }}');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Avis parents carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu du haut"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Afficher le titre",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_stars",
+      "label": "Afficher les étoiles au-dessus",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "FOR PARENTS, BY PARENTS"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur du fond",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Couleur des cartes texte",
+      "default": "#e6d8cc"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte avis",
+      "default": "#696969"
+    },
+    {
+      "type": "color",
+      "id": "author_color",
+      "label": "Couleur du prénom",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Couleur étoiles du haut",
+      "default": "#e3ae7a"
+    },
+    {
+      "type": "color",
+      "id": "review_star_color",
+      "label": "Couleur étoiles avis",
+      "default": "#444444"
+    },
+    {
+      "type": "header",
+      "content": "Largeur et disposition PC"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 1000,
+      "max": 2400,
+      "step": 50,
+      "default": 2100
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Nombre de cartes visibles sur PC",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "card_height_desktop",
+      "label": "Hauteur des cartes PC",
+      "min": 220,
+      "max": 650,
+      "step": 10,
+      "default": 440
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Espacement entre les cartes PC",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "side_padding_desktop",
+      "label": "Marges gauche/droite PC",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Disposition mobile"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Nombre de cartes visibles mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_height_mobile",
+      "label": "Hauteur des cartes mobile",
+      "min": 220,
+      "max": 560,
+      "step": 10,
+      "default": 380
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "label": "Espacement entre les cartes mobile",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Marges gauche/droite mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Arrondis et ombres"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi cartes PC",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_radius_mobile",
+      "label": "Arrondi cartes mobile",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "shadow_y",
+      "label": "Ombre verticale",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "label": "Flou de l’ombre",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Opacité de l’ombre",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Typographies"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille titre PC",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "default": 21
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Épaisseur titre",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "label": "Espacement lettres titre PC",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing_mobile",
+      "label": "Espacement lettres titre mobile",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "quote_size_desktop",
+      "label": "Taille texte avis PC",
+      "min": 12,
+      "max": 34,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "quote_size_mobile",
+      "label": "Taille texte avis mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "author_size_desktop",
+      "label": "Taille prénom PC",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "author_size_mobile",
+      "label": "Taille prénom mobile",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "top_stars_size",
+      "label": "Taille étoiles du haut",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "review_stars_size",
+      "label": "Taille étoiles avis",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_card_padding",
+      "label": "Padding intérieur cartes texte",
+      "min": 10,
+      "max": 70,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "header",
+      "content": "Espacements"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding haut PC",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bas PC",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding haut mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bas mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "header_margin",
+      "label": "Marge sous le titre",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Flèches"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Afficher les flèches",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "arrow_size",
+      "label": "Taille des flèches",
+      "min": 24,
+      "max": 70,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "arrows_margin_top",
+      "label": "Marge flèches PC",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "arrows_margin_top_mobile",
+      "label": "Marge flèches mobile",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "arrow_bg",
+      "label": "Fond flèche",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Couleur icône flèche",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "arrow_border",
+      "label": "Couleur bordure flèche",
+      "default": "#d8d8d8"
+    },
+    {
+      "type": "color",
+      "id": "arrow_hover_bg",
+      "label": "Fond flèche au survol",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "arrow_hover_color",
+      "label": "Icône flèche au survol",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_review",
+      "name": "Avis texte",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Texte de l’avis",
+          "default": "Love this product. Easy to use, clean and perfect for everyday life."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Nom du client",
+          "default": "Jennifer M."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stars",
+          "label": "Afficher les étoiles",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Nombre d’étoiles",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    },
+    {
+      "type": "image_review",
+      "name": "Image client",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Texte alternatif",
+          "default": "Photo client"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis parents carousel",
+      "blocks": [
+        {
+          "type": "text_review"
+        },
+        {
+          "type": "image_review"
+        },
+        {
+          "type": "text_review",
+          "settings": {
+            "quote": "Perfect towel for newborns. They are soft and I love the colors.",
+            "author": "Lorena D."
+          }
+        },
+        {
+          "type": "image_review"
+        },
+        {
+          "type": "text_review",
+          "settings": {
+            "quote": "We love these products. They are easy to rinse off and perfect for meal time.",
+            "author": "Kytana C."
+          }
+        },
+        {
+          "type": "image_review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
