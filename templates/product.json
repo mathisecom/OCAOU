@@ -788,8 +788,29 @@
         "item_jpcpPn": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Combien y a-t-il de poches de rangement ?",
+            "content": "<p>Le sac à dos possède 6 poches pour organiser facilement toutes les affaires : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures pour bien compartimenter le contenu. </p><p>Une grande poche est en filet, ce qui permet de voir en un coup d’œil ce qu’elle contient. Cela facilite le rangement et l’organisation.</p>"
+          }
+        },
+        "item_YMqBiG": {
+          "type": "item",
+          "settings": {
+            "title": "Pourquoi y a-t-il des étiquettes dans le sac ?",
+            "content": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. </p><p>Il apprend à lire en rangeant, gagne en autonomie et s’amuse en organisant ses affaires. Le sac devient ainsi un véritable support pédagogique, à la fois ludique et pratique.</p>"
+          }
+        },
+        "item_FTrFa7": {
+          "type": "item",
+          "settings": {
+            "title": "Peut-on personnaliser le sac à dos ?",
+            "content": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.</p>"
+          }
+        },
+        "item_V4a3MT": {
+          "type": "item",
+          "settings": {
+            "title": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
+            "content": "<p>Le surplus de sangle se glisse facilement dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !<br/><br/><br/></p>"
           }
         }
       },
@@ -800,7 +821,10 @@
         "item_k7rMLg",
         "item_CUbCC4",
         "item_gjnpnD",
-        "item_jpcpPn"
+        "item_jpcpPn",
+        "item_YMqBiG",
+        "item_FTrFa7",
+        "item_V4a3MT"
       ],
       "name": "FAQ",
       "settings": {
