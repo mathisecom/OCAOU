@@ -284,8 +284,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
-            "title": "Stylé & pratique",
-            "text": "Un sac joli, utile et pensé pour tous les jours."
+            "title": "FLEXIBLE",
+            "text": "Bretelles rembourrées et réglables. Un sac adapté aux parents et aux enfants."
           }
         },
         "benefit_DEAXEw": {
@@ -293,8 +293,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
-            "title": "Facile à nettoyer",
-            "text": "Un sac conçu pour accompagner les petits accidents du quotidien."
+            "title": "PRATIQUE",
+            "text": "Attaches poussette intégrées. Deux poignées pour transporter ou accrocher."
           }
         },
         "benefit_nA8ApQ": {
@@ -302,8 +302,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
-            "title": "Organisation optimale",
-            "text": "Des poches étiquetées pour tout retrouver facilement."
+            "title": "ORGANISATION",
+            "text": "Des poches et des étiquettes pour tout catégoriser."
           }
         },
         "benefit_FtDVLR": {
@@ -311,8 +311,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
-            "title": "Livraison rapide",
-            "text": "Votre commande est préparée et expédiée rapidement."
+            "title": "PROTECTION",
+            "text": "Revêtement intérieur déperlant."
           }
         }
       },
