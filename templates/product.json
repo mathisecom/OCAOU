@@ -521,9 +521,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Tout est organisé, même les imprévus",
+            "heading_tag": "h3",
+            "content": "<p>Grâce à ses compartiments étiquetés, chaque chose trouve sa place : gourde, goûter, doudou, affaires de rechange ou petits essentiels du quotidien. Fini de chercher partout, le sac vous guide naturellement.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -533,9 +533,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Un sac qui grandit avec votre enfant",
+            "heading_tag": "h3",
+            "content": "<p>Pensé pour accompagner toutes les étapes, il passe facilement du sac à langer au sac d’école, d’activités ou de balade. Pratique pour les parents, facile à adopter par les enfants.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -545,9 +545,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Pratique partout, tout le temps",
+            "heading_tag": "h3",
+            "content": "<p>Bretelles réglables, attaches poussette, poignées de transport et intérieur déperlant : il est conçu pour suivre le rythme des journées bien remplies, sans stress et sans compromis.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
