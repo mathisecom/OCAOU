@@ -584,8 +584,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
-            "title": "Stylé & pratique",
-            "text": "Un sac joli, utile et pensé pour tous les jours."
+            "title": "FLEXIBLE",
+            "text": "Bretelles rembourrées et réglables. Un sac adapté aux parents et aux enfants."
           }
         },
         "benefit_h4bTWg": {
@@ -593,8 +593,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
-            "title": "Facile à nettoyer",
-            "text": "Un sac conçu pour accompagner les petits accidents du quotidien."
+            "title": "PRATIQUE",
+            "text": "Attaches poussette intégrées. Deux poignées pour transporter ou accrocher."
           }
         },
         "benefit_Lpj498": {
@@ -602,8 +602,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
-            "title": "Organisation optimale",
-            "text": "Des poches étiquetées pour tout retrouver facilement."
+            "title": "ORGANISATION",
+            "text": "Des poches et des étiquettes pour tout catégoriser."
           }
         },
         "benefit_J8aV6U": {
@@ -611,8 +611,8 @@
           "settings": {
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
-            "title": "Livraison rapide",
-            "text": "Votre commande est préparée et expédiée rapidement."
+            "title": "PROTECTION",
+            "text": "Revêtement intérieur déperlant."
           }
         }
       },
@@ -784,6 +784,13 @@
             "title": "Comment peut-on accrocher le sac à dos ?",
             "content": "<p>Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé. Il est très pratique, il s’accroche partout !</p>"
           }
+        },
+        "item_jpcpPn": {
+          "type": "item",
+          "settings": {
+            "title": "Question",
+            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+          }
         }
       },
       "block_order": [
@@ -792,7 +799,8 @@
         "item_Ukfjeg",
         "item_k7rMLg",
         "item_CUbCC4",
-        "item_gjnpnD"
+        "item_gjnpnD",
+        "item_jpcpPn"
       ],
       "name": "FAQ",
       "settings": {
@@ -813,7 +821,7 @@
         "heading_gradient": "",
         "button_background": "",
         "button_text_color": "",
-        "accordion_background": "#FCF9F5",
+        "accordion_background": "#fcf9f5",
         "accordion_text_color": ""
       }
     },
