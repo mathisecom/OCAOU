@@ -746,22 +746,22 @@
         "item_mJCRPw": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "Le sac à dos est-il pour les enfants ou pour les parents ?",
+            "content": "<p>Il est conçu pour les deux ! Les bretelles sont réglables, ce qui permet aussi bien aux enfants qu’aux parents de le porter.</p>"
           }
         },
         "item_e3WRir": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "À partir de quel âge un enfant peut-il le porter ?",
+            "content": "<p>Dès 2 ans, un enfant peut le porter seul. Il pourra y mettre ses affaires pour la crèche, la maternelle, la nounou, les activités ou les sorties.</p>"
           }
         },
         "item_Ukfjeg": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "À quoi sert ce sac à dos ?",
+            "content": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance : on y range les affaires selon l’âge de l’enfant et ses besoins.</p>"
           }
         }
       },
