@@ -817,7 +817,7 @@
           "type": "item",
           "settings": {
             "title": "Quel est le poids du sac à dos ?",
-            "content": "<p>Le sac pèse entre 380 et 422 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! De plus, les bretelles sont rembourrées.<br/><br/></p>"
+            "content": "<p>Le sac pèse entre 380 et 422 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! De plus, les bretelles sont rembourrées.</p>"
           }
         }
       },
@@ -1039,7 +1039,7 @@
       "settings": {
         "videos_position": "above_description",
         "use_metafield": false,
-        "heading": "<p><strong>+3,000 PARENTS CONQUIS</strong></p>",
+        "heading": "",
         "heading_custom": false,
         "heading_font": "josefin_sans_n4",
         "heading_size": 12,
