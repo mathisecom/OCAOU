@@ -121,6 +121,64 @@
         "product_card_text_color": ""
       }
     },
+    "bandedefilante_AkFDNj": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_FPy68m": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "BUY ONCE, BUY WELL",
+            "icon_text": "🍒"
+          }
+        },
+        "marquee_item_THwWM6": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "HEIRLOOM QUALITY",
+            "icon_text": "✹"
+          }
+        },
+        "marquee_item_deX74F": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
+            "icon_text": "🌈"
+          }
+        },
+        "marquee_item_fbRmh4": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "MACHINE WASHABLE FABRICS",
+            "icon_text": "🌷"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_FPy68m",
+        "marquee_item_THwWM6",
+        "marquee_item_deX74F",
+        "marquee_item_fbRmh4"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#F5EFE8",
+        "text_color": "#AF6C67",
+        "border_color": "#E8DDD3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 44,
+        "font_size_desktop": 13,
+        "font_size_mobile": 11,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 70,
+        "gap_mobile": 45,
+        "speed": 60,
+        "pause_on_hover": false
+      }
+    },
     "avisparents_9fPrRY": {
       "type": "avisparents",
       "blocks": {
@@ -204,7 +262,7 @@
         "text_card_padding": 34,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 0,
-        "padding_top_mobile": 24,
+        "padding_top_mobile": 52,
         "padding_bottom_mobile": 8,
         "header_margin": 28,
         "show_arrows": true,
@@ -282,7 +340,7 @@
         "row_gap_desktop": 30,
         "column_gap_mobile": 28,
         "row_gap_mobile": 44,
-        "icon_circle_bg": "#D2B3A8",
+        "icon_circle_bg": "#d2b3a8",
         "icon_color": "#ffffff",
         "icon_circle_size_desktop": 90,
         "icon_circle_size_mobile": 80,
@@ -520,6 +578,7 @@
   "order": [
     "logoscroll_WxkMyg",
     "featured_collection_Dzf4fX",
+    "bandedefilante_AkFDNj",
     "avisparents_9fPrRY",
     "avantageicons_9NE3Mb",
     "instagram_gw8WKA",
