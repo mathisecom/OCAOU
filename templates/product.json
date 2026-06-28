@@ -763,12 +763,36 @@
             "title": "À quoi sert ce sac à dos ?",
             "content": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance : on y range les affaires selon l’âge de l’enfant et ses besoins.</p>"
           }
+        },
+        "item_k7rMLg": {
+          "type": "item",
+          "settings": {
+            "title": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
+            "content": "<p>Non, il s’utilise aussi comme un sac à dos classique. Il n’est pas nécessaire de l’ouvrir entièrement pour le remplir ou le vider.<br/>Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », vous pouvez facilement ranger ou retirer des vêtements de rechange, des jouets ou d’autres objets — que ce soit en mode organiseur ou en mode sac à dos.</p>"
+          }
+        },
+        "item_CUbCC4": {
+          "type": "item",
+          "settings": {
+            "title": "Peut-on ranger d’autres affaires que dans les poches ?",
+            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glisser dans le sac en mode sac à dos.</p>"
+          }
+        },
+        "item_gjnpnD": {
+          "type": "item",
+          "settings": {
+            "title": "Comment peut-on accrocher le sac à dos ?",
+            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glisser dans le sac en mode sac à dos.</p>"
+          }
         }
       },
       "block_order": [
         "item_mJCRPw",
         "item_e3WRir",
-        "item_Ukfjeg"
+        "item_Ukfjeg",
+        "item_k7rMLg",
+        "item_CUbCC4",
+        "item_gjnpnD"
       ],
       "name": "FAQ",
       "settings": {
