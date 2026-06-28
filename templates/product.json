@@ -810,7 +810,14 @@
           "type": "item",
           "settings": {
             "title": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
-            "content": "<p>Le surplus de sangle se glisse facilement dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !<br/><br/><br/></p>"
+            "content": "<p>Le surplus de sangle se glisse facilement dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
+          }
+        },
+        "item_EYfz3a": {
+          "type": "item",
+          "settings": {
+            "title": "Quel est le poids du sac à dos ?",
+            "content": "<p>Le sac pèse entre 380 et 422 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! De plus, les bretelles sont rembourrées.<br/><br/></p>"
           }
         }
       },
@@ -824,7 +831,8 @@
         "item_jpcpPn",
         "item_YMqBiG",
         "item_FTrFa7",
-        "item_V4a3MT"
+        "item_V4a3MT",
+        "item_EYfz3a"
       ],
       "name": "FAQ",
       "settings": {
