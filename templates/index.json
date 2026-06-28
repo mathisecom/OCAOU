@@ -218,6 +218,99 @@
         "arrow_hover_color": "#ffffff"
       }
     },
+    "avantageicons_9NE3Mb": {
+      "type": "avantageicons",
+      "blocks": {
+        "benefit_3FhiFX": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "Stylé & pratique",
+            "text": "Un sac joli, utile et pensé pour tous les jours."
+          }
+        },
+        "benefit_DEAXEw": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "Icône bénéfice",
+            "icon": "wash",
+            "title": "Facile à nettoyer",
+            "text": "Un sac conçu pour accompagner les petits accidents du quotidien."
+          }
+        },
+        "benefit_nA8ApQ": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "Icône bénéfice",
+            "icon": "clock",
+            "title": "Organisation optimale",
+            "text": "Des poches étiquetées pour tout retrouver facilement."
+          }
+        },
+        "benefit_FtDVLR": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "Icône bénéfice",
+            "icon": "truck",
+            "title": "Livraison rapide",
+            "text": "Votre commande est préparée et expédiée rapidement."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_3FhiFX",
+        "benefit_DEAXEw",
+        "benefit_nA8ApQ",
+        "benefit_FtDVLR"
+      ],
+      "name": "Avantages icônes",
+      "settings": {
+        "title": "Vous allez adorer le sac O’CAOU parce que...",
+        "title_alignment": "center",
+        "title_color": "#000000",
+        "title_size_desktop": 30,
+        "title_size_mobile": 24,
+        "title_weight": "700",
+        "title_margin_bottom_desktop": 80,
+        "title_margin_bottom_mobile": 44,
+        "full_width": false,
+        "max_width": 1200,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "column_gap_desktop": 56,
+        "row_gap_desktop": 30,
+        "column_gap_mobile": 28,
+        "row_gap_mobile": 44,
+        "icon_circle_bg": "#D2B3A8",
+        "icon_color": "#ffffff",
+        "icon_circle_size_desktop": 90,
+        "icon_circle_size_mobile": 80,
+        "icon_size_desktop": 54,
+        "icon_size_mobile": 42,
+        "icon_margin_bottom_desktop": 18,
+        "icon_margin_bottom_mobile": 16,
+        "benefit_title_color": "#000000",
+        "text_color": "#000000",
+        "benefit_title_size_desktop": 16,
+        "benefit_title_size_mobile": 15,
+        "benefit_title_weight": "700",
+        "benefit_title_margin_bottom": 16,
+        "benefit_title_margin_bottom_mobile": 14,
+        "text_size_desktop": 15,
+        "text_size_mobile": 12,
+        "text_weight": "400",
+        "text_max_width_desktop": 260,
+        "text_max_width_mobile": 170,
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 16,
+        "padding_bottom_desktop": 52,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 16,
+        "side_padding_desktop": 40,
+        "side_padding_mobile": 14
+      }
+    },
     "instagram_gw8WKA": {
       "type": "instagram",
       "blocks": {
@@ -428,6 +521,7 @@
     "logoscroll_WxkMyg",
     "featured_collection_Dzf4fX",
     "avisparents_9fPrRY",
+    "avantageicons_9NE3Mb",
     "instagram_gw8WKA",
     "faq"
   ]
