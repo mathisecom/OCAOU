@@ -520,10 +520,11 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/home_background-mobile.jpg",
             "column_size": "3",
             "title": "Tout est organisé, même les imprévus",
             "heading_tag": "h3",
-            "content": "<p>Grâce à ses compartiments étiquetés, chaque chose trouve sa place : gourde, goûter, doudou, affaires de rechange ou petits essentiels du quotidien. Fini de chercher partout, le sac vous guide naturellement.</p>",
+            "content": "<p>Des poches étiquetées pour ranger facilement gourde, goûter, doudou et affaires du quotidien.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -532,10 +533,11 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
             "title": "Un sac qui grandit avec votre enfant",
             "heading_tag": "h3",
-            "content": "<p>Pensé pour accompagner toutes les étapes, il passe facilement du sac à langer au sac d’école, d’activités ou de balade. Pratique pour les parents, facile à adopter par les enfants.</p>",
+            "content": "<p>Du sac à langer au sac d’école, il accompagne chaque âge et chaque moment de la journée.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -544,10 +546,11 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
             "title": "Pratique partout, tout le temps",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette, poignées de transport et intérieur déperlant : il est conçu pour suivre le rythme des journées bien remplies, sans stress et sans compromis.</p>",
+            "content": "<p>Bretelles réglables, attaches poussette et intérieur déperlant : un sac pensé pour suivre toutes les sorties.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -980,7 +983,7 @@
         "heading_height": 130,
         "heading_align": "center",
         "heading_align_mobile": "center",
-        "slider_view": 2,
+        "slider_view": 4,
         "slider_view_mobile": 2,
         "slider_gap": 16,
         "slider_gap_mobile": 16,
