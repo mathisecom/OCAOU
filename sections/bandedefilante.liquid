@@ -1,0 +1,384 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --marquee-bg: {{ section.settings.bg_color }};
+    --marquee-text: {{ section.settings.text_color }};
+    --marquee-border: {{ section.settings.border_color }};
+    --marquee-font-size-desktop: {{ section.settings.font_size_desktop }}px;
+    --marquee-font-size-mobile: {{ section.settings.font_size_mobile }}px;
+    --marquee-icon-size: {{ section.settings.icon_size }}px;
+    --marquee-gap-desktop: {{ section.settings.gap_desktop }}px;
+    --marquee-gap-mobile: {{ section.settings.gap_mobile }}px;
+    --marquee-height-desktop: {{ section.settings.height_desktop }}px;
+    --marquee-height-mobile: {{ section.settings.height_mobile }}px;
+    --marquee-speed: {{ section.settings.speed }}s;
+    --marquee-letter-spacing: {{ section.settings.letter_spacing }}px;
+  }
+
+  .premium-marquee-{{ section.id }} {
+    width: 100%;
+    overflow: hidden;
+    background: var(--marquee-bg);
+    border-top: {{ section.settings.border_width }}px solid var(--marquee-border);
+    border-bottom: {{ section.settings.border_width }}px solid var(--marquee-border);
+    min-height: var(--marquee-height-desktop);
+    display: flex;
+    align-items: center;
+  }
+
+  .premium-marquee-{{ section.id }} .premium-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: premiumMarquee{{ section.id }} var(--marquee-speed) linear infinite;
+    will-change: transform;
+  }
+
+  .premium-marquee-{{ section.id }}.pause-on-hover:hover .premium-marquee__track {
+    animation-play-state: paused;
+  }
+
+  .premium-marquee-{{ section.id }} .premium-marquee__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .premium-marquee-{{ section.id }} .premium-marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: var(--marquee-gap-desktop);
+    color: var(--marquee-text);
+    font-size: var(--marquee-font-size-desktop);
+    font-weight: {{ section.settings.font_weight }};
+    letter-spacing: var(--marquee-letter-spacing);
+    line-height: 1;
+    white-space: nowrap;
+    {% if section.settings.uppercase %}
+      text-transform: uppercase;
+    {% endif %}
+  }
+
+  .premium-marquee-{{ section.id }} .premium-marquee__icon {
+    width: var(--marquee-icon-size);
+    height: var(--marquee-icon-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: var(--marquee-icon-size);
+    line-height: 1;
+  }
+
+  .premium-marquee-{{ section.id }} .premium-marquee__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  @keyframes premiumMarquee{{ section.id }} {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .premium-marquee-{{ section.id }} {
+      min-height: var(--marquee-height-mobile);
+    }
+
+    .premium-marquee-{{ section.id }} .premium-marquee__item {
+      font-size: var(--marquee-font-size-mobile);
+      margin-right: var(--marquee-gap-mobile);
+      gap: 8px;
+    }
+  }
+{% endstyle %}
+
+<div class="premium-marquee-{{ section.id }} {% if section.settings.pause_on_hover %}pause-on-hover{% endif %}">
+  <div class="premium-marquee__track">
+    
+    <div class="premium-marquee__group">
+      {% for i in (1..4) %}
+        {% for block in section.blocks %}
+          <div class="premium-marquee__item" {{ block.shopify_attributes }}>
+            {% if block.settings.icon_image != blank %}
+              <span class="premium-marquee__icon">
+                <img
+                  src="{{ block.settings.icon_image | image_url: width: 80 }}"
+                  alt=""
+                  loading="lazy"
+                  width="40"
+                  height="40"
+                >
+              </span>
+            {% elsif block.settings.icon_text != blank %}
+              <span class="premium-marquee__icon">
+                {{ block.settings.icon_text }}
+              </span>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <span>{{ block.settings.text }}</span>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    <div class="premium-marquee__group" aria-hidden="true">
+      {% for i in (1..4) %}
+        {% for block in section.blocks %}
+          <div class="premium-marquee__item">
+            {% if block.settings.icon_image != blank %}
+              <span class="premium-marquee__icon">
+                <img
+                  src="{{ block.settings.icon_image | image_url: width: 80 }}"
+                  alt=""
+                  loading="lazy"
+                  width="40"
+                  height="40"
+                >
+              </span>
+            {% elsif block.settings.icon_text != blank %}
+              <span class="premium-marquee__icon">
+                {{ block.settings.icon_text }}
+              </span>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <span>{{ block.settings.text }}</span>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bande défilante premium",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur du fond",
+      "default": "#F5EFE8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#A85D47"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Couleur des bordures",
+      "default": "#E8DDD3"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Épaisseur des bordures",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Hauteur PC",
+      "min": 30,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Hauteur mobile",
+      "min": 28,
+      "max": 90,
+      "step": 2,
+      "unit": "px",
+      "default": 46
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Taille du texte PC",
+      "min": 9,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Taille du texte mobile",
+      "min": 8,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Graisse du texte",
+      "default": "600",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Espacement des lettres",
+      "min": 0,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1.5
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Texte en majuscules",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille des icônes",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "label": "Espacement entre les éléments PC",
+      "min": 20,
+      "max": 180,
+      "step": 5,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Espacement entre les éléments mobile",
+      "min": 15,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Vitesse du défilement",
+      "min": 8,
+      "max": 80,
+      "step": 1,
+      "unit": "s",
+      "default": 32
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Mettre en pause au survol",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "marquee_item",
+      "name": "Élément",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "BUY ONCE, BUY WELL"
+        },
+        {
+          "type": "text",
+          "id": "icon_text",
+          "label": "Icône emoji",
+          "default": "🍒",
+          "info": "Tu peux mettre un emoji ou laisser vide si tu utilises une image."
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icône image personnalisée"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bande défilante premium",
+      "blocks": [
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "BUY ONCE, BUY WELL",
+            "icon_text": "🍒"
+          }
+        },
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "HEIRLOOM QUALITY",
+            "icon_text": "✹"
+          }
+        },
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
+            "icon_text": "🌈"
+          }
+        },
+        {
+          "type": "marquee_item",
+          "settings": {
+            "text": "MACHINE WASHABLE FABRICS",
+            "icon_text": "🌷"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
