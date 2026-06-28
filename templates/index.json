@@ -175,7 +175,7 @@
         "icon_size": 20,
         "gap_desktop": 70,
         "gap_mobile": 45,
-        "speed": 60,
+        "speed": 65,
         "pause_on_hover": false
       }
     },
