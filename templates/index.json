@@ -345,9 +345,9 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#FCF9F5",
+        "bg_color": "#fcf9f5",
         "text_color": "#af6c67",
-        "border_color": "#FCF9F5",
+        "border_color": "#fcf9f5",
         "border_width": 0,
         "height_desktop": 56,
         "height_mobile": 44,
@@ -466,7 +466,7 @@
         "icon_MGMfaU": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_45.png",
+            "icon_image": "shopify://shop_images/Design_sans_titre_51.png",
             "icon_alt": "Icône avantage",
             "title": "Zero Mercury"
           }
@@ -711,8 +711,8 @@
         "icon_margin_bottom_mobile": 25,
         "icon_color": "#ffffff",
         "section_bg_color": "#ffffff",
-        "card_bg_color": "#FBF6EF",
-        "overlay_color": "#FCF9F5",
+        "card_bg_color": "#fbf6ef",
+        "overlay_color": "#fcf9f5",
         "overlay_opacity": 30,
         "title_color": "#101010",
         "subtitle_color": "#101010",
