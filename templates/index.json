@@ -161,9 +161,9 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#FBF6EF",
-        "text_color": "#AF6C67",
-        "border_color": "#FBF6EF",
+        "bg_color": "#fbf6ef",
+        "text_color": "#af6c67",
+        "border_color": "#fbf6ef",
         "border_width": 0,
         "height_desktop": 56,
         "height_mobile": 44,
@@ -282,6 +282,7 @@
         "benefit_3FhiFX": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/mobilite_icon_b91966be-5c9d-494f-b369-cf269630ad0d.svg",
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "FLEXIBLE",
@@ -291,6 +292,7 @@
         "benefit_DEAXEw": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/pratique_icon_18797a95-652f-49b9-b119-fc3edb891af2.svg",
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
             "title": "PRATIQUE",
@@ -300,6 +302,7 @@
         "benefit_nA8ApQ": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/organisation_icon_5198e099-038e-4ec6-9cb7-3cba71eba6eb.svg",
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
             "title": "ORGANISATION",
@@ -309,6 +312,7 @@
         "benefit_FtDVLR": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/protection_icon_90ab697e-d2e6-4553-bb30-d71f04f6efdf.svg",
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
             "title": "PROTECTION",
@@ -340,7 +344,7 @@
         "row_gap_desktop": 30,
         "column_gap_mobile": 28,
         "row_gap_mobile": 44,
-        "icon_circle_bg": "#AF6C67",
+        "icon_circle_bg": "#af6c67",
         "icon_color": "#ffffff",
         "icon_circle_size_desktop": 90,
         "icon_circle_size_mobile": 80,
