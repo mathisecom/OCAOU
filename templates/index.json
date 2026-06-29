@@ -460,6 +460,141 @@
         "arrow_hover_color": "#ffffff"
       }
     },
+    "sectionsicones_JdQXN9": {
+      "type": "sectionsicones",
+      "blocks": {
+        "icon_MGMfaU": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Design_sans_titre_45.png",
+            "icon_alt": "Icône avantage",
+            "title": "Zero Mercury"
+          }
+        },
+        "icon_AEPRaf": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Design_sans_titre_46.png",
+            "icon_alt": "Icône avantage",
+            "title": "Zero PCBs"
+          }
+        },
+        "icon_iFFUyC": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Design_sans_titre_47.png",
+            "icon_alt": "Icône avantage",
+            "title": "Zero Oxidised Oil"
+          }
+        },
+        "icon_VHNHwk": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Design_sans_titre_48.png",
+            "icon_alt": "Icône avantage",
+            "title": "Zero Ocean Contaminants"
+          }
+        },
+        "icon_yKJirQ": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Design_sans_titre_49.png",
+            "icon_alt": "Icône avantage",
+            "title": "Zero Microplastics"
+          }
+        },
+        "icon_KixXBn": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Design_sans_titre_50.png",
+            "icon_alt": "Icône avantage",
+            "title": "Zero Dioxins"
+          }
+        }
+      },
+      "block_order": [
+        "icon_MGMfaU",
+        "icon_AEPRaf",
+        "icon_iFFUyC",
+        "icon_VHNHwk",
+        "icon_yKJirQ",
+        "icon_KixXBn"
+      ],
+      "name": "Clean Omega icônes",
+      "settings": {
+        "title": "Le sac intelligent qui pense à tout !",
+        "subtitle": "Magique, mais surtout trop pratique! Le sac O'CAOU se transforme en organiseur où tout est catégorisé. Un pense-bête étiqueté imaginé pour vous soulager.",
+        "header_alignment": "center",
+        "title_color": "#101010",
+        "subtitle_color": "#101010",
+        "title_size_desktop": 31,
+        "title_size_mobile": 27,
+        "title_weight": "700",
+        "title_letter_spacing": 0,
+        "title_letter_spacing_mobile": 0,
+        "subtitle_size_desktop": 16,
+        "subtitle_size_mobile": 14,
+        "subtitle_weight": "400",
+        "subtitle_max_width": 780,
+        "subtitle_max_width_mobile": 360,
+        "subtitle_margin_top": 14,
+        "subtitle_margin_top_mobile": 12,
+        "main_image": "shopify://shop_images/sac-ocaou-etiquettes-rangement_646eac9e-b98d-4c62-bc83-276b9768adf7.jpg",
+        "main_image_alt": "Image produit",
+        "image_max_width_desktop": 720,
+        "image_max_width_mobile": 400,
+        "image_alignment_desktop": "center",
+        "image_alignment_mobile": "center",
+        "image_card_bg": "#ffffff",
+        "show_image_card_border": false,
+        "image_card_border": "#eeeeee",
+        "image_card_radius_desktop": 0,
+        "image_card_radius_mobile": 12,
+        "show_bottom_band_desktop": false,
+        "show_bottom_band_mobile": false,
+        "bottom_band_color": "#e5f3f7",
+        "bottom_band_height_desktop": 50,
+        "bottom_band_height_mobile": 50,
+        "placeholder_height_desktop": 460,
+        "placeholder_height_mobile": 320,
+        "icons_columns_desktop": 3,
+        "icons_columns_mobile": 3,
+        "icon_circle_size_desktop": 100,
+        "icon_circle_size_mobile": 62,
+        "icon_image_size_desktop": 56,
+        "icon_image_size_mobile": 34,
+        "icon_border_width": 1,
+        "icon_border_color": "#d9a5a5",
+        "icon_circle_bg": "#ffffff",
+        "icon_fallback_color": "#c67878",
+        "icon_text_color": "#335100",
+        "icon_text_size_desktop": 24,
+        "icon_text_size_mobile": 14,
+        "icon_text_weight": "500",
+        "icon_text_gap_desktop": 18,
+        "icon_text_gap_mobile": 10,
+        "icons_row_gap_desktop": 58,
+        "icons_column_gap_desktop": 52,
+        "icons_row_gap_mobile": 32,
+        "icons_column_gap_mobile": 18,
+        "full_width": false,
+        "max_width": 1500,
+        "image_column_width": 3,
+        "icons_column_width": 3,
+        "mobile_image_position": "after_icons",
+        "columns_gap_desktop": 70,
+        "columns_gap_mobile": 34,
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 52,
+        "padding_bottom_desktop": 52,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 28,
+        "side_padding_desktop": 40,
+        "side_padding_mobile": 16,
+        "header_margin_bottom_desktop": 52,
+        "header_margin_bottom_mobile": 30
+      }
+    },
     "avantageicons_9NE3Mb": {
       "type": "avantageicons",
       "blocks": {
@@ -841,6 +976,7 @@
     "featured_collection_Dzf4fX",
     "bandedefilante_AkFDNj",
     "avisparents_9fPrRY",
+    "sectionsicones_JdQXN9",
     "avantageicons_9NE3Mb",
     "30retours_rDewFa",
     "instagram_gw8WKA",
