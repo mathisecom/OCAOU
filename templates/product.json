@@ -569,7 +569,7 @@
         "icon_size": 20,
         "gap_desktop": 65,
         "gap_mobile": 45,
-        "speed": 63,
+        "speed": 48,
         "pause_on_hover": false
       }
     },
