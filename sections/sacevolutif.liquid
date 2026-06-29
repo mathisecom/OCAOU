@@ -3,10 +3,14 @@
     
     <div class="fp-evo-content">
       <div class="fp-evo-text">
-        {% if section.settings.heading_top != blank %}
+        {% if section.settings.heading_top != blank or section.settings.heading_highlight != blank %}
           <h2>
-            <span>{{ section.settings.heading_top }}</span>
-            <strong>{{ section.settings.heading_highlight }}</strong>
+            {% if section.settings.heading_top != blank %}
+              <span>{{ section.settings.heading_top }}</span>
+            {% endif %}
+            {% if section.settings.heading_highlight != blank %}
+              <strong>{{ section.settings.heading_highlight }}</strong>
+            {% endif %}
           </h2>
         {% endif %}
 
@@ -15,7 +19,8 @@
             <button
               class="fp-evo-btn {% if forloop.first %}is-active{% endif %}"
               type="button"
-              data-image="{% if block.settings.moment_image != blank %}{{ block.settings.moment_image | image_url: width: 1400 }}{% elsif section.settings.main_image != blank %}{{ section.settings.main_image | image_url: width: 1400 }}{% endif %}"
+              aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+              data-image="{% if block.settings.moment_image != blank %}{{ block.settings.moment_image | image_url: width: 1600 }}{% elsif section.settings.main_image != blank %}{{ section.settings.main_image | image_url: width: 1600 }}{% endif %}"
               {{ block.shopify_attributes }}
             >
               {{ block.settings.label }}
@@ -31,14 +36,14 @@
       {% if first_block.settings.moment_image != blank %}
         <img
           class="fp-evo-image"
-          src="{{ first_block.settings.moment_image | image_url: width: 1400 }}"
+          src="{{ first_block.settings.moment_image | image_url: width: 1600 }}"
           alt="{{ first_block.settings.label | escape }}"
           loading="lazy"
         >
       {% elsif section.settings.main_image != blank %}
         <img
           class="fp-evo-image"
-          src="{{ section.settings.main_image | image_url: width: 1400 }}"
+          src="{{ section.settings.main_image | image_url: width: 1600 }}"
           alt="{{ section.settings.heading_top | escape }}"
           loading="lazy"
         >
@@ -119,6 +124,7 @@
     transition: all 0.25s ease;
     box-shadow: 0 8px 24px rgba(0,0,0,0.03);
     min-height: 48px;
+    white-space: nowrap;
   }
 
   .fp-evo-{{ section.id }} .fp-evo-btn:hover {
@@ -183,6 +189,7 @@
     .fp-evo-{{ section.id }} .fp-evo-content {
       padding: 42px 26px 34px;
       order: 1;
+      overflow: hidden;
     }
 
     .fp-evo-{{ section.id }} .fp-evo-image-wrap {
@@ -200,14 +207,32 @@
     }
 
     .fp-evo-{{ section.id }} .fp-evo-buttons {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
       gap: 10px;
+      padding-bottom: 8px;
+      margin-left: -26px;
+      margin-right: -26px;
+      padding-left: 26px;
+      padding-right: 26px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-buttons::-webkit-scrollbar {
+      display: none;
     }
 
     .fp-evo-{{ section.id }} .fp-evo-btn {
-      flex: 1 1 calc(50% - 10px);
-      padding: 13px 14px;
+      flex: 0 0 auto;
+      min-width: max-content;
+      padding: 13px 18px;
       font-size: 14px;
       min-height: 46px;
+      scroll-snap-align: start;
     }
   }
 
@@ -216,8 +241,11 @@
       padding: 36px 20px 28px;
     }
 
-    .fp-evo-{{ section.id }} .fp-evo-btn {
-      flex: 1 1 100%;
+    .fp-evo-{{ section.id }} .fp-evo-buttons {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     .fp-evo-{{ section.id }} .fp-evo-image,
@@ -230,14 +258,14 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    initFpEvoSection{{ section.id | replace: '-', '' }}();
+    initFpEvoSection{{ section.id | replace: '-', '' | replace: '_', '' }}();
   });
 
   document.addEventListener('shopify:section:load', function () {
-    initFpEvoSection{{ section.id | replace: '-', '' }}();
+    initFpEvoSection{{ section.id | replace: '-', '' | replace: '_', '' }}();
   });
 
-  function initFpEvoSection{{ section.id | replace: '-', '' }}() {
+  function initFpEvoSection{{ section.id | replace: '-', '' | replace: '_', '' }}() {
     const section = document.querySelector('.fp-evo-{{ section.id }}');
     if (!section) return;
 
@@ -247,14 +275,19 @@
     if (!buttons.length || !image) return;
 
     buttons.forEach(function(button) {
+      if (button.dataset.fpEvoBound === 'true') return;
+      button.dataset.fpEvoBound = 'true';
+
       button.addEventListener('click', function() {
         const newImage = button.getAttribute('data-image');
 
         buttons.forEach(function(btn) {
           btn.classList.remove('is-active');
+          btn.setAttribute('aria-pressed', 'false');
         });
 
         button.classList.add('is-active');
+        button.setAttribute('aria-pressed', 'true');
 
         if (newImage && image.src !== newImage) {
           image.classList.add('is-changing');
