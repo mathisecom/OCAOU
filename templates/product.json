@@ -676,6 +676,7 @@
       "settings": {
         "title": "Garantie 30 jours",
         "subtitle": "Nous sommes tellement convaincus que vous allez l’adorer que vous avez 30 jours pour l’essayer.",
+        "product_image": "shopify://shop_images/IMG_2751.jpg",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
         "bg_position_mobile": "center center",
