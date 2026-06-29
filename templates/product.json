@@ -952,7 +952,7 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": "",
-        "testimonial_card_background": "",
+        "testimonial_card_background": "#FCF9F5",
         "testimonial_card_text_color": ""
       }
     },
