@@ -15,18 +15,28 @@
         "avatar_aRLTzC": {
           "type": "avatar",
           "settings": {
+            "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T141106.558.jpg",
             "avatar_alt": "Client satisfait"
           }
         },
         "avatar_48iALN": {
           "type": "avatar",
           "settings": {
+            "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140827.935.jpg",
             "avatar_alt": "Client satisfait"
           }
         },
         "avatar_hWyfyf": {
           "type": "avatar",
           "settings": {
+            "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140631.591.jpg",
+            "avatar_alt": "Client satisfait"
+          }
+        },
+        "avatar_t9cWai": {
+          "type": "avatar",
+          "settings": {
+            "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140635.451.jpg",
             "avatar_alt": "Client satisfait"
           }
         },
@@ -56,6 +66,7 @@
         "avatar_aRLTzC",
         "avatar_48iALN",
         "avatar_hWyfyf",
+        "avatar_t9cWai",
         "benefit_JkT9WB",
         "benefit_dbwd4G",
         "benefit_YP6kzR"
@@ -90,7 +101,7 @@
         "star_count": 5,
         "star_symbol": "★",
         "stars_label": "Note de 4,8 sur 5",
-        "rating_text": "<strong>4,8/5</strong> | <strong>+3,789 Parents Satisfaits</strong>",
+        "rating_text": "<strong>4,8/5</strong> | <strong>+3,789 Avis</strong>",
         "avatar_size": 46,
         "avatar_border_width": 3,
         "avatar_border_color": "#FFFFFF",
