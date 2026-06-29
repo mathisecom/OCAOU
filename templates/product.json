@@ -1017,8 +1017,8 @@
           "settings": {
             "video": "shopify://files/videos/Ocaou.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "modal_heading": "<h4>Modal Heading</h4>",
-            "modal_text": "<p>Modal Text</p>"
+            "modal_heading": "",
+            "modal_text": ""
           }
         },
         "video_Cj7DmL": {
@@ -1026,14 +1026,34 @@
           "settings": {
             "video": "shopify://files/videos/lv_0_20250723165810.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "modal_heading": "<h4>Modal Heading</h4>",
-            "modal_text": "<p>Modal Text</p>"
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "video_EWCWpz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/le compagnon des vacances apaisées.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "video_YgwTmQ": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/vidéo usages montée.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "modal_heading": "",
+            "modal_text": ""
           }
         }
       },
       "block_order": [
         "video_fxCYTT",
-        "video_Cj7DmL"
+        "video_Cj7DmL",
+        "video_EWCWpz",
+        "video_YgwTmQ"
       ],
       "name": "Customify - Product Videos",
       "settings": {
