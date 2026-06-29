@@ -641,6 +641,7 @@
         "benefit_6jE3Lc": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/Design_sans_titre_41.png",
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "FLEXIBLE",
@@ -650,6 +651,7 @@
         "benefit_h4bTWg": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/Design_sans_titre_42.png",
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
             "title": "PRATIQUE",
@@ -659,6 +661,7 @@
         "benefit_Lpj498": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/Design_sans_titre_43.png",
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
             "title": "ORGANISATION",
@@ -668,6 +671,7 @@
         "benefit_J8aV6U": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/Design_sans_titre_44.png",
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
             "title": "PROTECTION",
