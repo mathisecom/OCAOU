@@ -800,6 +800,98 @@
         "subtitle_margin_top_mobile": 10
       }
     },
+    "sacevolutif_dYJENd": {
+      "type": "sacevolutif",
+      "blocks": {
+        "moment_BpB4Ub": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour langer"
+          }
+        },
+        "moment_XTiUYa": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour l'école"
+          }
+        },
+        "moment_fjtpEt": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour danser"
+          }
+        },
+        "moment_cMBWpc": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour les activités"
+          }
+        },
+        "moment_G97BQt": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour une soirée"
+          }
+        },
+        "moment_RAPFzw": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour se balader"
+          }
+        },
+        "moment_TKpH3E": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour s'amuser"
+          }
+        },
+        "moment_BHVfnH": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour cuisiner"
+          }
+        },
+        "moment_gcrchE": {
+          "type": "moment",
+          "settings": {
+            "label": "Pour pique-niquer"
+          }
+        }
+      },
+      "block_order": [
+        "moment_BpB4Ub",
+        "moment_XTiUYa",
+        "moment_fjtpEt",
+        "moment_cMBWpc",
+        "moment_G97BQt",
+        "moment_RAPFzw",
+        "moment_TKpH3E",
+        "moment_BHVfnH",
+        "moment_gcrchE"
+      ],
+      "name": "Sac évolutif moments",
+      "settings": {
+        "heading_top": "Un sac évolutif pour",
+        "heading_highlight": "chaque moment de la journée",
+        "section_bg": "#ffffff",
+        "card_bg": "#F7EFE8",
+        "title_color": "#000000",
+        "highlight_color": "#D9BBAA",
+        "button_bg": "#FFFFFF",
+        "button_color": "#D9A98F",
+        "active_button_bg": "#D7A42A",
+        "active_button_text": "#FFFFFF",
+        "max_width": 1100,
+        "desktop_height": 600,
+        "mobile_image_height": 360,
+        "title_size": 38,
+        "radius": 8,
+        "mobile_radius": 14,
+        "button_radius": 10,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "rich_text_WCLrEr": {
       "type": "rich-text",
       "blocks": {
@@ -1464,6 +1556,7 @@
     "multi_column_FnzMQb",
     "avantageicons_k7faYm",
     "30retours_YLhBEm",
+    "sacevolutif_dYJENd",
     "rich_text_WCLrEr",
     "logoscroll_Lyixnk",
     "testimonials_LKV3kq",
