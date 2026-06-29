@@ -440,7 +440,7 @@
         "icon_43MEdK",
         "icon_iNqmJ9"
       ],
-      "name": "Clean Omega icônes",
+      "name": "Clean icônes",
       "settings": {
         "title": "Le sac intelligent qui pense à tout !",
         "subtitle": "Magique, mais surtout trop pratique! Le sac O'CAOU se transforme en organiseur où tout est catégorisé. Un pense-bête étiqueté imaginé pour vous soulager.",
@@ -459,6 +459,7 @@
         "subtitle_max_width_mobile": 360,
         "subtitle_margin_top": 14,
         "subtitle_margin_top_mobile": 15,
+        "main_image": "shopify://shop_images/sac-ocaou-etiquettes-rangement_646eac9e-b98d-4c62-bc83-276b9768adf7.jpg",
         "main_image_alt": "Image produit",
         "image_max_width_desktop": 720,
         "image_max_width_mobile": 400,
@@ -470,7 +471,7 @@
         "image_card_radius_desktop": 0,
         "image_card_radius_mobile": 12,
         "show_bottom_band_desktop": false,
-        "show_bottom_band_mobile": true,
+        "show_bottom_band_mobile": false,
         "bottom_band_color": "#fbf6ef",
         "bottom_band_height_desktop": 50,
         "bottom_band_height_mobile": 50,
