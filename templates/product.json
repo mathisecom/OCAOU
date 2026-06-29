@@ -508,7 +508,7 @@
         "padding_top_desktop": 52,
         "padding_bottom_desktop": 52,
         "padding_top_mobile": 60,
-        "padding_bottom_mobile": 28,
+        "padding_bottom_mobile": 56,
         "side_padding_desktop": 40,
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
@@ -568,8 +568,8 @@
         "uppercase": true,
         "icon_size": 20,
         "gap_desktop": 65,
-        "gap_mobile": 45,
-        "speed": 48,
+        "gap_mobile": 50,
+        "speed": 52,
         "pause_on_hover": false
       }
     },
