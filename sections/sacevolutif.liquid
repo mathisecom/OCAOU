@@ -1,0 +1,505 @@
+<section class="fp-evo-section fp-evo-{{ section.id }}">
+  <div class="fp-evo-wrapper">
+    
+    <div class="fp-evo-content">
+      <div class="fp-evo-text">
+        {% if section.settings.heading_top != blank %}
+          <h2>
+            <span>{{ section.settings.heading_top }}</span>
+            <strong>{{ section.settings.heading_highlight }}</strong>
+          </h2>
+        {% endif %}
+
+        <div class="fp-evo-buttons">
+          {% for block in section.blocks %}
+            <button
+              class="fp-evo-btn {% if forloop.first %}is-active{% endif %}"
+              type="button"
+              data-image="{% if block.settings.moment_image != blank %}{{ block.settings.moment_image | image_url: width: 1400 }}{% elsif section.settings.main_image != blank %}{{ section.settings.main_image | image_url: width: 1400 }}{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.label }}
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="fp-evo-image-wrap">
+      {% assign first_block = section.blocks.first %}
+      
+      {% if first_block.settings.moment_image != blank %}
+        <img
+          class="fp-evo-image"
+          src="{{ first_block.settings.moment_image | image_url: width: 1400 }}"
+          alt="{{ first_block.settings.label | escape }}"
+          loading="lazy"
+        >
+      {% elsif section.settings.main_image != blank %}
+        <img
+          class="fp-evo-image"
+          src="{{ section.settings.main_image | image_url: width: 1400 }}"
+          alt="{{ section.settings.heading_top | escape }}"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="fp-evo-placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .fp-evo-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.section_bg }};
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-wrapper {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    min-height: {{ section.settings.desktop_height }}px;
+    border-radius: {{ section.settings.radius }}px;
+    overflow: hidden;
+    background: {{ section.settings.card_bg }};
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-content {
+    display: flex;
+    align-items: center;
+    padding: 70px 50px;
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-text {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .fp-evo-{{ section.id }} h2 {
+    margin: 0 0 44px;
+    font-size: clamp(32px, 4vw, {{ section.settings.title_size }}px);
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    color: {{ section.settings.title_color }};
+  }
+
+  .fp-evo-{{ section.id }} h2 span,
+  .fp-evo-{{ section.id }} h2 strong {
+    display: block;
+  }
+
+  .fp-evo-{{ section.id }} h2 strong {
+    color: {{ section.settings.highlight_color }};
+    font-weight: 800;
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 14px;
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-btn {
+    border: none;
+    border-radius: {{ section.settings.button_radius }}px;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_color }};
+    padding: 14px 22px;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+    min-height: 48px;
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-btn:hover {
+    transform: translateY(-2px);
+    color: {{ section.settings.active_button_text }};
+    background: {{ section.settings.active_button_bg }};
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-btn.is-active {
+    background: {{ section.settings.active_button_bg }};
+    color: {{ section.settings.active_button_text }};
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-image-wrap {
+    position: relative;
+    min-height: {{ section.settings.desktop_height }}px;
+    background: #f7f2ea;
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.25s ease, transform 0.35s ease;
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-image.is-changing {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: {{ section.settings.desktop_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3eee7;
+  }
+
+  .fp-evo-{{ section.id }} .fp-evo-placeholder svg {
+    width: 180px;
+    height: 180px;
+    opacity: 0.35;
+  }
+
+  @media screen and (max-width: 989px) {
+    .fp-evo-{{ section.id }} {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-wrapper {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      border-radius: {{ section.settings.mobile_radius }}px;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-content {
+      padding: 42px 26px 34px;
+      order: 1;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-image-wrap {
+      order: 2;
+      min-height: {{ section.settings.mobile_image_height }}px;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-image {
+      height: {{ section.settings.mobile_image_height }}px;
+    }
+
+    .fp-evo-{{ section.id }} h2 {
+      margin-bottom: 30px;
+      font-size: clamp(30px, 9vw, 46px);
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-buttons {
+      gap: 10px;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-btn {
+      flex: 1 1 calc(50% - 10px);
+      padding: 13px 14px;
+      font-size: 14px;
+      min-height: 46px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .fp-evo-{{ section.id }} .fp-evo-content {
+      padding: 36px 20px 28px;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-btn {
+      flex: 1 1 100%;
+    }
+
+    .fp-evo-{{ section.id }} .fp-evo-image,
+    .fp-evo-{{ section.id }} .fp-evo-image-wrap {
+      height: {{ section.settings.mobile_image_height }}px;
+      min-height: {{ section.settings.mobile_image_height }}px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    initFpEvoSection{{ section.id | replace: '-', '' }}();
+  });
+
+  document.addEventListener('shopify:section:load', function () {
+    initFpEvoSection{{ section.id | replace: '-', '' }}();
+  });
+
+  function initFpEvoSection{{ section.id | replace: '-', '' }}() {
+    const section = document.querySelector('.fp-evo-{{ section.id }}');
+    if (!section) return;
+
+    const buttons = section.querySelectorAll('.fp-evo-btn');
+    const image = section.querySelector('.fp-evo-image');
+
+    if (!buttons.length || !image) return;
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        const newImage = button.getAttribute('data-image');
+
+        buttons.forEach(function(btn) {
+          btn.classList.remove('is-active');
+        });
+
+        button.classList.add('is-active');
+
+        if (newImage && image.src !== newImage) {
+          image.classList.add('is-changing');
+
+          setTimeout(function() {
+            image.src = newImage;
+            image.alt = button.textContent.trim();
+            image.classList.remove('is-changing');
+          }, 180);
+        }
+      });
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Sac évolutif moments",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_top",
+      "label": "Titre principal",
+      "default": "Un sac évolutif pour"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Texte coloré",
+      "default": "chaque moment de la journée"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Image principale"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fond extérieur",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fond du bloc",
+      "default": "#F7EFE8"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur titre",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Couleur texte secondaire",
+      "default": "#D9BBAA"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fond boutons",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Texte boutons",
+      "default": "#D9A98F"
+    },
+    {
+      "type": "color",
+      "id": "active_button_bg",
+      "label": "Fond bouton actif",
+      "default": "#D7A42A"
+    },
+    {
+      "type": "color",
+      "id": "active_button_text",
+      "label": "Texte bouton actif",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximum",
+      "min": 900,
+      "max": 1600,
+      "step": 50,
+      "default": 1100
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Hauteur desktop",
+      "min": 420,
+      "max": 760,
+      "step": 20,
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "label": "Hauteur image mobile",
+      "min": 260,
+      "max": 620,
+      "step": 20,
+      "default": 360
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille titre desktop",
+      "min": 36,
+      "max": 72,
+      "step": 2,
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "Arrondi desktop",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "mobile_radius",
+      "label": "Arrondi mobile",
+      "min": 0,
+      "max": 36,
+      "step": 2,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Arrondi boutons",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haut",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge bas",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "moment",
+      "name": "Bouton moment",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Texte du bouton",
+          "default": "Pour l’école"
+        },
+        {
+          "type": "image_picker",
+          "id": "moment_image",
+          "label": "Image liée à ce bouton"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sac évolutif moments",
+      "blocks": [
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour langer"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour l'école"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour danser"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour les activités"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour une soirée"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour se balader"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour s'amuser"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour cuisiner"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "label": "Pour pique-niquer"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
