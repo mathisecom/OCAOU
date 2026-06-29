@@ -186,8 +186,8 @@
         "card_radius": 22,
         "card_radius_mobile": 18,
         "card_shadow_opacity": 5,
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
+        "padding_top_desktop": 56,
+        "padding_bottom_desktop": 56,
         "padding_top_mobile": 28,
         "padding_bottom_mobile": 36,
         "enable_animation": false
