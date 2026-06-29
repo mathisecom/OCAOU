@@ -551,8 +551,8 @@
         "bg_color": "#ffffff",
         "padding_top_desktop": 16,
         "padding_bottom_desktop": 52,
-        "padding_top_mobile": 68,
-        "padding_bottom_mobile": 20,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 40,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
       }
@@ -562,7 +562,7 @@
       "name": "Bannière garantie produit",
       "settings": {
         "title": "Garantie 30 jours",
-        "subtitle": "Votre routine doit vous faire du bien. Si ce n’est pas le cas, vous êtes couvert.",
+        "subtitle": "Nous sommes tellement convaincus que vous allez l’adorer que vous avez 30 jours pour l’essayer.",
         "product_image": "shopify://shop_images/IMG_2751.webp",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
@@ -583,10 +583,10 @@
         "subtitle_color": "#101010",
         "title_size_desktop": 31,
         "title_line_height_desktop": 105,
-        "subtitle_size_desktop": 16,
+        "subtitle_size_desktop": 14,
         "subtitle_line_height_desktop": 135,
         "title_weight": "700",
-        "subtitle_weight": "600",
+        "subtitle_weight": "400",
         "title_letter_spacing": 0,
         "title_size_mobile": 27,
         "title_line_height_mobile": 95,
