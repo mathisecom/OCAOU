@@ -9,6 +9,178 @@
  */
 {
   "sections": {
+    "heromedia_zwA498": {
+      "type": "heromedia",
+      "blocks": {
+        "avatar_aRLTzC": {
+          "type": "avatar",
+          "settings": {
+            "avatar_alt": "Client satisfait"
+          }
+        },
+        "avatar_48iALN": {
+          "type": "avatar",
+          "settings": {
+            "avatar_alt": "Client satisfait"
+          }
+        },
+        "avatar_hWyfyf": {
+          "type": "avatar",
+          "settings": {
+            "avatar_alt": "Client satisfait"
+          }
+        },
+        "benefit_JkT9WB": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "✹",
+            "benefit_text": "100% Naturel"
+          }
+        },
+        "benefit_dbwd4G": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "✹",
+            "benefit_text": "Élimine le duvet"
+          }
+        },
+        "benefit_YP6kzR": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "✹",
+            "benefit_text": "Peau plus lisse"
+          }
+        }
+      },
+      "block_order": [
+        "avatar_aRLTzC",
+        "avatar_48iALN",
+        "avatar_hWyfyf",
+        "benefit_JkT9WB",
+        "benefit_dbwd4G",
+        "benefit_YP6kzR"
+      ],
+      "name": "Hero nutrition moderne",
+      "settings": {
+        "image_fit": "cover",
+        "image_position": "center center",
+        "image_ratio": 155,
+        "image_ratio_mobile": 155,
+        "image_position_desktop": "left",
+        "image_position_mobile": "top",
+        "show_badge": false,
+        "badge_text_main": "32+",
+        "badge_text_sub": "superaliments",
+        "badge_position": "top-right",
+        "badge_size_desktop": 78,
+        "badge_size_mobile": 72,
+        "badge_offset_x": 24,
+        "badge_offset_y": 24,
+        "badge_main_size": 27,
+        "badge_main_size_mobile": 24,
+        "badge_sub_size": 11,
+        "badge_sub_size_mobile": 10,
+        "badge_background": "#FFFFFF",
+        "badge_text_color": "#101010",
+        "badge_border_color": "#101010",
+        "badge_border_width": 1,
+        "show_social_proof": true,
+        "show_avatars": true,
+        "show_stars": true,
+        "star_count": 5,
+        "star_symbol": "★",
+        "stars_label": "Note de 4,8 sur 5",
+        "rating_text": "<strong>4,8/5</strong> | <strong>+3,789 Parents Satisfaits</strong>",
+        "avatar_size": 46,
+        "avatar_border_width": 3,
+        "avatar_border_color": "#FFFFFF",
+        "star_size": 17,
+        "rating_size": 12,
+        "proof_margin_bottom": 34,
+        "proof_margin_bottom_mobile": 28,
+        "heading_tag": "h2",
+        "heading_line_1": "La nutrition,",
+        "heading_italic": "c’est dur.",
+        "brand_text": "Cloud",
+        "show_brand_dot": true,
+        "heading_line_2": "la rend facile.",
+        "heading_font_family": "Georgia, 'Times New Roman', serif",
+        "heading_size_desktop": 60,
+        "heading_size_mobile": 35,
+        "heading_weight": 400,
+        "italic_weight": 400,
+        "heading_line_height": "0.9",
+        "heading_line_height_mobile": "0.95",
+        "description": "<p>Comblez les manques de votre alimentation. Plus de <strong>96 %</strong> d’entre nous manquent de nutriments essentiels : Cloud les regroupe dans 3 gummies savoureux — énergie, concentration et sommeil réparateur.</p>",
+        "description_width": 620,
+        "body_size": 15,
+        "body_size_mobile": 12,
+        "description_margin_top": 26,
+        "description_margin_top_mobile": 22,
+        "show_benefits": true,
+        "benefits_background": "#FFFFFF",
+        "benefits_text_color": "#101010",
+        "benefits_icon_color": "#AF6C67",
+        "benefits_border_color": "#FCFCFC",
+        "benefits_border_width": 0,
+        "benefits_radius": 30,
+        "benefits_font_size": 13,
+        "benefits_font_size_mobile": 10,
+        "benefits_font_weight": 700,
+        "benefits_icon_size": 14,
+        "benefits_icon_size_mobile": 14,
+        "benefits_margin_top": 20,
+        "benefits_margin_top_mobile": 18,
+        "benefits_padding_x": 14,
+        "benefits_padding_y": 7,
+        "benefits_padding_x_mobile": 12,
+        "benefits_padding_y_mobile": 8,
+        "benefits_gap": 14,
+        "benefits_gap_mobile": 10,
+        "benefits_full_mobile": true,
+        "benefits_stack_mobile": false,
+        "button_text": "OBTENIR MAINTENANT",
+        "button_link": "",
+        "button_arrow": "→",
+        "button_height": 58,
+        "button_height_mobile": 54,
+        "button_padding_x": 38,
+        "button_padding_x_mobile": 30,
+        "button_radius": 38,
+        "button_font_size": 16,
+        "button_font_size_mobile": 15,
+        "button_margin_top": 28,
+        "button_margin_top_mobile": 28,
+        "button_full_mobile": true,
+        "button_shadow_opacity": 0,
+        "show_guarantee": true,
+        "guarantee_icon": "",
+        "guarantee_text": "Garantie satisfait ou remboursé 30 jours",
+        "guarantee_size": 12,
+        "background_color": "#F7F7F4",
+        "card_background": "#EDEBE4",
+        "text_color": "#101010",
+        "muted_color": "#111111",
+        "accent_color": "#AF6C67",
+        "stars_color": "#00B67A",
+        "button_background": "#AF6C67",
+        "button_text_color": "#FFFFFF",
+        "container_width": 1220,
+        "content_width": 640,
+        "desktop_gap": 80,
+        "mobile_gap": 28,
+        "text_align_desktop": "center",
+        "text_align_mobile": "center",
+        "card_radius": 22,
+        "card_radius_mobile": 18,
+        "card_shadow_opacity": 5,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 36,
+        "enable_animation": false
+      }
+    },
     "logoscroll_WxkMyg": {
       "type": "logoscroll",
       "blocks": {
@@ -580,6 +752,7 @@
     }
   },
   "order": [
+    "heromedia_zwA498",
     "logoscroll_WxkMyg",
     "featured_collection_Dzf4fX",
     "bandedefilante_AkFDNj",
