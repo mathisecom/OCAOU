@@ -86,6 +86,16 @@
             "payment_button_text_color": ""
           }
         },
+        "associated_products_dQCNyG": {
+          "type": "associated_products",
+          "settings": {
+            "title": "SOUVENT ACHETÉS ENSEMBLE",
+            "stack_products": false,
+            "products_count": 4,
+            "background": "",
+            "text_color": ""
+          }
+        },
         "liquid_FttJaB": {
           "type": "liquid",
           "settings": {
@@ -161,6 +171,7 @@
         "quantity_selector",
         "liquid_RFPgnk",
         "buy_buttons",
+        "associated_products_dQCNyG",
         "liquid_FttJaB",
         "liquid_ezRHbz",
         "liquid_CnEcbM",
