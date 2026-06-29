@@ -1,0 +1,1781 @@
+{% comment %}
+  Section : Hero Nutrition Moderne
+  Responsive PC + Mobile
+  Entièrement modifiable depuis l’éditeur Shopify
+{% endcomment %}
+
+<section
+  id="HeroNutritionCloud-{{ section.id }}"
+  class="hero-nutrition-cloud"
+  {{ section.shopify_attributes }}
+>
+  <style>
+    #HeroNutritionCloud-{{ section.id }} {
+      --hnc-bg: {{ section.settings.background_color }};
+      --hnc-card-bg: {{ section.settings.card_background }};
+      --hnc-text: {{ section.settings.text_color }};
+      --hnc-muted: {{ section.settings.muted_color }};
+      --hnc-accent: {{ section.settings.accent_color }};
+      --hnc-stars: {{ section.settings.stars_color }};
+      --hnc-button-bg: {{ section.settings.button_background }};
+      --hnc-button-text: {{ section.settings.button_text_color }};
+      --hnc-radius: {{ section.settings.card_radius }}px;
+      --hnc-container: {{ section.settings.container_width }}px;
+      --hnc-gap: {{ section.settings.desktop_gap }}px;
+      --hnc-heading-desktop: {{ section.settings.heading_size_desktop }}px;
+      --hnc-heading-mobile: {{ section.settings.heading_size_mobile }}px;
+      --hnc-body-size: {{ section.settings.body_size }}px;
+      --hnc-rating-size: {{ section.settings.rating_size }}px;
+      --hnc-image-ratio: {{ section.settings.image_ratio | times: 0.01 }} / 1;
+      --hnc-card-shadow: 0 24px 70px rgba(0, 0, 0, {{ section.settings.card_shadow_opacity | times: 0.01 }});
+      --hnc-button-shadow: 0 18px 35px rgba(0, 0, 0, {{ section.settings.button_shadow_opacity | times: 0.01 }});
+
+      background: var(--hnc-bg);
+      color: var(--hnc-text);
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+      overflow: hidden;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} * {
+      box-sizing: border-box;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-container {
+      width: min(100% - 40px, var(--hnc-container));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--hnc-gap);
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-media {
+      flex: 1 1 0;
+      order: {% if section.settings.image_position_desktop == 'left' %}1{% else %}2{% endif %};
+      min-width: 0;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-content {
+      flex: 1 1 0;
+      order: {% if section.settings.image_position_desktop == 'left' %}2{% else %}1{% endif %};
+      max-width: {{ section.settings.content_width }}px;
+      text-align: {{ section.settings.text_align_desktop }};
+      min-width: 0;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-card {
+      position: relative;
+      width: 100%;
+      aspect-ratio: var(--hnc-image-ratio);
+      background: var(--hnc-card-bg);
+      border-radius: var(--hnc-radius);
+      overflow: hidden;
+      box-shadow: var(--hnc-card-shadow);
+      isolation: isolate;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.45), transparent 34%),
+        radial-gradient(circle at 75% 85%, rgba(255,255,255,0.22), transparent 28%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: {{ section.settings.image_fit }};
+      object-position: {{ section.settings.image_position }};
+      position: relative;
+      z-index: 1;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-placeholder {
+      width: 100%;
+      height: 100%;
+      background: #f1f1ec;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-badge {
+      position: absolute;
+      z-index: 4;
+      width: {{ section.settings.badge_size_desktop }}px;
+      height: {{ section.settings.badge_size_desktop }}px;
+      border-radius: 999px;
+      background: {{ section.settings.badge_background }};
+      color: {{ section.settings.badge_text_color }};
+      border: {{ section.settings.badge_border_width }}px solid {{ section.settings.badge_border_color }};
+      display: {% if section.settings.show_badge %}flex{% else %}none{% endif %};
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      line-height: 1;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-badge--top-left {
+      top: {{ section.settings.badge_offset_y }}px;
+      left: {{ section.settings.badge_offset_x }}px;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-badge--top-right {
+      top: {{ section.settings.badge_offset_y }}px;
+      right: {{ section.settings.badge_offset_x }}px;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-badge--bottom-left {
+      bottom: {{ section.settings.badge_offset_y }}px;
+      left: {{ section.settings.badge_offset_x }}px;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-badge--bottom-right {
+      bottom: {{ section.settings.badge_offset_y }}px;
+      right: {{ section.settings.badge_offset_x }}px;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-badge-main {
+      font-size: {{ section.settings.badge_main_size }}px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-badge-sub {
+      margin-top: 3px;
+      font-size: {{ section.settings.badge_sub_size }}px;
+      font-weight: 600;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-proof {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: {{ section.settings.proof_margin_bottom }}px;
+
+      {% if section.settings.text_align_desktop == 'center' %}
+        justify-content: center;
+      {% elsif section.settings.text_align_desktop == 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: flex-start;
+      {% endif %}
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-avatars {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      flex-shrink: 0;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-avatar {
+      width: {{ section.settings.avatar_size }}px;
+      height: {{ section.settings.avatar_size }}px;
+      border-radius: 999px;
+      border: {{ section.settings.avatar_border_width }}px solid {{ section.settings.avatar_border_color }};
+      overflow: hidden;
+      margin-left: -10px;
+      background: #ddd;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-avatar-fallback {
+      font-size: 12px;
+      font-weight: 700;
+      color: #111;
+      background: #eeeeee;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-rating {
+      line-height: 1.15;
+      font-size: var(--hnc-rating-size);
+      color: var(--hnc-text);
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-stars {
+      display: flex;
+      gap: 1px;
+      color: var(--hnc-stars);
+      font-size: {{ section.settings.star_size }}px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-rating-text {
+      font-weight: 600;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-rating-text strong {
+      font-weight: 900;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-heading {
+      margin: 0;
+      color: var(--hnc-text);
+      font-family: {{ section.settings.heading_font_family }};
+      font-size: clamp(var(--hnc-heading-mobile), 5vw, var(--hnc-heading-desktop));
+      font-weight: {{ section.settings.heading_weight }};
+      line-height: {{ section.settings.heading_line_height }};
+      letter-spacing: -0.055em;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-heading-line {
+      display: block;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-heading em {
+      font-style: italic;
+      font-weight: {{ section.settings.italic_weight }};
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-brand-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      white-space: nowrap;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-dot {
+      width: 0.22em;
+      height: 0.22em;
+      background: var(--hnc-accent);
+      border-radius: 999px;
+      display: {% if section.settings.show_brand_dot %}inline-block{% else %}none{% endif %};
+      transform: translateY(-0.18em);
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-description {
+      margin: {{ section.settings.description_margin_top }}px auto 0;
+      color: var(--hnc-muted);
+      font-size: var(--hnc-body-size);
+      line-height: 1.45;
+      max-width: {{ section.settings.description_width }}px;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-description p {
+      margin: 0;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-description strong {
+      color: var(--hnc-text);
+      font-weight: 900;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-benefits {
+      margin: {{ section.settings.benefits_margin_top }}px auto 0;
+      display: {% if section.settings.show_benefits %}inline-flex{% else %}none{% endif %};
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: {{ section.settings.benefits_gap }}px;
+      padding: {{ section.settings.benefits_padding_y }}px {{ section.settings.benefits_padding_x }}px;
+      max-width: 100%;
+      background: {{ section.settings.benefits_background }};
+      color: {{ section.settings.benefits_text_color }};
+      border: {{ section.settings.benefits_border_width }}px solid {{ section.settings.benefits_border_color }};
+      border-radius: {{ section.settings.benefits_radius }}px;
+      font-size: {{ section.settings.benefits_font_size }}px;
+      font-weight: {{ section.settings.benefits_font_weight }};
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-benefit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-benefit-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: {{ section.settings.benefits_icon_color }};
+      font-size: {{ section.settings.benefits_icon_size }}px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-actions {
+      margin-top: {{ section.settings.button_margin_top }}px;
+      display: flex;
+      flex-direction: column;
+      align-items:
+        {% if section.settings.text_align_desktop == 'center' %}center{% elsif section.settings.text_align_desktop == 'right' %}flex-end{% else %}flex-start{% endif %};
+      gap: 12px;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: {{ section.settings.button_height }}px;
+      padding: 0 {{ section.settings.button_padding_x }}px;
+      border-radius: {{ section.settings.button_radius }}px;
+      background: var(--hnc-button-bg);
+      color: var(--hnc-button-text);
+      font-size: {{ section.settings.button_font_size }}px;
+      font-weight: 800;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: var(--hnc-button-shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-button-arrow {
+      font-size: 1.2em;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-guarantee {
+      display: {% if section.settings.show_guarantee %}inline-flex{% else %}none{% endif %};
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: var(--hnc-muted);
+      font-size: {{ section.settings.guarantee_size }}px;
+      line-height: 1.25;
+    }
+
+    #HeroNutritionCloud-{{ section.id }} .hnc-guarantee-icon {
+      font-size: 1.05em;
+      color: var(--hnc-text);
+    }
+
+    {% if section.settings.enable_animation %}
+      @media (prefers-reduced-motion: no-preference) {
+        #HeroNutritionCloud-{{ section.id }} .hnc-card {
+          animation: hncFloat-{{ section.id }} 5.5s ease-in-out infinite;
+        }
+
+        #HeroNutritionCloud-{{ section.id }} .hnc-badge {
+          animation: hncBadge-{{ section.id }} 4.8s ease-in-out infinite;
+        }
+
+        @keyframes hncFloat-{{ section.id }} {
+          0%, 100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-6px);
+          }
+        }
+
+        @keyframes hncBadge-{{ section.id }} {
+          0%, 100% {
+            transform: rotate(-2deg) scale(1);
+          }
+
+          50% {
+            transform: rotate(2deg) scale(1.04);
+          }
+        }
+      }
+    {% endif %}
+
+    @media screen and (max-width: 749px) {
+      #HeroNutritionCloud-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-container {
+        width: min(100% - 28px, var(--hnc-container));
+        flex-direction: column;
+        gap: {{ section.settings.mobile_gap }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-media {
+        width: 100%;
+        order: {% if section.settings.image_position_mobile == 'top' %}1{% else %}2{% endif %};
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-content {
+        width: 100%;
+        max-width: 100%;
+        order: {% if section.settings.image_position_mobile == 'top' %}2{% else %}1{% endif %};
+        text-align: {{ section.settings.text_align_mobile }};
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-card {
+        aspect-ratio: {{ section.settings.image_ratio_mobile | times: 0.01 }} / 1;
+        border-radius: {{ section.settings.card_radius_mobile }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-proof {
+        margin-bottom: {{ section.settings.proof_margin_bottom_mobile }}px;
+
+        {% if section.settings.text_align_mobile == 'center' %}
+          justify-content: center;
+        {% elsif section.settings.text_align_mobile == 'right' %}
+          justify-content: flex-end;
+        {% else %}
+          justify-content: flex-start;
+        {% endif %}
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-heading {
+        font-size: var(--hnc-heading-mobile);
+        line-height: {{ section.settings.heading_line_height_mobile }};
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-description {
+        margin-top: {{ section.settings.description_margin_top_mobile }}px;
+        font-size: {{ section.settings.body_size_mobile }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-benefits {
+        margin-top: {{ section.settings.benefits_margin_top_mobile }}px;
+        width: {% if section.settings.benefits_full_mobile %}100%{% else %}auto{% endif %};
+        font-size: {{ section.settings.benefits_font_size_mobile }}px;
+        padding: {{ section.settings.benefits_padding_y_mobile }}px {{ section.settings.benefits_padding_x_mobile }}px;
+        gap: {{ section.settings.benefits_gap_mobile }}px;
+        {% if section.settings.benefits_stack_mobile %}
+          flex-direction: column;
+          align-items: center;
+        {% endif %}
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-benefit {
+        white-space: {% if section.settings.benefits_stack_mobile %}normal{% else %}nowrap{% endif %};
+        text-align: center;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-benefit-icon {
+        font-size: {{ section.settings.benefits_icon_size_mobile }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-actions {
+        margin-top: {{ section.settings.button_margin_top_mobile }}px;
+        align-items:
+          {% if section.settings.text_align_mobile == 'center' %}center{% elsif section.settings.text_align_mobile == 'right' %}flex-end{% else %}flex-start{% endif %};
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-button {
+        width: {% if section.settings.button_full_mobile %}100%{% else %}auto{% endif %};
+        min-height: {{ section.settings.button_height_mobile }}px;
+        font-size: {{ section.settings.button_font_size_mobile }}px;
+        padding: 0 {{ section.settings.button_padding_x_mobile }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-badge {
+        width: {{ section.settings.badge_size_mobile }}px;
+        height: {{ section.settings.badge_size_mobile }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-badge-main {
+        font-size: {{ section.settings.badge_main_size_mobile }}px;
+      }
+
+      #HeroNutritionCloud-{{ section.id }} .hnc-badge-sub {
+        font-size: {{ section.settings.badge_sub_size_mobile }}px;
+      }
+    }
+  </style>
+
+  <div class="hnc-container">
+    <div class="hnc-media">
+      <div class="hnc-card">
+        {% if section.settings.main_image != blank %}
+          {{
+            section.settings.main_image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              widths: '375, 550, 750, 990, 1200, 1600',
+              sizes: '(min-width: 990px) 48vw, 92vw',
+              class: 'hnc-image'
+          }}
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'hnc-placeholder' }}
+        {% endif %}
+
+        <div class="hnc-badge hnc-badge--{{ section.settings.badge_position }}">
+          <span class="hnc-badge-main">{{ section.settings.badge_text_main | escape }}</span>
+          <span class="hnc-badge-sub">{{ section.settings.badge_text_sub | escape }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hnc-content">
+      {% assign avatar_blocks = section.blocks | where: 'type', 'avatar' %}
+      {% assign benefit_blocks = section.blocks | where: 'type', 'benefit' %}
+
+      {% if section.settings.show_social_proof %}
+        <div class="hnc-proof">
+          {% if section.settings.show_avatars %}
+            <div class="hnc-avatars" aria-label="Clients satisfaits">
+              {% if avatar_blocks.size > 0 %}
+                {% for block in avatar_blocks %}
+                  <span class="hnc-avatar" {{ block.shopify_attributes }}>
+                    {% if block.settings.avatar_image != blank %}
+                      {{
+                        block.settings.avatar_image
+                        | image_url: width: 120
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'hnc-avatar-img',
+                          alt: block.settings.avatar_alt
+                      }}
+                    {% else %}
+                      <span class="hnc-avatar-fallback">{{ forloop.index }}</span>
+                    {% endif %}
+                  </span>
+                {% endfor %}
+              {% else %}
+                {% for i in (1..3) %}
+                  <span class="hnc-avatar">
+                    <span class="hnc-avatar-fallback">{{ i }}</span>
+                  </span>
+                {% endfor %}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="hnc-rating">
+            {% if section.settings.show_stars and section.settings.star_count > 0 %}
+              <div class="hnc-stars" aria-label="{{ section.settings.stars_label | escape }}">
+                {% for i in (1..section.settings.star_count) %}
+                  <span>{{ section.settings.star_symbol | escape }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.settings.rating_text != blank %}
+              <div class="hnc-rating-text">
+                {{ section.settings.rating_text }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      <{{ section.settings.heading_tag }} class="hnc-heading">
+        <span class="hnc-heading-line">
+          {% if section.settings.heading_line_1 != blank %}
+            <span>{{ section.settings.heading_line_1 | escape }}</span>
+          {% endif %}
+
+          {% if section.settings.heading_italic != blank %}
+            <em>{{ section.settings.heading_italic | escape }}</em>
+          {% endif %}
+        </span>
+
+        <span class="hnc-heading-line">
+          {% if section.settings.brand_text != blank %}
+            <span class="hnc-brand-wrap">
+              <span>{{ section.settings.brand_text | escape }}</span>
+              <span class="hnc-dot"></span>
+            </span>
+          {% endif %}
+
+          {% if section.settings.heading_line_2 != blank %}
+            <span>{{ section.settings.heading_line_2 | escape }}</span>
+          {% endif %}
+        </span>
+      </{{ section.settings.heading_tag }}>
+
+      {% if section.settings.description != blank %}
+        <div class="hnc-description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.show_benefits %}
+        <div class="hnc-benefits" role="list" aria-label="Bénéfices produit">
+          {% if benefit_blocks.size > 0 %}
+            {% for block in benefit_blocks %}
+              <div class="hnc-benefit" role="listitem" {{ block.shopify_attributes }}>
+                {% if block.settings.benefit_icon != blank %}
+                  <span class="hnc-benefit-icon">{{ block.settings.benefit_icon | escape }}</span>
+                {% endif %}
+
+                {% if block.settings.benefit_text != blank %}
+                  <span>{{ block.settings.benefit_text | escape }}</span>
+                {% endif %}
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="hnc-benefit" role="listitem">
+              <span class="hnc-benefit-icon">✹</span>
+              <span>100% Naturel</span>
+            </div>
+
+            <div class="hnc-benefit" role="listitem">
+              <span class="hnc-benefit-icon">✹</span>
+              <span>Élimine le duvet</span>
+            </div>
+
+            <div class="hnc-benefit" role="listitem">
+              <span class="hnc-benefit-icon">✹</span>
+              <span>Peau plus lisse</span>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="hnc-actions">
+        {% if section.settings.button_text != blank %}
+          <a class="hnc-button" href="{{ section.settings.button_link | default: '#' }}">
+            <span>{{ section.settings.button_text | escape }}</span>
+
+            {% if section.settings.button_arrow != blank %}
+              <span class="hnc-button-arrow">{{ section.settings.button_arrow | escape }}</span>
+            {% endif %}
+          </a>
+        {% endif %}
+
+        {% if section.settings.guarantee_text != blank %}
+          <div class="hnc-guarantee">
+            {% if section.settings.guarantee_icon != blank %}
+              <span class="hnc-guarantee-icon">{{ section.settings.guarantee_icon | escape }}</span>
+            {% endif %}
+
+            <span>{{ section.settings.guarantee_text | escape }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero nutrition moderne",
+  "tag": "section",
+  "class": "section-hero-nutrition-cloud",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image principale"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Image produit principale"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Ajustement de l’image",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Remplir le cadre"
+        },
+        {
+          "value": "contain",
+          "label": "Image entière"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "image_position",
+      "label": "Position de l’image",
+      "default": "center center"
+    },
+    {
+      "type": "range",
+      "id": "image_ratio",
+      "label": "Ratio image PC",
+      "min": 80,
+      "max": 220,
+      "step": 5,
+      "default": 155
+    },
+    {
+      "type": "range",
+      "id": "image_ratio_mobile",
+      "label": "Ratio image mobile",
+      "min": 80,
+      "max": 220,
+      "step": 5,
+      "default": 155
+    },
+    {
+      "type": "select",
+      "id": "image_position_desktop",
+      "label": "Position image sur PC",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Image à gauche"
+        },
+        {
+          "value": "right",
+          "label": "Image à droite"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_position_mobile",
+      "label": "Position image sur mobile",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "Image au-dessus"
+        },
+        {
+          "value": "bottom",
+          "label": "Image en dessous"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Badge rond"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Afficher le badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text_main",
+      "label": "Texte principal du badge",
+      "default": "32+"
+    },
+    {
+      "type": "text",
+      "id": "badge_text_sub",
+      "label": "Texte secondaire du badge",
+      "default": "superaliments"
+    },
+    {
+      "type": "select",
+      "id": "badge_position",
+      "label": "Position du badge",
+      "default": "top-right",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Haut gauche"
+        },
+        {
+          "value": "top-right",
+          "label": "Haut droite"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bas gauche"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bas droite"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "badge_size_desktop",
+      "label": "Taille badge PC",
+      "min": 50,
+      "max": 140,
+      "step": 2,
+      "default": 78
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "label": "Taille badge mobile",
+      "min": 44,
+      "max": 120,
+      "step": 2,
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "badge_offset_x",
+      "label": "Décalage horizontal du badge",
+      "min": 8,
+      "max": 80,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "badge_offset_y",
+      "label": "Décalage vertical du badge",
+      "min": 8,
+      "max": 80,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "badge_main_size",
+      "label": "Taille texte principal badge PC",
+      "min": 14,
+      "max": 42,
+      "step": 1,
+      "default": 27
+    },
+    {
+      "type": "range",
+      "id": "badge_main_size_mobile",
+      "label": "Taille texte principal badge mobile",
+      "min": 14,
+      "max": 38,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "badge_sub_size",
+      "label": "Taille texte secondaire badge PC",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "badge_sub_size_mobile",
+      "label": "Taille texte secondaire badge mobile",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Fond du badge",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Texte du badge",
+      "default": "#003F1B"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Bordure du badge",
+      "default": "#003F1B"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_width",
+      "label": "Épaisseur bordure badge",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Avis clients"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_proof",
+      "label": "Afficher la preuve sociale",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_avatars",
+      "label": "Afficher les photos clients",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stars",
+      "label": "Afficher les étoiles",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "star_count",
+      "label": "Nombre d’étoiles",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "star_symbol",
+      "label": "Symbole étoile",
+      "default": "★"
+    },
+    {
+      "type": "text",
+      "id": "stars_label",
+      "label": "Texte accessibilité étoiles",
+      "default": "Note de 4,8 sur 5"
+    },
+    {
+      "type": "html",
+      "id": "rating_text",
+      "label": "Texte avis",
+      "default": "<strong>4,8 étoiles</strong> | <strong>1789+ avis</strong> | <strong>10 000+</strong> utilisateurs"
+    },
+    {
+      "type": "range",
+      "id": "avatar_size",
+      "label": "Taille photos clients",
+      "min": 26,
+      "max": 70,
+      "step": 2,
+      "default": 46
+    },
+    {
+      "type": "range",
+      "id": "avatar_border_width",
+      "label": "Épaisseur bordure photos",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "color",
+      "id": "avatar_border_color",
+      "label": "Couleur bordure photos",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "Taille étoiles",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "default": 19
+    },
+    {
+      "type": "range",
+      "id": "rating_size",
+      "label": "Taille texte avis",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "proof_margin_bottom",
+      "label": "Espacement sous avis PC",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "proof_margin_bottom_mobile",
+      "label": "Espacement sous avis mobile",
+      "min": 0,
+      "max": 70,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Balise du titre",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Titre ligne 1",
+      "default": "La nutrition,"
+    },
+    {
+      "type": "text",
+      "id": "heading_italic",
+      "label": "Mot en italique",
+      "default": "c’est dur."
+    },
+    {
+      "type": "text",
+      "id": "brand_text",
+      "label": "Nom de marque",
+      "default": "Cloud"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_brand_dot",
+      "label": "Afficher le point de couleur après la marque",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Titre ligne 2",
+      "default": "la rend facile."
+    },
+    {
+      "type": "text",
+      "id": "heading_font_family",
+      "label": "Police du titre",
+      "default": "Georgia, 'Times New Roman', serif"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Taille titre PC",
+      "min": 34,
+      "max": 100,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 28,
+      "max": 68,
+      "step": 1,
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Graisse du titre",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "italic_weight",
+      "label": "Graisse du texte italique",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "text",
+      "id": "heading_line_height",
+      "label": "Hauteur de ligne titre PC",
+      "default": "0.9"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_height_mobile",
+      "label": "Hauteur de ligne titre mobile",
+      "default": "0.95"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Texte de description",
+      "default": "<p>Comblez les manques de votre alimentation. Plus de <strong>96 %</strong> d’entre nous manquent de nutriments essentiels : Cloud les regroupe dans 3 gummies savoureux — énergie, concentration et sommeil réparateur.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_width",
+      "label": "Largeur max description",
+      "min": 280,
+      "max": 900,
+      "step": 10,
+      "default": 620
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Taille texte description PC",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "body_size_mobile",
+      "label": "Taille texte description mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_margin_top",
+      "label": "Espacement description PC",
+      "min": 0,
+      "max": 70,
+      "step": 2,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "description_margin_top_mobile",
+      "label": "Espacement description mobile",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 22
+    },
+    {
+      "type": "header",
+      "content": "Bénéfices avec icônes"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefits",
+      "label": "Afficher les bénéfices",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "benefits_background",
+      "label": "Fond des bénéfices",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "benefits_text_color",
+      "label": "Couleur texte bénéfices",
+      "default": "#E13B86"
+    },
+    {
+      "type": "color",
+      "id": "benefits_icon_color",
+      "label": "Couleur icônes bénéfices",
+      "default": "#E13B86"
+    },
+    {
+      "type": "color",
+      "id": "benefits_border_color",
+      "label": "Couleur bordure bénéfices",
+      "default": "#E13B86"
+    },
+    {
+      "type": "range",
+      "id": "benefits_border_width",
+      "label": "Épaisseur bordure bénéfices",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "benefits_radius",
+      "label": "Arrondi bénéfices",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "benefits_font_size",
+      "label": "Taille texte bénéfices PC",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "benefits_font_size_mobile",
+      "label": "Taille texte bénéfices mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "benefits_font_weight",
+      "label": "Graisse texte bénéfices",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "benefits_icon_size",
+      "label": "Taille icônes PC",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "benefits_icon_size_mobile",
+      "label": "Taille icônes mobile",
+      "min": 10,
+      "max": 26,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "benefits_margin_top",
+      "label": "Espacement bénéfices PC",
+      "min": 0,
+      "max": 70,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "benefits_margin_top_mobile",
+      "label": "Espacement bénéfices mobile",
+      "min": 0,
+      "max": 70,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "benefits_padding_x",
+      "label": "Padding horizontal bénéfices PC",
+      "min": 8,
+      "max": 50,
+      "step": 2,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "benefits_padding_y",
+      "label": "Padding vertical bénéfices PC",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "benefits_padding_x_mobile",
+      "label": "Padding horizontal bénéfices mobile",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "benefits_padding_y_mobile",
+      "label": "Padding vertical bénéfices mobile",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "benefits_gap",
+      "label": "Espace entre bénéfices PC",
+      "min": 6,
+      "max": 34,
+      "step": 2,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "benefits_gap_mobile",
+      "label": "Espace entre bénéfices mobile",
+      "min": 6,
+      "max": 30,
+      "step": 2,
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "benefits_full_mobile",
+      "label": "Bénéfices pleine largeur sur mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "benefits_stack_mobile",
+      "label": "Empiler les bénéfices sur mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Bouton"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "Commencer mon parcours Cloud"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "text",
+      "id": "button_arrow",
+      "label": "Icône / flèche du bouton",
+      "default": "→"
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "label": "Hauteur bouton PC",
+      "min": 42,
+      "max": 80,
+      "step": 2,
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "button_height_mobile",
+      "label": "Hauteur bouton mobile",
+      "min": 42,
+      "max": 78,
+      "step": 2,
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Largeur interne bouton PC",
+      "min": 18,
+      "max": 80,
+      "step": 2,
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x_mobile",
+      "label": "Largeur interne bouton mobile",
+      "min": 18,
+      "max": 70,
+      "step": 2,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Arrondi bouton",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Taille texte bouton PC",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "label": "Taille texte bouton mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Espacement bouton PC",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top_mobile",
+      "label": "Espacement bouton mobile",
+      "min": 0,
+      "max": 70,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_mobile",
+      "label": "Bouton pleine largeur sur mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "button_shadow_opacity",
+      "label": "Ombre bouton",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Garantie"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_guarantee",
+      "label": "Afficher la garantie",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "guarantee_icon",
+      "label": "Icône garantie",
+      "default": "☠"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Texte garantie",
+      "default": "Garantie satisfait ou remboursé 30 jours"
+    },
+    {
+      "type": "range",
+      "id": "guarantee_size",
+      "label": "Taille texte garantie",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond de section",
+      "default": "#F7F7F4"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Fond image",
+      "default": "#EDEBE4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur titre / texte fort",
+      "default": "#003F1B"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Couleur texte secondaire",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur accent",
+      "default": "#9BD36A"
+    },
+    {
+      "type": "color",
+      "id": "stars_color",
+      "label": "Couleur étoiles",
+      "default": "#F8B400"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond bouton",
+      "default": "#1D1D1D"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte bouton",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Largeur max section",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "default": 1220
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Largeur max contenu texte",
+      "min": 360,
+      "max": 900,
+      "step": 10,
+      "default": 640
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Espace image / texte PC",
+      "min": 20,
+      "max": 180,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Espace image / texte mobile",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "select",
+      "id": "text_align_desktop",
+      "label": "Alignement texte PC",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align_mobile",
+      "label": "Alignement texte mobile",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi image PC",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "card_radius_mobile",
+      "label": "Arrondi image mobile",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_opacity",
+      "label": "Ombre image",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding haut PC",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bas PC",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding haut mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bas mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Activer légère animation flottante",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "avatar",
+      "name": "Photo client",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar_image",
+          "label": "Image client"
+        },
+        {
+          "type": "text",
+          "id": "avatar_alt",
+          "label": "Texte alternatif",
+          "default": "Client satisfait"
+        }
+      ]
+    },
+    {
+      "type": "benefit",
+      "name": "Bénéfice avec icône",
+      "settings": [
+        {
+          "type": "text",
+          "id": "benefit_icon",
+          "label": "Icône",
+          "default": "✹"
+        },
+        {
+          "type": "text",
+          "id": "benefit_text",
+          "label": "Texte",
+          "default": "100% Naturel"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero nutrition moderne",
+      "blocks": [
+        {
+          "type": "avatar"
+        },
+        {
+          "type": "avatar"
+        },
+        {
+          "type": "avatar"
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "✹",
+            "benefit_text": "100% Naturel"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "✹",
+            "benefit_text": "Élimine le duvet"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "✹",
+            "benefit_text": "Peau plus lisse"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
