@@ -468,15 +468,15 @@
           "settings": {
             "icon_image": "shopify://shop_images/Design_sans_titre_45.png",
             "icon_alt": "Icône avantage",
-            "title": "Étiquettes Pratiques"
+            "title": "Zero Mercury"
           }
         },
         "icon_AEPRaf": {
           "type": "icon",
           "settings": {
             "icon_image": "shopify://shop_images/Design_sans_titre_46.png",
-            "icon_alt": "Tout au même endroit",
-            "title": "Tout au même endroit"
+            "icon_alt": "Icône avantage",
+            "title": "Zero PCBs"
           }
         },
         "icon_iFFUyC": {
@@ -484,7 +484,7 @@
           "settings": {
             "icon_image": "shopify://shop_images/Design_sans_titre_47.png",
             "icon_alt": "Icône avantage",
-            "title": "Préparation Rapide"
+            "title": "Zero Oxidised Oil"
           }
         },
         "icon_VHNHwk": {
@@ -492,7 +492,7 @@
           "settings": {
             "icon_image": "shopify://shop_images/Design_sans_titre_48.png",
             "icon_alt": "Icône avantage",
-            "title": "Doudou Toujours Retrouvé"
+            "title": "Zero Ocean Contaminants"
           }
         },
         "icon_yKJirQ": {
@@ -500,7 +500,7 @@
           "settings": {
             "icon_image": "shopify://shop_images/Design_sans_titre_49.png",
             "icon_alt": "Icône avantage",
-            "title": "Gourde Facile D’accès"
+            "title": "Zero Microplastics"
           }
         },
         "icon_KixXBn": {
@@ -508,7 +508,7 @@
           "settings": {
             "icon_image": "shopify://shop_images/Design_sans_titre_50.png",
             "icon_alt": "Icône avantage",
-            "title": "Rangement Sans Stress"
+            "title": "Zero Dioxins"
           }
         }
       },
@@ -567,9 +567,9 @@
         "icon_border_color": "#d9a5a5",
         "icon_circle_bg": "#ffffff",
         "icon_fallback_color": "#c67878",
-        "icon_text_color": "#101010",
+        "icon_text_color": "#335100",
         "icon_text_size_desktop": 24,
-        "icon_text_size_mobile": 11,
+        "icon_text_size_mobile": 14,
         "icon_text_weight": "500",
         "icon_text_gap_desktop": 18,
         "icon_text_gap_mobile": 10,
