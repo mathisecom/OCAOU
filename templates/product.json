@@ -521,28 +521,28 @@
         "marquee_item_7NfyzF": {
           "type": "marquee_item",
           "settings": {
-            "text": "BUY ONCE, BUY WELL",
+            "text": "Tout est à sa place",
             "icon_text": "🍒"
           }
         },
         "marquee_item_qcCcnL": {
           "type": "marquee_item",
           "settings": {
-            "text": "HEIRLOOM QUALITY",
+            "text": "Prêt en quelques secondes",
             "icon_text": "✹"
           }
         },
         "marquee_item_PGEcxn": {
           "type": "marquee_item",
           "settings": {
-            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
+            "text": "Aide l’enfant à être autonome",
             "icon_text": "🌈"
           }
         },
         "marquee_item_7XteVb": {
           "type": "marquee_item",
           "settings": {
-            "text": "MACHINE WASHABLE FABRICS",
+            "text": "Pensé pour durer",
             "icon_text": "🌷"
           }
         }
