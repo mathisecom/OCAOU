@@ -870,6 +870,20 @@
             "image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140626.663.jpg",
             "url": ""
           }
+        },
+        "image_KWJB43": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140827.935.jpg",
+            "url": ""
+          }
+        },
+        "image_HPXExF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140833.615.jpg",
+            "url": ""
+          }
         }
       },
       "block_order": [
@@ -877,7 +891,9 @@
         "image_7BfKiH",
         "image_XWbcJF",
         "image_ryYMnT",
-        "image_GCdPNQ"
+        "image_GCdPNQ",
+        "image_KWJB43",
+        "image_HPXExF"
       ],
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
