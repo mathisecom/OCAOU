@@ -19,7 +19,7 @@
           "settings": {
             "show_icon": true,
             "icon": "truck",
-            "text": "Livraison Offerte à partir de 150€",
+            "text": "Livraison Offerte à partir de 50€ TTC",
             "link": ""
           }
         },
@@ -53,10 +53,10 @@
         "max_width": 1600,
         "desktop_alignment": "center",
         "mobile_layout": "scroll",
-        "bg_color": "#AF6C67",
+        "bg_color": "#af6c67",
         "text_color": "#ffffff",
         "icon_bg_color": "#ffffff",
-        "icon_color": "#AF6C67",
+        "icon_color": "#af6c67",
         "font_size_desktop": 13,
         "font_size_mobile": 12,
         "font_weight": "600",
@@ -126,7 +126,7 @@
         "text_size": "text-xs",
         "navigation_mode": "arrows",
         "scrolling_speed": 10,
-        "background": "#FBF6EF",
+        "background": "#fbf6ef",
         "background_gradient": "",
         "text_color": "#333333"
       }
