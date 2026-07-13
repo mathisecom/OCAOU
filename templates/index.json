@@ -334,9 +334,9 @@
         "label_bg_hover": "#AF6C67",
         "label_color": "#ffffff",
         "bg_color": "#FFFFFF",
-        "side_padding": 20,
+        "side_padding": 10,
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 10
       }
     },
     "featured_collection_Dzf4fX": {
