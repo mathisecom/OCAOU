@@ -95,6 +95,14 @@
             "menu_title": "Informations Légales"
           }
         },
+        "links_wQqUnT": {
+          "type": "links",
+          "settings": {
+            "menu": "commande",
+            "show_menu_title": true,
+            "menu_title": "Informations Légales"
+          }
+        },
         "text": {
           "type": "text",
           "settings": {
@@ -107,6 +115,7 @@
       "block_order": [
         "newsletter",
         "links",
+        "links_wQqUnT",
         "text"
       ],
       "settings": {
