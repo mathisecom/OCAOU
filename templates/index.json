@@ -283,7 +283,8 @@
       "settings": {
         "collection": "",
         "products": [
-          "sac-ocaou"
+          "sac-ocaou",
+          "gourde"
         ],
         "full_width": true,
         "stack_products": false,
