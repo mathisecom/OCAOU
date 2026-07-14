@@ -1,10 +1,11 @@
 {% comment %}
 ================================================================
   Section "Grille de collections" — page d'accueil
-  ▸ 4 vignettes cliquables avec étiquette (modifiable dans le
+  ▸ Vignettes cliquables avec étiquette (modifiable dans le
     personnalisateur de thème : images, textes, liens, couleurs)
-  ▸ PC : 4 colonnes côte à côte (comme la capture desktop)
-  ▸ Mobile : 2 colonnes sur 2 lignes (comme la capture mobile)
+  ▸ PC : 6 colonnes côte à côte
+  ▸ Tablette : 3 colonnes
+  ▸ Mobile : 2 colonnes
 
   INSTALLATION :
   1. Admin Shopify > Boutique en ligne > Thèmes > ⋯ > Modifier le code
@@ -67,20 +68,30 @@
   .cgrid-{{ section.id }} .cgrid__label {
     position: absolute;
     left: 50%;
-    bottom: 18px;
+    bottom: 14px;
     transform: translateX(-50%);
-    padding: 9px 18px;
+    max-width: calc(100% - 16px);
+    padding: 8px 14px;
     background: {{ section.settings.label_bg }};
     color: {{ section.settings.label_color }};
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: background .25s ease;
   }
   .cgrid-{{ section.id }} .cgrid__card:hover .cgrid__label {
     background: {{ section.settings.label_bg_hover }};
+  }
+
+  /* ----- Tablette : 3 colonnes pour éviter des vignettes écrasées ----- */
+  @media (min-width: 750px) and (max-width: 1099px) {
+    .cgrid-{{ section.id }} .cgrid__grid {
+      grid-template-columns: repeat({{ section.settings.columns_tablet }}, 1fr);
+    }
   }
 
   /* ----- Mobile : 2 colonnes, étiquette en bandeau pleine largeur ----- */
@@ -95,6 +106,7 @@
       bottom: 0;
       transform: none;
       width: 100%;
+      max-width: none;
       text-align: center;
       padding: 10px 6px;
       font-size: 11px;
@@ -124,15 +136,15 @@
           <div class="cgrid__media">
             {% if block.settings.image != blank %}
               {{ block.settings.image
-                 | image_url: width: 1200
-                 | image_tag: loading: 'lazy', widths: '400, 600, 800, 1200',
-                   sizes: '(max-width: 749px) 50vw, 25vw',
+                 | image_url: width: 800
+                 | image_tag: loading: 'lazy', widths: '300, 400, 600, 800',
+                   sizes: '(max-width: 749px) 50vw, (max-width: 1099px) 33vw, 17vw',
                    alt: block.settings.label }}
             {% elsif block.settings.collection.featured_image != blank %}
               {{ block.settings.collection.featured_image
-                 | image_url: width: 1200
-                 | image_tag: loading: 'lazy', widths: '400, 600, 800, 1200',
-                   sizes: '(max-width: 749px) 50vw, 25vw',
+                 | image_url: width: 800
+                 | image_tag: loading: 'lazy', widths: '300, 400, 600, 800',
+                   sizes: '(max-width: 749px) 50vw, (max-width: 1099px) 33vw, 17vw',
                    alt: block.settings.label }}
             {% else %}
               {{ 'collection-1' | placeholder_svg_tag }}
@@ -153,7 +165,7 @@
   "name": "Grille de collections",
   "tag": "section",
   "class": "section-grille-collections",
-  "max_blocks": 8,
+  "max_blocks": 12,
   "settings": [
     {
       "type": "text",
@@ -181,8 +193,15 @@
       "type": "range",
       "id": "columns_desktop",
       "label": "Colonnes sur PC",
-      "min": 2, "max": 5, "step": 1,
-      "default": 4
+      "min": 2, "max": 6, "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Colonnes sur tablette",
+      "min": 2, "max": 4, "step": 1,
+      "default": 3
     },
     {
       "type": "select",
@@ -211,7 +230,7 @@
       "id": "gap",
       "label": "Espace entre les vignettes (PC)",
       "min": 0, "max": 40, "step": 2, "unit": "px",
-      "default": 16
+      "default": 12
     },
     {
       "type": "range",
@@ -313,7 +332,9 @@
         { "type": "carte", "settings": { "label": "Les sacs à dos" } },
         { "type": "carte", "settings": { "label": "Le bain rayé" } },
         { "type": "carte", "settings": { "label": "Le repas" } },
-        { "type": "carte", "settings": { "label": "Les carreaux" } }
+        { "type": "carte", "settings": { "label": "Les carreaux" } },
+        { "type": "carte", "settings": { "label": "Les gourdes" } },
+        { "type": "carte", "settings": { "label": "Les coffrets" } }
       ]
     }
   ]
