@@ -750,6 +750,158 @@
         "text_color": ""
       }
     },
+    "detailsac_geEaiU": {
+      "type": "detailsac",
+      "blocks": {
+        "benefit_aFjTVJ": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "🤐",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "Zips YKK",
+            "text": "La référence mondiale, avec pull zipper facile à attraper"
+          }
+        },
+        "benefit_mzcNJq": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "☁️",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "Rembourrage matelassé",
+            "text": "Confort du dos et des épaules"
+          }
+        },
+        "benefit_f7pURM": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "🛒",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "Attaches poussette",
+            "text": "Intégrées, il s'accroche partout"
+          }
+        },
+        "benefit_ATjM8F": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "🧵",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "Tissus de caractère",
+            "text": "Canvas, nid d'abeille, sherpa longues bouclettes"
+          }
+        },
+        "benefit_Ghidzm": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "🏷️",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "Étiquette prénom",
+            "text": "« O'CAOU je le perds » — pour personnaliser"
+          }
+        },
+        "benefit_YLYxjt": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "✋",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "2 poignées",
+            "text": "Pour le porter dans tous les sens"
+          }
+        },
+        "benefit_xRw9CM": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "🪢",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "Cordon range-sangle",
+            "text": "Fini le surplus de sangle qui traîne"
+          }
+        },
+        "benefit_FaHYgd": {
+          "type": "benefit",
+          "settings": {
+            "emoji": "🧸",
+            "icon_alt": "Icône bénéfice",
+            "icon": "check",
+            "title": "2 boucles doudou",
+            "text": "Pour 2 tailles de doudou, avec élastique logo"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_aFjTVJ",
+        "benefit_mzcNJq",
+        "benefit_f7pURM",
+        "benefit_ATjM8F",
+        "benefit_Ghidzm",
+        "benefit_YLYxjt",
+        "benefit_xRw9CM",
+        "benefit_FaHYgd"
+      ],
+      "name": "Détails qualité O'CAOU",
+      "settings": {
+        "eyebrow": "La qualité O'CAOU",
+        "eyebrow_color": "#BC4A33",
+        "eyebrow_size_desktop": 12,
+        "eyebrow_size_mobile": 11,
+        "eyebrow_margin_bottom": 12,
+        "title": "Pensé dans les moindres détails",
+        "title_alignment": "center",
+        "title_color": "#3A2C22",
+        "title_size_desktop": 30,
+        "title_size_mobile": 22,
+        "title_weight": "700",
+        "title_margin_bottom_desktop": 12,
+        "title_margin_bottom_mobile": 10,
+        "subtitle": "Chaque finition a été choisie pour durer et simplifier la vie.",
+        "subtitle_color": "#6B5A4C",
+        "subtitle_size_desktop": 16,
+        "subtitle_size_mobile": 14,
+        "subtitle_margin_bottom_desktop": 56,
+        "subtitle_margin_bottom_mobile": 36,
+        "full_width": false,
+        "max_width": 1200,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "column_gap_desktop": 40,
+        "row_gap_desktop": 48,
+        "column_gap_mobile": 20,
+        "row_gap_mobile": 36,
+        "icon_circle_bg": "#FCF9F5",
+        "icon_color": "#BC4A33",
+        "icon_circle_size_desktop": 84,
+        "icon_circle_size_mobile": 70,
+        "icon_size_desktop": 36,
+        "icon_size_mobile": 30,
+        "icon_margin_bottom_desktop": 16,
+        "icon_margin_bottom_mobile": 12,
+        "benefit_title_color": "#3A2C22",
+        "text_color": "#6B5A4C",
+        "benefit_title_size_desktop": 17,
+        "benefit_title_size_mobile": 15,
+        "benefit_title_weight": "700",
+        "benefit_title_margin_bottom": 8,
+        "benefit_title_margin_bottom_mobile": 6,
+        "text_size_desktop": 14,
+        "text_size_mobile": 13,
+        "text_weight": "400",
+        "text_max_width_desktop": 230,
+        "text_max_width_mobile": 160,
+        "bg_color": "#FFFFFF",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 52,
+        "side_padding_desktop": 40,
+        "side_padding_mobile": 14
+      }
+    },
     "avantageicons_k7faYm": {
       "type": "avantageicons",
       "blocks": {
@@ -800,6 +952,7 @@
         "benefit_Lpj498",
         "benefit_J8aV6U"
       ],
+      "disabled": true,
       "name": "Avantages icônes",
       "settings": {
         "title": "Vous allez adorer le sac O’CAOU parce que...",
@@ -1582,6 +1735,7 @@
     "sectionsicones_Y3DFyV",
     "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
+    "detailsac_geEaiU",
     "avantageicons_k7faYm",
     "30retours_YLhBEm",
     "rich_text_WCLrEr",
