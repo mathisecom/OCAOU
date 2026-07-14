@@ -495,6 +495,92 @@
         "padding_bottom_mobile": 8
       }
     },
+    "imagewithtexticons_pncmHL": {
+      "type": "imagewithtexticons",
+      "blocks": {
+        "pastille_ijfLDd": {
+          "type": "pastille",
+          "settings": {
+            "label": "Biberon"
+          }
+        },
+        "pastille_THqHaA": {
+          "type": "pastille",
+          "settings": {
+            "label": "Doudou"
+          }
+        },
+        "pastille_RGEbFM": {
+          "type": "pastille",
+          "settings": {
+            "label": "Couches & linge"
+          }
+        },
+        "pastille_c6PkmD": {
+          "type": "pastille",
+          "settings": {
+            "label": "Tétine"
+          }
+        },
+        "pastille_GEDQqY": {
+          "type": "pastille",
+          "settings": {
+            "label": "Repas"
+          }
+        }
+      },
+      "block_order": [
+        "pastille_ijfLDd",
+        "pastille_THqHaA",
+        "pastille_RGEbFM",
+        "pastille_c6PkmD",
+        "pastille_GEDQqY"
+      ],
+      "name": "O'CAOU — Image + Texte",
+      "settings": {
+        "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
+        "image_position": "right",
+        "image_first_mobile": true,
+        "image_ratio": "1 / 1",
+        "image_radius": 12,
+        "placeholder_color": "#e9a94e",
+        "eyebrow": "Pour les parents",
+        "title": "Avant tout, un sac à langer pour ranger les essentiels de bébé",
+        "subtitle": "5 poches pensées pour ne plus jamais chercher :",
+        "mantra": "<p>Avec ses étiquettes et ses filets :<br/><strong>Tout est visible. Tout est organisé.</strong><br/>Plus besoin de chercher. La charge mentale est soulagée.</p>",
+        "eyebrow_size": 12,
+        "title_size": 32,
+        "subtitle_size": 16,
+        "pill_size": 12,
+        "mantra_size": 16,
+        "btn_size": 15,
+        "eyebrow_size_mobile": 11,
+        "title_size_mobile": 18,
+        "subtitle_size_mobile": 15,
+        "pill_size_mobile": 11,
+        "mantra_size_mobile": 15,
+        "btn_size_mobile": 14,
+        "btn_label": "OBTENIR MAINTENANT",
+        "btn_link": "#shopify-section-template--29953933574478__main",
+        "btn_text_color": "#ffffff",
+        "bg_color": "#ffffff",
+        "text_color": "#3a2c22",
+        "accent_color": "#af6c67",
+        "pill_bg": "#ffffff",
+        "pill_border": "#eadfce",
+        "check_color": "#00b67a",
+        "mantra_border_color": "#af6c67",
+        "pill_radius": 9,
+        "pill_shadow": false,
+        "container_width": 1260,
+        "gap_desktop": 60,
+        "gap_mobile": 28,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 8
+      }
+    },
     "sectionsicones_Y3DFyV": {
       "type": "sectionsicones",
       "blocks": {
@@ -1579,6 +1665,7 @@
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
+    "imagewithtexticons_pncmHL",
     "sectionsicones_Y3DFyV",
     "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
