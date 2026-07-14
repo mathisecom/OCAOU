@@ -472,16 +472,16 @@
         "accent_color": "#AF6C67",
         "pill_bg": "#FFFFFF",
         "pill_border": "#EADFCE",
-        "check_color": "#4E9A6F",
-        "mantra_border_color": "#E9A94E",
-        "pill_radius": 16,
+        "check_color": "#00B67A",
+        "mantra_border_color": "#AF6C67",
+        "pill_radius": 9,
         "container_width": 1160,
         "gap_desktop": 60,
-        "gap_mobile": 30,
+        "gap_mobile": 28,
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48
+        "padding_bottom_mobile": 8
       }
     },
     "sectionsicones_Y3DFyV": {
