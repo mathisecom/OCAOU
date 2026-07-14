@@ -280,10 +280,26 @@
     "grillecollections_HyQXcx": {
       "type": "grillecollections",
       "blocks": {
+        "carte_Y7LJak": {
+          "type": "carte",
+          "settings": {
+            "label": "Naissance",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_HRQYa9": {
+          "type": "carte",
+          "settings": {
+            "label": "Crèches",
+            "collection": "",
+            "link": ""
+          }
+        },
         "carte_CwnzDJ": {
           "type": "carte",
           "settings": {
-            "label": "Les sacs à dos",
+            "label": "Sorties",
             "collection": "",
             "link": ""
           }
@@ -291,7 +307,7 @@
         "carte_VRxatd": {
           "type": "carte",
           "settings": {
-            "label": "Le bain rayé",
+            "label": "Repas",
             "collection": "",
             "link": ""
           }
@@ -299,32 +315,34 @@
         "carte_pCQgxk": {
           "type": "carte",
           "settings": {
-            "label": "Le repas",
+            "label": "Pour maman",
             "collection": "",
             "link": ""
           }
         },
-        "carte_cPd3Fr": {
+        "carte_PqKnFx": {
           "type": "carte",
           "settings": {
-            "label": "Les carreaux",
+            "label": "Idées cadeaux ",
             "collection": "",
             "link": ""
           }
         }
       },
       "block_order": [
+        "carte_Y7LJak",
+        "carte_HRQYa9",
         "carte_CwnzDJ",
         "carte_VRxatd",
         "carte_pCQgxk",
-        "carte_cPd3Fr"
+        "carte_PqKnFx"
       ],
       "name": "Grille de collections",
       "settings": {
         "heading": "NOS COLLECTIONS",
         "heading_align": "center",
         "heading_color": "#1d2153",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "columns_mobile": "2",
         "ratio": "3 / 4",
         "gap": 16,
