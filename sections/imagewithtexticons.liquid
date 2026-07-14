@@ -1,0 +1,480 @@
+{% comment %}
+  ─────────────────────────────────────────────────────────────
+  SECTION O'CAOU — Image + Texte + Pastilles + Encadré
+  À placer dans : sections/ocaou-image-texte.liquid
+  Tout est modifiable depuis l'éditeur de thème :
+  image, textes, pastilles (blocs), encadré, couleurs,
+  position de l'image, arrondis, espacements PC & mobile.
+  Typographie : hérite du thème (Bricolage Grotesque).
+  ─────────────────────────────────────────────────────────────
+{% endcomment %}
+
+{%- liquid
+  assign s = section.settings
+  assign uid = section.id
+-%}
+
+<style>
+  #ocaou-{{ uid }} {
+    background: {{ s.bg_color }};
+    padding-top: {{ s.padding_top }}px;
+    padding-bottom: {{ s.padding_bottom }}px;
+  }
+  #ocaou-{{ uid }} .ocaou-container {
+    max-width: {{ s.container_width }}px;
+    margin: 0 auto;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  #ocaou-{{ uid }} .ocaou-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ s.gap_desktop }}px;
+    align-items: center;
+  }
+  {% if s.image_position == 'right' %}
+  #ocaou-{{ uid }} .ocaou-media { order: 2; }
+  {% endif %}
+
+  /* ── Image ── */
+  #ocaou-{{ uid }} .ocaou-media-box {
+    border-radius: {{ s.image_radius }}px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 16px 44px rgba(58, 44, 34, .10);
+  }
+  #ocaou-{{ uid }} .ocaou-media-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: {{ s.image_ratio }};
+  }
+  #ocaou-{{ uid }} .ocaou-media-placeholder {
+    aspect-ratio: {{ s.image_ratio }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    background:
+      radial-gradient(circle, rgba(255,255,255,.9) 0 3.5px, transparent 4.5px) 0 0 / 34px 34px,
+      {{ s.placeholder_color }};
+  }
+
+  /* ── Textes (typo héritée du thème = Bricolage Grotesque) ── */
+  #ocaou-{{ uid }} .ocaou-eyebrow {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: {{ s.accent_color }};
+    margin-bottom: 14px;
+  }
+  #ocaou-{{ uid }} .ocaou-title {
+    font-size: {{ s.title_size }}px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: {{ s.text_color }};
+    margin: 0 0 14px;
+  }
+  #ocaou-{{ uid }} .ocaou-subtitle {
+    font-size: 1.6rem;
+    color: {{ s.text_color }};
+    opacity: .85;
+    margin: 0 0 20px;
+  }
+
+  /* ── Pastilles ── */
+  #ocaou-{{ uid }} .ocaou-pockets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 26px;
+  }
+  #ocaou-{{ uid }} .ocaou-pocket {
+    background: {{ s.pill_bg }};
+    border: 1.5px solid {{ s.pill_border }};
+    border-radius: {{ s.pill_radius }}px;
+    padding: 12px 18px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: {{ s.text_color }};
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 3px 10px rgba(58, 44, 34, .05);
+  }
+  #ocaou-{{ uid }} .ocaou-pocket .check {
+    color: {{ s.check_color }};
+    font-weight: 900;
+  }
+
+  /* ── Encadré / mantra ── */
+  #ocaou-{{ uid }} .ocaou-mantra {
+    border-left: 4px solid {{ s.mantra_border_color }};
+    padding: 8px 0 8px 20px;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: {{ s.text_color }};
+  }
+  #ocaou-{{ uid }} .ocaou-mantra strong,
+  #ocaou-{{ uid }} .ocaou-mantra b {
+    color: {{ s.accent_color }};
+  }
+  #ocaou-{{ uid }} .ocaou-mantra p { margin: 0; }
+
+  /* ── Bouton (optionnel) ── */
+  #ocaou-{{ uid }} .ocaou-btn {
+    display: inline-block;
+    margin-top: 26px;
+    background: {{ s.accent_color }};
+    color: {{ s.btn_text_color }};
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 15px 32px;
+    border-radius: 999px;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  #ocaou-{{ uid }} .ocaou-btn:hover {
+    transform: translateY(2px);
+    opacity: .92;
+  }
+
+  /* ── Responsive mobile ── */
+  @media (max-width: 749px) {
+    #ocaou-{{ uid }} {
+      padding-top: {{ s.padding_top_mobile }}px;
+      padding-bottom: {{ s.padding_bottom_mobile }}px;
+    }
+    #ocaou-{{ uid }} .ocaou-grid {
+      grid-template-columns: 1fr;
+      gap: {{ s.gap_mobile }}px;
+    }
+    {% if s.image_first_mobile %}
+    #ocaou-{{ uid }} .ocaou-media { order: 0; }
+    #ocaou-{{ uid }} .ocaou-content { order: 1; }
+    {% else %}
+    #ocaou-{{ uid }} .ocaou-media { order: 1; }
+    #ocaou-{{ uid }} .ocaou-content { order: 0; }
+    {% endif %}
+    #ocaou-{{ uid }} .ocaou-title {
+      font-size: {{ s.title_size_mobile }}px;
+    }
+    #ocaou-{{ uid }} .ocaou-eyebrow { font-size: 1.2rem; }
+    #ocaou-{{ uid }} .ocaou-subtitle { font-size: 1.5rem; }
+    #ocaou-{{ uid }} .ocaou-pocket { font-size: 1.3rem; padding: 10px 15px; }
+    #ocaou-{{ uid }} .ocaou-mantra { font-size: 1.5rem; }
+    #ocaou-{{ uid }} .ocaou-btn { width: 100%; text-align: center; }
+  }
+</style>
+
+<div id="ocaou-{{ uid }}">
+  <div class="ocaou-container">
+    <div class="ocaou-grid">
+
+      {%- comment -%} ── Colonne image ── {%- endcomment -%}
+      <div class="ocaou-media">
+        <div class="ocaou-media-box">
+          {%- if s.image != blank -%}
+            <img
+              src="{{ s.image | image_url: width: 1200 }}"
+              srcset="
+                {{ s.image | image_url: width: 600 }} 600w,
+                {{ s.image | image_url: width: 900 }} 900w,
+                {{ s.image | image_url: width: 1200 }} 1200w"
+              sizes="(max-width: 749px) 100vw, 50vw"
+              alt="{{ s.image.alt | default: s.title | escape }}"
+              loading="lazy"
+              width="{{ s.image.width }}"
+              height="{{ s.image.height }}">
+          {%- else -%}
+            <div class="ocaou-media-placeholder">🍼</div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} ── Colonne contenu ── {%- endcomment -%}
+      <div class="ocaou-content">
+
+        {%- if s.eyebrow != blank -%}
+          <span class="ocaou-eyebrow">{{ s.eyebrow }}</span>
+        {%- endif -%}
+
+        {%- if s.title != blank -%}
+          <h2 class="ocaou-title">{{ s.title }}</h2>
+        {%- endif -%}
+
+        {%- if s.subtitle != blank -%}
+          <p class="ocaou-subtitle">{{ s.subtitle }}</p>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <div class="ocaou-pockets">
+            {%- for block in section.blocks -%}
+              <span class="ocaou-pocket" {{ block.shopify_attributes }}>
+                <span class="check">✔</span>{{ block.settings.label }}
+              </span>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if s.mantra != blank -%}
+          <div class="ocaou-mantra">{{ s.mantra }}</div>
+        {%- endif -%}
+
+        {%- if s.btn_label != blank -%}
+          <a class="ocaou-btn" href="{{ s.btn_link | default: '#' }}">{{ s.btn_label }}</a>
+        {%- endif -%}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "O'CAOU — Image + Texte",
+  "tag": "section",
+  "class": "ocaou-image-texte",
+  "settings": [
+    { "type": "header", "content": "🖼️ Image" },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position de l'image (PC)",
+      "options": [
+        { "value": "left", "label": "À gauche" },
+        { "value": "right", "label": "À droite" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_first_mobile",
+      "label": "Image en premier sur mobile",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Ratio de l'image",
+      "options": [
+        { "value": "1 / 1", "label": "Carré (1:1)" },
+        { "value": "4 / 3.4", "label": "Légèrement haut (4:3.4)" },
+        { "value": "4 / 3", "label": "Paysage (4:3)" },
+        { "value": "3 / 4", "label": "Portrait (3:4)" }
+      ],
+      "default": "1 / 1"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi de l'image",
+      "min": 0, "max": 60, "step": 2, "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Couleur si aucune image",
+      "default": "#E9A94E"
+    },
+
+    { "type": "header", "content": "✏️ Textes" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "Pour les parents"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Avant tout, un sac à langer pour ranger les essentiels de bébé"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre (PC)",
+      "min": 20, "max": 60, "step": 1, "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille du titre (mobile)",
+      "min": 18, "max": 40, "step": 1, "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "5 poches pensées pour ne plus jamais chercher :"
+    },
+    {
+      "type": "richtext",
+      "id": "mantra",
+      "label": "Encadré (texte avec barre latérale)",
+      "info": "Mettez en gras les mots à colorer en accent.",
+      "default": "<p>Avec ses étiquettes et ses filets :<br><strong>Tout est visible. Tout est organisé.</strong><br>Plus besoin de chercher. La charge mentale est soulagée.</p>"
+    },
+
+    { "type": "header", "content": "🔘 Bouton (optionnel)" },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Texte du bouton",
+      "info": "Laissez vide pour masquer le bouton."
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur du texte du bouton",
+      "default": "#FFFFFF"
+    },
+
+    { "type": "header", "content": "🎨 Couleurs" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fond de la section",
+      "default": "#FBF7EF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#3A2C22"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur accent (sur-titre, gras, bouton)",
+      "default": "#BC4A33"
+    },
+    {
+      "type": "color",
+      "id": "pill_bg",
+      "label": "Fond des pastilles",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "pill_border",
+      "label": "Bordure des pastilles",
+      "default": "#EADFCE"
+    },
+    {
+      "type": "color",
+      "id": "check_color",
+      "label": "Couleur des ✔",
+      "default": "#4E9A6F"
+    },
+    {
+      "type": "color",
+      "id": "mantra_border_color",
+      "label": "Barre latérale de l'encadré",
+      "default": "#E9A94E"
+    },
+    {
+      "type": "range",
+      "id": "pill_radius",
+      "label": "Arrondi des pastilles",
+      "min": 0, "max": 30, "step": 1, "unit": "px",
+      "default": 16
+    },
+
+    { "type": "header", "content": "📐 Espacements" },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Largeur maximum",
+      "min": 900, "max": 1600, "step": 20, "unit": "px",
+      "default": 1160
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "label": "Espace image / texte (PC)",
+      "min": 20, "max": 120, "step": 4, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Espace image / texte (mobile)",
+      "min": 16, "max": 60, "step": 2, "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute (PC)",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse (PC)",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Marge haute (mobile)",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Marge basse (mobile)",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pastille",
+      "name": "Pastille",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Texte de la pastille",
+          "default": "Biberon"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "O'CAOU — Image + Texte",
+      "blocks": [
+        { "type": "pastille", "settings": { "label": "Biberon" } },
+        { "type": "pastille", "settings": { "label": "Doudou" } },
+        { "type": "pastille", "settings": { "label": "Couches & linge" } },
+        { "type": "pastille", "settings": { "label": "Tétine" } },
+        { "type": "pastille", "settings": { "label": "Repas" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
