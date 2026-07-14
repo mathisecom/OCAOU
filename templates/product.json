@@ -756,7 +756,7 @@
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Gourde"
           }
         },
         "pastille_THqHaA": {
@@ -768,19 +768,19 @@
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Vêtements"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Jouets"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Goûter"
           }
         }
       },
