@@ -23,7 +23,7 @@
     padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
   }
   .cgrid-{{ section.id }} .cgrid__inner {
-    max-width: 1400px;
+    max-width: {% if section.settings.full_width %}none{% else %}1400px{% endif %};
     margin: 0 auto;
     padding: 0 {{ section.settings.side_padding }}px;
   }
@@ -189,6 +189,12 @@
       "default": "#1d2153"
     },
     { "type": "header", "content": "Disposition" },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Pleine largeur sur PC",
+      "default": true
+    },
     {
       "type": "range",
       "id": "columns_desktop",
