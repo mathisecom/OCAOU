@@ -1,0 +1,337 @@
+{% comment %}
+================================================================
+  SNIPPET O'CAOU — Offres Duo intégrées à la fiche produit
+  À placer dans : snippets/ocaou-duo-produit.liquid
+
+  ▸ Version COMPACTE pensée pour la colonne d'informations
+    produit (sous le bouton d'achat, comme votre encadré
+    "Garantie satisfait ou remboursé")
+
+  ═══ INTÉGRATION — 2 méthodes ═══
+
+  MÉTHODE 1 (sans toucher au code de la section produit) :
+  1. Créez ce fichier dans "snippets"
+  2. Personnaliser le thème > page produit
+  3. Dans la section produit, "Ajouter un bloc" > "Liquid
+     personnalisé" (Custom Liquid)
+  4. Collez dedans UNIQUEMENT cette ligne :
+     {% render 'ocaou-duo-produit', product: product %}
+  5. Glissez le bloc où vous voulez (sous le bouton d'achat,
+     sous la garantie...)
+
+  MÉTHODE 2 (si votre thème n'a pas de bloc Liquid perso) :
+  Ouvrez sections/main-product.liquid et collez la même ligne
+  {% render 'ocaou-duo-produit', product: product %}
+  à l'endroit voulu dans la colonne d'infos.
+
+  ═══ CONFIGURATION — modifiez UNIQUEMENT la zone ci-dessous ═══
+================================================================
+{% endcomment %}
+
+{% comment %}
+  ── ZONE DE CONFIGURATION ──────────────────────────────
+  Remplacez les "handles" par ceux de VOS produits.
+  (Le handle = fin de l'URL du produit.
+   Ex : votre-boutique.com/products/gourde-ocaou
+   → handle = gourde-ocaou)
+  Prix duo en euros. Laissez un handle vide ('') pour
+  masquer un duo.
+{% endcomment %}
+{%- liquid
+  assign duo1_handle = 'gourde-ocaou'
+  assign duo1_titre = 'Le Duo Gourde'
+  assign duo1_prix = 89.0
+  assign duo1_badge = 'Le préféré ♥'
+
+  assign duo2_handle = 'cabas-ocaou'
+  assign duo2_titre = 'Le Duo Cabas'
+  assign duo2_prix = 99.0
+  assign duo2_badge = ''
+
+  assign duo3_handle = 'pochette-ocaou'
+  assign duo3_titre = 'Le Duo Pochette'
+  assign duo3_prix = 89.0
+  assign duo3_badge = ''
+
+  assign titre_bloc = 'Complétez avec un indispensable — Prix Duo 🎁'
+  assign couleur_accent = '#B3565A'
+  assign couleur_bordure = '#E5D8C8'
+  assign couleur_fond = '#FDFBF7'
+  assign couleur_vert = '#1EA97C'
+
+  assign main_variant = product.selected_or_first_available_variant
+  assign duo_uid = 'duoP-' | append: product.id
+-%}
+
+<style>
+  #{{ duo_uid }} { margin: 18px 0; }
+  #{{ duo_uid }} .duoP-titre {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  #{{ duo_uid }} .duoP-card {
+    border: 1.5px dashed {{ couleur_bordure }};
+    border-radius: 12px;
+    background: {{ couleur_fond }};
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  #{{ duo_uid }} .duoP-card.is-open { border-style: solid; border-color: {{ couleur_accent }}; }
+
+  #{{ duo_uid }} .duoP-resume {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+  }
+  #{{ duo_uid }} .duoP-thumb {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #F0E9DC;
+    flex: 0 0 auto;
+  }
+  #{{ duo_uid }} .duoP-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #{{ duo_uid }} .duoP-resume-txt { flex: 1; min-width: 0; }
+  #{{ duo_uid }} .duoP-resume-txt .nom {
+    font-size: 13.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  #{{ duo_uid }} .duoP-badge {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    background: {{ couleur_accent }};
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  #{{ duo_uid }} .duoP-resume-txt .prix {
+    font-size: 12.5px;
+    margin-top: 2px;
+  }
+  #{{ duo_uid }} .duoP-resume-txt .prix s { opacity: .5; margin-right: 6px; }
+  #{{ duo_uid }} .duoP-resume-txt .prix b { color: {{ couleur_accent }}; font-size: 14px; }
+  #{{ duo_uid }} .duoP-chevron {
+    flex: 0 0 auto;
+    transition: transform .2s ease;
+    opacity: .5;
+    font-size: 12px;
+  }
+  #{{ duo_uid }} .duoP-card.is-open .duoP-chevron { transform: rotate(180deg); }
+
+  #{{ duo_uid }} .duoP-detail {
+    display: none;
+    padding: 0 14px 14px;
+  }
+  #{{ duo_uid }} .duoP-card.is-open .duoP-detail { display: block; }
+  #{{ duo_uid }} .duoP-detail .lignes {
+    font-size: 12px;
+    opacity: .8;
+    margin: 0 0 10px;
+  }
+  #{{ duo_uid }} .duoP-detail .lignes .l { display: flex; justify-content: space-between; padding: 2px 0; }
+  #{{ duo_uid }} .duoP-detail .ship { font-size: 12px; font-weight: 700; color: {{ couleur_vert }}; margin: 0 0 10px; }
+  #{{ duo_uid }} .duoP-detail label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  #{{ duo_uid }} .duoP-detail select {
+    width: 100%;
+    padding: 9px 10px;
+    font-size: 13px;
+    border: 1px solid {{ couleur_bordure }};
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 10px;
+  }
+  #{{ duo_uid }} .duoP-btn {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: {{ couleur_accent }};
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 14px;
+    border-radius: 999px;
+    transition: opacity .15s ease;
+  }
+  #{{ duo_uid }} .duoP-btn:hover { opacity: .9; }
+  #{{ duo_uid }} .duoP-btn.is-added { background: {{ couleur_vert }}; }
+  #{{ duo_uid }} .duoP-btn:disabled { opacity: .6; cursor: wait; }
+</style>
+
+<div id="{{ duo_uid }}">
+  <p class="duoP-titre">{{ titre_bloc }}</p>
+
+  {%- for i in (1..3) -%}
+    {%- liquid
+      case i
+        when 1
+          assign d_handle = duo1_handle
+          assign d_titre = duo1_titre
+          assign d_prix = duo1_prix
+          assign d_badge = duo1_badge
+        when 2
+          assign d_handle = duo2_handle
+          assign d_titre = duo2_titre
+          assign d_prix = duo2_prix
+          assign d_badge = duo2_badge
+        when 3
+          assign d_handle = duo3_handle
+          assign d_titre = duo3_titre
+          assign d_prix = duo3_prix
+          assign d_badge = duo3_badge
+      endcase
+
+      if d_handle == blank
+        continue
+      endif
+
+      assign comp = all_products[d_handle]
+      if comp == blank or comp.id == blank
+        continue
+      endif
+
+      assign comp_variant = comp.selected_or_first_available_variant
+      assign total = main_variant.price | plus: comp_variant.price
+      assign duo_cents = d_prix | times: 100 | round
+    -%}
+
+    <div class="duoP-card">
+      <button type="button" class="duoP-resume" aria-expanded="false">
+        <span class="duoP-thumb">
+          {% if comp.featured_image != blank %}
+            {{ comp.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: comp.title }}
+          {% endif %}
+        </span>
+        <span class="duoP-resume-txt">
+          <span class="nom">
+            {{ d_titre }}
+            {% if d_badge != blank %}<span class="duoP-badge">{{ d_badge }}</span>{% endif %}
+          </span>
+          <span class="prix">
+            {% if total > duo_cents %}<s>{{ total | money }}</s>{% endif %}
+            <b>{{ duo_cents | money }}</b> Prix Duo
+          </span>
+        </span>
+        <span class="duoP-chevron">▼</span>
+      </button>
+
+      <div class="duoP-detail">
+        <div class="lignes">
+          <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
+          <div class="l"><span>{{ comp.title }}</span><span>{{ comp_variant.price | money }}</span></div>
+        </div>
+        <p class="ship">🚚 Livraison offerte</p>
+
+        {% if comp.variants.size > 1 %}
+          <label for="{{ duo_uid }}-sel-{{ i }}">Coloris</label>
+          <select id="{{ duo_uid }}-sel-{{ i }}" class="duoP-select">
+            {% for v in comp.variants %}
+              <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>
+                {{ v.title }}{% unless v.available %} — épuisé{% endunless %}
+              </option>
+            {% endfor %}
+          </select>
+        {% endif %}
+
+        <button
+          type="button"
+          class="duoP-btn"
+          data-main-variant="{{ main_variant.id }}"
+          data-comp-variant="{{ comp_variant.id }}"
+          {% unless main_variant.available and comp_variant.available %}disabled{% endunless %}>
+          {% if main_variant.available and comp_variant.available %}
+            Ajouter le Duo au panier
+          {% else %}
+            Duo indisponible
+          {% endif %}
+        </button>
+      </div>
+    </div>
+  {%- endfor -%}
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('{{ duo_uid }}');
+  if (!root || root.dataset.duoInit) return;
+  root.dataset.duoInit = '1';
+
+  // Ouverture / fermeture des cartes
+  root.querySelectorAll('.duoP-resume').forEach(function (head) {
+    head.addEventListener('click', function () {
+      var card = head.closest('.duoP-card');
+      var open = card.classList.contains('is-open');
+      root.querySelectorAll('.duoP-card').forEach(function (c) {
+        c.classList.remove('is-open');
+        c.querySelector('.duoP-resume').setAttribute('aria-expanded', 'false');
+      });
+      if (!open) {
+        card.classList.add('is-open');
+        head.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Ajout des 2 produits au panier
+  root.querySelectorAll('.duoP-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.duoP-card');
+      var select = card.querySelector('.duoP-select');
+      var compId = select ? select.value : btn.dataset.compVariant;
+      var mainId = btn.dataset.mainVariant;
+      if (!mainId || !compId) return;
+
+      var initial = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Ajout en cours…';
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [
+            { id: parseInt(mainId, 10), quantity: 1 },
+            { id: parseInt(compId, 10), quantity: 1 }
+          ]
+        })
+      })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function () {
+        btn.classList.add('is-added');
+        btn.textContent = '✓ Duo ajouté au panier';
+        btn.disabled = false;
+        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+        setTimeout(function () {
+          btn.classList.remove('is-added');
+          btn.textContent = initial;
+        }, 4000);
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Erreur — réessayez';
+        setTimeout(function () { btn.textContent = initial; }, 3000);
+      });
+    });
+  });
+})();
+</script>
