@@ -104,7 +104,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 3px 10px rgba(58, 44, 34, .05);
+    {% if s.pill_shadow %}box-shadow: 0 3px 10px rgba(58, 44, 34, .08);{% endif %}
   }
   #ocaou-{{ uid }} .ocaou-pocket .check {
     color: {{ s.check_color }};
@@ -469,6 +469,12 @@
       "label": "Arrondi des pastilles",
       "min": 0, "max": 30, "step": 1, "unit": "px",
       "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "pill_shadow",
+      "label": "Afficher l'ombre des pastilles",
+      "default": true
     },
 
     { "type": "header", "content": "📐 Espacements" },
