@@ -3,8 +3,9 @@
   SECTION O'CAOU — Image + Texte + Pastilles + Encadré
   À placer dans : sections/ocaou-image-texte.liquid
   Tout est modifiable depuis l'éditeur de thème :
-  image, textes, pastilles (blocs), encadré, couleurs,
-  position de l'image, arrondis, espacements PC & mobile.
+  image, textes, TAILLES DE TOUS LES TEXTES (PC & mobile),
+  pastilles (blocs), encadré, couleurs, position, arrondis,
+  espacements.
   Typographie : hérite du thème (Bricolage Grotesque).
   ─────────────────────────────────────────────────────────────
 {% endcomment %}
@@ -64,7 +65,7 @@
   /* ── Textes (typo héritée du thème = Bricolage Grotesque) ── */
   #ocaou-{{ uid }} .ocaou-eyebrow {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: {{ s.eyebrow_size }}px;
     font-weight: 700;
     letter-spacing: .14em;
     text-transform: uppercase;
@@ -79,7 +80,7 @@
     margin: 0 0 14px;
   }
   #ocaou-{{ uid }} .ocaou-subtitle {
-    font-size: 1.6rem;
+    font-size: {{ s.subtitle_size }}px;
     color: {{ s.text_color }};
     opacity: .85;
     margin: 0 0 20px;
@@ -96,9 +97,9 @@
     background: {{ s.pill_bg }};
     border: 1.5px solid {{ s.pill_border }};
     border-radius: {{ s.pill_radius }}px;
-    padding: 12px 18px;
+    padding: 10px 16px;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: {{ s.pill_size }}px;
     color: {{ s.text_color }};
     display: inline-flex;
     align-items: center;
@@ -114,7 +115,7 @@
   #ocaou-{{ uid }} .ocaou-mantra {
     border-left: 4px solid {{ s.mantra_border_color }};
     padding: 8px 0 8px 20px;
-    font-size: 1.6rem;
+    font-size: {{ s.mantra_size }}px;
     line-height: 1.7;
     color: {{ s.text_color }};
   }
@@ -131,9 +132,9 @@
     background: {{ s.accent_color }};
     color: {{ s.btn_text_color }};
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: {{ s.btn_size }}px;
     text-decoration: none;
-    padding: 15px 32px;
+    padding: 14px 30px;
     border-radius: 999px;
     transition: transform .15s ease, opacity .15s ease;
   }
@@ -159,14 +160,12 @@
     #ocaou-{{ uid }} .ocaou-media { order: 1; }
     #ocaou-{{ uid }} .ocaou-content { order: 0; }
     {% endif %}
-    #ocaou-{{ uid }} .ocaou-title {
-      font-size: {{ s.title_size_mobile }}px;
-    }
-    #ocaou-{{ uid }} .ocaou-eyebrow { font-size: 1.2rem; }
-    #ocaou-{{ uid }} .ocaou-subtitle { font-size: 1.5rem; }
-    #ocaou-{{ uid }} .ocaou-pocket { font-size: 1.3rem; padding: 10px 15px; }
-    #ocaou-{{ uid }} .ocaou-mantra { font-size: 1.5rem; }
-    #ocaou-{{ uid }} .ocaou-btn { width: 100%; text-align: center; }
+    #ocaou-{{ uid }} .ocaou-eyebrow  { font-size: {{ s.eyebrow_size_mobile }}px; }
+    #ocaou-{{ uid }} .ocaou-title    { font-size: {{ s.title_size_mobile }}px; }
+    #ocaou-{{ uid }} .ocaou-subtitle { font-size: {{ s.subtitle_size_mobile }}px; }
+    #ocaou-{{ uid }} .ocaou-pocket   { font-size: {{ s.pill_size_mobile }}px; padding: 9px 14px; }
+    #ocaou-{{ uid }} .ocaou-mantra   { font-size: {{ s.mantra_size_mobile }}px; }
+    #ocaou-{{ uid }} .ocaou-btn      { font-size: {{ s.btn_size_mobile }}px; width: 100%; text-align: center; }
   }
 </style>
 
@@ -287,7 +286,7 @@
       "default": "#E9A94E"
     },
 
-    { "type": "header", "content": "✏️ Textes" },
+    { "type": "header", "content": "✏️ Contenus" },
     {
       "type": "text",
       "id": "eyebrow",
@@ -301,20 +300,6 @@
       "default": "Avant tout, un sac à langer pour ranger les essentiels de bébé"
     },
     {
-      "type": "range",
-      "id": "title_size",
-      "label": "Taille du titre (PC)",
-      "min": 20, "max": 60, "step": 1, "unit": "px",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "title_size_mobile",
-      "label": "Taille du titre (mobile)",
-      "min": 18, "max": 40, "step": 1, "unit": "px",
-      "default": 26
-    },
-    {
       "type": "text",
       "id": "subtitle",
       "label": "Sous-titre",
@@ -326,6 +311,94 @@
       "label": "Encadré (texte avec barre latérale)",
       "info": "Mettez en gras les mots à colorer en accent.",
       "default": "<p>Avec ses étiquettes et ses filets :<br><strong>Tout est visible. Tout est organisé.</strong><br>Plus besoin de chercher. La charge mentale est soulagée.</p>"
+    },
+
+    { "type": "header", "content": "🔠 Tailles des textes — PC" },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Taille du sur-titre",
+      "min": 9, "max": 24, "step": 1, "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "min": 18, "max": 60, "step": 1, "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Taille du sous-titre",
+      "min": 12, "max": 28, "step": 1, "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "pill_size",
+      "label": "Taille des pastilles",
+      "min": 11, "max": 22, "step": 1, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mantra_size",
+      "label": "Taille de l'encadré",
+      "min": 12, "max": 28, "step": 1, "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "btn_size",
+      "label": "Taille du bouton",
+      "min": 12, "max": 24, "step": 1, "unit": "px",
+      "default": 15
+    },
+
+    { "type": "header", "content": "📱 Tailles des textes — Mobile" },
+    {
+      "type": "range",
+      "id": "eyebrow_size_mobile",
+      "label": "Taille du sur-titre",
+      "min": 8, "max": 20, "step": 1, "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille du titre",
+      "min": 16, "max": 40, "step": 1, "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "label": "Taille du sous-titre",
+      "min": 11, "max": 24, "step": 1, "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "pill_size_mobile",
+      "label": "Taille des pastilles",
+      "min": 10, "max": 20, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "mantra_size_mobile",
+      "label": "Taille de l'encadré",
+      "min": 11, "max": 24, "step": 1, "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "btn_size_mobile",
+      "label": "Taille du bouton",
+      "min": 11, "max": 22, "step": 1, "unit": "px",
+      "default": 14
     },
 
     { "type": "header", "content": "🔘 Bouton (optionnel)" },

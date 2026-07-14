@@ -409,6 +409,81 @@
         "arrow_hover_color": "#ffffff"
       }
     },
+    "imagewithtexticons_4VMEKy": {
+      "type": "imagewithtexticons",
+      "blocks": {
+        "pastille_W9UQHh": {
+          "type": "pastille",
+          "settings": {
+            "label": "Biberon"
+          }
+        },
+        "pastille_FYV9wT": {
+          "type": "pastille",
+          "settings": {
+            "label": "Doudou"
+          }
+        },
+        "pastille_M4mYEq": {
+          "type": "pastille",
+          "settings": {
+            "label": "Couches & linge"
+          }
+        },
+        "pastille_VK8hn9": {
+          "type": "pastille",
+          "settings": {
+            "label": "Tétine"
+          }
+        },
+        "pastille_xacKVt": {
+          "type": "pastille",
+          "settings": {
+            "label": "Repas"
+          }
+        }
+      },
+      "block_order": [
+        "pastille_W9UQHh",
+        "pastille_FYV9wT",
+        "pastille_M4mYEq",
+        "pastille_VK8hn9",
+        "pastille_xacKVt"
+      ],
+      "name": "O'CAOU — Image + Texte",
+      "settings": {
+        "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
+        "image_position": "left",
+        "image_first_mobile": true,
+        "image_ratio": "1 / 1",
+        "image_radius": 12,
+        "placeholder_color": "#E9A94E",
+        "eyebrow": "Pour les parents",
+        "title": "Avant tout, un sac à langer pour ranger les essentiels de bébé",
+        "subtitle": "5 poches pensées pour ne plus jamais chercher :",
+        "mantra": "<p>Avec ses étiquettes et ses filets :<br/><strong>Tout est visible. Tout est organisé.</strong><br/>Plus besoin de chercher. La charge mentale est soulagée.</p>",
+        "title_size": 36,
+        "title_size_mobile": 18,
+        "btn_label": "",
+        "btn_link": "",
+        "btn_text_color": "#FFFFFF",
+        "bg_color": "#FFFFFF",
+        "text_color": "#3A2C22",
+        "accent_color": "#AF6C67",
+        "pill_bg": "#FFFFFF",
+        "pill_border": "#EADFCE",
+        "check_color": "#4E9A6F",
+        "mantra_border_color": "#E9A94E",
+        "pill_radius": 16,
+        "container_width": 1160,
+        "gap_desktop": 60,
+        "gap_mobile": 30,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
     "sectionsicones_Y3DFyV": {
       "type": "sectionsicones",
       "blocks": {
@@ -1492,6 +1567,7 @@
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
+    "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
     "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
