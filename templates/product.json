@@ -867,7 +867,7 @@
             "custom_icon": "shopify://shop_images/Design_sans_titre_43.png",
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
-            "title": "ORGANISATION",
+            "title": "FONCTIONNEL & PÉDAGOGIQUE",
             "text": "Des poches et des étiquettes pour tout catégoriser."
           }
         },
@@ -889,15 +889,6 @@
             "title": "CONFORT",
             "text": "Léger facile à porter, compact et moletonné"
           }
-        },
-        "benefit_wDEf8Q": {
-          "type": "benefit",
-          "settings": {
-            "icon_alt": "Icône bénéfice",
-            "icon": "smile",
-            "title": "Pratique au quotidien",
-            "text": "Un sac pensé pour simplifier les sorties, l’école et les activités."
-          }
         }
       },
       "block_order": [
@@ -905,8 +896,7 @@
         "benefit_h4bTWg",
         "benefit_Lpj498",
         "benefit_J8aV6U",
-        "benefit_BqnDgY",
-        "benefit_wDEf8Q"
+        "benefit_BqnDgY"
       ],
       "name": "Avantages icônes",
       "settings": {
