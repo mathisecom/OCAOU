@@ -81,8 +81,8 @@
           "settings": {
             "show_payment_button": true,
             "show_gift_card_recipient": true,
-            "atc_button_background": "#CD9438",
-            "atc_button_text_color": "#FFFFFF",
+            "atc_button_background": "#cd9438",
+            "atc_button_text_color": "#ffffff",
             "payment_button_background": "",
             "payment_button_text_color": ""
           }
@@ -167,6 +167,7 @@
         },
         "liquid_7PLJAn": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "<div id='ss-product-videos'></div>"
           }
