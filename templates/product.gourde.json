@@ -125,6 +125,16 @@
             "collapse_content": true
           }
         },
+        "collapsible_text_BgHqca": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Pourquoi choisir O'CAOU ?",
+            "content": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA</p><p>✔ Sans PVC</p><p>✔ Sans phtalates</p><p>✔ Compatible contact alimentaire</p><p>✔ Sans goût ni odeur. </p>",
+            "page": ""
+          }
+        },
         "collapsible_text_fiLq6U": {
           "type": "collapsible_text",
           "settings": {
@@ -142,16 +152,6 @@
             "icon_width": 20,
             "title": "Entretien",
             "content": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante. </li><li>Compatible avec la stérilisation à la vapeur.</li></ul>",
-            "page": ""
-          }
-        },
-        "collapsible_text_BgHqca": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Pourquoi choisir O'CAOU ?",
-            "content": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA</p><p>✔ Sans PVC</p><p>✔ Sans phtalates</p><p>✔ Compatible contact alimentaire</p><p>✔ Sans goût ni odeur. </p>",
             "page": ""
           }
         },
@@ -190,9 +190,9 @@
         "liquid_CnEcbM",
         "associated_products_dQCNyG",
         "description",
+        "collapsible_text_BgHqca",
         "collapsible_text_fiLq6U",
         "collapsible_text_QkwrFT",
-        "collapsible_text_BgHqca",
         "collapsible_text_HKATAV",
         "liquid_7PLJAn"
       ],
