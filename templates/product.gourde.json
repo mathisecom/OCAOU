@@ -159,8 +159,8 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Entretien",
-            "content": "<ul><li>Laver séparément délicatement à la main à l'eau froide</li><li>Ne pas faire tremper</li><li>Essorer à la main</li><li>Remodeler avant séchage</li><li>Séchage à plat</li><li>Ne pas sécher au sèche linge</li><li>Ne pas repasser</li><li>Ne pas utiliser d'agent de blanchiment</li></ul>",
+            "title": "Caractéristiques",
+            "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p><p><span style=\"text-decoration:underline\">Entretien</span> : </p><ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante. </li><li>Compatible avec la stérilisation à la vapeur.</li></ul>",
             "page": ""
           }
         },
