@@ -137,12 +137,11 @@
         },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Dimensions (en cm)",
-            "content": "<p><strong>Dimensions fermées:</strong><br/>L34cm (base) / L23cm (haut) x H27cm x P10cm</p><p><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm (70cm avec poignée) x P10cm</p>",
+            "title": "Entretien",
+            "content": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante. </li><li>Compatible avec la stérilisation à la vapeur.</li></ul>",
             "page": ""
           }
         },
@@ -162,7 +161,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "Caractéristiques",
-            "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p><p><span style=\"text-decoration:underline\">Entretien</span> : </p><ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante. </li><li>Compatible avec la stérilisation à la vapeur.</li></ul>",
+            "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p>",
             "page": ""
           }
         },
