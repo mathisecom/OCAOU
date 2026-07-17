@@ -82,7 +82,7 @@
           "settings": {
             "show_payment_button": true,
             "show_gift_card_recipient": true,
-            "atc_button_background": "#CD9438",
+            "atc_button_background": "#cd9438",
             "atc_button_text_color": "",
             "payment_button_background": "",
             "payment_button_text_color": ""
@@ -97,7 +97,7 @@
         "liquid_ezRHbz": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .fp-money-back-box {\n    display: flex;\n    align-items: center;\n    gap: 16px;\n    background: #FBF6EF;\n    border: 1.5px dashed #AF6C67;\n    border-radius: 6px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    color: #333333;\n    width: 100%;\n    box-sizing: border-box;\n  }\n\n  .fp-money-back-icon {\n    width: 42px;\n    height: 42px;\n    min-width: 42px;\n    flex-shrink: 0;\n    border-radius: 50%;\n    background: #AF6C67;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #ffffff;\n  }\n\n  .fp-money-back-icon svg {\n    width: 24px;\n    height: 24px;\n    display: block;\n  }\n\n  .fp-money-back-content {\n    display: flex;\n    flex-direction: column;\n    gap: 3px;\n  }\n\n  .fp-money-back-title {\n    font-size: 15px;\n    font-weight: 600;\n    line-height: 1.2;\n    color: #333333;\n    margin: 0;\n  }\n\n  .fp-money-back-subtitle {\n    font-size: 12px;\n    font-weight: 400;\n    line-height: 1.3;\n    color: #333333;\n    margin: 0;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-money-back-box {\n      align-items: center;\n      gap: 10px;\n      padding: 12px 12px;\n    }\n\n    .fp-money-back-icon {\n      width: 34px;\n      height: 34px;\n      min-width: 34px;\n      max-width: 34px;\n      flex: 0 0 34px;\n    }\n\n    .fp-money-back-icon svg {\n      width: 20px;\n      height: 20px;\n    }\n\n    .fp-money-back-title {\n      font-size: 12px;\n      line-height: 1.2;\n      color: #333333;\n    }\n\n    .fp-money-back-subtitle {\n      font-size: 10px;\n      line-height: 1.25;\n      color: #333333;\n    }\n  }\n</style>\n\n<div class=\"fp-money-back-box\">\n  <div class=\"fp-money-back-icon\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n      <path d=\"M12 2.5L19 5.5V10.8C19 15.5 16.1 19.4 12 21.5C7.9 19.4 5 15.5 5 10.8V5.5L12 2.5Z\" fill=\"currentColor\"/>\n      <path d=\"M8.5 12L10.8 14.3L15.8 9.3\" stroke=\"#ffffff\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    </svg>\n  </div>\n\n  <div class=\"fp-money-back-content\">\n    <p class=\"fp-money-back-title\">Garantie satisfait ou remboursé 30 jours</p>\n    <p class=\"fp-money-back-subtitle\">Nous sommes tellement convaincus que vous allez l’adorer que vous avez 30 jours pour l’essayer.</p>\n  </div>\n</div>"
+            "liquid": "<style>\n  .fp-money-back-box {\n    display: flex;\n    align-items: center;\n    gap: 16px;\n    background: #FBF6EF;\n    border: 1.5px dashed #AF6C67;\n    border-radius: 6px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    color: #333333;\n    width: 100%;\n    box-sizing: border-box;\n  }\n\n  .fp-money-back-icon {\n    width: 42px;\n    height: 42px;\n    min-width: 42px;\n    flex-shrink: 0;\n    border-radius: 50%;\n    background: #AF6C67;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #ffffff;\n  }\n\n  .fp-money-back-icon svg {\n    width: 24px;\n    height: 24px;\n    display: block;\n  }\n\n  .fp-money-back-content {\n    display: flex;\n    flex-direction: column;\n    gap: 3px;\n  }\n\n  .fp-money-back-title {\n    font-size: 15px;\n    font-weight: 600;\n    line-height: 1.2;\n    color: #333333;\n    margin: 0;\n  }\n\n  .fp-money-back-subtitle {\n    font-size: 12px;\n    font-weight: 400;\n    line-height: 1.3;\n    color: #333333;\n    margin: 0;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-money-back-box {\n      align-items: center;\n      gap: 10px;\n      padding: 12px 12px;\n    }\n\n    .fp-money-back-icon {\n      width: 34px;\n      height: 34px;\n      min-width: 34px;\n      max-width: 34px;\n      flex: 0 0 34px;\n    }\n\n    .fp-money-back-icon svg {\n      width: 20px;\n      height: 20px;\n    }\n\n    .fp-money-back-title {\n      font-size: 12px;\n      line-height: 1.2;\n      color: #333333;\n    }\n\n    .fp-money-back-subtitle {\n      font-size: 10px;\n      line-height: 1.25;\n      color: #333333;\n    }\n  }\n</style>\n\n<div class=\"fp-money-back-box\">\n  <div class=\"fp-money-back-icon\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n      <path d=\"M12 2.5L19 5.5V10.8C19 15.5 16.1 19.4 12 21.5C7.9 19.4 5 15.5 5 10.8V5.5L12 2.5Z\" fill=\"currentColor\"/>\n      <path d=\"M8.5 12L10.8 14.3L15.8 9.3\" stroke=\"#ffffff\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    </svg>\n  </div>\n\n  <div class=\"fp-money-back-content\">\n    <p class=\"fp-money-back-title\">Garantie satisfait ou remboursé 14 jours</p>\n    <p class=\"fp-money-back-subtitle\">Nous sommes tellement convaincus que vous allez l’adorer que vous avez 14 jours pour l’essayer.</p>\n  </div>\n</div>"
           }
         },
         "liquid_CnEcbM": {
@@ -481,11 +481,11 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#ffffff",
         "text_color": "#3a2c22",
-        "accent_color": "#CD9438",
+        "accent_color": "#cd9438",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
-        "mantra_border_color": "#CD9438",
+        "mantra_border_color": "#cd9438",
         "pill_radius": 9,
         "pill_shadow": false,
         "container_width": 1260,
@@ -822,11 +822,11 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#ffffff",
         "text_color": "#3a2c22",
-        "accent_color": "#CD9438",
+        "accent_color": "#cd9438",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
-        "mantra_border_color": "#CD9438",
+        "mantra_border_color": "#cd9438",
         "pill_radius": 9,
         "pill_shadow": false,
         "container_width": 1260,
