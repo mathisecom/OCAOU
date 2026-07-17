@@ -880,13 +880,33 @@
             "title": "DÉPERLANT",
             "text": "Revêtement intérieur déperlant."
           }
+        },
+        "benefit_BqnDgY": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "CONFORT",
+            "text": "Léger facile à porter, compact et moletonné"
+          }
+        },
+        "benefit_wDEf8Q": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "Pratique au quotidien",
+            "text": "Un sac pensé pour simplifier les sorties, l’école et les activités."
+          }
         }
       },
       "block_order": [
         "benefit_6jE3Lc",
         "benefit_h4bTWg",
         "benefit_Lpj498",
-        "benefit_J8aV6U"
+        "benefit_J8aV6U",
+        "benefit_BqnDgY",
+        "benefit_wDEf8Q"
       ],
       "name": "Avantages icônes",
       "settings": {
