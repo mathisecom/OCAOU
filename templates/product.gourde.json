@@ -808,7 +808,6 @@
         "benefit_Lpj498",
         "benefit_J8aV6U"
       ],
-      "disabled": true,
       "name": "Avantages icônes",
       "settings": {
         "title": "Vous allez adorer le sac O’CAOU parce que...",
@@ -850,8 +849,8 @@
         "bg_color": "#ffffff",
         "padding_top_desktop": 16,
         "padding_bottom_desktop": 52,
-        "padding_top_mobile": 36,
-        "padding_bottom_mobile": 40,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
       }
