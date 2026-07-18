@@ -34,7 +34,7 @@
     "text_font": "bricolage_grotesque_n4",
     "text_font_size_desktop": 14,
     "heading_apparition": "split_fade",
-    "color_swatch_config": "Bleu: #97B0CE",
+    "color_swatch_config": "Bleu: #97B0CE\nRose: #FFC0CB",
     "product_color_display": "swatch",
     "product_image_aspect_ratio": "square",
     "product_info_alignment": "start",
