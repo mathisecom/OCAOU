@@ -411,8 +411,9 @@
         "marquee_item_deX74F": {
           "type": "marquee_item",
           "settings": {
-            "text": "Aide l’enfant à être autonome",
-            "icon_text": "🌈"
+            "text": "Encourage l'autonomie",
+            "icon_text": "🌈",
+            "icon_image": "shopify://shop_images/icone.png"
           }
         },
         "marquee_item_fbRmh4": {
