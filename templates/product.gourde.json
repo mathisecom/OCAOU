@@ -806,11 +806,11 @@
       ],
       "name": "Avantages icônes",
       "settings": {
-        "title": "Vous allez adorer le sac O’CAOU parce que...",
+        "title": "Vous allez adorer la gourde O’CAOU parce que...",
         "title_alignment": "center",
         "title_color": "#000000",
         "title_size_desktop": 30,
-        "title_size_mobile": 25,
+        "title_size_mobile": 23,
         "title_weight": "700",
         "title_margin_bottom_desktop": 80,
         "title_margin_bottom_mobile": 44,
