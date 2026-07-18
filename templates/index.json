@@ -152,7 +152,7 @@
         "benefits_full_mobile": true,
         "benefits_stack_mobile": false,
         "button_text": "OBTENIR MAINTENANT",
-        "button_link": "shopify://products/sac-ocaou",
+        "button_link": "#shopify-section-template--29953933869390__grillecollections_HyQXcx",
         "button_arrow": "→",
         "button_height": 58,
         "button_height_mobile": 54,
@@ -284,7 +284,7 @@
           "type": "carte",
           "settings": {
             "label": "Naissance",
-            "collection": "",
+            "collection": "naissance",
             "link": ""
           }
         },
@@ -292,7 +292,7 @@
           "type": "carte",
           "settings": {
             "label": "Pour maman",
-            "collection": "",
+            "collection": "pour-maman",
             "link": ""
           }
         },
@@ -300,7 +300,7 @@
           "type": "carte",
           "settings": {
             "label": "Crèche & Maternelle",
-            "collection": "",
+            "collection": "creches-maternelle",
             "link": ""
           }
         },
@@ -308,7 +308,7 @@
           "type": "carte",
           "settings": {
             "label": "Repas",
-            "collection": "",
+            "collection": "repas",
             "link": ""
           }
         },
@@ -316,7 +316,7 @@
           "type": "carte",
           "settings": {
             "label": "Sorties",
-            "collection": "",
+            "collection": "sorties",
             "link": ""
           }
         },
