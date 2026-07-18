@@ -636,65 +636,6 @@
         "header_margin_bottom_mobile": 30
       }
     },
-    "bandedefilante_6mBxhe": {
-      "type": "bandedefilante",
-      "blocks": {
-        "marquee_item_7NfyzF": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒"
-          }
-        },
-        "marquee_item_qcCcnL": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Prêt en quelques secondes",
-            "icon_text": "✹"
-          }
-        },
-        "marquee_item_PGEcxn": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Aide l’enfant à être autonome",
-            "icon_text": "🌈"
-          }
-        },
-        "marquee_item_7XteVb": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Pensé pour durer",
-            "icon_text": "🌷"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_item_7NfyzF",
-        "marquee_item_qcCcnL",
-        "marquee_item_PGEcxn",
-        "marquee_item_7XteVb"
-      ],
-      "disabled": true,
-      "name": "Bande défilante premium",
-      "settings": {
-        "bg_color": "#fbf6ef",
-        "text_color": "#af6c67",
-        "border_color": "#e8ddd3",
-        "border_width": 0,
-        "height_desktop": 56,
-        "height_mobile": 52,
-        "font_size_desktop": 13,
-        "font_size_mobile": 10,
-        "font_weight": "600",
-        "letter_spacing": 1.5,
-        "uppercase": true,
-        "icon_size": 20,
-        "gap_desktop": 65,
-        "gap_mobile": 50,
-        "speed": 52,
-        "pause_on_hover": false
-      }
-    },
     "multi_column_FnzMQb": {
       "type": "multi-column",
       "blocks": {
@@ -846,9 +787,67 @@
         "padding_top_desktop": 16,
         "padding_bottom_desktop": 52,
         "padding_top_mobile": 20,
-        "padding_bottom_mobile": 20,
+        "padding_bottom_mobile": 60,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
+      }
+    },
+    "bandedefilante_6mBxhe": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_7NfyzF": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Tout est à sa place",
+            "icon_text": "🍒"
+          }
+        },
+        "marquee_item_qcCcnL": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Prêt en quelques secondes",
+            "icon_text": "✹"
+          }
+        },
+        "marquee_item_PGEcxn": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Aide l’enfant à être autonome",
+            "icon_text": "🌈"
+          }
+        },
+        "marquee_item_7XteVb": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Pensé pour durer",
+            "icon_text": "🌷"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_7NfyzF",
+        "marquee_item_qcCcnL",
+        "marquee_item_PGEcxn",
+        "marquee_item_7XteVb"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#fbf6ef",
+        "text_color": "#af6c67",
+        "border_color": "#e8ddd3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 52,
+        "font_size_desktop": 13,
+        "font_size_mobile": 10,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 65,
+        "gap_mobile": 50,
+        "speed": 52,
+        "pause_on_hover": false
       }
     },
     "30retours_YLhBEm": {
@@ -1586,9 +1585,9 @@
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
-    "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
     "avantageicons_k7faYm",
+    "bandedefilante_6mBxhe",
     "30retours_YLhBEm",
     "rich_text_WCLrEr",
     "logoscroll_Lyixnk",
