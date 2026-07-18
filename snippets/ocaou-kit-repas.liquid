@@ -1,0 +1,451 @@
+{% comment %}
+================================================================
+  SNIPPET O'CAOU — Kit Repas Nomade (fiche produit Gourde)
+  À placer dans : snippets/ocaou-kit-repas.liquid
+
+  ▸ Même style que les Duos du sac : cartes accordéon avec
+    miniature, prix, badge, détail au clic
+  ▸ 3 étapes CUMULATIVES :
+      Étape 1 : Gourde + Lunch box
+      Étape 2 : + Couverts (🎁 pochon offert)
+      Étape 3 : + Sac isotherme (🎁 lingettes offertes)
+  ▸ Les totaux sont calculés avec les VRAIS prix Shopify
+  ▸ Le bouton ajoute TOUS les produits de l'étape au panier
+  ▸ Choix du coloris pour chaque produit à variantes
+
+  ═══ INTÉGRATION ═══
+  1. Créez ce fichier dans "snippets"
+  2. Page produit Gourde > bloc "Liquid personnalisé" :
+     {% render 'ocaou-kit-repas', product: product %}
+
+  ⚠️ CADEAUX : le pochon (étapes 2-3) et les lingettes
+  (étape 3) sont affichés comme avantages. Pour qu'ils
+  arrivent à 0€ dans le panier, créez dans l'admin des
+  réductions automatiques de type "achète X, Y, Z →
+  produit offert". Si vous renseignez leurs handles dans
+  la configuration, ils seront aussi ajoutés au panier
+  automatiquement (laissez vide '' sinon).
+================================================================
+{% endcomment %}
+
+{% comment %}
+  ── ZONE DE CONFIGURATION ──────────────────────────────
+  Remplacez les handles par ceux de VOS produits
+  (fin de l'URL de la fiche produit).
+{% endcomment %}
+{%- liquid
+  assign kit_lunchbox_handle = 'lunch-box'
+  assign kit_couverts_handle = 'couverts'
+  assign kit_isotherme_handle = 'sac-isotherme'
+
+  assign gift_pochon_handle = ''
+  assign gift_lingettes_handle = ''
+
+  assign titre_bloc = 'Complétez votre Kit Repas Nomade :'
+  assign couleur_accent = '#B3565A'
+  assign couleur_bordure = '#E5D8C8'
+  assign couleur_fond = '#FDFBF7'
+  assign couleur_vert = '#1EA97C'
+  assign couleur_or = '#D9A13B'
+
+  assign main_variant = product.selected_or_first_available_variant
+  assign kit_uid = 'kitR-' | append: product.id
+
+  assign p_lunch = all_products[kit_lunchbox_handle]
+  assign p_couv = all_products[kit_couverts_handle]
+  assign p_iso = all_products[kit_isotherme_handle]
+
+  assign v_lunch = p_lunch.selected_or_first_available_variant
+  assign v_couv = p_couv.selected_or_first_available_variant
+  assign v_iso = p_iso.selected_or_first_available_variant
+-%}
+
+<style>
+  #{{ kit_uid }} { margin: 18px 0; }
+  #{{ kit_uid }} .kitR-titre {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  #{{ kit_uid }} .kitR-card {
+    border: 1.5px dashed {{ couleur_bordure }};
+    border-radius: 12px;
+    background: {{ couleur_fond }};
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  #{{ kit_uid }} .kitR-card.is-open { border-style: solid; border-color: {{ couleur_accent }}; }
+  #{{ kit_uid }} .kitR-card.is-best { border-style: solid; border-color: {{ couleur_or }}; }
+  #{{ kit_uid }} .kitR-card.is-best.is-open { border-color: {{ couleur_accent }}; }
+
+  #{{ kit_uid }} .kitR-resume {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+  }
+  #{{ kit_uid }} .kitR-thumbs {
+    display: flex;
+    flex: 0 0 auto;
+  }
+  #{{ kit_uid }} .kitR-thumb {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #F0E9DC;
+    border: 2px solid #fff;
+    margin-left: -10px;
+  }
+  #{{ kit_uid }} .kitR-thumb:first-child { margin-left: 0; }
+  #{{ kit_uid }} .kitR-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  #{{ kit_uid }} .kitR-resume-txt { flex: 1; min-width: 0; }
+  #{{ kit_uid }} .kitR-resume-txt .nom {
+    font-size: 13.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  #{{ kit_uid }} .kitR-badge {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    background: {{ couleur_accent }};
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  #{{ kit_uid }} .kitR-badge.or { background: {{ couleur_or }}; }
+  #{{ kit_uid }} .kitR-resume-txt .prix {
+    font-size: 12.5px;
+    margin-top: 2px;
+  }
+  #{{ kit_uid }} .kitR-resume-txt .prix b { color: {{ couleur_accent }}; font-size: 14px; }
+  #{{ kit_uid }} .kitR-resume-txt .gains {
+    font-size: 11px;
+    font-weight: 700;
+    color: {{ couleur_vert }};
+    margin-top: 1px;
+  }
+  #{{ kit_uid }} .kitR-chevron {
+    flex: 0 0 auto;
+    transition: transform .2s ease;
+    opacity: .5;
+    font-size: 12px;
+  }
+  #{{ kit_uid }} .kitR-card.is-open .kitR-chevron { transform: rotate(180deg); }
+
+  #{{ kit_uid }} .kitR-detail { display: none; padding: 0 14px 14px; }
+  #{{ kit_uid }} .kitR-card.is-open .kitR-detail { display: block; }
+  #{{ kit_uid }} .kitR-detail .lignes {
+    font-size: 12px;
+    opacity: .85;
+    margin: 0 0 10px;
+  }
+  #{{ kit_uid }} .kitR-detail .lignes .l { display: flex; justify-content: space-between; padding: 2px 0; }
+  #{{ kit_uid }} .kitR-detail .cadeaux {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  #{{ kit_uid }} .kitR-detail .cadeaux div { padding: 2px 0; color: {{ couleur_vert }}; }
+  #{{ kit_uid }} .kitR-detail .cadeaux small {
+    display: block;
+    font-weight: 400;
+    color: #6b6b6b;
+    padding-left: 20px;
+  }
+  #{{ kit_uid }} .kitR-detail label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  #{{ kit_uid }} .kitR-detail select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid {{ couleur_bordure }};
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 10px;
+  }
+  #{{ kit_uid }} .kitR-btn {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: {{ couleur_accent }};
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 14px;
+    border-radius: 999px;
+    transition: opacity .15s ease;
+  }
+  #{{ kit_uid }} .kitR-btn:hover { opacity: .9; }
+  #{{ kit_uid }} .kitR-btn.or { background: {{ couleur_or }}; }
+  #{{ kit_uid }} .kitR-btn.is-added { background: {{ couleur_vert }}; }
+  #{{ kit_uid }} .kitR-btn:disabled { opacity: .6; cursor: wait; }
+
+  #{{ kit_uid }} .kitR-eco {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: {{ couleur_vert }};
+    margin-top: 4px;
+  }
+</style>
+
+<div id="{{ kit_uid }}">
+  <p class="kitR-titre">{{ titre_bloc }}</p>
+
+  {%- if p_lunch != blank and p_lunch.id != blank -%}
+
+  {%- liquid
+    assign total1 = main_variant.price | plus: v_lunch.price
+    assign total2 = total1 | plus: v_couv.price
+    assign total3 = total2 | plus: v_iso.price
+  -%}
+
+  {%- comment -%} ═══ ÉTAPE 1 : Gourde + Lunch box ═══ {%- endcomment -%}
+  <div class="kitR-card">
+    <button type="button" class="kitR-resume" aria-expanded="false">
+      <span class="kitR-thumbs">
+        <span class="kitR-thumb">{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
+        <span class="kitR-thumb">{% if p_lunch.featured_image %}{{ p_lunch.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
+      </span>
+      <span class="kitR-resume-txt">
+        <span class="nom">Gourde + Lunch box</span>
+        <span class="prix"><b>{{ total1 | money }}</b> TTC</span>
+        <span class="gains">🚚 Livraison offerte (4,50 à 6,50€)</span>
+      </span>
+      <span class="kitR-chevron">▼</span>
+    </button>
+    <div class="kitR-detail">
+      <div class="lignes">
+        <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
+        <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
+      </div>
+      <div class="cadeaux">
+        <div>🚚 Livraison offerte (valeur 4,50 à 6,50€)</div>
+      </div>
+      {% if p_lunch.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s1-lunch">Coloris lunch box</label>
+        <select id="{{ kit_uid }}-s1-lunch" data-handle="lunch">
+          {% for v in p_lunch.variants %}
+            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      <button type="button" class="kitR-btn" data-items='["MAIN","lunch"]'
+        {% unless main_variant.available and v_lunch.available %}disabled{% endunless %}>
+        {% if main_variant.available and v_lunch.available %}Ajouter ce duo au panier{% else %}Indisponible{% endif %}
+      </button>
+    </div>
+  </div>
+
+  {%- comment -%} ═══ ÉTAPE 2 : + Couverts ═══ {%- endcomment -%}
+  {%- if p_couv != blank and p_couv.id != blank -%}
+  <div class="kitR-card">
+    <button type="button" class="kitR-resume" aria-expanded="false">
+      <span class="kitR-thumbs">
+        <span class="kitR-thumb">{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
+        <span class="kitR-thumb">{% if p_lunch.featured_image %}{{ p_lunch.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
+        <span class="kitR-thumb">{% if p_couv.featured_image %}{{ p_couv.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
+      </span>
+      <span class="kitR-resume-txt">
+        <span class="nom">+ Les couverts</span>
+        <span class="prix"><b>{{ total2 | money }}</b> TTC</span>
+        <span class="gains">🎁 Pochon O'CAOU offert · 🚚 Livraison offerte</span>
+      </span>
+      <span class="kitR-chevron">▼</span>
+    </button>
+    <div class="kitR-detail">
+      <div class="lignes">
+        <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
+        <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
+        <div class="l"><span>{{ p_couv.title }}</span><span>{{ v_couv.price | money }}</span></div>
+      </div>
+      <div class="cadeaux">
+        <div>🚚 Livraison déjà offerte</div>
+        <div>🎁 Pochon O'CAOU offert
+          <small>100% coton, 30x40 cm. Durable, réutilisable et pensé pour vous simplifier le quotidien.</small>
+        </div>
+      </div>
+      {% if p_lunch.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s2-lunch">Coloris lunch box</label>
+        <select id="{{ kit_uid }}-s2-lunch" data-handle="lunch">
+          {% for v in p_lunch.variants %}
+            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      {% if p_couv.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s2-couv">Coloris couverts</label>
+        <select id="{{ kit_uid }}-s2-couv" data-handle="couv">
+          {% for v in p_couv.variants %}
+            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      <button type="button" class="kitR-btn" data-items='["MAIN","lunch","couv"]'
+        {% unless main_variant.available and v_lunch.available and v_couv.available %}disabled{% endunless %}>
+        {% if main_variant.available and v_lunch.available and v_couv.available %}Ajouter ce trio au panier{% else %}Indisponible{% endif %}
+      </button>
+    </div>
+  </div>
+  {%- endif -%}
+
+  {%- comment -%} ═══ ÉTAPE 3 : + Sac isotherme = Kit complet ═══ {%- endcomment -%}
+  {%- if p_couv != blank and p_couv.id != blank and p_iso != blank and p_iso.id != blank -%}
+  <div class="kitR-card is-best">
+    <button type="button" class="kitR-resume" aria-expanded="false">
+      <span class="kitR-thumbs">
+        <span class="kitR-thumb">{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
+        <span class="kitR-thumb">{% if p_lunch.featured_image %}{{ p_lunch.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
+        <span class="kitR-thumb">{% if p_couv.featured_image %}{{ p_couv.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
+        <span class="kitR-thumb">{% if p_iso.featured_image %}{{ p_iso.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_iso.title }}{% endif %}</span>
+      </span>
+      <span class="kitR-resume-txt">
+        <span class="nom">Kit Repas Nomade complet <span class="kitR-badge or">Kit complet ★</span></span>
+        <span class="prix"><b>{{ total3 | money }}</b> TTC</span>
+        <span class="gains">🎁 Lingettes offertes (22,90€) · 🎁 Pochon offert · 🚚 Livraison offerte</span>
+      </span>
+      <span class="kitR-chevron">▼</span>
+    </button>
+    <div class="kitR-detail">
+      <div class="lignes">
+        <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
+        <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
+        <div class="l"><span>{{ p_couv.title }}</span><span>{{ v_couv.price | money }}</span></div>
+        <div class="l"><span>{{ p_iso.title }}</span><span>{{ v_iso.price | money }}</span></div>
+      </div>
+      <div class="cadeaux">
+        <div>🎁 Sac de 4 lingettes lavables O'CAOU offert (valeur 22,90€)
+          <small>Bambou & coton OEKO-TEX®. Douces, absorbantes, réutilisables et pensées pour accompagner tous les petits moments du quotidien : allaitement, bébé, repas et goûter.</small>
+        </div>
+        <div>🎁 Pochon O'CAOU offert</div>
+        <div>🚚 Livraison offerte</div>
+      </div>
+      {% if p_lunch.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s3-lunch">Coloris lunch box</label>
+        <select id="{{ kit_uid }}-s3-lunch" data-handle="lunch">
+          {% for v in p_lunch.variants %}
+            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      {% if p_couv.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s3-couv">Coloris couverts</label>
+        <select id="{{ kit_uid }}-s3-couv" data-handle="couv">
+          {% for v in p_couv.variants %}
+            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      {% if p_iso.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s3-iso">Coloris sac isotherme</label>
+        <select id="{{ kit_uid }}-s3-iso" data-handle="iso">
+          {% for v in p_iso.variants %}
+            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      <button type="button" class="kitR-btn or" data-items='["MAIN","lunch","couv","iso"]'
+        {% unless main_variant.available and v_lunch.available and v_couv.available and v_iso.available %}disabled{% endunless %}>
+        {% if main_variant.available and v_lunch.available and v_couv.available and v_iso.available %}Ajouter le Kit complet au panier{% else %}Indisponible{% endif %}
+      </button>
+    </div>
+  </div>
+  {%- endif -%}
+
+  <p class="kitR-eco">💰 Économisez jusqu'à 29,40€ avec le Kit Repas Nomade</p>
+
+  {%- else -%}
+    <p style="font-size:12px;opacity:.7">⚠️ Configurez les handles des produits dans le snippet ocaou-kit-repas.</p>
+  {%- endif -%}
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('{{ kit_uid }}');
+  if (!root || root.dataset.kitInit) return;
+  root.dataset.kitInit = '1';
+
+  // Variantes par défaut (si le produit n'a qu'une variante, pas de select)
+  var defaults = {
+    MAIN: '{{ main_variant.id }}',
+    lunch: '{{ v_lunch.id }}',
+    couv: '{{ v_couv.id }}',
+    iso: '{{ v_iso.id }}'
+  };
+
+  // Accordéon
+  root.querySelectorAll('.kitR-resume').forEach(function (head) {
+    head.addEventListener('click', function () {
+      var card = head.closest('.kitR-card');
+      var open = card.classList.contains('is-open');
+      root.querySelectorAll('.kitR-card').forEach(function (c) {
+        c.classList.remove('is-open');
+        c.querySelector('.kitR-resume').setAttribute('aria-expanded', 'false');
+      });
+      if (!open) {
+        card.classList.add('is-open');
+        head.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Ajout groupé au panier
+  root.querySelectorAll('.kitR-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.kitR-card');
+      var keys = JSON.parse(btn.dataset.items);
+      var items = keys.map(function (key) {
+        var sel = card.querySelector('select[data-handle="' + key + '"]');
+        var id = sel ? sel.value : defaults[key];
+        return { id: parseInt(id, 10), quantity: 1 };
+      }).filter(function (it) { return it.id; });
+
+      if (!items.length) return;
+
+      var initial = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Ajout en cours…';
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: items })
+      })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function () {
+        btn.classList.add('is-added');
+        btn.textContent = '✓ Ajouté au panier';
+        btn.disabled = false;
+        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+        setTimeout(function () {
+          btn.classList.remove('is-added');
+          btn.textContent = initial;
+        }, 4000);
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Erreur — réessayez';
+        setTimeout(function () { btn.textContent = initial; }, 3000);
+      });
+    });
+  });
+})();
+</script>
