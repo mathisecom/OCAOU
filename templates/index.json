@@ -404,7 +404,8 @@
           "type": "marquee_item",
           "settings": {
             "text": "Prêt en quelques secondes",
-            "icon_text": "✹"
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/CLAIR.png"
           }
         },
         "marquee_item_deX74F": {
