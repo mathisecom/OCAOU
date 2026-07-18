@@ -397,7 +397,8 @@
           "type": "marquee_item",
           "settings": {
             "text": "Tout est à sa place",
-            "icon_text": "🍒"
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_1.png"
           }
         },
         "marquee_item_THwWM6": {
@@ -419,8 +420,9 @@
         "marquee_item_fbRmh4": {
           "type": "marquee_item",
           "settings": {
-            "text": "Pensé pour durer",
-            "icon_text": "🌷"
+            "text": "Complice des familles",
+            "icon_text": "🌷",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
       },
