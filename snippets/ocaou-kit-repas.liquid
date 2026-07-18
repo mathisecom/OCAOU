@@ -41,7 +41,7 @@
   assign gift_pochon_handle = ''
   assign gift_lingettes_handle = ''
 
-  assign titre_bloc = 'Complétez votre Gourde :'
+  assign titre_bloc = 'Complétez votre Kit Repas Nomade :'
   assign couleur_accent = '#B3565A'
   assign couleur_bordure = '#E5D8C8'
   assign couleur_fond = '#FDFBF7'
@@ -75,8 +75,18 @@
     overflow: hidden;
   }
   #{{ kit_uid }} .kitR-card.is-open { border-style: solid; border-color: {{ couleur_accent }}; }
-  #{{ kit_uid }} .kitR-card.is-best { border-style: solid; border-color: {{ couleur_or }}; }
-  #{{ kit_uid }} .kitR-card.is-best.is-open { border-color: {{ couleur_accent }}; }
+  #{{ kit_uid }} .kitR-compact .kitR-resume { padding: 10px 12px; }
+  #{{ kit_uid }} .kitR-compact .kitR-thumb { width: 34px; height: 34px; }
+  #{{ kit_uid }} .kitR-compact .kitR-resume-txt .nom { font-size: 12.5px; }
+  #{{ kit_uid }} .kitR-compact .kitR-badge { font-size: 9px; padding: 2px 7px; }
+  #{{ kit_uid }} .kitR-compact .kitR-resume-txt .prix { font-size: 11.5px; }
+  #{{ kit_uid }} .kitR-compact .kitR-resume-txt .prix b { font-size: 13px; }
+  #{{ kit_uid }} .kitR-compact .kitR-resume-txt .gains { font-size: 10px; }
+  #{{ kit_uid }} .kitR-compact .kitR-detail .lignes { font-size: 11px; }
+  #{{ kit_uid }} .kitR-compact .kitR-detail .cadeaux { font-size: 11px; }
+  #{{ kit_uid }} .kitR-compact .kitR-detail .cadeaux small { font-size: 10.5px; }
+  #{{ kit_uid }} .kitR-compact .kitR-accroche { font-size: 11.5px !important; }
+  #{{ kit_uid }} .kitR-compact .kitR-btn { font-size: 12px; padding: 10px 12px; }
 
   #{{ kit_uid }} .kitR-resume {
     display: flex;
@@ -309,7 +319,7 @@
 
   {%- comment -%} ═══ ÉTAPE 3 : + Sac isotherme = Kit complet ═══ {%- endcomment -%}
   {%- if p_couv != blank and p_couv.id != blank and p_iso != blank and p_iso.id != blank -%}
-  <div class="kitR-card is-best">
+  <div class="kitR-card kitR-compact">
     <button type="button" class="kitR-resume" aria-expanded="false">
       <span class="kitR-thumbs">
         <span class="kitR-thumb">{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
@@ -325,6 +335,7 @@
       <span class="kitR-chevron">▼</span>
     </button>
     <div class="kitR-detail">
+      <p class="kitR-accroche" style="font-size:12.5px;font-weight:600;margin:0 0 10px;">Complétez votre Kit Repas Nomade et recevez les lingettes lavables O'CAOU en cadeau. 🎁</p>
       <div class="lignes">
         <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
         <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
