@@ -310,6 +310,7 @@
         "carte_VRxatd": {
           "type": "carte",
           "settings": {
+            "image": "shopify://shop_images/ADS_IMAGE_2.jpg",
             "label": "Repas",
             "collection": "repas",
             "link": ""
@@ -318,6 +319,7 @@
         "carte_CwnzDJ": {
           "type": "carte",
           "settings": {
+            "image": "shopify://shop_images/ocaou-sac-enfant-poussette.jpg",
             "label": "Sorties",
             "collection": "sorties",
             "link": ""
