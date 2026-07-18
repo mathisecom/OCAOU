@@ -138,6 +138,7 @@
         },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -148,6 +149,7 @@
         },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
