@@ -888,6 +888,7 @@
         "benefit_BqnDgY": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE.png",
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "CONFORT",
