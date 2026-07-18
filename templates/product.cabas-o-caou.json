@@ -14,6 +14,7 @@
       "blocks": {
         "liquid_6HNzqf": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "<style>\n  .gb-badges-container {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding-bottom: 0px;\n    margin: 0;\n    flex-wrap: wrap;\n  }\n\n  .gb-style-badge {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 7px;\n    padding: 7px 16px;\n    min-height: 32px;\n    border-radius: 12px;\n    border: 1.6px dashed #AF6C67;\n    font-size: 12px;\n    line-height: 1;\n    font-weight: 900;\n    text-transform: uppercase;\n    letter-spacing: 0.03em;\n    white-space: nowrap;\n    box-sizing: border-box;\n  }\n\n  .gb-style-badge--bestseller {\n    background: #AF6C67;\n    color: #ffffff;\n    border-color: #AF6C67;\n  }\n\n  .gb-style-badge--evolutif {\n    background: #FBF6EF;\n    color: #333333;\n    border-color: #AF6C67;\n  }\n\n  .gb-style-badge__icon {\n    width: 15px;\n    height: 15px;\n    display: inline-flex;\n    flex-shrink: 0;\n  }\n\n  .gb-style-badge__icon svg {\n    width: 100%;\n    height: 100%;\n    display: block;\n    stroke: currentColor;\n  }\n\n  @media screen and (max-width: 749px) {\n    .gb-badges-container {\n      gap: 6px;\n      padding-bottom: 0;\n      margin-bottom: -2px;\n    }\n\n    .gb-style-badge {\n      padding: 6px 13px;\n      min-height: 30px;\n      border-radius: 10px;\n      font-size: 10.5px;\n      border-width: 1.4px;\n      gap: 5px;\n    }\n\n    .gb-style-badge__icon {\n      width: 14px;\n      height: 14px;\n    }\n  }\n</style>\n\n<div class=\"gb-badges-container\">\n  <div class=\"gb-style-badge gb-style-badge--bestseller\">\n    Best Seller\n  </div>\n\n  <div class=\"gb-style-badge gb-style-badge--evolutif\">\n    <span class=\"gb-style-badge__icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n        <path d=\"M7 8.5V7C7 4.8 8.8 3 11 3H13C15.2 3 17 4.8 17 7V8.5\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n        <path d=\"M6.5 8.5H17.5C18.6 8.5 19.5 9.4 19.5 10.5V18.5C19.5 19.6 18.6 20.5 17.5 20.5H6.5C5.4 20.5 4.5 19.6 4.5 18.5V10.5C4.5 9.4 5.4 8.5 6.5 8.5Z\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/>\n        <path d=\"M8 13.5H16\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n        <path d=\"M12 10.5V16.5\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n      </svg>\n    </span>\n    Sac évolutif\n  </div>\n</div>"
           }
@@ -140,6 +141,7 @@
         },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -150,6 +152,7 @@
         },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -160,6 +163,7 @@
         },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -170,6 +174,7 @@
         },
         "liquid_7PLJAn": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "<div id='ss-product-videos'></div>"
           }
@@ -279,6 +284,7 @@
         "image_DVxrBH",
         "image_78Tjqg"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
@@ -359,6 +365,7 @@
         "review_item_YAT8UW",
         "review_item_FyV4Br"
       ],
+      "disabled": true,
       "name": "Avis parents carousel",
       "settings": {
         "show_header": true,
@@ -455,6 +462,7 @@
         "pastille_VK8hn9",
         "pastille_xacKVt"
       ],
+      "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
@@ -560,6 +568,7 @@
         "icon_43MEdK",
         "icon_iNqmJ9"
       ],
+      "disabled": true,
       "name": "Clean icônes",
       "settings": {
         "title": "Le sac intelligent qui pense à tout !",
@@ -673,6 +682,7 @@
         "marquee_item_PGEcxn",
         "marquee_item_7XteVb"
       ],
+      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fbf6ef",
@@ -741,6 +751,7 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
+      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -796,6 +807,7 @@
         "pastille_c6PkmD",
         "pastille_GEDQqY"
       ],
+      "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
@@ -901,6 +913,7 @@
         "benefit_J8aV6U",
         "benefit_BqnDgY"
       ],
+      "disabled": true,
       "name": "Avantages icônes",
       "settings": {
         "title": "Vous allez adorer le sac O’CAOU parce que...",
@@ -950,6 +963,7 @@
     },
     "30retours_YLhBEm": {
       "type": "30retours",
+      "disabled": true,
       "name": "Bannière garantie produit",
       "settings": {
         "title": "Retours Faciles sous 14 Jours ",
@@ -1339,6 +1353,7 @@
         "item_V4a3MT",
         "item_EYfz3a"
       ],
+      "disabled": true,
       "name": "FAQ",
       "settings": {
         "full_width": true,
@@ -1560,6 +1575,7 @@
         "video_EWCWpz",
         "video_YgwTmQ"
       ],
+      "disabled": true,
       "name": "Customify - Product Videos",
       "settings": {
         "videos_position": "above_description",
