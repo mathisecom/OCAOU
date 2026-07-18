@@ -288,18 +288,18 @@
             "link": ""
           }
         },
-        "carte_HRQYa9": {
+        "carte_pCQgxk": {
           "type": "carte",
           "settings": {
-            "label": "Crèche & Maternelle",
+            "label": "Pour maman",
             "collection": "",
             "link": ""
           }
         },
-        "carte_CwnzDJ": {
+        "carte_HRQYa9": {
           "type": "carte",
           "settings": {
-            "label": "Sorties",
+            "label": "Crèche & Maternelle",
             "collection": "",
             "link": ""
           }
@@ -312,10 +312,10 @@
             "link": ""
           }
         },
-        "carte_pCQgxk": {
+        "carte_CwnzDJ": {
           "type": "carte",
           "settings": {
-            "label": "Pour maman",
+            "label": "Sorties",
             "collection": "",
             "link": ""
           }
@@ -331,10 +331,10 @@
       },
       "block_order": [
         "carte_Y7LJak",
-        "carte_HRQYa9",
-        "carte_CwnzDJ",
-        "carte_VRxatd",
         "carte_pCQgxk",
+        "carte_HRQYa9",
+        "carte_VRxatd",
+        "carte_CwnzDJ",
         "carte_PqKnFx"
       ],
       "name": "Grille de collections",
