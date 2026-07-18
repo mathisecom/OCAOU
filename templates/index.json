@@ -301,7 +301,7 @@
         "carte_HRQYa9": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/ADS_IMAGE_1.jpg",
+            "image": "shopify://shop_images/pour_lecole_2.jpg",
             "label": "Crèche & Maternelle",
             "collection": "creches-maternelle",
             "link": ""
@@ -310,7 +310,7 @@
         "carte_VRxatd": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/ADS_IMAGE_2.jpg",
+            "image": "shopify://shop_images/ocaou-pour-pique-niquer.jpg",
             "label": "Repas",
             "collection": "repas",
             "link": ""
