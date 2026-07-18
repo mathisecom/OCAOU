@@ -283,6 +283,7 @@
         "carte_Y7LJak": {
           "type": "carte",
           "settings": {
+            "image": "shopify://shop_images/ADS_IMAGE.jpg",
             "label": "Naissance",
             "collection": "naissance",
             "link": ""
