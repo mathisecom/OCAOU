@@ -292,6 +292,7 @@
         "carte_pCQgxk": {
           "type": "carte",
           "settings": {
+            "image": "shopify://shop_images/Newborn_homepage_block_20260706.webp",
             "label": "Pour maman",
             "collection": "pour-maman",
             "link": ""
@@ -300,6 +301,7 @@
         "carte_HRQYa9": {
           "type": "carte",
           "settings": {
+            "image": "shopify://shop_images/ADS_IMAGE_1.jpg",
             "label": "Crèche & Maternelle",
             "collection": "creches-maternelle",
             "link": ""
