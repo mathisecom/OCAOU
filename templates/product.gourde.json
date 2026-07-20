@@ -712,6 +712,7 @@
         "benefit_6jE3Lc": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_3.png",
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "SOUPLE",
@@ -721,6 +722,7 @@
         "benefit_h4bTWg": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_4.png",
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
             "title": "PRATIQUE",
@@ -730,6 +732,7 @@
         "benefit_Lpj498": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_6.png",
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
             "title": "HYGIÈNE",
@@ -739,6 +742,7 @@
         "benefit_J8aV6U": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_7.png",
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
             "title": "PROTECTION",
