@@ -799,6 +799,106 @@
         "side_padding_mobile": 14
       }
     },
+    "ocacoufriseage_LWBwAr": {
+      "type": "ocacoufriseage",
+      "blocks": {
+        "etape_ynWtgx": {
+          "type": "etape",
+          "settings": {
+            "emoji": "🍼",
+            "label": "À 2 ans",
+            "text": "Il apprend à boire tout seul"
+          }
+        },
+        "etape_WRjKyq": {
+          "type": "etape",
+          "settings": {
+            "emoji": "🎒",
+            "label": "À 3 ans",
+            "text": "Elle l'accompagne à la maternelle"
+          }
+        },
+        "etape_CHTXfE": {
+          "type": "etape",
+          "settings": {
+            "emoji": "⚽",
+            "label": "À 5 ans",
+            "text": "Elle hydrate au sport"
+          }
+        },
+        "etape_ptFAHG": {
+          "type": "etape",
+          "settings": {
+            "emoji": "✈️",
+            "label": "À 6 ans",
+            "text": "Elle voyage avec lui"
+          }
+        }
+      },
+      "block_order": [
+        "etape_ynWtgx",
+        "etape_WRjKyq",
+        "etape_CHTXfE",
+        "etape_ptFAHG"
+      ],
+      "name": "Frise des âges",
+      "settings": {
+        "eyebrow": "Pensée pour durer",
+        "eyebrow_color": "#BC4A33",
+        "eyebrow_size": 13,
+        "eyebrow_size_mobile": 11,
+        "eyebrow_margin_bottom": 12,
+        "title": "Une gourde pensée pour grandir avec votre enfant",
+        "title_color": "#3A2C22",
+        "title_size": 34,
+        "title_size_mobile": 22,
+        "title_margin_bottom": 56,
+        "title_margin_bottom_mobile": 36,
+        "timeline_max_width": 900,
+        "columns_mobile": 2,
+        "col_gap": 10,
+        "col_gap_mobile": 14,
+        "row_gap_mobile": 30,
+        "timeline_margin_bottom": 44,
+        "timeline_margin_bottom_mobile": 24,
+        "line_color": "#BC4A33",
+        "line_opacity": 40,
+        "line_thickness": 2,
+        "line_inset": 10,
+        "hide_line_mobile": true,
+        "dot_bg": "#FFFFFF",
+        "dot_border_color": "#F3DDD3",
+        "dot_border_hover_color": "#BC4A33",
+        "dot_border_width": 3,
+        "dot_size": 80,
+        "dot_size_mobile": 68,
+        "icon_size": 32,
+        "icon_size_mobile": 26,
+        "dot_margin_bottom": 14,
+        "dot_margin_bottom_mobile": 10,
+        "label_color": "#BC4A33",
+        "label_size": 16,
+        "label_size_mobile": 14,
+        "text_color": "#6B5A4C",
+        "text_size": 13,
+        "text_size_mobile": 12,
+        "slogan": "Une seule gourde. Des centaines d'aventures.",
+        "slogan_color": "#3A2C22",
+        "slogan_accent_color": "#E86A4B",
+        "slogan_size": 22,
+        "slogan_size_mobile": 18,
+        "bg_color": "#FCF9F5",
+        "max_width": 1160,
+        "section_radius": 40,
+        "section_radius_mobile": 24,
+        "side_margin": 22,
+        "side_margin_mobile": 10,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
     "bandedefilante_6mBxhe": {
       "type": "bandedefilante",
       "blocks": {
@@ -837,6 +937,7 @@
         "marquee_item_PGEcxn",
         "marquee_item_7XteVb"
       ],
+      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fbf6ef",
@@ -1593,6 +1694,7 @@
     "sectionsicones_Y3DFyV",
     "multi_column_FnzMQb",
     "avantageicons_k7faYm",
+    "ocacoufriseage_LWBwAr",
     "bandedefilante_6mBxhe",
     "rich_text_WCLrEr",
     "logoscroll_Lyixnk",
