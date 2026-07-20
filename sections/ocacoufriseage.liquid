@@ -1,0 +1,647 @@
+{% comment %}
+================================================================
+  SECTION O'CAOU — Frise / Timeline "pensée pour durer"
+  À placer dans : sections/ocaou-frise-ages.liquid
+
+  ▸ Sur-titre + titre + slogan final (2 couleurs)
+  ▸ Étapes en blocs : icône (emoji), année, texte —
+    ajoutez/retirez/réordonnez librement
+  ▸ Ligne pointillée reliant les étapes (PC), masquée
+    proprement sur mobile
+  ▸ Tout est modifiable : textes, tailles, couleurs,
+    espacements, PC & mobile séparément
+
+  INSTALLATION :
+  1. Modifier le code > sections > Ajouter une nouvelle section
+  2. Nommer : ocaou-frise-ages  (.liquid)
+  3. Coller ce fichier, enregistrer
+  4. Personnaliser > Ajouter une section > "Frise des âges"
+================================================================
+{% endcomment %}
+
+{%- liquid
+  assign s = section.settings
+  assign uid = section.id
+-%}
+
+<style>
+  #frise-{{ uid }} {
+    background: {{ s.bg_color }};
+    padding: {{ s.padding_top }}px 0 {{ s.padding_bottom }}px;
+    border-radius: {{ s.section_radius }}px;
+    margin: 0 {{ s.side_margin }}px;
+  }
+  #frise-{{ uid }} .frise-inner {
+    max-width: {{ s.max_width }}px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  #frise-{{ uid }} .frise-eyebrow {
+    display: block;
+    text-align: center;
+    font-size: {{ s.eyebrow_size }}px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: {{ s.eyebrow_color }};
+    margin: 0 0 {{ s.eyebrow_margin_bottom }}px;
+  }
+  #frise-{{ uid }} .frise-title {
+    text-align: center;
+    font-size: {{ s.title_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: {{ s.title_color }};
+    margin: 0 0 {{ s.title_margin_bottom }}px;
+  }
+
+  #frise-{{ uid }} .frise-timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat({{ section.blocks.size }}, 1fr);
+    gap: {{ s.col_gap }}px;
+    max-width: {{ s.timeline_max_width }}px;
+    margin: 0 auto {{ s.timeline_margin_bottom }}px;
+  }
+  #frise-{{ uid }} .frise-timeline::before {
+    content: "";
+    position: absolute;
+    top: {{ s.dot_size | divided_by: 2 }}px;
+    left: {{ s.line_inset }}%;
+    right: {{ s.line_inset }}%;
+    border-top: {{ s.line_thickness }}px dashed {{ s.line_color }};
+    opacity: {{ s.line_opacity | divided_by: 100.0 }};
+    z-index: 0;
+  }
+
+  #frise-{{ uid }} .frise-step {
+    text-align: center;
+    position: relative;
+    padding: 0 6px;
+  }
+  #frise-{{ uid }} .frise-dot {
+    width: {{ s.dot_size }}px;
+    height: {{ s.dot_size }}px;
+    margin: 0 auto {{ s.dot_margin_bottom }}px;
+    border-radius: 50%;
+    background: {{ s.dot_bg }};
+    border: {{ s.dot_border_width }}px solid {{ s.dot_border_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ s.icon_size }}px;
+    position: relative;
+    z-index: 1;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  #frise-{{ uid }} .frise-step:hover .frise-dot {
+    transform: scale(1.1) rotate(-4deg);
+    border-color: {{ s.dot_border_hover_color }};
+  }
+  #frise-{{ uid }} .frise-dot img {
+    width: 62%;
+    height: 62%;
+    object-fit: contain;
+    border-radius: 0;
+  }
+
+  #frise-{{ uid }} .frise-label {
+    font-size: {{ s.label_size }}px;
+    font-weight: 700;
+    color: {{ s.label_color }};
+    margin: 0 0 4px;
+  }
+  #frise-{{ uid }} .frise-text {
+    font-size: {{ s.text_size }}px;
+    color: {{ s.text_color }};
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  #frise-{{ uid }} .frise-slogan {
+    text-align: center;
+    font-weight: 700;
+    font-size: {{ s.slogan_size }}px;
+    color: {{ s.slogan_color }};
+    margin: 0;
+  }
+  #frise-{{ uid }} .frise-slogan em {
+    font-style: normal;
+    color: {{ s.slogan_accent_color }};
+  }
+
+  /* ── Responsive mobile ── */
+  @media (max-width: 749px) {
+    #frise-{{ uid }} {
+      padding: {{ s.padding_top_mobile }}px 0 {{ s.padding_bottom_mobile }}px;
+      border-radius: {{ s.section_radius_mobile }}px;
+      margin: 0 {{ s.side_margin_mobile }}px;
+    }
+    #frise-{{ uid }} .frise-eyebrow { font-size: {{ s.eyebrow_size_mobile }}px; }
+    #frise-{{ uid }} .frise-title {
+      font-size: {{ s.title_size_mobile }}px;
+      margin-bottom: {{ s.title_margin_bottom_mobile }}px;
+    }
+    #frise-{{ uid }} .frise-timeline {
+      grid-template-columns: repeat({{ s.columns_mobile }}, 1fr);
+      row-gap: {{ s.row_gap_mobile }}px;
+      column-gap: {{ s.col_gap_mobile }}px;
+      margin-bottom: {{ s.timeline_margin_bottom_mobile }}px;
+    }
+    {% if s.hide_line_mobile %}
+    #frise-{{ uid }} .frise-timeline::before { display: none; }
+    {% endif %}
+    #frise-{{ uid }} .frise-dot {
+      width: {{ s.dot_size_mobile }}px;
+      height: {{ s.dot_size_mobile }}px;
+      font-size: {{ s.icon_size_mobile }}px;
+      margin-bottom: {{ s.dot_margin_bottom_mobile }}px;
+    }
+    #frise-{{ uid }} .frise-label { font-size: {{ s.label_size_mobile }}px; }
+    #frise-{{ uid }} .frise-text { font-size: {{ s.text_size_mobile }}px; }
+    #frise-{{ uid }} .frise-slogan { font-size: {{ s.slogan_size_mobile }}px; }
+  }
+</style>
+
+<div id="frise-{{ uid }}">
+  <div class="frise-inner">
+
+    {% if s.eyebrow != blank %}
+      <span class="frise-eyebrow">{{ s.eyebrow }}</span>
+    {% endif %}
+
+    {% if s.title != blank %}
+      <h2 class="frise-title">{{ s.title }}</h2>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="frise-timeline">
+        {% for block in section.blocks %}
+          <div class="frise-step" {{ block.shopify_attributes }}>
+            <div class="frise-dot">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 100 | image_tag: loading: 'lazy', alt: block.settings.label }}
+              {% elsif block.settings.emoji != blank %}
+                <span aria-hidden="true">{{ block.settings.emoji }}</span>
+              {% endif %}
+            </div>
+            {% if block.settings.label != blank %}
+              <p class="frise-label">{{ block.settings.label }}</p>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <p class="frise-text">{{ block.settings.text }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if s.slogan != blank %}
+      <p class="frise-slogan">{{ s.slogan }}</p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Frise des âges",
+  "tag": "section",
+  "class": "section-ocaou-frise",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "header", "content": "Sur-titre" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "Pensée pour durer"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Couleur",
+      "default": "#BC4A33"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Taille PC",
+      "min": 9, "max": 22, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size_mobile",
+      "label": "Taille mobile",
+      "min": 8, "max": 18, "step": 1, "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_margin_bottom",
+      "label": "Marge sous le sur-titre",
+      "min": 0, "max": 40, "step": 2, "unit": "px",
+      "default": 12
+    },
+
+    { "type": "header", "content": "Titre" },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Une gourde pensée pour grandir avec votre enfant"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur",
+      "default": "#3A2C22"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille PC",
+      "min": 18, "max": 56, "step": 1, "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille mobile",
+      "min": 16, "max": 36, "step": 1, "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Marge sous le titre PC",
+      "min": 0, "max": 100, "step": 2, "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_mobile",
+      "label": "Marge sous le titre mobile",
+      "min": 0, "max": 70, "step": 2, "unit": "px",
+      "default": 36
+    },
+
+    { "type": "header", "content": "Ligne de temps" },
+    {
+      "type": "range",
+      "id": "timeline_max_width",
+      "label": "Largeur maximum de la frise",
+      "min": 400, "max": 1200, "step": 20, "unit": "px",
+      "default": 920
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Colonnes sur mobile",
+      "min": 1, "max": 4, "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "col_gap",
+      "label": "Espace horizontal PC",
+      "min": 0, "max": 60, "step": 2, "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "col_gap_mobile",
+      "label": "Espace horizontal mobile",
+      "min": 0, "max": 40, "step": 2, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "row_gap_mobile",
+      "label": "Espace vertical mobile",
+      "min": 10, "max": 60, "step": 2, "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "timeline_margin_bottom",
+      "label": "Marge sous la frise PC",
+      "min": 0, "max": 100, "step": 2, "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "timeline_margin_bottom_mobile",
+      "label": "Marge sous la frise mobile",
+      "min": 0, "max": 70, "step": 2, "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Couleur du pointillé",
+      "default": "#BC4A33"
+    },
+    {
+      "type": "range",
+      "id": "line_opacity",
+      "label": "Opacité du pointillé (%)",
+      "min": 0, "max": 100, "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "line_thickness",
+      "label": "Épaisseur du pointillé",
+      "min": 1, "max": 6, "step": 1, "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "line_inset",
+      "label": "Retrait du pointillé (%)",
+      "min": 0, "max": 20, "step": 1,
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_line_mobile",
+      "label": "Masquer le pointillé sur mobile",
+      "default": true
+    },
+
+    { "type": "header", "content": "Icônes / ronds" },
+    {
+      "type": "color",
+      "id": "dot_bg",
+      "label": "Fond du rond",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "dot_border_color",
+      "label": "Bordure du rond",
+      "default": "#F3DDD3"
+    },
+    {
+      "type": "color",
+      "id": "dot_border_hover_color",
+      "label": "Bordure au survol",
+      "default": "#BC4A33"
+    },
+    {
+      "type": "range",
+      "id": "dot_border_width",
+      "label": "Épaisseur de la bordure",
+      "min": 0, "max": 6, "step": 1, "unit": "px",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "dot_size",
+      "label": "Taille du rond PC",
+      "min": 40, "max": 140, "step": 2, "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "dot_size_mobile",
+      "label": "Taille du rond mobile",
+      "min": 36, "max": 110, "step": 2, "unit": "px",
+      "default": 68
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille de l'émoji PC",
+      "min": 14, "max": 60, "step": 1, "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Taille de l'émoji mobile",
+      "min": 12, "max": 50, "step": 1, "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "dot_margin_bottom",
+      "label": "Marge sous le rond PC",
+      "min": 0, "max": 40, "step": 1, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "dot_margin_bottom_mobile",
+      "label": "Marge sous le rond mobile",
+      "min": 0, "max": 30, "step": 1, "unit": "px",
+      "default": 10
+    },
+
+    { "type": "header", "content": "Textes des étapes" },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Couleur de l'année",
+      "default": "#BC4A33"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Taille de l'année PC",
+      "min": 10, "max": 26, "step": 1, "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "label_size_mobile",
+      "label": "Taille de l'année mobile",
+      "min": 10, "max": 22, "step": 1, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#6B5A4C"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille du texte PC",
+      "min": 9, "max": 22, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Taille du texte mobile",
+      "min": 9, "max": 18, "step": 1, "unit": "px",
+      "default": 12
+    },
+
+    { "type": "header", "content": "Slogan final" },
+    {
+      "type": "text",
+      "id": "slogan",
+      "label": "Slogan",
+      "info": "Mettez le texte à mettre en accent entre <em>...</em>. Ex : Une seule gourde. <em>Des centaines d'aventures.</em>",
+      "default": "Une seule gourde. <em>Des centaines d'aventures.</em>"
+    },
+    {
+      "type": "color",
+      "id": "slogan_color",
+      "label": "Couleur principale",
+      "default": "#3A2C22"
+    },
+    {
+      "type": "color",
+      "id": "slogan_accent_color",
+      "label": "Couleur accent",
+      "default": "#E86A4B"
+    },
+    {
+      "type": "range",
+      "id": "slogan_size",
+      "label": "Taille PC",
+      "min": 14, "max": 34, "step": 1, "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "slogan_size_mobile",
+      "label": "Taille mobile",
+      "min": 13, "max": 26, "step": 1, "unit": "px",
+      "default": 17
+    },
+
+    { "type": "header", "content": "Fond et espacements" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fond de la section",
+      "default": "#F4EBDD"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximum du contenu",
+      "min": 700, "max": 1400, "step": 20, "unit": "px",
+      "default": 1160
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Arrondi de la section PC",
+      "min": 0, "max": 80, "step": 2, "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_radius_mobile",
+      "label": "Arrondi de la section mobile",
+      "min": 0, "max": 60, "step": 2, "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "side_margin",
+      "label": "Marge latérale PC",
+      "min": 0, "max": 60, "step": 2, "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "side_margin_mobile",
+      "label": "Marge latérale mobile",
+      "min": 0, "max": 30, "step": 2, "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espace au-dessus PC",
+      "min": 0, "max": 140, "step": 4, "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espace en dessous PC",
+      "min": 0, "max": 140, "step": 4, "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Espace au-dessus mobile",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Espace en dessous mobile",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "etape",
+      "name": "Étape",
+      "settings": [
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Émoji (prioritaire)",
+          "info": "Collez un émoji, ex : 🍼. Laissez vide pour utiliser une image."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (si pas d'émoji)"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Année / étape",
+          "default": "À 2 ans"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Il apprend à boire tout seul"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Frise des âges",
+      "blocks": [
+        {
+          "type": "etape",
+          "settings": { "emoji": "🍼", "label": "À 2 ans", "text": "Il apprend à boire tout seul" }
+        },
+        {
+          "type": "etape",
+          "settings": { "emoji": "🎒", "label": "À 3 ans", "text": "Elle l'accompagne à la maternelle" }
+        },
+        {
+          "type": "etape",
+          "settings": { "emoji": "⚽", "label": "À 5 ans", "text": "Elle hydrate au sport" }
+        },
+        {
+          "type": "etape",
+          "settings": { "emoji": "✈️", "label": "À 6 ans", "text": "Elle voyage avec lui" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
