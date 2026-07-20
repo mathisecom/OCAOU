@@ -912,7 +912,7 @@
         "title_margin_bottom_mobile": 44,
         "full_width": false,
         "max_width": 1200,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "columns_mobile": 2,
         "column_gap_desktop": 56,
         "row_gap_desktop": 30,
