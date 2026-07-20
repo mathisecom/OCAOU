@@ -114,6 +114,14 @@
     gap: 14px;
     font-size: {{ s.emoji_size }}px;
     margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  #coffrets-{{ uid }} .cof-visu img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   #coffrets-{{ uid }} .cof-name {
@@ -271,9 +279,13 @@
           {% endif %}
 
           <div class="cof-visu">
-            {% if block.settings.emoji1 != blank %}<span>{{ block.settings.emoji1 }}</span>{% endif %}
-            {% if block.settings.emoji2 != blank %}<span>{{ block.settings.emoji2 }}</span>{% endif %}
-            {% if block.settings.emoji3 != blank %}<span>{{ block.settings.emoji3 }}</span>{% endif %}
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', alt: block.settings.titre }}
+            {% else %}
+              {% if block.settings.emoji1 != blank %}<span>{{ block.settings.emoji1 }}</span>{% endif %}
+              {% if block.settings.emoji2 != blank %}<span>{{ block.settings.emoji2 }}</span>{% endif %}
+              {% if block.settings.emoji3 != blank %}<span>{{ block.settings.emoji3 }}</span>{% endif %}
+            {% endif %}
           </div>
 
           <h3 class="cof-name">{{ block.settings.titre }}</h3>
@@ -885,10 +897,16 @@
           "label": "Composition (optionnel)",
           "info": "Laissez vide pour générer automatiquement à partir des produits choisis ci-dessous."
         },
-        { "type": "header", "content": "Émojis du visuel" },
-        { "type": "text", "id": "emoji1", "label": "Émoji 1", "default": "🧸" },
-        { "type": "text", "id": "emoji2", "label": "Émoji 2", "default": "🛏️" },
-        { "type": "text", "id": "emoji3", "label": "Émoji 3", "default": "💡" },
+        { "type": "header", "content": "Visuel du coffret" },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Si une image est choisie, elle remplace les émojis ci-dessous."
+        },
+        { "type": "text", "id": "emoji1", "label": "Émoji 1 (si pas d'image)", "default": "🧸" },
+        { "type": "text", "id": "emoji2", "label": "Émoji 2 (si pas d'image)", "default": "🛏️" },
+        { "type": "text", "id": "emoji3", "label": "Émoji 3 (si pas d'image)", "default": "💡" },
         { "type": "header", "content": "Produits du coffret" },
         {
           "type": "product",
