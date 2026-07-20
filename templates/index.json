@@ -943,6 +943,148 @@
         "side_padding_mobile": 14
       }
     },
+    "ocaoujaibesoin_bxqEpT": {
+      "type": "ocaoujaibesoin",
+      "blocks": {
+        "message_DnBDHi": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où il a soif",
+            "icon": "🥤",
+            "icon_position": "right",
+            "background_color": "#f7ddd5",
+            "text_color": "#2D2926",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 28,
+            "rotation": -1
+          }
+        },
+        "message_ydHNfC": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où il a faim",
+            "icon": "🍎",
+            "icon_position": "right",
+            "background_color": "#faedc4",
+            "text_color": "#2D2926",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 28,
+            "rotation": 1
+          }
+        },
+        "message_YrrFYK": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où il a froid",
+            "icon": "🧣",
+            "icon_position": "right",
+            "background_color": "#cfe7ec",
+            "text_color": "#2D2926",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 28,
+            "rotation": -1
+          }
+        },
+        "message_xNdDBV": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où il a peur",
+            "icon": "💡",
+            "icon_position": "right",
+            "background_color": "#fbe9c9",
+            "text_color": "#2D2926",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 28,
+            "rotation": 1
+          }
+        },
+        "message_wxwVYP": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où c'est chaud",
+            "icon": "🔥",
+            "icon_position": "right",
+            "background_color": "#f6dad5",
+            "text_color": "#2D2926",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 28,
+            "rotation": -1
+          }
+        },
+        "message_fJmXEA": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où c'est froid",
+            "icon": "❄️",
+            "icon_position": "right",
+            "background_color": "#d9efeb",
+            "text_color": "#2D2926",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 28,
+            "rotation": 1
+          }
+        },
+        "message_fgU8Pa": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où ça coule",
+            "icon": "💧",
+            "icon_position": "right",
+            "background_color": "#f1ddd8",
+            "text_color": "#2D2926",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 28,
+            "rotation": -1
+          }
+        }
+      },
+      "block_order": [
+        "message_DnBDHi",
+        "message_ydHNfC",
+        "message_YrrFYK",
+        "message_xNdDBV",
+        "message_wxwVYP",
+        "message_fJmXEA",
+        "message_fgU8Pa"
+      ],
+      "name": "Notre histoire O'CAOU",
+      "settings": {
+        "eyebrow": "NOTRE HISTOIRE",
+        "title": "Pourquoi O'CAOU ?",
+        "heading_tag": "h2",
+        "subtitle": "Parce qu'on le dit 10 fois par jour !",
+        "intro_text": "<p>Parce qu'être parent, c'est penser à tout :</p>",
+        "transition_text": "<p>Parce qu'on veut du bien à nos enfants, qu'ils soient bien. Être parent, c'est beaucoup : ranger, anticiper, s'organiser.</p>",
+        "challenge_prefix": "Le plus grand défi ?",
+        "challenge_highlight": "NE RIEN OUBLIER !",
+        "main_text": "<p>Alors <strong>O'CAOU prévoit, pour vous et vos petits.</strong> O'CAOU imagine des essentiels pratiques et ludiques qui accompagnent les familles de la maternité à la maternelle. Des accessoires pour être parés à toutes les éventualités : avec O'CAOU, vous aurez des solutions pour tous les imprévus du quotidien.</p>",
+        "final_text": "<p>Des étiquettes partout pour guider, pour vous soulager. Les petits gagnent en autonomie : <strong>ils lisent en rangeant</strong> et préparent leurs affaires tout seuls, comme des grands.</p>",
+        "text_alignment": "center",
+        "content_width": 900,
+        "chips_width": 760,
+        "mobile_chip_columns": "1",
+        "chip_gap": 14,
+        "background_color": "#FFFFFF",
+        "text_color": "#2D2926",
+        "title_color": "#2D2926",
+        "accent_color": "#BC4A33",
+        "title_size": 38,
+        "title_size_mobile": 30,
+        "subtitle_size": 19,
+        "body_size": 14,
+        "padding_top": 64,
+        "padding_bottom": 72,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 48
+      }
+    },
     "30retours_rDewFa": {
       "type": "30retours",
       "name": "Bannière garantie produit",
@@ -1231,6 +1373,7 @@
     "avisparents_9fPrRY",
     "sectionsicones_JdQXN9",
     "avantageicons_9NE3Mb",
+    "ocaoujaibesoin_bxqEpT",
     "30retours_rDewFa",
     "instagram_gw8WKA",
     "faq"
