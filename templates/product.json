@@ -894,6 +894,15 @@
             "title": "CONFORT",
             "text": "Léger facile à porter, compact et moletonné"
           }
+        },
+        "benefit_RyBCLy": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "ERGONOMIQUE",
+            "text": "Un sac pensé pour simplifier les sorties, l’école et les activités."
+          }
         }
       },
       "block_order": [
@@ -901,7 +910,8 @@
         "benefit_h4bTWg",
         "benefit_Lpj498",
         "benefit_J8aV6U",
-        "benefit_BqnDgY"
+        "benefit_BqnDgY",
+        "benefit_RyBCLy"
       ],
       "name": "Avantages icônes",
       "settings": {
