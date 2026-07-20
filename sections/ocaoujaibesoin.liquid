@@ -53,7 +53,7 @@
             {% when 'full' %}
               {% assign chip_basis = 100 %}
             {% else %}
-              {% assign chip_basis = 240 %}
+              {% assign chip_basis = 220 %}
           {% endcase %}
 
           <div
@@ -180,23 +180,33 @@
   }
 
   .ocaou-story__chips {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
-    gap: var(--ocaou-chip-gap);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    column-gap: var(--ocaou-chip-gap);
+    row-gap: var(--ocaou-chip-gap);
     width: min(100%, var(--ocaou-chips-width));
     margin: 18px auto 34px;
   }
 
+  /*
+    Disposition ordinateur :
+    3 pastilles sur la première ligne,
+    3 pastilles sur la deuxième,
+    puis la dernière exactement au centre.
+  */
+  .ocaou-story__chip:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+
   .ocaou-story--left .ocaou-story__chips {
-    justify-content: flex-start;
     margin-left: 0;
   }
 
   .ocaou-story__chip {
     display: inline-flex;
-    flex: 0 1 var(--chip-basis, 240px);
+    width: min(100%, var(--chip-basis, 220px));
     align-items: center;
     justify-content: center;
     min-height: 52px;
@@ -214,7 +224,8 @@
   }
 
   .ocaou-story__chip--full {
-    flex-basis: 100%;
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .ocaou-story__chip--icon-left {
@@ -303,19 +314,43 @@
       gap: max(10px, calc(var(--ocaou-chip-gap) - 4px));
     }
 
-    .ocaou-story--mobile-1 .ocaou-story__chip {
-      flex-basis: 100%;
-      max-width: 430px;
+    .ocaou-story--mobile-1 .ocaou-story__chips {
+      grid-template-columns: minmax(0, 1fr);
     }
 
-    .ocaou-story--mobile-2 .ocaou-story__chip:not(.ocaou-story__chip--full) {
-      flex-basis: calc(50% - (var(--ocaou-chip-gap) / 2));
+    .ocaou-story--mobile-1 .ocaou-story__chip,
+    .ocaou-story--mobile-1 .ocaou-story__chip:last-child:nth-child(3n + 1) {
+      grid-column: 1;
+      width: min(100%, 430px);
+    }
+
+    .ocaou-story--mobile-2 .ocaou-story__chips {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ocaou-story--mobile-2 .ocaou-story__chip {
+      width: 100%;
+    }
+
+    /*
+      En mode mobile 2 colonnes, une dernière pastille seule
+      est centrée sous les autres.
+    */
+    .ocaou-story--mobile-2 .ocaou-story__chip:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      width: calc(50% - (var(--ocaou-chip-gap) / 4));
+      justify-self: center;
     }
 
     .ocaou-story__chip {
       min-height: 48px;
       padding: 11px 14px;
       transform: none;
+    }
+
+    .ocaou-story__chip--full {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
     }
 
     .ocaou-story__challenge {
