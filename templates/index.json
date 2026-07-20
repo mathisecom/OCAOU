@@ -525,7 +525,7 @@
         "section_radius_mobile": 24,
         "side_margin": 22,
         "side_margin_mobile": 10,
-        "margin_bottom": 0,
+        "margin_bottom": 80,
         "margin_bottom_mobile": 40,
         "padding_top": 64,
         "padding_bottom": 64,
