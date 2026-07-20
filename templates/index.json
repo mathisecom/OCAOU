@@ -731,13 +731,24 @@
             "title": "DÉPERLANT",
             "text": "O’CAOU il pleut…revêtement extérieur et intérieur déperlant"
           }
+        },
+        "benefit_xpPJ8M": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_430x_a68f05be-4066-4bad-982e-5e94e5dc1870.png",
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "CONFORT",
+            "text": "Léger facile à porter, compact et molletonné"
+          }
         }
       },
       "block_order": [
         "benefit_3FhiFX",
         "benefit_DEAXEw",
         "benefit_nA8ApQ",
-        "benefit_FtDVLR"
+        "benefit_FtDVLR",
+        "benefit_xpPJ8M"
       ],
       "name": "Avantages icônes",
       "settings": {
