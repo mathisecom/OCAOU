@@ -1,0 +1,952 @@
+{% comment %}
+================================================================
+  SECTION O'CAOU — Les coffrets (page d'accueil)
+  À placer dans : sections/ocaou-coffrets.liquid
+
+  ▸ Fond sombre, cartes coffrets avec badge, visuel à pois
+    + émojis, prix barré / prix coffret
+  ▸ Chaque coffret = 1 bloc, jusqu'à 3 produits liés
+  ▸ Le bouton "Offrir ce coffret" AJOUTE TOUS LES PRODUITS
+    du coffret au panier en un clic (AJAX, sans rechargement)
+  ▸ Le prix barré est calculé automatiquement à partir des
+    vrais prix Shopify des produits choisis ; le prix coffret
+    (remisé) se saisit manuellement
+  ▸ Tout est modifiable : textes, couleurs, tailles PC/mobile,
+    nombre de colonnes, émojis, produits liés
+
+  INSTALLATION :
+  1. Modifier le code > sections > Ajouter une nouvelle section
+  2. Nommer : ocaou-coffrets  (.liquid)
+  3. Coller ce fichier, enregistrer
+  4. Personnaliser (page d'accueil) > Ajouter une section
+     > "Les coffrets O'CAOU"
+  5. Dans chaque bloc "Coffret", choisissez les 2-3 produits
+     qui le composent (ex : Doudou + Couverture + Veilleuse)
+
+  ⚠️ Pour que le prix coffret s'applique réellement au
+  paiement (et pas seulement à l'affichage), créez dans
+  Admin > Réductions une réduction automatique par coffret
+  (condition "achète X et Y et Z" > montant remisé).
+================================================================
+{% endcomment %}
+
+{%- liquid
+  assign s = section.settings
+  assign uid = section.id
+-%}
+
+<style>
+  #coffrets-{{ uid }} {
+    background: {{ s.bg_color }};
+    border-radius: {{ s.section_radius }}px;
+    margin: 0 {{ s.side_margin }}px;
+    padding: {{ s.padding_top }}px 0 {{ s.padding_bottom }}px;
+  }
+  #coffrets-{{ uid }} .cof-inner {
+    max-width: {{ s.max_width }}px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  #coffrets-{{ uid }} .cof-eyebrow {
+    display: block;
+    text-align: center;
+    font-size: {{ s.eyebrow_size }}px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: {{ s.eyebrow_color }};
+    margin: 0 0 {{ s.eyebrow_margin_bottom }}px;
+  }
+  #coffrets-{{ uid }} .cof-title {
+    text-align: center;
+    font-size: {{ s.title_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: {{ s.title_color }};
+    margin: 0 0 {{ s.subtitle_margin_top }}px;
+  }
+  #coffrets-{{ uid }} .cof-subtitle {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto {{ s.subtitle_margin_bottom }}px;
+    font-size: {{ s.subtitle_size }}px;
+    color: {{ s.subtitle_color }};
+    line-height: 1.55;
+  }
+
+  #coffrets-{{ uid }} .cof-grid {
+    display: grid;
+    grid-template-columns: repeat({{ s.columns_desktop }}, minmax(0,1fr));
+    gap: {{ s.col_gap }}px;
+    align-items: stretch;
+  }
+
+  #coffrets-{{ uid }} .cof-card {
+    background: {{ s.card_bg }};
+    border-radius: {{ s.card_radius }}px;
+    padding: {{ s.card_padding }}px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  #coffrets-{{ uid }} .cof-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    background: {{ s.badge_bg }};
+    color: {{ s.badge_color }};
+    font-weight: 700;
+    font-size: {{ s.badge_size }}px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  #coffrets-{{ uid }} .cof-visu {
+    border-radius: {{ s.visu_radius }}px;
+    background:
+      radial-gradient(circle, rgba(255,255,255,.9) 0 3px, transparent 4px) 0 0 / 26px 26px,
+      {{ s.visu_bg }};
+    height: {{ s.visu_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: {{ s.emoji_size }}px;
+    margin-bottom: 20px;
+  }
+
+  #coffrets-{{ uid }} .cof-name {
+    font-size: {{ s.card_title_size }}px;
+    font-weight: 700;
+    color: {{ s.card_title_color }};
+    margin: 0 0 6px;
+  }
+  #coffrets-{{ uid }} .cof-compo {
+    font-size: {{ s.compo_size }}px;
+    color: {{ s.compo_color }};
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+
+  #coffrets-{{ uid }} .cof-prices {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  #coffrets-{{ uid }} .cof-prices s {
+    font-size: {{ s.price_old_size }}px;
+    color: {{ s.price_old_color }};
+  }
+  #coffrets-{{ uid }} .cof-prices .now {
+    font-size: {{ s.price_new_size }}px;
+    font-weight: 800;
+    color: {{ s.price_new_color }};
+  }
+
+  #coffrets-{{ uid }} .cof-gift {
+    font-size: {{ s.gift_size }}px;
+    font-weight: 700;
+    color: {{ s.gift_color }};
+    margin: 0 0 18px;
+  }
+
+  #coffrets-{{ uid }} .cof-btn {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: {{ s.btn_bg }};
+    color: {{ s.btn_color }};
+    font-weight: 700;
+    font-size: {{ s.btn_size }}px;
+    padding: 15px 20px;
+    border-radius: {{ s.btn_radius }}px;
+    transition: opacity .15s ease, transform .15s ease;
+  }
+  #coffrets-{{ uid }} .cof-btn:hover { opacity: .92; transform: translateY(1px); }
+  #coffrets-{{ uid }} .cof-btn.is-added { background: {{ s.btn_added_bg }}; }
+  #coffrets-{{ uid }} .cof-btn:disabled { opacity: .55; cursor: not-allowed; }
+
+  #coffrets-{{ uid }} .cof-more {
+    text-align: center;
+    margin-top: {{ s.footer_margin_top }}px;
+  }
+  #coffrets-{{ uid }} .cof-more a {
+    color: {{ s.footer_link_color }};
+    font-weight: 700;
+    text-decoration: none;
+    font-size: {{ s.footer_size }}px;
+  }
+  #coffrets-{{ uid }} .cof-more a:hover { text-decoration: underline; }
+
+  /* ── Responsive mobile ── */
+  @media (max-width: 749px) {
+    #coffrets-{{ uid }} {
+      border-radius: {{ s.section_radius_mobile }}px;
+      margin: 0 {{ s.side_margin_mobile }}px;
+      padding: {{ s.padding_top_mobile }}px 0 {{ s.padding_bottom_mobile }}px;
+    }
+    #coffrets-{{ uid }} .cof-eyebrow { font-size: {{ s.eyebrow_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-title { font-size: {{ s.title_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-subtitle { font-size: {{ s.subtitle_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-grid {
+      grid-template-columns: repeat({{ s.columns_mobile }}, minmax(0,1fr));
+      gap: {{ s.col_gap_mobile }}px;
+    }
+    #coffrets-{{ uid }} .cof-card { padding: {{ s.card_padding_mobile }}px; }
+    #coffrets-{{ uid }} .cof-visu { height: {{ s.visu_height_mobile }}px; font-size: {{ s.emoji_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-name { font-size: {{ s.card_title_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-compo { font-size: {{ s.compo_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-prices .now { font-size: {{ s.price_new_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-prices s { font-size: {{ s.price_old_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-gift { font-size: {{ s.gift_size_mobile }}px; }
+    #coffrets-{{ uid }} .cof-btn { font-size: {{ s.btn_size_mobile }}px; padding: 13px 18px; }
+  }
+</style>
+
+<div id="coffrets-{{ uid }}">
+  <div class="cof-inner">
+
+    {% if s.eyebrow != blank %}<span class="cof-eyebrow">{{ s.eyebrow }}</span>{% endif %}
+    {% if s.title != blank %}<h2 class="cof-title">{{ s.title }}</h2>{% endif %}
+    {% if s.subtitle != blank %}<p class="cof-subtitle">{{ s.subtitle }}</p>{% endif %}
+
+    <div class="cof-grid">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign v1 = block.settings.produit1.selected_or_first_available_variant
+          assign v2 = block.settings.produit2.selected_or_first_available_variant
+          assign v3 = block.settings.produit3.selected_or_first_available_variant
+
+          assign total = 0
+          assign all_available = true
+          assign ids_json = ''
+
+          if v1 != blank
+            assign total = total | plus: v1.price
+            assign ids_json = ids_json | append: v1.id | append: ','
+            unless v1.available
+              assign all_available = false
+            endunless
+          endif
+          if v2 != blank
+            assign total = total | plus: v2.price
+            assign ids_json = ids_json | append: v2.id | append: ','
+            unless v2.available
+              assign all_available = false
+            endunless
+          endif
+          if v3 != blank
+            assign total = total | plus: v3.price
+            assign ids_json = ids_json | append: v3.id | append: ','
+            unless v3.available
+              assign all_available = false
+            endunless
+          endif
+
+          assign coffret_cents = block.settings.prix_coffret | times: 100 | round
+
+          assign compo_text = block.settings.composition
+          if compo_text == blank
+            assign parts = ''
+            if block.settings.produit1 != blank
+              assign parts = parts | append: block.settings.produit1.title
+            endif
+            if block.settings.produit2 != blank
+              assign parts = parts | append: ' + ' | append: block.settings.produit2.title
+            endif
+            if block.settings.produit3 != blank
+              assign parts = parts | append: ' + ' | append: block.settings.produit3.title
+            endif
+            assign compo_text = parts
+          endif
+        -%}
+
+        <div class="cof-card" {{ block.shopify_attributes }}>
+          {% if block.settings.badge != blank %}
+            <span class="cof-badge">{{ block.settings.badge }}</span>
+          {% endif %}
+
+          <div class="cof-visu">
+            {% if block.settings.emoji1 != blank %}<span>{{ block.settings.emoji1 }}</span>{% endif %}
+            {% if block.settings.emoji2 != blank %}<span>{{ block.settings.emoji2 }}</span>{% endif %}
+            {% if block.settings.emoji3 != blank %}<span>{{ block.settings.emoji3 }}</span>{% endif %}
+          </div>
+
+          <h3 class="cof-name">{{ block.settings.titre }}</h3>
+          {% if compo_text != blank %}<p class="cof-compo">{{ compo_text }}</p>{% endif %}
+
+          <div class="cof-prices">
+            {% if total > coffret_cents %}<s>{{ total | money }}</s>{% endif %}
+            <span class="now">{{ coffret_cents | money }}</span>
+          </div>
+
+          {% if block.settings.avantages != blank %}
+            <p class="cof-gift">{{ block.settings.avantages }}</p>
+          {% endif %}
+
+          {% if ids_json != blank %}
+            <button
+              type="button"
+              class="cof-btn"
+              data-ids="{{ ids_json }}"
+              {% unless all_available %}disabled{% endunless %}>
+              {% if all_available %}
+                {{ block.settings.bouton_texte | default: 'Offrir ce coffret' }}
+              {% else %}
+                Coffret indisponible
+              {% endif %}
+            </button>
+          {% else %}
+            <p style="font-size:12px;opacity:.6">⚠️ Ajoutez les produits de ce coffret dans les réglages du bloc.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if s.footer_text != blank %}
+      <div class="cof-more">
+        <a href="{{ s.footer_link | default: '#' }}">{{ s.footer_text }}</a>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var section = document.getElementById('coffrets-{{ uid }}');
+  if (!section || section.dataset.cofInit) return;
+  section.dataset.cofInit = '1';
+
+  section.querySelectorAll('.cof-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var idsStr = btn.dataset.ids || '';
+      var ids = idsStr.split(',').filter(Boolean).map(function (id) {
+        return { id: parseInt(id, 10), quantity: 1 };
+      });
+      if (!ids.length) return;
+
+      var initial = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Ajout en cours…';
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: ids })
+      })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function () {
+        btn.classList.add('is-added');
+        btn.textContent = '✓ Coffret ajouté au panier';
+        btn.disabled = false;
+        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+        {% if s.redirect_to_cart %}
+        window.location.href = '/cart';
+        {% endif %}
+        setTimeout(function () {
+          btn.classList.remove('is-added');
+          btn.textContent = initial;
+        }, 4000);
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Erreur — réessayez';
+        setTimeout(function () { btn.textContent = initial; }, 3000);
+      });
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Les coffrets O'CAOU",
+  "tag": "section",
+  "class": "section-ocaou-coffrets",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "header", "content": "Comportement" },
+    {
+      "type": "checkbox",
+      "id": "redirect_to_cart",
+      "label": "Rediriger vers le panier après l'ajout",
+      "default": false
+    },
+
+    { "type": "header", "content": "Titres" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "Prêts à offrir"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Les coffrets O'CAOU"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "5 moments, 5 besoins, 5 réponses. Pochon cadeau « O'CAOU c'est pour offrir » et livraison offerts."
+    },
+
+    { "type": "header", "content": "Lien bas de section" },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Texte du lien",
+      "default": "Voir tous les coffrets → Premier repas · Balades"
+    },
+    {
+      "type": "url",
+      "id": "footer_link",
+      "label": "Lien"
+    },
+
+    { "type": "header", "content": "Disposition" },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Colonnes PC",
+      "min": 1, "max": 4, "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Colonnes mobile",
+      "options": [
+        { "value": "1", "label": "1 colonne" },
+        { "value": "2", "label": "2 colonnes" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximum",
+      "min": 800, "max": 1600, "step": 20, "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "col_gap",
+      "label": "Espace entre cartes PC",
+      "min": 8, "max": 60, "step": 2, "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "col_gap_mobile",
+      "label": "Espace entre cartes mobile",
+      "min": 8, "max": 40, "step": 2, "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi des cartes",
+      "min": 0, "max": 40, "step": 2, "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "visu_radius",
+      "label": "Arrondi du visuel",
+      "min": 0, "max": 30, "step": 2, "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Marge interne des cartes PC",
+      "min": 10, "max": 50, "step": 2, "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "label": "Marge interne des cartes mobile",
+      "min": 10, "max": 40, "step": 2, "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "visu_height",
+      "label": "Hauteur du visuel PC",
+      "min": 80, "max": 260, "step": 5, "unit": "px",
+      "default": 135
+    },
+    {
+      "type": "range",
+      "id": "visu_height_mobile",
+      "label": "Hauteur du visuel mobile",
+      "min": 70, "max": 220, "step": 5, "unit": "px",
+      "default": 115
+    },
+    {
+      "type": "range",
+      "id": "emoji_size",
+      "label": "Taille des émojis PC",
+      "min": 16, "max": 60, "step": 1, "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "emoji_size_mobile",
+      "label": "Taille des émojis mobile",
+      "min": 14, "max": 50, "step": 1, "unit": "px",
+      "default": 28
+    },
+
+    { "type": "header", "content": "Couleurs" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fond de la section",
+      "default": "#3A2C22"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Couleur sur-titre",
+      "default": "#E9A94E"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur titre",
+      "default": "#FBF7EF"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Couleur sous-titre",
+      "default": "#CBB9A9"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fond des cartes",
+      "default": "#FBF7EF"
+    },
+    {
+      "type": "color",
+      "id": "visu_bg",
+      "label": "Fond du visuel (pois)",
+      "default": "#F3DDD3"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Fond du badge",
+      "default": "#E9A94E"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Texte du badge",
+      "default": "#3A2C22"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Titre des cartes",
+      "default": "#3A2C22"
+    },
+    {
+      "type": "color",
+      "id": "compo_color",
+      "label": "Texte composition",
+      "default": "#6B5A4C"
+    },
+    {
+      "type": "color",
+      "id": "price_old_color",
+      "label": "Prix barré",
+      "default": "#8A7A6C"
+    },
+    {
+      "type": "color",
+      "id": "price_new_color",
+      "label": "Prix coffret",
+      "default": "#BC4A33"
+    },
+    {
+      "type": "color",
+      "id": "gift_color",
+      "label": "Ligne avantages (cadeau/livraison)",
+      "default": "#4E9A6F"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Fond du bouton",
+      "default": "#BC4A33"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Texte du bouton",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "btn_added_bg",
+      "label": "Bouton après ajout",
+      "default": "#4E9A6F"
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Arrondi du bouton",
+      "min": 0, "max": 40, "step": 2, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "footer_link_color",
+      "label": "Couleur du lien bas de page",
+      "default": "#E9A94E"
+    },
+
+    { "type": "header", "content": "Tailles des textes — PC" },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Sur-titre",
+      "min": 9, "max": 22, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Titre",
+      "min": 20, "max": 56, "step": 1, "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Sous-titre",
+      "min": 12, "max": 24, "step": 1, "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Badge",
+      "min": 9, "max": 18, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Titre des cartes",
+      "min": 14, "max": 30, "step": 1, "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "compo_size",
+      "label": "Composition",
+      "min": 10, "max": 20, "step": 1, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "price_old_size",
+      "label": "Prix barré",
+      "min": 10, "max": 22, "step": 1, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "price_new_size",
+      "label": "Prix coffret",
+      "min": 16, "max": 40, "step": 1, "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "gift_size",
+      "label": "Ligne avantages",
+      "min": 10, "max": 18, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "btn_size",
+      "label": "Bouton",
+      "min": 11, "max": 20, "step": 1, "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "footer_size",
+      "label": "Lien bas de section",
+      "min": 11, "max": 20, "step": 1, "unit": "px",
+      "default": 14
+    },
+
+    { "type": "header", "content": "Tailles des textes — Mobile" },
+    {
+      "type": "range",
+      "id": "eyebrow_size_mobile",
+      "label": "Sur-titre",
+      "min": 8, "max": 18, "step": 1, "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Titre",
+      "min": 18, "max": 40, "step": 1, "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "label": "Sous-titre",
+      "min": 11, "max": 20, "step": 1, "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Titre des cartes",
+      "min": 13, "max": 24, "step": 1, "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "compo_size_mobile",
+      "label": "Composition",
+      "min": 10, "max": 18, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "price_old_size_mobile",
+      "label": "Prix barré",
+      "min": 10, "max": 18, "step": 1, "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "price_new_size_mobile",
+      "label": "Prix coffret",
+      "min": 15, "max": 32, "step": 1, "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "gift_size_mobile",
+      "label": "Ligne avantages",
+      "min": 10, "max": 16, "step": 1, "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "btn_size_mobile",
+      "label": "Bouton",
+      "min": 11, "max": 18, "step": 1, "unit": "px",
+      "default": 14
+    },
+
+    { "type": "header", "content": "Espacements" },
+    {
+      "type": "range",
+      "id": "eyebrow_margin_bottom",
+      "label": "Marge sous sur-titre",
+      "min": 0, "max": 30, "step": 2, "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_top",
+      "label": "Marge sous titre",
+      "min": 0, "max": 30, "step": 2, "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_bottom",
+      "label": "Marge sous sous-titre",
+      "min": 0, "max": 80, "step": 2, "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "footer_margin_top",
+      "label": "Marge au-dessus du lien final",
+      "min": 0, "max": 80, "step": 2, "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Arrondi de la section PC",
+      "min": 0, "max": 80, "step": 2, "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_radius_mobile",
+      "label": "Arrondi de la section mobile",
+      "min": 0, "max": 60, "step": 2, "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "side_margin",
+      "label": "Marge latérale PC",
+      "min": 0, "max": 60, "step": 2, "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "side_margin_mobile",
+      "label": "Marge latérale mobile",
+      "min": 0, "max": 30, "step": 2, "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espace au-dessus PC",
+      "min": 0, "max": 140, "step": 4, "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espace en dessous PC",
+      "min": 0, "max": 140, "step": 4, "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Espace au-dessus mobile",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Espace en dessous mobile",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "coffret",
+      "name": "Coffret",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "Tout commence"
+        },
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Titre du coffret",
+          "default": "Coffret Naissance"
+        },
+        {
+          "type": "text",
+          "id": "composition",
+          "label": "Composition (optionnel)",
+          "info": "Laissez vide pour générer automatiquement à partir des produits choisis ci-dessous."
+        },
+        { "type": "header", "content": "Émojis du visuel" },
+        { "type": "text", "id": "emoji1", "label": "Émoji 1", "default": "🧸" },
+        { "type": "text", "id": "emoji2", "label": "Émoji 2", "default": "🛏️" },
+        { "type": "text", "id": "emoji3", "label": "Émoji 3", "default": "💡" },
+        { "type": "header", "content": "Produits du coffret" },
+        {
+          "type": "product",
+          "id": "produit1",
+          "label": "Produit 1"
+        },
+        {
+          "type": "product",
+          "id": "produit2",
+          "label": "Produit 2"
+        },
+        {
+          "type": "product",
+          "id": "produit3",
+          "label": "Produit 3 (optionnel)"
+        },
+        { "type": "header", "content": "Prix & avantages" },
+        {
+          "type": "number",
+          "id": "prix_coffret",
+          "label": "Prix Coffret (en euros)",
+          "default": 94.9,
+          "info": "Le prix barré est calculé automatiquement (somme des prix des produits)."
+        },
+        {
+          "type": "text",
+          "id": "avantages",
+          "label": "Ligne avantages",
+          "default": "🎁 Pochon offert · 🚚 Livraison offerte"
+        },
+        {
+          "type": "text",
+          "id": "bouton_texte",
+          "label": "Texte du bouton",
+          "default": "Offrir ce coffret"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Les coffrets O'CAOU",
+      "blocks": [
+        {
+          "type": "coffret",
+          "settings": {
+            "badge": "Tout commence",
+            "titre": "Coffret Naissance",
+            "emoji1": "🧸", "emoji2": "🛏️", "emoji3": "💡",
+            "prix_coffret": 94.9
+          }
+        },
+        {
+          "type": "coffret",
+          "settings": {
+            "badge": "La rentrée !",
+            "titre": "Coffret Comme les grands",
+            "emoji1": "🎒", "emoji2": "🥤", "emoji3": "🧸",
+            "prix_coffret": 99.9
+          }
+        },
+        {
+          "type": "coffret",
+          "settings": {
+            "badge": "Merci maman",
+            "titre": "Coffret Pour maman",
+            "emoji1": "🎒", "emoji2": "🤱", "emoji3": "🧻",
+            "prix_coffret": 94.9
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
