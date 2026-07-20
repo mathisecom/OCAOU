@@ -741,6 +741,16 @@
             "title": "CONFORT",
             "text": "Léger facile à porter, compact et molletonné"
           }
+        },
+        "benefit_ipbNa9": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_11.png",
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "ERGONOMIQUE",
+            "text": "Tirettes faciles à ouvrir, même pour les petites mains."
+          }
         }
       },
       "block_order": [
@@ -748,7 +758,8 @@
         "benefit_DEAXEw",
         "benefit_nA8ApQ",
         "benefit_FtDVLR",
-        "benefit_xpPJ8M"
+        "benefit_xpPJ8M",
+        "benefit_ipbNa9"
       ],
       "name": "Avantages icônes",
       "settings": {
