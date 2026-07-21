@@ -24,7 +24,7 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Livraison Offerte",
+            "title": "Livraison Offerte à partir de 50€ TTC",
             "content": ""
           }
         },
@@ -38,7 +38,7 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Service Client",
+            "title": "Service client",
             "content": ""
           }
         },
@@ -52,7 +52,7 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Paiement Sécurisé",
+            "title": "Paiement sécurisé",
             "content": ""
           }
         }
