@@ -100,13 +100,13 @@
           "settings": {
             "menu": "commande",
             "show_menu_title": true,
-            "menu_title": "Informations Légales"
+            "menu_title": "Informations légales"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "title": "Contactez-Nous",
+            "title": "Contactez-nous",
             "content": "<p>E-Mail : hello@ocaou.com</p><p>O'CAOU<br/>2 rue de la chapelle<br/>résidence Beau Rivage<br/>83270 Saint-Cyr-sur-Mer</p>",
             "enable_follow_on_shop": true
           }
