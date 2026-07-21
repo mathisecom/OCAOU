@@ -28,7 +28,7 @@
         "liquid_BaArxm": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .fp-product-title-custom {\n    margin: 0 0 8px 0 !important; /* espace sous le titre */\n    padding: 0 !important;\n    font-size: 26px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #333333;\n  }\n  .fp-product-price-custom {\n    margin: 0 !important;\n    padding: 0 !important;\n    font-size: 22px;\n    font-weight: 600; /* semi-bold */\n    line-height: 1.2;\n    color: #AF6C67;\n  }\n  .main-product__block:has(.fp-product-title-custom),\n  .main-product__block:has(.fp-product-price-custom) {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n  }\n  @media screen and (max-width: 749px) {\n    .fp-product-title-custom {\n      font-size: 22px;\n      margin: 0 0 6px 0 !important;\n      padding: 0 !important;\n    }\n    .fp-product-price-custom {\n      font-size: 19px;\n      margin: 0 !important;\n      padding: 0 !important;\n    }\n  }\n</style>\n<h3 class=\"fp-product-title-custom\">Gourde O'CAOU</h3>\n<p class=\"fp-product-price-custom\">24,90€</p>"
+            "liquid": "<style>\n  .fp-product-title-custom {\n    margin: 0 0 8px 0 !important; /* espace sous le titre */\n    padding: 0 !important;\n    font-size: 26px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #333333;\n  }\n  .fp-product-price-custom {\n    margin: 0 !important;\n    padding: 0 !important;\n    font-size: 22px;\n    font-weight: 600; /* semi-bold */\n    line-height: 1.2;\n    color: #AF6C67;\n  }\n  .main-product__block:has(.fp-product-title-custom),\n  .main-product__block:has(.fp-product-price-custom) {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n  }\n  @media screen and (max-width: 749px) {\n    .fp-product-title-custom {\n      font-size: 22px;\n      margin: 0 0 6px 0 !important;\n      padding: 0 !important;\n    }\n    .fp-product-price-custom {\n      font-size: 19px;\n      margin: 0 !important;\n      padding: 0 !important;\n    }\n  }\n</style>\n<h3 class=\"fp-product-title-custom\">Gourde O'CAOU j'ai soif</h3>\n<p class=\"fp-product-price-custom\">24,90€</p>"
           }
         },
         "title": {
@@ -803,6 +803,64 @@
         "side_padding_mobile": 14
       }
     },
+    "bandedefilante_6mBxhe": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_7NfyzF": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Souple & légère",
+            "icon_text": "🍒"
+          }
+        },
+        "marquee_item_qcCcnL": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Incassable",
+            "icon_text": "✹"
+          }
+        },
+        "marquee_item_PGEcxn": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Bouchon anti-fuite",
+            "icon_text": "🌈"
+          }
+        },
+        "marquee_item_7XteVb": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Développe l'autonomie",
+            "icon_text": "🌷"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_7NfyzF",
+        "marquee_item_qcCcnL",
+        "marquee_item_PGEcxn",
+        "marquee_item_7XteVb"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#fbf6ef",
+        "text_color": "#af6c67",
+        "border_color": "#e8ddd3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 52,
+        "font_size_desktop": 13,
+        "font_size_mobile": 10,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 65,
+        "gap_mobile": 50,
+        "speed": 52,
+        "pause_on_hover": false
+      }
+    },
     "ocacoufriseage_LWBwAr": {
       "type": "ocacoufriseage",
       "blocks": {
@@ -901,64 +959,6 @@
         "padding_bottom": 64,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
-      }
-    },
-    "bandedefilante_6mBxhe": {
-      "type": "bandedefilante",
-      "blocks": {
-        "marquee_item_7NfyzF": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Souple & légère",
-            "icon_text": "🍒"
-          }
-        },
-        "marquee_item_qcCcnL": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Incassable",
-            "icon_text": "✹"
-          }
-        },
-        "marquee_item_PGEcxn": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Bouchon anti-fuite",
-            "icon_text": "🌈"
-          }
-        },
-        "marquee_item_7XteVb": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Développe l'autonomie",
-            "icon_text": "🌷"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_item_7NfyzF",
-        "marquee_item_qcCcnL",
-        "marquee_item_PGEcxn",
-        "marquee_item_7XteVb"
-      ],
-      "name": "Bande défilante premium",
-      "settings": {
-        "bg_color": "#fbf6ef",
-        "text_color": "#af6c67",
-        "border_color": "#e8ddd3",
-        "border_width": 0,
-        "height_desktop": 56,
-        "height_mobile": 52,
-        "font_size_desktop": 13,
-        "font_size_mobile": 10,
-        "font_weight": "600",
-        "letter_spacing": 1.5,
-        "uppercase": true,
-        "icon_size": 20,
-        "gap_desktop": 65,
-        "gap_mobile": 50,
-        "speed": 52,
-        "pause_on_hover": false
       }
     },
     "rich_text_WCLrEr": {
