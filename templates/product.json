@@ -1249,7 +1249,7 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "",
+        "background": "#AF6C67",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -1356,7 +1356,7 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Questions Fréquentes",
+        "title": "Questions fréquentes",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
