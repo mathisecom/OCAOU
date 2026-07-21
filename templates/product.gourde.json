@@ -843,7 +843,7 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#fbf6ef",
+        "bg_color": "#FCF9F5",
         "text_color": "#af6c67",
         "border_color": "#e8ddd3",
         "border_width": 0,
