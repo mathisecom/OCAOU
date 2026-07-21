@@ -19,7 +19,7 @@
           "settings": {
             "show_icon": true,
             "icon": "truck",
-            "text": "Livraison Offerte à partir de 50€ TTC",
+            "text": "Livraison offerte à partir de 50€ TTC",
             "link": ""
           }
         },
@@ -28,7 +28,7 @@
           "settings": {
             "show_icon": true,
             "icon": "box",
-            "text": "Paiement Possible en 3 fois",
+            "text": "Paiement possible en 3 fois",
             "link": ""
           }
         },
@@ -37,7 +37,7 @@
           "settings": {
             "show_icon": true,
             "icon": "gift",
-            "text": "Délai de réflexion de 14 jours",
+            "text": "Retour facile sous 14 jours",
             "link": ""
           }
         }
