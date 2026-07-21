@@ -726,7 +726,7 @@
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
             "title": "PRATIQUE",
-            "text": "Bouchon anti-fuite et paille amovible. Facile à ouvrir, facile à nettoyer, seul comme un grand."
+            "text": "Bouchon anti-fuite et paille amovible. Douce pour les dents, facile à ouvrir, facile à nettoyer."
           }
         },
         "benefit_Lpj498": {
@@ -1190,8 +1190,8 @@
       "type": "30retours",
       "name": "Bannière garantie produit",
       "settings": {
-        "title": "Garantie 14 jours",
-        "subtitle": "Nous sommes tellement convaincus que vous allez l’adorer que vous avez 14 jours pour l’essayer.",
+        "title": "Retours faciles 14 jours",
+        "subtitle": "Vous allez l'adorer.\nNous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
         "product_image": "shopify://shop_images/ocaou-pour-cuisiner.jpg",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
