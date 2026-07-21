@@ -37,7 +37,7 @@
           "settings": {
             "show_icon": true,
             "icon": "gift",
-            "text": "Délai de réflexion de 30 jours",
+            "text": "Délai de réflexion de 14 jours",
             "link": ""
           }
         }
@@ -126,7 +126,7 @@
         "text_size": "text-xs",
         "navigation_mode": "arrows",
         "scrolling_speed": 10,
-        "background": "#fbf6ef",
+        "background": "#CD9438",
         "background_gradient": "",
         "text_color": "#333333"
       }
