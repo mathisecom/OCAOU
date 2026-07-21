@@ -147,7 +147,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "Entretien",
-            "content": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante. </li><li>Compatible avec la stérilisation à la vapeur.</li></ul>",
+            "content": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante ou à la vapeur.</li></ul>",
             "page": ""
           }
         },
