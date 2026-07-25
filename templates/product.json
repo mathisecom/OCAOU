@@ -1061,9 +1061,9 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#cd9438",
+        "background": "#FFFFFF",
         "background_gradient": "",
-        "text_color": ""
+        "text_color": "#000000"
       }
     },
     "logoscroll_Lyixnk": {
@@ -1249,7 +1249,7 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "#af6c67",
+        "background": "#FFFFFF",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
