@@ -424,6 +424,55 @@
             "complement_bouton_texte": "Je complète mon coffret"
           }
         },
+        "coffret_KeE4Tr": {
+          "type": "coffret",
+          "settings": {
+            "badge": "O'CAOU maman vient d'accoucher",
+            "titre": "Coffret Pour maman",
+            "composition": "",
+            "composition_generique": "Doudou + Couverture + Veilleuse",
+            "image": "shopify://shop_images/ChatGPT_Image_20_juil._2026_15_05_55.png",
+            "emoji1": "",
+            "emoji2": "",
+            "emoji3": "",
+            "produit1": "sac-ocaou",
+            "produit2": "coussinets-allaitements",
+            "produit3": "lingettes-lavables",
+            "prix_coffret": 112.7,
+            "pochon_valeur": 7.9,
+            "bouton_texte": "Offrir ce coffret",
+            "complement_actif": false,
+            "complement_texte": "Ajoutez la pochette assortie à votre coffret",
+            "complement_produit": "",
+            "complement_prix_normal": 24.9,
+            "complement_prix_remise": 22.9,
+            "complement_bouton_texte": "Je complète mon coffret"
+          }
+        },
+        "coffret_yd7zXD": {
+          "type": "coffret",
+          "settings": {
+            "badge": "O’CAOU bébé est né",
+            "titre": "Coffret Premier Repas",
+            "composition": "O’CAOU je veux un câlin + O’CAOU j’ai froid + O’CAOU j’ai peur",
+            "composition_generique": "Doudou + Couverture + Veilleuse",
+            "emoji1": "🧸",
+            "emoji2": "🛏️",
+            "emoji3": "💡",
+            "produit1": "",
+            "produit2": "",
+            "produit3": "",
+            "prix_coffret": 99.9,
+            "pochon_valeur": 7.9,
+            "bouton_texte": "Ajouter mon coffret au panier",
+            "complement_actif": false,
+            "complement_texte": "Ajoutez la pochette assortie à votre coffret",
+            "complement_produit": "",
+            "complement_prix_normal": 24.9,
+            "complement_prix_remise": 22.9,
+            "complement_bouton_texte": "Je complète mon coffret"
+          }
+        },
         "coffret_EccUzK": {
           "type": "coffret",
           "settings": {
@@ -449,23 +498,22 @@
             "complement_bouton_texte": "Je complète mon coffret"
           }
         },
-        "coffret_KeE4Tr": {
+        "coffret_MeacmM": {
           "type": "coffret",
           "settings": {
-            "badge": "O'CAOU maman vient d'accoucher",
-            "titre": "Coffret Pour maman",
-            "composition": "",
+            "badge": "O’CAOU bébé est né",
+            "titre": "Coffret Balades",
+            "composition": "O’CAOU je veux un câlin + O’CAOU j’ai froid + O’CAOU j’ai peur",
             "composition_generique": "Doudou + Couverture + Veilleuse",
-            "image": "shopify://shop_images/ChatGPT_Image_20_juil._2026_15_05_55.png",
-            "emoji1": "",
-            "emoji2": "",
-            "emoji3": "",
-            "produit1": "sac-ocaou",
-            "produit2": "coussinets-allaitements",
-            "produit3": "lingettes-lavables",
-            "prix_coffret": 112.7,
+            "emoji1": "🧸",
+            "emoji2": "🛏️",
+            "emoji3": "💡",
+            "produit1": "",
+            "produit2": "",
+            "produit3": "",
+            "prix_coffret": 99.9,
             "pochon_valeur": 7.9,
-            "bouton_texte": "Offrir ce coffret",
+            "bouton_texte": "Ajouter mon coffret au panier",
             "complement_actif": false,
             "complement_texte": "Ajoutez la pochette assortie à votre coffret",
             "complement_produit": "",
@@ -477,8 +525,10 @@
       },
       "block_order": [
         "coffret_rL99Jq",
+        "coffret_KeE4Tr",
+        "coffret_yd7zXD",
         "coffret_EccUzK",
-        "coffret_KeE4Tr"
+        "coffret_MeacmM"
       ],
       "name": "Les coffrets O'CAOU",
       "settings": {
