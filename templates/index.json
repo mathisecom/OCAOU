@@ -359,7 +359,7 @@
         "label_bg": "#af6c67",
         "label_bg_hover": "#af6c67",
         "label_color": "#ffffff",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "side_padding": 10,
         "padding_top": 40,
         "padding_bottom": 10
@@ -387,7 +387,7 @@
         "content": "",
         "link_url": "",
         "link_text": "Découvrir",
-        "background": "#F4EDE1",
+        "background": "#f4ede1",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -405,6 +405,7 @@
             "badge": "O'CAOU bébé est né",
             "titre": "Coffret Naissance",
             "composition": "",
+            "composition_generique": "Doudou + Couverture + Veilleuse",
             "image": "shopify://shop_images/ChatGPT_Image_20_juil._2026_14_18_28.png",
             "emoji1": "",
             "emoji2": "",
@@ -413,8 +414,14 @@
             "produit2": "couverture",
             "produit3": "veilleuse",
             "prix_coffret": 109.7,
-            "avantages": "🎁 Pochon offert · 🚚 Livraison offerte",
-            "bouton_texte": "Offrir ce coffret"
+            "pochon_valeur": 7.9,
+            "bouton_texte": "Offrir ce coffret",
+            "complement_actif": false,
+            "complement_texte": "Ajoutez la pochette assortie à votre coffret",
+            "complement_produit": "",
+            "complement_prix_normal": 24.9,
+            "complement_prix_remise": 22.9,
+            "complement_bouton_texte": "Je complète mon coffret"
           }
         },
         "coffret_EccUzK": {
@@ -423,6 +430,7 @@
             "badge": "O'CAOU je deviens autonome",
             "titre": "Coffret Comme les grands",
             "composition": "",
+            "composition_generique": "Doudou + Couverture + Veilleuse",
             "image": "shopify://shop_images/4c2c3dd6-d4dd-412e-a19b-323ebb4b921a.png",
             "emoji1": "",
             "emoji2": "",
@@ -431,8 +439,14 @@
             "produit2": "gourde",
             "produit3": "doudou",
             "prix_coffret": 124.7,
-            "avantages": "🎁 Pochon offert · 🚚 Livraison offerte",
-            "bouton_texte": "Offrir ce coffret"
+            "pochon_valeur": 7.9,
+            "bouton_texte": "Offrir ce coffret",
+            "complement_actif": false,
+            "complement_texte": "Ajoutez la pochette assortie à votre coffret",
+            "complement_produit": "",
+            "complement_prix_normal": 24.9,
+            "complement_prix_remise": 22.9,
+            "complement_bouton_texte": "Je complète mon coffret"
           }
         },
         "coffret_KeE4Tr": {
@@ -441,6 +455,7 @@
             "badge": "O'CAOU maman vient d'accoucher",
             "titre": "Coffret Pour maman",
             "composition": "",
+            "composition_generique": "Doudou + Couverture + Veilleuse",
             "image": "shopify://shop_images/ChatGPT_Image_20_juil._2026_15_05_55.png",
             "emoji1": "",
             "emoji2": "",
@@ -449,8 +464,14 @@
             "produit2": "coussinets-allaitements",
             "produit3": "lingettes-lavables",
             "prix_coffret": 112.7,
-            "avantages": "🎁 Pochon offert · 🚚 Livraison offerte",
-            "bouton_texte": "Offrir ce coffret"
+            "pochon_valeur": 7.9,
+            "bouton_texte": "Offrir ce coffret",
+            "complement_actif": false,
+            "complement_texte": "Ajoutez la pochette assortie à votre coffret",
+            "complement_produit": "",
+            "complement_prix_normal": 24.9,
+            "complement_prix_remise": 22.9,
+            "complement_bouton_texte": "Je complète mon coffret"
           }
         }
       },
@@ -477,7 +498,7 @@
         "card_padding": 26,
         "card_padding_mobile": 20,
         "visu_height": 260,
-        "visu_height_mobile": 200,
+        "visu_height_mobile": 220,
         "emoji_size": 34,
         "emoji_size_mobile": 28,
         "bg_color": "#ffffff",
@@ -493,9 +514,14 @@
         "price_old_color": "#151515",
         "price_new_color": "#bc4a33",
         "gift_color": "#454545",
+        "advantage_final_color": "#bc4a33",
         "btn_bg": "#cd9438",
         "btn_color": "#ffffff",
         "btn_added_bg": "#4e9a6f",
+        "complement_bg": "#f3ddd3",
+        "complement_border": "#e9a94e",
+        "complement_btn_bg": "#ffffff",
+        "complement_btn_color": "#3a2c22",
         "btn_radius": 14,
         "footer_link_color": "#e9a94e",
         "eyebrow_size": 13,
