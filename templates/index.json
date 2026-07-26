@@ -513,9 +513,9 @@
             "prix_coffret": 64.9,
             "pochon_valeur": 7.9,
             "bouton_texte": "Offrir ce coffret",
-            "complement_actif": false,
-            "complement_texte": "Ajoutez la pochette assortie à votre coffret",
-            "complement_produit": "",
+            "complement_actif": true,
+            "complement_texte": "Ajoutez la pochette assortie à votre Coffret Balades",
+            "complement_produit": "pochette-ocaou",
             "complement_prix_normal": 24.9,
             "complement_prix_remise": 22.9,
             "complement_bouton_texte": "Je complète mon coffret"
