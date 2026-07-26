@@ -512,10 +512,10 @@
             "produit3": "",
             "pochon_valeur": 7.9,
             "bouton_texte": "Offrir ce coffret",
-            "complement_actif": true,
+            "complement_actif": false,
             "complement_texte": "Ajoutez la pochette assortie à votre coffret",
-            "produit_coffret_complet": "",
-            "complement_produit": "",
+            "produit_coffret_complet": "coffret-balades-pochette",
+            "complement_produit": "pochette-ocaou",
             "complement_bouton_texte": "Je complète mon coffret"
           }
         }
