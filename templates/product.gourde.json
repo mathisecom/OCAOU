@@ -85,7 +85,7 @@
             "show_gift_card_recipient": true,
             "atc_button_background": "#cd9438",
             "atc_button_text_color": "#ffffff",
-            "payment_button_background": "#B3565A",
+            "payment_button_background": "#b3565a",
             "payment_button_text_color": ""
           }
         },
@@ -298,7 +298,7 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
         "background_color": "#ffffff",
         "border_color": "#121212",
@@ -805,14 +805,16 @@
           "type": "marquee_item",
           "settings": {
             "text": "Souple & légère",
-            "icon_text": "🍒"
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_24.png"
           }
         },
-        "marquee_item_qcCcnL": {
+        "marquee_item_7XteVb": {
           "type": "marquee_item",
           "settings": {
-            "text": "Incassable",
-            "icon_text": "✹"
+            "text": "Développe l'autonomie",
+            "icon_text": "🌷",
+            "icon_image": "shopify://shop_images/icone.png"
           }
         },
         "marquee_item_PGEcxn": {
@@ -822,19 +824,20 @@
             "icon_text": "🌈"
           }
         },
-        "marquee_item_7XteVb": {
+        "marquee_item_qcCcnL": {
           "type": "marquee_item",
           "settings": {
-            "text": "Développe l'autonomie",
-            "icon_text": "🌷"
+            "text": "Incassable",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_25.png"
           }
         }
       },
       "block_order": [
         "marquee_item_7NfyzF",
-        "marquee_item_qcCcnL",
+        "marquee_item_7XteVb",
         "marquee_item_PGEcxn",
-        "marquee_item_7XteVb"
+        "marquee_item_qcCcnL"
       ],
       "name": "Bande défilante premium",
       "settings": {
@@ -984,7 +987,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": ""
       }
@@ -1172,7 +1175,7 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -1487,7 +1490,7 @@
         "enable_hover_darken": false,
         "mobile_scroll": true,
         "mobile_card_width": 45,
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "placeholder_bg": "#f2f2f2",
         "placeholder_text_color": "#777777",
         "padding_top_desktop": 0,
