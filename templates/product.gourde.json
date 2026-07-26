@@ -821,7 +821,8 @@
           "type": "marquee_item",
           "settings": {
             "text": "Bouchon anti-fuite",
-            "icon_text": "🌈"
+            "icon_text": "🌈",
+            "icon_image": "shopify://shop_images/icone_26.png"
           }
         },
         "marquee_item_qcCcnL": {
