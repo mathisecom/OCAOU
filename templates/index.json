@@ -476,11 +476,10 @@
         "coffret_EccUzK": {
           "type": "coffret",
           "settings": {
-            "badge": "O'CAOU je deviens autonome",
+            "badge": "O’CAOU je rentre en maternelle",
             "titre": "Coffret Comme les grands",
             "composition": "",
             "composition_generique": "Doudou + Couverture + Veilleuse",
-            "image": "shopify://shop_images/4c2c3dd6-d4dd-412e-a19b-323ebb4b921a.png",
             "emoji1": "",
             "emoji2": "",
             "emoji3": "",
@@ -501,7 +500,7 @@
         "coffret_MeacmM": {
           "type": "coffret",
           "settings": {
-            "badge": "O’CAOU bébé est né",
+            "badge": "O’CAOU je sors",
             "titre": "Coffret Balades",
             "composition": "O’CAOU je veux un câlin + O’CAOU j’ai froid + O’CAOU j’ai peur",
             "composition_generique": "Doudou + Couverture + Veilleuse",
