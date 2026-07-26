@@ -904,6 +904,15 @@
             "title": "ERGONOMIQUE",
             "text": "Tirettes faciles à ouvrir, même pour les petites mains."
           }
+        },
+        "benefit_WBBmQd": {
+          "type": "benefit",
+          "settings": {
+            "icon_alt": "SÉCURITÉ",
+            "icon": "smile",
+            "title": "SÉCURITÉ",
+            "text": "Les doudous sont ligotés et les poches filets permettent de tout bloquer."
+          }
         }
       },
       "block_order": [
@@ -912,7 +921,8 @@
         "benefit_Lpj498",
         "benefit_J8aV6U",
         "benefit_BqnDgY",
-        "benefit_RyBCLy"
+        "benefit_RyBCLy",
+        "benefit_WBBmQd"
       ],
       "name": "Avantages icônes",
       "settings": {
