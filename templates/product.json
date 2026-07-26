@@ -908,6 +908,7 @@
         "benefit_WBBmQd": {
           "type": "benefit",
           "settings": {
+            "custom_icon": "shopify://shop_images/icone_23.png",
             "icon_alt": "SÉCURITÉ",
             "icon": "smile",
             "title": "SÉCURITÉ",
