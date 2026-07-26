@@ -428,8 +428,8 @@
           "settings": {
             "badge": "O'CAOU maman vient d'accoucher",
             "titre": "Coffret Pour maman",
-            "composition": "O’CAOU bébé arrive, je m’organise + O’CAOU j’allaite + O’CAOU ça coule",
-            "composition_generique": "Sac à dos organiseur + Coussinets d’allaitement + Lingettes lavables",
+            "composition": "",
+            "composition_generique": "Sac-organiseur + Coussinets d’allaitement + Lingettes lavables",
             "image": "shopify://shop_images/ChatGPT_Image_26_juil._2026_14_50_09.png",
             "emoji1": "",
             "emoji2": "",
@@ -452,7 +452,7 @@
           "settings": {
             "badge": "O’CAOU  je deviens autonome",
             "titre": "Coffret Premier Repas",
-            "composition": "O’CAOU j’ai soif + O’CAOU j’ai faim + O’CAOU je mange",
+            "composition": "",
             "composition_generique": "Gourde + Lunch box + Couverts avec poche de rangement en silicone",
             "image": "shopify://shop_images/ChatGPT_Image_26_juil._2026_14_52_44.png",
             "emoji1": "🧸",
@@ -476,8 +476,8 @@
           "settings": {
             "badge": "O’CAOU je rentre en maternelle",
             "titre": "Coffret Comme les grands",
-            "composition": "O’CAOU je deviens grand + O’CAOU j’ai soif + O’CAOU je veux un câlin",
-            "composition_generique": "Sac à dos organiseur + Gourde + Doudou",
+            "composition": "",
+            "composition_generique": "Sac-organiseur + Gourde + Doudou",
             "image": "shopify://shop_images/4c2c3dd6-d4dd-412e-a19b-323ebb4b921a.png",
             "emoji1": "",
             "emoji2": "",
@@ -500,7 +500,7 @@
           "settings": {
             "badge": "O’CAOU je sors",
             "titre": "Coffret Balades",
-            "composition": "O’CAOU je prends TOUT + O’CAOU c’est chaud / O’CAOU c’est froid",
+            "composition": "",
             "composition_generique": "Cabas + Sac isotherme",
             "image": "shopify://shop_images/ChatGPT_Image_26_juil._2026_14_58_09.png",
             "emoji1": "🧸",
