@@ -28,7 +28,7 @@
         "liquid_BaArxm": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .fp-product-title-custom {\n    margin: 0 0 8px 0 !important; /* espace sous le titre */\n    padding: 0 !important;\n    font-size: 26px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #333333;\n  }\n  .fp-product-price-custom {\n    margin: 0 !important;\n    padding: 0 !important;\n    font-size: 22px;\n    font-weight: 600; /* semi-bold */\n    line-height: 1.2;\n    color: #AF6C67;\n  }\n  .main-product__block:has(.fp-product-title-custom),\n  .main-product__block:has(.fp-product-price-custom) {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n  }\n  @media screen and (max-width: 749px) {\n    .fp-product-title-custom {\n      font-size: 22px;\n      margin: 0 0 6px 0 !important;\n      padding: 0 !important;\n    }\n    .fp-product-price-custom {\n      font-size: 19px;\n      margin: 0 !important;\n      padding: 0 !important;\n    }\n  }\n</style>\n<h3 class=\"fp-product-title-custom\">Gourde O'CAOU j'ai soif</h3>\n<p class=\"fp-product-price-custom\">24,90€</p>"
+            "liquid": "<style>\n  .fp-product-title-custom {\n    margin: 0 0 5px 0 !important;\n    padding: 0 !important;\n    font-size: 26px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #333333;\n  }\n\n  .fp-product-subtitle-custom {\n    margin: 0 0 8px 0 !important;\n    padding: 0 !important;\n    font-size: 17px;\n    font-weight: 400;\n    line-height: 1.3;\n    color: #666666;\n  }\n\n  .fp-product-price-custom {\n    margin: 0 !important;\n    padding: 0 !important;\n    font-size: 22px;\n    font-weight: 600;\n    line-height: 1.2;\n    color: #AF6C67;\n  }\n\n  .main-product__block:has(.fp-product-title-custom),\n  .main-product__block:has(.fp-product-subtitle-custom),\n  .main-product__block:has(.fp-product-price-custom) {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-product-title-custom {\n      font-size: 22px;\n      margin: 0 0 4px 0 !important;\n    }\n\n    .fp-product-subtitle-custom {\n      font-size: 15px;\n      margin: 0 0 6px 0 !important;\n    }\n\n    .fp-product-price-custom {\n      font-size: 19px;\n    }\n  }\n</style>\n\n<h3 class=\"fp-product-title-custom\">Gourde</h3>\n\n<p class=\"fp-product-subtitle-custom\">\n  O'CAOU j'ai soif\n</p>\n\n<p class=\"fp-product-price-custom\">24,90 €</p>"
           }
         },
         "title": {
@@ -303,7 +303,7 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#F4EDE1",
+        "layout_bg_color": "#f4ede1",
         "layout_border_color": "#121212",
         "background_color": "#ffffff",
         "border_color": "#121212",
@@ -774,7 +774,7 @@
         "row_gap_desktop": 30,
         "column_gap_mobile": 28,
         "row_gap_mobile": 44,
-        "icon_circle_bg": "#F4EDE1",
+        "icon_circle_bg": "#f4ede1",
         "icon_color": "#ffffff",
         "icon_circle_size_desktop": 110,
         "icon_circle_size_mobile": 108,
@@ -794,7 +794,7 @@
         "text_weight": "400",
         "text_max_width_desktop": 260,
         "text_max_width_mobile": 170,
-        "bg_color": "#AF6C67",
+        "bg_color": "#af6c67",
         "padding_top_desktop": 16,
         "padding_bottom_desktop": 52,
         "padding_top_mobile": 20,
@@ -843,7 +843,7 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#FCF9F5",
+        "bg_color": "#fcf9f5",
         "text_color": "#af6c67",
         "border_color": "#e8ddd3",
         "border_width": 0,
@@ -906,7 +906,7 @@
       "name": "Frise des âges",
       "settings": {
         "eyebrow": "Pensée pour durer",
-        "eyebrow_color": "#AF6C67",
+        "eyebrow_color": "#af6c67",
         "eyebrow_size": 13,
         "eyebrow_size_mobile": 11,
         "eyebrow_margin_bottom": 12,
@@ -929,7 +929,7 @@
         "line_inset": 10,
         "hide_line_mobile": true,
         "dot_bg": "#ffffff",
-        "dot_border_color": "#AF6C67",
+        "dot_border_color": "#af6c67",
         "dot_border_hover_color": "#bc4a33",
         "dot_border_width": 3,
         "dot_size": 80,
@@ -938,7 +938,7 @@
         "icon_size_mobile": 26,
         "dot_margin_bottom": 14,
         "dot_margin_bottom_mobile": 10,
-        "label_color": "#AF6C67",
+        "label_color": "#af6c67",
         "label_size": 16,
         "label_size_mobile": 14,
         "text_color": "#6b5a4c",
@@ -949,7 +949,7 @@
         "slogan_accent_color": "#e86a4b",
         "slogan_size": 22,
         "slogan_size_mobile": 18,
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "max_width": 1160,
         "section_radius": 40,
         "section_radius_mobile": 24,
@@ -989,7 +989,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#CD9438",
+        "background": "#cd9438",
         "background_gradient": "",
         "text_color": ""
       }
@@ -1177,7 +1177,7 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "#AF6C67",
+        "background": "#af6c67",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -1205,7 +1205,7 @@
         "icon_margin_bottom_mobile": 23,
         "icon_color": "#ffffff",
         "section_bg_color": "#ffffff",
-        "card_bg_color": "#F4EDE1",
+        "card_bg_color": "#f4ede1",
         "overlay_color": "#fcfcfc",
         "overlay_opacity": 30,
         "title_color": "#101010",
@@ -1492,7 +1492,7 @@
         "enable_hover_darken": false,
         "mobile_scroll": true,
         "mobile_card_width": 45,
-        "bg_color": "#CD9438",
+        "bg_color": "#cd9438",
         "placeholder_bg": "#f2f2f2",
         "placeholder_text_color": "#777777",
         "padding_top_desktop": 0,
