@@ -511,8 +511,8 @@
             "bouton_texte": "Offrir ce coffret",
             "complement_actif": true,
             "complement_texte": "Ajoutez la pochette assortie à votre coffret",
-            "produit_coffret_complet": "pochette-ocaou",
-            "complement_produit": "pochette-ocaou",
+            "produit_coffret_complet": "",
+            "complement_produit": "",
             "complement_bouton_texte": "Je complète mon coffret"
           }
         }
