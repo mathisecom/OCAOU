@@ -3,37 +3,36 @@
   SECTION O'CAOU — Les coffrets (page d'accueil)
   À placer dans : sections/ocaou-coffrets.liquid
 
-  ▸ 5 coffrets : Naissance / Pour maman / Premier repas /
-    Comme les grands / Balades
-  ▸ Fond sombre, cartes coffrets avec badge, visuel à pois
-    + émojis, prix barré / prix coffret calculés automatiquement
-  ▸ Ligne "Votre avantage" calculée automatiquement
-    = (valeur produits - prix coffret) + valeur du pochon offert
-  ▸ Le bouton principal AJOUTE TOUS LES PRODUITS du coffret
-    au panier en un clic (AJAX, sans rechargement)
-  ▸ Coffret "complémentable" (ex : Balades + Pochette) :
-    un bouton secondaire ajoute la pochette à la SÉLECTION
-    (sans quitter la page, sans aller sur la fiche produit),
-    le prix affiché passe de 64,90€ à 87,80€, le bouton devient
-    "✓ POCHETTE AJOUTÉE", puis le bouton principal ajoute
-    les 4 produits ensemble au panier.
+  VERSION AVEC PRIX RÉEL DU PANIER
+
+  ▸ Chaque carte utilise un véritable produit coffret créé dans
+    Shopify Bundles.
+  ▸ Le prix affiché vient directement de la variante du produit
+    coffret sélectionné : il est donc identique dans la carte,
+    le panier et le paiement.
+  ▸ Les produits 1, 2 et 3 servent uniquement à afficher la
+    composition, le prix total barré et l'avantage client.
+  ▸ Le bouton principal ajoute UNE variante de coffret au panier.
+  ▸ Pour un coffret complémentable, créez un second produit bundle
+    contenant le coffret complet, par exemple : Balades + Pochette.
+    Le bouton secondaire bascule entre le bundle de base et le
+    bundle complet sans quitter la page.
 
   INSTALLATION :
-  1. Modifier le code > sections > Ajouter une nouvelle section
-  2. Nommer : ocaou-coffrets  (.liquid)
-  3. Coller ce fichier, enregistrer
-  4. Personnaliser (page d'accueil) > Ajouter une section
-     > "Les coffrets O'CAOU"
-  5. Dans chaque bloc "Coffret", choisissez les 2-3 produits
-     qui le composent
-  6. Pour le coffret Balades : activez "Coffret complémentable"
-     et choisissez le produit Pochette + ses 2 prix
+  1. Créez chaque coffret dans l'application Shopify Bundles.
+  2. Pour un coffret complémentable, créez également sa version
+     complète, par exemple « Coffret Balades + Pochette ».
+  3. Modifier le code > sections > Ajouter une nouvelle section.
+  4. Nommer la section : ocaou-coffrets (.liquid).
+  5. Coller ce fichier puis enregistrer.
+  6. Dans l'éditeur du thème, sélectionnez pour chaque carte :
+     - le produit coffret Shopify Bundles réellement vendu ;
+     - les produits de composition servant à l'affichage ;
+     - éventuellement le produit coffret complet.
 
-  ⚠️ Pour que le prix coffret (et le prix coffret + pochette)
-  s'applique réellement au paiement, créez dans
-  Admin > Réductions une réduction automatique par coffret
-  (condition "achète X et Y et Z" > montant remisé), et une
-  seconde réduction pour la combinaison avec la pochette.
+  IMPORTANT : le prix n'est plus saisi manuellement dans cette
+  section. Modifiez le prix directement sur le produit bundle dans
+  Shopify pour que l'affichage et le panier restent synchronisés.
 ================================================================
 {% endcomment %}
 
@@ -305,33 +304,32 @@
           assign v2 = block.settings.produit2.selected_or_first_available_variant
           assign v3 = block.settings.produit3.selected_or_first_available_variant
 
+          assign coffret_variant = block.settings.produit_coffret.selected_or_first_available_variant
+          assign coffret_complet_variant = block.settings.produit_coffret_complet.selected_or_first_available_variant
+          assign comp_variant = block.settings.complement_produit.selected_or_first_available_variant
+
           assign total = 0
-          assign all_available = true
-          assign ids_json = ''
 
           if v1 != blank
             assign total = total | plus: v1.price
-            assign ids_json = ids_json | append: v1.id | append: ','
-            unless v1.available
-              assign all_available = false
-            endunless
           endif
           if v2 != blank
             assign total = total | plus: v2.price
-            assign ids_json = ids_json | append: v2.id | append: ','
-            unless v2.available
-              assign all_available = false
-            endunless
           endif
           if v3 != blank
             assign total = total | plus: v3.price
-            assign ids_json = ids_json | append: v3.id | append: ','
-            unless v3.available
-              assign all_available = false
-            endunless
           endif
 
-          assign coffret_cents = block.settings.prix_coffret | times: 100 | round
+          assign coffret_cents = 0
+          assign coffret_variant_id = ''
+          assign coffret_available = false
+
+          if coffret_variant != blank
+            assign coffret_cents = coffret_variant.price
+            assign coffret_variant_id = coffret_variant.id
+            assign coffret_available = coffret_variant.available
+          endif
+
           assign pochon_value = block.settings.pochon_valeur
           if pochon_value == blank
             assign pochon_value = 7.9
@@ -346,21 +344,45 @@
               assign parts = parts | append: block.settings.produit1.title
             endif
             if block.settings.produit2 != blank
-              assign parts = parts | append: ' + ' | append: block.settings.produit2.title
+              if parts != blank
+                assign parts = parts | append: ' + '
+              endif
+              assign parts = parts | append: block.settings.produit2.title
             endif
             if block.settings.produit3 != blank
-              assign parts = parts | append: ' + ' | append: block.settings.produit3.title
+              if parts != blank
+                assign parts = parts | append: ' + '
+              endif
+              assign parts = parts | append: block.settings.produit3.title
             endif
             assign compo_text = parts
           endif
 
           assign has_complement = false
-          if block.settings.complement_actif and block.settings.complement_produit != blank
+          assign coffret_complet_variant_id = ''
+          assign coffret_complet_available = false
+          assign total_with_complement_cents = 0
+          assign comp_normal_cents = 0
+          assign comp_remise_cents = 0
+          assign total_products_with_complement = total
+          assign avantage_complet_cents = avantage_cents
+
+          if block.settings.complement_actif and coffret_variant != blank and coffret_complet_variant != blank
             assign has_complement = true
-            assign comp_variant = block.settings.complement_produit.selected_or_first_available_variant
-            assign comp_remise_cents = block.settings.complement_prix_remise | times: 100 | round
-            assign comp_normal_cents = block.settings.complement_prix_normal | times: 100 | round
-            assign total_with_complement_cents = coffret_cents | plus: comp_remise_cents
+            assign coffret_complet_variant_id = coffret_complet_variant.id
+            assign coffret_complet_available = coffret_complet_variant.available
+            assign total_with_complement_cents = coffret_complet_variant.price
+            assign comp_remise_cents = total_with_complement_cents | minus: coffret_cents
+
+            if comp_variant != blank
+              assign comp_normal_cents = comp_variant.price
+              assign total_products_with_complement = total | plus: comp_normal_cents
+            else
+              assign comp_normal_cents = comp_remise_cents
+              assign total_products_with_complement = total | plus: comp_remise_cents
+            endif
+
+            assign avantage_complet_cents = total_products_with_complement | minus: total_with_complement_cents | plus: pochon_cents
           endif
         -%}
 
@@ -385,18 +407,38 @@
             <p class="cof-compo-generic">{{ block.settings.composition_generique }}</p>
           {% endif %}
 
-          <div class="cof-prices">
-            {% if total > coffret_cents %}<s>{{ total | money }}</s>{% endif %}
-            <span class="now">{{ coffret_cents | money }}</span>
-          </div>
+          {% if coffret_variant != blank %}
+            <div class="cof-prices">
+              <s
+                class="cof-price-old"
+                data-price-base="{{ total | money }}"
+                data-price-complete="{{ total_products_with_complement | money }}"
+                data-show-base="{% if total > coffret_cents %}true{% else %}false{% endif %}"
+                data-show-complete="{% if total_products_with_complement > total_with_complement_cents %}true{% else %}false{% endif %}"
+                {% unless total > coffret_cents %}style="display:none"{% endunless %}>
+                {{ total | money }}
+              </s>
+              <span class="now">{{ coffret_cents | money }}</span>
+            </div>
 
-          <div class="cof-advantages">
-            <p>🎁 Pochon cadeau « O’CAOU c’est pour offrir » — valeur {{ pochon_cents | money }} OFFERT</p>
-            <p>🚚 LIVRAISON OFFERTE</p>
-            {% if avantage_cents > 0 %}
-              <p class="cof-advantage-final">Votre avantage : {{ avantage_cents | money }} + la livraison offerte</p>
-            {% endif %}
-          </div>
+            <div class="cof-advantages">
+              <p>🎁 Pochon cadeau « O’CAOU c’est pour offrir » — valeur {{ pochon_cents | money }} OFFERT</p>
+              <p>🚚 LIVRAISON OFFERTE</p>
+              <p
+                class="cof-advantage-final"
+                data-advantage-base="Votre avantage : {{ avantage_cents | money }} + la livraison offerte"
+                data-advantage-complete="Votre avantage : {{ avantage_complet_cents | money }} + la livraison offerte"
+                data-show-base="{% if avantage_cents > 0 %}true{% else %}false{% endif %}"
+                data-show-complete="{% if avantage_complet_cents > 0 %}true{% else %}false{% endif %}"
+                {% unless avantage_cents > 0 %}style="display:none"{% endunless %}>
+                Votre avantage : {{ avantage_cents | money }} + la livraison offerte
+              </p>
+            </div>
+          {% else %}
+            <p style="font-size:12px;line-height:1.5;color:#BC4A33;font-weight:700;margin:0 0 18px;">
+              ⚠️ Sélectionnez le produit coffret Shopify Bundles dans les réglages de cette carte.
+            </p>
+          {% endif %}
 
           {% if has_complement %}
             <div class="cof-complement">
@@ -409,31 +451,41 @@
               <button
                 type="button"
                 class="cof-btn cof-btn-complement"
-                data-complement-id="{{ comp_variant.id }}"
+                data-variant-base="{{ coffret_variant_id }}"
+                data-variant-complete="{{ coffret_complet_variant_id }}"
+                data-available-base="{{ coffret_available }}"
+                data-available-complete="{{ coffret_complet_available }}"
                 data-price-base="{{ coffret_cents | money }}"
                 data-price-total="{{ total_with_complement_cents | money }}"
                 data-label-default="{{ block.settings.complement_bouton_texte | default: 'Je complète mon coffret' }}"
-                data-label-active="✓ POCHETTE AJOUTÉE">
-                {{ block.settings.complement_bouton_texte | default: 'Je complète mon coffret' }}
+                data-label-active="✓ POCHETTE AJOUTÉE"
+                {% unless coffret_complet_available %}disabled{% endunless %}>
+                {% if coffret_complet_available %}
+                  {{ block.settings.complement_bouton_texte | default: 'Je complète mon coffret' }}
+                {% else %}
+                  Coffret complet indisponible
+                {% endif %}
               </button>
             </div>
           {% endif %}
 
-          {% if ids_json != blank %}
+          {% if coffret_variant != blank %}
             <button
               type="button"
               class="cof-btn cof-btn-main"
-              data-ids="{{ ids_json }}"
-              data-ids-base="{{ ids_json }}"
-              {% unless all_available %}disabled{% endunless %}>
-              {% if all_available %}
+              data-variant-id="{{ coffret_variant_id }}"
+              data-variant-base="{{ coffret_variant_id }}"
+              data-variant-complete="{{ coffret_complet_variant_id }}"
+              data-available-base="{{ coffret_available }}"
+              data-available-complete="{{ coffret_complet_available }}"
+              data-label-default="{{ block.settings.bouton_texte | default: 'Ajouter mon coffret au panier' }}"
+              {% unless coffret_available %}disabled{% endunless %}>
+              {% if coffret_available %}
                 {{ block.settings.bouton_texte | default: 'Ajouter mon coffret au panier' }}
               {% else %}
                 Coffret indisponible
               {% endif %}
             </button>
-          {% else %}
-            <p style="font-size:12px;opacity:.6">⚠️ Ajoutez les produits de ce coffret dans les réglages du bloc.</p>
           {% endif %}
         </div>
       {% endfor %}
@@ -454,47 +506,72 @@
   if (!section || section.dataset.cofInit) return;
   section.dataset.cofInit = '1';
 
-  // Bouton "je complète mon coffret" (pochette, etc.)
-  // Ajoute/retire l'article complémentaire de la sélection SANS quitter la page
-  // et met à jour le prix affiché sur la carte.
+  // Bouton « Je complète mon coffret » :
+  // remplace le bundle de base par le bundle complet.
   section.querySelectorAll('.cof-btn-complement').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var card = btn.closest('.cof-card');
       var mainBtn = card.querySelector('.cof-btn-main');
       var priceEl = card.querySelector('.cof-prices .now');
-      var complementId = btn.dataset.complementId;
+      var oldPriceEl = card.querySelector('.cof-price-old');
+      var advantageEl = card.querySelector('.cof-advantage-final');
       var isActive = btn.classList.contains('is-active');
 
+      if (!mainBtn || !priceEl) return;
+
       if (!isActive) {
-        // Activer : on ajoute l'id du complément à la sélection du coffret
         btn.classList.add('is-active');
         btn.textContent = btn.dataset.labelActive;
+
         priceEl.textContent = btn.dataset.priceTotal;
         priceEl.classList.add('is-updated');
-        if (mainBtn) {
-          mainBtn.dataset.ids = mainBtn.dataset.idsBase + complementId + ',';
+
+        mainBtn.dataset.variantId = btn.dataset.variantComplete;
+        mainBtn.disabled = btn.dataset.availableComplete !== 'true';
+        mainBtn.textContent = mainBtn.disabled
+          ? 'Coffret complet indisponible'
+          : mainBtn.dataset.labelDefault;
+
+        if (oldPriceEl) {
+          oldPriceEl.textContent = oldPriceEl.dataset.priceComplete;
+          oldPriceEl.style.display = oldPriceEl.dataset.showComplete === 'true' ? '' : 'none';
+        }
+
+        if (advantageEl) {
+          advantageEl.textContent = advantageEl.dataset.advantageComplete;
+          advantageEl.style.display = advantageEl.dataset.showComplete === 'true' ? '' : 'none';
         }
       } else {
-        // Désactiver : on retire le complément
         btn.classList.remove('is-active');
         btn.textContent = btn.dataset.labelDefault;
+
         priceEl.textContent = btn.dataset.priceBase;
         priceEl.classList.remove('is-updated');
-        if (mainBtn) {
-          mainBtn.dataset.ids = mainBtn.dataset.idsBase;
+
+        mainBtn.dataset.variantId = btn.dataset.variantBase;
+        mainBtn.disabled = btn.dataset.availableBase !== 'true';
+        mainBtn.textContent = mainBtn.disabled
+          ? 'Coffret indisponible'
+          : mainBtn.dataset.labelDefault;
+
+        if (oldPriceEl) {
+          oldPriceEl.textContent = oldPriceEl.dataset.priceBase;
+          oldPriceEl.style.display = oldPriceEl.dataset.showBase === 'true' ? '' : 'none';
+        }
+
+        if (advantageEl) {
+          advantageEl.textContent = advantageEl.dataset.advantageBase;
+          advantageEl.style.display = advantageEl.dataset.showBase === 'true' ? '' : 'none';
         }
       }
     });
   });
 
-  // Bouton principal : ajoute tous les produits du coffret (+ complément si actif) au panier
+  // Bouton principal : ajoute le véritable produit Shopify Bundles au panier.
   section.querySelectorAll('.cof-btn-main').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var idsStr = btn.dataset.ids || '';
-      var ids = idsStr.split(',').filter(Boolean).map(function (id) {
-        return { id: parseInt(id, 10), quantity: 1 };
-      });
-      if (!ids.length) return;
+      var variantId = parseInt(btn.dataset.variantId, 10);
+      if (!variantId) return;
 
       var initial = btn.textContent;
       btn.disabled = true;
@@ -502,8 +579,13 @@
 
       fetch('/cart/add.js', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: ids })
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          items: [{ id: variantId, quantity: 1 }]
+        })
       })
       .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
       .then(function () {
@@ -1099,30 +1181,33 @@
         { "type": "text", "id": "emoji1", "label": "Émoji 1 (si pas d'image)", "default": "🧸" },
         { "type": "text", "id": "emoji2", "label": "Émoji 2 (si pas d'image)", "default": "🛏️" },
         { "type": "text", "id": "emoji3", "label": "Émoji 3 (si pas d'image)", "default": "💡" },
-        { "type": "header", "content": "Produits du coffret" },
+        { "type": "header", "content": "Produit réellement ajouté au panier" },
+        {
+          "type": "product",
+          "id": "produit_coffret",
+          "label": "Produit coffret Shopify Bundles",
+          "info": "Obligatoire. Le prix affiché et le prix du panier proviennent directement de ce produit."
+        },
+        { "type": "header", "content": "Produits de composition (affichage)" },
         {
           "type": "product",
           "id": "produit1",
-          "label": "Produit 1"
+          "label": "Produit 1",
+          "info": "Sert au calcul du prix barré et de l'avantage."
         },
         {
           "type": "product",
           "id": "produit2",
-          "label": "Produit 2"
+          "label": "Produit 2",
+          "info": "Sert au calcul du prix barré et de l'avantage."
         },
         {
           "type": "product",
           "id": "produit3",
-          "label": "Produit 3 (optionnel)"
+          "label": "Produit 3 (optionnel)",
+          "info": "Sert au calcul du prix barré et de l'avantage."
         },
-        { "type": "header", "content": "Prix & avantages" },
-        {
-          "type": "number",
-          "id": "prix_coffret",
-          "label": "Prix Coffret (en euros)",
-          "default": 99.9,
-          "info": "Le prix barré est calculé automatiquement (somme des prix des produits)."
-        },
+        { "type": "header", "content": "Avantages" },
         {
           "type": "number",
           "id": "pochon_valeur",
@@ -1150,20 +1235,15 @@
         },
         {
           "type": "product",
+          "id": "produit_coffret_complet",
+          "label": "Produit coffret complet Shopify Bundles",
+          "info": "Obligatoire lorsque le complément est actif. Exemple : Coffret Balades + Pochette. Son prix sera utilisé dans le panier."
+        },
+        {
+          "type": "product",
           "id": "complement_produit",
-          "label": "Produit complémentaire"
-        },
-        {
-          "type": "number",
-          "id": "complement_prix_normal",
-          "label": "Prix normal du complément (barré)",
-          "default": 24.9
-        },
-        {
-          "type": "number",
-          "id": "complement_prix_remise",
-          "label": "Prix remisé du complément (ajouté au total coffret)",
-          "default": 22.9
+          "label": "Produit complémentaire seul (affichage)",
+          "info": "Sert uniquement à afficher son prix normal barré et à calculer l'avantage."
         },
         {
           "type": "text",
@@ -1186,7 +1266,6 @@
             "composition": "O’CAOU je veux un câlin + O’CAOU j’ai froid + O’CAOU j’ai peur",
             "composition_generique": "Doudou + Couverture + Veilleuse",
             "emoji1": "🧸", "emoji2": "🛏️", "emoji3": "💡",
-            "prix_coffret": 99.9,
             "pochon_valeur": 7.9,
             "bouton_texte": "Ajouter mon coffret au panier"
           }
@@ -1199,7 +1278,6 @@
             "composition": "O’CAOU bébé arrive, je m’organise + O’CAOU j’allaite + O’CAOU ça coule",
             "composition_generique": "Sac à dos organiseur + Coussinets d’allaitement + Lingettes lavables",
             "emoji1": "🎒", "emoji2": "🤱", "emoji3": "🧻",
-            "prix_coffret": 99.9,
             "pochon_valeur": 7.9,
             "bouton_texte": "Ajouter mon coffret au panier"
           }
@@ -1212,7 +1290,6 @@
             "composition": "O’CAOU j’ai soif + O’CAOU j’ai faim + O’CAOU je mange",
             "composition_generique": "Gourde + Lunch box + Couverts avec poche de rangement en silicone",
             "emoji1": "🥤", "emoji2": "🍱", "emoji3": "🍴",
-            "prix_coffret": 69.9,
             "pochon_valeur": 7.9,
             "bouton_texte": "Ajouter mon coffret au panier"
           }
@@ -1225,7 +1302,6 @@
             "composition": "O’CAOU je deviens grand + O’CAOU j’ai soif + O’CAOU je veux un câlin",
             "composition_generique": "Sac à dos organiseur + Gourde + Doudou",
             "emoji1": "🎒", "emoji2": "🥤", "emoji3": "🧸",
-            "prix_coffret": 109.9,
             "pochon_valeur": 7.9,
             "bouton_texte": "Ajouter mon coffret au panier"
           }
@@ -1238,13 +1314,10 @@
             "composition": "O’CAOU je prends TOUT + O’CAOU c’est chaud / O’CAOU c’est froid",
             "composition_generique": "Cabas + Sac isotherme",
             "emoji1": "👜", "emoji2": "🧊", "emoji3": "",
-            "prix_coffret": 64.9,
             "pochon_valeur": 7.9,
             "bouton_texte": "Ajouter mon coffret au panier",
             "complement_actif": true,
             "complement_texte": "Ajoutez la pochette assortie à votre Coffret Balades",
-            "complement_prix_normal": 24.9,
-            "complement_prix_remise": 22.9,
             "complement_bouton_texte": "Je complète mon coffret"
           }
         }
