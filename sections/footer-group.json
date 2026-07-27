@@ -104,9 +104,9 @@
         "links": {
           "type": "links",
           "settings": {
-            "menu": "",
+            "menu": "main-menu",
             "show_menu_title": true,
-            "menu_title": "Informations Légales"
+            "menu_title": "Mneu"
           }
         },
         "links_wQqUnT": {
