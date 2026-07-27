@@ -36,7 +36,7 @@
           "type": "announcement",
           "settings": {
             "show_icon": true,
-            "icon": "gift",
+            "icon": "return",
             "text": "Retour facile sous 14 jours",
             "link": ""
           }
@@ -58,7 +58,7 @@
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
         "font_size_desktop": 13,
-        "font_size_mobile": 12,
+        "font_size_mobile": 11,
         "font_weight": "600",
         "icon_circle_size_desktop": 24,
         "icon_circle_size_mobile": 22,
