@@ -120,7 +120,7 @@
         "message"
       ],
       "settings": {
-        "enable_sticky": false,
+        "enable_sticky": true,
         "autoplay": false,
         "cycle_speed": 6,
         "text_size": "text-xs",
@@ -128,7 +128,7 @@
         "scrolling_speed": 10,
         "background": "#cd9438",
         "background_gradient": "",
-        "text_color": "#FFFFFF"
+        "text_color": "#ffffff"
       }
     }
   },
