@@ -1118,7 +1118,7 @@
             "desktop_width": "medium",
             "font_size": 15,
             "border_radius": 28,
-            "rotation": -1
+            "rotation": 3
           }
         }
       },
