@@ -751,6 +751,7 @@
         "benefit_Lpj498",
         "benefit_J8aV6U"
       ],
+      "disabled": true,
       "name": "Avantages icônes",
       "settings": {
         "title": "Vous allez adorer la gourde O’CAOU parce que...",
@@ -840,6 +841,7 @@
         "marquee_item_PGEcxn",
         "marquee_item_qcCcnL"
       ],
+      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fcf9f5",
@@ -902,6 +904,7 @@
         "etape_CHTXfE",
         "etape_ptFAHG"
       ],
+      "disabled": true,
       "name": "Frise des âges",
       "settings": {
         "eyebrow": "Pensée pour durer",
