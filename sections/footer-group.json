@@ -38,7 +38,7 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Paiement possible en 3x",
+            "title": "Paiement possible en 3X",
             "content": ""
           }
         },
@@ -55,12 +55,26 @@
             "title": "Paiement sécurisé",
             "content": ""
           }
+        },
+        "item_wwhK7N": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "mobile_icon_width": 36,
+            "icon_width": 36,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Retour facile sous 14 jours",
+            "content": ""
+          }
         }
       },
       "block_order": [
         "free-shipping",
         "customer-support",
-        "discount"
+        "discount",
+        "item_wwhK7N"
       ],
       "settings": {
         "full_width": true,
