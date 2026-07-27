@@ -3,20 +3,22 @@
   SECTION O'CAOU — Les coffrets (page d'accueil)
   À placer dans : sections/ocaou-coffrets.liquid
 
-  VERSION AVEC PRIX RÉEL DU PANIER
+  VERSION "OFFRIR CE COFFRET" → REDIRIGE VERS LA FICHE PRODUIT
+  (aucun ajout au panier, uniquement une redirection)
 
   ▸ Chaque carte utilise un véritable produit coffret créé dans
-    Shopify Bundles.
-  ▸ Le prix affiché vient directement de la variante du produit
-    coffret sélectionné : il est donc identique dans la carte,
-    le panier et le paiement.
+    Shopify Bundles, uniquement pour récupérer son prix réel et
+    l'URL de sa fiche produit.
+  ▸ Le bouton principal (« Offrir ce coffret ») ne fait plus
+    d'ajout au panier : il redirige simplement le client vers la
+    fiche produit du coffret sélectionné.
   ▸ Les produits 1, 2 et 3 servent uniquement à afficher la
     composition, le prix total barré et l'avantage client.
-  ▸ Le bouton principal ajoute UNE variante de coffret au panier.
   ▸ Pour un coffret complémentable, créez un second produit bundle
     contenant le coffret complet, par exemple : Balades + Pochette.
-    Le bouton secondaire bascule entre le bundle de base et le
-    bundle complet sans quitter la page.
+    Le bouton secondaire bascule l'affichage (prix, avantage) et
+    la destination du bouton principal entre le bundle de base et
+    le bundle complet, sans quitter la page.
 
   INSTALLATION :
   1. Créez chaque coffret dans l'application Shopify Bundles.
@@ -32,7 +34,8 @@
 
   IMPORTANT : le prix n'est plus saisi manuellement dans cette
   section. Modifiez le prix directement sur le produit bundle dans
-  Shopify pour que l'affichage et le panier restent synchronisés.
+  Shopify pour que l'affichage reste synchronisé avec la fiche
+  produit.
 ================================================================
 {% endcomment %}
 
@@ -323,11 +326,13 @@
           assign coffret_cents = 0
           assign coffret_variant_id = ''
           assign coffret_available = false
+          assign coffret_url = ''
 
           if coffret_variant != blank
             assign coffret_cents = coffret_variant.price
             assign coffret_variant_id = coffret_variant.id
             assign coffret_available = coffret_variant.available
+            assign coffret_url = block.settings.produit_coffret.url
           endif
 
           assign pochon_value = block.settings.pochon_valeur
@@ -361,6 +366,7 @@
           assign has_complement = false
           assign coffret_complet_variant_id = ''
           assign coffret_complet_available = false
+          assign coffret_complet_url = ''
           assign total_with_complement_cents = 0
           assign comp_normal_cents = 0
           assign comp_remise_cents = 0
@@ -371,6 +377,7 @@
             assign has_complement = true
             assign coffret_complet_variant_id = coffret_complet_variant.id
             assign coffret_complet_available = coffret_complet_variant.available
+            assign coffret_complet_url = block.settings.produit_coffret_complet.url
             assign total_with_complement_cents = coffret_complet_variant.price
             assign comp_remise_cents = total_with_complement_cents | minus: coffret_cents
 
@@ -451,10 +458,10 @@
               <button
                 type="button"
                 class="cof-btn cof-btn-complement"
-                data-variant-base="{{ coffret_variant_id }}"
-                data-variant-complete="{{ coffret_complet_variant_id }}"
                 data-available-base="{{ coffret_available }}"
                 data-available-complete="{{ coffret_complet_available }}"
+                data-url-base="{{ coffret_url }}"
+                data-url-complete="{{ coffret_complet_url }}"
                 data-price-base="{{ coffret_cents | money }}"
                 data-price-total="{{ total_with_complement_cents | money }}"
                 data-label-default="{{ block.settings.complement_bouton_texte | default: 'Je complète mon coffret' }}"
@@ -473,15 +480,15 @@
             <button
               type="button"
               class="cof-btn cof-btn-main"
-              data-variant-id="{{ coffret_variant_id }}"
-              data-variant-base="{{ coffret_variant_id }}"
-              data-variant-complete="{{ coffret_complet_variant_id }}"
+              data-url="{{ coffret_url }}"
+              data-url-base="{{ coffret_url }}"
+              data-url-complete="{{ coffret_complet_url }}"
               data-available-base="{{ coffret_available }}"
               data-available-complete="{{ coffret_complet_available }}"
-              data-label-default="{{ block.settings.bouton_texte | default: 'Ajouter mon coffret au panier' }}"
+              data-label-default="{{ block.settings.bouton_texte | default: 'Offrir ce coffret' }}"
               {% unless coffret_available %}disabled{% endunless %}>
               {% if coffret_available %}
-                {{ block.settings.bouton_texte | default: 'Ajouter mon coffret au panier' }}
+                {{ block.settings.bouton_texte | default: 'Offrir ce coffret' }}
               {% else %}
                 Coffret indisponible
               {% endif %}
@@ -507,7 +514,9 @@
   section.dataset.cofInit = '1';
 
   // Bouton « Je complète mon coffret » :
-  // remplace le bundle de base par le bundle complet.
+  // met à jour l'affichage (prix, avantage) et la destination
+  // du bouton principal, qui basculera vers la fiche produit
+  // du coffret complet au lieu du coffret de base.
   section.querySelectorAll('.cof-btn-complement').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var card = btn.closest('.cof-card');
@@ -526,7 +535,7 @@
         priceEl.textContent = btn.dataset.priceTotal;
         priceEl.classList.add('is-updated');
 
-        mainBtn.dataset.variantId = btn.dataset.variantComplete;
+        mainBtn.dataset.url = btn.dataset.urlComplete;
         mainBtn.disabled = btn.dataset.availableComplete !== 'true';
         mainBtn.textContent = mainBtn.disabled
           ? 'Coffret complet indisponible'
@@ -548,7 +557,7 @@
         priceEl.textContent = btn.dataset.priceBase;
         priceEl.classList.remove('is-updated');
 
-        mainBtn.dataset.variantId = btn.dataset.variantBase;
+        mainBtn.dataset.url = btn.dataset.urlBase;
         mainBtn.disabled = btn.dataset.availableBase !== 'true';
         mainBtn.textContent = mainBtn.disabled
           ? 'Coffret indisponible'
@@ -567,45 +576,14 @@
     });
   });
 
-  // Bouton principal : ajoute le véritable produit Shopify Bundles au panier.
+  // Bouton principal : redirige simplement vers la fiche produit
+  // du coffret (base ou complet, selon le choix du client).
+  // Aucun ajout au panier n'est effectué.
   section.querySelectorAll('.cof-btn-main').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var variantId = parseInt(btn.dataset.variantId, 10);
-      if (!variantId) return;
-
-      var initial = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Ajout en cours…';
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          items: [{ id: variantId, quantity: 1 }]
-        })
-      })
-      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
-      .then(function () {
-        btn.classList.add('is-added');
-        btn.textContent = '✓ Coffret ajouté au panier';
-        btn.disabled = false;
-        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
-        {% if s.redirect_to_cart %}
-        window.location.href = '/cart';
-        {% endif %}
-        setTimeout(function () {
-          btn.classList.remove('is-added');
-          btn.textContent = initial;
-        }, 4000);
-      })
-      .catch(function () {
-        btn.disabled = false;
-        btn.textContent = 'Erreur — réessayez';
-        setTimeout(function () { btn.textContent = initial; }, 3000);
-      });
+      var url = btn.dataset.url;
+      if (!url) return;
+      window.location.href = url;
     });
   });
 })();
@@ -618,14 +596,6 @@
   "class": "section-ocaou-coffrets",
   "max_blocks": 6,
   "settings": [
-    { "type": "header", "content": "Comportement" },
-    {
-      "type": "checkbox",
-      "id": "redirect_to_cart",
-      "label": "Rediriger vers le panier après l'ajout",
-      "default": false
-    },
-
     { "type": "header", "content": "Titres" },
     {
       "type": "text",
@@ -855,7 +825,7 @@
     {
       "type": "color",
       "id": "btn_added_bg",
-      "label": "Bouton après ajout / complément actif",
+      "label": "Bouton complément actif",
       "default": "#4E9A6F"
     },
     {
@@ -1181,12 +1151,12 @@
         { "type": "text", "id": "emoji1", "label": "Émoji 1 (si pas d'image)", "default": "🧸" },
         { "type": "text", "id": "emoji2", "label": "Émoji 2 (si pas d'image)", "default": "🛏️" },
         { "type": "text", "id": "emoji3", "label": "Émoji 3 (si pas d'image)", "default": "💡" },
-        { "type": "header", "content": "Produit réellement ajouté au panier" },
+        { "type": "header", "content": "Produit utilisé pour le prix et le lien" },
         {
           "type": "product",
           "id": "produit_coffret",
           "label": "Produit coffret Shopify Bundles",
-          "info": "Obligatoire. Le prix affiché et le prix du panier proviennent directement de ce produit."
+          "info": "Obligatoire. Le prix affiché et l'URL vers laquelle redirige le bouton principal proviennent de ce produit."
         },
         { "type": "header", "content": "Produits de composition (affichage)" },
         {
@@ -1218,7 +1188,8 @@
           "type": "text",
           "id": "bouton_texte",
           "label": "Texte du bouton principal",
-          "default": "Ajouter mon coffret au panier"
+          "info": "Ce bouton redirige vers la fiche produit du coffret, il n'ajoute rien au panier.",
+          "default": "Offrir ce coffret"
         },
         { "type": "header", "content": "Coffret complémentable (optionnel)" },
         {
@@ -1237,7 +1208,7 @@
           "type": "product",
           "id": "produit_coffret_complet",
           "label": "Produit coffret complet Shopify Bundles",
-          "info": "Obligatoire lorsque le complément est actif. Exemple : Coffret Balades + Pochette. Son prix sera utilisé dans le panier."
+          "info": "Obligatoire lorsque le complément est actif. Exemple : Coffret Balades + Pochette. Son prix et sa fiche produit seront utilisés une fois le complément sélectionné."
         },
         {
           "type": "product",
@@ -1267,7 +1238,7 @@
             "composition_generique": "Doudou + Couverture + Veilleuse",
             "emoji1": "🧸", "emoji2": "🛏️", "emoji3": "💡",
             "pochon_valeur": 7.9,
-            "bouton_texte": "Ajouter mon coffret au panier"
+            "bouton_texte": "Offrir ce coffret"
           }
         },
         {
@@ -1279,7 +1250,7 @@
             "composition_generique": "Sac à dos organiseur + Coussinets d’allaitement + Lingettes lavables",
             "emoji1": "🎒", "emoji2": "🤱", "emoji3": "🧻",
             "pochon_valeur": 7.9,
-            "bouton_texte": "Ajouter mon coffret au panier"
+            "bouton_texte": "Offrir ce coffret"
           }
         },
         {
@@ -1291,7 +1262,7 @@
             "composition_generique": "Gourde + Lunch box + Couverts avec poche de rangement en silicone",
             "emoji1": "🥤", "emoji2": "🍱", "emoji3": "🍴",
             "pochon_valeur": 7.9,
-            "bouton_texte": "Ajouter mon coffret au panier"
+            "bouton_texte": "Offrir ce coffret"
           }
         },
         {
@@ -1303,7 +1274,7 @@
             "composition_generique": "Sac à dos organiseur + Gourde + Doudou",
             "emoji1": "🎒", "emoji2": "🥤", "emoji3": "🧸",
             "pochon_valeur": 7.9,
-            "bouton_texte": "Ajouter mon coffret au panier"
+            "bouton_texte": "Offrir ce coffret"
           }
         },
         {
@@ -1315,7 +1286,7 @@
             "composition_generique": "Cabas + Sac isotherme",
             "emoji1": "👜", "emoji2": "🧊", "emoji3": "",
             "pochon_valeur": 7.9,
-            "bouton_texte": "Ajouter mon coffret au panier",
+            "bouton_texte": "Offrir ce coffret",
             "complement_actif": true,
             "complement_texte": "Ajoutez la pochette assortie à votre Coffret Balades",
             "complement_bouton_texte": "Je complète mon coffret"
