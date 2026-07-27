@@ -330,7 +330,7 @@
           "settings": {
             "image": "shopify://shop_images/ADS_IMAGE_3.jpg",
             "label": "Idées cadeaux ",
-            "collection": "",
+            "collection": "les-coffrets",
             "link": ""
           }
         }
