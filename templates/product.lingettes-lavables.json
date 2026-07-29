@@ -138,16 +138,6 @@
             "page": ""
           }
         },
-        "collapsible_text_fiLq6U": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Informations sur la livraisons",
-            "content": "<p><strong>· Livraison à domicile :</strong> 6 € </p><p><strong>· Point relais Pickup : </strong>4,50 € </p><p><strong>· Livraison express à domicile :</strong> 12 €.</p><p>Les dates de <strong>livraison estimées</strong> sont <strong>affichées directement</strong> avant la commande.</p>",
-            "page": ""
-          }
-        },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
           "settings": {
@@ -155,6 +145,16 @@
             "icon_width": 20,
             "title": "Composition",
             "content": "<p>80% bambou-20%coton (certifié OEKO-TEX® Standard 100)</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_fiLq6U": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Informations sur la livraisons",
+            "content": "<p><strong>· Livraison à domicile :</strong> 6 € </p><p><strong>· Point relais Pickup : </strong>4,50 € </p><p><strong>· Livraison express à domicile :</strong> 12 €.</p><p>Les dates de <strong>livraison estimées</strong> sont <strong>affichées directement</strong> avant la commande.</p>",
             "page": ""
           }
         },
@@ -195,8 +195,8 @@
         "associated_products_dQCNyG",
         "description",
         "collapsible_text_QkwrFT",
-        "collapsible_text_fiLq6U",
         "collapsible_text_BgHqca",
+        "collapsible_text_fiLq6U",
         "collapsible_text_HKATAV",
         "liquid_7PLJAn"
       ],
