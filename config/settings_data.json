@@ -36,7 +36,7 @@
     "text_font_size_mobile": 13,
     "text_font_size_desktop": 13,
     "heading_apparition": "split_fade",
-    "color_swatch_config": "Bleu: #97B0CE\nRose: #FFC0CB\nBleu: #93AFD5",
+    "color_swatch_config": "Bleu: #97B0CE\nRose: #FFC0CB\nBleu: #93AFD5\nÉcru: #BAB7AD",
     "show_sold_out_badge": false,
     "show_discount": false,
     "product_color_display": "swatch",
