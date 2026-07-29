@@ -131,7 +131,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "Pourquoi choisir O'CAOU ?",
-            "content": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA</p><p>✔ Sans PVC</p><p>✔ Sans phtalates</p><p>✔ Compatible contact alimentaire</p><p>✔ Sans goût ni odeur. </p>",
+            "content": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA, PVC ni phtalates</p><p>✔Sans goût ni odeur</p><p>✔ Pensé pour durer et accompagner les enfants pendant des années.</p>",
             "page": ""
           }
         },
@@ -148,12 +148,11 @@
         },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
             "title": "Caractéristiques",
-            "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p>",
+            "content": "<ul><li>Couverts en acier inoxydable </li><li>Manches en silicone alimentaire </li><li>Pochette de protection en silicone</li></ul>",
             "page": ""
           }
         },
