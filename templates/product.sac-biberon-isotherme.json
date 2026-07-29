@@ -140,12 +140,11 @@
         },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Dimensions (en cm)",
-            "content": "<p><strong>Dimensions fermées:</strong><br/>L34cm (base) / L23cm (haut) x H27cm x P10cm</p><p><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm (70cm avec poignée) x P10cm</p>",
+            "title": "Caractéristiques",
+            "content": "<p>• Capacité : 5,2 L • Dimensions: H 23x diamètre 17cm<br/>• Matière : Polyesther, intérieur PEVA<br/>• Entretien : nettoyage facile avec un chiffon humide</p>",
             "page": ""
           }
         },
