@@ -148,12 +148,11 @@
         },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
             "title": "Caractéristiques",
-            "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p>",
+            "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : 112mm x 126,5mm x 91,5mm</p><p><span style=\"text-decoration:underline\">Poids</span>= : 157g</p><p><span style=\"text-decoration:underline\">Composition</span> : silicone de haute qualité</p><p><span style=\"text-decoration:underline\">Entretien</span> : Nettoyer avec un chiffon doux et humide</p>",
             "page": ""
           }
         },
