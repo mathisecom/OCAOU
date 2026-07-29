@@ -128,19 +128,8 @@
             "collapse_content": true
           }
         },
-        "collapsible_text_fiLq6U": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Informations sur la livraisons",
-            "content": "<p><strong>· Livraison à domicile :</strong> 6 € </p><p><strong>· Point relais Pickup : </strong>4,50 € </p><p><strong>· Livraison express à domicile :</strong> 12 €.</p><p>Les dates de <strong>livraison estimées</strong> sont <strong>affichées directement</strong> avant la commande.</p>",
-            "page": ""
-          }
-        },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -151,12 +140,11 @@
         },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Composition Textile",
-            "content": "<p><strong>Sac nid d'abeille Chair et Bleu Gris :</strong></p><p>Extérieur: 100% Coton</p><p>Intérieur: 80% Coton / 20% Rayon</p><p>Filet: 100% polyester</p><p><strong>Sac toile de coton Bleu-Vert Panda et Terracotta Chien :</strong></p><p>Extérieur: 80% Coton / 20% Rayon</p><p>Intérieur: 80% Coton / 20% Rayon</p><p>Filet: 100% polyester</p>",
+            "title": "Composition",
+            "content": "<p>Extérieur :80% bambou-20%coton (certifié OEKO-TEX® Standard 100)</p><p>Cœur absorbant : Microfibre </p><p>Couche extérieure : membrane imperméable</p>",
             "page": ""
           }
         },
@@ -168,6 +156,16 @@
             "icon_width": 20,
             "title": "Entretien",
             "content": "<ul><li>Laver séparément délicatement à la main à l'eau froide</li><li>Ne pas faire tremper</li><li>Essorer à la main</li><li>Remodeler avant séchage</li><li>Séchage à plat</li><li>Ne pas sécher au sèche linge</li><li>Ne pas repasser</li><li>Ne pas utiliser d'agent de blanchiment</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_text_fiLq6U": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Informations sur la livraisons",
+            "content": "<p><strong>· Livraison à domicile :</strong> 6 € </p><p><strong>· Point relais Pickup : </strong>4,50 € </p><p><strong>· Livraison express à domicile :</strong> 12 €.</p><p>Les dates de <strong>livraison estimées</strong> sont <strong>affichées directement</strong> avant la commande.</p>",
             "page": ""
           }
         },
@@ -196,10 +194,10 @@
         "liquid_CnEcbM",
         "associated_products_dQCNyG",
         "description",
-        "collapsible_text_fiLq6U",
         "collapsible_text_QkwrFT",
         "collapsible_text_BgHqca",
         "collapsible_text_HKATAV",
+        "collapsible_text_fiLq6U",
         "liquid_7PLJAn"
       ],
       "settings": {
