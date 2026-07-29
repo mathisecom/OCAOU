@@ -137,12 +137,11 @@
         },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Entretien",
-            "content": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante. </li><li>Compatible avec la stérilisation à la vapeur.</li></ul>",
+            "title": "Pensée pour les bébés",
+            "content": "<ul><li>Rassure au coucher</li><li>Nomade: facile à tenir grâce à son anse</li><li>Aide à l'endormissement</li><li>Accompagne les réveils nocturnes</li><li>Toujours à portée de main</li><li>Autonomie pour se déplacer</li><li>Tactile pour allumer éteindre</li></ul>",
             "page": ""
           }
         },
