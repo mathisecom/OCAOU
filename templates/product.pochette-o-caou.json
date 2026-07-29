@@ -127,12 +127,11 @@
         },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Pourquoi choisir O'CAOU ?",
-            "content": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA</p><p>✔ Sans PVC</p><p>✔ Sans phtalates</p><p>✔ Compatible contact alimentaire</p><p>✔ Sans goût ni odeur. </p>",
+            "title": "Usages",
+            "content": "<p>Pour maman : maquillage, coussinets, telephone…</p><p>Crèche & maternelle : change,rechange, tétine, …</p><p>Sorties : lunettes, lingettes, mouchoirs…</p>",
             "page": ""
           }
         },
