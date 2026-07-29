@@ -138,23 +138,21 @@
         },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Entretien",
-            "content": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante. </li><li>Compatible avec la stérilisation à la vapeur.</li></ul>",
+            "title": "Dimensions",
+            "content": "<p>Dimensions : 29 × 20 cm</p>",
             "page": ""
           }
         },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Caractéristiques",
-            "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p>",
+            "title": "Composition textile",
+            "content": "<p>Extérieur : 100 % coton</p><p>Intérieur : 30 % coton / 70 % polyester</p>",
             "page": ""
           }
         },
