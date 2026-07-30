@@ -141,7 +141,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "Dimensions (en cm)",
-            "content": "<p><strong>Dimensions fermées:</strong><br/>L34cm (base) / L23cm (haut) x H27cm x P10cm</p><p><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm (70cm avec poignée) x P10cm</p>",
+            "content": "<p><strong>Dimensions fermées:</strong><br/>L34cm x H27cm x P10cm</p><p><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm </p>",
             "page": ""
           }
         },
