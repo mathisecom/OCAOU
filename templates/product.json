@@ -904,16 +904,6 @@
             "title": "ERGONOMIQUE",
             "text": "Tirettes faciles à ouvrir, même pour les petites mains."
           }
-        },
-        "benefit_WBBmQd": {
-          "type": "benefit",
-          "settings": {
-            "custom_icon": "shopify://shop_images/icone_23.png",
-            "icon_alt": "SÉCURITÉ",
-            "icon": "smile",
-            "title": "SÉCURITÉ",
-            "text": "Les doudous sont ligotés et les poches filets permettent de tout bloquer."
-          }
         }
       },
       "block_order": [
@@ -922,8 +912,7 @@
         "benefit_Lpj498",
         "benefit_J8aV6U",
         "benefit_BqnDgY",
-        "benefit_RyBCLy",
-        "benefit_WBBmQd"
+        "benefit_RyBCLy"
       ],
       "name": "Avantages icônes",
       "settings": {
@@ -1346,7 +1335,7 @@
           "type": "item",
           "settings": {
             "title": "Quel est le poids du sac à dos ?",
-            "content": "<p>Le sac pèse entre 380 et 422 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! De plus, les bretelles sont rembourrées.</p>"
+            "content": "<p>Le sac pèse entre 360 et 480 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! </p>"
           }
         }
       },
