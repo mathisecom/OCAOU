@@ -113,7 +113,6 @@
         },
         "associated_products_dQCNyG": {
           "type": "associated_products",
-          "disabled": true,
           "settings": {
             "title": "SOUVENT ACHETÉS ENSEMBLE",
             "stack_products": false,
