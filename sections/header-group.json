@@ -27,7 +27,7 @@
           "type": "announcement",
           "settings": {
             "show_icon": true,
-            "icon": "box",
+            "icon": "payment",
             "text": "Paiement en 3x",
             "link": ""
           }
