@@ -35,7 +35,7 @@
         "products_per_page": 24,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 3,
-        "filter_layout": "sidebar",
+        "filter_layout": "horizontal",
         "show_sort_by": true,
         "show_filters": true,
         "show_filter_group_name": false,
