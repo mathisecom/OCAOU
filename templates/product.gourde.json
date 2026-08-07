@@ -700,6 +700,39 @@
         "text_color": ""
       }
     },
+    "shop_the_look_BrdzWG": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_crRUa8": {
+          "type": "product",
+          "settings": {
+            "product": "coffret-premier-repas",
+            "horizontal_position": 52,
+            "vertical_position": 25
+          }
+        }
+      },
+      "block_order": [
+        "product_crRUa8"
+      ],
+      "name": "Shop the look",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "title": "Il existe aussi en coffret",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": "",
+        "product_card_mobile_background": "",
+        "product_card_mobile_text_color": "",
+        "background_dots": "#FFF"
+      }
+    },
     "avantageicons_k7faYm": {
       "type": "avantageicons",
       "blocks": {
@@ -1694,6 +1727,7 @@
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
     "multi_column_FnzMQb",
+    "shop_the_look_BrdzWG",
     "avantageicons_k7faYm",
     "bandedefilante_6mBxhe",
     "ocacoufriseage_LWBwAr",
