@@ -717,7 +717,7 @@
       ],
       "name": "Shop the look",
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "stack_mobile": true,
         "image": "shopify://shop_images/ChatGPTImage26juil.2026_14_52_44_cb3a6abc-0d81-4eb1-855c-e3b09d429dbb.png",
         "title": "Il existe aussi en coffret",
