@@ -708,7 +708,7 @@
           "settings": {
             "product": "coffret-premier-repas",
             "horizontal_position": 52,
-            "vertical_position": 25
+            "vertical_position": 40
           }
         }
       },
@@ -719,6 +719,7 @@
       "settings": {
         "full_width": true,
         "stack_mobile": true,
+        "image": "shopify://shop_images/ChatGPTImage26juil.2026_14_52_44_cb3a6abc-0d81-4eb1-855c-e3b09d429dbb.png",
         "title": "Il existe aussi en coffret",
         "content": "",
         "background": "",
@@ -730,7 +731,7 @@
         "product_card_text_color": "",
         "product_card_mobile_background": "",
         "product_card_mobile_text_color": "",
-        "background_dots": "#FFF"
+        "background_dots": "#fff"
       }
     },
     "avantageicons_k7faYm": {
