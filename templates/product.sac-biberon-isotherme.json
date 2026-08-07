@@ -217,6 +217,40 @@
         "input_text_color": ""
       }
     },
+    "shop_the_look_Dm8yCV": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_hBkj79": {
+          "type": "product",
+          "settings": {
+            "product": "coffret-balades",
+            "horizontal_position": 52,
+            "vertical_position": 45
+          }
+        }
+      },
+      "block_order": [
+        "product_hBkj79"
+      ],
+      "name": "Shop the look",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "image": "shopify://shop_images/ChatGPT_Image_26_juil._2026_14_58_09.png",
+        "title": "Il existe aussi en coffret",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": "",
+        "product_card_mobile_background": "",
+        "product_card_mobile_text_color": "",
+        "background_dots": "#FFF"
+      }
+    },
     "rich_text_7LA3LQ": {
       "type": "rich-text",
       "blocks": {
@@ -1688,6 +1722,7 @@
   },
   "order": [
     "main",
+    "shop_the_look_Dm8yCV",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
