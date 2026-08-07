@@ -108,28 +108,38 @@
     flex: 0 0 auto;
   }
   #{{ duo_uid }} .duoP-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  #{{ duo_uid }} .duoP-thumb-trio {
-    width: 104px;
+  #{{ duo_uid }} .duoP-thumb-trio,
+  #{{ duo_uid }} .duoP-thumb-duo {
     height: 48px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3px;
     background: transparent;
     overflow: visible;
   }
-  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini {
+  #{{ duo_uid }} .duoP-thumb-trio {
+    width: 104px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  #{{ duo_uid }} .duoP-thumb-duo {
+    width: 70px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini,
+  #{{ duo_uid }} .duoP-thumb-duo .duoP-mini {
     min-width: 0;
     overflow: hidden;
     border-radius: 8px;
     background: #F0E9DC;
   }
-  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini img {
+  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini img,
+  #{{ duo_uid }} .duoP-thumb-duo .duoP-mini img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini.is-empty {
+  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini.is-empty,
+  #{{ duo_uid }} .duoP-thumb-duo .duoP-mini.is-empty {
     display: grid;
     place-items: center;
     font-size: 16px;
@@ -298,10 +308,17 @@
             </span>
           </span>
         {% else %}
-          <span class="duoP-thumb">
-            {% if comp_image != blank %}
-              <img class="duoP-img-comp" src="{{ comp_image | image_url: width: 120 }}" loading="lazy" alt="{{ comp.title | escape }}">
-            {% endif %}
+          <span class="duoP-thumb duoP-thumb-duo" aria-label="{{ product.title }} + {{ comp.title }}">
+            <span class="duoP-mini">
+              {% if main_image != blank %}
+                <img src="{{ main_image | image_url: width: 160 }}" loading="lazy" alt="{{ product.title | escape }}">
+              {% endif %}
+            </span>
+            <span class="duoP-mini">
+              {% if comp_image != blank %}
+                <img class="duoP-img-comp" src="{{ comp_image | image_url: width: 160 }}" loading="lazy" alt="{{ comp.title | escape }}">
+              {% endif %}
+            </span>
           </span>
         {% endif %}
         <span class="duoP-resume-txt">
