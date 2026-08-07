@@ -232,8 +232,8 @@
   <div class="kitR-card">
     <button type="button" class="kitR-resume" aria-expanded="false">
       <span class="kitR-thumbs">
-        <span class="kitR-thumb">{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
-        <span class="kitR-thumb">{% if p_lunch.featured_image %}{{ p_lunch.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="MAIN">{% assign img_main = main_variant.featured_image | default: product.featured_image %}{% if img_main %}{{ img_main | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="lunch">{% assign img_lunch = v_lunch.featured_image | default: p_lunch.featured_image %}{% if img_lunch %}{{ img_lunch | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
       </span>
       <span class="kitR-resume-txt">
         <span class="nom">Gourde + Lunch box</span>
@@ -254,7 +254,8 @@
         <label for="{{ kit_uid }}-s1-lunch">Coloris lunch box</label>
         <select id="{{ kit_uid }}-s1-lunch" data-handle="lunch">
           {% for v in p_lunch.variants %}
-            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+            {% assign variant_img = v.featured_image | default: p_lunch.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
           {% endfor %}
         </select>
       {% endif %}
@@ -270,9 +271,9 @@
   <div class="kitR-card">
     <button type="button" class="kitR-resume" aria-expanded="false">
       <span class="kitR-thumbs">
-        <span class="kitR-thumb">{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
-        <span class="kitR-thumb">{% if p_lunch.featured_image %}{{ p_lunch.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
-        <span class="kitR-thumb">{% if p_couv.featured_image %}{{ p_couv.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="MAIN">{% assign img_main = main_variant.featured_image | default: product.featured_image %}{% if img_main %}{{ img_main | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="lunch">{% assign img_lunch = v_lunch.featured_image | default: p_lunch.featured_image %}{% if img_lunch %}{{ img_lunch | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="couv">{% assign img_couv = v_couv.featured_image | default: p_couv.featured_image %}{% if img_couv %}{{ img_couv | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
       </span>
       <span class="kitR-resume-txt">
         <span class="nom">+ Les couverts</span>
@@ -297,7 +298,8 @@
         <label for="{{ kit_uid }}-s2-lunch">Coloris lunch box</label>
         <select id="{{ kit_uid }}-s2-lunch" data-handle="lunch">
           {% for v in p_lunch.variants %}
-            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+            {% assign variant_img = v.featured_image | default: p_lunch.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
           {% endfor %}
         </select>
       {% endif %}
@@ -305,7 +307,8 @@
         <label for="{{ kit_uid }}-s2-couv">Coloris couverts</label>
         <select id="{{ kit_uid }}-s2-couv" data-handle="couv">
           {% for v in p_couv.variants %}
-            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+            {% assign variant_img = v.featured_image | default: p_couv.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
           {% endfor %}
         </select>
       {% endif %}
@@ -322,10 +325,10 @@
   <div class="kitR-card kitR-compact">
     <button type="button" class="kitR-resume" aria-expanded="false">
       <span class="kitR-thumbs">
-        <span class="kitR-thumb">{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
-        <span class="kitR-thumb">{% if p_lunch.featured_image %}{{ p_lunch.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
-        <span class="kitR-thumb">{% if p_couv.featured_image %}{{ p_couv.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
-        <span class="kitR-thumb">{% if p_iso.featured_image %}{{ p_iso.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_iso.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="MAIN">{% assign img_main = main_variant.featured_image | default: product.featured_image %}{% if img_main %}{{ img_main | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="lunch">{% assign img_lunch = v_lunch.featured_image | default: p_lunch.featured_image %}{% if img_lunch %}{{ img_lunch | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_lunch.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="couv">{% assign img_couv = v_couv.featured_image | default: p_couv.featured_image %}{% if img_couv %}{{ img_couv | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
+        <span class="kitR-thumb" data-handle="iso">{% assign img_iso = v_iso.featured_image | default: p_iso.featured_image %}{% if img_iso %}{{ img_iso | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_iso.title }}{% endif %}</span>
       </span>
       <span class="kitR-resume-txt">
         <span class="nom">Kit Repas Nomade complet <span class="kitR-badge or">Kit complet ★</span></span>
@@ -353,7 +356,8 @@
         <label for="{{ kit_uid }}-s3-lunch">Coloris lunch box</label>
         <select id="{{ kit_uid }}-s3-lunch" data-handle="lunch">
           {% for v in p_lunch.variants %}
-            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+            {% assign variant_img = v.featured_image | default: p_lunch.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
           {% endfor %}
         </select>
       {% endif %}
@@ -361,7 +365,8 @@
         <label for="{{ kit_uid }}-s3-couv">Coloris couverts</label>
         <select id="{{ kit_uid }}-s3-couv" data-handle="couv">
           {% for v in p_couv.variants %}
-            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+            {% assign variant_img = v.featured_image | default: p_couv.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
           {% endfor %}
         </select>
       {% endif %}
@@ -369,7 +374,8 @@
         <label for="{{ kit_uid }}-s3-iso">Coloris sac isotherme</label>
         <select id="{{ kit_uid }}-s3-iso" data-handle="iso">
           {% for v in p_iso.variants %}
-            <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+            {% assign variant_img = v.featured_image | default: p_iso.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}" {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
           {% endfor %}
         </select>
       {% endif %}
@@ -401,6 +407,35 @@
     couv: '{{ v_couv.id }}',
     iso: '{{ v_iso.id }}'
   };
+
+  // Mise à jour de la miniature selon la variante choisie
+  function updateVariantThumb(select) {
+    var card = select.closest('.kitR-card');
+    if (!card) return;
+
+    var key = select.dataset.handle;
+    var option = select.options[select.selectedIndex];
+    var imageUrl = option ? option.dataset.image : '';
+    if (!key || !imageUrl) return;
+
+    var img = card.querySelector('.kitR-thumb[data-handle="' + key + '"] img');
+    if (!img) return;
+
+    // image_tag génère généralement un srcset : on le retire pour forcer
+    // immédiatement l'image de la variante sélectionnée.
+    img.removeAttribute('srcset');
+    img.removeAttribute('sizes');
+    img.src = imageUrl;
+  }
+
+  root.querySelectorAll('select[data-handle]').forEach(function (select) {
+    select.addEventListener('change', function () {
+      updateVariantThumb(select);
+    });
+
+    // Synchronise aussi la miniature avec la variante sélectionnée au chargement.
+    updateVariantThumb(select);
+  });
 
   // Accordéon
   root.querySelectorAll('.kitR-resume').forEach(function (head) {
