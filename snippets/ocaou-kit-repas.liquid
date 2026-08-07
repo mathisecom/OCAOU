@@ -8,7 +8,7 @@
   ▸ 3 étapes CUMULATIVES :
       Étape 1 : Gourde + Lunch box
       Étape 2 : + Couverts (🎁 pochon offert)
-      Étape 3 : + Sac isotherme (🎁 lingettes offertes)
+      Étape 3 : + Sac isotherme (🎁 poignée nomade offerte)
   ▸ Les totaux sont calculés avec les VRAIS prix Shopify
   ▸ Le bouton ajoute TOUS les produits de l'étape au panier
   ▸ Choix du coloris pour chaque produit à variantes
@@ -18,7 +18,7 @@
   2. Page produit Gourde > bloc "Liquid personnalisé" :
      {% render 'ocaou-kit-repas', product: product %}
 
-  ⚠️ CADEAUX : le pochon (étapes 2-3) et les lingettes
+  ⚠️ CADEAUX : le pochon (étapes 2-3) et la poignée nomade
   (étape 3) sont affichés comme avantages. Pour qu'ils
   arrivent à 0€ dans le panier, créez dans l'admin des
   réductions automatiques de type "achète X, Y, Z →
@@ -39,7 +39,7 @@
   assign kit_isotherme_handle = 'sac-isotherme'
 
   assign gift_pochon_handle = ''
-  assign gift_lingettes_handle = ''
+  assign gift_poignee_handle = ''
 
   assign titre_bloc = 'Complétez votre Kit Repas Nomade :'
   assign couleur_accent = '#B3565A'
@@ -333,12 +333,12 @@
       <span class="kitR-resume-txt">
         <span class="nom">Kit Repas Nomade complet <span class="kitR-badge or">Kit complet ★</span></span>
         <span class="prix"><b>{{ total3 | money }}</b> TTC</span>
-        <span class="gains">🎁 Lingettes offertes (22,90€) · 🎁 Pochon offert · 🚚 Livraison offerte</span>
+        <span class="gains">🎁 Poignée nomade offerte · 🎁 Pochon offert · 🚚 Livraison offerte</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
     <div class="kitR-detail">
-      <p class="kitR-accroche" style="font-size:12.5px;font-weight:600;margin:0 0 10px;">Complétez votre Kit Repas Nomade et recevez les lingettes lavables O'CAOU en cadeau. 🎁</p>
+      <p class="kitR-accroche" style="font-size:12.5px;font-weight:600;margin:0 0 10px;">Complétez votre Kit Repas Nomade et recevez la poignée nomade O'CAOU en cadeau. 🎁</p>
       <div class="lignes">
         <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
         <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
@@ -346,8 +346,8 @@
         <div class="l"><span>{{ p_iso.title }}</span><span>{{ v_iso.price | money }}</span></div>
       </div>
       <div class="cadeaux">
-        <div>🎁 Sac de 4 lingettes lavables O'CAOU offert (valeur 22,90€)
-          <small>Bambou & coton OEKO-TEX®. Douces, absorbantes, réutilisables et pensées pour accompagner tous les petits moments du quotidien : allaitement, bébé, repas et goûter.</small>
+        <div>🎁 Poignée nomade O'CAOU offerte
+          <small>Offerte avec le Kit Repas Nomade complet.</small>
         </div>
         <div>🎁 Pochon O'CAOU offert</div>
         <div>🚚 Livraison offerte</div>
@@ -387,7 +387,7 @@
   </div>
   {%- endif -%}
 
-  <p class="kitR-eco">💰 Économisez jusqu'à 29,40€ avec le Kit Repas Nomade</p>
+  <p class="kitR-eco">🎁 Profitez des cadeaux et de la livraison offerte avec le Kit Repas Nomade</p>
 
   {%- else -%}
     <p style="font-size:12px;opacity:.7">⚠️ Configurez les handles des produits dans le snippet ocaou-kit-repas.</p>
