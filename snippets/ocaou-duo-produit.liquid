@@ -42,11 +42,19 @@
   assign duo1_titre = 'Le Duo Gourde'
   assign duo1_prix = 89.0
   assign duo1_badge = 'Le préféré ♥'
+  assign duo1_cadeau_handle = 'poignee-nomade'
+  assign duo1_cadeau_nom = 'Poignée nomade'
+  assign duo1_cadeau_libelle = 'Poignée nomade offerte'
+  assign duo1_cadeau_prix = 9.90
 
   assign duo2_handle = 'cabas-ocaou'
   assign duo2_titre = 'Le Duo Cabas'
   assign duo2_prix = 99.0
   assign duo2_badge = ''
+  assign duo2_cadeau_handle = 'pochon'
+  assign duo2_cadeau_nom = 'Pochon'
+  assign duo2_cadeau_libelle = 'Pochon offert'
+  assign duo2_cadeau_prix = 9.90
 
   assign duo3_handle = 'pochette-ocaou'
   assign duo3_titre = 'Le Duo Pochette'
@@ -100,6 +108,32 @@
     flex: 0 0 auto;
   }
   #{{ duo_uid }} .duoP-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #{{ duo_uid }} .duoP-thumb-trio {
+    width: 104px;
+    height: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3px;
+    background: transparent;
+    overflow: visible;
+  }
+  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #F0E9DC;
+  }
+  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #{{ duo_uid }} .duoP-thumb-trio .duoP-mini.is-empty {
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+  }
   #{{ duo_uid }} .duoP-resume-txt { flex: 1; min-width: 0; }
   #{{ duo_uid }} .duoP-resume-txt .nom {
     font-size: 13.5px;
@@ -143,7 +177,16 @@
     opacity: .8;
     margin: 0 0 10px;
   }
-  #{{ duo_uid }} .duoP-detail .lignes .l { display: flex; justify-content: space-between; padding: 2px 0; }
+  #{{ duo_uid }} .duoP-detail .lignes .l { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
+  #{{ duo_uid }} .duoP-detail .lignes .duoP-gift {
+    margin-top: 4px;
+    padding-top: 7px;
+    border-top: 1px dashed {{ couleur_bordure }};
+    font-weight: 700;
+    opacity: 1;
+  }
+  #{{ duo_uid }} .duoP-detail .lignes .duoP-gift s { opacity: .55; margin-right: 6px; font-weight: 400; }
+  #{{ duo_uid }} .duoP-detail .lignes .duoP-gift b { color: {{ couleur_vert }}; }
   #{{ duo_uid }} .duoP-detail .ship { font-size: 12px; font-weight: 700; color: {{ couleur_vert }}; margin: 0 0 10px; }
   #{{ duo_uid }} .duoP-detail label {
     display: block;
@@ -189,16 +232,28 @@
           assign d_titre = duo1_titre
           assign d_prix = duo1_prix
           assign d_badge = duo1_badge
+          assign d_cadeau_handle = duo1_cadeau_handle
+          assign d_cadeau_nom = duo1_cadeau_nom
+          assign d_cadeau_libelle = duo1_cadeau_libelle
+          assign d_cadeau_prix = duo1_cadeau_prix
         when 2
           assign d_handle = duo2_handle
           assign d_titre = duo2_titre
           assign d_prix = duo2_prix
           assign d_badge = duo2_badge
+          assign d_cadeau_handle = duo2_cadeau_handle
+          assign d_cadeau_nom = duo2_cadeau_nom
+          assign d_cadeau_libelle = duo2_cadeau_libelle
+          assign d_cadeau_prix = duo2_cadeau_prix
         when 3
           assign d_handle = duo3_handle
           assign d_titre = duo3_titre
           assign d_prix = duo3_prix
           assign d_badge = duo3_badge
+          assign d_cadeau_handle = ''
+          assign d_cadeau_nom = ''
+          assign d_cadeau_libelle = ''
+          assign d_cadeau_prix = 0
       endcase
 
       if d_handle == blank
@@ -211,17 +266,44 @@
       endif
 
       assign comp_variant = comp.selected_or_first_available_variant
-      assign total = main_variant.price | plus: comp_variant.price
+      assign comp_image = comp_variant.featured_image | default: comp.featured_image
+      assign main_image = main_variant.featured_image | default: product.featured_image
+      assign cadeau = all_products[d_cadeau_handle]
+      assign cadeau_image = cadeau.featured_image
+      assign cadeau_cents = d_cadeau_prix | times: 100 | round
+      assign total = main_variant.price | plus: comp_variant.price | plus: cadeau_cents
       assign duo_cents = d_prix | times: 100 | round
     -%}
 
     <div class="duoP-card">
       <button type="button" class="duoP-resume" aria-expanded="false">
-        <span class="duoP-thumb">
-          {% if comp.featured_image != blank %}
-            {{ comp.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: comp.title }}
-          {% endif %}
-        </span>
+        {% if i == 1 or i == 2 %}
+          <span class="duoP-thumb duoP-thumb-trio" aria-label="{{ product.title }} + {{ comp.title }} + {{ d_cadeau_nom }}">
+            <span class="duoP-mini">
+              {% if main_image != blank %}
+                <img src="{{ main_image | image_url: width: 160 }}" loading="lazy" alt="{{ product.title | escape }}">
+              {% endif %}
+            </span>
+            <span class="duoP-mini">
+              {% if comp_image != blank %}
+                <img class="duoP-img-comp" src="{{ comp_image | image_url: width: 160 }}" loading="lazy" alt="{{ comp.title | escape }}">
+              {% endif %}
+            </span>
+            <span class="duoP-mini{% if cadeau_image == blank %} is-empty{% endif %}">
+              {% if cadeau_image != blank %}
+                <img src="{{ cadeau_image | image_url: width: 160 }}" loading="lazy" alt="{{ d_cadeau_nom | escape }}">
+              {% else %}
+                <span aria-hidden="true">🎁</span>
+              {% endif %}
+            </span>
+          </span>
+        {% else %}
+          <span class="duoP-thumb">
+            {% if comp_image != blank %}
+              <img class="duoP-img-comp" src="{{ comp_image | image_url: width: 120 }}" loading="lazy" alt="{{ comp.title | escape }}">
+            {% endif %}
+          </span>
+        {% endif %}
         <span class="duoP-resume-txt">
           <span class="nom">
             {{ d_titre }}
@@ -238,7 +320,13 @@
       <div class="duoP-detail">
         <div class="lignes">
           <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
-          <div class="l"><span>{{ comp.title }}</span><span>{{ comp_variant.price | money }}</span></div>
+          <div class="l"><span>{{ comp.title }}</span><span class="duoP-comp-price">{{ comp_variant.price | money }}</span></div>
+          {% if d_cadeau_nom != blank %}
+            <div class="l duoP-gift">
+              <span>🎁 {{ d_cadeau_libelle }}</span>
+              <span><s>{{ cadeau_cents | money }}</s><b>Offert</b></span>
+            </div>
+          {% endif %}
         </div>
         <p class="ship">🚚 Livraison offerte</p>
 
@@ -246,7 +334,13 @@
           <label for="{{ duo_uid }}-sel-{{ i }}">Coloris</label>
           <select id="{{ duo_uid }}-sel-{{ i }}" class="duoP-select">
             {% for v in comp.variants %}
-              <option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>
+              {%- assign v_image = v.featured_image | default: comp.featured_image -%}
+              <option
+                value="{{ v.id }}"
+                data-image="{% if v_image != blank %}{{ v_image | image_url: width: 180 }}{% endif %}"
+                data-price="{{ v.price | money | escape }}"
+                {% if v.id == comp_variant.id %}selected{% endif %}
+                {% unless v.available %}disabled{% endunless %}>
                 {{ v.title }}{% unless v.available %} — épuisé{% endunless %}
               </option>
             {% endfor %}
@@ -258,6 +352,7 @@
           class="duoP-btn"
           data-main-variant="{{ main_variant.id }}"
           data-comp-variant="{{ comp_variant.id }}"
+          data-gift-name="{{ d_cadeau_nom | escape }}"
           {% unless main_variant.available and comp_variant.available %}disabled{% endunless %}>
           {% if main_variant.available and comp_variant.available %}
             Ajouter le Duo au panier
@@ -292,7 +387,29 @@
     });
   });
 
-  // Ajout des 2 produits au panier
+
+  // Met à jour la photo et le prix du produit complémentaire selon le coloris choisi
+  root.querySelectorAll('.duoP-select').forEach(function (select) {
+    select.addEventListener('change', function () {
+      var card = select.closest('.duoP-card');
+      var option = select.options[select.selectedIndex];
+      var compImg = card.querySelector('.duoP-img-comp');
+      var compPrice = card.querySelector('.duoP-comp-price');
+      var btn = card.querySelector('.duoP-btn');
+
+      if (compImg && option && option.dataset.image) {
+        compImg.src = option.dataset.image;
+      }
+      if (compPrice && option && option.dataset.price) {
+        compPrice.textContent = option.dataset.price;
+      }
+      if (btn) {
+        btn.dataset.compVariant = select.value;
+      }
+    });
+  });
+
+  // Ajout des 2 produits au panier + mémorisation du cadeau offert
   root.querySelectorAll('.duoP-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var card = btn.closest('.duoP-card');
@@ -305,13 +422,19 @@
       btn.disabled = true;
       btn.textContent = 'Ajout en cours…';
 
+      var compItem = { id: parseInt(compId, 10), quantity: 1 };
+      var giftName = btn.dataset.giftName;
+      if (giftName) {
+        compItem.properties = { 'Cadeau offert': giftName };
+      }
+
       fetch('/cart/add.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           items: [
             { id: parseInt(mainId, 10), quantity: 1 },
-            { id: parseInt(compId, 10), quantity: 1 }
+            compItem
           ]
         })
       })
