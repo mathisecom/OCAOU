@@ -199,7 +199,7 @@
         "full_width": true,
         "show_fixed_add_to_cart": true,
         "desktop_media_width": 45,
-        "desktop_media_layout": "carousel_thumbnails_left",
+        "desktop_media_layout": "carousel_thumbnails_bottom",
         "mobile_media_size": "contained",
         "mobile_carousel_control": "thumbnails",
         "enable_video_autoplay": false,
@@ -244,7 +244,7 @@
         "product_card_text_color": "",
         "product_card_mobile_background": "",
         "product_card_mobile_text_color": "",
-        "background_dots": "#FFF"
+        "background_dots": "#fff"
       }
     },
     "rich_text_7LA3LQ": {
