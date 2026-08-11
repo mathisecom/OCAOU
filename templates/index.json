@@ -283,7 +283,7 @@
         "carte_Y7LJak": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/ADS_IMAGE.jpg",
+            "image": "shopify://shop_images/IMG_2790.heic",
             "label": "Naissance",
             "collection": "naissance",
             "link": ""
@@ -301,7 +301,7 @@
         "carte_HRQYa9": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/pour_lecole_2.jpg",
+            "image": "shopify://shop_images/creche_maternelle_d87a33a3-a4a8-4551-a1ba-92c3d7b7e3f2.png",
             "label": "Crèche & Maternelle",
             "collection": "creches-maternelle",
             "link": ""
@@ -310,7 +310,7 @@
         "carte_VRxatd": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/ocaou-pour-pique-niquer.jpg",
+            "image": "shopify://shop_images/repas.png",
             "label": "Repas",
             "collection": "repas",
             "link": ""
@@ -319,7 +319,7 @@
         "carte_CwnzDJ": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-enfant-poussette.jpg",
+            "image": "shopify://shop_images/Gemini_Generated_Image_13qifq13qifq13qi.png",
             "label": "Sorties",
             "collection": "sorties",
             "link": ""
@@ -328,7 +328,7 @@
         "carte_PqKnFx": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/ADS_IMAGE_3.jpg",
+            "image": "shopify://shop_images/idees_cadeaux.png",
             "label": "Idées cadeaux ",
             "collection": "les-coffrets",
             "link": ""
