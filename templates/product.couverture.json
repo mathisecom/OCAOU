@@ -667,7 +667,7 @@
         "marquee_item_7XteVb": {
           "type": "marquee_item",
           "settings": {
-            "text": "Pensé pour durer",
+            "text": "Lavable et certifiée OEKO-TEX®",
             "icon_text": "✹"
           }
         }
@@ -704,11 +704,10 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
             "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
+            "title": "Un cocon de douceur",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>Sa maille <strong>douce, souple et légère</strong> enveloppe bébé confortablement dès ses premiers jours.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -717,11 +716,10 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
+            "title": "Confort sans étouffer",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.</p>",
+            "content": "<p>Sa matière <strong>respirante et réconfortante</strong> garde bébé bien installé à la maison comme en balade.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -730,11 +728,10 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
-            "title": "Pratique partout, tout le temps",
+            "title": "Pensée pour le quotidien",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p><strong>Lavable et certifiée OEKO-TEX®</strong>, elle accompagne bébé dès la naissance et se nettoie facilement.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
