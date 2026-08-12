@@ -705,7 +705,6 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
             "column_size": "3",
             "title": "Tout est organisé, même les imprévus",
             "heading_tag": "h3",
@@ -718,7 +717,6 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
             "title": "Un sac qui grandit avec votre enfant",
             "heading_tag": "h3",
@@ -731,7 +729,6 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
             "title": "Pratique partout, tout le temps",
             "heading_tag": "h3",
