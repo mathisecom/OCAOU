@@ -740,9 +740,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
+            "title": "Tout ce qu’il faut, toujours avec vous",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>Sa <strong>grande capacité</strong> permet d’emporter facilement les affaires de bébé, les vôtres et celles de toute la famille.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -752,9 +752,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
+            "title": "Léger et facile à vivre",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.</p>",
+            "content": "<p>Spacieux sans être encombrant, ce cabas reste <strong>léger et pratique</strong> pour vous accompagner au quotidien.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -764,9 +764,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Pratique partout, tout le temps",
+            "title": "Tout reste bien organisé",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p>Sa <strong>poche intérieure</strong> garde vos essentiels à portée de main, pour des sorties plus simples et mieux organisées.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
