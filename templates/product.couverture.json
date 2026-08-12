@@ -704,6 +704,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_19_41_1.png",
             "column_size": "3",
             "title": "Un cocon de douceur",
             "heading_tag": "h3",
@@ -716,6 +717,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_19_43_2.png",
             "column_size": "3",
             "title": "Confort sans étouffer",
             "heading_tag": "h3",
@@ -728,6 +730,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_19_43_3.png",
             "column_size": "3",
             "title": "Pensée pour le quotidien",
             "heading_tag": "h3",
