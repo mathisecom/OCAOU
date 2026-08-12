@@ -21,24 +21,28 @@
         "image_WFQKFd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "url": ""
           }
         },
         "image_JUR4cR": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "url": ""
           }
         },
         "image_MhTMW6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "url": ""
           }
         },
         "image_R89UY8": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/biba.png",
             "url": ""
           }
         }
@@ -60,7 +64,7 @@
         "heading_size_mobile": 18,
         "heading_height": 130,
         "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 30,
+        "scrolling_velocity_mobile": 12,
         "scrolling_direction": "left",
         "pause_hover": false,
         "scrolling_gap": 70,
