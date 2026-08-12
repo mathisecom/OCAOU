@@ -107,7 +107,7 @@
             "title": "Marie Claire",
             "content": "",
             "link_text": "Lien de L'Article",
-            "link_url": "",
+            "link_url": "https://www.marieclaire.fr/des-cadeaux-de-noel-a-faire-en-famille,1485316.asp",
             "background": "#FFFFFF",
             "background_gradient": "",
             "text_color": "#000000",
@@ -169,7 +169,6 @@
         "image_pigGck": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/image.webp",
             "media_width": 50,
             "media_position": "start",
             "text_position": "place-self-center text-center",
