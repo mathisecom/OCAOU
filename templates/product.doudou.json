@@ -704,6 +704,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_09_32_3.png",
             "column_size": "3",
             "title": "Un câlin tout en douceur",
             "heading_tag": "h3",
@@ -716,6 +717,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_09_32_2.png",
             "column_size": "3",
             "title": "Facile à attraper",
             "heading_tag": "h3",
@@ -728,6 +730,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_09_32_1.png",
             "column_size": "3",
             "title": "Toujours près de bébé",
             "heading_tag": "h3",
