@@ -738,6 +738,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_56_11_1.png",
             "column_size": "3",
             "title": "Tout son repas trouve sa place",
             "heading_tag": "h3",
@@ -750,6 +751,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_56_11_2.png",
             "column_size": "3",
             "title": "Chaud ou frais, comme il faut",
             "heading_tag": "h3",
@@ -762,6 +764,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_56_11_3.png",
             "column_size": "3",
             "title": "Pratique dans toutes les aventures",
             "heading_tag": "h3",
