@@ -637,6 +637,40 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "shop_the_look_PCVrP4": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_e3ypLk": {
+          "type": "product",
+          "settings": {
+            "product": "coffret-naissance",
+            "horizontal_position": 33,
+            "vertical_position": 73
+          }
+        }
+      },
+      "block_order": [
+        "product_e3ypLk"
+      ],
+      "name": "Shop the look",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "image": "shopify://shop_images/ChatGPTImage7aout2026_15_44_22_3.png",
+        "title": "Existe Aussi en Coffret",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": "",
+        "product_card_mobile_background": "",
+        "product_card_mobile_text_color": "",
+        "background_dots": "#FFF"
+      }
+    },
     "bandedefilante_6mBxhe": {
       "type": "bandedefilante",
       "blocks": {
@@ -1587,6 +1621,7 @@
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
+    "shop_the_look_PCVrP4",
     "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
     "avantageicons_k7faYm",
