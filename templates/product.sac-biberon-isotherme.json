@@ -739,9 +739,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
+            "title": "Tout son repas trouve sa place",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>Avec sa <strong>grande capacité de 5,2 L</strong>, il accueille facilement repas, goûter, boisson et petits essentiels.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -751,9 +751,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
+            "title": "Chaud ou frais, comme il faut",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.</p>",
+            "content": "<p>Son intérieur isotherme aide à <strong>conserver les aliments au chaud ou au frais</strong> pendant les trajets et les sorties.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -763,9 +763,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Pratique partout, tout le temps",
+            "title": "Pratique dans toutes les aventures",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p><strong>Léger, étanche et facile à nettoyer</strong>, il s’accroche facilement grâce à sa sangle et suit les Petits Grands partout.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
