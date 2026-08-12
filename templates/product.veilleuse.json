@@ -643,29 +643,29 @@
         "marquee_item_7NfyzF": {
           "type": "marquee_item",
           "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒"
+            "text": "Rassure au coucher",
+            "icon_text": "✹"
           }
         },
         "marquee_item_qcCcnL": {
           "type": "marquee_item",
           "settings": {
-            "text": "Prêt en quelques secondes",
+            "text": "Lumière douce",
             "icon_text": "✹"
           }
         },
         "marquee_item_PGEcxn": {
           "type": "marquee_item",
           "settings": {
-            "text": "Aide l’enfant à être autonome",
-            "icon_text": "🌈"
+            "text": "Adaptée aux petites mains",
+            "icon_text": "✹"
           }
         },
         "marquee_item_7XteVb": {
           "type": "marquee_item",
           "settings": {
-            "text": "Pensé pour durer",
-            "icon_text": "🌷"
+            "text": "Nomade avec son anse",
+            "icon_text": "✹"
           }
         }
       },
@@ -675,7 +675,6 @@
         "marquee_item_PGEcxn",
         "marquee_item_7XteVb"
       ],
-      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fbf6ef",
@@ -702,7 +701,6 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
             "column_size": "3",
             "title": "Tout est organisé, même les imprévus",
             "heading_tag": "h3",
@@ -715,7 +713,6 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
             "title": "Un sac qui grandit avec votre enfant",
             "heading_tag": "h3",
@@ -728,7 +725,6 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
             "title": "Pratique partout, tout le temps",
             "heading_tag": "h3",
@@ -744,7 +740,6 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
-      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
