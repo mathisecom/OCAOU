@@ -647,29 +647,29 @@
         "marquee_item_7NfyzF": {
           "type": "marquee_item",
           "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒"
+            "text": "Bambou ultra doux",
+            "icon_text": "✹"
           }
         },
         "marquee_item_qcCcnL": {
           "type": "marquee_item",
           "settings": {
-            "text": "Prêt en quelques secondes",
+            "text": "Très absorbants",
             "icon_text": "✹"
           }
         },
         "marquee_item_PGEcxn": {
           "type": "marquee_item",
           "settings": {
-            "text": "Aide l’enfant à être autonome",
-            "icon_text": "🌈"
+            "text": "Respirants et imperméables",
+            "icon_text": "✹"
           }
         },
         "marquee_item_7XteVb": {
           "type": "marquee_item",
           "settings": {
-            "text": "Pensé pour durer",
-            "icon_text": "🌷"
+            "text": "Lavables et réutilisables",
+            "icon_text": "✹"
           }
         }
       },
@@ -679,7 +679,6 @@
         "marquee_item_PGEcxn",
         "marquee_item_7XteVb"
       ],
-      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fbf6ef",
@@ -748,7 +747,6 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
-      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
