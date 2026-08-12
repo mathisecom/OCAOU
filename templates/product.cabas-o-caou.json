@@ -739,6 +739,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_46_1.png",
             "column_size": "3",
             "title": "Tout ce qu’il faut, toujours avec vous",
             "heading_tag": "h3",
@@ -751,6 +752,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_46_2.png",
             "column_size": "3",
             "title": "Léger et facile à vivre",
             "heading_tag": "h3",
@@ -763,6 +765,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_47_3.png",
             "column_size": "3",
             "title": "Tout reste bien organisé",
             "heading_tag": "h3",
