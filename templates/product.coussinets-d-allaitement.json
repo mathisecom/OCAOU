@@ -705,6 +705,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_36_38_1.png",
             "column_size": "3",
             "title": "Tout doux pour votre peau",
             "heading_tag": "h3",
@@ -717,6 +718,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_36_38_2.png",
             "column_size": "3",
             "title": "Une protection qui reste discrète",
             "heading_tag": "h3",
@@ -729,6 +731,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_36_38_3.png",
             "column_size": "3",
             "title": "À laver et à réutiliser",
             "heading_tag": "h3",
