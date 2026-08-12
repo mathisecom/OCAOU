@@ -647,29 +647,29 @@
         "marquee_item_7NfyzF": {
           "type": "marquee_item",
           "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒"
+            "text": "Bambou ultra doux",
+            "icon_text": "✹"
           }
         },
         "marquee_item_qcCcnL": {
           "type": "marquee_item",
           "settings": {
-            "text": "Prêt en quelques secondes",
+            "text": "Très absorbantes",
             "icon_text": "✹"
           }
         },
         "marquee_item_PGEcxn": {
           "type": "marquee_item",
           "settings": {
-            "text": "Aide l’enfant à être autonome",
-            "icon_text": "🌈"
+            "text": "Lavables et réutilisables",
+            "icon_text": "✹"
           }
         },
         "marquee_item_7XteVb": {
           "type": "marquee_item",
           "settings": {
-            "text": "Pensé pour durer",
-            "icon_text": "🌷"
+            "text": "Pochette imperméable incluse",
+            "icon_text": "✹"
           }
         }
       },
