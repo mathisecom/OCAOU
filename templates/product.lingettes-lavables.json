@@ -679,7 +679,6 @@
         "marquee_item_PGEcxn",
         "marquee_item_7XteVb"
       ],
-      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fbf6ef",
@@ -706,11 +705,10 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
             "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
+            "title": "Douces avec toutes les peaux",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>En <strong>bambou ultra doux</strong>, elles nettoient délicatement le visage, les mains ou la peau de bébé.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -719,11 +717,10 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
+            "title": "Douces mais très efficaces",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.</p>",
+            "content": "<p>Leur matière <strong>très absorbante</strong> permet de nettoyer facilement les petits accidents du quotidien.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -732,11 +729,10 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
-            "title": "Pratique partout, tout le temps",
+            "title": "À réutiliser encore et encore",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p><strong>Lavables et réutilisables</strong>, elles vous accompagnent partout grâce à leur <strong>pochette imperméable incluse</strong>.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -748,7 +744,6 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
-      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
