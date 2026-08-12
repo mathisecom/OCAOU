@@ -169,6 +169,7 @@
         "image_pigGck": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/biba-n533.webp",
             "media_width": 50,
             "media_position": "start",
             "text_position": "place-self-center text-center",
@@ -177,7 +178,7 @@
             "subheading": "",
             "title": "BIBA",
             "content": "",
-            "link_text": "Lien de L'Article",
+            "link_text": "",
             "link_url": "",
             "background": "#FFFFFF",
             "background_gradient": "",
@@ -204,7 +205,7 @@
         "image_LgVm4Y": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/image.webp",
+            "image": "shopify://shop_images/image_2.webp",
             "media_width": 50,
             "media_position": "end",
             "text_position": "place-self-center text-center",
@@ -214,7 +215,7 @@
             "title": "Yoopala",
             "content": "",
             "link_text": "Lien de L'Article",
-            "link_url": "",
+            "link_url": "https://www.yoopala.com/ressources/trois-indispensables-garde-enfant-sereine/",
             "background": "#FFFFFF",
             "background_gradient": "",
             "text_color": "#000000",
