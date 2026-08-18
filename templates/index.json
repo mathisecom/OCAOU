@@ -1033,7 +1033,7 @@
             "desktop_width": "medium",
             "font_size": 15,
             "border_radius": 10,
-            "rotation": 1
+            "rotation": -1
           }
         },
         "message_ydHNfC": {
@@ -1061,7 +1061,7 @@
             "desktop_width": "medium",
             "font_size": 15,
             "border_radius": 10,
-            "rotation": 0
+            "rotation": -1
           }
         },
         "message_xNdDBV": {
