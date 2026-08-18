@@ -1026,13 +1026,13 @@
           "type": "message",
           "settings": {
             "text": "Au cas où  j'ai soif",
-            "icon": "🍼",
+            "icon": "",
             "icon_position": "right",
-            "background_color": "#cd9438",
-            "text_color": "#2d2926",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
             "desktop_width": "medium",
             "font_size": 15,
-            "border_radius": 28,
+            "border_radius": 10,
             "rotation": -1
           }
         },
@@ -1040,13 +1040,13 @@
           "type": "message",
           "settings": {
             "text": "Au cas où j'ai faim",
-            "icon": "🍪",
+            "icon": "",
             "icon_position": "right",
-            "background_color": "#cd9438",
-            "text_color": "#2d2926",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
             "desktop_width": "medium",
             "font_size": 15,
-            "border_radius": 28,
+            "border_radius": 10,
             "rotation": 1
           }
         },
@@ -1054,13 +1054,13 @@
           "type": "message",
           "settings": {
             "text": "Au cas où j'ai froid",
-            "icon": "🧣",
+            "icon": "",
             "icon_position": "right",
-            "background_color": "#cd9438",
-            "text_color": "#2d2926",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
             "desktop_width": "medium",
             "font_size": 15,
-            "border_radius": 28,
+            "border_radius": 10,
             "rotation": -1
           }
         },
@@ -1068,41 +1068,69 @@
           "type": "message",
           "settings": {
             "text": "Au cas où j'ai peur",
-            "icon": "⭐",
+            "icon": "",
             "icon_position": "right",
-            "background_color": "#cd9438",
-            "text_color": "#2d2926",
+            "background_color": "#AF6C67",
+            "text_color": "#FCF9F5",
             "desktop_width": "medium",
             "font_size": 15,
-            "border_radius": 28,
+            "border_radius": 10,
             "rotation": 1
+          }
+        },
+        "message_cRRzwn": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où je prends TOUT !",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": -1
           }
         },
         "message_wxwVYP": {
           "type": "message",
           "settings": {
             "text": "Au cas où c'est chaud/froid",
-            "icon": "🔥 ❄️",
+            "icon": "",
             "icon_position": "right",
-            "background_color": "#cd9438",
-            "text_color": "#2d2926",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
             "desktop_width": "medium",
             "font_size": 15,
-            "border_radius": 28,
+            "border_radius": 10,
+            "rotation": 2
+          }
+        },
+        "message_9FwdFz": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où je le perds",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
             "rotation": -1
           }
         },
         "message_fJmXEA": {
           "type": "message",
           "settings": {
-            "text": "Au cas où mon doudou",
-            "icon": "🧸",
+            "text": "Au cas où je range TOUT",
+            "icon": "",
             "icon_position": "right",
-            "background_color": "#cd9438",
-            "text_color": "#2d2926",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
             "desktop_width": "medium",
             "font_size": 15,
-            "border_radius": 28,
+            "border_radius": 10,
             "rotation": 1
           }
         },
@@ -1110,14 +1138,14 @@
           "type": "message",
           "settings": {
             "text": "Au cas où ça coule",
-            "icon": "💧",
+            "icon": "",
             "icon_position": "right",
-            "background_color": "#cd9438",
-            "text_color": "#2d2926",
+            "background_color": "#AF6C67",
+            "text_color": "#FFFFFF",
             "desktop_width": "medium",
             "font_size": 15,
-            "border_radius": 28,
-            "rotation": 3
+            "border_radius": 10,
+            "rotation": -1
           }
         }
       },
@@ -1126,7 +1154,9 @@
         "message_ydHNfC",
         "message_YrrFYK",
         "message_xNdDBV",
+        "message_cRRzwn",
         "message_wxwVYP",
+        "message_9FwdFz",
         "message_fJmXEA",
         "message_fgU8Pa"
       ],
