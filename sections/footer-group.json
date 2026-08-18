@@ -28,20 +28,6 @@
             "content": ""
           }
         },
-        "customer-support": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-customer-support",
-            "custom_icon": "shopify://shop_images/icone_2.svg",
-            "mobile_icon_width": 36,
-            "icon_width": 36,
-            "icon_background_type": "none",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "Paiement possible en 3X",
-            "content": ""
-          }
-        },
         "discount": {
           "type": "item",
           "settings": {
@@ -52,7 +38,7 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Paiement sécurisé",
+            "title": "Paiement sécurisé et en 3x",
             "content": ""
           }
         },
@@ -73,7 +59,6 @@
       },
       "block_order": [
         "free-shipping",
-        "customer-support",
         "discount",
         "item_wwhK7N"
       ],
