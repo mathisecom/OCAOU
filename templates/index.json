@@ -319,7 +319,7 @@
         "carte_CwnzDJ": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/cargo_copie.png",
+            "image": "shopify://shop_images/Gemini_Generated_Image_v89sn6v89sn6v89s.jpg",
             "label": "Sorties",
             "collection": "sorties",
             "link": ""
@@ -674,7 +674,7 @@
         "review_item_mMgnMQ": {
           "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/IMG_0604.jpg",
+            "image": "shopify://shop_images/cargo.png",
             "image_alt": "Photo client",
             "quote": "Mon fils de 3 ans adore ranger ses petites affaires.Il est vraiment ingénieux et bien pensé.La taille est parfaite!",
             "author": "Sandrine C.",
@@ -685,7 +685,7 @@
         "review_item_MWwici": {
           "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
+            "image": "shopify://shop_images/Gemini_Generated_Image_rl4mzcrl4mzcrl4m.jpg",
             "image_alt": "Photo client",
             "quote": "Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.",
             "author": "Marion C.",
@@ -696,7 +696,7 @@
         "review_item_qHHqyd": {
           "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-a-dos-enfant.jpg",
+            "image": "shopify://shop_images/Tezza-8754.jpg",
             "image_alt": "Photo client",
             "quote": "Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!",
             "author": "Sophia M.",
@@ -1197,7 +1197,7 @@
       "settings": {
         "title": "Retours Faciles sous 14 Jours",
         "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
-        "product_image": "shopify://shop_images/IMG_2751.webp",
+        "product_image": "shopify://shop_images/no_change_copie.jpg",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
         "bg_position_mobile": "center center",
