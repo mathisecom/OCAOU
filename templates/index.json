@@ -292,7 +292,7 @@
         "carte_pCQgxk": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/Tezza-7035.jpg",
+            "image": "shopify://shop_images/no_change.jpg",
             "label": "Pour maman",
             "collection": "pour-maman",
             "link": ""
@@ -310,7 +310,7 @@
         "carte_VRxatd": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/repas.png",
+            "image": "shopify://shop_images/Gemini_Generated_Image_f9ul35f9ul35f9ul.jpg",
             "label": "Repas",
             "collection": "repas",
             "link": ""
@@ -328,7 +328,7 @@
         "carte_PqKnFx": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/idees_cadeaux.png",
+            "image": "shopify://shop_images/no_change.png",
             "label": "Idées cadeaux ",
             "collection": "les-coffrets",
             "link": ""
