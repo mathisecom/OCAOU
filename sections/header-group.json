@@ -19,7 +19,7 @@
           "settings": {
             "show_icon": true,
             "icon": "truck",
-            "text": "Livraison offerte à partir de 50€ TTC",
+            "text": "Livraison offerte à partir de 79€ TTC",
             "link": ""
           }
         },
@@ -126,7 +126,7 @@
         "text_size": "text-xs",
         "navigation_mode": "arrows",
         "scrolling_speed": 10,
-        "background": "#CF9A2E",
+        "background": "#cf9a2e",
         "background_gradient": "",
         "text_color": "#ffffff"
       }
