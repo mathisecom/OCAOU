@@ -668,103 +668,6 @@
         "pause_on_hover": false
       }
     },
-    "avisparents_9fPrRY": {
-      "type": "avisparents",
-      "blocks": {
-        "review_item_mMgnMQ": {
-          "type": "review_item",
-          "settings": {
-            "image": "shopify://shop_images/cargo.png",
-            "image_alt": "Photo client",
-            "quote": "Mon fils de 3 ans adore ranger ses petites affaires.Il est vraiment ingénieux et bien pensé.La taille est parfaite!",
-            "author": "Sandrine C.",
-            "show_stars": true,
-            "stars": 5
-          }
-        },
-        "review_item_MWwici": {
-          "type": "review_item",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_rl4mzcrl4mzcrl4m.jpg",
-            "image_alt": "Photo client",
-            "quote": "Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.",
-            "author": "Marion C.",
-            "show_stars": true,
-            "stars": 5
-          }
-        },
-        "review_item_qHHqyd": {
-          "type": "review_item",
-          "settings": {
-            "image": "shopify://shop_images/Tezza-8754.jpg",
-            "image_alt": "Photo client",
-            "quote": "Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!",
-            "author": "Sophia M.",
-            "show_stars": true,
-            "stars": 5
-          }
-        }
-      },
-      "block_order": [
-        "review_item_mMgnMQ",
-        "review_item_MWwici",
-        "review_item_qHHqyd"
-      ],
-      "name": "Avis parents carousel",
-      "settings": {
-        "show_header": true,
-        "show_top_stars": true,
-        "title": "+1,200 PARENTS CONQUIS",
-        "bg_color": "#cd9438",
-        "card_bg_color": "#f4ede1",
-        "title_color": "#ffffff",
-        "text_color": "#696969",
-        "author_color": "#666666",
-        "star_color": "#00b67a",
-        "review_star_color": "#00b67a",
-        "max_width": 2100,
-        "columns_desktop": 4,
-        "card_height_desktop": 440,
-        "card_gap": 26,
-        "side_padding_desktop": 24,
-        "columns_mobile": 1,
-        "mobile_image_height": 220,
-        "mobile_text_padding": 24,
-        "card_gap_mobile": 16,
-        "side_padding_mobile": 26,
-        "card_radius": 18,
-        "card_radius_mobile": 18,
-        "shadow_y": 0,
-        "shadow_blur": 0,
-        "shadow_opacity": 0,
-        "title_size_desktop": 17,
-        "title_size_mobile": 14,
-        "title_weight": "700",
-        "title_letter_spacing": 2,
-        "title_letter_spacing_mobile": 1,
-        "quote_size_desktop": 15,
-        "quote_size_mobile": 17,
-        "author_size_desktop": 15,
-        "author_size_mobile": 14,
-        "top_stars_size": 16,
-        "review_stars_size": 14,
-        "text_card_padding": 34,
-        "padding_top_desktop": 72,
-        "padding_bottom_desktop": 36,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 8,
-        "header_margin": 28,
-        "show_arrows": true,
-        "arrow_size": 34,
-        "arrows_margin_top": 16,
-        "arrows_margin_top_mobile": 16,
-        "arrow_bg": "#ffffff",
-        "arrow_color": "#444444",
-        "arrow_border": "#d8d8d8",
-        "arrow_hover_bg": "#111111",
-        "arrow_hover_color": "#ffffff"
-      }
-    },
     "sectionsicones_JdQXN9": {
       "type": "sectionsicones",
       "blocks": {
@@ -1476,7 +1379,6 @@
     "featured_collection_Dzf4fX",
     "offrecoffret_Tj4hcD",
     "bandedefilante_AkFDNj",
-    "avisparents_9fPrRY",
     "sectionsicones_JdQXN9",
     "avantageicons_9NE3Mb",
     "ocaoujaibesoin_bxqEpT",
