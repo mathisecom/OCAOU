@@ -184,7 +184,7 @@
         "text_align_desktop": "center",
         "text_align_mobile": "center",
         "card_radius": 16,
-        "card_radius_mobile": 18,
+        "card_radius_mobile": 16,
         "card_shadow_opacity": 0,
         "padding_top_desktop": 56,
         "padding_bottom_desktop": 56,
