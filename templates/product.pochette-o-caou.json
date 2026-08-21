@@ -896,7 +896,7 @@
         "full_width": false,
         "max_width": 1400,
         "card_height_desktop": 310,
-        "card_radius_desktop": 8,
+        "card_radius_desktop": 16,
         "card_padding_x_desktop": 100,
         "card_padding_y_desktop": 50,
         "text_column_width": 2,

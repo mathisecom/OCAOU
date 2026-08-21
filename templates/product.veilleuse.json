@@ -359,8 +359,8 @@
         "mobile_text_padding": 24,
         "card_gap_mobile": 16,
         "side_padding_mobile": 16,
-        "card_radius": 18,
-        "card_radius_mobile": 18,
+        "card_radius": 16,
+        "card_radius_mobile": 16,
         "shadow_y": 0,
         "shadow_blur": 0,
         "shadow_opacity": 0,
@@ -713,11 +713,11 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Tezza-4228.jpg",
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_44_12_1.png",
             "column_size": "3",
             "title": "Un coucher tout en douceur",
             "heading_tag": "h2",
-            "content": "<p>Une <strong>lumière douce</strong> qui rassure bébé et crée une ambiance apaisante au moment du coucher.</p>",
+            "content": "<p>Sa <strong>lumière douce</strong> rassure bébé et crée une ambiance apaisante au moment du coucher.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -726,11 +726,11 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/IMG_2803.heic",
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_44_12_2.png",
             "column_size": "3",
             "title": "Pensée pour les petites mains",
             "heading_tag": "h2",
-            "content": "<p>Ronde et douce, la veilleuse bébé dragon est <strong>facile à attraper</strong>, pour que bébé garde son petit compagnon près de lui.</p>",
+            "content": "<p>Sa forme toute ronde est <strong>facile à attraper</strong>, pour que bébé garde son petit compagnon près de lui.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -739,7 +739,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/eden_couloir_veilleuse.png",
+            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_44_13_3.png",
             "column_size": "3",
             "title": "Elle vous suit partout",
             "heading_tag": "h2",
@@ -906,7 +906,7 @@
         "full_width": false,
         "max_width": 1400,
         "card_height_desktop": 310,
-        "card_radius_desktop": 8,
+        "card_radius_desktop": 16,
         "card_padding_x_desktop": 100,
         "card_padding_y_desktop": 50,
         "text_column_width": 2,
@@ -917,7 +917,7 @@
         "product_width_desktop": 430,
         "product_offset_y_desktop": 70,
         "product_alignment_desktop": "center",
-        "card_radius_mobile": 8,
+        "card_radius_mobile": 16,
         "card_padding_x_mobile": 22,
         "card_padding_y_mobile": 36,
         "card_padding_bottom_mobile": 0,
@@ -1498,7 +1498,7 @@
         "slider_gap": 16,
         "slider_gap_mobile": 16,
         "slider_mt": 20,
-        "card_radius": 10,
+        "card_radius": 16,
         "card_border_thickness": 0,
         "card_shadow": true,
         "video_ratio": "portrait",
