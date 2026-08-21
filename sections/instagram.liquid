@@ -1,48 +1,48 @@
 {% style %}
   #shopify-section-{{ section.id }} .fp-follow-section {
     width: 100%;
-    background: {{ section.settings.bg_color }};
-    padding-top: {{ section.settings.padding_top_desktop }}px;
-    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    background: {{ settings.insta_bg_color }};
+    padding-top: {{ settings.insta_padding_top_desktop }}px;
+    padding-bottom: {{ settings.insta_padding_bottom_desktop }}px;
     overflow: hidden;
   }
 
   #shopify-section-{{ section.id }} .fp-follow-container {
-    max-width: {% if section.settings.full_width %}none{% else %}{{ section.settings.max_width }}px{% endif %};
+    max-width: {% if settings.insta_full_width %}none{% else %}{{ settings.insta_max_width }}px{% endif %};
     margin: 0 auto;
-    padding-left: {{ section.settings.side_padding_desktop }}px;
-    padding-right: {{ section.settings.side_padding_desktop }}px;
+    padding-left: {{ settings.insta_side_padding_desktop }}px;
+    padding-right: {{ settings.insta_side_padding_desktop }}px;
   }
 
   #shopify-section-{{ section.id }} .fp-follow-header {
-    text-align: {{ section.settings.title_alignment }};
-    margin-bottom: {{ section.settings.title_margin_bottom }}px;
+    text-align: {{ settings.insta_title_alignment }};
+    margin-bottom: {{ settings.insta_title_margin_bottom }}px;
   }
 
   #shopify-section-{{ section.id }} .fp-follow-title {
     margin: 0;
-    color: {{ section.settings.title_color }};
-    font-size: {{ section.settings.title_size_desktop }}px;
-    font-weight: {{ section.settings.title_weight }};
-    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+    color: {{ settings.insta_title_color }};
+    font-size: {{ settings.insta_title_size_desktop }}px;
+    font-weight: {{ settings.insta_title_weight }};
+    letter-spacing: {{ settings.insta_title_letter_spacing }}px;
     line-height: 1.2;
-    {% if section.settings.title_uppercase %}
+    {% if settings.insta_title_uppercase %}
       text-transform: uppercase;
     {% endif %}
   }
 
   #shopify-section-{{ section.id }} .fp-follow-grid {
     display: grid;
-    grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
-    gap: {{ section.settings.gap_desktop }}px;
+    grid-template-columns: repeat({{ settings.insta_columns_desktop }}, minmax(0, 1fr));
+    gap: {{ settings.insta_gap_desktop }}px;
   }
 
   #shopify-section-{{ section.id }} .fp-follow-card {
     position: relative;
     overflow: hidden;
-    border-radius: {{ section.settings.image_radius }}px;
-    background: {{ section.settings.placeholder_bg }};
-    box-shadow: 0 {{ section.settings.shadow_y }}px {{ section.settings.shadow_blur }}px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
+    border-radius: {{ settings.insta_image_radius }}px;
+    background: {{ settings.insta_placeholder_bg }};
+    box-shadow: 0 {{ settings.insta_shadow_y }}px {{ settings.insta_shadow_blur }}px rgba(0, 0, 0, {{ settings.insta_shadow_opacity | divided_by: 100.0 }});
   }
 
   #shopify-section-{{ section.id }} .fp-follow-card-inner {
@@ -58,14 +58,14 @@
   #shopify-section-{{ section.id }} .fp-follow-image-wrap {
     width: 100%;
     position: relative;
-    aspect-ratio: {{ section.settings.image_ratio }};
+    aspect-ratio: {{ settings.insta_image_ratio }};
     overflow: hidden;
   }
 
-  {% if section.settings.force_height_desktop %}
+  {% if settings.insta_force_height_desktop %}
     #shopify-section-{{ section.id }} .fp-follow-image-wrap {
       aspect-ratio: auto;
-      height: {{ section.settings.image_height_desktop }}px;
+      height: {{ settings.insta_image_height_desktop }}px;
     }
   {% endif %}
 
@@ -73,15 +73,15 @@
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: {{ section.settings.image_fit }};
+    object-fit: {{ settings.insta_image_fit }};
     transition: transform 0.45s ease, filter 0.45s ease;
   }
 
   #shopify-section-{{ section.id }} .fp-follow-card:hover .fp-follow-image {
-    {% if section.settings.enable_hover_zoom %}
+    {% if settings.insta_enable_hover_zoom %}
       transform: scale(1.05);
     {% endif %}
-    {% if section.settings.enable_hover_darken %}
+    {% if settings.insta_enable_hover_darken %}
       filter: brightness(0.85);
     {% endif %}
   }
@@ -90,8 +90,8 @@
     width: 100%;
     height: 100%;
     min-height: 220px;
-    background: {{ section.settings.placeholder_bg }};
-    color: {{ section.settings.placeholder_text_color }};
+    background: {{ settings.insta_placeholder_bg }};
+    color: {{ settings.insta_placeholder_text_color }};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +103,7 @@
   #shopify-section-{{ section.id }} .fp-follow-overlay {
     position: absolute;
     inset: 0;
-    padding: {{ section.settings.overlay_padding }}px;
+    padding: {{ settings.insta_overlay_padding }}px;
     display: flex;
     pointer-events: none;
     z-index: 2;
@@ -152,80 +152,80 @@
   }
 
   #shopify-section-{{ section.id }} .fp-follow-overlay-text {
-    color: {{ section.settings.overlay_text_color }};
-    font-size: {{ section.settings.overlay_size_desktop }}px;
-    font-weight: {{ section.settings.overlay_weight }};
+    color: {{ settings.insta_overlay_text_color }};
+    font-size: {{ settings.insta_overlay_size_desktop }}px;
+    font-weight: {{ settings.insta_overlay_weight }};
     line-height: 1.2;
-    letter-spacing: {{ section.settings.overlay_letter_spacing }}px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, {{ section.settings.overlay_shadow_opacity | divided_by: 100.0 }});
+    letter-spacing: {{ settings.insta_overlay_letter_spacing }}px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, {{ settings.insta_overlay_shadow_opacity | divided_by: 100.0 }});
   }
 
   #shopify-section-{{ section.id }} .fp-follow-bottom-link {
-    margin-top: {{ section.settings.button_margin_top }}px;
-    text-align: {{ section.settings.button_alignment }};
+    margin-top: {{ settings.insta_button_margin_top }}px;
+    text-align: {{ settings.insta_button_alignment }};
   }
 
   #shopify-section-{{ section.id }} .fp-follow-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: {{ section.settings.button_height }}px;
-    padding: 0 {{ section.settings.button_padding_x }}px;
-    border-radius: {{ section.settings.button_radius }}px;
-    background: {{ section.settings.button_bg }};
-    color: {{ section.settings.button_text_color }};
-    font-size: {{ section.settings.button_font_size }}px;
-    font-weight: {{ section.settings.button_weight }};
+    min-height: {{ settings.insta_button_height }}px;
+    padding: 0 {{ settings.insta_button_padding_x }}px;
+    border-radius: {{ settings.insta_button_radius }}px;
+    background: {{ settings.insta_button_bg }};
+    color: {{ settings.insta_button_text_color }};
+    font-size: {{ settings.insta_button_font_size }}px;
+    font-weight: {{ settings.insta_button_weight }};
     text-decoration: none;
     transition: all 0.25s ease;
   }
 
   #shopify-section-{{ section.id }} .fp-follow-button:hover {
-    background: {{ section.settings.button_hover_bg }};
-    color: {{ section.settings.button_hover_text_color }};
+    background: {{ settings.insta_button_hover_bg }};
+    color: {{ settings.insta_button_hover_text_color }};
   }
 
   @media screen and (max-width: 989px) {
     #shopify-section-{{ section.id }} .fp-follow-section {
-      padding-top: {{ section.settings.padding_top_mobile }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-top: {{ settings.insta_padding_top_mobile }}px;
+      padding-bottom: {{ settings.insta_padding_bottom_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-follow-container {
-      padding-left: {{ section.settings.side_padding_mobile }}px;
-      padding-right: {{ section.settings.side_padding_mobile }}px;
+      padding-left: {{ settings.insta_side_padding_mobile }}px;
+      padding-right: {{ settings.insta_side_padding_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-follow-header {
-      margin-bottom: {{ section.settings.title_margin_bottom_mobile }}px;
+      margin-bottom: {{ settings.insta_title_margin_bottom_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-follow-title {
-      font-size: {{ section.settings.title_size_mobile }}px;
-      letter-spacing: {{ section.settings.title_letter_spacing_mobile }}px;
+      font-size: {{ settings.insta_title_size_mobile }}px;
+      letter-spacing: {{ settings.insta_title_letter_spacing_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-follow-grid {
-      grid-template-columns: repeat({{ section.settings.columns_mobile }}, minmax(0, 1fr));
-      gap: {{ section.settings.gap_mobile }}px;
+      grid-template-columns: repeat({{ settings.insta_columns_mobile }}, minmax(0, 1fr));
+      gap: {{ settings.insta_gap_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-follow-image-wrap {
-      aspect-ratio: {{ section.settings.image_ratio_mobile }};
+      aspect-ratio: {{ settings.insta_image_ratio_mobile }};
     }
 
-    {% if section.settings.force_height_mobile %}
+    {% if settings.insta_force_height_mobile %}
       #shopify-section-{{ section.id }} .fp-follow-image-wrap {
         aspect-ratio: auto;
-        height: {{ section.settings.image_height_mobile }}px;
+        height: {{ settings.insta_image_height_mobile }}px;
       }
     {% endif %}
 
     #shopify-section-{{ section.id }} .fp-follow-overlay-text {
-      font-size: {{ section.settings.overlay_size_mobile }}px;
+      font-size: {{ settings.insta_overlay_size_mobile }}px;
     }
 
-    {% if section.settings.mobile_scroll %}
+    {% if settings.insta_mobile_scroll %}
       #shopify-section-{{ section.id }} .fp-follow-grid {
         display: flex;
         overflow-x: auto;
@@ -239,7 +239,7 @@
       }
 
       #shopify-section-{{ section.id }} .fp-follow-card {
-        flex: 0 0 {{ section.settings.mobile_card_width }}%;
+        flex: 0 0 {{ settings.insta_mobile_card_width }}%;
         scroll-snap-align: start;
       }
     {% endif %}
@@ -249,35 +249,50 @@
 <section class="fp-follow-section">
   <div class="fp-follow-container">
 
-    {% if section.settings.show_title %}
+    {% if settings.insta_show_title %}
       <div class="fp-follow-header">
-        {% if section.settings.title != blank %}
+        {% if settings.insta_title != blank %}
           <h2 class="fp-follow-title">
-            {{ section.settings.title }}
+            {{ settings.insta_title }}
           </h2>
         {% endif %}
       </div>
     {% endif %}
 
     <div class="fp-follow-grid">
-      {% for block in section.blocks %}
+      {% for photo_idx in (1..6) %}
+{%- assign ip_pfx = 'insta_photo' | append: photo_idx -%}
+{%- assign ip_img_key = ip_pfx | append: '_image' -%}
+{%- assign ip_img = settings[ip_img_key] -%}
+{%- assign ip_alt_key = ip_pfx | append: '_alt_text' -%}
+{%- assign ip_alt = settings[ip_alt_key] -%}
+{%- assign ip_link_key = ip_pfx | append: '_link' -%}
+{%- assign ip_link = settings[ip_link_key] -%}
+{%- assign ip_newtab_key = ip_pfx | append: '_open_new_tab' -%}
+{%- assign ip_newtab = settings[ip_newtab_key] -%}
+{%- assign ip_imgpos_key = ip_pfx | append: '_image_position' -%}
+{%- assign ip_imgpos = settings[ip_imgpos_key] -%}
+{%- assign ip_otext_key = ip_pfx | append: '_overlay_text' -%}
+{%- assign ip_otext = settings[ip_otext_key] -%}
+{%- assign ip_opos_key = ip_pfx | append: '_overlay_position' -%}
+{%- assign ip_opos = settings[ip_opos_key] -%}
         <div class="fp-follow-card" {{ block.shopify_attributes }}>
-          {% if block.settings.link != blank %}
-            <a href="{{ block.settings.link }}" class="fp-follow-card-inner" {% if block.settings.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {% if ip_link != blank %}
+            <a href="{{ ip_link }}" class="fp-follow-card-inner" {% if ip_newtab %}target="_blank" rel="noopener"{% endif %}>
           {% else %}
             <div class="fp-follow-card-inner">
           {% endif %}
 
             <div class="fp-follow-image-wrap">
-              {% if block.settings.image != blank %}
+              {% if ip_img != blank %}
                 <img
                   class="fp-follow-image"
-                  src="{{ block.settings.image | image_url: width: 1200 }}"
-                  alt="{{ block.settings.alt_text | escape }}"
+                  src="{{ ip_img | image_url: width: 1200 }}"
+                  alt="{{ ip_alt | escape }}"
                   loading="lazy"
                   width="1200"
                   height="1200"
-                  style="object-position: {{ block.settings.image_position }};"
+                  style="object-position: {{ ip_imgpos }};"
                 >
               {% else %}
                 <div class="fp-follow-placeholder">
@@ -285,16 +300,16 @@
                 </div>
               {% endif %}
 
-              {% if block.settings.overlay_text != blank %}
-                <div class="fp-follow-overlay is-{{ block.settings.overlay_position }}">
+              {% if ip_otext != blank %}
+                <div class="fp-follow-overlay is-{{ ip_opos }}">
                   <div class="fp-follow-overlay-text">
-                    {{ block.settings.overlay_text }}
+                    {{ ip_otext }}
                   </div>
                 </div>
               {% endif %}
             </div>
 
-          {% if block.settings.link != blank %}
+          {% if ip_link != blank %}
             </a>
           {% else %}
             </div>
@@ -303,10 +318,10 @@
       {% endfor %}
     </div>
 
-    {% if section.settings.show_button and section.settings.button_text != blank %}
+    {% if settings.insta_show_button and settings.insta_button_text != blank %}
       <div class="fp-follow-bottom-link">
-        <a class="fp-follow-button" href="{{ section.settings.button_link }}" {% if section.settings.button_new_tab %}target="_blank" rel="noopener"{% endif %}>
-          {{ section.settings.button_text }}
+        <a class="fp-follow-button" href="{{ settings.insta_button_link }}" {% if settings.insta_button_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ settings.insta_button_text }}
         </a>
       </div>
     {% endif %}
