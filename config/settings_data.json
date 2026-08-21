@@ -36,7 +36,7 @@
     "text_font_size_mobile": 13,
     "text_font_size_desktop": 13,
     "heading_apparition": "split_fade",
-    "color_swatch_config": "Bleu: #97B0CE\nRose: #FFC0CB\nBleu: #93AFD5\nÉcru: #BAB7AD\nNude: #EADACB\nGraou: #C39939\nBlanc: #F2EFE6\nLéopard: #EBE2CA",
+    "color_swatch_config": "Bleu: #97B0CE\nRose: #BE6E76\nBleu: #93AFD5\nÉcru: #BAB7AD\nNude: #EADACB\nGraou: #C39939\nBlanc: #F2EFE6\nLéopard: #C39939\nNavy: #4D709C",
     "show_sold_out_badge": false,
     "show_discount": false,
     "product_color_display": "swatch",
