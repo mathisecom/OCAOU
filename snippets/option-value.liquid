@@ -80,36 +80,39 @@ Color swatch specific parameters:
 
 {%- liquid
   if type == 'swatch' or type == 'block' and show_swatch
-    if swatch.image != blank
-      assign swatch_image = swatch.image | image_url: width: 72
-      assign swatch_style = '--swatch-background: url(' | append: swatch_image | append: ')'
-    elsif swatch.color != blank
-      assign swatch_style = '--swatch-background: linear-gradient(to right, ' | append: swatch.color | append: ', ' | append: swatch.color | append: ')'
-    else
-      # When color or image is not explicitly passed, we parse the config
-      assign swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />'
+    assign swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />'
+    assign swatch_config_matched = false
 
-      assign swatch_style = '--swatch-background: linear-gradient(to right, ' | append: downcase_label | append: ', ' | append: downcase_label | append: ')'
+    for swatch_item in swatch_config
+      assign swatch_parts = swatch_item | split: ':'
+      assign swatch_name = swatch_parts.first | downcase | strip
 
-      for swatch_item in swatch_config
-        assign swatch_parts = swatch_item | split: ':'
-        assign swatch_name = swatch_parts.first | downcase | strip
+      if downcase_label == swatch_name
+        assign swatch_value = swatch_parts.last | strip
 
-        if downcase_label == swatch_name
-          assign swatch_value = swatch_parts.last | strip
-
-          if swatch_value contains '#'
-            assign swatch_style = '--swatch-background: linear-gradient(to right, ' | append: swatch_value | append: ', ' | append: swatch_value | append: ')'
-          elsif swatch_value contains 'linear-gradient('
-            assign swatch_style = '--swatch-background: ' | append: swatch_value
-          elsif images[swatch_value] != blank
-            assign swatch_image = images[swatch_value] | image_url: width: 72
-            assign swatch_style = '--swatch-background: url(' | append: swatch_image | append: ')'
-          endif
-
-          break
+        if swatch_value contains '#'
+          assign swatch_style = '--swatch-background: linear-gradient(to right, ' | append: swatch_value | append: ', ' | append: swatch_value | append: ')'
+        elsif swatch_value contains 'linear-gradient('
+          assign swatch_style = '--swatch-background: ' | append: swatch_value
+        elsif images[swatch_value] != blank
+          assign swatch_image = images[swatch_value] | image_url: width: 72
+          assign swatch_style = '--swatch-background: url(' | append: swatch_image | append: ')'
         endif
-      endfor
+
+        assign swatch_config_matched = true
+        break
+      endif
+    endfor
+
+    if swatch_config_matched == false
+      if swatch.image != blank
+        assign swatch_image = swatch.image | image_url: width: 72
+        assign swatch_style = '--swatch-background: url(' | append: swatch_image | append: ')'
+      elsif swatch.color != blank
+        assign swatch_style = '--swatch-background: linear-gradient(to right, ' | append: swatch.color | append: ', ' | append: swatch.color | append: ')'
+      else
+        assign swatch_style = '--swatch-background: linear-gradient(to right, ' | append: downcase_label | append: ', ' | append: downcase_label | append: ')'
+      endif
     endif
   endif
 -%}
