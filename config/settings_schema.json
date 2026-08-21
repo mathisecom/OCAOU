@@ -930,5 +930,1862 @@
         "info": "180 x 180px .png recommended"
       }
     ]
+  },
+  {
+    "name": "Section Retour facile (global)",
+    "settings": [
+      {
+        "type": "text",
+        "id": "retours_title",
+        "label": "Titre",
+        "default": "Garantie 30 jours"
+      },
+      {
+        "type": "textarea",
+        "id": "retours_subtitle",
+        "label": "Sous-titre",
+        "default": "Votre routine doit vous faire du bien. Si ce n’est pas le cas, vous êtes couvert."
+      },
+      {
+        "type": "image_picker",
+        "id": "retours_product_image",
+        "label": "Image produit"
+      },
+      {
+        "type": "text",
+        "id": "retours_product_image_alt",
+        "label": "Texte alternatif image produit",
+        "default": "Image produit garantie"
+      },
+      {
+        "type": "image_picker",
+        "id": "retours_bg_image",
+        "label": "Image de fond optionnelle"
+      },
+      {
+        "type": "select",
+        "id": "retours_bg_position",
+        "label": "Position image de fond PC",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "retours_bg_position_mobile",
+        "label": "Position image de fond mobile",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "retours_show_default_icon",
+        "label": "Afficher l’icône par défaut",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "retours_custom_icon",
+        "label": "Icône personnalisée"
+      },
+      {
+        "type": "text",
+        "id": "retours_icon_alt",
+        "label": "Texte alternatif icône",
+        "default": "Icône garantie"
+      },
+      {
+        "type": "range",
+        "id": "retours_icon_size_desktop",
+        "label": "Taille icône PC",
+        "min": 30,
+        "max": 120,
+        "step": 2,
+        "default": 72
+      },
+      {
+        "type": "range",
+        "id": "retours_icon_size_mobile",
+        "label": "Taille icône mobile",
+        "min": 30,
+        "max": 100,
+        "step": 2,
+        "default": 62
+      },
+      {
+        "type": "range",
+        "id": "retours_icon_margin_bottom_desktop",
+        "label": "Marge sous icône PC",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "retours_icon_margin_bottom_mobile",
+        "label": "Marge sous icône mobile",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 10
+      },
+      {
+        "type": "color",
+        "id": "retours_icon_color",
+        "label": "Couleur icône",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "retours_section_bg_color",
+        "label": "Fond extérieur",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "retours_card_bg_color",
+        "label": "Fond du bloc",
+        "default": "#77A51A"
+      },
+      {
+        "type": "color",
+        "id": "retours_overlay_color",
+        "label": "Couleur overlay fond",
+        "default": "#77A51A"
+      },
+      {
+        "type": "range",
+        "id": "retours_overlay_opacity",
+        "label": "Opacité overlay fond",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "default": 30
+      },
+      {
+        "type": "color",
+        "id": "retours_title_color",
+        "label": "Couleur titre",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "retours_subtitle_color",
+        "label": "Couleur sous-titre",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "retours_title_size_desktop",
+        "label": "Taille titre PC",
+        "min": 20,
+        "max": 70,
+        "step": 1,
+        "default": 34
+      },
+      {
+        "type": "range",
+        "id": "retours_title_line_height_desktop",
+        "label": "Hauteur ligne titre PC",
+        "min": 80,
+        "max": 150,
+        "step": 5,
+        "default": 105
+      },
+      {
+        "type": "range",
+        "id": "retours_subtitle_size_desktop",
+        "label": "Taille sous-titre PC",
+        "min": 12,
+        "max": 30,
+        "step": 1,
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "retours_subtitle_line_height_desktop",
+        "label": "Hauteur ligne sous-titre PC",
+        "min": 100,
+        "max": 180,
+        "step": 5,
+        "default": 135
+      },
+      {
+        "type": "select",
+        "id": "retours_title_weight",
+        "label": "Épaisseur titre",
+        "default": "700",
+        "options": [
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          },
+          {
+            "value": "800",
+            "label": "Extra-bold"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "retours_subtitle_weight",
+        "label": "Épaisseur sous-titre",
+        "default": "600",
+        "options": [
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "retours_title_letter_spacing",
+        "label": "Espacement lettres titre",
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "retours_title_size_mobile",
+        "label": "Taille titre mobile",
+        "min": 20,
+        "max": 55,
+        "step": 1,
+        "default": 32
+      },
+      {
+        "type": "range",
+        "id": "retours_title_line_height_mobile",
+        "label": "Hauteur ligne titre mobile",
+        "min": 80,
+        "max": 150,
+        "step": 5,
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "retours_subtitle_size_mobile",
+        "label": "Taille sous-titre mobile",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "retours_subtitle_line_height_mobile",
+        "label": "Hauteur ligne sous-titre mobile",
+        "min": 100,
+        "max": 180,
+        "step": 5,
+        "default": 135
+      },
+      {
+        "type": "checkbox",
+        "id": "retours_full_width",
+        "label": "Prendre toute la largeur",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "retours_max_width",
+        "label": "Largeur maximale",
+        "min": 900,
+        "max": 1800,
+        "step": 50,
+        "default": 1400
+      },
+      {
+        "type": "range",
+        "id": "retours_card_height_desktop",
+        "label": "Hauteur du bloc PC",
+        "min": 220,
+        "max": 600,
+        "step": 10,
+        "default": 310
+      },
+      {
+        "type": "range",
+        "id": "retours_card_radius_desktop",
+        "label": "Arrondi du bloc PC",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "retours_card_padding_x_desktop",
+        "label": "Padding horizontal PC",
+        "min": 20,
+        "max": 160,
+        "step": 5,
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "retours_card_padding_y_desktop",
+        "label": "Padding vertical PC",
+        "min": 20,
+        "max": 120,
+        "step": 5,
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "retours_text_column_width",
+        "label": "Largeur colonne texte",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "retours_image_column_width",
+        "label": "Largeur colonne image",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "retours_column_gap_desktop",
+        "label": "Espace texte / image PC",
+        "min": 10,
+        "max": 160,
+        "step": 5,
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "retours_text_max_width_desktop",
+        "label": "Largeur max texte PC",
+        "min": 300,
+        "max": 900,
+        "step": 10,
+        "default": 620
+      },
+      {
+        "type": "select",
+        "id": "retours_text_alignment_desktop",
+        "label": "Alignement texte PC",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Gauche"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "right",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "retours_product_width_desktop",
+        "label": "Largeur image produit PC",
+        "min": 220,
+        "max": 700,
+        "step": 10,
+        "default": 430
+      },
+      {
+        "type": "range",
+        "id": "retours_product_offset_y_desktop",
+        "label": "Décalage vertical produit PC",
+        "min": -120,
+        "max": 160,
+        "step": 10,
+        "default": 70
+      },
+      {
+        "type": "select",
+        "id": "retours_product_alignment_desktop",
+        "label": "Alignement image produit PC",
+        "default": "center",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "Gauche"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "flex-end",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "retours_card_radius_mobile",
+        "label": "Arrondi du bloc mobile",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "retours_card_padding_x_mobile",
+        "label": "Padding horizontal mobile",
+        "min": 12,
+        "max": 60,
+        "step": 2,
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "retours_card_padding_y_mobile",
+        "label": "Padding haut mobile",
+        "min": 20,
+        "max": 100,
+        "step": 2,
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "retours_card_padding_bottom_mobile",
+        "label": "Padding bas mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "retours_column_gap_mobile",
+        "label": "Espace texte / image mobile",
+        "min": 0,
+        "max": 80,
+        "step": 2,
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "retours_text_max_width_mobile",
+        "label": "Largeur max texte mobile",
+        "min": 220,
+        "max": 450,
+        "step": 10,
+        "default": 350
+      },
+      {
+        "type": "select",
+        "id": "retours_text_alignment_mobile",
+        "label": "Alignement texte mobile",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Gauche"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "right",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "retours_product_width_mobile",
+        "label": "Largeur image produit mobile",
+        "min": 180,
+        "max": 420,
+        "step": 10,
+        "default": 310
+      },
+      {
+        "type": "range",
+        "id": "retours_product_offset_y_mobile",
+        "label": "Décalage vertical produit mobile",
+        "min": -80,
+        "max": 120,
+        "step": 10,
+        "default": 10
+      },
+      {
+        "type": "select",
+        "id": "retours_product_alignment_mobile",
+        "label": "Alignement image produit mobile",
+        "default": "center",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "Gauche"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "flex-end",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "retours_padding_top_desktop",
+        "label": "Marge haut PC",
+        "min": 0,
+        "max": 160,
+        "step": 4,
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "retours_padding_bottom_desktop",
+        "label": "Marge bas PC",
+        "min": 0,
+        "max": 160,
+        "step": 4,
+        "default": 120
+      },
+      {
+        "type": "range",
+        "id": "retours_padding_top_mobile",
+        "label": "Marge haut mobile",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "retours_padding_bottom_mobile",
+        "label": "Marge bas mobile",
+        "min": 0,
+        "max": 160,
+        "step": 4,
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "retours_side_padding_desktop",
+        "label": "Marge côtés PC",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "retours_side_padding_mobile",
+        "label": "Marge côtés mobile",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "retours_shadow_y",
+        "label": "Ombre verticale",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "retours_shadow_blur",
+        "label": "Flou ombre",
+        "min": 0,
+        "max": 80,
+        "step": 2,
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "retours_shadow_opacity",
+        "label": "Opacité ombre",
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "retours_subtitle_margin_top_desktop",
+        "label": "Marge au-dessus sous-titre PC",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "retours_subtitle_margin_top_mobile",
+        "label": "Marge au-dessus sous-titre mobile",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 10
+      }
+    ]
+  },
+  {
+    "name": "Section Instagram - style (global)",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "insta_show_title",
+        "label": "Afficher le titre",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "insta_title",
+        "label": "Titre",
+        "default": "FOLLOW US"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_title_uppercase",
+        "label": "Titre en majuscules",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_title_alignment",
+        "label": "Alignement du titre",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Gauche"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "right",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "insta_title_color",
+        "label": "Couleur du titre",
+        "default": "#111111"
+      },
+      {
+        "type": "range",
+        "id": "insta_title_size_desktop",
+        "label": "Taille titre PC",
+        "min": 12,
+        "max": 48,
+        "step": 1,
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "insta_title_size_mobile",
+        "label": "Taille titre mobile",
+        "min": 12,
+        "max": 38,
+        "step": 1,
+        "default": 18
+      },
+      {
+        "type": "select",
+        "id": "insta_title_weight",
+        "label": "Épaisseur du titre",
+        "default": "700",
+        "options": [
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          },
+          {
+            "value": "800",
+            "label": "Extra-bold"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "insta_title_letter_spacing",
+        "label": "Espacement lettres titre PC",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "insta_title_letter_spacing_mobile",
+        "label": "Espacement lettres titre mobile",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "insta_title_margin_bottom",
+        "label": "Marge sous le titre PC",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "insta_title_margin_bottom_mobile",
+        "label": "Marge sous le titre mobile",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_full_width",
+        "label": "Prendre toute la largeur",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "insta_max_width",
+        "label": "Largeur maximale si pleine largeur désactivée",
+        "min": 800,
+        "max": 2400,
+        "step": 50,
+        "default": 1600
+      },
+      {
+        "type": "range",
+        "id": "insta_columns_desktop",
+        "label": "Nombre de colonnes PC",
+        "min": 2,
+        "max": 8,
+        "step": 1,
+        "default": 6
+      },
+      {
+        "type": "range",
+        "id": "insta_columns_mobile",
+        "label": "Nombre de colonnes mobile",
+        "min": 1,
+        "max": 3,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "insta_gap_desktop",
+        "label": "Espace entre images PC",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "insta_gap_mobile",
+        "label": "Espace entre images mobile",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "select",
+        "id": "insta_image_ratio",
+        "label": "Format image PC",
+        "default": "1 / 1",
+        "options": [
+          {
+            "value": "1 / 1",
+            "label": "Carré 1:1"
+          },
+          {
+            "value": "4 / 5",
+            "label": "Portrait 4:5"
+          },
+          {
+            "value": "3 / 4",
+            "label": "Portrait 3:4"
+          },
+          {
+            "value": "16 / 9",
+            "label": "Paysage 16:9"
+          },
+          {
+            "value": "5 / 4",
+            "label": "Paysage 5:4"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "insta_image_ratio_mobile",
+        "label": "Format image mobile",
+        "default": "1 / 1",
+        "options": [
+          {
+            "value": "1 / 1",
+            "label": "Carré 1:1"
+          },
+          {
+            "value": "4 / 5",
+            "label": "Portrait 4:5"
+          },
+          {
+            "value": "3 / 4",
+            "label": "Portrait 3:4"
+          },
+          {
+            "value": "16 / 9",
+            "label": "Paysage 16:9"
+          },
+          {
+            "value": "5 / 4",
+            "label": "Paysage 5:4"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_force_height_desktop",
+        "label": "Forcer une hauteur fixe sur PC",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "insta_image_height_desktop",
+        "label": "Hauteur image PC",
+        "min": 180,
+        "max": 700,
+        "step": 10,
+        "default": 320
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_force_height_mobile",
+        "label": "Forcer une hauteur fixe sur mobile",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "insta_image_height_mobile",
+        "label": "Hauteur image mobile",
+        "min": 120,
+        "max": 500,
+        "step": 10,
+        "default": 210
+      },
+      {
+        "type": "select",
+        "id": "insta_image_fit",
+        "label": "Adaptation de l’image",
+        "default": "cover",
+        "options": [
+          {
+            "value": "cover",
+            "label": "Remplir la case"
+          },
+          {
+            "value": "contain",
+            "label": "Image entière"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "insta_image_radius",
+        "label": "Arrondi des images",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_enable_hover_zoom",
+        "label": "Zoom léger au survol",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_enable_hover_darken",
+        "label": "Assombrir au survol",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_mobile_scroll",
+        "label": "Activer le défilement horizontal mobile",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "insta_mobile_card_width",
+        "label": "Largeur d’une image en défilement mobile",
+        "min": 40,
+        "max": 100,
+        "step": 5,
+        "default": 70
+      },
+      {
+        "type": "color",
+        "id": "insta_bg_color",
+        "label": "Couleur de fond",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "insta_placeholder_bg",
+        "label": "Fond image vide",
+        "default": "#f2f2f2"
+      },
+      {
+        "type": "color",
+        "id": "insta_placeholder_text_color",
+        "label": "Texte image vide",
+        "default": "#777777"
+      },
+      {
+        "type": "range",
+        "id": "insta_padding_top_desktop",
+        "label": "Padding haut PC",
+        "min": 0,
+        "max": 140,
+        "step": 2,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_padding_bottom_desktop",
+        "label": "Padding bas PC",
+        "min": 0,
+        "max": 140,
+        "step": 2,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_padding_top_mobile",
+        "label": "Padding haut mobile",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_padding_bottom_mobile",
+        "label": "Padding bas mobile",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_side_padding_desktop",
+        "label": "Marge gauche/droite PC",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_side_padding_mobile",
+        "label": "Marge gauche/droite mobile",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_shadow_y",
+        "label": "Ombre verticale",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_shadow_blur",
+        "label": "Flou de l’ombre",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "insta_shadow_opacity",
+        "label": "Opacité de l’ombre",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "color",
+        "id": "insta_overlay_text_color",
+        "label": "Couleur texte image",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "insta_overlay_size_desktop",
+        "label": "Taille texte image PC",
+        "min": 8,
+        "max": 40,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "insta_overlay_size_mobile",
+        "label": "Taille texte image mobile",
+        "min": 8,
+        "max": 32,
+        "step": 1,
+        "default": 12
+      },
+      {
+        "type": "select",
+        "id": "insta_overlay_weight",
+        "label": "Épaisseur texte image",
+        "default": "600",
+        "options": [
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "insta_overlay_letter_spacing",
+        "label": "Espacement lettres texte image",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "insta_overlay_padding",
+        "label": "Marge intérieure texte image",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "insta_overlay_shadow_opacity",
+        "label": "Ombre du texte image",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "default": 35
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_show_button",
+        "label": "Afficher un bouton sous les images",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "insta_button_text",
+        "label": "Texte du bouton",
+        "default": "Suivez-nous"
+      },
+      {
+        "type": "url",
+        "id": "insta_button_link",
+        "label": "Lien du bouton"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_button_new_tab",
+        "label": "Ouvrir le lien dans un nouvel onglet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_button_alignment",
+        "label": "Alignement du bouton",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Gauche"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "right",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "insta_button_margin_top",
+        "label": "Marge au-dessus du bouton",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "insta_button_height",
+        "label": "Hauteur du bouton",
+        "min": 30,
+        "max": 70,
+        "step": 1,
+        "default": 44
+      },
+      {
+        "type": "range",
+        "id": "insta_button_padding_x",
+        "label": "Largeur intérieure bouton",
+        "min": 10,
+        "max": 70,
+        "step": 1,
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "insta_button_radius",
+        "label": "Arrondi du bouton",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "insta_button_font_size",
+        "label": "Taille texte bouton",
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "insta_button_weight",
+        "label": "Épaisseur texte bouton",
+        "default": "600",
+        "options": [
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "insta_button_bg",
+        "label": "Fond bouton",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "insta_button_text_color",
+        "label": "Texte bouton",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "insta_button_hover_bg",
+        "label": "Fond bouton au survol",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "insta_button_hover_text_color",
+        "label": "Texte bouton au survol",
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "name": "Section Instagram - 6 photos (global)",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "insta_photo1_image",
+        "label": "Photo 1 - Image"
+      },
+      {
+        "type": "text",
+        "id": "insta_photo1_alt_text",
+        "label": "Photo 1 - Texte alternatif",
+        "default": "Photo Instagram"
+      },
+      {
+        "type": "url",
+        "id": "insta_photo1_link",
+        "label": "Photo 1 - Lien de l’image"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_photo1_open_new_tab",
+        "label": "Photo 1 - Ouvrir dans un nouvel onglet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_photo1_image_position",
+        "label": "Photo 1 - Position de l’image",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "insta_photo1_overlay_text",
+        "label": "Photo 1 - Texte sur l’image"
+      },
+      {
+        "type": "select",
+        "id": "insta_photo1_overlay_position",
+        "label": "Photo 1 - Position du texte",
+        "default": "center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Haut gauche"
+          },
+          {
+            "value": "top-center",
+            "label": "Haut centre"
+          },
+          {
+            "value": "top-right",
+            "label": "Haut droite"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bas gauche"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bas centre"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bas droite"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "insta_photo2_image",
+        "label": "Photo 2 - Image"
+      },
+      {
+        "type": "text",
+        "id": "insta_photo2_alt_text",
+        "label": "Photo 2 - Texte alternatif",
+        "default": "Photo Instagram"
+      },
+      {
+        "type": "url",
+        "id": "insta_photo2_link",
+        "label": "Photo 2 - Lien de l’image"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_photo2_open_new_tab",
+        "label": "Photo 2 - Ouvrir dans un nouvel onglet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_photo2_image_position",
+        "label": "Photo 2 - Position de l’image",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "insta_photo2_overlay_text",
+        "label": "Photo 2 - Texte sur l’image"
+      },
+      {
+        "type": "select",
+        "id": "insta_photo2_overlay_position",
+        "label": "Photo 2 - Position du texte",
+        "default": "center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Haut gauche"
+          },
+          {
+            "value": "top-center",
+            "label": "Haut centre"
+          },
+          {
+            "value": "top-right",
+            "label": "Haut droite"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bas gauche"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bas centre"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bas droite"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "insta_photo3_image",
+        "label": "Photo 3 - Image"
+      },
+      {
+        "type": "text",
+        "id": "insta_photo3_alt_text",
+        "label": "Photo 3 - Texte alternatif",
+        "default": "Photo Instagram"
+      },
+      {
+        "type": "url",
+        "id": "insta_photo3_link",
+        "label": "Photo 3 - Lien de l’image"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_photo3_open_new_tab",
+        "label": "Photo 3 - Ouvrir dans un nouvel onglet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_photo3_image_position",
+        "label": "Photo 3 - Position de l’image",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "insta_photo3_overlay_text",
+        "label": "Photo 3 - Texte sur l’image"
+      },
+      {
+        "type": "select",
+        "id": "insta_photo3_overlay_position",
+        "label": "Photo 3 - Position du texte",
+        "default": "center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Haut gauche"
+          },
+          {
+            "value": "top-center",
+            "label": "Haut centre"
+          },
+          {
+            "value": "top-right",
+            "label": "Haut droite"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bas gauche"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bas centre"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bas droite"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "insta_photo4_image",
+        "label": "Photo 4 - Image"
+      },
+      {
+        "type": "text",
+        "id": "insta_photo4_alt_text",
+        "label": "Photo 4 - Texte alternatif",
+        "default": "Photo Instagram"
+      },
+      {
+        "type": "url",
+        "id": "insta_photo4_link",
+        "label": "Photo 4 - Lien de l’image"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_photo4_open_new_tab",
+        "label": "Photo 4 - Ouvrir dans un nouvel onglet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_photo4_image_position",
+        "label": "Photo 4 - Position de l’image",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "insta_photo4_overlay_text",
+        "label": "Photo 4 - Texte sur l’image"
+      },
+      {
+        "type": "select",
+        "id": "insta_photo4_overlay_position",
+        "label": "Photo 4 - Position du texte",
+        "default": "center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Haut gauche"
+          },
+          {
+            "value": "top-center",
+            "label": "Haut centre"
+          },
+          {
+            "value": "top-right",
+            "label": "Haut droite"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bas gauche"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bas centre"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bas droite"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "insta_photo5_image",
+        "label": "Photo 5 - Image"
+      },
+      {
+        "type": "text",
+        "id": "insta_photo5_alt_text",
+        "label": "Photo 5 - Texte alternatif",
+        "default": "Photo Instagram"
+      },
+      {
+        "type": "url",
+        "id": "insta_photo5_link",
+        "label": "Photo 5 - Lien de l’image"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_photo5_open_new_tab",
+        "label": "Photo 5 - Ouvrir dans un nouvel onglet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_photo5_image_position",
+        "label": "Photo 5 - Position de l’image",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "insta_photo5_overlay_text",
+        "label": "Photo 5 - Texte sur l’image"
+      },
+      {
+        "type": "select",
+        "id": "insta_photo5_overlay_position",
+        "label": "Photo 5 - Position du texte",
+        "default": "center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Haut gauche"
+          },
+          {
+            "value": "top-center",
+            "label": "Haut centre"
+          },
+          {
+            "value": "top-right",
+            "label": "Haut droite"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bas gauche"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bas centre"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bas droite"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "insta_photo6_image",
+        "label": "Photo 6 - Image"
+      },
+      {
+        "type": "text",
+        "id": "insta_photo6_alt_text",
+        "label": "Photo 6 - Texte alternatif",
+        "default": "Photo Instagram"
+      },
+      {
+        "type": "url",
+        "id": "insta_photo6_link",
+        "label": "Photo 6 - Lien de l’image"
+      },
+      {
+        "type": "checkbox",
+        "id": "insta_photo6_open_new_tab",
+        "label": "Photo 6 - Ouvrir dans un nouvel onglet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "insta_photo6_image_position",
+        "label": "Photo 6 - Position de l’image",
+        "default": "center center",
+        "options": [
+          {
+            "value": "center center",
+            "label": "Centre"
+          },
+          {
+            "value": "top center",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bas"
+          },
+          {
+            "value": "left center",
+            "label": "Gauche"
+          },
+          {
+            "value": "right center",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "insta_photo6_overlay_text",
+        "label": "Photo 6 - Texte sur l’image"
+      },
+      {
+        "type": "select",
+        "id": "insta_photo6_overlay_position",
+        "label": "Photo 6 - Position du texte",
+        "default": "center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Haut gauche"
+          },
+          {
+            "value": "top-center",
+            "label": "Haut centre"
+          },
+          {
+            "value": "top-right",
+            "label": "Haut droite"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bas gauche"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bas centre"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bas droite"
+          }
+        ]
+      }
+    ]
   }
 ]
