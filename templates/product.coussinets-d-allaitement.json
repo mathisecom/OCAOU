@@ -82,7 +82,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true,
+            "show_payment_button": false,
             "show_gift_card_recipient": true,
             "atc_button_background": "#cd9438",
             "atc_button_text_color": "",
@@ -159,16 +159,6 @@
             "page": ""
           }
         },
-        "collapsible_text_fiLq6U": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Informations sur la livraisons",
-            "content": "<p><strong>· Livraison à domicile :</strong> 6 € </p><p><strong>· Point relais Pickup : </strong>4,50 € </p><p><strong>· Livraison express à domicile :</strong> 12 €.</p><p>Les dates de <strong>livraison estimées</strong> sont <strong>affichées directement</strong> avant la commande.</p>",
-            "page": ""
-          }
-        },
         "liquid_7PLJAn": {
           "type": "liquid",
           "disabled": true,
@@ -197,7 +187,6 @@
         "collapsible_text_QkwrFT",
         "collapsible_text_BgHqca",
         "collapsible_text_HKATAV",
-        "collapsible_text_fiLq6U",
         "liquid_7PLJAn"
       ],
       "settings": {
@@ -209,7 +198,7 @@
         "mobile_carousel_control": "thumbnails",
         "enable_video_autoplay": false,
         "enable_video_looping": true,
-        "enable_image_zoom": false,
+        "enable_image_zoom": true,
         "max_image_zoom_level": 3,
         "background": "",
         "background_gradient": "",
@@ -489,7 +478,7 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#ffffff",
         "text_color": "#3a2c22",
-        "accent_color": "#cd9438",
+        "accent_color": "#9f6b69",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
@@ -832,7 +821,7 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#ffffff",
         "text_color": "#3a2c22",
-        "accent_color": "#cd9438",
+        "accent_color": "#9f6b69",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
