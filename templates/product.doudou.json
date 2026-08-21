@@ -1482,7 +1482,7 @@
         "force_height_mobile": false,
         "image_height_mobile": 210,
         "image_fit": "cover",
-        "image_radius": 0,
+        "image_radius": 16,
         "enable_hover_zoom": true,
         "enable_hover_darken": false,
         "mobile_scroll": true,
