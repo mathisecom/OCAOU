@@ -1625,7 +1625,7 @@
         "buttons_size_mobile": 48,
         "buttons_radius": 8,
         "buttons_border_thickness": 0,
-        "modal_video_radius": 0,
+        "modal_video_radius": 16,
         "modal_video_border_thickness": 0,
         "modal_video_ratio": "portrait",
         "modal_video_ratio_mobile": "portrait",
