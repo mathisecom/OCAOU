@@ -958,7 +958,7 @@
         "slogan_size_mobile": 18,
         "bg_color": "#f4ede1",
         "max_width": 1160,
-        "section_radius": 40,
+        "section_radius": 16,
         "section_radius_mobile": 24,
         "side_margin": 22,
         "side_margin_mobile": 10,
