@@ -590,7 +590,7 @@
         "image_card_bg": "#ffffff",
         "show_image_card_border": false,
         "image_card_border": "#eeeeee",
-        "image_card_radius_desktop": 0,
+        "image_card_radius_desktop": 16,
         "image_card_radius_mobile": 12,
         "show_bottom_band_desktop": false,
         "show_bottom_band_mobile": false,
