@@ -1,43 +1,43 @@
 {% style %}
   #shopify-section-{{ section.id }} .fp-guarantee-section {
     width: 100%;
-    background: {{ section.settings.section_bg_color }};
-    padding-top: {{ section.settings.padding_top_desktop }}px;
-    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    background: {{ settings.retours_section_bg_color }};
+    padding-top: {{ settings.retours_padding_top_desktop }}px;
+    padding-bottom: {{ settings.retours_padding_bottom_desktop }}px;
     overflow: hidden;
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-container {
-    max-width: {% if section.settings.full_width %}none{% else %}{{ section.settings.max_width }}px{% endif %};
+    max-width: {% if settings.retours_full_width %}none{% else %}{{ settings.retours_max_width }}px{% endif %};
     margin: 0 auto;
-    padding-left: {{ section.settings.side_padding_desktop }}px;
-    padding-right: {{ section.settings.side_padding_desktop }}px;
+    padding-left: {{ settings.retours_side_padding_desktop }}px;
+    padding-right: {{ settings.retours_side_padding_desktop }}px;
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-card {
     position: relative;
-    min-height: {{ section.settings.card_height_desktop }}px;
-    border-radius: {{ section.settings.card_radius_desktop }}px;
-    background: {{ section.settings.card_bg_color }};
+    min-height: {{ settings.retours_card_height_desktop }}px;
+    border-radius: {{ settings.retours_card_radius_desktop }}px;
+    background: {{ settings.retours_card_bg_color }};
     overflow: visible;
     display: grid;
-    grid-template-columns: {{ section.settings.text_column_width }}fr {{ section.settings.image_column_width }}fr;
+    grid-template-columns: {{ settings.retours_text_column_width }}fr {{ settings.retours_image_column_width }}fr;
     align-items: center;
-    gap: {{ section.settings.column_gap_desktop }}px;
-    padding: {{ section.settings.card_padding_y_desktop }}px {{ section.settings.card_padding_x_desktop }}px;
+    gap: {{ settings.retours_column_gap_desktop }}px;
+    padding: {{ settings.retours_card_padding_y_desktop }}px {{ settings.retours_card_padding_x_desktop }}px;
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-bg {
     position: absolute;
     inset: 0;
-    border-radius: {{ section.settings.card_radius_desktop }}px;
+    border-radius: {{ settings.retours_card_radius_desktop }}px;
     overflow: hidden;
     z-index: 1;
-    background-color: {{ section.settings.card_bg_color }};
-    {% if section.settings.bg_image != blank %}
-      background-image: url({{ section.settings.bg_image | image_url: width: 2200 }});
+    background-color: {{ settings.retours_card_bg_color }};
+    {% if settings.retours_bg_image != blank %}
+      background-image: url({{ settings.retours_bg_image | image_url: width: 2200 }});
       background-size: cover;
-      background-position: {{ section.settings.bg_position }};
+      background-position: {{ settings.retours_bg_position }};
       background-repeat: no-repeat;
     {% endif %}
   }
@@ -46,22 +46,22 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: {{ section.settings.overlay_color }};
-    opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    background: {{ settings.retours_overlay_color }};
+    opacity: {{ settings.retours_overlay_opacity | divided_by: 100.0 }};
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-content {
     position: relative;
     z-index: 3;
-    max-width: {{ section.settings.text_max_width_desktop }}px;
-    text-align: {{ section.settings.text_alignment_desktop }};
+    max-width: {{ settings.retours_text_max_width_desktop }}px;
+    text-align: {{ settings.retours_text_alignment_desktop }};
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-icon {
-    width: {{ section.settings.icon_size_desktop }}px;
-    height: {{ section.settings.icon_size_desktop }}px;
-    margin-bottom: {{ section.settings.icon_margin_bottom_desktop }}px;
-    color: {{ section.settings.icon_color }};
+    width: {{ settings.retours_icon_size_desktop }}px;
+    height: {{ settings.retours_icon_size_desktop }}px;
+    margin-bottom: {{ settings.retours_icon_margin_bottom_desktop }}px;
+    color: {{ settings.retours_icon_color }};
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -82,46 +82,46 @@
 
   #shopify-section-{{ section.id }} .fp-guarantee-title {
     margin: 0;
-    color: {{ section.settings.title_color }};
-    font-size: {{ section.settings.title_size_desktop }}px;
-    font-weight: {{ section.settings.title_weight }};
-    line-height: {{ section.settings.title_line_height_desktop | divided_by: 100.0 }};
-    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+    color: {{ settings.retours_title_color }};
+    font-size: {{ settings.retours_title_size_desktop }}px;
+    font-weight: {{ settings.retours_title_weight }};
+    line-height: {{ settings.retours_title_line_height_desktop | divided_by: 100.0 }};
+    letter-spacing: {{ settings.retours_title_letter_spacing }}px;
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-subtitle {
-    margin: {{ section.settings.subtitle_margin_top_desktop }}px 0 0;
-    color: {{ section.settings.subtitle_color }};
-    font-size: {{ section.settings.subtitle_size_desktop }}px;
-    font-weight: {{ section.settings.subtitle_weight }};
-    line-height: {{ section.settings.subtitle_line_height_desktop | divided_by: 100.0 }};
+    margin: {{ settings.retours_subtitle_margin_top_desktop }}px 0 0;
+    color: {{ settings.retours_subtitle_color }};
+    font-size: {{ settings.retours_subtitle_size_desktop }}px;
+    font-weight: {{ settings.retours_subtitle_weight }};
+    line-height: {{ settings.retours_subtitle_line_height_desktop | divided_by: 100.0 }};
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-image-area {
     position: relative;
     z-index: 3;
     display: flex;
-    justify-content: {{ section.settings.product_alignment_desktop }};
+    justify-content: {{ settings.retours_product_alignment_desktop }};
     align-items: center;
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-product-image {
     width: 100%;
-    max-width: {{ section.settings.product_width_desktop }}px;
-    transform: translateY({{ section.settings.product_offset_y_desktop }}px);
+    max-width: {{ settings.retours_product_width_desktop }}px;
+    transform: translateY({{ settings.retours_product_offset_y_desktop }}px);
     display: block;
     object-fit: contain;
     border-radius: 16px;
-    filter: drop-shadow(0 {{ section.settings.shadow_y }}px {{ section.settings.shadow_blur }}px rgba(0,0,0,{{ section.settings.shadow_opacity | divided_by: 100.0 }}));
+    filter: drop-shadow(0 {{ settings.retours_shadow_y }}px {{ settings.retours_shadow_blur }}px rgba(0,0,0,{{ settings.retours_shadow_opacity | divided_by: 100.0 }}));
   }
 
   #shopify-section-{{ section.id }} .fp-guarantee-placeholder {
     width: 100%;
-    max-width: {{ section.settings.product_width_desktop }}px;
+    max-width: {{ settings.retours_product_width_desktop }}px;
     min-height: 260px;
     background: rgba(255,255,255,0.18);
     border: 1px dashed rgba(255,255,255,0.5);
-    color: {{ section.settings.subtitle_color }};
+    color: {{ settings.retours_subtitle_color }};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,63 +132,63 @@
 
   @media screen and (max-width: 989px) {
     #shopify-section-{{ section.id }} .fp-guarantee-section {
-      padding-top: {{ section.settings.padding_top_mobile }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-top: {{ settings.retours_padding_top_mobile }}px;
+      padding-bottom: {{ settings.retours_padding_bottom_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-container {
-      padding-left: {{ section.settings.side_padding_mobile }}px;
-      padding-right: {{ section.settings.side_padding_mobile }}px;
+      padding-left: {{ settings.retours_side_padding_mobile }}px;
+      padding-right: {{ settings.retours_side_padding_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-card {
       min-height: auto;
-      border-radius: {{ section.settings.card_radius_mobile }}px;
+      border-radius: {{ settings.retours_card_radius_mobile }}px;
       grid-template-columns: 1fr;
-      gap: {{ section.settings.column_gap_mobile }}px;
-      padding: {{ section.settings.card_padding_y_mobile }}px {{ section.settings.card_padding_x_mobile }}px {{ section.settings.card_padding_bottom_mobile }}px;
+      gap: {{ settings.retours_column_gap_mobile }}px;
+      padding: {{ settings.retours_card_padding_y_mobile }}px {{ settings.retours_card_padding_x_mobile }}px {{ settings.retours_card_padding_bottom_mobile }}px;
       overflow: hidden;
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-bg {
-      border-radius: {{ section.settings.card_radius_mobile }}px;
-      background-position: {{ section.settings.bg_position_mobile }};
+      border-radius: {{ settings.retours_card_radius_mobile }}px;
+      background-position: {{ settings.retours_bg_position_mobile }};
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-content {
-      max-width: {{ section.settings.text_max_width_mobile }}px;
+      max-width: {{ settings.retours_text_max_width_mobile }}px;
       margin: 0 auto;
-      text-align: {{ section.settings.text_alignment_mobile }};
+      text-align: {{ settings.retours_text_alignment_mobile }};
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-icon {
-      width: {{ section.settings.icon_size_mobile }}px;
-      height: {{ section.settings.icon_size_mobile }}px;
-      margin-bottom: {{ section.settings.icon_margin_bottom_mobile }}px;
+      width: {{ settings.retours_icon_size_mobile }}px;
+      height: {{ settings.retours_icon_size_mobile }}px;
+      margin-bottom: {{ settings.retours_icon_margin_bottom_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-title {
-      font-size: {{ section.settings.title_size_mobile }}px;
-      line-height: {{ section.settings.title_line_height_mobile | divided_by: 100.0 }};
+      font-size: {{ settings.retours_title_size_mobile }}px;
+      line-height: {{ settings.retours_title_line_height_mobile | divided_by: 100.0 }};
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-subtitle {
-      margin-top: {{ section.settings.subtitle_margin_top_mobile }}px;
-      font-size: {{ section.settings.subtitle_size_mobile }}px;
-      line-height: {{ section.settings.subtitle_line_height_mobile | divided_by: 100.0 }};
+      margin-top: {{ settings.retours_subtitle_margin_top_mobile }}px;
+      font-size: {{ settings.retours_subtitle_size_mobile }}px;
+      line-height: {{ settings.retours_subtitle_line_height_mobile | divided_by: 100.0 }};
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-image-area {
-      justify-content: {{ section.settings.product_alignment_mobile }};
+      justify-content: {{ settings.retours_product_alignment_mobile }};
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-product-image {
-      max-width: {{ section.settings.product_width_mobile }}px;
-      transform: translateY({{ section.settings.product_offset_y_mobile }}px);
+      max-width: {{ settings.retours_product_width_mobile }}px;
+      transform: translateY({{ settings.retours_product_offset_y_mobile }}px);
     }
 
     #shopify-section-{{ section.id }} .fp-guarantee-placeholder {
-      max-width: {{ section.settings.product_width_mobile }}px;
+      max-width: {{ settings.retours_product_width_mobile }}px;
       min-height: 220px;
     }
   }
@@ -201,47 +201,47 @@
       <div class="fp-guarantee-bg"></div>
 
       <div class="fp-guarantee-content">
-        {% if section.settings.custom_icon != blank %}
+        {% if settings.retours_custom_icon != blank %}
           <div class="fp-guarantee-icon">
             <img
-              src="{{ section.settings.custom_icon | image_url: width: 300 }}"
-              alt="{{ section.settings.icon_alt | escape }}"
+              src="{{ settings.retours_custom_icon | image_url: width: 300 }}"
+              alt="{{ settings.retours_icon_alt | escape }}"
               loading="lazy"
               width="300"
               height="300"
             >
           </div>
-        {% elsif section.settings.show_default_icon %}
+        {% elsif settings.retours_show_default_icon %}
           <div class="fp-guarantee-icon" aria-hidden="true">
             <svg viewBox="0 0 80 80" fill="none">
               <path d="M47 9C32.5 10.3 20.5 20.6 17.1 34.5C15.4 41.7 16.7 49.3 20.8 55.4" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
               <path d="M23 55C27.8 37.5 38.8 24.5 58 14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
               <path d="M47 9C61.7 13.4 68.6 25.6 65.2 38.8C62.2 50.4 51.1 57.9 39.2 55.4" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
               <circle cx="53" cy="53" r="18" fill="currentColor"/>
-              <path d="M44.8 53L50.8 59L62.3 46.8" stroke="{{ section.settings.card_bg_color }}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M44.8 53L50.8 59L62.3 46.8" stroke="{{ settings.retours_card_bg_color }}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
         {% endif %}
 
-        {% if section.settings.title != blank %}
+        {% if settings.retours_title != blank %}
           <h2 class="fp-guarantee-title">
-            {{ section.settings.title }}
+            {{ settings.retours_title }}
           </h2>
         {% endif %}
 
-        {% if section.settings.subtitle != blank %}
+        {% if settings.retours_subtitle != blank %}
           <p class="fp-guarantee-subtitle">
-            {{ section.settings.subtitle }}
+            {{ settings.retours_subtitle }}
           </p>
         {% endif %}
       </div>
 
       <div class="fp-guarantee-image-area">
-        {% if section.settings.product_image != blank %}
+        {% if settings.retours_product_image != blank %}
           <img
             class="fp-guarantee-product-image"
-            src="{{ section.settings.product_image | image_url: width: 1200 }}"
-            alt="{{ section.settings.product_image_alt | escape }}"
+            src="{{ settings.retours_product_image | image_url: width: 1200 }}"
+            alt="{{ settings.retours_product_image_alt | escape }}"
             loading="lazy"
             width="1200"
             height="900"
