@@ -384,7 +384,7 @@
         "mobile_text_padding": 24,
         "card_gap_mobile": 16,
         "side_padding_mobile": 16,
-        "card_radius": 18,
+        "card_radius": 16,
         "card_radius_mobile": 18,
         "shadow_y": 0,
         "shadow_blur": 0,
