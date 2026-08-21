@@ -135,16 +135,6 @@
             "page": ""
           }
         },
-        "collapsible_text_QkwrFT": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Pensée pour les bébés",
-            "content": "<ul><li>Rassure au coucher</li><li>Nomade: facile à tenir grâce à son anse</li><li>Aide à l'endormissement</li><li>Accompagne les réveils nocturnes</li><li>Toujours à portée de main</li><li>Autonomie pour se déplacer</li><li>Tactile pour allumer éteindre</li></ul>",
-            "page": ""
-          }
-        },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
           "settings": {
@@ -152,16 +142,6 @@
             "icon_width": 20,
             "title": "Caractéristiques",
             "content": "<p><span style=\"text-decoration:underline\">Dimensions</span> : 112mm x 126,5mm x 91,5mm</p><p><span style=\"text-decoration:underline\">Poids</span>= : 157g</p><p><span style=\"text-decoration:underline\">Composition</span> : silicone de haute qualité</p><p><span style=\"text-decoration:underline\">Entretien</span> : Nettoyer avec un chiffon doux et humide</p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_fiLq6U": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Informations sur la livraisons",
-            "content": "<p><strong>· Livraison à domicile :</strong> 6 € </p><p><strong>· Point relais Pickup : </strong>4,50 € </p><p><strong>· Livraison express à domicile :</strong> 12 €.</p><p>Les dates de <strong>livraison estimées</strong> sont <strong>affichées directement</strong> avant la commande.</p>",
             "page": ""
           }
         },
@@ -191,9 +171,7 @@
         "associated_products_dQCNyG",
         "description",
         "collapsible_text_BgHqca",
-        "collapsible_text_QkwrFT",
         "collapsible_text_HKATAV",
-        "collapsible_text_fiLq6U",
         "liquid_7PLJAn"
       ],
       "settings": {
