@@ -1039,7 +1039,7 @@
         "product_width_desktop": 430,
         "product_offset_y_desktop": 70,
         "product_alignment_desktop": "center",
-        "card_radius_mobile": 8,
+        "card_radius_mobile": 16,
         "card_padding_x_mobile": 22,
         "card_padding_y_mobile": 36,
         "card_padding_bottom_mobile": 0,
