@@ -983,7 +983,7 @@
         "bg_color": "#f4ede1",
         "max_width": 1160,
         "section_radius": 16,
-        "section_radius_mobile": 24,
+        "section_radius_mobile": 16,
         "side_margin": 22,
         "side_margin_mobile": 10,
         "padding_top": 64,

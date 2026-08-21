@@ -595,7 +595,7 @@
         "subtitle_margin_bottom": 48,
         "footer_margin_top": 36,
         "section_radius": 16,
-        "section_radius_mobile": 24,
+        "section_radius_mobile": 16,
         "side_margin": 22,
         "side_margin_mobile": 10,
         "margin_bottom": 80,
