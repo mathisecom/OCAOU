@@ -21,19 +21,19 @@ Supported variables
 {%- liquid
   case size
     when 'lg'
-      assign regular_price_classes = 'text-lg'
+      assign regular_price_classes = 'text-lg text-on-sale'
       assign on_sale_price_classes = 'text-lg text-on-sale'
       assign compare_at_price_classes = 'text-subdued line-through'
       assign unit_price_classes = 'text-subdued'
   
     when 'sm'
-      assign regular_price_classes = 'text-subdued text-sm'
+      assign regular_price_classes = 'text-on-sale text-sm'
       assign on_sale_price_classes = 'text-on-sale text-sm'
       assign compare_at_price_classes = 'text-subdued text-sm line-through'
       assign unit_price_classes = 'text-subdued text-sm'
   
     else
-      assign regular_price_classes = 'text-subdued'
+      assign regular_price_classes = 'text-on-sale'
       assign on_sale_price_classes = 'text-on-sale'
       assign compare_at_price_classes = 'text-subdued line-through'
       assign unit_price_classes = 'text-subdued text-sm'
