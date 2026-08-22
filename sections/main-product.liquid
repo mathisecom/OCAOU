@@ -59,6 +59,7 @@
 </div>
 
 {%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
+{%- assign variant_picker_block = section.blocks | where: 'type', 'variant_picker' | first -%}
 
 {%- if section.settings.show_fixed_add_to_cart and product.available and buy_buttons_block != blank -%}
   <product-rerender id="{{ product_form_id }}-sticky-bar" observe-form="{{ product_form_id }}">
@@ -88,6 +89,7 @@
 
             <a href="{{ product.url }}" class="bold truncate-text">{{ product.title }}</a>
             {%- render 'price-list', product: product, variant: product.selected_or_first_available_variant, form_id: product_form_id -%}
+            {%- if variant_picker_block -%}<div class="product-quick-add__variant-picker">{%- render 'variant-picker', product: product, form_id: product_form_id, update_url: false, hide_sold_out_variants: variant_picker_block.settings.hide_sold_out_variants, hide_size_chart: true, force_dropdown_as_block: true, block: variant_picker_block -%}</div>{%- endif -%}
           </div>
 
           <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" force-secondary-button>
