@@ -133,18 +133,8 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Composition",
-            "content": "<p>• Matière : 100% Polyesther </p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_D7HAHP": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Dimensions",
-            "content": "<p>Dimension: L30cm</p>",
+            "title": "Caractéristiques",
+            "content": "<p>Matière : 100% Polyesther </p><p>Dimension: L30cm</p>",
             "page": ""
           }
         },
@@ -194,7 +184,6 @@
         "associated_products_dQCNyG",
         "description",
         "collapsible_text_BgHqca",
-        "collapsible_text_D7HAHP",
         "collapsible_text_QkwrFT",
         "collapsible_text_HKATAV",
         "liquid_7PLJAn"
