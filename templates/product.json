@@ -960,6 +960,7 @@
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
+        "disabled": true,
       "blocks": {
         "image_DkrWqw": {
           "type": "image",
