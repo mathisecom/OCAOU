@@ -1151,6 +1151,7 @@
     },
     "testimonials_LKV3kq": {
       "type": "testimonials",
+        "disabled": true,
       "blocks": {
         "testimonial_DnV3QU": {
           "type": "testimonial",
