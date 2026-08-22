@@ -133,8 +133,8 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Pourquoi choisir O'CAOU ?",
-            "content": "<ul><li>Des produits pensés dès la naissance</li><li>Des essentiels complémentaires</li><li>Pensés pour durer</li><li>Créés pour simplifier le quotidien des familles</li></ul>",
+            "title": "Description",
+            "content": "<h5><strong>Le cocon des premiers instants</strong></h5><p>À la maternité, elle réchauffe bébé.<br/>À la maison, elle accompagne les câlins.<br/>En balade, elle protège les petits aventuriers.<br/>Une seule couverture.<br/>Des centaines de câlins.<br/>Des milliers de souvenirs.</p>",
             "page": ""
           }
         },
@@ -150,6 +150,7 @@
         },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
