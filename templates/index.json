@@ -803,6 +803,32 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "rich_text_TrB4qN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Yg7B8r": {
+          "type": "heading",
+          "settings": {
+            "text": "O'CAOU répond aux petits \"O'CAOU\" du quotidien des familles.",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Yg7B8r"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "avantageicons_9NE3Mb": {
       "type": "avantageicons",
       "blocks": {
@@ -1380,6 +1406,7 @@
     "offrecoffret_Tj4hcD",
     "bandedefilante_AkFDNj",
     "sectionsicones_JdQXN9",
+    "rich_text_TrB4qN",
     "avantageicons_9NE3Mb",
     "ocaoujaibesoin_bxqEpT",
     "30retours_rDewFa",
