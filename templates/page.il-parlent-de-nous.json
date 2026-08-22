@@ -72,9 +72,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -108,7 +108,7 @@
             "content": "",
             "link_text": "Lien de L'Article",
             "link_url": "https://www.marieclaire.fr/des-cadeaux-de-noel-a-faire-en-famille,1485316.asp",
-            "background": "#FFFFFF",
+            "background": "#ffffff",
             "background_gradient": "",
             "text_color": "#000000",
             "text_gradient": "",
@@ -144,7 +144,7 @@
             "content": "",
             "link_text": "Lien de L'Article",
             "link_url": "https://www.doolittle.fr/au-cas-ou-tu-aies-besoin-dun-sac-a-dos-malin-ocaou-est-la/",
-            "background": "#FFFFFF",
+            "background": "#ffffff",
             "background_gradient": "",
             "text_color": "#000000",
             "text_gradient": "",
@@ -180,7 +180,7 @@
             "content": "",
             "link_text": "",
             "link_url": "",
-            "background": "#FFFFFF",
+            "background": "#ffffff",
             "background_gradient": "",
             "text_color": "#000000",
             "text_gradient": "",
@@ -191,6 +191,42 @@
       },
       "block_order": [
         "image_pigGck"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "full_width": true,
+        "alternate_media_position": false,
+        "spacing": "none"
+      }
+    },
+    "media_with_text_NtUGen": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_r3g8LV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/biba-n533.webp",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "La Maison des Maternelles",
+            "content": "",
+            "link_text": "Voir la vidéo",
+            "link_url": "https://www.instagram.com/reel/DF9_5louyI5/",
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text_color": "#000000",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_r3g8LV"
       ],
       "name": "Media with text",
       "settings": {
@@ -216,7 +252,7 @@
             "content": "",
             "link_text": "Lien de L'Article",
             "link_url": "https://www.yoopala.com/ressources/trois-indispensables-garde-enfant-sereine/",
-            "background": "#FFFFFF",
+            "background": "#ffffff",
             "background_gradient": "",
             "text_color": "#000000",
             "text_gradient": "",
@@ -242,6 +278,7 @@
     "media_with_text_waqUe4",
     "media_with_text_9rpgKm",
     "media_with_text_dU7kDX",
+    "media_with_text_NtUGen",
     "media_with_text_nrJ9Y4"
   ]
 }
