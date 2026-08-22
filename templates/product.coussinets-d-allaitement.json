@@ -133,7 +133,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Dimensions (en cm)",
+            "title": "Dimensions",
             "content": "<p>Pochette de transport 17x19cm</p><p>Filet : 20x20cm</p><p>Coussinets 3D : 12cm</p>",
             "page": ""
           }
