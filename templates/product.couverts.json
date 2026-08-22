@@ -125,6 +125,16 @@
             "collapse_content": true
           }
         },
+        "collapsible_text_WtaBCY": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Dimensions",
+            "content": "<p>Poche de rangement : L17m</p><p>Couvert : L14cm</p><p></p>",
+            "page": ""
+          }
+        },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
           "settings": {
@@ -180,6 +190,7 @@
         "liquid_CnEcbM",
         "associated_products_dQCNyG",
         "description",
+        "collapsible_text_WtaBCY",
         "collapsible_text_BgHqca",
         "collapsible_text_QkwrFT",
         "collapsible_text_HKATAV",
