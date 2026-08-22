@@ -941,37 +941,6 @@
   </style>
 {% endunless %}
 
-<script>
-  (function () {
-    function moreLoadProductForm() {
-      var productForm = document.querySelector('#ss-product-videos');
-      if (!productForm){
-        var productForm = document.querySelector('{% if videos_position == "below_title" or videos_position == "above_title" %}.product__title{% elsif videos_position == "below_description" or videos_position == "above_description" %}.product__description{% else %}.button--add-to-cart, .product .product-form, .product-single__add-to-cart, .shopify-payment-button, .shopify-payment-button__button, .ProductForm__BuyButtons, .add-to-cart{% endif %}');
-        if (!productForm) return;
-        }
-        const templateContent = document.querySelector(
-          '#ss-product-video-{{ section.id }}'
-        ).content;
-
-        productForm.insertAdjacentElement(
-          '{% if videos_position == "below_buy" or videos_position == "below_title" or videos_position == "below_description" %}afterend{% else %}beforebegin{% endif %}',
-          templateContent.firstElementChild
-        );
-
-      var bodyInner = document.querySelector('body');
-      const templateContent2 = document.querySelector(
-        '#ss-product-video-modal-{{ section.id }}'
-      ).content;
-
-      bodyInner.insertAdjacentElement(
-        'beforeend',
-        templateContent2.firstElementChild
-      );
-
-    }
-    window.addEventListener('DOMContentLoaded', moreLoadProductForm);
-  })();
-</script>
 {% if section.blocks.size > 0 or videos.size > 0 %}
   <template
     class="section-{{ section.id }} video-{{ section.id }}"
