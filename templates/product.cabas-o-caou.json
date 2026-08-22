@@ -143,7 +143,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Entretien",
+            "title": "Composition",
             "content": "<p>Extérieur : 100 % coton</p><p>Intérieur : 30 % coton / 70 % polyester</p>",
             "page": ""
           }
@@ -154,8 +154,8 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Composition Textile",
-            "content": "<p><strong>Sac nid d'abeille Chair et Bleu Gris :</strong></p><p>Extérieur: 100% Coton</p><p>Intérieur: 80% Coton / 20% Rayon</p><p>Filet: 100% polyester</p><p><strong>Sac toile de coton Bleu-Vert Panda et Terracotta Chien :</strong></p><p>Extérieur: 80% Coton / 20% Rayon</p><p>Intérieur: 80% Coton / 20% Rayon</p><p>Filet: 100% polyester</p>",
+            "title": "Entretien",
+            "content": "<ul><li>Lavage à 30°</li><li>Ne pas sécher au sèche linge</li><li>Ne pas utiliser d’agent de blanchiment</li></ul>",
             "page": ""
           }
         },
