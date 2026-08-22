@@ -128,23 +128,33 @@
             "collapse_content": true
           }
         },
-        "collapsible_text_QkwrFT": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Pourquoi choisir O'CAOU ?",
-            "content": "<ul><li>Des produits pensés pour accompagner bébé dès la naissance</li><li>Des essentiels complémentaires</li><li>Pensés pour durer</li><li>Créés pour simplifier le quotidien des familles</li></ul>",
-            "page": ""
-          }
-        },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
           "settings": {
             "icon": "none",
             "icon_width": 20,
+            "title": "Composition",
+            "content": "<p>• Matière : 100% Polyesther </p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_D7HAHP": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
             "title": "Caractéristiques",
-            "content": "<p>• Matière : Polyesther • <span style=\"text-decoration:underline\">Dimensions</span> : L30cm<br/>• Entretien : Machine 30°<br/>• CE</p>",
+            "content": "<p>Dimension: L30cm</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_QkwrFT": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Entretien",
+            "content": "<ul><li>Machine 30°</li></ul>",
             "page": ""
           }
         },
@@ -154,7 +164,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "Pensé pour les bébés",
-            "content": "<ul><li>Rassure au moment du coucher</li><li>Accompagne les premiers câlins</li><li>Doux au toucher</li><li>Facile et léger à transporter</li></ul>",
+            "content": "<ul><li>Rassure au moment du coucher</li><li>Accompagne les premiers câlins</li><li>Doux au toucher</li><li>Léger et Facile à transporter</li><li>S’accroche partout avec  la poignée nomade</li></ul>",
             "page": ""
           }
         },
@@ -183,8 +193,9 @@
         "liquid_CnEcbM",
         "associated_products_dQCNyG",
         "description",
-        "collapsible_text_QkwrFT",
         "collapsible_text_BgHqca",
+        "collapsible_text_D7HAHP",
+        "collapsible_text_QkwrFT",
         "collapsible_text_HKATAV",
         "liquid_7PLJAn"
       ],
