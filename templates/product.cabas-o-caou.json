@@ -730,9 +730,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_46_1.png",
             "column_size": "3",
-            "title": "Tout ce qu’il faut, toujours avec vous",
+            "title": "Prendre TOUT au cas où...",
             "heading_tag": "h3",
-            "content": "<p>Sa <strong>grande capacité</strong> permet d’emporter facilement les affaires de bébé, les vôtres et celles de toute la famille.</p>",
+            "content": "<p>Sa <strong>grande capacité</strong> permet d’emporter facilement les affaires de bébé et celles de toute la famille.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -745,7 +745,7 @@
             "column_size": "3",
             "title": "Léger et facile à vivre",
             "heading_tag": "h3",
-            "content": "<p>Spacieux sans être encombrant, ce cabas reste <strong>léger et pratique</strong> pour vous accompagner au quotidien.</p>",
+            "content": "<p><strong>Léger et pratique</strong>, ce cabas se plie facilement et vous accompagne partout au quotidien.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -756,9 +756,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_47_3.png",
             "column_size": "3",
-            "title": "Tout reste bien organisé",
+            "title": "Être organisé et stylé",
             "heading_tag": "h3",
-            "content": "<p>Sa <strong>poche intérieure</strong> garde vos essentiels à portée de main, pour des sorties plus simples et mieux organisées.</p>",
+            "content": "<p>Une <strong>poche intérieure</strong> pratique pour organiser et garder les essentiels à portée de main.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
