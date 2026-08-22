@@ -708,7 +708,7 @@
             "column_size": "3",
             "title": "Un câlin tout en douceur",
             "heading_tag": "h3",
-            "content": "<p>Son toucher <strong>ultra doux et réconfortant</strong> offre à bébé un compagnon rassurant pour les moments de calme et de tendresse.</p>",
+            "content": "<p><strong>Ultra doux et réconfortant</strong>, ce doudou rassure bébé à tout moment de la journée.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -721,7 +721,7 @@
             "column_size": "3",
             "title": "Facile à attraper",
             "heading_tag": "h3",
-            "content": "<p>Ses formes souples sont pensées pour les <strong>petites mains</strong>, afin que bébé puisse facilement le serrer contre lui.</p>",
+            "content": "<p>Des formes souples pensées pour les <strong>petites mains. </strong>Des ailes et un bec pour que Bébé puisse facilement l'attraper et le serrer.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -732,9 +732,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_09_32_1.png",
             "column_size": "3",
-            "title": "Toujours près de bébé",
+            "title": "Un doudou pour durer",
             "heading_tag": "h3",
-            "content": "<p><strong>Léger et lavable en machine</strong>, il accompagne bébé dès la naissance, à la maison comme pendant toutes ses sorties.</p>",
+            "content": "<p><strong>Léger et lavable en machine</strong>, il accompagne bébé dès la naissance,mais aussi les petits aventuriers.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
