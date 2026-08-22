@@ -52,7 +52,7 @@
         "liquid_EcDw3M": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .fp-product-benefits {\n    margin: 14px 0;\n    color: #333333;\n  }\n\n  .fp-product-benefits-title {\n    margin: 0 0 8px;\n    font-size: 18px;\n    font-weight: 700;\n    line-height: 1.3;\n    color: #333333;\n  }\n\n  .fp-product-benefits-text {\n    margin: 0 0 18px;\n    font-size: 16px;\n    font-weight: 500;\n    line-height: 1.5;\n    color: #333333;\n  }\n\n  .fp-product-benefits-grid {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px 14px;\n  }\n\n  .fp-product-benefit-pill {\n    display: inline-flex;\n    align-items: center;\n    gap: 7px;\n    padding: 7px 11px;\n    background: #FBF6EF;\n    color: #333333;\n    border-radius: 4px;\n    font-size: 15px;\n    font-weight: 500;\n    line-height: 1.2;\n    white-space: nowrap;\n  }\n\n  .fp-product-benefit-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 16px;\n    height: 16px;\n    min-width: 16px;\n    border-radius: 50%;\n    background: #AF6C67;\n    color: #ffffff;\n  }\n\n  .fp-product-benefit-icon svg {\n    display: block;\n    width: 10px;\n    height: 10px;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-product-benefits-title {\n      font-size: 16px;\n    }\n\n    .fp-product-benefits-text {\n      margin-bottom: 14px;\n      font-size: 14px;\n    }\n\n    .fp-product-benefits-grid {\n      gap: 8px;\n    }\n\n    .fp-product-benefit-pill {\n      gap: 6px;\n      padding: 6px 9px;\n      font-size: 13px;\n      white-space: normal;\n    }\n\n    .fp-product-benefit-icon {\n      width: 15px;\n      height: 15px;\n      min-width: 15px;\n    }\n\n    .fp-product-benefit-icon svg {\n      width: 9px;\n      height: 9px;\n    }\n  }\n</style>\n\n<div class=\"fp-product-benefits\">\n\n  <h3 class=\"fp-product-benefits-title\">\n    O’CAOU je veux un câlin\n  </h3>\n\n  <p class=\"fp-product-benefits-text\">\n    Le doudou tout doux qui rassure bébé et l’accompagne partout, dès ses premiers câlins.\n  </p>\n\n  <div class=\"fp-product-benefits-grid\">\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Ultra doux et réconfortant</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Facile à attraper</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Rassurant dès la naissance</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Léger et lavable en machine</span>\n    </div>\n\n  </div>\n</div>"
+            "liquid": "<style>\n  .fp-product-benefits {\n    margin: 14px 0;\n    color: #333333;\n  }\n\n  .fp-product-benefits-title {\n    margin: 0 0 8px;\n    font-size: 18px;\n    font-weight: 700;\n    line-height: 1.3;\n    color: #333333;\n  }\n\n  .fp-product-benefits-text {\n    margin: 0 0 18px;\n    font-size: 16px;\n    font-weight: 500;\n    line-height: 1.5;\n    color: #333333;\n  }\n\n  .fp-product-benefits-grid {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px 14px;\n  }\n\n  .fp-product-benefit-pill {\n    display: inline-flex;\n    align-items: center;\n    gap: 7px;\n    padding: 7px 11px;\n    background: #FBF6EF;\n    color: #333333;\n    border-radius: 4px;\n    font-size: 15px;\n    font-weight: 500;\n    line-height: 1.2;\n    white-space: nowrap;\n  }\n\n  .fp-product-benefit-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 16px;\n    height: 16px;\n    min-width: 16px;\n    border-radius: 50%;\n    background: #AF6C67;\n    color: #ffffff;\n  }\n\n  .fp-product-benefit-icon svg {\n    display: block;\n    width: 10px;\n    height: 10px;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-product-benefits-title {\n      font-size: 16px;\n    }\n\n    .fp-product-benefits-text {\n      margin-bottom: 14px;\n      font-size: 14px;\n    }\n\n    .fp-product-benefits-grid {\n      gap: 8px;\n    }\n\n    .fp-product-benefit-pill {\n      gap: 6px;\n      padding: 6px 9px;\n      font-size: 13px;\n      white-space: normal;\n    }\n\n    .fp-product-benefit-icon {\n      width: 15px;\n      height: 15px;\n      min-width: 15px;\n    }\n\n    .fp-product-benefit-icon svg {\n      width: 9px;\n      height: 9px;\n    }\n  }\n</style>\n\n<div class=\"fp-product-benefits\">\n\n  <h3 class=\"fp-product-benefits-title\">\n    \n  </h3>\n\n  <p class=\"fp-product-benefits-text\">\n    Le doudou qui rassure les tout-petits , parce qu’un câlin c’est juste TROP TROP bien.Pensé pour les petites mains. Imaginé pour les grands câlins.\n  </p>\n\n  <div class=\"fp-product-benefits-grid\">\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Ultra doux et réconfortant</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Facile à attraper</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Rassurant dès la naissance</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Léger et lavable en machine</span>\n    </div>\n\n  </div>\n</div>"
           }
         },
         "variant_picker": {
@@ -82,7 +82,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true,
+            "show_payment_button": false,
             "show_gift_card_recipient": true,
             "atc_button_background": "#cd9438",
             "atc_button_text_color": "",
@@ -158,16 +158,6 @@
             "page": ""
           }
         },
-        "collapsible_text_fiLq6U": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Informations sur la livraisons",
-            "content": "<p><strong>· Livraison à domicile :</strong> 6 € </p><p><strong>· Point relais Pickup : </strong>4,50 € </p><p><strong>· Livraison express à domicile :</strong> 12 €.</p><p>Les dates de <strong>livraison estimées</strong> sont <strong>affichées directement</strong> avant la commande.</p>",
-            "page": ""
-          }
-        },
         "liquid_7PLJAn": {
           "type": "liquid",
           "disabled": true,
@@ -196,7 +186,6 @@
         "collapsible_text_QkwrFT",
         "collapsible_text_BgHqca",
         "collapsible_text_HKATAV",
-        "collapsible_text_fiLq6U",
         "liquid_7PLJAn"
       ],
       "settings": {
@@ -208,7 +197,7 @@
         "mobile_carousel_control": "thumbnails",
         "enable_video_autoplay": false,
         "enable_video_looping": true,
-        "enable_image_zoom": false,
+        "enable_image_zoom": true,
         "max_image_zoom_level": 3,
         "background": "",
         "background_gradient": "",
@@ -488,7 +477,7 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#ffffff",
         "text_color": "#3a2c22",
-        "accent_color": "#cd9438",
+        "accent_color": "#9f6b69",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
@@ -831,7 +820,7 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#ffffff",
         "text_color": "#3a2c22",
-        "accent_color": "#cd9438",
+        "accent_color": "#9f6b69",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
@@ -960,37 +949,37 @@
       "disabled": true,
       "name": "Bannière garantie produit",
       "settings": {
-        "title": "Retours Faciles sous 14 Jours ",
+        "title": "Retours Faciles sous 14 Jours",
         "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
-        "product_image": "shopify://shop_images/IMG_2751.jpg",
+        "product_image": "shopify://shop_images/no_change_copie_3.jpg",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
         "bg_position_mobile": "center center",
-        "show_default_icon": false,
+        "show_default_icon": true,
         "custom_icon": "shopify://shop_images/Design_sans_titre_40.png",
         "icon_alt": "Icône garantie",
-        "icon_size_desktop": 38,
-        "icon_size_mobile": 38,
-        "icon_margin_bottom_desktop": 20,
-        "icon_margin_bottom_mobile": 23,
+        "icon_size_desktop": 56,
+        "icon_size_mobile": 44,
+        "icon_margin_bottom_desktop": 12,
+        "icon_margin_bottom_mobile": 25,
         "icon_color": "#ffffff",
         "section_bg_color": "#ffffff",
-        "card_bg_color": "#fbf6ef",
-        "overlay_color": "#fcfcfc",
+        "card_bg_color": "#af6c67",
+        "overlay_color": "#fcf9f5",
         "overlay_opacity": 30,
         "title_color": "#101010",
         "subtitle_color": "#101010",
-        "title_size_desktop": 34,
+        "title_size_desktop": 31,
         "title_line_height_desktop": 105,
         "subtitle_size_desktop": 14,
         "subtitle_line_height_desktop": 135,
         "title_weight": "700",
         "subtitle_weight": "400",
         "title_letter_spacing": 0,
-        "title_size_mobile": 30,
+        "title_size_mobile": 29,
         "title_line_height_mobile": 95,
         "subtitle_size_mobile": 13,
-        "subtitle_line_height_mobile": 125,
+        "subtitle_line_height_mobile": 135,
         "full_width": false,
         "max_width": 1400,
         "card_height_desktop": 310,
@@ -1018,7 +1007,7 @@
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 120,
         "padding_top_mobile": 24,
-        "padding_bottom_mobile": 28,
+        "padding_bottom_mobile": 0,
         "side_padding_desktop": 40,
         "side_padding_mobile": 16,
         "shadow_y": 10,
