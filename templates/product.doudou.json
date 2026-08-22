@@ -1008,6 +1008,7 @@
     },
     "rich_text_WCLrEr": {
       "type": "rich-text",
+        "disabled": true,
       "blocks": {
         "subheading_dxbRyg": {
           "type": "subheading",
