@@ -379,7 +379,7 @@
       ],
       "name": "O'CAOU — Image + Texte",
       "settings": {
-        "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
+        "image": "shopify://shop_images/no_change_1_47e509c6-0909-4775-a769-e1ed5d0a406f.png",
         "image_position": "left",
         "image_first_mobile": true,
         "image_ratio": "1 / 1",
@@ -960,7 +960,6 @@
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
-        "disabled": true,
       "blocks": {
         "image_DkrWqw": {
           "type": "image",
@@ -1029,6 +1028,7 @@
         "image_HPXExF",
         "image_MK3rYP"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
