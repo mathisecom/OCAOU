@@ -1126,7 +1126,6 @@
       "settings": {
         "title": "Retours Faciles sous 14 Jours",
         "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
-        "product_image": "shopify://shop_images/OCAOU_Version1-44.jpg",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
         "bg_position_mobile": "center center",
@@ -1139,7 +1138,7 @@
         "icon_margin_bottom_mobile": 25,
         "icon_color": "#ffffff",
         "section_bg_color": "#ffffff",
-        "card_bg_color": "#af6c67",
+        "card_bg_color": "#FCF9F5",
         "overlay_color": "#fcf9f5",
         "overlay_opacity": 30,
         "title_color": "#101010",
