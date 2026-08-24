@@ -422,6 +422,22 @@
         "padding_bottom_mobile": 8
       }
     },
+    "image_with_text_overlay_AFhAQ7": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/Elia_x6_8eb32827-81ab-4a04-b806-a0a89f126302.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "sectionsicones_Y3DFyV": {
       "type": "sectionsicones",
       "blocks": {
@@ -619,68 +635,6 @@
         "pause_on_hover": false
       }
     },
-    "multi_column_FnzMQb": {
-      "type": "multi-column",
-      "blocks": {
-        "item_wXyMTV": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_1_bc2f9336-b9f5-4b60-b2f2-16ae3c6f067c.png",
-            "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
-            "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
-        "item_KhaUjE": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/Mayol_SAD.png",
-            "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
-            "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
-        "item_rRTD9L": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/details_pratiques_2.png",
-            "column_size": "3",
-            "title": "Pratique partout, tout le temps",
-            "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant. O'CAOU il pleut, les affaires sont protégées !</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        }
-      },
-      "block_order": [
-        "item_wXyMTV",
-        "item_KhaUjE",
-        "item_rRTD9L"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "full_width": true,
-        "stack_on_mobile": false,
-        "gap": "medium",
-        "text_alignment": "center",
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
@@ -765,6 +719,68 @@
         "padding_bottom": 80,
         "padding_top_mobile": 8,
         "padding_bottom_mobile": 8
+      }
+    },
+    "multi_column_FnzMQb": {
+      "type": "multi-column",
+      "blocks": {
+        "item_wXyMTV": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_1_bc2f9336-b9f5-4b60-b2f2-16ae3c6f067c.png",
+            "column_size": "3",
+            "title": "Tout est organisé, même les imprévus",
+            "heading_tag": "h3",
+            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_KhaUjE": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Mayol_SAD.png",
+            "column_size": "3",
+            "title": "Un sac qui grandit avec votre enfant",
+            "heading_tag": "h3",
+            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_rRTD9L": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/details_pratiques_2.png",
+            "column_size": "3",
+            "title": "Pratique partout, tout le temps",
+            "heading_tag": "h3",
+            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant. O'CAOU il pleut, les affaires sont protégées !</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_wXyMTV",
+        "item_KhaUjE",
+        "item_rRTD9L"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "avantageicons_k7faYm": {
@@ -1342,10 +1358,11 @@
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "imagewithtexticons_4VMEKy",
+    "image_with_text_overlay_AFhAQ7",
     "sectionsicones_Y3DFyV",
     "bandedefilante_6mBxhe",
-    "multi_column_FnzMQb",
     "imagewithtexticons_pncmHL",
+    "multi_column_FnzMQb",
     "avantageicons_k7faYm",
     "30retours_YLhBEm",
     "logoscroll_Lyixnk",
