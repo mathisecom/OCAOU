@@ -728,7 +728,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_46_1.png",
+            "image": "shopify://shop_images/58.png",
             "column_size": "3",
             "title": "Prendre TOUT au cas où...",
             "heading_tag": "h3",
@@ -741,7 +741,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_46_2.png",
+            "image": "shopify://shop_images/55.png",
             "column_size": "3",
             "title": "Léger et facile à vivre",
             "heading_tag": "h3",
@@ -754,7 +754,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_48_47_3.png",
+            "image": "shopify://shop_images/50.png",
             "column_size": "3",
             "title": "Être organisé et stylé",
             "heading_tag": "h3",
@@ -1054,7 +1054,6 @@
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
-        "disabled": true,
       "blocks": {
         "image_DkrWqw": {
           "type": "image",
@@ -1123,6 +1122,7 @@
         "image_HPXExF",
         "image_MK3rYP"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
