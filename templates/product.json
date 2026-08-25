@@ -425,12 +425,6 @@
     "image_with_text_overlay_wrRh6T": {
       "type": "image-with-text-overlay",
       "blocks": {
-        "subheading_B6EGBC": {
-          "type": "subheading",
-          "settings": {
-            "text": "COLLECTION"
-          }
-        },
         "heading_yBeiCm": {
           "type": "heading",
           "settings": {
@@ -446,7 +440,6 @@
         }
       },
       "block_order": [
-        "subheading_B6EGBC",
         "heading_yBeiCm",
         "richtext_k3QBRy"
       ],
