@@ -753,7 +753,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/details_pratiques_2.png",
+            "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_08_25_13.png",
             "column_size": "3",
             "title": "Pratique partout, tout le temps",
             "heading_tag": "h3",
@@ -920,7 +920,7 @@
         "icon_margin_bottom_mobile": 25,
         "icon_color": "#ffffff",
         "section_bg_color": "#ffffff",
-        "card_bg_color": "#F4EDE1",
+        "card_bg_color": "#f4ede1",
         "overlay_color": "#fcf9f5",
         "overlay_opacity": 30,
         "title_color": "#101010",
