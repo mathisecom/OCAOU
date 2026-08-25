@@ -422,15 +422,41 @@
         "padding_bottom_mobile": 8
       }
     },
-    "image_with_text_overlay_AFhAQ7": {
+    "image_with_text_overlay_wrRh6T": {
       "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_B6EGBC": {
+          "type": "subheading",
+          "settings": {
+            "text": "COLLECTION"
+          }
+        },
+        "heading_yBeiCm": {
+          "type": "heading",
+          "settings": {
+            "text": "Un sac pour langer tout en restant stylé",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_k3QBRy": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_B6EGBC",
+        "heading_yBeiCm",
+        "richtext_k3QBRy"
+      ],
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/Elia_x6_8eb32827-81ab-4a04-b806-a0a89f126302.png",
+        "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_21_32.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -1358,7 +1384,7 @@
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "imagewithtexticons_4VMEKy",
-    "image_with_text_overlay_AFhAQ7",
+    "image_with_text_overlay_wrRh6T",
     "sectionsicones_Y3DFyV",
     "bandedefilante_6mBxhe",
     "imagewithtexticons_pncmHL",
