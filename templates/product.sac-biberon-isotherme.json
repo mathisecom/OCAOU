@@ -727,7 +727,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_15_56_11_1.png",
+            "image": "shopify://shop_images/recadree.png",
             "column_size": "3",
             "title": "Tout son repas trouve sa place",
             "heading_tag": "h3",
@@ -1053,7 +1053,6 @@
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
-        "disabled": true,
       "blocks": {
         "image_DkrWqw": {
           "type": "image",
@@ -1122,6 +1121,7 @@
         "image_HPXExF",
         "image_MK3rYP"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
