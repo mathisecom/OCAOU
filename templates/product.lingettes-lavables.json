@@ -719,7 +719,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_04_05_3.png",
+            "image": "shopify://shop_images/lingettes_cabas.png",
             "column_size": "3",
             "title": "À réutiliser encore et encore",
             "heading_tag": "h3",
@@ -1019,7 +1019,6 @@
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
-        "disabled": true,
       "blocks": {
         "image_DkrWqw": {
           "type": "image",
@@ -1088,6 +1087,7 @@
         "image_HPXExF",
         "image_MK3rYP"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
