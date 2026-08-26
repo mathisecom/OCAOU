@@ -73,7 +73,7 @@
       ],
       "name": "Hero OCAOU",
       "settings": {
-        "main_image": "shopify://shop_images/20260819_162536.png",
+        "main_image": "shopify://shop_images/no_change_1_34041875-d36c-429e-9f49-6fa64f59de28.png",
         "image_fit": "cover",
         "image_position": "center center",
         "image_ratio": 90,
@@ -1138,7 +1138,7 @@
         "icon_margin_bottom_mobile": 25,
         "icon_color": "#ffffff",
         "section_bg_color": "#ffffff",
-        "card_bg_color": "#FCF9F5",
+        "card_bg_color": "#fcf9f5",
         "overlay_color": "#fcf9f5",
         "overlay_opacity": 30,
         "title_color": "#101010",
