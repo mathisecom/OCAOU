@@ -679,19 +679,6 @@
     "multi_column_FnzMQb": {
       "type": "multi-column",
       "blocks": {
-        "item_wXyMTV": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/lumiere-matias_doudou_poussette_copie.png",
-            "column_size": "3",
-            "title": "Un câlin tout en douceur",
-            "heading_tag": "h3",
-            "content": "<p><strong>Ultra doux et réconfortant</strong>, ce doudou rassure bébé à tout moment de la journée.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
         "item_KhaUjE": {
           "type": "item",
           "settings": {
@@ -700,6 +687,19 @@
             "title": "Facile à attraper",
             "heading_tag": "h3",
             "content": "<p>Des formes souples pensées pour les <strong>petites mains. </strong>Des ailes et un bec pour que Bébé puisse facilement l'attraper et le serrer.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_wXyMTV": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/lumiere-matias_doudou_poussette_copie.png",
+            "column_size": "3",
+            "title": "Un câlin tout en douceur",
+            "heading_tag": "h3",
+            "content": "<p><strong>Ultra doux et réconfortant</strong>, ce doudou rassure bébé à tout moment de la journée.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -720,8 +720,8 @@
         }
       },
       "block_order": [
-        "item_wXyMTV",
         "item_KhaUjE",
+        "item_wXyMTV",
         "item_rRTD9L"
       ],
       "name": "Multi-column",
