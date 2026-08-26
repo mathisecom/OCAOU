@@ -708,7 +708,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_12_aout_2026_16_09_32_1.png",
+            "image": "shopify://shop_images/mayol_epuisette_doudou.png",
             "column_size": "3",
             "title": "Un doudou pour durer",
             "heading_tag": "h3",
@@ -1008,7 +1008,6 @@
     },
     "rich_text_WCLrEr": {
       "type": "rich-text",
-        "disabled": true,
       "blocks": {
         "subheading_dxbRyg": {
           "type": "subheading",
@@ -1030,6 +1029,7 @@
         "subheading_dxbRyg",
         "heading_VwLx79"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "full_width": true,
@@ -1042,7 +1042,6 @@
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
-        "disabled": true,
       "blocks": {
         "image_DkrWqw": {
           "type": "image",
@@ -1111,6 +1110,7 @@
         "image_HPXExF",
         "image_MK3rYP"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
@@ -1151,7 +1151,6 @@
     },
     "testimonials_LKV3kq": {
       "type": "testimonials",
-        "disabled": true,
       "blocks": {
         "testimonial_DnV3QU": {
           "type": "testimonial",
@@ -1216,6 +1215,7 @@
         "testimonial_cdKCDw",
         "testimonial_tnLDK4"
       ],
+      "disabled": true,
       "name": "Testimonials",
       "settings": {
         "full_width": true,
