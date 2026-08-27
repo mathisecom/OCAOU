@@ -111,7 +111,7 @@
         "proof_margin_bottom": 34,
         "proof_margin_bottom_mobile": 28,
         "heading_tag": "h1",
-        "heading_line_1": "O’ CAOU,  la  solution à tous les \" au cas où . . . \" du quotidien",
+        "heading_line_1": "O’CAOU,  la solution à tous les \" au cas où . . . \" du quotidien",
         "heading_italic": "",
         "brand_text": "",
         "show_brand_dot": true,
@@ -292,7 +292,7 @@
         "carte_pCQgxk": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/format_34.png",
+            "image": "shopify://shop_images/20260822_190753.jpg",
             "label": "Pour maman",
             "collection": "pour-maman",
             "link": ""
@@ -310,7 +310,7 @@
         "carte_VRxatd": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/repas_81369cc5-379f-49c9-b312-e6b5331615f2.png",
+            "image": "shopify://shop_images/no_change_662ae4dd-0bf6-44e6-a0c3-cd25a55f4d20.png",
             "label": "Repas",
             "collection": "repas",
             "link": ""
@@ -1126,6 +1126,7 @@
       "settings": {
         "title": "Retours Faciles sous 14 Jours",
         "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
+        "product_image": "shopify://shop_images/ocaou-photo-1.png",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
         "bg_position_mobile": "center center",

@@ -47,38 +47,9 @@
     "cart_show_free_shipping_threshold": true,
     "cart_free_shipping_threshold": "50",
     "favicon": "shopify://shop_images/fav-ocaou-min.png",
-    "checkout_accent_color": "#f0c417",
-    "checkout_button_color": "#1a1a1a",
-    "content_for_index": [],
-    "blocks": {
-      "15557474716127144420": {
-        "type": "shopify://apps/kaching-bundles/blocks/app-embed-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
-        "disabled": false,
-        "settings": {}
-      },
-      "8778269090131883189": {
-        "type": "shopify://apps/kaching-bundles/blocks/app-embed-block-v2/6c637362-a106-4a32-94ac-94dcfd68cdb8",
-        "disabled": false,
-        "settings": {}
-      },
-      "16477348613150133823": {
-        "type": "shopify://apps/unlimited-bundles/blocks/script-app-block/d33d0f48-dee0-42a0-b156-2a5dce91814a",
-        "disabled": true,
-        "settings": {
-          "reload_on_line_item_properties": false,
-          "disable_reload_on_cart_update": false,
-          "disable_cart_attribute_tracker": false,
-          "disable_facebook_events": false,
-          "enable_reload_on_bundle_auto_match": false,
-          "use_h2_header": false,
-          "match_cart_discount_title": false,
-          "enable_checkout_trigger_functions": false
-        }
-      }
-    },
     "retours_title": "Retours Faciles sous 14 Jours",
     "retours_subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
-    "retours_product_image": "shopify://shop_images/no_change_copie_3.jpg",
+    "retours_product_image": "shopify://shop_images/ocaou-photo-1.png",
     "retours_product_image_alt": "Image produit garantie",
     "retours_bg_position": "center center",
     "retours_bg_position_mobile": "center center",
@@ -247,7 +218,36 @@
     "insta_photo6_open_new_tab": true,
     "insta_photo6_image_position": "center center",
     "insta_photo6_overlay_text": "",
-    "insta_photo6_overlay_position": "center"
+    "insta_photo6_overlay_position": "center",
+    "checkout_accent_color": "#f0c417",
+    "checkout_button_color": "#1a1a1a",
+    "content_for_index": [],
+    "blocks": {
+      "15557474716127144420": {
+        "type": "shopify://apps/kaching-bundles/blocks/app-embed-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+        "disabled": false,
+        "settings": {}
+      },
+      "8778269090131883189": {
+        "type": "shopify://apps/kaching-bundles/blocks/app-embed-block-v2/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+        "disabled": false,
+        "settings": {}
+      },
+      "16477348613150133823": {
+        "type": "shopify://apps/unlimited-bundles/blocks/script-app-block/d33d0f48-dee0-42a0-b156-2a5dce91814a",
+        "disabled": true,
+        "settings": {
+          "reload_on_line_item_properties": false,
+          "disable_reload_on_cart_update": false,
+          "disable_cart_attribute_tracker": false,
+          "disable_facebook_events": false,
+          "enable_reload_on_bundle_auto_match": false,
+          "use_h2_header": false,
+          "match_cart_discount_title": false,
+          "enable_checkout_trigger_functions": false
+        }
+      }
+    }
   },
   "presets": {
     "Sound": {
