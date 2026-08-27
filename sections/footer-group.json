@@ -152,7 +152,7 @@
         "lazy": true
       }
     },
-      "testimonials_LKV3kq": {
+    "testimonials_LKV3kq": {
       "type": "testimonials",
       "blocks": {
         "testimonial_DnV3QU": {
@@ -408,7 +408,7 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Livraison offerte à partir de 79€ TTC",
+            "title": "Livraison offerte à partir de 79€ en France",
             "content": ""
           }
         },
