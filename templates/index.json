@@ -819,6 +819,7 @@
       "block_order": [
         "heading_Yg7B8r"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "full_width": true,
