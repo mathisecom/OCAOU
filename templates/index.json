@@ -1039,7 +1039,7 @@
         "message_9FwdFz": {
           "type": "message",
           "settings": {
-            "text": "Au cas où je range TOUT",
+            "text": "Au cas où je mange",
             "icon": "",
             "icon_position": "right",
             "background_color": "#af6c67",
@@ -1064,14 +1064,14 @@
             "rotation": 1
           }
         },
-        "message_fgU8Pa": {
+        "message_CTbnYx": {
           "type": "message",
           "settings": {
-            "text": "Au cas où ça coule",
+            "text": "Au cas où…ça coule",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#af6c67",
-            "text_color": "#ffffff",
+            "background_color": "#AF6C67",
+            "text_color": "#FCF9F5",
             "desktop_width": "medium",
             "font_size": 15,
             "border_radius": 10,
@@ -1088,7 +1088,7 @@
         "message_wxwVYP",
         "message_9FwdFz",
         "message_fJmXEA",
-        "message_fgU8Pa"
+        "message_CTbnYx"
       ],
       "name": "Notre histoire O'CAOU",
       "settings": {
