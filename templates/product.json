@@ -216,7 +216,7 @@
         "show_progress_bar": true,
         "products_count": 2,
         "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
+        "products_per_row_desktop": 2,
         "subheading": "",
         "title": "Il existe aussi en coffret",
         "content": "",
@@ -246,6 +246,7 @@
       "block_order": [
         "product_Bpc3gQ"
       ],
+      "disabled": true,
       "name": "Shop the look",
       "settings": {
         "full_width": false,
@@ -435,7 +436,7 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#f4ede1",
         "text_color": "#3a2c22",
-        "accent_color": "#9f6b69",
+        "accent_color": "#CF9A2E",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
@@ -753,7 +754,7 @@
         "btn_text_color": "#ffffff",
         "bg_color": "#f4ede1",
         "text_color": "#3a2c22",
-        "accent_color": "#9f6b69",
+        "accent_color": "#CF9A2E",
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
