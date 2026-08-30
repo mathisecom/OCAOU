@@ -208,7 +208,8 @@
       "settings": {
         "collection": "les-coffrets",
         "products": [
-          "coffret-pour-maman"
+          "coffret-pour-maman",
+          "coffret-comme-les-grands"
         ],
         "full_width": true,
         "stack_products": true,
