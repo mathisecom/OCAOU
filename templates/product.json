@@ -636,8 +636,8 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#fbf6ef",
-        "text_color": "#af6c67",
+        "bg_color": "#151515",
+        "text_color": "#FFFFFF",
         "border_color": "#e8ddd3",
         "border_width": 0,
         "height_desktop": 56,
