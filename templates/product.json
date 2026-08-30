@@ -206,7 +206,7 @@
       "type": "featured-collection",
       "name": "Featured collection",
       "settings": {
-        "collection": "",
+        "collection": "les-coffrets",
         "products": [
           "coffret-pour-maman"
         ],
