@@ -753,6 +753,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/format_34_copie_4.png",
             "column_size": "3",
             "title": "Pratique dans toutes les aventures",
             "heading_tag": "h3",
