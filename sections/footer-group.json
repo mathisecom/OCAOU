@@ -428,6 +428,7 @@
         },
         "item_wwhK7N": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "icon": "picto-coupon",
             "custom_icon": "shopify://shop_images/icone.svg",
