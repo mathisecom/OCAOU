@@ -733,6 +733,7 @@
       "block_order": [
         "product_crRUa8"
       ],
+      "disabled": true,
       "name": "Shop the look",
       "settings": {
         "full_width": false,
