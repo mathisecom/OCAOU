@@ -250,6 +250,7 @@
       "block_order": [
         "product_hBkj79"
       ],
+      "disabled": true,
       "name": "Shop the look",
       "settings": {
         "full_width": true,
