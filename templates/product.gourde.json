@@ -187,6 +187,9 @@
         "collapsible_text_HKATAV",
         "liquid_7PLJAn"
       ],
+      "custom_css": [
+        ".product-info__complementary-products > .h-stack > p {font-weight: 700;}"
+      ],
       "settings": {
         "full_width": true,
         "show_fixed_add_to_cart": true,
