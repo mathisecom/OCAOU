@@ -304,6 +304,32 @@
         "lazy": true
       }
     },
+    "featured_collection_pcRQcR": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 6,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Featured collection",
+        "content": "",
+        "link_url": "",
+        "link_text": "View all",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
     "avisparents_byECTe": {
       "type": "avisparents",
       "blocks": {
@@ -983,7 +1009,6 @@
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
-        "disabled": true,
       "blocks": {
         "image_DkrWqw": {
           "type": "image",
@@ -1052,6 +1077,7 @@
         "image_HPXExF",
         "image_MK3rYP"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
@@ -1437,6 +1463,7 @@
     "main",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
+    "featured_collection_pcRQcR",
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
