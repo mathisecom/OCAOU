@@ -427,7 +427,7 @@
           "type": "coffret",
           "settings": {
             "badge": "O'CAOU MAMAN VIENT D'ACCOUCHER",
-            "titre": "Coffret Pour maman",
+            "titre": "Coffret Pour Maman",
             "composition": "",
             "composition_generique": "",
             "image": "shopify://shop_images/ChatGPTImage7aout2026_15_21_01_2.png",
@@ -651,7 +651,7 @@
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#151515",
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "border_color": "#fcf9f5",
         "border_width": 0,
         "height_desktop": 56,
