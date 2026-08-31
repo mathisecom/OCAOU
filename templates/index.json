@@ -1125,8 +1125,8 @@
       "type": "30retours",
       "name": "Bannière garantie produit",
       "settings": {
-        "title": "Retours Faciles sous 14 Jours",
-        "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
+        "title": "PARÉS À TOUTES LES ÉVENTUALITÉS. JUSTE O’CAOU…",
+        "subtitle": "",
         "product_image": "shopify://shop_images/ocaou-photo-1.png",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
