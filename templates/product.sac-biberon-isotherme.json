@@ -212,7 +212,9 @@
       "name": "Featured collection",
       "settings": {
         "collection": "",
-        "products": [],
+        "products": [
+          "coffret-balades"
+        ],
         "full_width": true,
         "stack_products": true,
         "show_progress_bar": false,
