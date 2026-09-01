@@ -68,7 +68,7 @@
         "liquid_89n964": {
           "type": "liquid",
           "settings": {
-            "liquid": "{% render 'ocaou-duo-produit', product: product %}"
+            "liquid": "{% comment %}\n  O'CAOU — Offres Duo.\n  Les prix barrés et le prix du cadeau sont repris AUTOMATIQUEMENT\n  des fiches produits Shopify : rien à changer ici si un tarif bouge.\n  Ici on règle seulement : le titre du bloc, le seuil de livraison\n  offerte, et le PRIX PROMO de chaque duo.\n  Un handle laissé vide ('') masque le duo correspondant.\n{% endcomment %}\n{% render 'ocaou-duo-produit', product: product,\n   titre_bloc: 'Complétez avec un Indispensable :',\n   seuil_livraison: 79,\n\n   duo1_handle: 'gourde',\n   duo1_titre: 'Le Duo Gourde',\n   duo1_prix: 89,\n   duo1_badge: 'Le préféré ♥',\n   duo1_cadeau_handle: 'poignee-nomade',\n   duo1_cadeau_mot: 'OFFERTE',\n\n   duo2_handle: 'cabas-ocaou',\n   duo2_titre: 'Le Duo Cabas',\n   duo2_prix: 99,\n   duo2_badge: '',\n   duo2_cadeau_handle: 'pochon',\n   duo2_cadeau_mot: 'OFFERT',\n\n   duo3_handle: ''\n%}"
           }
         },
         "liquid_RFPgnk": {
