@@ -621,7 +621,9 @@
       "name": "Featured collection",
       "settings": {
         "collection": "",
-        "products": [],
+        "products": [
+          "coffret-naissance"
+        ],
         "full_width": true,
         "stack_products": true,
         "show_progress_bar": false,
@@ -657,6 +659,7 @@
       "block_order": [
         "product_e3ypLk"
       ],
+      "disabled": true,
       "name": "Shop the look",
       "settings": {
         "full_width": true,
