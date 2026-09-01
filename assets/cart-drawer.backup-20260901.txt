@@ -172,11 +172,6 @@
         {%- if section.settings.show_checkout_button -%}
           {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl' -%}
         {%- endif -%}
-              {%- comment -%}O'CAOU — bouton "Continuer mes achats" : ferme simplement le panier{%- endcomment -%}
-        {%- if section.settings.show_continue_shopping_button -%}
-          {%- assign continue_label = section.settings.continue_shopping_label | default: 'Continuer mes achats' -%}
-          <button type="button" is="close-button" class="button button--xl button--secondary">{{ continue_label }}</button>
-        {%- endif -%}
       </form>
     </div>
   {%- endif -%}
@@ -217,19 +212,6 @@
       "id": "show_checkout_button",
       "label": "Show checkout button",
       "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_continue_shopping_button",
-      "label": "Afficher le bouton Continuer mes achats",
-      "info": "Ferme le panier et laisse le client sur la page où il se trouve.",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "continue_shopping_label",
-      "label": "Texte du bouton Continuer mes achats",
-      "default": "Continuer mes achats"
     },
     {
       "type": "header",
