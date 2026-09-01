@@ -344,5 +344,10 @@
       "product_color_display": "swatch",
       "product_info_alignment": "center"
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "/* CTA Ajouter au panier en majuscules (pages produit) */.product-info__buy-buttons .button,.product-quick-add .button {text-transform: uppercase; }"
+    ]
   }
 }
