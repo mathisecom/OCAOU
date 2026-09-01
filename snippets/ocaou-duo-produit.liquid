@@ -38,6 +38,9 @@
     assign titre_bloc = 'Complétez avec un Indispensable :'
   endunless
   unless seuil_livraison
+    assign seuil_livraison = settings.cart_free_shipping_threshold
+  endunless
+  unless seuil_livraison
     assign seuil_livraison = 79
   endunless
 

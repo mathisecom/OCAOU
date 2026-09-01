@@ -230,6 +230,9 @@
     assign total2 = total1 | plus: v_couv.price
     assign total3 = total2 | plus: v_iso.price
     unless seuil_livraison
+      assign seuil_livraison = settings.cart_free_shipping_threshold
+    endunless
+    unless seuil_livraison
       assign seuil_livraison = 79
     endunless
     assign seuil_cents = seuil_livraison | times: 100 | round
