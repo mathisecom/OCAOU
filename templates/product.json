@@ -203,76 +203,6 @@
         "input_text_color": ""
       }
     },
-    "collection_list_fXqUiT": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_FaNhDr": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "subheading": "",
-            "title": "",
-            "url": "",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_n79tGp": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "subheading": "",
-            "title": "",
-            "url": "",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_YzRDBh": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "subheading": "",
-            "title": "",
-            "url": "",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_FaNhDr",
-        "collection_n79tGp",
-        "collection_YzRDBh"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "full_width": true,
-        "stack_collections": true,
-        "collections_per_row_mobile": "1",
-        "collections_per_row": 5,
-        "show_progress_bar": false,
-        "subheading": "",
-        "title": "Collection list",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": ""
-      }
-    },
     "featured_collection_MXYA7g": {
       "type": "featured-collection",
       "name": "Featured collection",
@@ -941,7 +871,7 @@
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 15
       }
     },
     "avantageicons_k7faYm": {
@@ -1515,7 +1445,6 @@
   },
   "order": [
     "main",
-    "collection_list_fXqUiT",
     "featured_collection_MXYA7g",
     "shop_the_look_zAW9Nh",
     "rich_text_7LA3LQ",
