@@ -1,0 +1,112 @@
+{%- comment -%}
+  O'CAOU — Helper d'ajout au panier pour les blocs sur mesure (duos, kits, coffrets).
+
+  Pourquoi ce fichier : le theme Impact ne rafraichit le tiroir panier, le total,
+  le compteur et la barre "livraison offerte" que lorsqu'il recoit ses propres
+  evenements. Un simple "cart:refresh" ne suffit pas. Ce helper reproduit
+  exactement le contrat natif du theme :
+
+    1. cart:prepare-bundled-sections  -> les sections concernees s'inscrivent
+    2. /cart/add.js avec ces sections -> Shopify renvoie leur HTML a jour
+    3. variant:add                    -> ouvre le tiroir panier
+    4. cart:change                    -> met a jour total, compteur, livraison offerte
+
+  Utilisation dans un bloc :
+    window.OCAOUCart.add([{ id: 123, quantity: 1 }, ...])   // ajoute puis rafraichit
+    window.OCAOUCart.refresh()                              // rafraichit seulement
+
+  Charge une seule fois via layout/theme.liquid.
+{%- endcomment -%}
+<script>
+  window.OCAOUCart = window.OCAOUCart || (function () {
+    function root() {
+      return (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+    }
+
+    // Demande a toutes les sections panier de s'inscrire pour etre re-rendues
+    function bundledSections() {
+      var sections = ['variant-added'];
+      document.documentElement.dispatchEvent(
+        new CustomEvent('cart:prepare-bundled-sections', { bubbles: true, detail: { sections: sections } })
+      );
+      return sections;
+    }
+
+    // Le theme est-il configure en "panier = page" plutot qu'en tiroir ?
+    function cartIsPage() {
+      var settings = (window.themeVariables && window.themeVariables.settings) || {};
+      return settings.cartType === 'page' || settings.pageType === 'cart';
+    }
+
+    function sectionsRequestUrl(sections) {
+      var params = new URLSearchParams(window.location.search);
+      params.set('sections', sections.join(','));
+      return window.location.pathname + '?' + params.toString();
+    }
+
+    async function fetchSections(sections) {
+      try {
+        var response = await fetch(sectionsRequestUrl(sections));
+        if (!response.ok) return {};
+        return await response.json();
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function broadcast(cart, openDrawer) {
+      if (openDrawer !== false) {
+        document.documentElement.dispatchEvent(
+          new CustomEvent('variant:add', { bubbles: true, detail: { items: cart.items || [], cart: cart } })
+        );
+      }
+      document.documentElement.dispatchEvent(
+        new CustomEvent('cart:change', { bubbles: true, detail: { baseEvent: 'variant:add', cart: cart } })
+      );
+    }
+
+    // Rafraichit tiroir + total + compteur + barre livraison offerte
+    async function refresh(openDrawer) {
+      if (cartIsPage()) {
+        window.location.href = root() + 'cart';
+        return null;
+      }
+      var sections = bundledSections();
+      var cart = await (await fetch(root() + 'cart.js')).json();
+      cart.sections = await fetchSections(sections);
+      broadcast(cart, openDrawer);
+      return cart;
+    }
+
+    // Ajoute une liste de lignes au panier puis rafraichit toute l'interface
+    async function add(items) {
+      var sections = bundledSections();
+      var response = await fetch(root() + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({
+          items: items,
+          sections: sections,
+          sections_url: window.location.pathname
+        })
+      });
+      var payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload.description || payload.message || 'Erreur panier');
+      }
+      if (cartIsPage()) {
+        window.location.href = root() + 'cart';
+        return payload;
+      }
+      var cart = await (await fetch(root() + 'cart.js')).json();
+      cart.sections = payload.sections || (await fetchSections(sections));
+      broadcast(cart, true);
+      return payload;
+    }
+
+    return { add: add, refresh: refresh };
+  })();
+</script>
