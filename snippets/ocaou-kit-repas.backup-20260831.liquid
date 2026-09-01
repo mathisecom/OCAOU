@@ -215,9 +215,6 @@
     color: {{ couleur_vert }};
     margin-top: 4px;
   }
-  #{{ kit_uid }} .kitR-resume-txt .gains { color: {{ couleur_vert }}; font-weight: 700; }
-  #{{ kit_uid }} .kitR-detail .cadeaux, #{{ kit_uid }} .kitR-detail .cadeaux div { color: {{ couleur_vert }}; font-weight: 700; }
-  #{{ kit_uid }} .kitR-detail .cadeaux small { font-weight: 400; opacity: .85; }
 </style>
 
 <div id="{{ kit_uid }}">
@@ -229,10 +226,6 @@
     assign total1 = main_variant.price | plus: v_lunch.price
     assign total2 = total1 | plus: v_couv.price
     assign total3 = total2 | plus: v_iso.price
-    unless seuil_livraison
-      assign seuil_livraison = 79
-    endunless
-    assign seuil_cents = seuil_livraison | times: 100 | round
   -%}
 
   {%- comment -%} ═══ ÉTAPE 1 : Gourde + Lunch box ═══ {%- endcomment -%}
@@ -245,7 +238,7 @@
       <span class="kitR-resume-txt">
         <span class="nom">Gourde + Lunch box</span>
         <span class="prix"><b>{{ total1 | money }}</b> TTC</span>
-        {% if total1 >= seuil_cents %}<span class="gains">🚚 LIVRAISON OFFERTE</span>{% endif %}
+        <span class="gains">🚚 Livraison offerte (4,50 à 6,50€)</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -255,7 +248,7 @@
         <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
       </div>
       <div class="cadeaux">
-        {% if total1 >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
+        <div>🚚 Livraison offerte (valeur 4,50 à 6,50€)</div>
       </div>
       {% if p_lunch.variants.size > 1 %}
         <label for="{{ kit_uid }}-s1-lunch">Coloris lunch box</label>
@@ -285,7 +278,7 @@
       <span class="kitR-resume-txt">
         <span class="nom">+ Les couverts</span>
         <span class="prix"><b>{{ total2 | money }}</b> TTC</span>
-        <span class="gains">🎁 Pochon O'CAOU OFFERT{% if total2 >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="gains">🎁 Pochon O'CAOU offert · 🚚 Livraison offerte</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -296,8 +289,8 @@
         <div class="l"><span>{{ p_couv.title }}</span><span>{{ v_couv.price | money }}</span></div>
       </div>
       <div class="cadeaux">
-        {% if total2 >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
-        <div>🎁 Pochon O'CAOU OFFERT
+        <div>🚚 Livraison déjà offerte</div>
+        <div>🎁 Pochon O'CAOU offert
           <small>100% coton, 30x40 cm. Durable, réutilisable et pensé pour vous simplifier le quotidien.</small>
         </div>
       </div>
@@ -340,7 +333,7 @@
       <span class="kitR-resume-txt">
         <span class="nom">Kit Repas Nomade complet <span class="kitR-badge or">Kit complet ★</span></span>
         <span class="prix"><b>{{ total3 | money }}</b> TTC</span>
-        <span class="gains">🎁 Poignée nomade OFFERTE · 🎁 Pochon OFFERT{% if total3 >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="gains">🎁 Poignée nomade offerte · 🎁 Pochon offert · 🚚 Livraison offerte</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -353,11 +346,11 @@
         <div class="l"><span>{{ p_iso.title }}</span><span>{{ v_iso.price | money }}</span></div>
       </div>
       <div class="cadeaux">
-        <div>🎁 Poignée nomade O'CAOU OFFERTE
+        <div>🎁 Poignée nomade O'CAOU offerte
           <small>Offerte avec le Kit Repas Nomade complet.</small>
         </div>
-        <div>🎁 Pochon O'CAOU OFFERT</div>
-        {% if total3 >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
+        <div>🎁 Pochon O'CAOU offert</div>
+        <div>🚚 Livraison offerte</div>
       </div>
       {% if p_lunch.variants.size > 1 %}
         <label for="{{ kit_uid }}-s3-lunch">Coloris lunch box</label>
@@ -394,7 +387,7 @@
   </div>
   {%- endif -%}
 
-  <p class="kitR-eco">🎁 Profitez des cadeaux offerts avec le Kit Repas Nomade</p>
+  <p class="kitR-eco">🎁 Profitez des cadeaux et de la livraison offerte avec le Kit Repas Nomade</p>
 
   {%- else -%}
     <p style="font-size:12px;opacity:.7">⚠️ Configurez les handles des produits dans le snippet ocaou-kit-repas.</p>
