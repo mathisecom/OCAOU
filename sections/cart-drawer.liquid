@@ -175,7 +175,7 @@
               {%- comment -%}O'CAOU — bouton "Continuer mes achats" : ferme simplement le panier{%- endcomment -%}
         {%- if section.settings.show_continue_shopping_button -%}
           {%- assign continue_label = section.settings.continue_shopping_label | default: 'Continuer mes achats' -%}
-          <button type="button" is="close-button" class="button button--xl button--secondary">{{ continue_label }}</button>
+          <button type="button" is="close-button" class="button button--xl button--outline">{{ continue_label }}</button>
         {%- endif -%}
       </form>
     </div>
