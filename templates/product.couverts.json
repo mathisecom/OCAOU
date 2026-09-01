@@ -215,6 +215,64 @@
         "input_text_color": ""
       }
     },
+    "bandedefilante_9RCnpw": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_cHffyH": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "BUY ONCE, BUY WELL",
+            "icon_text": "🍒"
+          }
+        },
+        "marquee_item_yMLFdJ": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "HEIRLOOM QUALITY",
+            "icon_text": "✹"
+          }
+        },
+        "marquee_item_kJjdUg": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
+            "icon_text": "🌈"
+          }
+        },
+        "marquee_item_eceDit": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "MACHINE WASHABLE FABRICS",
+            "icon_text": "🌷"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_cHffyH",
+        "marquee_item_yMLFdJ",
+        "marquee_item_kJjdUg",
+        "marquee_item_eceDit"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#F5EFE8",
+        "text_color": "#A85D47",
+        "border_color": "#E8DDD3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 46,
+        "font_size_desktop": 13,
+        "font_size_mobile": 11,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 70,
+        "gap_mobile": 45,
+        "speed": 32,
+        "pause_on_hover": false
+      }
+    },
     "rich_text_7LA3LQ": {
       "type": "rich-text",
       "blocks": {
@@ -1158,6 +1216,65 @@
         "accordion_text_color": ""
       }
     },
+    "multi_column_dFdnGb": {
+      "type": "multi-column",
+      "blocks": {
+        "item_QaU4cY": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_jbmjBC": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_z6n4dY": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_QaU4cY",
+        "item_jbmjBC",
+        "item_z6n4dY"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "instagram_M4jpkB": {
       "type": "instagram",
       "blocks": {
@@ -1313,6 +1430,7 @@
   },
   "order": [
     "main",
+    "bandedefilante_9RCnpw",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
@@ -1324,6 +1442,7 @@
     "30retours_YLhBEm",
     "logoscroll_Lyixnk",
     "faq_RLPihW",
+    "multi_column_dFdnGb",
     "instagram_M4jpkB"
   ]
 }
