@@ -746,6 +746,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/format_34.png",
             "column_size": "3",
             "title": "À laver et à réutiliser",
             "heading_tag": "h3",
