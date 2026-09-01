@@ -213,7 +213,8 @@
       "settings": {
         "collection": "",
         "products": [
-          "coffret-balades"
+          "coffret-balades",
+          "kit-repas-nomade-complet"
         ],
         "full_width": true,
         "stack_products": true,
