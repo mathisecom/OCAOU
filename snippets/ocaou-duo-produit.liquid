@@ -587,11 +587,7 @@
         { id: parseInt(mainId, 10), quantity: 1 },
         { id: parseInt(compId, 10), quantity: 1 }
       ];
-      var giftName = btn.dataset.giftName;
       var giftId = btn.dataset.giftVariant;
-      if (giftName) {
-        items[1].properties = { 'Cadeau offert': giftName };
-      }
       if (giftId) {
         items.push({
           id: parseInt(giftId, 10),
