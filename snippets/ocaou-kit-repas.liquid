@@ -5,10 +5,10 @@
 
   ▸ Même style que les Duos du sac : cartes accordéon avec
     miniature, prix, badge, détail au clic
-  ▸ 3 étapes CUMULATIVES :
-      Étape 1 : Gourde + Lunch box
-      Étape 2 : + Couverts (🎁 pochon offert)
-      Étape 3 : + Sac isotherme (🎁 poignée nomade offerte)
+  ▸ 3 étapes CUMULATIVES, vendues à PRIX PACK :
+      Étape 1 : Gourde + Lunch box   49,90 € (🎁 poignée nomade)
+      Étape 2 : + Couverts           69,90 € (🎁 pochon)
+      Étape 3 : + Sac isotherme      99,90 € (🎁 poignée + pochon + livraison)
   ▸ Les totaux sont calculés avec les VRAIS prix Shopify
   ▸ Le bouton ajoute TOUS les produits de l'étape au panier
   ▸ Choix du coloris pour chaque produit à variantes
@@ -38,8 +38,14 @@
   assign kit_couverts_handle = 'couverts'
   assign kit_isotherme_handle = 'sac-isotherme'
 
-  assign gift_pochon_handle = ''
-  assign gift_poignee_handle = ''
+  assign gift_pochon_handle = 'pochon'
+  assign gift_poignee_handle = 'poignee-nomade'
+
+  # ── PRIX DES PACKS (en centimes : 4990 = 49,90 €) ──
+  # L'ancien prix barré est calculé tout seul à partir des vrais prix produits.
+  assign pack1_prix = 4990
+  assign pack2_prix = 6990
+  assign pack3_prix = 9990
 
   assign titre_bloc = 'Complétez votre Kit Repas Nomade :'
   assign couleur_accent = '#9f6b69'
@@ -218,6 +224,8 @@
   #{{ kit_uid }} .kitR-resume-txt .gains { color: {{ couleur_vert }}; font-weight: 700; }
   #{{ kit_uid }} .kitR-detail .cadeaux, #{{ kit_uid }} .kitR-detail .cadeaux div { color: {{ couleur_vert }}; font-weight: 700; }
   #{{ kit_uid }} .kitR-detail .cadeaux small { font-weight: 400; opacity: .85; }
+  #{{ kit_uid }} .kitR-resume-txt .prix s { opacity: .5; font-weight: 400; margin-left: 6px; }
+  #{{ kit_uid }} .kitR-detail .cadeaux s { opacity: .6; font-weight: 400; }
 </style>
 
 <div id="{{ kit_uid }}">
@@ -236,6 +244,11 @@
       assign seuil_livraison = 79
     endunless
     assign seuil_cents = seuil_livraison | times: 100 | round
+
+    assign g_poignee = all_products[gift_poignee_handle]
+    assign g_pochon = all_products[gift_pochon_handle]
+    assign vg_poignee = g_poignee.selected_or_first_available_variant
+    assign vg_pochon = g_pochon.selected_or_first_available_variant
   -%}
 
   {%- comment -%} ═══ ÉTAPE 1 : Gourde + Lunch box ═══ {%- endcomment -%}
@@ -247,8 +260,8 @@
       </span>
       <span class="kitR-resume-txt">
         <span class="nom">Gourde + Lunch box</span>
-        <span class="prix"><b>{{ total1 | money }}</b> TTC</span>
-        {% if total1 >= seuil_cents %}<span class="gains">🚚 LIVRAISON OFFERTE</span>{% endif %}
+        <span class="prix"><b>{{ pack1_prix | money }}</b> <s>{{ total1 | money }}</s> TTC</span>
+        <span class="gains">🎁 Poignée nomade offerte {{ vg_poignee.price | money }}{% if pack1_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -258,8 +271,20 @@
         <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
       </div>
       <div class="cadeaux">
-        {% if total1 >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
+        <div>🎁 Poignée nomade O'CAOU OFFERTE <s>{{ vg_poignee.price | money }}</s>
+          <small>Le clip malin pour accrocher la gourde au sac, à la poussette ou au vélo.</small>
+        </div>
+        {% if pack1_prix >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
       </div>
+      {% if product.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s1-main">Coloris gourde</label>
+        <select id="{{ kit_uid }}-s1-main" data-handle="MAIN">
+          {% for v in product.variants %}
+            {% assign variant_img = v.featured_image | default: product.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}"{% if v.id == main_variant.id %} selected{% endif %} {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
       {% if p_lunch.variants.size > 1 %}
         <label for="{{ kit_uid }}-s1-lunch">Coloris lunch box</label>
         <select id="{{ kit_uid }}-s1-lunch" data-handle="lunch">
@@ -270,6 +295,8 @@
         </select>
       {% endif %}
       <button type="button" class="kitR-btn" data-items='["MAIN","lunch"]'
+        data-bundle="Duo Gourde + Lunch box"
+        data-gifts="{% if vg_poignee.id and vg_poignee.available %}{{ vg_poignee.id }}{% endif %}"
         {% unless main_variant.available and v_lunch.available %}disabled{% endunless %}>
         {% if main_variant.available and v_lunch.available %}Ajouter ce duo au panier{% else %}Indisponible{% endif %}
       </button>
@@ -286,9 +313,9 @@
         <span class="kitR-thumb" data-handle="couv">{% assign img_couv = v_couv.featured_image | default: p_couv.featured_image %}{% if img_couv %}{{ img_couv | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
       </span>
       <span class="kitR-resume-txt">
-        <span class="nom">+ Les couverts</span>
-        <span class="prix"><b>{{ total2 | money }}</b> TTC</span>
-        <span class="gains">🎁 Pochon O'CAOU OFFERT{% if total2 >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="nom">+ Les couverts <span class="kitR-badge or">Kit complet ★</span></span>
+        <span class="prix"><b>{{ pack2_prix | money }}</b> <s>{{ total2 | money }}</s> TTC</span>
+        <span class="gains">🎁 Pochon O'CAOU offert {{ vg_pochon.price | money }}{% if pack2_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -299,11 +326,20 @@
         <div class="l"><span>{{ p_couv.title }}</span><span>{{ v_couv.price | money }}</span></div>
       </div>
       <div class="cadeaux">
-        {% if total2 >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
-        <div>🎁 Pochon O'CAOU OFFERT
-          <small>100% coton, 30x40 cm. Durable, réutilisable et pensé pour vous simplifier le quotidien.</small>
+        <div>🎁 Pochon O'CAOU OFFERT <s>{{ vg_pochon.price | money }}</s>
+          <small>100% coton, 30x40cm. Pour ranger, transporter ou offrir le Kit Repas Nomade avec soin.</small>
         </div>
+        {% if pack2_prix >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
       </div>
+      {% if product.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s2-main">Coloris gourde</label>
+        <select id="{{ kit_uid }}-s2-main" data-handle="MAIN">
+          {% for v in product.variants %}
+            {% assign variant_img = v.featured_image | default: product.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}"{% if v.id == main_variant.id %} selected{% endif %} {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
       {% if p_lunch.variants.size > 1 %}
         <label for="{{ kit_uid }}-s2-lunch">Coloris lunch box</label>
         <select id="{{ kit_uid }}-s2-lunch" data-handle="lunch">
@@ -323,6 +359,8 @@
         </select>
       {% endif %}
       <button type="button" class="kitR-btn" data-items='["MAIN","lunch","couv"]'
+        data-bundle="Kit Repas Nomade + couverts"
+        data-gifts="{% if vg_pochon.id and vg_pochon.available %}{{ vg_pochon.id }}{% endif %}"
         {% unless main_variant.available and v_lunch.available and v_couv.available %}disabled{% endunless %}>
         {% if main_variant.available and v_lunch.available and v_couv.available %}Ajouter ce trio au panier{% else %}Indisponible{% endif %}
       </button>
@@ -341,9 +379,9 @@
         <span class="kitR-thumb" data-handle="iso">{% assign img_iso = v_iso.featured_image | default: p_iso.featured_image %}{% if img_iso %}{{ img_iso | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_iso.title }}{% endif %}</span>
       </span>
       <span class="kitR-resume-txt">
-        <span class="nom">Kit Repas Nomade complet <span class="kitR-badge or">Kit complet ★</span></span>
-        <span class="prix"><b>{{ total3 | money }}</b> TTC</span>
-        <span class="gains">🎁 Poignée nomade OFFERTE · 🎁 Pochon OFFERT{% if total3 >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="nom">+ Sac isotherme <span class="kitR-badge or">Kit repas complet ★</span></span>
+        <span class="prix"><b>{{ pack3_prix | money }}</b> <s>{{ total3 | money }}</s> TTC</span>
+        <span class="gains">🎁 Poignée nomade OFFERTE · 🎁 Pochon OFFERT{% if pack3_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -356,12 +394,23 @@
         <div class="l"><span>{{ p_iso.title }}</span><span>{{ v_iso.price | money }}</span></div>
       </div>
       <div class="cadeaux">
-        <div>🎁 Poignée nomade O'CAOU OFFERTE
-          <small>Offerte avec le Kit Repas Nomade complet.</small>
+        <div>🎁 Poignée nomade O'CAOU OFFERTE <s>{{ vg_poignee.price | money }}</s>
+          <small>Le clip malin pour accrocher la gourde au sac, à la poussette ou au vélo.</small>
         </div>
-        <div>🎁 Pochon O'CAOU OFFERT</div>
-        {% if total3 >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
+        <div>🎁 Pochon O'CAOU OFFERT <s>{{ vg_pochon.price | money }}</s>
+          <small>100% coton, 30x40cm. Pour ranger, transporter ou offrir le Kit Repas Nomade avec soin.</small>
+        </div>
+        {% if pack3_prix >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
       </div>
+      {% if product.variants.size > 1 %}
+        <label for="{{ kit_uid }}-s3-main">Coloris gourde</label>
+        <select id="{{ kit_uid }}-s3-main" data-handle="MAIN">
+          {% for v in product.variants %}
+            {% assign variant_img = v.featured_image | default: product.featured_image %}
+            <option value="{{ v.id }}" data-image="{% if variant_img %}{{ variant_img | image_url: width: 240 }}{% endif %}"{% if v.id == main_variant.id %} selected{% endif %} {% unless v.available %}disabled{% endunless %}>{{ v.title }}{% unless v.available %} — épuisé{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
       {% if p_lunch.variants.size > 1 %}
         <label for="{{ kit_uid }}-s3-lunch">Coloris lunch box</label>
         <select id="{{ kit_uid }}-s3-lunch" data-handle="lunch">
@@ -390,8 +439,10 @@
         </select>
       {% endif %}
       <button type="button" class="kitR-btn or" data-items='["MAIN","lunch","couv","iso"]'
+        data-bundle="Kit Repas Nomade complet"
+        data-gifts="{% if vg_poignee.id and vg_poignee.available %}{{ vg_poignee.id }}{% endif %}{% if vg_poignee.id and vg_poignee.available and vg_pochon.id and vg_pochon.available %},{% endif %}{% if vg_pochon.id and vg_pochon.available %}{{ vg_pochon.id }}{% endif %}"
         {% unless main_variant.available and v_lunch.available and v_couv.available and v_iso.available %}disabled{% endunless %}>
-        {% if main_variant.available and v_lunch.available and v_couv.available and v_iso.available %}Ajouter le Kit complet au panier{% else %}Indisponible{% endif %}
+        {% if main_variant.available and v_lunch.available and v_couv.available and v_iso.available %}Ajouter le Kit repas complet au panier{% else %}Indisponible{% endif %}
       </button>
     </div>
   </div>
@@ -475,6 +526,19 @@
       }).filter(function (it) { return it.id; });
 
       if (!items.length) return;
+
+      // Cadeaux offerts : ajoutés au panier avec la mention "Cadeau offert avec".
+      // Leur prix passe à 0 € grâce aux réductions automatiques Shopify.
+      var bundleName = btn.dataset.bundle || '';
+      (btn.dataset.gifts || '').split(',').forEach(function (gid) {
+        gid = gid.trim();
+        if (!gid) return;
+        items.push({
+          id: parseInt(gid, 10),
+          quantity: 1,
+          properties: { 'Cadeau offert avec': bundleName }
+        });
+      });
 
       var initial = btn.textContent;
       btn.disabled = true;
