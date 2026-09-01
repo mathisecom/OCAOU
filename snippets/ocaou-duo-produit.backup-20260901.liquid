@@ -610,7 +610,7 @@
         btn.classList.add('is-added');
         btn.textContent = '✓ Duo ajouté au panier';
         btn.disabled = false;
-        window.OCAOUCart.refresh();
+        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
       })
       .catch(function () {
         btn.disabled = false;

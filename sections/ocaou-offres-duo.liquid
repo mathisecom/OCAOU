@@ -340,14 +340,10 @@
         btn.classList.add('is-added');
         btn.textContent = '✓ Duo ajouté au panier';
         btn.disabled = false;
-        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+        window.OCAOUCart.refresh();
         {% if s.redirection_panier %}
         window.location.href = '/cart';
         {% endif %}
-        setTimeout(function () {
-          btn.classList.remove('is-added');
-          btn.textContent = initial;
-        }, 4000);
       })
       .catch(function () {
         btn.disabled = false;

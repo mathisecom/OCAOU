@@ -490,7 +490,7 @@
         btn.classList.add('is-added');
         btn.textContent = '✓ Ajouté au panier';
         btn.disabled = false;
-        window.OCAOUCart.refresh();
+        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
       })
       .catch(function () {
         btn.disabled = false;
