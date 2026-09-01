@@ -234,6 +234,123 @@
         "text_color": ""
       }
     },
+    "bandedefilante_KDdCrf": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_FDMF9E": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "BUY ONCE, BUY WELL",
+            "icon_text": "🍒"
+          }
+        },
+        "marquee_item_7ycJ3L": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "HEIRLOOM QUALITY",
+            "icon_text": "✹"
+          }
+        },
+        "marquee_item_iTWCEn": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
+            "icon_text": "🌈"
+          }
+        },
+        "marquee_item_VWatBk": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "MACHINE WASHABLE FABRICS",
+            "icon_text": "🌷"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_FDMF9E",
+        "marquee_item_7ycJ3L",
+        "marquee_item_iTWCEn",
+        "marquee_item_VWatBk"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#F5EFE8",
+        "text_color": "#A85D47",
+        "border_color": "#E8DDD3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 46,
+        "font_size_desktop": 13,
+        "font_size_mobile": 11,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 70,
+        "gap_mobile": 45,
+        "speed": 32,
+        "pause_on_hover": false
+      }
+    },
+    "multi_column_3Abb9D": {
+      "type": "multi-column",
+      "blocks": {
+        "item_mVJNLp": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_cXg93w": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_xWdtph": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_mVJNLp",
+        "item_cXg93w",
+        "item_xWdtph"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "logoscroll_rVRFrN": {
       "type": "logoscroll",
       "blocks": {
@@ -1412,6 +1529,8 @@
   "order": [
     "main",
     "rich_text_7LA3LQ",
+    "bandedefilante_KDdCrf",
+    "multi_column_3Abb9D",
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
