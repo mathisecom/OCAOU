@@ -430,15 +430,15 @@
 
             <div class="cof-advantages">
               <p>🎁 Pochon cadeau « O’CAOU c’est pour offrir » — valeur {{ pochon_cents | money }} OFFERT</p>
-              <p>🚚 LIVRAISON OFFERTE</p>
+              {% assign seuil_cents = settings.cart_free_shipping_threshold | default: 79 | times: 100 | round %}{% if coffret_cents >= seuil_cents %}<p>🚚 LIVRAISON OFFERTE</p>{% endif %}
               <p
                 class="cof-advantage-final"
-                data-advantage-base="Votre avantage : {{ avantage_cents | money }} + la livraison offerte"
-                data-advantage-complete="Votre avantage : {{ avantage_complet_cents | money }} + la livraison offerte"
+                data-advantage-base="Votre avantage : {{ avantage_cents | money }}{% if coffret_cents >= seuil_cents %} + la livraison offerte{% endif %}"
+                data-advantage-complete="Votre avantage : {{ avantage_complet_cents | money }}{% if coffret_cents >= seuil_cents %} + la livraison offerte{% endif %}"
                 data-show-base="{% if avantage_cents > 0 %}true{% else %}false{% endif %}"
                 data-show-complete="{% if avantage_complet_cents > 0 %}true{% else %}false{% endif %}"
                 {% unless avantage_cents > 0 %}style="display:none"{% endunless %}>
-                Votre avantage : {{ avantage_cents | money }} + la livraison offerte
+                Votre avantage : {{ avantage_cents | money }}{% if coffret_cents >= seuil_cents %} + la livraison offerte{% endif %}
               </p>
             </div>
           {% else %}
