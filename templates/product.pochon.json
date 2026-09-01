@@ -1340,6 +1340,7 @@
         "item_V4a3MT",
         "item_EYfz3a"
       ],
+      "disabled": true,
       "name": "FAQ",
       "settings": {
         "full_width": true,
