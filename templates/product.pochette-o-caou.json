@@ -204,6 +204,65 @@
         "input_text_color": ""
       }
     },
+    "multi_column_qCcy3y": {
+      "type": "multi-column",
+      "blocks": {
+        "item_BPXUQh": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Pour ranger mais rester stylé",
+            "heading_tag": "h3",
+            "content": "<p>Une pochette au <strong>design et coloris modernes </strong>pour ranger en gardant du style.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_DW7cWr": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Légère et molletonnée",
+            "heading_tag": "h3",
+            "content": "<p>Transporter vos affaires ou celles de bébé en toute <strong>sécurité.</strong></p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_HFECaq": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Une poignée pour transporter",
+            "heading_tag": "h3",
+            "content": "<p>Une poignée pratique qui vous permet de transporter ou accrocher partout vos essentiels avec vous.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_BPXUQh",
+        "item_DW7cWr",
+        "item_HFECaq"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "rich_text_7LA3LQ": {
       "type": "rich-text",
       "blocks": {
@@ -1302,6 +1361,7 @@
   },
   "order": [
     "main",
+    "multi_column_qCcy3y",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
