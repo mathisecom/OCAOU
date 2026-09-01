@@ -735,6 +735,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/no_change_a002a7ff-3d38-4917-880d-8e85f01db786.png",
             "column_size": "3",
             "title": "Absorbantes et polyvalentes",
             "heading_tag": "h3",
