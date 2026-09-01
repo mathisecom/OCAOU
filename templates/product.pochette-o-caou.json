@@ -204,6 +204,64 @@
         "input_text_color": ""
       }
     },
+    "bandedefilante_t4MfYq": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_AFxwxA": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "BUY ONCE, BUY WELL",
+            "icon_text": "🍒"
+          }
+        },
+        "marquee_item_9hYa4e": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "HEIRLOOM QUALITY",
+            "icon_text": "✹"
+          }
+        },
+        "marquee_item_yL9JEf": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
+            "icon_text": "🌈"
+          }
+        },
+        "marquee_item_WUR3Ag": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "MACHINE WASHABLE FABRICS",
+            "icon_text": "🌷"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_AFxwxA",
+        "marquee_item_9hYa4e",
+        "marquee_item_yL9JEf",
+        "marquee_item_WUR3Ag"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#F5EFE8",
+        "text_color": "#A85D47",
+        "border_color": "#E8DDD3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 46,
+        "font_size_desktop": 13,
+        "font_size_mobile": 11,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 70,
+        "gap_mobile": 45,
+        "speed": 32,
+        "pause_on_hover": false
+      }
+    },
     "multi_column_qCcy3y": {
       "type": "multi-column",
       "blocks": {
@@ -1361,6 +1419,7 @@
   },
   "order": [
     "main",
+    "bandedefilante_t4MfYq",
     "multi_column_qCcy3y",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
