@@ -14,6 +14,7 @@
       "blocks": {
         "avatar_aRLTzC": {
           "type": "avatar",
+          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T141106.558.jpg",
             "avatar_alt": "Client satisfait"
@@ -21,6 +22,7 @@
         },
         "avatar_48iALN": {
           "type": "avatar",
+          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140827.935.jpg",
             "avatar_alt": "Client satisfait"
@@ -28,6 +30,7 @@
         },
         "avatar_hWyfyf": {
           "type": "avatar",
+          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140631.591.jpg",
             "avatar_alt": "Client satisfait"
@@ -35,6 +38,7 @@
         },
         "avatar_t9cWai": {
           "type": "avatar",
+          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140635.451.jpg",
             "avatar_alt": "Client satisfait"
