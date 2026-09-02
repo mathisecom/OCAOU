@@ -218,8 +218,9 @@
         "marquee_item_9hYa4e": {
           "type": "marquee_item",
           "settings": {
-            "text": "HEIRLOOM QUALITY",
-            "icon_text": "✹"
+            "text": "FACILE À TRANSPORTER",
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
         "marquee_item_yL9JEf": {
