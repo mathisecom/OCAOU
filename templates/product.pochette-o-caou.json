@@ -226,8 +226,9 @@
         "marquee_item_yL9JEf": {
           "type": "marquee_item",
           "settings": {
-            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
-            "icon_text": "🌈"
+            "text": "ORGANISATION SIMPLIFIÉE",
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
         "marquee_item_WUR3Ag": {
