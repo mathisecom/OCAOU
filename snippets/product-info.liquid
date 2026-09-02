@@ -338,6 +338,9 @@ Supported variables
             {%- render 'accordion', title: block.settings.title, content: accordion_content, icon: icon, icon_width: block.settings.icon_width, class: 'product-info__accordion', block: block -%}
           {%- endif -%}
 
+        {%- when 'product_videos' -%}
+          {%- render 'product-videos', block: block, product: product -%}
+
         {%- when 'image' -%}
           {%- if block.settings.image != blank -%}
             <div class="product-info__image">
