@@ -210,8 +210,9 @@
         "marquee_item_AFxwxA": {
           "type": "marquee_item",
           "settings": {
-            "text": "BUY ONCE, BUY WELL",
-            "icon_text": "🍒"
+            "text": "GRANDE CAPACITÉ",
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
         "marquee_item_9hYa4e": {
@@ -231,8 +232,9 @@
         "marquee_item_WUR3Ag": {
           "type": "marquee_item",
           "settings": {
-            "text": "MACHINE WASHABLE FABRICS",
-            "icon_text": "🌷"
+            "text": "LÉGÈRE ET REMBOURRÉE",
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
       },
@@ -244,9 +246,9 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#F5EFE8",
-        "text_color": "#A85D47",
-        "border_color": "#E8DDD3",
+        "bg_color": "#f5efe8",
+        "text_color": "#a85d47",
+        "border_color": "#e8ddd3",
         "border_width": 0,
         "height_desktop": 56,
         "height_mobile": 46,
