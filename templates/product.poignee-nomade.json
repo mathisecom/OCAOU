@@ -1025,6 +1025,7 @@
         "item_W34Fff": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/20260823_130455.jpg",
             "column_size": "3",
             "title": "MOUSQUETON FACILE À ATTACHER",
             "heading_tag": "h3",
