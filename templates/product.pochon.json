@@ -1016,7 +1016,7 @@
             "column_size": "3",
             "title": "Protège pendant les déplacements",
             "heading_tag": "h3",
-            "content": "<p>Doudou, jouets, habits, chaussures… emportez tous leurs essentiels sans les abîmer.</p>",
+            "content": "<p>Doudou, jouets, habits, chaussures… emportez tous leurs essentiels <strong>sans les abîmer.</strong></p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1028,7 +1028,7 @@
             "column_size": "3",
             "title": "Emballage élégant",
             "heading_tag": "h3",
-            "content": "<p>Pour offrir avec soins et délicatesse vos sélections ou nos coffrets cadeaux. </p>",
+            "content": "<p>Pour <strong>offrir avec soins et délicatesse </strong>vos sélections ou nos coffrets cadeaux. </p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1040,7 +1040,7 @@
             "column_size": "3",
             "title": "Réutilisable et durable",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "content": "<p><strong>Lavable, </strong>il est utile à toute la famille pendant des années.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
