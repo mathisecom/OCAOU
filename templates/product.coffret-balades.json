@@ -638,6 +638,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/145_a7fc3cce-d07f-4309-b41e-a836f38e73d5.webp",
             "column_size": "3",
             "title": "Tout pour la balade",
             "heading_tag": "h3",
@@ -650,6 +651,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/144_44b2c655-6274-4817-a943-12635dd4f2e0.webp",
             "column_size": "3",
             "title": "Pratique et spacieux",
             "heading_tag": "h3",
@@ -662,6 +664,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/64.webp",
             "column_size": "3",
             "title": "Beau et facile à emporter",
             "heading_tag": "h3",
