@@ -1254,9 +1254,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Une forme ergonomique",
+            "heading_tag": "h3",
+            "content": "<p>Un manche en silicone facile à prendre en main, pour aider bébé à manger seul et gagner en autonomie.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1266,9 +1266,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Des couverts toujours propres",
+            "heading_tag": "h3",
+            "content": "<p>Une poche facile à glisser dans le sac pour protéger les couverts de bébé</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1278,8 +1278,8 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
+            "title": "Les sacs sont protégés",
+            "heading_tag": "h3",
             "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_url": "",
             "link_text": "",
