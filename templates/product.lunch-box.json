@@ -1340,9 +1340,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Adaptée aux petites portions",
+            "heading_tag": "h3",
+            "content": "<p>Pour des repas équilibrés et bien organisés.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1352,9 +1352,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Un couvercle hermétique avec séparateur intégré",
+            "heading_tag": "h3",
+            "content": "<p>Pour éviter les fuites et garder les aliments bien séparés, sans les mélanger.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1364,9 +1364,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Résiste au chaud comme au froid",
+            "heading_tag": "h3",
+            "content": "<p>Compatible avec le lave-vaisselle et le congélateur, pour des repas aussi bien chauds que frais.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
