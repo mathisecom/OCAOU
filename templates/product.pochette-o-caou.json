@@ -302,7 +302,7 @@
             "column_size": "3",
             "title": "Une poignée pour transporter",
             "heading_tag": "h3",
-            "content": "<p>Une poignée pratique qui vous permet de transporter ou accrocher partout vos essentiels avec vous.</p>",
+            "content": "<p>Une<strong> poignée pratique</strong> qui vous permet de transporter ou accrocher partout vos essentiels avec vous.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
