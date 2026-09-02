@@ -272,6 +272,7 @@
         "item_BPXUQh": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/40.webp",
             "column_size": "3",
             "title": "Pour ranger mais rester stylé",
             "heading_tag": "h3",
@@ -284,6 +285,7 @@
         "item_DW7cWr": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/44.webp",
             "column_size": "3",
             "title": "Légère et molletonnée",
             "heading_tag": "h3",
@@ -296,6 +298,7 @@
         "item_HFECaq": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPTImage25aout2026_15_21_14_b8964a16-ebb6-438a-8a81-faceae2a6576.webp",
             "column_size": "3",
             "title": "Une poignée pour transporter",
             "heading_tag": "h3",
