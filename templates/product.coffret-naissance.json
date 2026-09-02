@@ -677,6 +677,7 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
+      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -831,6 +832,7 @@
         "marquee_item_PGEcxn",
         "marquee_item_qcCcnL"
       ],
+      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fcf9f5",
