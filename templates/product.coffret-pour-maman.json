@@ -803,7 +803,7 @@
         "marquee_item_7NfyzF": {
           "type": "marquee_item",
           "settings": {
-            "text": "Souple & légère",
+            "text": "Pensé pour maman",
             "icon_text": "🍒",
             "icon_image": "shopify://shop_images/icone_2.png"
           }
@@ -811,7 +811,7 @@
         "marquee_item_xcAC3H": {
           "type": "marquee_item",
           "settings": {
-            "text": "Souple & légère",
+            "text": "Doux et réutilisable",
             "icon_text": "🍒",
             "icon_image": "shopify://shop_images/icone_2.png"
           }
@@ -819,15 +819,7 @@
         "marquee_item_DqaQQB": {
           "type": "marquee_item",
           "settings": {
-            "text": "Souple & légère",
-            "icon_text": "🍒",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        },
-        "marquee_item_93pQaE": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Souple & légère",
+            "text": "Une attention qui fait plaisir",
             "icon_text": "🍒",
             "icon_image": "shopify://shop_images/icone_2.png"
           }
@@ -836,8 +828,7 @@
       "block_order": [
         "marquee_item_7NfyzF",
         "marquee_item_xcAC3H",
-        "marquee_item_DqaQQB",
-        "marquee_item_93pQaE"
+        "marquee_item_DqaQQB"
       ],
       "name": "Bande défilante premium",
       "settings": {
