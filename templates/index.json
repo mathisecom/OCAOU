@@ -14,7 +14,6 @@
       "blocks": {
         "avatar_aRLTzC": {
           "type": "avatar",
-          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T141106.558.jpg",
             "avatar_alt": "Client satisfait"
@@ -22,7 +21,6 @@
         },
         "avatar_48iALN": {
           "type": "avatar",
-          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140827.935.jpg",
             "avatar_alt": "Client satisfait"
@@ -30,7 +28,6 @@
         },
         "avatar_hWyfyf": {
           "type": "avatar",
-          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140631.591.jpg",
             "avatar_alt": "Client satisfait"
@@ -38,7 +35,6 @@
         },
         "avatar_t9cWai": {
           "type": "avatar",
-          "disabled": true,
           "settings": {
             "avatar_image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T140635.451.jpg",
             "avatar_alt": "Client satisfait"
@@ -557,14 +553,14 @@
         "subtitle_color": "#151515",
         "card_bg": "#f4ede1",
         "visu_bg": "#fcf9f5",
-        "badge_bg": "#AF6C67",
-        "badge_color": "#FFFFFF",
+        "badge_bg": "#af6c67",
+        "badge_color": "#ffffff",
         "card_title_color": "#151515",
         "compo_color": "#151515",
         "price_old_color": "#151515",
-        "price_new_color": "#AF6C67",
+        "price_new_color": "#af6c67",
         "gift_color": "#454545",
-        "advantage_final_color": "#AF6C67",
+        "advantage_final_color": "#af6c67",
         "btn_bg": "#cd9438",
         "btn_color": "#ffffff",
         "btn_added_bg": "#4e9a6f",
