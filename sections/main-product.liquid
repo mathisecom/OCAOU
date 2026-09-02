@@ -1227,6 +1227,121 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       ]
     },
     {
+      "type": "product_videos",
+      "name": "Vidéos produit",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Les vidéos se gèrent produit par produit, dans la fiche produit de l'admin (bloc « Métachamps » en bas de page). Ce bloc affiche automatiquement toutes les vidéos du métachamp, sans limite de nombre."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "En vidéo"
+        },
+        {
+          "type": "header",
+          "content": "Mise en page"
+        },
+        {
+          "type": "select",
+          "id": "columns_mobile",
+          "label": "Colonnes sur mobile",
+          "options": [
+            { "value": "1", "label": "1" },
+            { "value": "2", "label": "2" }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "range",
+          "id": "columns_desktop",
+          "label": "Colonnes sur ordinateur",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 2
+        },
+        {
+          "type": "range",
+          "id": "gap",
+          "label": "Espacement entre les vidéos",
+          "min": 0,
+          "max": 24,
+          "step": 2,
+          "default": 8,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "border_radius",
+          "label": "Arrondi des angles",
+          "min": 0,
+          "max": 30,
+          "step": 2,
+          "default": 8,
+          "unit": "px"
+        },
+        {
+          "type": "select",
+          "id": "aspect_ratio",
+          "label": "Format des vignettes",
+          "options": [
+            { "value": "natural", "label": "Format d'origine" },
+            { "value": "1/1", "label": "Carré (1:1)" },
+            { "value": "4/5", "label": "Portrait (4:5)" },
+            { "value": "9/16", "label": "Vertical / Reels (9:16)" },
+            { "value": "16/9", "label": "Paysage (16:9)" }
+          ],
+          "default": "9/16"
+        },
+        {
+          "type": "header",
+          "content": "Lecture"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_controls",
+          "label": "Afficher les contrôles de lecture",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Lecture automatique en boucle, sans son",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_captions",
+          "label": "Afficher une légende sous chaque vidéo",
+          "info": "Reprend le texte alternatif renseigné sur le fichier.",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Source des vidéos"
+        },
+        {
+          "type": "paragraph",
+          "content": "À ne modifier que si le métachamp produit a été créé avec un autre nom."
+        },
+        {
+          "type": "text",
+          "id": "metafield_namespace",
+          "label": "Espace de noms",
+          "default": "custom"
+        },
+        {
+          "type": "text",
+          "id": "metafield_key",
+          "label": "Clé",
+          "default": "product_videos"
+        }
+      ]
+    },
+    {
       "type": "liquid",
       "name": "Custom Liquid",
       "settings": [
