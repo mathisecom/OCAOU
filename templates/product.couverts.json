@@ -1266,7 +1266,7 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Des couverts toujours propres",
+            "title": "Des couverts protégés",
             "heading_tag": "h3",
             "content": "<p>Une pochette facile à glisser dans le sac, pour garder les couverts de bébé propres et bien protégés.</p>",
             "link_url": "",
@@ -1278,9 +1278,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Les sacs sont protégés",
+            "title": "Le sac reste propre",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "content": "<p>Après le repas, les couverts sales se glissent dans leur pochette pour ne rien salir dans le sac.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
