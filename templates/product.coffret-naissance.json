@@ -635,11 +635,11 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
+            "image": "shopify://shop_images/ChatGPTImage7aout2026_15_44_22_3.webp",
             "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
+            "title": "Pour rassurer bébé",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement gourde, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>Une couverture, un doudou et une veilleuse réunis dans un seul coffret tout doux.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -648,11 +648,10 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
+            "title": "Doux et pratique",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac d’école, il accompagne chaque âge et chaque moment de la journée.</p>",
+            "content": "<p>Des essentiels pensés pour accompagner bébé à la maison comme en déplacement.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -661,11 +660,10 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
-            "title": "Pratique partout, tout le temps",
+            "title": "Une belle idée cadeau",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette et intérieur déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p>Un coffret naissance utile, tendre et facile à offrir.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -677,7 +675,6 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
-      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -832,7 +829,6 @@
         "marquee_item_PGEcxn",
         "marquee_item_qcCcnL"
       ],
-      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fcf9f5",
