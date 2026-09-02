@@ -639,11 +639,10 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
             "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
+            "title": "Prêt pour la maternelle",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement gourde, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>Un sac, une gourde et un doudou pour accompagner ses premières journées comme un grand.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -652,11 +651,10 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
+            "title": "Gagner en autonomie",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac d’école, il accompagne chaque âge et chaque moment de la journée.</p>",
+            "content": "<p>Un coffret pensé pour l’aider à préparer ses affaires, boire seul et prendre ses petites habitudes.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -665,11 +663,10 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
-            "title": "Pratique partout, tout le temps",
+            "title": "Pour toutes ses aventures",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette et intérieur déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p>Des essentiels pratiques et rassurants à emporter à l’école, en sortie ou chez les grands-parents.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -681,7 +678,6 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
-      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -797,46 +793,36 @@
     "bandedefilante_6mBxhe": {
       "type": "bandedefilante",
       "blocks": {
-        "marquee_item_7NfyzF": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Souple & légère",
-            "icon_text": "🍒",
-            "icon_image": "shopify://shop_images/icone_24.png"
-          }
-        },
-        "marquee_item_7XteVb": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Développe l'autonomie",
-            "icon_text": "🌷",
-            "icon_image": "shopify://shop_images/icone.png"
-          }
-        },
-        "marquee_item_PGEcxn": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Bouchon anti-fuite",
-            "icon_text": "🌈",
-            "icon_image": "shopify://shop_images/icone_26.png"
-          }
-        },
         "marquee_item_qcCcnL": {
           "type": "marquee_item",
           "settings": {
             "text": "Incassable",
             "icon_text": "✹",
-            "icon_image": "shopify://shop_images/icone_25.png"
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_dqkT9i": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Gagner en autonomie",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_JKMkJW": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Pour toutes ses aventures",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
       },
       "block_order": [
-        "marquee_item_7NfyzF",
-        "marquee_item_7XteVb",
-        "marquee_item_PGEcxn",
-        "marquee_item_qcCcnL"
+        "marquee_item_qcCcnL",
+        "marquee_item_dqkT9i",
+        "marquee_item_JKMkJW"
       ],
-      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fcf9f5",
