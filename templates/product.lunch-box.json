@@ -1288,22 +1288,22 @@
         "marquee_item_atNMKG": {
           "type": "marquee_item",
           "settings": {
-            "text": "HEIRLOOM QUALITY",
+            "text": "SILICONE SOUPLE ET DOUX",
             "icon_text": "✹"
           }
         },
         "marquee_item_m6FMEf": {
           "type": "marquee_item",
           "settings": {
-            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
-            "icon_text": "🌈"
+            "text": "FACILE À OUVRIR",
+            "icon_text": "✹"
           }
         },
         "marquee_item_TKjp6W": {
           "type": "marquee_item",
           "settings": {
-            "text": "MACHINE WASHABLE FABRICS",
-            "icon_text": "🌷"
+            "text": "LAVE VAISSELLE ET MICRO-ONDE",
+            "icon_text": "✹"
           }
         }
       },
