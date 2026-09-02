@@ -646,11 +646,10 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
             "column_size": "3",
-            "title": "Tout est organisé, même les imprévus",
+            "title": "Pensé pour Maman",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement gourde, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>Un sac, des coussinets d’allaitement et des lingettes lavables réunis dans un coffret pratique et tout doux.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -659,11 +658,10 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
             "column_size": "3",
-            "title": "Un sac qui grandit avec votre enfant",
+            "title": "Doux et Réutilisable",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac d’école, il accompagne chaque âge et chaque moment de la journée.</p>",
+            "content": "<p>Des essentiels en bambou, agréables pour la peau et faciles à laver au quotidien.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -672,11 +670,10 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "column_size": "3",
-            "title": "Pratique partout, tout le temps",
+            "title": "Une attention qui fait plaisir",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette et intérieur déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p>Un coffret utile et joli, parfait à offrir à une jeune maman.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -688,7 +685,6 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
-      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -809,41 +805,40 @@
           "settings": {
             "text": "Souple & légère",
             "icon_text": "🍒",
-            "icon_image": "shopify://shop_images/icone_24.png"
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
-        "marquee_item_7XteVb": {
+        "marquee_item_xcAC3H": {
           "type": "marquee_item",
           "settings": {
-            "text": "Développe l'autonomie",
-            "icon_text": "🌷",
-            "icon_image": "shopify://shop_images/icone.png"
+            "text": "Souple & légère",
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
-        "marquee_item_PGEcxn": {
+        "marquee_item_DqaQQB": {
           "type": "marquee_item",
           "settings": {
-            "text": "Bouchon anti-fuite",
-            "icon_text": "🌈",
-            "icon_image": "shopify://shop_images/icone_26.png"
+            "text": "Souple & légère",
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
-        "marquee_item_qcCcnL": {
+        "marquee_item_93pQaE": {
           "type": "marquee_item",
           "settings": {
-            "text": "Incassable",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/icone_25.png"
+            "text": "Souple & légère",
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
       },
       "block_order": [
         "marquee_item_7NfyzF",
-        "marquee_item_7XteVb",
-        "marquee_item_PGEcxn",
-        "marquee_item_qcCcnL"
+        "marquee_item_xcAC3H",
+        "marquee_item_DqaQQB",
+        "marquee_item_93pQaE"
       ],
-      "disabled": true,
       "name": "Bande défilante premium",
       "settings": {
         "bg_color": "#fcf9f5",
