@@ -648,6 +648,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/25_6ba0defd-7b9a-4d4e-b85a-1869fda6751f.png",
             "column_size": "3",
             "title": "Doux et pratique",
             "heading_tag": "h3",
@@ -660,6 +661,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Montagephotositewebenfants.webp",
             "column_size": "3",
             "title": "Une belle idée cadeau",
             "heading_tag": "h3",
