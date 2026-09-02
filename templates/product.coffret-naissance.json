@@ -795,41 +795,32 @@
         "marquee_item_7NfyzF": {
           "type": "marquee_item",
           "settings": {
-            "text": "Souple & légère",
+            "text": "Doux et Pratique",
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_qzELdq": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Pour Rassurer Bébé",
             "icon_text": "🍒",
-            "icon_image": "shopify://shop_images/icone_24.png"
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
-        "marquee_item_7XteVb": {
+        "marquee_item_zRYBiq": {
           "type": "marquee_item",
           "settings": {
-            "text": "Développe l'autonomie",
-            "icon_text": "🌷",
-            "icon_image": "shopify://shop_images/icone.png"
-          }
-        },
-        "marquee_item_PGEcxn": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Bouchon anti-fuite",
-            "icon_text": "🌈",
-            "icon_image": "shopify://shop_images/icone_26.png"
-          }
-        },
-        "marquee_item_qcCcnL": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Incassable",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/icone_25.png"
+            "text": "Une Belle Idée Cadeau",
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
       },
       "block_order": [
         "marquee_item_7NfyzF",
-        "marquee_item_7XteVb",
-        "marquee_item_PGEcxn",
-        "marquee_item_qcCcnL"
+        "marquee_item_qzELdq",
+        "marquee_item_zRYBiq"
       ],
       "name": "Bande défilante premium",
       "settings": {
