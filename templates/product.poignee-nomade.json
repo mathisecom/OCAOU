@@ -1014,9 +1014,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "POUR RESTER BIEN HYDRATÉ",
+            "title": "LÉGÈRE ET PRATIQUE",
             "heading_tag": "h3",
-            "content": "<p><strong>Une sangle pratique pour</strong> garder sa gourde à portée de main et penser à boire tout au long de la journée.</p>",
+            "content": "<p>Petite, cette poignée <strong>se glisse et s'accroche partout. </strong></p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1026,9 +1026,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "MOUSQUETON FACILE À ATTACHER",
+            "heading_tag": "h3",
+            "content": "<p>Les enfants peuvent <strong>accrocher tout seuls </strong>leur gourde ou leur doudou, pour boire et câliner tout au long de la journée.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -1038,9 +1038,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "DESIGN STYLÉ",
+            "heading_tag": "h3",
+            "content": "<p><strong>Une poignée fun </strong>pour accompagner les enfants dans toutes leurs aventures.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
