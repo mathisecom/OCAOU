@@ -1025,6 +1025,7 @@
         "item_rAbmeD": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_2_sept._2026_12_04_56.png",
             "column_size": "3",
             "title": "Emballage élégant",
             "heading_tag": "h3",

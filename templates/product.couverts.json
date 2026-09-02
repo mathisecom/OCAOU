@@ -249,22 +249,23 @@
         "marquee_item_cHffyH": {
           "type": "marquee_item",
           "settings": {
-            "text": "BUY ONCE, BUY WELL",
-            "icon_text": "🍒"
+            "text": "RÉSISTE AUX HAUTES ET BASSES TEMPÉRATURES",
+            "icon_text": "✹"
           }
         },
         "marquee_item_yMLFdJ": {
           "type": "marquee_item",
           "settings": {
             "text": "HEIRLOOM QUALITY",
-            "icon_text": "✹"
+            "icon_text": ""
           }
         },
         "marquee_item_kJjdUg": {
           "type": "marquee_item",
           "settings": {
-            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
-            "icon_text": "🌈"
+            "text": "FAVORISE L'AUTONOMIE",
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone.png"
           }
         },
         "marquee_item_eceDit": {
@@ -283,9 +284,9 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#F5EFE8",
-        "text_color": "#A85D47",
-        "border_color": "#E8DDD3",
+        "bg_color": "#f5efe8",
+        "text_color": "#a85d47",
+        "border_color": "#e8ddd3",
         "border_width": 0,
         "height_desktop": 56,
         "height_mobile": 46,
