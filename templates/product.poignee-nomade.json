@@ -1013,6 +1013,7 @@
         "item_R3KbgQ": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_ruwrgoruwrgoruwr.jpg",
             "column_size": "3",
             "title": "LÉGÈRE ET PRATIQUE",
             "heading_tag": "h3",
