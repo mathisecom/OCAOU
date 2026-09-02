@@ -694,40 +694,35 @@
     "bandedefilante_KDdCrf": {
       "type": "bandedefilante",
       "blocks": {
-        "marquee_item_FDMF9E": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "BUY ONCE, BUY WELL",
-            "icon_text": "🍒"
-          }
-        },
         "marquee_item_7ycJ3L": {
           "type": "marquee_item",
           "settings": {
             "text": "HEIRLOOM QUALITY",
-            "icon_text": "✹"
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
-        "marquee_item_iTWCEn": {
+        "marquee_item_kgqtJ9": {
           "type": "marquee_item",
           "settings": {
-            "text": "TIMELESS, PRACTICAL, SUSTAINABLE",
-            "icon_text": "🌈"
+            "text": "HEIRLOOM QUALITY",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
-        "marquee_item_VWatBk": {
+        "marquee_item_ANRRH7": {
           "type": "marquee_item",
           "settings": {
-            "text": "MACHINE WASHABLE FABRICS",
-            "icon_text": "🌷"
+            "text": "HEIRLOOM QUALITY",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
       },
       "block_order": [
-        "marquee_item_FDMF9E",
         "marquee_item_7ycJ3L",
-        "marquee_item_iTWCEn",
-        "marquee_item_VWatBk"
+        "marquee_item_kgqtJ9",
+        "marquee_item_ANRRH7"
       ],
       "name": "Bande défilante premium",
       "settings": {
