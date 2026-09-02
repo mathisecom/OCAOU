@@ -1039,6 +1039,7 @@
         "item_7aWhmP": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_ruwrgoruwrgoruwr.jpg",
             "column_size": "3",
             "title": "DESIGN STYLÉ",
             "heading_tag": "h3",
