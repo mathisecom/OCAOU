@@ -144,12 +144,12 @@ Color swatch specific parameters:
     {%- assign image = image | default: variant.featured_media | default: variant.product.featured_media -%}
 
     {%- if image != blank -%}
-      <{{ option_value_tag }} class="thumbnail-swatch {% if size == 'sm' %}thumbnail-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag == 'a' %}is-selected{% endif %} {% if bordered %}border{% endif %}" {{ attributes }}>
+      <{{ option_value_tag }} class="thumbnail-swatch {% if size == 'sm' %}thumbnail-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if bordered %}border{% endif %}" {{ attributes }}>
         <span class="sr-only">{{ label | default: value }}</span>
         {{- image | image_url: width: image.width | image_tag: sizes: '60px', widths: '60,120', class: 'object-cover' -}}
       </{{ option_value_tag }}>
     {%- else -%}
-      <{{ option_value_tag }} class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag == 'a' %}is-selected{% endif %}" for="{{ id | escape }}" {{ attributes }}>
+      <{{ option_value_tag }} class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %}" for="{{ id | escape }}" {{ attributes }}>
         {{ label | default: value }}
       </{{ option_value_tag }}>
     {%- endif -%}
@@ -157,7 +157,7 @@ Color swatch specific parameters:
   {%- when 'block' -%}
     {%- assign white_label_list = 'general.label.white' | t | replace: ', ', ',' | downcase | split: ',' -%}
 
-    <{{ option_value_tag }} class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag == 'a' %}is-selected{% endif %}" {{ attributes }}>
+    <{{ option_value_tag }} class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %}" {{ attributes }}>
       {%- if show_swatch -%}
         <span class="block-swatch__color {% if white_label_list contains downcase_label %}ring-inset{% endif %}" style="{{ swatch_style }}"></span>
       {%- endif -%}
@@ -168,12 +168,12 @@ Color swatch specific parameters:
   {%- when 'swatch' -%}
     {%- assign white_label_list = 'general.label.white' | t | replace: ', ', ',' | downcase | split: ',' -%}
 
-    <{{ option_value_tag }} class="color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag == 'a' %}is-selected{% endif %} {% if white_label_list contains downcase_label %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}" {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}" {{ attributes }}>
+    <{{ option_value_tag }} class="color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if white_label_list contains downcase_label %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}" {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}" {{ attributes }}>
       <span class="sr-only">{{ label | default: value }}</span>
     </{{ option_value_tag }}>
 
   {%- when 'image_filter' -%}
-    <{{ option_value_tag }} class="image-filter {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag == 'a' %}is-selected{% endif %}" {{ attributes }}>
+    <{{ option_value_tag }} class="image-filter {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %}" {{ attributes }}>
       {%- if filter_value.image -%}
         {{- filter_value.image | image_url: width: filter_value.image.width | image_tag: loading: 'lazy', sizes: '32px', widths: '32,64,96', class: 'image-filter__image' -}}
       {%- endif -%}
