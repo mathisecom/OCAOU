@@ -1046,6 +1046,7 @@
         "item_HpQ438": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/20260903_170758.jpg",
             "column_size": "3",
             "title": "Protège pendant les déplacements",
             "heading_tag": "h3",
