@@ -77,7 +77,7 @@
           "type": "associated_products",
           "settings": {
             "title": "À glisser dans le cabas ou le sac à dos",
-            "stack_products": false,
+            "stack_products": true,
             "products_count": 4,
             "background": "",
             "text_color": ""
