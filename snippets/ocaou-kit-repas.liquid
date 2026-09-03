@@ -7,7 +7,7 @@
     miniature, prix, badge, détail au clic
   ▸ 3 étapes CUMULATIVES, vendues à PRIX PACK :
       Étape 1 : Gourde + Lunch box   49,90 € (🎁 poignée nomade)
-      Étape 2 : + Couverts           69,90 € (🎁 pochon)
+      Étape 2 : + Couverts           69,90 € (🎁 pochon + poignée nomade)
       Étape 3 : + Sac isotherme      99,90 € (🎁 poignée + pochon + livraison)
   ▸ Les totaux sont calculés avec les VRAIS prix Shopify
   ▸ Le bouton ajoute TOUS les produits de l'étape au panier
@@ -313,9 +313,9 @@
         <span class="kitR-thumb" data-handle="couv">{% assign img_couv = v_couv.featured_image | default: p_couv.featured_image %}{% if img_couv %}{{ img_couv | image_url: width: 120 | image_tag: loading: 'lazy', alt: p_couv.title }}{% endif %}</span>
       </span>
       <span class="kitR-resume-txt">
-        <span class="nom">+ Les couverts <span class="kitR-badge or">Kit complet ★</span></span>
+        <span class="nom">+ Les couverts <span class="kitR-badge or">Coffret Premier Repas ★</span></span>
         <span class="prix"><b>{{ pack2_prix | money }}</b> <s>{{ total2 | money }}</s> TTC</span>
-        <span class="gains">🎁 Pochon O'CAOU offert {{ vg_pochon.price | money }}{% if pack2_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="gains">🎁 Pochon O'CAOU offert {{ vg_pochon.price | money }} · 🎁 Poignée nomade offerte {{ vg_poignee.price | money }}{% if pack2_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -327,7 +327,10 @@
       </div>
       <div class="cadeaux">
         <div>🎁 Pochon O'CAOU OFFERT <s>{{ vg_pochon.price | money }}</s>
-          <small>100% coton, 30x40cm. Pour ranger, transporter ou offrir le Kit Repas Nomade avec soin.</small>
+          <small>100% coton, 30x40cm. Pour ranger, transporter ou offrir le Coffret Premier Repas avec soin.</small>
+        </div>
+        <div>🎁 Poignée nomade O'CAOU OFFERTE <s>{{ vg_poignee.price | money }}</s>
+          <small>Le clip malin pour accrocher la gourde au sac, à la poussette ou au vélo.</small>
         </div>
         {% if pack2_prix >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
       </div>
@@ -360,7 +363,7 @@
       {% endif %}
       <button type="button" class="kitR-btn" data-items='["MAIN","lunch","couv"]'
         data-bundle="Kit Repas Nomade + couverts"
-        data-gifts="{% if vg_pochon.id and vg_pochon.available %}{{ vg_pochon.id }}{% endif %}"
+        data-gifts="{% if vg_pochon.id and vg_pochon.available %}{{ vg_pochon.id }}{% endif %}{% if vg_pochon.id and vg_pochon.available and vg_poignee.id and vg_poignee.available %},{% endif %}{% if vg_poignee.id and vg_poignee.available %}{{ vg_poignee.id }}{% endif %}"
         {% unless main_variant.available and v_lunch.available and v_couv.available %}disabled{% endunless %}>
         {% if main_variant.available and v_lunch.available and v_couv.available %}Ajouter ce trio au panier{% else %}Indisponible{% endif %}
       </button>
@@ -386,7 +389,6 @@
       <span class="kitR-chevron">▼</span>
     </button>
     <div class="kitR-detail">
-      <p class="kitR-accroche" style="font-size:12.5px;font-weight:600;margin:0 0 10px;">Complétez votre Kit Repas Nomade et recevez la poignée nomade O'CAOU en cadeau. 🎁</p>
       <div class="lignes">
         <div class="l"><span>{{ product.title }}</span><span>{{ main_variant.price | money }}</span></div>
         <div class="l"><span>{{ p_lunch.title }}</span><span>{{ v_lunch.price | money }}</span></div>
