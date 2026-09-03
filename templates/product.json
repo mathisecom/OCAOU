@@ -156,22 +156,6 @@
             "page": ""
           }
         },
-        "product_videos_ocaou": {
-          "type": "product_videos",
-          "settings": {
-            "title": "En vidéo",
-            "columns_mobile": "1",
-            "columns_desktop": 2,
-            "gap": 8,
-            "border_radius": 8,
-            "aspect_ratio": "9/16",
-            "show_controls": true,
-            "autoplay": false,
-            "show_captions": false,
-            "metafield_namespace": "custom",
-            "metafield_key": "product_videos"
-          }
-        },
         "liquid_7PLJAn": {
           "type": "liquid",
           "settings": {
@@ -199,7 +183,6 @@
         "collapsible_text_QkwrFT",
         "collapsible_text_BgHqca",
         "collapsible_text_HKATAV",
-        "product_videos_ocaou",
         "liquid_7PLJAn"
       ],
       "settings": {
