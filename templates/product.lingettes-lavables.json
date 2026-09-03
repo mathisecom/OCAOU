@@ -77,7 +77,7 @@
           "type": "associated_products",
           "settings": {
             "title": "À compléter avec les coussinets, la lunch box et les couverts",
-            "stack_products": false,
+            "stack_products": true,
             "products_count": 4,
             "background": "",
             "text_color": ""
