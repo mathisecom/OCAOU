@@ -91,6 +91,42 @@
         "lazy": true
       }
     },
+    "media_with_text_NtUGen": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_r3g8LV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/la_maison_des_maternelles.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "La Maison des Maternelles",
+            "content": "",
+            "link_text": "Voir la vidéo",
+            "link_url": "https://www.instagram.com/reel/DF9_5louyI5/",
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text_color": "#000000",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_r3g8LV"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "full_width": true,
+        "alternate_media_position": false,
+        "spacing": "none"
+      }
+    },
     "media_with_text_waqUe4": {
       "type": "media-with-text",
       "blocks": {
@@ -234,51 +270,15 @@
         "alternate_media_position": false,
         "spacing": "none"
       }
-    },
-    "media_with_text_NtUGen": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_r3g8LV": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/la_maison_des_maternelles.jpg",
-            "media_width": 50,
-            "media_position": "start",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "",
-            "title": "La Maison des Maternelles",
-            "content": "",
-            "link_text": "Voir la vidéo",
-            "link_url": "https://www.instagram.com/reel/DF9_5louyI5/",
-            "background": "#ffffff",
-            "background_gradient": "",
-            "text_color": "#000000",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_r3g8LV"
-      ],
-      "name": "Media with text",
-      "settings": {
-        "full_width": true,
-        "alternate_media_position": false,
-        "spacing": "none"
-      }
     }
   },
   "order": [
     "main",
     "logoscroll_EixnWc",
-    "media_with_text_waqUe4",
+    "media_with_text_NtUGen",
     "media_with_text_9rpgKm",
     "media_with_text_dU7kDX",
     "media_with_text_nrJ9Y4",
-    "media_with_text_NtUGen"
+    "media_with_text_waqUe4"
   ]
 }
