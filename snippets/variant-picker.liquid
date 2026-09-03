@@ -50,6 +50,33 @@ Supported variables
           assign resolved_option_selector_style = block.settings.swatch_selector_style
         endif
 
+        # O'CAOU : sur les coffrets composables, chaque option porte le nom d'un article
+        # (Doudou, Gourde...) et non le mot "couleur". Si toutes ses valeurs figurent dans la
+        # liste des couleurs du theme, on affiche des pastilles plutot que des libelles.
+        if swatch_count == 0 and block.settings.swatch_selector_style != 'none' and settings.color_swatch_config != blank
+          assign ocaou_config = settings.color_swatch_config | newline_to_br | split: '<br />'
+          assign ocaou_matched = 0
+
+          for ocaou_value in option.values
+            assign ocaou_value_name = ocaou_value.name | downcase | strip
+
+            for ocaou_item in ocaou_config
+              assign ocaou_name = ocaou_item | split: ':' | first | downcase | strip
+
+              if ocaou_name == ocaou_value_name
+                assign ocaou_matched = ocaou_matched | plus: 1
+                break
+              endif
+            endfor
+          endfor
+
+          assign ocaou_total = option.values | size
+
+          if ocaou_matched == ocaou_total
+            assign resolved_option_selector_style = block.settings.swatch_selector_style
+          endif
+        endif
+
         if resolved_option_selector_style == 'dropdown' and force_dropdown_as_block
           assign resolved_option_selector_style = 'block'
         endif
