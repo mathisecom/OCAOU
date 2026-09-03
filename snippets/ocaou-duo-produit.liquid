@@ -261,6 +261,7 @@
   #{{ duo_uid }} .duoP-btn {
     display: block;
     width: 100%;
+    text-align: center;
     border: none;
     cursor: pointer;
     background: {{ couleur_accent }};
@@ -404,7 +405,7 @@
         </div>
 
         {% if duo_cents >= seuil_cents %}
-          <p class="ship">🚚 Livraison offerte</p>
+          <p class="ship">🚚 Point relais offert</p>
         {% endif %}
 
         {% if product.variants.size > 1 %}

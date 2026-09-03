@@ -199,6 +199,7 @@
   #{{ kit_uid }} .kitR-btn {
     display: block;
     width: 100%;
+    text-align: center;
     border: none;
     cursor: pointer;
     background: {{ couleur_accent }};
@@ -261,7 +262,7 @@
       <span class="kitR-resume-txt">
         <span class="nom">Gourde + Lunch box</span>
         <span class="prix"><b>{{ pack1_prix | money }}</b> <s>{{ total1 | money }}</s> TTC</span>
-        <span class="gains">🎁 Poignée nomade offerte {{ vg_poignee.price | money }}{% if pack1_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="gains">🎁 Poignée nomade offerte {{ vg_poignee.price | money }}{% if pack1_prix >= seuil_cents %} · 🚚 POINT RELAIS OFFERT{% endif %}</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -274,7 +275,7 @@
         <div>🎁 Poignée nomade O'CAOU OFFERTE <s>{{ vg_poignee.price | money }}</s>
           <small>Le clip malin pour accrocher la gourde au sac, à la poussette ou au vélo.</small>
         </div>
-        {% if pack1_prix >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
+        {% if pack1_prix >= seuil_cents %}<div>🚚 POINT RELAIS OFFERT</div>{% endif %}
       </div>
       {% if product.variants.size > 1 %}
         <label for="{{ kit_uid }}-s1-main">Coloris gourde</label>
@@ -315,7 +316,7 @@
       <span class="kitR-resume-txt">
         <span class="nom">+ Les couverts <span class="kitR-badge or">Coffret Premier Repas ★</span></span>
         <span class="prix"><b>{{ pack2_prix | money }}</b> <s>{{ total2 | money }}</s> TTC</span>
-        <span class="gains">🎁 Pochon O'CAOU offert {{ vg_pochon.price | money }} · 🎁 Poignée nomade offerte {{ vg_poignee.price | money }}{% if pack2_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="gains">🎁 Pochon O'CAOU offert {{ vg_pochon.price | money }} · 🎁 Poignée nomade offerte {{ vg_poignee.price | money }}{% if pack2_prix >= seuil_cents %} · 🚚 POINT RELAIS OFFERT{% endif %}</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -332,7 +333,7 @@
         <div>🎁 Poignée nomade O'CAOU OFFERTE <s>{{ vg_poignee.price | money }}</s>
           <small>Le clip malin pour accrocher la gourde au sac, à la poussette ou au vélo.</small>
         </div>
-        {% if pack2_prix >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
+        {% if pack2_prix >= seuil_cents %}<div>🚚 POINT RELAIS OFFERT</div>{% endif %}
       </div>
       {% if product.variants.size > 1 %}
         <label for="{{ kit_uid }}-s2-main">Coloris gourde</label>
@@ -384,7 +385,7 @@
       <span class="kitR-resume-txt">
         <span class="nom">+ Sac isotherme <span class="kitR-badge or">Kit repas complet ★</span></span>
         <span class="prix"><b>{{ pack3_prix | money }}</b> <s>{{ total3 | money }}</s> TTC</span>
-        <span class="gains">🎁 Poignée nomade OFFERTE · 🎁 Pochon OFFERT{% if pack3_prix >= seuil_cents %} · 🚚 LIVRAISON OFFERTE{% endif %}</span>
+        <span class="gains">🎁 Poignée nomade OFFERTE · 🎁 Pochon OFFERT{% if pack3_prix >= seuil_cents %} · 🚚 POINT RELAIS OFFERT{% endif %}</span>
       </span>
       <span class="kitR-chevron">▼</span>
     </button>
@@ -402,7 +403,7 @@
         <div>🎁 Pochon O'CAOU OFFERT <s>{{ vg_pochon.price | money }}</s>
           <small>100% coton, 30x40cm. Pour ranger, transporter ou offrir le Kit Repas Nomade avec soin.</small>
         </div>
-        {% if pack3_prix >= seuil_cents %}<div>🚚 LIVRAISON OFFERTE</div>{% endif %}
+        {% if pack3_prix >= seuil_cents %}<div>🚚 POINT RELAIS OFFERT</div>{% endif %}
       </div>
       {% if product.variants.size > 1 %}
         <label for="{{ kit_uid }}-s3-main">Coloris gourde</label>
