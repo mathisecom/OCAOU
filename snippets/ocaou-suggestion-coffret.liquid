@@ -33,6 +33,10 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg__cta[disabled] { opacity: .6; cursor: wait; }
   .ocaou-sugg__non { border: 0; background: none; cursor: pointer; font: inherit; font-size: .875em; opacity: .55; padding: 4px; }
   .ocaou-sugg__non:hover { opacity: .9; }
+  .ocaou-sugg--compact { flex-wrap: wrap; }
+  .ocaou-sugg--compact .ocaou-sugg__img { width: 40px; height: 40px; }
+  .ocaou-sugg--compact .ocaou-sugg__actions { width: 100%; justify-content: space-between; }
+  .ocaou-sugg--compact .ocaou-sugg__cta { flex: 1 1 auto; text-align: center; }
   @media screen and (max-width: 749px) {
     .ocaou-sugg { flex-wrap: wrap; }
     .ocaou-sugg__actions { width: 100%; justify-content: space-between; }
@@ -183,11 +187,13 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       });
     });
     return suite.then(function () {
+      var lignes = [{ id: trouve.combi.variante, quantity: 1 }];
+      if (window.OCAOUCart && window.OCAOUCart.add) return window.OCAOUCart.add(lignes);
       return fetch(window.Shopify.routes.root + 'cart/add.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: [{ id: trouve.combi.variante, quantity: 1 }] })
-      });
+        body: JSON.stringify({ items: lignes })
+      }).then(function () { window.location.reload(); });
     });
   }
 
@@ -219,6 +225,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       oui.disabled = true;
       oui.textContent = 'Un instant…';
       echange(trouve).then(function () {
+        if (!window.OCAOUCart || !window.OCAOUCart.add) return;
         window.location.reload();
       }).catch(function () {
         oui.disabled = false;
@@ -231,9 +238,21 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     return m.el;
   }
 
+  function hotesPanier() {
+    var hotes = [];
+    var recap = document.querySelector('.cart-order');
+    if (recap && recap.parentElement) hotes.push({ parent: recap.parentElement, avant: recap, compact: false });
+    document.querySelectorAll('[name="checkout"]').forEach(function (bouton) {
+      if (recap && recap.contains(bouton)) return;
+      var f = bouton.closest('form');
+      if (f && f.parentElement) hotes.push({ parent: f.parentElement, avant: f, compact: true });
+    });
+    return hotes;
+  }
+
   function poseDansPanier() {
-    var cibles = document.querySelectorAll('[name="checkout"]');
-    if (!cibles.length) return;
+    var hotes = hotesPanier();
+    if (!hotes.length) return;
     fetch(window.Shopify.routes.root + 'cart.js', { headers: { 'Accept': 'application/json' } })
       .then(function (r) { return r.json(); })
       .then(function (panier) {
@@ -241,10 +260,11 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         if (!panier.items || panier.items.length < 2) return;
         var trouve = chercheCoffret(panier);
         if (!trouve || refuses.indexOf(trouve.coffret.id) !== -1) return;
-        cibles.forEach(function (bouton) {
-          var hote = bouton.closest('form') || bouton.parentElement;
-          if (!hote || hote.querySelector('[data-ocaou-sugg="panier"]')) return;
-          hote.insertBefore(cartePanier(trouve), hote.firstChild);
+        hotes.forEach(function (h) {
+          if (h.parent.querySelector('[data-ocaou-sugg="panier"]')) return;
+          var carte = cartePanier(trouve);
+          if (h.compact) carte.classList.add('ocaou-sugg--compact');
+          h.parent.insertBefore(carte, h.avant);
         });
       })
       .catch(function () {});
