@@ -297,6 +297,39 @@
         "text_color": ""
       }
     },
+    "featured_collection_pn8kpc": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "coffret-balades",
+          "coffret-premier-repas",
+          "duo-cabas-et-sac-a-dos",
+          "coffret-naissance",
+          "coffret-pour-maman",
+          "coffret-comme-les-grands"
+        ],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 6,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Pochon cadeau inclu avec",
+        "content": "",
+        "link_url": "",
+        "link_text": "View all",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
     "logoscroll_rVRFrN": {
       "type": "logoscroll",
       "blocks": {
@@ -1523,6 +1556,7 @@
     "featured_collection_MXYA7g",
     "shop_the_look_zAW9Nh",
     "rich_text_7LA3LQ",
+    "featured_collection_pn8kpc",
     "logoscroll_rVRFrN",
     "imagewithtexticons_4VMEKy",
     "image_with_text_overlay_wrRh6T",
