@@ -55,6 +55,16 @@
             "liquid": "<style>\n  .fp-product-benefits {\n    margin: 14px 0;\n    color: #333333;\n  }\n\n  .fp-product-benefits-title {\n    margin: 0 0 8px;\n    font-size: 18px;\n    font-weight: 700;\n    line-height: 1.3;\n    color: #333333;\n  }\n\n  .fp-product-benefits-text {\n    margin: 0 0 18px;\n    font-size: 16px;\n    font-weight: 500;\n    line-height: 1.5;\n    color: #333333;\n  }\n\n  .fp-product-benefits-grid {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px 14px;\n  }\n\n  .fp-product-benefit-pill {\n    display: inline-flex;\n    align-items: center;\n    gap: 7px;\n    padding: 7px 11px;\n    background: #FBF6EF;\n    color: #333333;\n    border-radius: 4px;\n    font-size: 15px;\n    font-weight: 500;\n    line-height: 1.2;\n    white-space: nowrap;\n  }\n\n  .fp-product-benefit-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 16px;\n    height: 16px;\n    min-width: 16px;\n    border-radius: 50%;\n    background: #AF6C67;\n    color: #ffffff;\n  }\n\n  .fp-product-benefit-icon svg {\n    display: block;\n    width: 10px;\n    height: 10px;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-product-benefits-title {\n      font-size: 16px;\n    }\n\n    .fp-product-benefits-text {\n      margin-bottom: 14px;\n      font-size: 14px;\n    }\n\n    .fp-product-benefits-grid {\n      gap: 8px;\n    }\n\n    .fp-product-benefit-pill {\n      gap: 6px;\n      padding: 6px 9px;\n      font-size: 13px;\n      white-space: normal;\n    }\n\n    .fp-product-benefit-icon {\n      width: 15px;\n      height: 15px;\n      min-width: 15px;\n    }\n\n    .fp-product-benefit-icon svg {\n      width: 9px;\n      height: 9px;\n    }\n  }\n</style>\n\n<div class=\"fp-product-benefits\">\n\n  <h3 class=\"fp-product-benefits-title\">\n    \n  </h3>\n\n  <p class=\"fp-product-benefits-text\">\n    Le doudou qui rassure les tout-petits , parce qu’un câlin c’est juste TROP TROP bien.Pensé pour les petites mains. Imaginé pour les grands câlins.\n  </p>\n\n  <div class=\"fp-product-benefits-grid\">\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Ultra doux et réconfortant</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Facile à attraper</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Rassurant dès la naissance</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\"\n            stroke=\"currentColor\"\n            stroke-width=\"3\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Léger et lavable en machine</span>\n    </div>\n\n  </div>\n</div>"
           }
         },
+        "associated_products_dQCNyG": {
+          "type": "associated_products",
+          "settings": {
+            "title": "SOUVENT ACHETÉS ENSEMBLE",
+            "stack_products": false,
+            "products_count": 4,
+            "background": "",
+            "text_color": ""
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -110,17 +120,6 @@
             "liquid": "<style>\n  .fp-benefits-icons {\n    --fp-benefit-text: #333333;\n    --fp-benefit-border: #4f7208;\n    --fp-icon-size: 44px;\n    --fp-icon-inner-size: 30px;\n    --fp-text-size: 10px;\n\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 14px;\n    margin: 14px 0;\n    width: 100%;\n  }\n\n  .fp-benefit-item {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n    gap: 6px;\n    text-align: center;\n    color: var(--fp-benefit-text);\n  }\n\n  .fp-benefit-icon {\n    width: var(--fp-icon-size);\n    height: var(--fp-icon-size);\n    min-width: var(--fp-icon-size);\n    border: 1.5px solid var(--fp-benefit-border);\n    border-radius: 999px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden;\n    background: transparent;\n  }\n\n  .fp-benefit-icon img {\n    width: var(--fp-icon-inner-size);\n    height: var(--fp-icon-inner-size);\n    object-fit: contain;\n    display: block;\n  }\n\n  .fp-benefit-text {\n    font-size: var(--fp-text-size);\n    font-weight: 500;\n    line-height: 1.15;\n    color: #333333;\n    margin: 0;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-benefits-icons {\n      gap: 8px;\n      --fp-icon-size: 38px;\n      --fp-icon-inner-size: 26px;\n      --fp-text-size: 9.5px;\n    }\n\n    .fp-benefit-text {\n      line-height: 1.1;\n    }\n  }\n</style>\n\n<div class=\"fp-benefits-icons\">\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/Design_sans_titre_36.png?v=1782566411\" \n        alt=\"Heavy Metal Free\"\n        loading=\"lazy\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\"><b>ÉVOLUTIF</b></p>\n  </div>\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/Design_sans_titre_37.png?v=1782566462\" \n        alt=\"No Fishy Taste\"\n        loading=\"lazy\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\"><b>PRATIQUE</b></p>\n  </div>\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/Design_sans_titre_38.png?v=1782566493\" \n        alt=\"Free From Microplastics\"\n        loading=\"lazy\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\"><b>ORGANISATION</b></p>\n  </div>\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/Design_sans_titre_39.png?v=1782566493\" \n        alt=\"Pollutent Free\"\n        loading=\"lazy\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\"><b>DÉPERLANT</b></p>\n  </div>\n\n</div>"
           }
         },
-        "associated_products_dQCNyG": {
-          "type": "associated_products",
-          "disabled": true,
-          "settings": {
-            "title": "SOUVENT ACHETÉS ENSEMBLE",
-            "stack_products": false,
-            "products_count": 4,
-            "background": "",
-            "text_color": ""
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -165,6 +164,7 @@
         "badges",
         "price",
         "liquid_EcDw3M",
+        "associated_products_dQCNyG",
         "variant_picker",
         "liquid_89n964",
         "liquid_RFPgnk",
@@ -172,7 +172,6 @@
         "liquid_FttJaB",
         "liquid_ezRHbz",
         "liquid_CnEcbM",
-        "associated_products_dQCNyG",
         "description",
         "collapsible_text_BgHqca",
         "collapsible_text_HKATAV",
