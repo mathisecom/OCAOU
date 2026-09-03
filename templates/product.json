@@ -203,6 +203,122 @@
         "input_text_color": ""
       }
     },
+    "grillecollections_DiknAH": {
+      "type": "grillecollections",
+      "blocks": {
+        "carte_BwWNKf": {
+          "type": "carte",
+          "settings": {
+            "label": "",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_ebVPpE": {
+          "type": "carte",
+          "settings": {
+            "label": "Le bain rayé",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_kqWRQV": {
+          "type": "carte",
+          "settings": {
+            "label": "Le repas",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_rfPFFk": {
+          "type": "carte",
+          "settings": {
+            "label": "Les carreaux",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_UwMQpj": {
+          "type": "carte",
+          "settings": {
+            "label": "Les gourdes",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_eYcpWd": {
+          "type": "carte",
+          "settings": {
+            "label": "Les coffrets",
+            "collection": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "carte_BwWNKf",
+        "carte_ebVPpE",
+        "carte_kqWRQV",
+        "carte_rfPFFk",
+        "carte_UwMQpj",
+        "carte_eYcpWd"
+      ],
+      "name": "Grille de collections",
+      "settings": {
+        "heading": "",
+        "heading_align": "center",
+        "heading_color": "#1d2153",
+        "full_width": true,
+        "columns_desktop": 6,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "ratio": "3 / 4",
+        "gap": 12,
+        "gap_mobile": 10,
+        "radius": 0,
+        "label_bg": "#b3946a",
+        "label_bg_hover": "#9a7d55",
+        "label_color": "#ffffff",
+        "bg_color": "#faf6ef",
+        "side_padding": 20,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "17884506186ac633bf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9495523_rWhnLb": {
+          "type": "ai_gen_block_9495523",
+          "settings": {
+            "heading": "Découvrez nos vidéos",
+            "desktop_width_percent": 100,
+            "heading_size": 24,
+            "heading_font": "poppins_n6",
+            "title_1": "Vidéo 1",
+            "title_2": "Vidéo 2",
+            "title_3": "Vidéo 3",
+            "title_4": "Vidéo 4",
+            "title_5": "Vidéo 5",
+            "background_color": "#FFFFFF",
+            "text_color": "#1A1A1A",
+            "placeholder_color": "#F2F2F2",
+            "placeholder_text_color": "#666666",
+            "play_background": "#FFFFFF",
+            "play_color": "#1A1A1A",
+            "gap": 12,
+            "gap_mobile": 10,
+            "mobile_card_width": 60,
+            "radius": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9495523_rWhnLb"
+      ],
+      "settings": {}
+    },
     "featured_collection_MXYA7g": {
       "type": "featured-collection",
       "name": "Featured collection",
@@ -1445,6 +1561,8 @@
   },
   "order": [
     "main",
+    "grillecollections_DiknAH",
+    "17884506186ac633bf",
     "featured_collection_MXYA7g",
     "shop_the_look_zAW9Nh",
     "rich_text_7LA3LQ",
