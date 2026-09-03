@@ -89,7 +89,8 @@
 
             <a href="{{ product.url }}" class="bold truncate-text">{{ product.title }}</a>
             {%- render 'price-list', product: product, variant: product.selected_or_first_available_variant, form_id: product_form_id -%}
-            {%- if variant_picker_block -%}<div class="product-quick-add__variant-picker">{%- render 'variant-picker', product: product, form_id: product_form_id, update_url: false, hide_sold_out_variants: variant_picker_block.settings.hide_sold_out_variants, hide_size_chart: true, force_dropdown_as_block: true, block: variant_picker_block -%}</div>{%- endif -%}
+            {%- comment -%}O'CAOU : sur un produit a plusieurs options (coffret composable), la barre d'achat collante ne reprend pas le selecteur. Il dupliquerait les boutons radio du bloc principal, qui portent le meme name et se decocheraient entre eux.{%- endcomment -%}
+            {%- if variant_picker_block and product.options_with_values.size < 2 -%}<div class="product-quick-add__variant-picker">{%- render 'variant-picker', product: product, form_id: product_form_id, update_url: false, hide_sold_out_variants: variant_picker_block.settings.hide_sold_out_variants, hide_size_chart: true, force_dropdown_as_block: true, block: variant_picker_block -%}</div>{%- endif -%}
           </div>
 
           <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" force-secondary-button>
