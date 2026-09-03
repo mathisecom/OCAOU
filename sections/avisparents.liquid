@@ -406,7 +406,7 @@
       return card.offsetWidth + gap;
     }
 
-    prev.addEventListener('click', function () {
+    if (prev) prev.addEventListener('click', function () {
       const track = getActiveTrack();
       if (!track) return;
 
@@ -416,7 +416,7 @@
       });
     });
 
-    next.addEventListener('click', function () {
+    if (next) next.addEventListener('click', function () {
       const track = getActiveTrack();
       if (!track) return;
 
