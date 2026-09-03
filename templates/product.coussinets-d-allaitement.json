@@ -722,6 +722,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/20260903_133006.jpg",
             "column_size": "3",
             "title": "Tout doux pour votre peau",
             "heading_tag": "h3",
@@ -734,6 +735,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/20260903_160212.jpg",
             "column_size": "3",
             "title": "Une protection qui reste discrète",
             "heading_tag": "h3",
