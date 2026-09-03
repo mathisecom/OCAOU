@@ -218,6 +218,9 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     var produitId = meta.product && meta.product.id;
     if (!produitId) return;
 
+    // Certaines fiches portent deja un bloc de packs maison : on ne double pas.
+    if (document.querySelector('.duoP-btn, .kitR-btn')) return;
+
     var candidats = table.coffrets.filter(function (c) {
       return c.id !== produitId && c.articles.indexOf(produitId) !== -1;
     });
