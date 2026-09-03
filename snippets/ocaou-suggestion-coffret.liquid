@@ -1,0 +1,279 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+O'CAOU — SUGGESTION DE COFFRET
+----------------------------------------------------------------------------------------------------------------------
+
+Propose le coffret correspondant, jamais ne l'impose.
+
+* Sur une fiche produit : signale que l'article existe aussi dans un coffret.
+* Dans le panier : si les articles reunis forment un coffret, propose l'echange en un clic.
+
+La table de correspondance vit dans assets/ocaou-coffrets.json, regeneree par
+_scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur ici.
+{%- endcomment -%}
+
+<style>
+  .ocaou-sugg {
+    display: flex; align-items: center; gap: 14px;
+    margin: 16px 0; padding: 14px 16px;
+    border: 1px solid rgba(0,0,0,.12); border-radius: 14px;
+    background: #fff; text-decoration: none; color: inherit;
+  }
+  .ocaou-sugg__img { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 10px; object-fit: cover; background: #f3efe9; }
+  .ocaou-sugg__txt { flex: 1 1 auto; min-width: 0; line-height: 1.35; }
+  .ocaou-sugg__titre { font-weight: 600; margin-right: 6px; }
+  .ocaou-sugg__prix { color: {{ settings.color_accent | default: '#cd9438' }}; font-weight: 600; }
+  .ocaou-sugg__barre { text-decoration: line-through; opacity: .55; margin-left: 4px; }
+  .ocaou-sugg__detail { display: block; font-size: .875em; opacity: .7; margin-top: 2px; }
+  .ocaou-sugg__actions { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; }
+  .ocaou-sugg__cta {
+    display: inline-block; padding: 9px 16px; border-radius: 999px; border: 0; cursor: pointer;
+    background: {{ settings.color_accent | default: '#cd9438' }}; color: #fff; font: inherit; font-weight: 600; white-space: nowrap;
+  }
+  .ocaou-sugg__cta[disabled] { opacity: .6; cursor: wait; }
+  .ocaou-sugg__non { border: 0; background: none; cursor: pointer; font: inherit; font-size: .875em; opacity: .55; padding: 4px; }
+  .ocaou-sugg__non:hover { opacity: .9; }
+  @media screen and (max-width: 749px) {
+    .ocaou-sugg { flex-wrap: wrap; }
+    .ocaou-sugg__actions { width: 100%; justify-content: space-between; }
+  }
+</style>
+
+<script>
+(function () {
+  var SOURCE = {{ 'ocaou-coffrets.json' | asset_url | json }};
+  var table = null;
+  var refuses = [];
+  try { refuses = JSON.parse(sessionStorage.getItem('ocaou-sugg-refus') || '[]'); } catch (e) {}
+
+  function prix(centimes) {
+    return (centimes / 100).toFixed(2).replace('.', ',') + ' €';
+  }
+
+  function liste(noms) {
+    if (!noms.length) return '';
+    if (noms.length === 1) return noms[0];
+    return noms.slice(0, -1).join(', ') + ' et ' + noms[noms.length - 1];
+  }
+
+  // Tout texte venant de la table est insere par textContent, jamais par innerHTML.
+  function bloc(classe, texte, balise) {
+    var n = document.createElement(balise || 'span');
+    n.className = classe;
+    if (texte != null) n.textContent = texte;
+    return n;
+  }
+
+  function carte(options) {
+    var el = document.createElement(options.href ? 'a' : 'div');
+    el.className = 'ocaou-sugg';
+    el.setAttribute('data-ocaou-sugg', options.zone);
+    if (options.href) el.href = options.href;
+
+    if (options.image) {
+      var img = document.createElement('img');
+      img.className = 'ocaou-sugg__img';
+      img.alt = '';
+      img.loading = 'lazy';
+      img.src = options.image + (options.image.indexOf('?') === -1 ? '?' : '&') + 'width=104';
+      el.appendChild(img);
+    }
+
+    var txt = bloc('ocaou-sugg__txt', null, 'div');
+    txt.appendChild(bloc('ocaou-sugg__titre', options.titre));
+    txt.appendChild(bloc('ocaou-sugg__prix', prix(options.prix)));
+    if (options.barre) txt.appendChild(bloc('ocaou-sugg__barre', prix(options.barre)));
+    if (options.detail) txt.appendChild(bloc('ocaou-sugg__detail', options.detail));
+    el.appendChild(txt);
+
+    var actions = bloc('ocaou-sugg__actions', null, 'div');
+    el.appendChild(actions);
+    return { el: el, actions: actions };
+  }
+
+  /* ------------------------------------------------------------------ panier */
+
+  function dejaPrise(prises, item) {
+    return prises.some(function (l) { return l.key === item.key; });
+  }
+
+  function chercheCoffret(panier) {
+    // La table est rangee du plus grand coffret au plus petit : le premier qui
+    // correspond est celui qui reunit le plus d'articles.
+    for (var i = 0; i < table.coffrets.length; i++) {
+      var c = table.coffrets[i];
+      var lignes = [];
+      var variantes = [];
+      var complet = c.articles.every(function (produitId) {
+        var ligne = panier.items.find(function (it) {
+          return it.product_id === produitId && !dejaPrise(lignes, it);
+        });
+        if (!ligne) return false;
+        lignes.push(ligne);
+        variantes.push(ligne.variant_id);
+        return true;
+      });
+      if (!complet) continue;
+
+      var cle = variantes.slice().sort(function (a, b) { return a - b; }).join('-');
+      var combi = c.combinaisons[cle];
+      if (!combi || !combi.dispo) continue;
+
+      // Les articles compris d'office dans le coffret sortent aussi du panier.
+      var enDouble = panier.items.filter(function (it) {
+        return c.inclus.some(function (inc) { return inc.variante === it.variant_id; });
+      });
+
+      var toutes = lignes.concat(enDouble);
+      var actuel = toutes.reduce(function (t, l) { return t + l.final_line_price; }, 0);
+      if (combi.prix >= actuel) continue; // rien a gagner, on se tait
+
+      return { coffret: c, combi: combi, lignes: toutes, actuel: actuel };
+    }
+    return null;
+  }
+
+  function echange(trouve) {
+    var suite = Promise.resolve();
+    trouve.lignes.forEach(function (l) {
+      suite = suite.then(function () {
+        return fetch(window.Shopify.routes.root + 'cart/change.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: l.key, quantity: Math.max(0, l.quantity - 1) })
+        });
+      });
+    });
+    return suite.then(function () {
+      return fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [{ id: trouve.combi.variante, quantity: 1 }] })
+      });
+    });
+  }
+
+  function cartePanier(trouve) {
+    var c = trouve.coffret;
+    var compris = c.inclus.map(function (i) { return i.nom; });
+    var m = carte({
+      zone: 'panier',
+      image: c.image,
+      titre: 'Vos articles forment le ' + c.titre,
+      prix: trouve.combi.prix,
+      barre: trouve.actuel,
+      detail: compris.length ? 'Avec ' + liste(compris) + ' en plus.' : null
+    });
+
+    var non = bloc('ocaou-sugg__non', 'Non merci', 'button');
+    non.type = 'button';
+    non.addEventListener('click', function () {
+      refuses.push(c.id);
+      try { sessionStorage.setItem('ocaou-sugg-refus', JSON.stringify(refuses)); } catch (e) {}
+      m.el.remove();
+    });
+
+    var oui = bloc('ocaou-sugg__cta', 'Remplacer', 'button');
+    oui.type = 'button';
+    oui.addEventListener('click', function () {
+      oui.disabled = true;
+      oui.textContent = 'Un instant…';
+      echange(trouve).then(function () {
+        window.location.reload();
+      }).catch(function () {
+        oui.disabled = false;
+        oui.textContent = 'Remplacer';
+      });
+    });
+
+    m.actions.appendChild(non);
+    m.actions.appendChild(oui);
+    return m.el;
+  }
+
+  function poseDansPanier() {
+    var cibles = document.querySelectorAll('[name="checkout"]');
+    if (!cibles.length) return;
+    fetch(window.Shopify.routes.root + 'cart.js', { headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (panier) {
+        document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
+        if (!panier.items || panier.items.length < 2) return;
+        var trouve = chercheCoffret(panier);
+        if (!trouve || refuses.indexOf(trouve.coffret.id) !== -1) return;
+        cibles.forEach(function (bouton) {
+          var hote = bouton.closest('form') || bouton.parentElement;
+          if (!hote || hote.querySelector('[data-ocaou-sugg="panier"]')) return;
+          hote.insertBefore(cartePanier(trouve), hote.firstChild);
+        });
+      })
+      .catch(function () {});
+  }
+
+  /* ----------------------------------------------------------- fiche produit */
+
+  function poseDansFiche() {
+    var meta = window.ShopifyAnalytics && window.ShopifyAnalytics.meta;
+    if (!meta || !meta.page || meta.page.pageType !== 'product') return;
+    var produitId = meta.product && meta.product.id;
+    if (!produitId) return;
+
+    var candidats = table.coffrets.filter(function (c) {
+      return c.id !== produitId && c.articles.indexOf(produitId) !== -1;
+    });
+    if (!candidats.length) return;
+
+    // Le pas le plus court d'abord : le coffret qui demande le moins d'articles en plus.
+    candidats.sort(function (a, b) { return a.articles.length - b.articles.length; });
+
+    var hote = document.querySelector('.product-info buy-buttons');
+    if (!hote || !hote.parentElement) return;
+    if (hote.parentElement.querySelector('[data-ocaou-sugg="fiche"]')) return;
+
+    candidats.slice(0, 2).reverse().forEach(function (c) {
+      var autres = c.nomsArticles.filter(function (_, i) { return c.articles[i] !== produitId; });
+      var mini = Object.keys(c.combinaisons).reduce(function (m, k) {
+        var v = c.combinaisons[k];
+        return (!v.dispo) ? m : (m === null || v.prix < m.prix) ? v : m;
+      }, null);
+      if (!mini) return;
+
+      var m = carte({
+        zone: 'fiche',
+        href: c.url,
+        image: c.image,
+        titre: 'Aussi dans le ' + c.titre,
+        prix: mini.prix,
+        barre: mini.prixBarre,
+        detail: 'Avec ' + liste(autres.concat(c.inclus.map(function (i) { return i.nom; }))) + '.'
+      });
+      m.actions.appendChild(bloc('ocaou-sugg__cta', 'Voir le coffret'));
+      hote.parentElement.insertBefore(m.el, hote.nextSibling);
+    });
+  }
+
+  /* ------------------------------------------------------------------ amorce */
+
+  function passe() {
+    if (!table) return;
+    poseDansFiche();
+    poseDansPanier();
+  }
+
+  fetch(SOURCE)
+    .then(function (r) { return r.json(); })
+    .then(function (t) {
+      table = t;
+      passe();
+      // Le panier lateral s'ouvre et se rafraichit sans rechargement de page.
+      document.addEventListener('cart:change', passe);
+      document.addEventListener('cart:refresh', passe);
+      var minuteur = null;
+      new MutationObserver(function () {
+        clearTimeout(minuteur);
+        minuteur = setTimeout(poseDansPanier, 250);
+      }).observe(document.body, { childList: true, subtree: true });
+    })
+    .catch(function () { /* la suggestion est un bonus : son absence ne casse rien */ });
+})();
+</script>
