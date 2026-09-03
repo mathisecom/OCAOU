@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "liquid_PgqUKG": {
+          "type": "liquid",
+          "name": "CSS - Titre complementary en gras",
+          "settings": {
+            "liquid": "<style>product-recommendations p{font-weight:700!important;}</style>"
+          }
+        },
         "liquid_6HNzqf": {
           "type": "liquid",
           "disabled": true,
@@ -157,6 +164,7 @@
         }
       },
       "block_order": [
+        "liquid_PgqUKG",
         "liquid_6HNzqf",
         "liquid_hCXJAh",
         "liquid_BaArxm",
