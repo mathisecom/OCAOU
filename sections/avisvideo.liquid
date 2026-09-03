@@ -1245,7 +1245,7 @@
           });
       });
 
-      close.addEventListener('click', () => {
+      if (close) close.addEventListener('click', () => {
           document.body.style.overflow = '';
           modal.classList.remove('active');
           let frames = modal.querySelectorAll('iframe');
