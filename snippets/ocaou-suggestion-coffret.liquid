@@ -288,6 +288,28 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
   /* ----------------------------------------------------------- fiche produit */
 
+  // La variante actuellement choisie sur la fiche produit.
+  function varianteChoisie() {
+    var url = new URLSearchParams(window.location.search).get('variant');
+    if (url) return parseInt(url, 10);
+    var noeud = document.querySelector('.product-info variant-picker script[data-variant]') ||
+                document.querySelector('variant-picker script[data-variant]');
+    if (!noeud) return null;
+    try { return JSON.parse(noeud.textContent || '{}').id || null; } catch (e) { return null; }
+  }
+
+  // La combinaison la moins chere qui contient la couleur choisie par le client.
+  function combiPourVariante(c, varianteId) {
+    var retenue = null;
+    Object.keys(c.combinaisons).forEach(function (cle) {
+      var v = c.combinaisons[cle];
+      if (!v.dispo) return;
+      if (cle.split('-').indexOf(String(varianteId)) === -1) return;
+      if (retenue === null || v.prix < retenue.prix) retenue = v;
+    });
+    return retenue;
+  }
+
   // La combinaison disponible la moins chere d'un coffret.
   function prixMini(c) {
     return Object.keys(c.combinaisons).reduce(function (m, k) {
@@ -334,12 +356,13 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
     candidats.slice(0, 2).reverse().forEach(function (c) {
       var autres = c.nomsArticles.filter(function (_, i) { return c.articles[i] !== produitId; });
-      var mini = prixMini(c);
+      var choisie = varianteChoisie();
+      var mini = (choisie && combiPourVariante(c, choisie)) || prixMini(c);
       if (!mini) return;
 
       var m = carte({
         zone: 'fiche',
-        href: c.url,
+        href: c.url + '?variant=' + mini.variante,
         image: c.image,
         titre: 'Aussi dans le ' + c.titre,
         prix: mini.prix,
@@ -367,6 +390,11 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       // Le panier lateral s'ouvre et se rafraichit sans rechargement de page.
       document.addEventListener('cart:change', passe);
       document.addEventListener('cart:refresh', passe);
+      // Changer de couleur sur la fiche doit reporter ce choix sur les coffrets proposes.
+      document.addEventListener('variant:change', function () {
+        document.querySelectorAll('[data-ocaou-sugg="fiche"]').forEach(function (n) { n.remove(); });
+        poseDansFiche();
+      });
       var minuteur = null;
       new MutationObserver(function () {
         clearTimeout(minuteur);
