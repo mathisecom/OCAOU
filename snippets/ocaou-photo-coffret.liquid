@@ -14,7 +14,6 @@ Les images viennent de assets/ocaou-coffrets.json (cle « variantes »), regener
 _scripts/ocaou-coffrets.py cote ISOMORPH.
 {%- endcomment -%}
 
-{%- if product.requires_components -%}
 <script>
 (function () {
   var SOURCE = {{ 'ocaou-coffrets.json' | asset_url | json }};
@@ -80,10 +79,15 @@ _scripts/ocaou-coffrets.py cote ISOMORPH.
     });
   }
 
+  // Le comportement ne concerne que les fiches coffret.
+  function estCoffret(t) {
+    var chemin = window.location.pathname.replace(/\/$/, '');
+    return (t.coffrets || []).some(function (c) { return chemin.indexOf(c.url) !== -1; });
+  }
+
   fetch(SOURCE)
     .then(function (r) { return r.json(); })
-    .then(function (t) { table = t; ecoute(); })
+    .then(function (t) { if (!estCoffret(t)) return; table = t; ecoute(); })
     .catch(function () { /* la galerie reste celle du coffret */ });
 })();
 </script>
-{%- endif -%}
