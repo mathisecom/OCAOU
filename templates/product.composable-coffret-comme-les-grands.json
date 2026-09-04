@@ -657,6 +657,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/OCAOU_Version1-16.jpg",
             "column_size": "3",
             "title": "Pour toutes ses aventures",
             "heading_tag": "h3",
