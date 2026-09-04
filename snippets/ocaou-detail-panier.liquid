@@ -141,6 +141,12 @@ par _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en d
       var info = ligne.querySelector('.line-item__info') || ligne;
       var mention = texte('ocaou-cadeau-mention', 'Offert avec ' + m[1].trim(), 'p');
       info.appendChild(mention);
+
+      // Un cadeau se lit sous l'article qui l'offre, jamais au-dessus.
+      var rangee = ligne.closest('tr') || ligne;
+      if (rangee.parentNode && rangee.parentNode.lastElementChild !== rangee) {
+        rangee.parentNode.appendChild(rangee);
+      }
       return;
     }
   }
