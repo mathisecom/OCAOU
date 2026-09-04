@@ -27,8 +27,9 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg__detail { display: block; font-size: .875em; opacity: .7; margin-top: 2px; }
   .ocaou-sugg__actions { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; }
   .ocaou-sugg__cta {
-    display: inline-block; padding: 9px 16px; border-radius: 999px; border: 0; cursor: pointer;
-    background: {{ settings.color_accent | default: '#cd9438' }}; color: #fff; font: inherit; font-weight: 600; white-space: nowrap;
+    display: inline-block; padding: 7px 14px; border-radius: 999px; border: 0; cursor: pointer;
+    background: {{ settings.color_accent | default: '#cd9438' }}; color: #fff;
+    font: inherit; font-size: .875em; font-weight: 600; line-height: 1.4; white-space: nowrap;
   }
   .ocaou-sugg__cta[disabled] { opacity: .6; cursor: wait; }
   .ocaou-sugg__non { border: 0; background: none; cursor: pointer; font: inherit; font-size: .875em; opacity: .55; padding: 4px; }
@@ -36,7 +37,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg--compact { flex-wrap: wrap; }
   .ocaou-sugg--compact .ocaou-sugg__img { width: 40px; height: 40px; }
   .ocaou-sugg--compact .ocaou-sugg__actions { width: 100%; justify-content: space-between; }
-  .ocaou-sugg--compact .ocaou-sugg__cta { flex: 1 1 auto; text-align: center; }
+  .ocaou-sugg--compact .ocaou-sugg__cta { flex: 0 0 auto; }
   @media screen and (max-width: 749px) {
     .ocaou-sugg { flex-wrap: wrap; }
     .ocaou-sugg__actions { width: 100%; justify-content: space-between; }
