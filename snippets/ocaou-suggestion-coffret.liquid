@@ -34,6 +34,17 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg__cta[disabled] { opacity: .6; cursor: wait; }
   .ocaou-sugg__non { border: 0; background: none; cursor: pointer; font: inherit; font-size: .875em; opacity: .55; padding: 4px; }
   .ocaou-sugg__non:hover { opacity: .9; }
+  .ocaou-sugg__ok {
+    display: inline-block; padding: 7px 16px; border-radius: 999px; cursor: pointer;
+    border: 1px solid rgba(0,0,0,.18); background: #fff; color: inherit;
+    font: inherit; font-size: .875em; font-weight: 600; line-height: 1.4; white-space: nowrap;
+  }
+  .ocaou-sugg__ok:hover {
+    border-color: {{ settings.color_accent | default: '#cd9438' }};
+    color: {{ settings.color_accent | default: '#cd9438' }};
+  }
+  /* Une seule action sur la carte d'information : elle se pose a droite. */
+  .ocaou-sugg--info .ocaou-sugg__actions { justify-content: flex-end; }
 
   /* Peu de place : l'image reste a gauche du texte, les boutons passent dessous. */
   .ocaou-sugg--serre {
@@ -283,7 +294,8 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       m.el.querySelector('.ocaou-sugg__txt')
         .appendChild(bloc('ocaou-sugg__prix', 'vous gagnez ' + prix(avantage)));
     }
-    var ok = bloc('ocaou-sugg__non', 'J’ai compris', 'button');
+    m.el.classList.add('ocaou-sugg--info');
+    var ok = bloc('ocaou-sugg__ok', 'J’ai compris', 'button');
     ok.type = 'button';
     ok.addEventListener('click', function () {
       infoCourante = null;
