@@ -622,14 +622,16 @@
         "ai_gen_block_4e66e81_KHMPzr": {
           "type": "ai_gen_block_4e66e81",
           "settings": {
-            "heading": "Existe aussi en coffret",
+            "heading": "Souvent acheté avec",
             "products": [
+              "doudou",
+              "couverture",
               "coffret-naissance-1"
             ],
             "button_label": "Découvrir",
             "show_prices": true,
             "desktop_width_percent": 100,
-            "columns_desktop": "2",
+            "columns_desktop": "4",
             "columns_mobile": "1",
             "alignment": "left",
             "gap": 16,
