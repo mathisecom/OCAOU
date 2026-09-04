@@ -199,13 +199,19 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
       var dejaLa = pris.map(function (d) { return d.variante; });
       var enPlus = c.inclus.filter(function (inc) { return dejaLa.indexOf(inc.variante) === -1; })
-                           .map(function (inc) { return { nom: inc.nom, offert: !!inc.offert }; });
+                           .map(function (inc) { return { nom: inc.nom, offert: !!inc.offert, prix: inc.prix || 0 }; });
+
+      // L'avantage annonce compte aussi la valeur de ce que le coffret ajoute, cadeaux compris.
+      // Le regroupement automatique, lui, ne se declenche que si le panier coute moins cher.
+      var valeurAjoutee = enPlus.reduce(function (t, i) { return t + i.prix; }, 0);
 
       if (combi.prix >= actuel && !enPlus.length) continue;
 
       return {
         coffret: c, combi: combi, lignes: lignes, actuel: actuel,
-        economie: actuel - combi.prix, enPlus: enPlus
+        economie: actuel - combi.prix,
+        avantage: actuel - combi.prix + valeurAjoutee,
+        enPlus: enPlus
       };
     }
     return null;
@@ -240,6 +246,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       sessionStorage.setItem('ocaou-sugg-info', JSON.stringify({
         titre: trouve.coffret.titre,
         economie: trouve.economie,
+        avantage: trouve.avantage,
         offerts: trouve.enPlus,
         image: trouve.coffret.image
       }));
@@ -271,9 +278,10 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       prix: null,
       detail: mentionAjouts(info.offerts)
     });
-    if (info.economie > 0) {
+    var avantage = info.avantage != null ? info.avantage : info.economie;
+    if (avantage > 0) {
       m.el.querySelector('.ocaou-sugg__txt')
-        .appendChild(bloc('ocaou-sugg__prix', 'vous économisez ' + prix(info.economie)));
+        .appendChild(bloc('ocaou-sugg__prix', 'vous gagnez ' + prix(avantage)));
     }
     var ok = bloc('ocaou-sugg__non', 'J’ai compris', 'button');
     ok.type = 'button';
