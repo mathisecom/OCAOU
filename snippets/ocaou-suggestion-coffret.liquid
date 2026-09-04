@@ -99,27 +99,26 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
   // Une ligne de panier qui est elle-meme un coffret compte pour ses articles :
   // c'est ce qui permet de proposer le coffret de trois a partir d'un duo plus un article.
+  // Le prix reste porte par la ligne reelle, jamais par un composant.
   function deplie(panier) {
-    var lignes = [];
+    var entrees = [];
     panier.items.forEach(function (it) {
-      var source = null;
+      var composants = null;
       table.coffrets.some(function (c) {
         var comp = c.parVariante && c.parVariante[it.variant_id];
         if (!comp) return false;
-        source = comp;
+        composants = comp;
         return true;
       });
-      if (source) {
-        source.forEach(function (comp) {
-          lignes.push({ produit: comp.produit, variante: comp.variante, ligne: it, prix: 0, issuDe: it.key });
+      if (composants) {
+        composants.forEach(function (comp) {
+          entrees.push({ produit: comp.produit, variante: comp.variante, ligne: it, issuDunCoffret: true });
         });
-        // le prix du coffret d'origine est porte une seule fois
-        if (lignes.length) lignes[lignes.length - 1].prix = it.final_line_price;
       } else {
-        lignes.push({ produit: it.product_id, variante: it.variant_id, ligne: it, prix: it.final_line_price, issuDe: null });
+        entrees.push({ produit: it.product_id, variante: it.variant_id, ligne: it, issuDunCoffret: false });
       }
     });
-    return lignes;
+    return entrees;
   }
 
   function chercheCoffret(panier) {
@@ -148,17 +147,24 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       var combi = c.combinaisons[cle];
       if (!combi || !combi.dispo) continue;
 
-      // Les articles compris d'office dans le coffret sortent aussi du panier.
+      // Les articles compris d'office dans le coffret sortent aussi du panier,
+      // a condition qu'ils soient vendus a l'unite et non pris dans un autre coffret.
       deplies.forEach(function (d) {
-        if (pris.indexOf(d) === -1 && c.inclus.some(function (inc) { return inc.variante === d.variante; })) pris.push(d);
+        if (pris.indexOf(d) === -1 && !d.issuDunCoffret &&
+            c.inclus.some(function (inc) { return inc.variante === d.variante; })) pris.push(d);
       });
 
-      // Lignes reelles a retirer, sans doublon.
-      var aRetirer = [];
-      pris.forEach(function (d) {
-        if (aRetirer.indexOf(d.ligne) === -1) aRetirer.push(d.ligne);
+      // Un coffret deja au panier ne se defait que s'il est absorbe en entier.
+      // Sans cette regle, on lui emprunterait un article et on compterait son prix.
+      var lignes = [];
+      pris.forEach(function (d) { if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne); });
+      var entier = lignes.every(function (ligne) {
+        var total = deplies.filter(function (d) { return d.ligne === ligne; });
+        return total.every(function (d) { return pris.indexOf(d) !== -1; });
       });
-      var actuel = pris.reduce(function (t, d) { return t + d.prix; }, 0);
+      if (!entier) continue;
+
+      var actuel = lignes.reduce(function (t, l) { return t + l.final_line_price; }, 0);
 
       // Ce que le coffret apporte en plus de ce qui est deja dans le panier.
       var dejaLa = pris.map(function (d) { return d.variante; });
@@ -168,7 +174,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       if (combi.prix >= actuel && !enPlus.length) continue; // ni moins cher, ni plus complet
 
       return {
-        coffret: c, combi: combi, lignes: aRetirer, actuel: actuel,
+        coffret: c, combi: combi, lignes: lignes, actuel: actuel,
         economie: actuel - combi.prix, enPlus: enPlus
       };
     }
@@ -207,7 +213,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       prix: trouve.combi.prix,
       barre: gagne ? trouve.actuel : trouve.combi.prixBarre,
       detail: gagne
-        ? (trouve.enPlus.length ? 'Avec ' + liste(trouve.enPlus) + ' en plus.' : 'Vous economisez ' + prix(trouve.economie) + '.')
+        ? (trouve.enPlus.length ? 'Avec ' + liste(trouve.enPlus) + ' en plus.' : 'Vous économisez ' + prix(trouve.economie) + '.')
         : 'Vos articles plus ' + liste(trouve.enPlus) + ', pour ' + prix(-trouve.economie) + ' de plus.'
     });
 
