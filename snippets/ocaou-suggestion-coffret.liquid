@@ -288,6 +288,14 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
   /* ----------------------------------------------------------- fiche produit */
 
+  // La combinaison disponible la moins chere d'un coffret.
+  function prixMini(c) {
+    return Object.keys(c.combinaisons).reduce(function (m, k) {
+      var v = c.combinaisons[k];
+      return (!v.dispo) ? m : (m === null || v.prix < m.prix) ? v : m;
+    }, null);
+  }
+
   function poseDansFiche() {
     var meta = window.ShopifyAnalytics && window.ShopifyAnalytics.meta;
     if (!meta || !meta.page || meta.page.pageType !== 'product') return;
@@ -300,12 +308,20 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     var texteMaison = '';
     if (blocMaison) {
       var racine = blocMaison.closest('[class*="duoP"], [class*="kitR"], .product-info__block-item') || blocMaison;
-      texteMaison = (racine.textContent || '').toLowerCase();
+      texteMaison = (racine.textContent || '').replace(/\s+/g, ' ').toLowerCase();
+    }
+
+    // Le bloc maison nomme parfois la meme offre autrement : on compare aussi le prix.
+    function dejaCite(c) {
+      if (!texteMaison) return false;
+      if (texteMaison.indexOf(c.titre.toLowerCase()) !== -1) return true;
+      var moins = prixMini(c);
+      return moins ? texteMaison.indexOf(prix(moins.prix).toLowerCase()) !== -1 : false;
     }
 
     var candidats = table.coffrets.filter(function (c) {
       if (c.id === produitId || c.articles.indexOf(produitId) === -1) return false;
-      return texteMaison.indexOf(c.titre.toLowerCase()) === -1;
+      return !dejaCite(c);
     });
     if (!candidats.length) return;
 
@@ -318,10 +334,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
     candidats.slice(0, 2).reverse().forEach(function (c) {
       var autres = c.nomsArticles.filter(function (_, i) { return c.articles[i] !== produitId; });
-      var mini = Object.keys(c.combinaisons).reduce(function (m, k) {
-        var v = c.combinaisons[k];
-        return (!v.dispo) ? m : (m === null || v.prix < m.prix) ? v : m;
-      }, null);
+      var mini = prixMini(c);
       if (!mini) return;
 
       var m = carte({
