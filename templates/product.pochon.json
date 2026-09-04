@@ -1123,6 +1123,7 @@
         "item_MCgAhc": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/family.jpg",
             "column_size": "3",
             "title": "Réutilisable et durable",
             "heading_tag": "h3",
