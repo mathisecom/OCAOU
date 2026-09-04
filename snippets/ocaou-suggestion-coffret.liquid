@@ -22,8 +22,8 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg__img { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 10px; object-fit: cover; background: #f3efe9; }
   .ocaou-sugg__txt { flex: 1 1 auto; min-width: 0; line-height: 1.35; }
   .ocaou-sugg__titre { font-weight: 600; margin-right: 6px; }
-  .ocaou-sugg__prix { color: {{ settings.color_accent | default: '#cd9438' }}; font-weight: 600; }
-  .ocaou-sugg__barre { text-decoration: line-through; opacity: .55; margin-left: 4px; }
+  .ocaou-sugg__prix { color: {{ settings.color_accent | default: '#cd9438' }}; font-weight: 600; white-space: nowrap; }
+  .ocaou-sugg__barre { text-decoration: line-through; opacity: .55; margin-left: 4px; white-space: nowrap; }
   .ocaou-sugg__detail { display: block; font-size: .875em; opacity: .7; margin-top: 2px; }
   .ocaou-sugg__actions { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; }
   .ocaou-sugg__cta {
