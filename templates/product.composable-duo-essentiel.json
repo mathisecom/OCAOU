@@ -14,10 +14,10 @@
       "blocks": {
         "liquid_6HNzqf": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "<style>\n  .gb-badges-container {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding-bottom: 0px;\n    margin: 0;\n    flex-wrap: wrap;\n  }\n\n  .gb-style-badge {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 7px;\n    padding: 7px 16px;\n    min-height: 32px;\n    border-radius: 12px;\n    border: 1.6px dashed #AF6C67;\n    font-size: 12px;\n    line-height: 1;\n    font-weight: 900;\n    text-transform: uppercase;\n    letter-spacing: 0.03em;\n    white-space: nowrap;\n    box-sizing: border-box;\n  }\n\n  .gb-style-badge--bestseller {\n    background: #AF6C67;\n    color: #ffffff;\n    border-color: #AF6C67;\n  }\n\n  .gb-style-badge--evolutif {\n    background: #FBF6EF;\n    color: #333333;\n    border-color: #AF6C67;\n  }\n\n  .gb-style-badge__icon {\n    width: 15px;\n    height: 15px;\n    display: inline-flex;\n    flex-shrink: 0;\n  }\n\n  .gb-style-badge__icon svg {\n    width: 100%;\n    height: 100%;\n    display: block;\n    stroke: currentColor;\n  }\n\n  @media screen and (max-width: 749px) {\n    .gb-badges-container {\n      gap: 6px;\n      padding-bottom: 0;\n      margin-bottom: -2px;\n    }\n\n    .gb-style-badge {\n      padding: 6px 13px;\n      min-height: 30px;\n      border-radius: 10px;\n      font-size: 10.5px;\n      border-width: 1.4px;\n      gap: 5px;\n    }\n\n    .gb-style-badge__icon {\n      width: 14px;\n      height: 14px;\n    }\n  }\n</style>\n\n<div class=\"gb-badges-container\">\n  <div class=\"gb-style-badge gb-style-badge--bestseller\">\n    Best Seller\n  </div>\n\n  <div class=\"gb-style-badge gb-style-badge--evolutif\">\n    <span class=\"gb-style-badge__icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n        <path d=\"M7 8.5V7C7 4.8 8.8 3 11 3H13C15.2 3 17 4.8 17 7V8.5\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n        <path d=\"M6.5 8.5H17.5C18.6 8.5 19.5 9.4 19.5 10.5V18.5C19.5 19.6 18.6 20.5 17.5 20.5H6.5C5.4 20.5 4.5 19.6 4.5 18.5V10.5C4.5 9.4 5.4 8.5 6.5 8.5Z\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/>\n        <path d=\"M8 13.5H16\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n        <path d=\"M12 10.5V16.5\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n      </svg>\n    </span>\n    Sac évolutif\n  </div>\n</div>"
-          },
-          "disabled": true
+          }
         },
         "liquid_hCXJAh": {
           "type": "liquid",
@@ -98,10 +98,10 @@
         },
         "liquid_CnEcbM": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "<style>\n  .fp-benefits-icons {\n    --fp-benefit-text: #333333;\n    --fp-benefit-border: #4f7208;\n    --fp-icon-size: 44px;\n    --fp-icon-inner-size: 30px;\n    --fp-text-size: 10px;\n\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 14px;\n    margin: 14px 0;\n    width: 100%;\n  }\n\n  .fp-benefit-item {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n    gap: 6px;\n    text-align: center;\n    color: var(--fp-benefit-text);\n  }\n\n  .fp-benefit-icon {\n    width: var(--fp-icon-size);\n    height: var(--fp-icon-size);\n    min-width: var(--fp-icon-size);\n    border: 1.5px solid var(--fp-benefit-border);\n    border-radius: 999px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden;\n    background: transparent;\n  }\n\n  .fp-benefit-icon img {\n    width: var(--fp-icon-inner-size);\n    height: var(--fp-icon-inner-size);\n    object-fit: contain;\n    display: block;\n  }\n\n  .fp-benefit-text {\n    font-size: var(--fp-text-size);\n    font-weight: 500;\n    line-height: 1.15;\n    color: #333333;\n    margin: 0;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-benefits-icons {\n      gap: 8px;\n      --fp-icon-size: 38px;\n      --fp-icon-inner-size: 26px;\n      --fp-text-size: 9.5px;\n    }\n\n    .fp-benefit-text {\n      line-height: 1.1;\n    }\n  }\n</style>\n\n<div class=\"fp-benefits-icons\">\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/icone_36.png?v=1786088039\"\n        alt=\"Évolutif\"\n        loading=\"lazy\"\n        width=\"30\"\n        height=\"30\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\"><b>ÉVOLUTIF</b></p>\n  </div>\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/Design_sans_titre_37.png?v=1782566462\" \n        alt=\"Pratique\"\n        loading=\"lazy\"\n        width=\"30\"\n        height=\"30\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\"><b>PRATIQUE</b></p>\n  </div>\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/Design_sans_titre_38.png?v=1782566493\" \n        alt=\"Fonctionnel et pédagogique\"\n        loading=\"lazy\"\n        width=\"30\"\n        height=\"30\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\">\n      <b>FONCTIONNEL &amp; PÉDAGOGIQUE</b>\n    </p>\n  </div>\n\n  <div class=\"fp-benefit-item\">\n    <div class=\"fp-benefit-icon\">\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0880/4968/0718/files/Design_sans_titre_39.png?v=1782566493\" \n        alt=\"Déperlant\"\n        loading=\"lazy\"\n        width=\"30\"\n        height=\"30\"\n      >\n    </div>\n    <p class=\"fp-benefit-text\"><b>DÉPERLANT</b></p>\n  </div>\n\n</div>"
-          },
-          "disabled": true
+          }
         },
         "associated_products_dQCNyG": {
           "type": "associated_products",
@@ -124,36 +124,36 @@
         },
         "collapsible_text_QkwrFT": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
             "title": "Dimensions (en cm)",
             "content": "<p><strong>Dimensions fermées:</strong><br/>L34cm x H27cm x P10cm</p><p><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm </p>",
             "page": ""
-          },
-          "disabled": true
+          }
         },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
             "title": "Composition Textile",
             "content": "<p>Extérieur: 100% Coton</p><p>Intérieur: 100% coton</p><p>Filet: 100% polyester</p><p>Rembourrage : 100% polyurétane</p><p><strong>Sac sherpa</strong></p><p>Extérieur: 100% polyesther</p><p></p>",
             "page": ""
-          },
-          "disabled": true
+          }
         },
         "collapsible_text_HKATAV": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
             "title": "Entretien",
             "content": "<ul><li>Laver séparément délicatement à la main à l'eau froide</li><li>Ne pas faire tremper</li><li>Essorer à la main</li><li>Remodeler avant séchage</li><li>Séchage à plat</li><li>Ne pas sécher au sèche linge</li><li>Ne pas repasser</li><li>Ne pas utiliser d'agent de blanchiment</li></ul>",
             "page": ""
-          },
-          "disabled": true
+          }
         },
         "liquid_7PLJAn": {
           "type": "liquid",
@@ -217,7 +217,7 @@
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 2,
         "subheading": "",
-        "title": "Il existe aussi en coffret",
+        "title": "Existe aussi en coffret",
         "content": "",
         "link_url": "",
         "link_text": "View all",
@@ -405,6 +405,7 @@
         "pastille_VK8hn9",
         "pastille_xacKVt"
       ],
+      "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_43_57.png",
@@ -448,8 +449,7 @@
         "padding_bottom": 80,
         "padding_top_mobile": 48,
         "padding_bottom_mobile": 8
-      },
-      "disabled": true
+      }
     },
     "image_with_text_overlay_wrRh6T": {
       "type": "image-with-text-overlay",
@@ -472,6 +472,7 @@
         "heading_yBeiCm",
         "richtext_k3QBRy"
       ],
+      "disabled": true,
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
@@ -484,8 +485,7 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
-      },
-      "disabled": true
+      }
     },
     "sectionsicones_Y3DFyV": {
       "type": "sectionsicones",
@@ -547,6 +547,7 @@
         "icon_43MEdK",
         "icon_iNqmJ9"
       ],
+      "disabled": true,
       "name": "Clean icônes",
       "settings": {
         "title": "Le sac intelligent qui pense à tout !",
@@ -620,8 +621,7 @@
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
         "header_margin_bottom_mobile": 30
-      },
-      "disabled": true
+      }
     },
     "bandedefilante_6mBxhe": {
       "type": "bandedefilante",
@@ -726,6 +726,7 @@
         "pastille_c6PkmD",
         "pastille_GEDQqY"
       ],
+      "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_24_aout_2026_19_25_29.png",
@@ -769,8 +770,7 @@
         "padding_bottom": 80,
         "padding_top_mobile": 8,
         "padding_bottom_mobile": 8
-      },
-      "disabled": true
+      }
     },
     "multi_column_FnzMQb": {
       "type": "multi-column",
@@ -820,6 +820,7 @@
         "item_KhaUjE",
         "item_rRTD9L"
       ],
+      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -832,8 +833,7 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
-      },
-      "disabled": true
+      }
     },
     "image_with_text_overlay_MqfmTV": {
       "type": "image-with-text-overlay",
@@ -863,6 +863,7 @@
         "heading_MdDYh3",
         "richtext_QJwNGX"
       ],
+      "disabled": true,
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
@@ -875,8 +876,7 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
-      },
-      "disabled": true
+      }
     },
     "avantageicons_k7faYm": {
       "type": "avantageicons",
@@ -950,6 +950,7 @@
         "benefit_BqnDgY",
         "benefit_RyBCLy"
       ],
+      "disabled": true,
       "name": "Avantages icônes",
       "settings": {
         "title": "Vous allez adorer le sac O’CAOU parce que...",
@@ -995,8 +996,7 @@
         "padding_bottom_mobile": 40,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
-      },
-      "disabled": true
+      }
     },
     "30retours_YLhBEm": {
       "type": "30retours",
