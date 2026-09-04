@@ -792,7 +792,7 @@
         "carte_fPbR6h": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_22_09_06.png",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_22_49_00.png",
             "label": "",
             "collection": "",
             "link": ""
@@ -810,7 +810,7 @@
         "carte_Yxdt4y": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/format_34_d7b93609-818c-4c68-9cd6-86f06c749ed7.png",
+            "image": "shopify://shop_images/format_34_4e9a5766-c39c-485b-a3c1-b7dcd0f910d9.png",
             "label": "",
             "collection": "",
             "link": ""
@@ -839,6 +839,88 @@
         "heading_color": "#1d2153",
         "full_width": true,
         "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "ratio": "3 / 4",
+        "gap": 12,
+        "gap_mobile": 10,
+        "radius": 0,
+        "label_bg": "#b3946a",
+        "label_bg_hover": "#9a7d55",
+        "label_color": "#ffffff",
+        "bg_color": "#faf6ef",
+        "side_padding": 20,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "grillecollections_7p7pti": {
+      "type": "grillecollections",
+      "blocks": {
+        "carte_gFWLMW": {
+          "type": "carte",
+          "settings": {
+            "label": "Les sacs à dos",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_hxUqXb": {
+          "type": "carte",
+          "settings": {
+            "label": "Le bain rayé",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_Ck8k7w": {
+          "type": "carte",
+          "settings": {
+            "label": "Le repas",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_gj83dz": {
+          "type": "carte",
+          "settings": {
+            "label": "Les carreaux",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_UgtDiG": {
+          "type": "carte",
+          "settings": {
+            "label": "Les gourdes",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_gBkGnU": {
+          "type": "carte",
+          "settings": {
+            "label": "Les coffrets",
+            "collection": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "carte_gFWLMW",
+        "carte_hxUqXb",
+        "carte_Ck8k7w",
+        "carte_gj83dz",
+        "carte_UgtDiG",
+        "carte_gBkGnU"
+      ],
+      "name": "Grille de collections",
+      "settings": {
+        "heading": "",
+        "heading_align": "center",
+        "heading_color": "#1d2153",
+        "full_width": true,
+        "columns_desktop": 6,
         "columns_tablet": 3,
         "columns_mobile": "2",
         "ratio": "3 / 4",
@@ -1539,6 +1621,7 @@
     "bandedefilante_6mBxhe",
     "imagewithtexticons_pncmHL",
     "grillecollections_33TLNT",
+    "grillecollections_7p7pti",
     "multi_column_FnzMQb",
     "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
