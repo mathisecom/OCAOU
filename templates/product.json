@@ -860,7 +860,8 @@
         "carte_gFWLMW": {
           "type": "carte",
           "settings": {
-            "label": "Les sacs à dos",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_23_10_33.png",
+            "label": "Pour langer",
             "collection": "",
             "link": ""
           }
@@ -868,7 +869,8 @@
         "carte_hxUqXb": {
           "type": "carte",
           "settings": {
-            "label": "Le bain rayé",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_23_07_34.png",
+            "label": "Pour l'école",
             "collection": "",
             "link": ""
           }
