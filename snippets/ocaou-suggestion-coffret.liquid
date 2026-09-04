@@ -174,6 +174,18 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne);
       });
 
+      // Les cadeaux poses par les blocs de packs maison partent avec le regroupement :
+      // le coffret officiel porte ses propres cadeaux, sinon le client se retrouve
+      // avec une poignee facturee alors qu'elle lui etait annoncee offerte.
+      deplies.forEach(function (d) {
+        if (pris.indexOf(d) !== -1) return;
+        var props = d.ligne.properties || {};
+        var cadeau = Object.keys(props).some(function (k) { return /cadeau offert/i.test(k); });
+        if (!cadeau) return;
+        pris.push(d);
+        if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne);
+      });
+
       // Un coffret deja au panier ne se defait que s'il est absorbe en entier.
       var entier = lignes.every(function (ligne) {
         var total = deplies.filter(function (d) { return d.ligne === ligne; });
