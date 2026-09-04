@@ -792,7 +792,8 @@
         "carte_fPbR6h": {
           "type": "carte",
           "settings": {
-            "label": "Les sacs à dos",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_22_09_06.png",
+            "label": "",
             "collection": "",
             "link": ""
           }
@@ -800,7 +801,8 @@
         "carte_FjxDGB": {
           "type": "carte",
           "settings": {
-            "label": "Le bain rayé",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_22_15_27.png",
+            "label": "",
             "collection": "",
             "link": ""
           }
