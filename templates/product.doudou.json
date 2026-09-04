@@ -217,7 +217,7 @@
             "button_label": "Découvrir",
             "show_prices": true,
             "desktop_width_percent": 100,
-            "columns_desktop": "4",
+            "columns_desktop": "3",
             "columns_mobile": "2",
             "alignment": "left",
             "gap": 16,
@@ -669,35 +669,6 @@
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
         "header_margin_bottom_mobile": 30
-      }
-    },
-    "featured_collection_zAmmUW": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "collection": "",
-        "products": [
-          "coffret-comme-les-grands-1",
-          "coffret-naissance-1"
-        ],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_count": 2,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "Il existe aussi en coffret",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
       }
     },
     "bandedefilante_6mBxhe": {
@@ -1755,7 +1726,6 @@
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
-    "featured_collection_zAmmUW",
     "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
     "imagewithtexticons_pncmHL",
