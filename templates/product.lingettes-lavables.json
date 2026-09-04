@@ -75,6 +75,7 @@
         },
         "associated_products_dQCNyG": {
           "type": "associated_products",
+          "disabled": true,
           "settings": {
             "title": "À compléter avec les coussinets, la lunch box et les couverts",
             "stack_products": true,
@@ -253,46 +254,10 @@
             "button_radius": 24
           },
           "blocks": {}
-        },
-        "ai_gen_block_4e66e81_UjRwQJ": {
-          "type": "ai_gen_block_4e66e81",
-          "name": "Produits achetés ensemble",
-          "settings": {
-            "heading": "Aussi en coffret",
-            "products": [
-              "coffret-pour-maman-1"
-            ],
-            "button_label": "Découvrir",
-            "show_prices": true,
-            "desktop_width_percent": 100,
-            "columns_desktop": "4",
-            "columns_mobile": "2",
-            "alignment": "left",
-            "gap": 16,
-            "heading_size": 26,
-            "heading_size_mobile": 22,
-            "padding_vertical": 32,
-            "padding_horizontal": 24,
-            "padding_vertical_mobile": 24,
-            "padding_horizontal_mobile": 16,
-            "background_color": "#ffffff",
-            "card_background": "#ffffff",
-            "heading_color": "#1a1a1a",
-            "text_color": "#1a1a1a",
-            "muted_color": "#677279",
-            "placeholder_color": "#ede8e0",
-            "button_background": "#cd9438",
-            "button_text_color": "#ffffff",
-            "border_radius": 16,
-            "card_radius": 16,
-            "button_radius": 24
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_4e66e81_AHM8gn",
-        "ai_gen_block_4e66e81_UjRwQJ"
+        "ai_gen_block_4e66e81_AHM8gn"
       ],
       "settings": {}
     },
