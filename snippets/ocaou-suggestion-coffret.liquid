@@ -239,13 +239,18 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
   /* ------------------------------------------------------------- cartes */
 
+  // « OFFERT » sert d'etiquette : place devant, il n'a pas a s'accorder avec la liste.
+  function mentionOfferts(noms) {
+    if (!noms || !noms.length) return null;
+    return (noms.length > 1 ? 'OFFERTS' : 'OFFERT') + ' : ' + liste(noms) + '.';
+  }
+
   function carteInfo(info) {
-    var offerts = (info.offerts || []).map(function (n) { return n.toUpperCase(); });
     var m = carte({
       image: info.image,
       titre: 'Vos articles ont été réunis dans le ' + info.titre,
       prix: null,
-      detail: offerts.length ? liste(offerts) + ' OFFERTS.' : null
+      detail: mentionOfferts(info.offerts)
     });
     if (info.economie > 0) {
       m.el.querySelector('.ocaou-sugg__txt')
@@ -263,13 +268,13 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
   function carteProposition(trouve) {
     var c = trouve.coffret;
-    var offerts = trouve.enPlus.map(function (n) { return n.toUpperCase(); });
     var m = carte({
       image: c.image,
       titre: 'Passez au ' + c.titre,
       prix: trouve.combi.prix,
       barre: trouve.combi.prixBarre,
-      detail: 'Votre article + ' + liste(offerts) + ' OFFERTS, pour ' + prix(-trouve.economie) + ' de plus.'
+      detail: 'Votre article + ' + mentionOfferts(trouve.enPlus).replace(/\.$/, '') +
+              ', pour ' + prix(-trouve.economie) + ' de plus.'
     });
 
     var non = bloc('ocaou-sugg__non', 'Non merci', 'button');
