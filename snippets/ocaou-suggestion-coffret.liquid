@@ -147,17 +147,21 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       var combi = c.combinaisons[cle];
       if (!combi || !combi.dispo) continue;
 
-      // Les articles compris d'office dans le coffret sortent aussi du panier,
-      // a condition qu'ils soient vendus a l'unite et non pris dans un autre coffret.
+      // Les articles compris d'office dans le coffret sortent aussi du panier.
+      // Un article venant d'un coffret deja au panier n'est repris que si ce coffret
+      // est deja en train d'etre absorbe : on ne pioche pas dans un coffret intact.
+      var lignes = [];
+      pris.forEach(function (d) { if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne); });
       deplies.forEach(function (d) {
-        if (pris.indexOf(d) === -1 && !d.issuDunCoffret &&
-            c.inclus.some(function (inc) { return inc.variante === d.variante; })) pris.push(d);
+        if (pris.indexOf(d) !== -1) return;
+        if (!c.inclus.some(function (inc) { return inc.variante === d.variante; })) return;
+        if (d.issuDunCoffret && lignes.indexOf(d.ligne) === -1) return;
+        pris.push(d);
+        if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne);
       });
 
       // Un coffret deja au panier ne se defait que s'il est absorbe en entier.
       // Sans cette regle, on lui emprunterait un article et on compterait son prix.
-      var lignes = [];
-      pris.forEach(function (d) { if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne); });
       var entier = lignes.every(function (ligne) {
         var total = deplies.filter(function (d) { return d.ligne === ligne; });
         return total.every(function (d) { return pris.indexOf(d) !== -1; });
