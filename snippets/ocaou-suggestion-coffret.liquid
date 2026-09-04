@@ -1,12 +1,12 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
-O'CAOU — SUGGESTION DE COFFRET
+O'CAOU — REGROUPEMENT EN COFFRET
 ----------------------------------------------------------------------------------------------------------------------
 
-Propose le coffret correspondant, jamais ne l'impose.
+Dans le panier, quand les articles reunis forment un coffret :
 
-* Sur une fiche produit : signale que l'article existe aussi dans un coffret.
-* Dans le panier : si les articles reunis forment un coffret, propose l'echange en un clic.
+* le coffret est moins cher : le regroupement se fait tout seul, le client est informe ;
+* le coffret coute plus cher parce qu'il ajoute des articles : on propose, on n'impose pas.
 
 La table de correspondance vit dans assets/ocaou-coffrets.json, regeneree par
 _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur ici.
@@ -34,14 +34,11 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg__cta[disabled] { opacity: .6; cursor: wait; }
   .ocaou-sugg__non { border: 0; background: none; cursor: pointer; font: inherit; font-size: .875em; opacity: .55; padding: 4px; }
   .ocaou-sugg__non:hover { opacity: .9; }
-  /* Peu de place : l'image reste a gauche du texte, les boutons passent dessous.
-     Empiler l'image au-dessus du titre gachait une ligne entiere. */
+
+  /* Peu de place : l'image reste a gauche du texte, les boutons passent dessous. */
   .ocaou-sugg--serre {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    column-gap: 12px;
-    row-gap: 10px;
-    align-items: center;
+    display: grid; grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 12px; row-gap: 10px; align-items: center;
   }
   .ocaou-sugg--serre .ocaou-sugg__img { grid-column: 1; grid-row: 1; width: 40px; height: 40px; }
   .ocaou-sugg--serre .ocaou-sugg__txt { grid-column: 2; grid-row: 1; }
@@ -50,11 +47,8 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
   @media screen and (max-width: 749px) {
     .ocaou-sugg {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      column-gap: 12px;
-      row-gap: 10px;
-      align-items: center;
+      display: grid; grid-template-columns: auto minmax(0, 1fr);
+      column-gap: 12px; row-gap: 10px; align-items: center;
     }
     .ocaou-sugg__img { grid-column: 1; grid-row: 1; width: 40px; height: 40px; }
     .ocaou-sugg__txt { grid-column: 2; grid-row: 1; }
@@ -67,6 +61,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   var SOURCE = {{ 'ocaou-coffrets.json' | asset_url | json }};
   var table = null;
   var refuses = [];
+  var enCours = false;
   try { refuses = JSON.parse(sessionStorage.getItem('ocaou-sugg-refus') || '[]'); } catch (e) {}
 
   function prix(centimes) {
@@ -88,10 +83,9 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   }
 
   function carte(options) {
-    var el = document.createElement(options.href ? 'a' : 'div');
+    var el = document.createElement('div');
     el.className = 'ocaou-sugg';
-    el.setAttribute('data-ocaou-sugg', options.zone);
-    if (options.href) el.href = options.href;
+    el.setAttribute('data-ocaou-sugg', 'panier');
 
     if (options.image) {
       var img = document.createElement('img');
@@ -104,7 +98,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
     var txt = bloc('ocaou-sugg__txt', null, 'div');
     txt.appendChild(bloc('ocaou-sugg__titre', options.titre));
-    txt.appendChild(bloc('ocaou-sugg__prix', prix(options.prix)));
+    if (options.prix != null) txt.appendChild(bloc('ocaou-sugg__prix', prix(options.prix)));
     if (options.barre) txt.appendChild(bloc('ocaou-sugg__barre', prix(options.barre)));
     if (options.detail) txt.appendChild(bloc('ocaou-sugg__detail', options.detail));
     el.appendChild(txt);
@@ -114,11 +108,11 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     return { el: el, actions: actions };
   }
 
-  /* ------------------------------------------------------------------ panier */
+  /* ------------------------------------------------------- reconnaissance */
 
   // Une ligne de panier qui est elle-meme un coffret compte pour ses articles :
-  // c'est ce qui permet de proposer le coffret de trois a partir d'un duo plus un article.
-  // Le prix reste porte par la ligne reelle, jamais par un composant.
+  // c'est ce qui permet de reconnaitre le coffret de trois a partir d'un duo
+  // plus un article. Le prix reste porte par la ligne reelle.
   function deplie(panier) {
     var entrees = [];
     panier.items.forEach(function (it) {
@@ -143,11 +137,11 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   function chercheCoffret(panier) {
     var deplies = deplie(panier);
 
-    // La table est rangee du plus grand coffret au plus petit : le premier qui
-    // correspond est celui qui reunit le plus d'articles.
+    // La table va du plus grand coffret au plus petit : le premier qui correspond
+    // est celui qui reunit le plus d'articles.
     for (var i = 0; i < table.coffrets.length; i++) {
       var c = table.coffrets[i];
-      if (panier.items.some(function (it) { return it.product_id === c.id; })) continue; // deja pris
+      if (panier.items.some(function (it) { return it.product_id === c.id; })) continue;
 
       var pris = [];
       var variantes = [];
@@ -180,23 +174,21 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       });
 
       // Un coffret deja au panier ne se defait que s'il est absorbe en entier.
-      // Sans cette regle, on lui emprunterait un article et on compterait son prix.
       var entier = lignes.every(function (ligne) {
         var total = deplies.filter(function (d) { return d.ligne === ligne; });
         return total.every(function (d) { return pris.indexOf(d) !== -1; });
       });
       if (!entier) continue;
 
-      // Un seul exemplaire de chaque article part dans le coffret : on compare au prix
-      // unitaire, meme si la ligne du panier en contient plusieurs.
+      // Un seul exemplaire de chaque article part dans le coffret : on compare au
+      // prix unitaire, meme si la ligne du panier en contient plusieurs.
       var actuel = lignes.reduce(function (t, l) { return t + l.final_price; }, 0);
 
-      // Ce que le coffret apporte en plus de ce qui est deja dans le panier.
       var dejaLa = pris.map(function (d) { return d.variante; });
       var enPlus = c.inclus.filter(function (inc) { return dejaLa.indexOf(inc.variante) === -1; })
                            .map(function (inc) { return inc.nom; });
 
-      if (combi.prix >= actuel && !enPlus.length) continue; // ni moins cher, ni plus complet
+      if (combi.prix >= actuel && !enPlus.length) continue;
 
       return {
         coffret: c, combi: combi, lignes: lignes, actuel: actuel,
@@ -205,6 +197,8 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     }
     return null;
   }
+
+  /* ------------------------------------------------------------ echange */
 
   function echange(trouve) {
     var suite = Promise.resolve();
@@ -224,22 +218,54 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: lignes })
-      }).then(function () { window.location.reload(); });
+      });
     });
   }
 
-  function cartePanier(trouve) {
-    var c = trouve.coffret;
-    var gagne = trouve.economie > 0;
+  function apres(trouve) {
+    try {
+      sessionStorage.setItem('ocaou-sugg-info', JSON.stringify({
+        titre: trouve.coffret.titre,
+        economie: trouve.economie,
+        offerts: trouve.enPlus,
+        image: trouve.coffret.image
+      }));
+    } catch (e) {}
+    var surLaPagePanier = window.location.pathname.indexOf('/cart') !== -1;
+    if (!surLaPagePanier && window.OCAOUCart && window.OCAOUCart.add) { enCours = false; passe(); return; }
+    window.location.reload();
+  }
+
+  /* ------------------------------------------------------------- cartes */
+
+  function carteInfo(info) {
+    var offerts = (info.offerts || []).map(function (n) { return n.toUpperCase(); });
     var m = carte({
-      zone: 'panier',
+      image: info.image,
+      titre: 'Vos articles ont été réunis dans le ' + info.titre,
+      prix: null,
+      detail: offerts.length ? liste(offerts) + ' OFFERTS.' : null
+    });
+    if (info.economie > 0) {
+      m.el.querySelector('.ocaou-sugg__txt')
+        .appendChild(bloc('ocaou-sugg__prix', 'vous économisez ' + prix(info.economie)));
+    }
+    var ok = bloc('ocaou-sugg__non', 'J’ai compris', 'button');
+    ok.type = 'button';
+    ok.addEventListener('click', function () { m.el.remove(); });
+    m.actions.appendChild(ok);
+    return m.el;
+  }
+
+  function carteProposition(trouve) {
+    var c = trouve.coffret;
+    var offerts = trouve.enPlus.map(function (n) { return n.toUpperCase(); });
+    var m = carte({
       image: c.image,
-      titre: gagne ? 'Vos articles forment le ' + c.titre : 'Passez au ' + c.titre,
+      titre: 'Passez au ' + c.titre,
       prix: trouve.combi.prix,
-      barre: gagne ? trouve.actuel : trouve.combi.prixBarre,
-      detail: gagne
-        ? (trouve.enPlus.length ? 'Avec ' + liste(trouve.enPlus) + ' en plus.' : 'Vous économisez ' + prix(trouve.economie) + '.')
-        : 'Votre article + ' + liste(trouve.enPlus) + ', pour ' + prix(-trouve.economie) + ' de plus.'
+      barre: trouve.combi.prixBarre,
+      detail: 'Votre article + ' + liste(offerts) + ' OFFERTS, pour ' + prix(-trouve.economie) + ' de plus.'
     });
 
     var non = bloc('ocaou-sugg__non', 'Non merci', 'button');
@@ -250,20 +276,16 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       m.el.remove();
     });
 
-    var oui = bloc('ocaou-sugg__cta', gagne ? 'Remplacer' : 'Passer au coffret', 'button');
+    var oui = bloc('ocaou-sugg__cta', 'Passer au coffret', 'button');
     oui.type = 'button';
     oui.addEventListener('click', function () {
       oui.disabled = true;
       oui.textContent = 'Un instant…';
-      echange(trouve).then(function () {
-        // Dans le tiroir, le panier se rafraichit tout seul : recharger le fermerait.
-        // Sur la page panier, il faut recharger pour que les lignes se mettent a jour.
-        var surLaPagePanier = window.location.pathname.indexOf('/cart') !== -1;
-        if (!surLaPagePanier && window.OCAOUCart && window.OCAOUCart.add) { passe(); return; }
-        window.location.reload();
-      }).catch(function () {
+      enCours = true;
+      echange(trouve).then(function () { apres(trouve); }).catch(function () {
+        enCours = false;
         oui.disabled = false;
-        oui.textContent = gagne ? 'Remplacer' : 'Passer au coffret';
+        oui.textContent = 'Passer au coffret';
       });
     });
 
@@ -272,132 +294,63 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     return m.el;
   }
 
+  /* ------------------------------------------------------------- rendu */
+
   function hotesPanier() {
     var hotes = [];
     var recap = document.querySelector('.cart-order');
-    if (recap && recap.parentElement) hotes.push({ parent: recap.parentElement, avant: recap, compact: false });
+    if (recap && recap.parentElement) hotes.push({ parent: recap.parentElement, avant: recap, serre: false });
     document.querySelectorAll('[name="checkout"]').forEach(function (bouton) {
       if (recap && recap.contains(bouton)) return;
       var f = bouton.closest('form');
-      if (f && f.parentElement) hotes.push({ parent: f.parentElement, avant: f, compact: true });
+      if (f && f.parentElement) hotes.push({ parent: f.parentElement, avant: f, serre: true });
     });
     return hotes;
   }
 
-  function poseDansPanier() {
-    var hotes = hotesPanier();
-    if (!hotes.length) return;
+  function pose(fabrique) {
+    hotesPanier().forEach(function (h) {
+      if (h.parent.querySelector('[data-ocaou-sugg="panier"]')) return;
+      var c = fabrique();
+      if (h.serre) c.classList.add('ocaou-sugg--serre');
+      h.parent.insertBefore(c, h.avant);
+    });
+  }
+
+  function passe() {
+    if (!table || enCours) return;
+    if (!hotesPanier().length) return;
+
     fetch(window.Shopify.routes.root + 'cart.js', { headers: { 'Accept': 'application/json' } })
       .then(function (r) { return r.json(); })
       .then(function (panier) {
         document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
+
+        // Message qui suit un regroupement automatique.
+        var info = null;
+        try { info = JSON.parse(sessionStorage.getItem('ocaou-sugg-info') || 'null'); } catch (e) {}
+        if (info) {
+          sessionStorage.removeItem('ocaou-sugg-info');
+          pose(function () { return carteInfo(info); });
+          return;
+        }
+
         if (!panier.items || panier.items.length < 2) return;
         var trouve = chercheCoffret(panier);
-        if (!trouve || refuses.indexOf(trouve.coffret.id) !== -1) return;
-        hotes.forEach(function (h) {
-          if (h.parent.querySelector('[data-ocaou-sugg="panier"]')) return;
-          var carte = cartePanier(trouve);
-          if (h.compact) carte.classList.add('ocaou-sugg--serre');
-          h.parent.insertBefore(carte, h.avant);
-        });
+        if (!trouve) return;
+
+        // Moins cher : on regroupe tout seul, le client est informe apres coup.
+        if (trouve.economie > 0) {
+          enCours = true;
+          echange(trouve).then(function () { apres(trouve); }).catch(function () { enCours = false; });
+          return;
+        }
+
+        // Plus cher parce que le coffret ajoute des articles : on ne l'impose pas.
+        if (refuses.indexOf(trouve.coffret.id) !== -1) return;
+        pose(function () { return carteProposition(trouve); });
       })
       .catch(function () {});
-  }
-
-  /* ----------------------------------------------------------- fiche produit */
-
-  // La variante actuellement choisie sur la fiche produit.
-  function varianteChoisie() {
-    var url = new URLSearchParams(window.location.search).get('variant');
-    if (url) return parseInt(url, 10);
-    var noeud = document.querySelector('.product-info variant-picker script[data-variant]') ||
-                document.querySelector('variant-picker script[data-variant]');
-    if (!noeud) return null;
-    try { return JSON.parse(noeud.textContent || '{}').id || null; } catch (e) { return null; }
-  }
-
-  // La combinaison la moins chere qui contient la couleur choisie par le client.
-  function combiPourVariante(c, varianteId) {
-    var retenue = null;
-    Object.keys(c.combinaisons).forEach(function (cle) {
-      var v = c.combinaisons[cle];
-      if (!v.dispo) return;
-      if (cle.split('-').indexOf(String(varianteId)) === -1) return;
-      if (retenue === null || v.prix < retenue.prix) retenue = v;
-    });
-    return retenue;
-  }
-
-  // La combinaison disponible la moins chere d'un coffret.
-  function prixMini(c) {
-    return Object.keys(c.combinaisons).reduce(function (m, k) {
-      var v = c.combinaisons[k];
-      return (!v.dispo) ? m : (m === null || v.prix < m.prix) ? v : m;
-    }, null);
-  }
-
-  function poseDansFiche() {
-    var meta = window.ShopifyAnalytics && window.ShopifyAnalytics.meta;
-    if (!meta || !meta.page || meta.page.pageType !== 'product') return;
-    var produitId = meta.product && meta.product.id;
-    if (!produitId) return;
-
-    // Certaines fiches portent deja un bloc de packs maison. On n'y repete pas un
-    // coffret deja cite, mais on continue de signaler ceux qui manquent.
-    var blocMaison = document.querySelector('.duoP-card, .kitR-card, .duoP-btn, .kitR-btn');
-    var texteMaison = '';
-    if (blocMaison) {
-      var racine = blocMaison.closest('[class*="duoP"], [class*="kitR"], .product-info__block-item') || blocMaison;
-      texteMaison = (racine.textContent || '').replace(/\s+/g, ' ').toLowerCase();
-    }
-
-    // Le bloc maison nomme parfois la meme offre autrement : on compare aussi le prix.
-    function dejaCite(c) {
-      if (!texteMaison) return false;
-      if (texteMaison.indexOf(c.titre.toLowerCase()) !== -1) return true;
-      var moins = prixMini(c);
-      return moins ? texteMaison.indexOf(prix(moins.prix).toLowerCase()) !== -1 : false;
-    }
-
-    var candidats = table.coffrets.filter(function (c) {
-      if (c.id === produitId || c.articles.indexOf(produitId) === -1) return false;
-      return !dejaCite(c);
-    });
-    if (!candidats.length) return;
-
-    // Le pas le plus court d'abord : le coffret qui demande le moins d'articles en plus.
-    candidats.sort(function (a, b) { return a.articles.length - b.articles.length; });
-
-    var hote = document.querySelector('.product-info buy-buttons');
-    if (!hote || !hote.parentElement) return;
-    if (hote.parentElement.querySelector('[data-ocaou-sugg="fiche"]')) return;
-
-    candidats.slice(0, 2).reverse().forEach(function (c) {
-      var autres = c.nomsArticles.filter(function (_, i) { return c.articles[i] !== produitId; });
-      var choisie = varianteChoisie();
-      var mini = (choisie && combiPourVariante(c, choisie)) || prixMini(c);
-      if (!mini) return;
-
-      var m = carte({
-        zone: 'fiche',
-        href: c.url + '?variant=' + mini.variante,
-        image: c.image,
-        titre: 'Aussi dans le ' + c.titre,
-        prix: mini.prix,
-        barre: mini.prixBarre,
-        detail: 'Avec ' + liste(autres.concat(c.inclus.map(function (i) { return i.nom; }))) + '.'
-      });
-      m.actions.appendChild(bloc('ocaou-sugg__cta', 'Voir le coffret'));
-      hote.parentElement.insertBefore(m.el, hote.nextSibling);
-    });
-  }
-
-  /* ------------------------------------------------------------------ amorce */
-
-  function passe() {
-    if (!table) return;
-    poseDansFiche();
-    poseDansPanier();
   }
 
   fetch(SOURCE)
@@ -405,20 +358,14 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     .then(function (t) {
       table = t;
       passe();
-      // Le panier lateral s'ouvre et se rafraichit sans rechargement de page.
       document.addEventListener('cart:change', passe);
       document.addEventListener('cart:refresh', passe);
-      // Changer de couleur sur la fiche doit reporter ce choix sur les coffrets proposes.
-      document.addEventListener('variant:change', function () {
-        document.querySelectorAll('[data-ocaou-sugg="fiche"]').forEach(function (n) { n.remove(); });
-        poseDansFiche();
-      });
       var minuteur = null;
       new MutationObserver(function () {
         clearTimeout(minuteur);
-        minuteur = setTimeout(poseDansPanier, 250);
+        minuteur = setTimeout(passe, 250);
       }).observe(document.body, { childList: true, subtree: true });
     })
-    .catch(function () { /* la suggestion est un bonus : son absence ne casse rien */ });
+    .catch(function () { /* le regroupement est un bonus : son absence ne casse rien */ });
 })();
 </script>
