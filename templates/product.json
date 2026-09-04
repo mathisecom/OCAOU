@@ -810,7 +810,8 @@
         "carte_Yxdt4y": {
           "type": "carte",
           "settings": {
-            "label": "Le repas",
+            "image": "shopify://shop_images/format_34_d7b93609-818c-4c68-9cd6-86f06c749ed7.png",
+            "label": "",
             "collection": "",
             "link": ""
           }
