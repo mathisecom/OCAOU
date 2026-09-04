@@ -295,34 +295,6 @@
       ],
       "settings": {}
     },
-    "featured_collection_cKWy8m": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "collection": "",
-        "products": [
-          "coffret-pour-maman-1"
-        ],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_count": 2,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "Elles existent aussi en coffret",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
     "rich_text_7LA3LQ": {
       "type": "rich-text",
       "blocks": {
@@ -1517,7 +1489,6 @@
   "order": [
     "main",
     "17884529174cdbd1b5",
-    "featured_collection_cKWy8m",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "avisparents_byECTe",
