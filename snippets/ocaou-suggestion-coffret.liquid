@@ -238,7 +238,10 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       oui.disabled = true;
       oui.textContent = 'Un instant…';
       echange(trouve).then(function () {
-        if (!window.OCAOUCart || !window.OCAOUCart.add) return;
+        // Dans le tiroir, le panier se rafraichit tout seul : recharger le fermerait.
+        // Sur la page panier, il faut recharger pour que les lignes se mettent a jour.
+        var surLaPagePanier = window.location.pathname.indexOf('/cart') !== -1;
+        if (!surLaPagePanier && window.OCAOUCart && window.OCAOUCart.add) { passe(); return; }
         window.location.reload();
       }).catch(function () {
         oui.disabled = false;
