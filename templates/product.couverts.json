@@ -1296,6 +1296,7 @@
         "item_jbmjBC": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/20260904_171213.jpg",
             "column_size": "3",
             "title": "Des couverts protégés",
             "heading_tag": "h3",
@@ -1308,6 +1309,7 @@
         "item_z6n4dY": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/20260904_170456.jpg",
             "column_size": "3",
             "title": "Le sac reste propre",
             "heading_tag": "h3",
