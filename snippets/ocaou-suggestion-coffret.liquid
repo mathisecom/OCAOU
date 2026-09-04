@@ -62,6 +62,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   var table = null;
   var refuses = [];
   var enCours = false;
+  var infoCourante = null;   // message de regroupement, garde tant qu'il n'est pas ferme
   try { refuses = JSON.parse(sessionStorage.getItem('ocaou-sugg-refus') || '[]'); } catch (e) {}
 
   function prix(centimes) {
@@ -252,7 +253,10 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     }
     var ok = bloc('ocaou-sugg__non', 'J’ai compris', 'button');
     ok.type = 'button';
-    ok.addEventListener('click', function () { m.el.remove(); });
+    ok.addEventListener('click', function () {
+      infoCourante = null;
+      document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
+    });
     m.actions.appendChild(ok);
     return m.el;
   }
@@ -326,12 +330,14 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       .then(function (panier) {
         document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
 
-        // Message qui suit un regroupement automatique.
-        var info = null;
-        try { info = JSON.parse(sessionStorage.getItem('ocaou-sugg-info') || 'null'); } catch (e) {}
-        if (info) {
-          sessionStorage.removeItem('ocaou-sugg-info');
-          pose(function () { return carteInfo(info); });
+        // Message qui suit un regroupement automatique. Il est garde en memoire :
+        // le panier se redessine plusieurs fois et effacerait la carte.
+        try {
+          var stocke = JSON.parse(sessionStorage.getItem('ocaou-sugg-info') || 'null');
+          if (stocke) { infoCourante = stocke; sessionStorage.removeItem('ocaou-sugg-info'); }
+        } catch (e) {}
+        if (infoCourante) {
+          pose(function () { return carteInfo(infoCourante); });
           return;
         }
 
