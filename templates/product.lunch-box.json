@@ -75,6 +75,7 @@
         },
         "associated_products_dQCNyG": {
           "type": "associated_products",
+          "disabled": true,
           "settings": {
             "title": "À compléter avec les couverts et les lingettes lavables",
             "stack_products": false,
