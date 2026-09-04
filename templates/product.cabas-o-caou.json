@@ -208,34 +208,50 @@
         "input_text_color": ""
       }
     },
-    "featured_collection_UME4KY": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "collection": "",
-        "products": [
-          "coffret-balades-1",
-          "duo-pratique"
-        ],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_count": 2,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "Il existe aussi en coffret",
-        "content": "",
-        "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
+    "blocks_jgNmLc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4e66e81_MhmgiJ": {
+          "type": "ai_gen_block_4e66e81",
+          "settings": {
+            "heading": "Existe aussi en",
+            "products": [
+              "coffret-balades-1",
+              "duo-pratique"
+            ],
+            "button_label": "Découvrir",
+            "show_prices": true,
+            "desktop_width_percent": 100,
+            "columns_desktop": "2",
+            "columns_mobile": "2",
+            "alignment": "left",
+            "gap": 16,
+            "heading_size": 26,
+            "heading_size_mobile": 22,
+            "padding_vertical": 32,
+            "padding_horizontal": 24,
+            "padding_vertical_mobile": 24,
+            "padding_horizontal_mobile": 16,
+            "background_color": "#F4EDE1",
+            "card_background": "#FFFFFF",
+            "heading_color": "#1A1A1A",
+            "text_color": "#1A1A1A",
+            "muted_color": "#677279",
+            "placeholder_color": "#EDE8E0",
+            "button_background": "#CD9438",
+            "button_text_color": "#FFFFFF",
+            "border_radius": 16,
+            "card_radius": 16,
+            "button_radius": 24
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4e66e81_MhmgiJ"
+      ],
+      "name": "Produits achetés ensemble",
+      "settings": {}
     },
     "shop_the_look_hnNDdp": {
       "type": "shop-the-look",
@@ -1463,7 +1479,7 @@
   },
   "order": [
     "main",
-    "featured_collection_UME4KY",
+    "blocks_jgNmLc",
     "shop_the_look_hnNDdp",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
