@@ -270,6 +270,19 @@
         "alternate_media_position": false,
         "spacing": "none"
       }
+    },
+    "custom_liquid_THGfyy": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "liquid": "<script>(function(){function f(){document.querySelectorAll('a[href^=\"http\"]').forEach(function(a){if(a.hostname!==location.hostname){a.target='_blank';a.rel='noopener noreferrer';}})}if(document.readyState!=='loading'){f()}else{document.addEventListener('DOMContentLoaded',f)}})();</script>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -279,6 +292,7 @@
     "media_with_text_9rpgKm",
     "media_with_text_dU7kDX",
     "media_with_text_nrJ9Y4",
-    "media_with_text_waqUe4"
+    "media_with_text_waqUe4",
+    "custom_liquid_THGfyy"
   ]
 }
