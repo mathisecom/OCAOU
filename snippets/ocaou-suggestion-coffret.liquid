@@ -34,13 +34,31 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg__cta[disabled] { opacity: .6; cursor: wait; }
   .ocaou-sugg__non { border: 0; background: none; cursor: pointer; font: inherit; font-size: .875em; opacity: .55; padding: 4px; }
   .ocaou-sugg__non:hover { opacity: .9; }
-  .ocaou-sugg--compact { flex-wrap: wrap; }
-  .ocaou-sugg--compact .ocaou-sugg__img { width: 40px; height: 40px; }
-  .ocaou-sugg--compact .ocaou-sugg__actions { width: 100%; justify-content: space-between; }
-  .ocaou-sugg--compact .ocaou-sugg__cta { flex: 0 0 auto; }
+  /* Peu de place : l'image reste a gauche du texte, les boutons passent dessous.
+     Empiler l'image au-dessus du titre gachait une ligne entiere. */
+  .ocaou-sugg--serre {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 10px;
+    align-items: center;
+  }
+  .ocaou-sugg--serre .ocaou-sugg__img { grid-column: 1; grid-row: 1; width: 40px; height: 40px; }
+  .ocaou-sugg--serre .ocaou-sugg__txt { grid-column: 2; grid-row: 1; }
+  .ocaou-sugg--serre .ocaou-sugg__actions { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
+  .ocaou-sugg--serre .ocaou-sugg__cta { flex: 0 0 auto; }
+
   @media screen and (max-width: 749px) {
-    .ocaou-sugg { flex-wrap: wrap; }
-    .ocaou-sugg__actions { width: 100%; justify-content: space-between; }
+    .ocaou-sugg {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      column-gap: 12px;
+      row-gap: 10px;
+      align-items: center;
+    }
+    .ocaou-sugg__img { grid-column: 1; grid-row: 1; width: 40px; height: 40px; }
+    .ocaou-sugg__txt { grid-column: 2; grid-row: 1; }
+    .ocaou-sugg__actions { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
   }
 </style>
 
@@ -279,7 +297,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         hotes.forEach(function (h) {
           if (h.parent.querySelector('[data-ocaou-sugg="panier"]')) return;
           var carte = cartePanier(trouve);
-          if (h.compact) carte.classList.add('ocaou-sugg--compact');
+          if (h.compact) carte.classList.add('ocaou-sugg--serre');
           h.parent.insertBefore(carte, h.avant);
         });
       })
