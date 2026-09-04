@@ -199,7 +199,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
       var dejaLa = pris.map(function (d) { return d.variante; });
       var enPlus = c.inclus.filter(function (inc) { return dejaLa.indexOf(inc.variante) === -1; })
-                           .map(function (inc) { return inc.nom; });
+                           .map(function (inc) { return { nom: inc.nom, offert: !!inc.offert }; });
 
       if (combi.prix >= actuel && !enPlus.length) continue;
 
@@ -251,10 +251,17 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
   /* ------------------------------------------------------------- cartes */
 
+  // Seuls le pochon et la poignee sont des cadeaux. Les autres articles du coffret
+  // s'annoncent sans mention : ils sont compris dans le prix, pas offerts.
   // « OFFERT » sert d'etiquette : place devant, il n'a pas a s'accorder avec la liste.
-  function mentionOfferts(noms) {
-    if (!noms || !noms.length) return null;
-    return (noms.length > 1 ? 'OFFERTS' : 'OFFERT') + ' : ' + liste(noms) + '.';
+  function mentionAjouts(items) {
+    if (!items || !items.length) return null;
+    var cadeaux = [], compris = [];
+    items.forEach(function (i) { (i.offert ? cadeaux : compris).push(i.nom); });
+    var bouts = [];
+    if (compris.length) bouts.push('Avec ' + liste(compris) + '.');
+    if (cadeaux.length) bouts.push((cadeaux.length > 1 ? 'OFFERTS' : 'OFFERT') + ' : ' + liste(cadeaux) + '.');
+    return bouts.join(' ');
   }
 
   function carteInfo(info) {
@@ -262,7 +269,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       image: info.image,
       titre: 'Vos articles ont été réunis dans le ' + info.titre,
       prix: null,
-      detail: mentionOfferts(info.offerts)
+      detail: mentionAjouts(info.offerts)
     });
     if (info.economie > 0) {
       m.el.querySelector('.ocaou-sugg__txt')
@@ -285,7 +292,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       titre: 'Passez au ' + c.titre,
       prix: trouve.combi.prix,
       barre: trouve.combi.prixBarre,
-      detail: 'Votre article + ' + mentionOfferts(trouve.enPlus).replace(/\.$/, '') +
+      detail: 'Votre article + ' + liste(trouve.enPlus.map(function (i) { return i.nom; })) +
               ', pour ' + prix(-trouve.economie) + ' de plus.'
     });
 

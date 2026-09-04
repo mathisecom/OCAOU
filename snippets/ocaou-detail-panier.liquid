@@ -70,7 +70,7 @@ par _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en d
       var liste = c.parVariante && c.parVariante[vid];
       if (!liste) continue;
       var offerts = {};
-      (c.inclus || []).forEach(function (o) { offerts[o.produit] = true; });
+      (c.inclus || []).forEach(function (o) { if (o.offert) offerts[o.produit] = true; });
       return liste.map(function (comp) {
         var v = (table.variantes || {})[String(comp.variante)] || {};
         return { nom: v.nom, couleur: v.couleur, image: v.image, offert: !!offerts[comp.produit] };
