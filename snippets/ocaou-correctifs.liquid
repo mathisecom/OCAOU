@@ -13,4 +13,9 @@
   /* Dans la colonne etroite du panier, le bouton de commande tenait sur deux
      lignes a cause de ses marges laterales. */
   .cart-order__recap .button--xl { padding-left: 20px; padding-right: 20px; }
+
+  /* Colonne de droite des fiches produit tenue a une largeur de lecture : au dela,
+     les lignes de texte deviennent trop longues et les blocs partent en largeur. */
+  .product-info { max-width: 480px; }
+  @media screen and (max-width: 999px) { .product-info { max-width: none; } }
 </style>

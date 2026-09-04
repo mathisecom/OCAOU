@@ -158,16 +158,9 @@
           "settings": {
             "liquid": "<div id='ss-product-videos'></div>"
           }
-        },
-        "ocaou_largeur": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<style>\n  /* O'CAOU coffrets composables : colonne de droite tenue a une largeur de lecture. */\n  .product-info { max-width: 480px; }\n  @media screen and (max-width: 999px) { .product-info { max-width: none; } }\n</style>"
-          }
         }
       },
       "block_order": [
-        "ocaou_largeur",
         "liquid_6HNzqf",
         "liquid_hCXJAh",
         "liquid_BaArxm",

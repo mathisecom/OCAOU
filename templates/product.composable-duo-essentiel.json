@@ -160,16 +160,9 @@
           "settings": {
             "liquid": "<div id='ss-product-videos'></div>"
           }
-        },
-        "ocaou_largeur": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<style>\n  /* O'CAOU coffrets composables : colonne de droite tenue a une largeur de lecture. */\n  .product-info { max-width: 480px; }\n  @media screen and (max-width: 999px) { .product-info { max-width: none; } }\n</style>"
-          }
         }
       },
       "block_order": [
-        "ocaou_largeur",
         "liquid_6HNzqf",
         "liquid_hCXJAh",
         "liquid_BaArxm",
@@ -214,8 +207,8 @@
       "settings": {
         "collection": "les-coffrets",
         "products": [
-          "coffret-pour-maman-1",
-          "coffret-comme-les-grands-1"
+          "coffret-pour-maman",
+          "coffret-comme-les-grands"
         ],
         "full_width": true,
         "stack_products": false,
@@ -243,7 +236,7 @@
         "product_Bpc3gQ": {
           "type": "product",
           "settings": {
-            "product": "coffret-pour-maman-1",
+            "product": "coffret-pour-maman",
             "horizontal_position": 52,
             "vertical_position": 40
           }
