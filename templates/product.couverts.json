@@ -1283,6 +1283,7 @@
         "item_QaU4cY": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/format_34_fb484c48-12fd-41fc-93da-7400ea661b3c.png",
             "column_size": "3",
             "title": "Une forme ergonomique",
             "heading_tag": "h3",
