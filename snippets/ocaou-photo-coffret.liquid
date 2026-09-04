@@ -7,8 +7,11 @@ Sur une fiche article, choisir une couleur change la photo : chaque variante por
 Un coffret n'a pas de photo par combinaison, la grande image ne bougeait donc jamais.
 
 Ici, cliquer une pastille affiche la photo de l'article choisi, dans sa couleur, en premiere
-image de la galerie. La vignette correspondante suit. La photo d'origine du coffret est
-conservee et remise en place si la selection redevient impossible a illustrer.
+image de la galerie. La vignette correspondante suit.
+
+L'article concerne est identifie par comparaison des composants avant et apres le clic, jamais
+par le libelle de l'option : l'intitule affiche (« Sac a dos ») ne porte pas toujours le nom du
+produit (« Sac O'CAOU »).
 
 Les images viennent de assets/ocaou-coffrets.json (cle « variantes »), regeneree par
 _scripts/ocaou-coffrets.py cote ISOMORPH.
@@ -18,42 +21,41 @@ _scripts/ocaou-coffrets.py cote ISOMORPH.
 (function () {
   var SOURCE = {{ 'ocaou-coffrets.json' | asset_url | json }};
   var table = null;
-  var origine = null;
+  var coffret = null;
+  var precedents = [];
 
-  function sansAccent(t) {
-    return String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').trim().toLowerCase();
+  function estCoffret(t) {
+    var chemin = window.location.pathname.replace(/\/$/, '');
+    var trouve = null;
+    (t.coffrets || []).forEach(function (c) { if (chemin.indexOf(c.url) !== -1) trouve = c; });
+    return trouve;
   }
 
-  function imageDe(article, couleur) {
-    var v = (table || {}).variantes || {};
-    for (var id in v) {
-      if (sansAccent(v[id].nom) === sansAccent(article) && sansAccent(v[id].couleur) === sansAccent(couleur)) {
-        return v[id].image;
+  function varianteChoisie() {
+    var formes = document.querySelectorAll('form[action*="/cart/add"]');
+    for (var i = 0; i < formes.length; i++) {
+      var b = formes[i].querySelector('button[type="submit"]');
+      if (b && /ajouter au panier|acheter/i.test(b.textContent)) {
+        var el = formes[i].querySelector('[name="id"]');
+        if (el) return String(el.value);
       }
     }
-    return null;
+    var url = new URLSearchParams(window.location.search).get('variant');
+    return url || null;
   }
 
-  function choix(input) {
-    var champ = input.closest('fieldset');
-    var legende = champ && champ.querySelector('legend');
-    var etiquette = document.querySelector('label[for="' + (window.CSS && CSS.escape ? CSS.escape(input.id) : input.id) + '"]');
-    var couleur = etiquette && etiquette.textContent;
-    if (!legende || !couleur) return null;
-    return { article: legende.textContent.replace(/\s*:\s*$/, ''), couleur: couleur };
+  function composants(varianteId) {
+    var liste = coffret && coffret.parVariante && coffret.parVariante[varianteId];
+    return liste ? liste.map(function (c) { return c.variante; }) : [];
   }
 
   function pose(url) {
     var galerie = document.querySelector('product-gallery');
-    if (!galerie || !url) return;
-    var media = galerie.querySelector('.product-gallery__media');
+    var media = galerie && galerie.querySelector('.product-gallery__media');
     var image = media && media.querySelector('img');
-    if (!image) return;
-
-    if (origine === null) origine = { src: image.src, srcset: image.srcset };
+    if (!image || !url) return;
     image.srcset = '';
     image.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'width=1200';
-
     var vignette = galerie.querySelector('.product-gallery__thumbnail-list-wrapper img');
     if (vignette) {
       vignette.srcset = '';
@@ -62,32 +64,31 @@ _scripts/ocaou-coffrets.py cote ISOMORPH.
     if (media.scrollIntoView) media.scrollIntoView({ block: 'nearest', inline: 'center' });
   }
 
-  function remets() {
-    if (!origine) return;
-    var image = document.querySelector('product-gallery .product-gallery__media img');
-    if (image) { image.src = origine.src; image.srcset = origine.srcset; }
-  }
-
-  function ecoute() {
-    document.addEventListener('change', function (e) {
-      var input = e.target;
-      if (!input || input.type !== 'radio' || !input.closest('variant-picker')) return;
-      var c = choix(input);
-      if (!c) return;
-      var url = imageDe(c.article, c.couleur);
-      if (url) pose(url); else remets();
-    });
-  }
-
-  // Le comportement ne concerne que les fiches coffret.
-  function estCoffret(t) {
-    var chemin = window.location.pathname.replace(/\/$/, '');
-    return (t.coffrets || []).some(function (c) { return chemin.indexOf(c.url) !== -1; });
+  // L'article dont la couleur vient de changer est le composant qui n'etait pas la avant.
+  function regarde() {
+    var v = varianteChoisie();
+    if (!v) return;
+    var maintenant = composants(v);
+    if (!maintenant.length) return;
+    var nouveaux = maintenant.filter(function (id) { return precedents.indexOf(id) === -1; });
+    precedents = maintenant;
+    if (nouveaux.length !== 1) return;
+    var fiche = (table.variantes || {})[String(nouveaux[0])];
+    if (fiche && fiche.image) pose(fiche.image);
   }
 
   fetch(SOURCE)
     .then(function (r) { return r.json(); })
-    .then(function (t) { if (!estCoffret(t)) return; table = t; ecoute(); })
+    .then(function (t) {
+      table = t;
+      coffret = estCoffret(t);
+      if (!coffret) return;
+      precedents = composants(varianteChoisie());
+      document.addEventListener('change', function (e) {
+        if (!e.target || e.target.type !== 'radio' || !e.target.closest('variant-picker')) return;
+        setTimeout(regarde, 250);
+      });
+    })
     .catch(function () { /* la galerie reste celle du coffret */ });
 })();
 </script>
