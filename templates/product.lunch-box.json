@@ -223,10 +223,10 @@
           "settings": {
             "heading": "Souvent achetés ensemble",
             "products": [
-              "lingettes-lavables",
               "gourde",
-              "coffret-premier-repas-1",
-              "couverts"
+              "couverts",
+              "lingettes-lavables",
+              "coffret-premier-repas-1"
             ],
             "button_label": "Découvrir",
             "show_prices": true,
