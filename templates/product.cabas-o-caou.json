@@ -214,7 +214,8 @@
       "settings": {
         "collection": "",
         "products": [
-          "coffret-balades-1"
+          "coffret-balades-1",
+          "duo-pratique"
         ],
         "full_width": true,
         "stack_products": true,
