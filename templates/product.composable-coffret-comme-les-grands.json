@@ -631,6 +631,7 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_18_15_16.png",
             "column_size": "3",
             "title": "Prêt pour la maternelle",
             "heading_tag": "h3",
@@ -643,6 +644,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_18_23_39.png",
             "column_size": "3",
             "title": "Gagner en autonomie",
             "heading_tag": "h3",
