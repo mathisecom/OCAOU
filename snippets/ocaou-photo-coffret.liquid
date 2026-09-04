@@ -22,7 +22,6 @@ _scripts/ocaou-coffrets.py cote ISOMORPH.
   var SOURCE = {{ 'ocaou-coffrets.json' | asset_url | json }};
   var table = null;
   var coffret = null;
-  var precedents = [];
 
   function estCoffret(t) {
     var chemin = window.location.pathname.replace(/\/$/, '');
@@ -65,13 +64,12 @@ _scripts/ocaou-coffrets.py cote ISOMORPH.
   }
 
   // L'article dont la couleur vient de changer est le composant qui n'etait pas la avant.
-  function regarde() {
-    var v = varianteChoisie();
-    if (!v) return;
-    var maintenant = composants(v);
+  // Le releve « avant » se fait pendant la phase de capture, avant que le theme
+  // ne remplace la variante dans le formulaire.
+  function regarde(avant) {
+    var maintenant = composants(varianteChoisie());
     if (!maintenant.length) return;
-    var nouveaux = maintenant.filter(function (id) { return precedents.indexOf(id) === -1; });
-    precedents = maintenant;
+    var nouveaux = maintenant.filter(function (id) { return avant.indexOf(id) === -1; });
     if (nouveaux.length !== 1) return;
     var fiche = (table.variantes || {})[String(nouveaux[0])];
     if (fiche && fiche.image) pose(fiche.image);
@@ -83,11 +81,12 @@ _scripts/ocaou-coffrets.py cote ISOMORPH.
       table = t;
       coffret = estCoffret(t);
       if (!coffret) return;
-      precedents = composants(varianteChoisie());
       document.addEventListener('change', function (e) {
         if (!e.target || e.target.type !== 'radio' || !e.target.closest('variant-picker')) return;
-        setTimeout(regarde, 250);
-      });
+        var avant = composants(varianteChoisie());
+        setTimeout(function () { regarde(avant); }, 250);
+        setTimeout(function () { regarde(avant); }, 700);
+      }, true);
     })
     .catch(function () { /* la galerie reste celle du coffret */ });
 })();
