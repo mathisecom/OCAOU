@@ -1,0 +1,89 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+O'CAOU — LA PHOTO SUIT LA COULEUR CHOISIE (PAGES COFFRET)
+----------------------------------------------------------------------------------------------------------------------
+
+Sur une fiche article, choisir une couleur change la photo : chaque variante porte la sienne.
+Un coffret n'a pas de photo par combinaison, la grande image ne bougeait donc jamais.
+
+Ici, cliquer une pastille affiche la photo de l'article choisi, dans sa couleur, en premiere
+image de la galerie. La vignette correspondante suit. La photo d'origine du coffret est
+conservee et remise en place si la selection redevient impossible a illustrer.
+
+Les images viennent de assets/ocaou-coffrets.json (cle « variantes »), regeneree par
+_scripts/ocaou-coffrets.py cote ISOMORPH.
+{%- endcomment -%}
+
+{%- if product.requires_components -%}
+<script>
+(function () {
+  var SOURCE = {{ 'ocaou-coffrets.json' | asset_url | json }};
+  var table = null;
+  var origine = null;
+
+  function sansAccent(t) {
+    return String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').trim().toLowerCase();
+  }
+
+  function imageDe(article, couleur) {
+    var v = (table || {}).variantes || {};
+    for (var id in v) {
+      if (sansAccent(v[id].nom) === sansAccent(article) && sansAccent(v[id].couleur) === sansAccent(couleur)) {
+        return v[id].image;
+      }
+    }
+    return null;
+  }
+
+  function choix(input) {
+    var champ = input.closest('fieldset');
+    var legende = champ && champ.querySelector('legend');
+    var etiquette = document.querySelector('label[for="' + (window.CSS && CSS.escape ? CSS.escape(input.id) : input.id) + '"]');
+    var couleur = etiquette && etiquette.textContent;
+    if (!legende || !couleur) return null;
+    return { article: legende.textContent.replace(/\s*:\s*$/, ''), couleur: couleur };
+  }
+
+  function pose(url) {
+    var galerie = document.querySelector('product-gallery');
+    if (!galerie || !url) return;
+    var media = galerie.querySelector('.product-gallery__media');
+    var image = media && media.querySelector('img');
+    if (!image) return;
+
+    if (origine === null) origine = { src: image.src, srcset: image.srcset };
+    image.srcset = '';
+    image.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'width=1200';
+
+    var vignette = galerie.querySelector('.product-gallery__thumbnail-list-wrapper img');
+    if (vignette) {
+      vignette.srcset = '';
+      vignette.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'width=200';
+    }
+    if (media.scrollIntoView) media.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }
+
+  function remets() {
+    if (!origine) return;
+    var image = document.querySelector('product-gallery .product-gallery__media img');
+    if (image) { image.src = origine.src; image.srcset = origine.srcset; }
+  }
+
+  function ecoute() {
+    document.addEventListener('change', function (e) {
+      var input = e.target;
+      if (!input || input.type !== 'radio' || !input.closest('variant-picker')) return;
+      var c = choix(input);
+      if (!c) return;
+      var url = imageDe(c.article, c.couleur);
+      if (url) pose(url); else remets();
+    });
+  }
+
+  fetch(SOURCE)
+    .then(function (r) { return r.json(); })
+    .then(function (t) { table = t; ecoute(); })
+    .catch(function () { /* la galerie reste celle du coffret */ });
+})();
+</script>
+{%- endif -%}
