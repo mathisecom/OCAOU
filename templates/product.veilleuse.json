@@ -622,7 +622,7 @@
         "ai_gen_block_4e66e81_KHMPzr": {
           "type": "ai_gen_block_4e66e81",
           "settings": {
-            "heading": "Souvent acheté avec",
+            "heading": "Souvent achetée avec",
             "products": [
               "doudou",
               "couverture",
@@ -631,8 +631,8 @@
             "button_label": "Découvrir",
             "show_prices": true,
             "desktop_width_percent": 100,
-            "columns_desktop": "4",
-            "columns_mobile": "1",
+            "columns_desktop": "3",
+            "columns_mobile": "2",
             "alignment": "left",
             "gap": 16,
             "heading_size": 26,
