@@ -799,9 +799,9 @@
         "subheading": "",
         "title": "",
         "content": "",
-        "background": "",
+        "background": "#FFFFFF",
         "background_gradient": "",
-        "text_color": ""
+        "text_color": "#151515"
       }
     },
     "imagewithtexticons_pncmHL": {
