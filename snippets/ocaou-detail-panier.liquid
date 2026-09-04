@@ -1,0 +1,171 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+O'CAOU — DETAIL DU COFFRET DANS LE PANIER
+----------------------------------------------------------------------------------------------------------------------
+
+Une ligne de coffret ne montre que son titre : les articles qu'il contient, et surtout les
+articles offerts, n'apparaissaient qu'au moment du paiement. On les affiche ici sous la ligne,
+rattaches a elle par un filet, chaque article avec sa couleur et sa vignette, les articles
+offerts portant la mention « Offert ».
+
+Meme traitement pour les cadeaux ajoutes en ligne separee par les blocs duo et kit : ils sont
+decales sous l'article qui les declenche.
+
+La table de correspondance vit dans assets/ocaou-coffrets.json (cle « variantes »), regeneree
+par _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur ici.
+{%- endcomment -%}
+
+<style>
+  .ocaou-compo {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 2px 0 2px 12px;
+    border-left: 2px solid rgba(0,0,0,.12);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .ocaou-compo__item { display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 1.3; }
+  .ocaou-compo__img { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 6px; object-fit: cover; background: #f3efe9; }
+  .ocaou-compo__nom { min-width: 0; }
+  .ocaou-compo__couleur { opacity: .6; }
+  .ocaou-compo__offert {
+    flex: 0 0 auto;
+    padding: 1px 8px; border-radius: 999px;
+    background: {{ settings.color_accent | default: '#cd9438' }}; color: #fff;
+    font-size: 11px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase;
+  }
+  .ocaou-compo__item--offert .ocaou-compo__nom { font-weight: 600; }
+
+  /* Cadeau ajoute en ligne separee : il se lit sous l'article qui l'offre. */
+  line-item.ocaou-ligne-cadeau { position: relative; padding-left: 18px; }
+  line-item.ocaou-ligne-cadeau::before {
+    content: '';
+    position: absolute; left: 4px; top: 4px; bottom: 4px;
+    width: 2px; border-radius: 2px; background: {{ settings.color_accent | default: '#cd9438' }}; opacity: .45;
+  }
+  .ocaou-cadeau-mention {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 4px; font-size: 12px; font-weight: 600;
+    color: {{ settings.color_accent | default: '#cd9438' }};
+  }
+</style>
+
+<script>
+(function () {
+  var SOURCE = {{ 'ocaou-coffrets.json' | asset_url | json }};
+  var table = null;
+
+  function texte(classe, valeur, balise) {
+    var n = document.createElement(balise || 'span');
+    n.className = classe;
+    if (valeur != null) n.textContent = valeur;
+    return n;
+  }
+
+  function composants(vid) {
+    if (!table) return null;
+    for (var i = 0; i < table.coffrets.length; i++) {
+      var c = table.coffrets[i];
+      var liste = c.parVariante && c.parVariante[vid];
+      if (!liste) continue;
+      var offerts = {};
+      (c.inclus || []).forEach(function (o) { offerts[o.produit] = true; });
+      return liste.map(function (comp) {
+        var v = (table.variantes || {})[String(comp.variante)] || {};
+        return { nom: v.nom, couleur: v.couleur, image: v.image, offert: !!offerts[comp.produit] };
+      }).filter(function (c) { return c.nom; });
+    }
+    return null;
+  }
+
+  function detaille(ligne) {
+    var champ = ligne.querySelector('input.quantity-input[data-line-key]');
+    if (!champ) return;
+    var vid = String(champ.getAttribute('data-line-key')).split(':')[0];
+    if (ligne.getAttribute('data-ocaou-detail') === vid) return;
+
+    var ancien = ligne.querySelector('.ocaou-compo');
+    if (ancien) ancien.remove();
+    ligne.setAttribute('data-ocaou-detail', vid);
+
+    var pieces = composants(vid);
+    if (!pieces || !pieces.length) return;
+
+    var info = ligne.querySelector('.line-item__info');
+    if (!info) return;
+
+    // Le titre de variante (« Rose / Leopard ») est remplace par le detail article par article.
+    var titreVariante = null;
+    for (var i = 0; i < info.children.length; i++) {
+      var enfant = info.children[i];
+      if (enfant.tagName === 'P' && enfant.classList.contains('text-subdued')) { titreVariante = enfant; break; }
+    }
+    if (titreVariante) titreVariante.hidden = true;
+
+    var ul = document.createElement('ul');
+    ul.className = 'ocaou-compo';
+    pieces.forEach(function (p) {
+      var li = document.createElement('li');
+      li.className = 'ocaou-compo__item' + (p.offert ? ' ocaou-compo__item--offert' : '');
+      if (p.image) {
+        var img = document.createElement('img');
+        img.className = 'ocaou-compo__img';
+        img.alt = '';
+        img.loading = 'lazy';
+        img.src = p.image + (p.image.indexOf('?') === -1 ? '?' : '&') + 'width=52';
+        li.appendChild(img);
+      }
+      var nom = texte('ocaou-compo__nom', p.nom);
+      if (p.couleur) nom.appendChild(texte('ocaou-compo__couleur', ' · ' + p.couleur));
+      li.appendChild(nom);
+      if (p.offert) li.appendChild(texte('ocaou-compo__offert', 'Offert'));
+      ul.appendChild(li);
+    });
+
+    var apres = titreVariante || info.querySelector('.v-stack');
+    if (apres && apres.parentNode === info) info.insertBefore(ul, apres.nextSibling);
+    else info.appendChild(ul);
+  }
+
+  // Cadeau ajoute en ligne separee par les blocs duo et kit.
+  function cadeauSepare(ligne) {
+    if (ligne.hasAttribute('data-ocaou-cadeau')) return;
+    var puces = ligne.querySelectorAll('li.text-sm.text-subdued');
+    for (var i = 0; i < puces.length; i++) {
+      var m = /cadeau offert avec\s*:?\s*(.+)$/i.exec(puces[i].textContent.trim());
+      if (!m) continue;
+      ligne.setAttribute('data-ocaou-cadeau', '1');
+      ligne.classList.add('ocaou-ligne-cadeau');
+      puces[i].hidden = true;
+      var info = ligne.querySelector('.line-item__info') || ligne;
+      var mention = texte('ocaou-cadeau-mention', 'Offert avec ' + m[1].trim(), 'p');
+      info.appendChild(mention);
+      return;
+    }
+  }
+
+  function passe() {
+    var lignes = document.querySelectorAll('line-item');
+    for (var i = 0; i < lignes.length; i++) {
+      detaille(lignes[i]);
+      cadeauSepare(lignes[i]);
+    }
+  }
+
+  fetch(SOURCE)
+    .then(function (r) { return r.json(); })
+    .then(function (t) {
+      table = t;
+      passe();
+      document.addEventListener('cart:change', passe);
+      document.addEventListener('cart:refresh', passe);
+      var minuteur = null;
+      new MutationObserver(function () {
+        clearTimeout(minuteur);
+        minuteur = setTimeout(passe, 120);
+      }).observe(document.body, { childList: true, subtree: true });
+    })
+    .catch(function () { /* le detail est un confort de lecture : son absence ne casse rien */ });
+})();
+</script>
