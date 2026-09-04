@@ -819,7 +819,8 @@
         "carte_WAiM9m": {
           "type": "carte",
           "settings": {
-            "label": "Les carreaux",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_22_29_42.png",
+            "label": "",
             "collection": "",
             "link": ""
           }
