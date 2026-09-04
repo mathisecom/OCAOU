@@ -223,10 +223,10 @@
           "settings": {
             "heading": "Souvent achetés ensemble",
             "products": [
-              "lunch-box",
               "lingettes-lavables",
               "gourde",
-              "coffret-premier-repas-1"
+              "coffret-premier-repas-1",
+              "couverts"
             ],
             "button_label": "Découvrir",
             "show_prices": true,
