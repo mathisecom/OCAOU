@@ -294,11 +294,18 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     var produitId = meta.product && meta.product.id;
     if (!produitId) return;
 
-    // Certaines fiches portent deja un bloc de packs maison : on ne double pas.
-    if (document.querySelector('.duoP-btn, .kitR-btn')) return;
+    // Certaines fiches portent deja un bloc de packs maison. On n'y repete pas un
+    // coffret deja cite, mais on continue de signaler ceux qui manquent.
+    var blocMaison = document.querySelector('.duoP-card, .kitR-card, .duoP-btn, .kitR-btn');
+    var texteMaison = '';
+    if (blocMaison) {
+      var racine = blocMaison.closest('[class*="duoP"], [class*="kitR"], .product-info__block-item') || blocMaison;
+      texteMaison = (racine.textContent || '').toLowerCase();
+    }
 
     var candidats = table.coffrets.filter(function (c) {
-      return c.id !== produitId && c.articles.indexOf(produitId) !== -1;
+      if (c.id === produitId || c.articles.indexOf(produitId) === -1) return false;
+      return texteMaison.indexOf(c.titre.toLowerCase()) === -1;
     });
     if (!candidats.length) return;
 
