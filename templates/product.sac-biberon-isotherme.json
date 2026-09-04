@@ -222,7 +222,7 @@
             "button_label": "Découvrir",
             "show_prices": true,
             "desktop_width_percent": 100,
-            "columns_desktop": "4",
+            "columns_desktop": "3",
             "columns_mobile": "2",
             "alignment": "left",
             "gap": 16,
