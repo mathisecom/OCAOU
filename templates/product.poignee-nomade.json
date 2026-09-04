@@ -215,11 +215,11 @@
       "settings": {
         "collection": "",
         "products": [
-          "le-duo-gourde-lunch-box",
-          "coffret-premier-repas",
-          "duo-sac-a-dos-gourde",
-          "coffret-naissance",
-          "coffret-comme-les-grands"
+          "duo-miam",
+          "coffret-premier-repas-1",
+          "duo-essentiel",
+          "coffret-naissance-1",
+          "coffret-comme-les-grands-1"
         ],
         "full_width": true,
         "stack_products": true,
@@ -248,8 +248,8 @@
       "settings": {
         "collection": "les-coffrets",
         "products": [
-          "coffret-pour-maman",
-          "coffret-comme-les-grands"
+          "coffret-pour-maman-1",
+          "coffret-comme-les-grands-1"
         ],
         "full_width": true,
         "stack_products": false,
@@ -277,7 +277,7 @@
         "product_Bpc3gQ": {
           "type": "product",
           "settings": {
-            "product": "coffret-pour-maman",
+            "product": "coffret-pour-maman-1",
             "horizontal_position": 52,
             "vertical_position": 40
           }

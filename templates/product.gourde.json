@@ -314,9 +314,9 @@
       "settings": {
         "collection": "",
         "products": [
-          "coffret-premier-repas",
-          "coffret-comme-les-grands",
-          "duo-sac-a-dos-gourde"
+          "coffret-premier-repas-1",
+          "coffret-comme-les-grands-1",
+          "duo-essentiel"
         ],
         "full_width": true,
         "stack_products": true,
@@ -728,7 +728,7 @@
         "product_crRUa8": {
           "type": "product",
           "settings": {
-            "product": "coffret-premier-repas",
+            "product": "coffret-premier-repas-1",
             "horizontal_position": 52,
             "vertical_position": 40
           }

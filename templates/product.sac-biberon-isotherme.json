@@ -213,7 +213,7 @@
       "settings": {
         "collection": "",
         "products": [
-          "coffret-balades",
+          "coffret-balades-1",
           "kit-repas-nomade-complet"
         ],
         "full_width": true,
@@ -242,7 +242,7 @@
         "product_hBkj79": {
           "type": "product",
           "settings": {
-            "product": "coffret-balades",
+            "product": "coffret-balades-1",
             "horizontal_position": 52,
             "vertical_position": 45
           }

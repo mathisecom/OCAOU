@@ -622,7 +622,7 @@
       "settings": {
         "collection": "",
         "products": [
-          "coffret-naissance"
+          "coffret-naissance-1"
         ],
         "full_width": true,
         "stack_products": true,
@@ -650,7 +650,7 @@
         "product_e3ypLk": {
           "type": "product",
           "settings": {
-            "product": "coffret-naissance",
+            "product": "coffret-naissance-1",
             "horizontal_position": 33,
             "vertical_position": 73
           }
