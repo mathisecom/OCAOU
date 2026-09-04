@@ -396,10 +396,20 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   // Sous le bouton d'achat, la fiche signale le coffret qui contient cet article.
   // Le sac et la gourde ont leur propre bloc de packs : on ne double pas.
 
+  // Le formulaire principal est celui dont le bouton ajoute l'article de la page :
+  // les blocs de packs de la fiche portent eux aussi un formulaire d'ajout.
+  function formulairePrincipal() {
+    var formes = document.querySelectorAll('form[action*="/cart/add"]');
+    for (var i = 0; i < formes.length; i++) {
+      var b = formes[i].querySelector('button[type="submit"]');
+      if (b && /ajouter au panier|acheter/i.test(b.textContent)) return formes[i];
+    }
+    return null;
+  }
+
   function produitCourant() {
-    var m = /\/products\/([^/?#]+)/.exec(window.location.pathname);
-    if (!m) return null;
-    var el = document.querySelector('product-form [name="id"], form[action*="/cart/add"] [name="id"]');
+    var f = formulairePrincipal();
+    var el = f && f.querySelector('[name="id"]');
     return el ? Number(el.value) : null;
   }
 
@@ -467,9 +477,9 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     el.setAttribute('data-ocaou-sugg', 'article');
     el.setAttribute('data-variante', String(varianteId));
 
-    var bouton = document.querySelector('product-form button[type="submit"], form[action*="/cart/add"] button[type="submit"]');
-    if (!bouton) return;
-    var apres = bouton.closest('.product-info__block-item') || bouton.closest('product-form') || bouton.parentNode;
+    var f = formulairePrincipal();
+    if (!f) return;
+    var apres = f.closest('.product-info__block-item') || f;
     apres.parentNode.insertBefore(el, apres.nextSibling);
   }
 

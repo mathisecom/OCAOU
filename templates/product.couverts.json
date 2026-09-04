@@ -237,7 +237,7 @@
             "button_label": "Découvrir",
             "show_prices": true,
             "desktop_width_percent": 100,
-            "columns_desktop": "4",
+            "columns_desktop": "3",
             "columns_mobile": "2",
             "alignment": "left",
             "gap": 16,
@@ -270,45 +270,6 @@
     },
     "blocks_ihJ6CN": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_4e66e81_dJFYWb": {
-          "type": "ai_gen_block_4e66e81",
-          "settings": {
-            "heading": "Aussi en coffret",
-            "products": [
-              "coffret-premier-repas-1"
-            ],
-            "button_label": "Découvrir",
-            "show_prices": true,
-            "desktop_width_percent": 100,
-            "columns_desktop": "4",
-            "columns_mobile": "2",
-            "alignment": "left",
-            "gap": 16,
-            "heading_size": 26,
-            "heading_size_mobile": 22,
-            "padding_vertical": 32,
-            "padding_horizontal": 24,
-            "padding_vertical_mobile": 24,
-            "padding_horizontal_mobile": 16,
-            "background_color": "#fcf9f5",
-            "card_background": "#ffffff",
-            "heading_color": "#1a1a1a",
-            "text_color": "#1a1a1a",
-            "muted_color": "#677279",
-            "placeholder_color": "#ede8e0",
-            "button_background": "#cd9438",
-            "button_text_color": "#ffffff",
-            "border_radius": 16,
-            "card_radius": 16,
-            "button_radius": 24
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_4e66e81_dJFYWb"
-      ],
       "name": "Produits achetés ensemble",
       "settings": {}
     },
