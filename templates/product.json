@@ -824,31 +824,13 @@
             "collection": "",
             "link": ""
           }
-        },
-        "carte_VX6dUH": {
-          "type": "carte",
-          "settings": {
-            "label": "Les gourdes",
-            "collection": "",
-            "link": ""
-          }
-        },
-        "carte_yTDFhW": {
-          "type": "carte",
-          "settings": {
-            "label": "Les coffrets",
-            "collection": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "carte_fPbR6h",
         "carte_FjxDGB",
         "carte_Yxdt4y",
-        "carte_WAiM9m",
-        "carte_VX6dUH",
-        "carte_yTDFhW"
+        "carte_WAiM9m"
       ],
       "name": "Grille de collections",
       "settings": {
