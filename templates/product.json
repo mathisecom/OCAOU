@@ -217,7 +217,7 @@
             "button_label": "Découvrir",
             "show_prices": true,
             "desktop_width_percent": 100,
-            "columns_desktop": "4",
+            "columns_desktop": "2",
             "columns_mobile": "2",
             "alignment": "left",
             "gap": 16,
@@ -247,35 +247,6 @@
       ],
       "name": "Produits achetés ensemble",
       "settings": {}
-    },
-    "featured_collection_MXYA7g": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "collection": "les-coffrets",
-        "products": [
-          "coffret-pour-maman-1",
-          "coffret-comme-les-grands-1"
-        ],
-        "full_width": true,
-        "stack_products": false,
-        "show_progress_bar": true,
-        "products_count": 2,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 2,
-        "subheading": "",
-        "title": "Il existe aussi en coffret",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "#f4ede1",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
     },
     "shop_the_look_zAW9Nh": {
       "type": "shop-the-look",
@@ -1491,7 +1462,6 @@
   "order": [
     "main",
     "blocks_wGbWEC",
-    "featured_collection_MXYA7g",
     "shop_the_look_zAW9Nh",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
