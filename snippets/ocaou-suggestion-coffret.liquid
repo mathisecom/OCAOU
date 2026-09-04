@@ -391,17 +391,100 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       .catch(function () {});
   }
 
+
+  /* ------------------------------------------------------ fiche article */
+  // Sous le bouton d'achat, la fiche signale le coffret qui contient cet article.
+  // Le sac et la gourde ont leur propre bloc de packs : on ne double pas.
+
+  function produitCourant() {
+    var m = /\/products\/([^/?#]+)/.exec(window.location.pathname);
+    if (!m) return null;
+    var el = document.querySelector('product-form [name="id"], form[action*="/cart/add"] [name="id"]');
+    return el ? Number(el.value) : null;
+  }
+
+  function coffretDeLArticle(varianteId) {
+    var meilleur = null;
+    (table.coffrets || []).forEach(function (c) {
+      var dedans = false;
+      for (var v in c.parVariante) {
+        if (c.parVariante[v].some(function (comp) { return comp.variante === varianteId; })) { dedans = true; break; }
+      }
+      if (!dedans) return;
+      var combi = null;
+      for (var k in c.combinaisons) { combi = c.combinaisons[k]; break; }
+      if (!combi) return;
+      // le pas le plus court d'abord : le coffret qui ajoute le moins d'articles
+      if (!meilleur || c.articles.length < meilleur.coffret.articles.length) meilleur = { coffret: c, combi: combi };
+    });
+    return meilleur;
+  }
+
+  function autresArticles(c, varianteId) {
+    var noms = [];
+    var liste_v = null;
+    for (var v in c.parVariante) {
+      if (c.parVariante[v].some(function (comp) { return comp.variante === varianteId; })) { liste_v = c.parVariante[v]; break; }
+    }
+    (liste_v || []).forEach(function (comp) {
+      if (comp.variante === varianteId) return;
+      var v = (table.variantes || {})[String(comp.variante)];
+      if (v && noms.indexOf(v.nom) === -1) noms.push(v.nom);
+    });
+    return noms;
+  }
+
+  function carteArticle(trouve, varianteId) {
+    var c = trouve.coffret;
+    var m = carte({
+      image: c.image,
+      titre: 'Aussi dans le ' + c.titre,
+      prix: trouve.combi.prix,
+      barre: trouve.combi.prixBarre,
+      detail: 'Avec ' + liste(autresArticles(c, varianteId)) + '.'
+    });
+    var voir = document.createElement('a');
+    voir.className = 'ocaou-sugg__cta';
+    voir.href = c.url;
+    voir.textContent = 'Voir le coffret';
+    m.actions.appendChild(voir);
+    return m.el;
+  }
+
+  function passeArticle() {
+    if (window.location.pathname.indexOf('/products/') === -1) return;
+    if (document.querySelector('.duoP-btn, .kitR-btn')) return;   // bloc de packs deja present
+    var varianteId = produitCourant();
+    if (!varianteId) return;
+    var trouve = coffretDeLArticle(varianteId);
+    var existant = document.querySelector('[data-ocaou-sugg="article"]');
+    if (existant && existant.getAttribute('data-variante') === String(varianteId)) return;
+    if (existant) existant.remove();
+    if (!trouve) return;
+    if (trouve.coffret.parVariante[String(varianteId)]) return;   // on est deja sur la fiche du coffret
+
+    var el = carteArticle(trouve, varianteId);
+    el.setAttribute('data-ocaou-sugg', 'article');
+    el.setAttribute('data-variante', String(varianteId));
+
+    var bouton = document.querySelector('product-form button[type="submit"], form[action*="/cart/add"] button[type="submit"]');
+    if (!bouton) return;
+    var apres = bouton.closest('.product-info__block-item') || bouton.closest('product-form') || bouton.parentNode;
+    apres.parentNode.insertBefore(el, apres.nextSibling);
+  }
+
   fetch(SOURCE)
     .then(function (r) { return r.json(); })
     .then(function (t) {
       table = t;
       passe();
+      passeArticle();
       document.addEventListener('cart:change', passe);
       document.addEventListener('cart:refresh', passe);
       var minuteur = null;
       new MutationObserver(function () {
         clearTimeout(minuteur);
-        minuteur = setTimeout(passe, 250);
+        minuteur = setTimeout(function () { passe(); passeArticle(); }, 250);
       }).observe(document.body, { childList: true, subtree: true });
     })
     .catch(function () { /* le regroupement est un bonus : son absence ne casse rien */ });
