@@ -169,13 +169,13 @@
           </a>
         {%- endif -%}
 
-        {%- if section.settings.show_checkout_button -%}
-          {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl' -%}
-        {%- endif -%}
               {%- comment -%}O'CAOU — bouton "Continuer mes achats" : ferme simplement le panier{%- endcomment -%}
         {%- if section.settings.show_continue_shopping_button -%}
           {%- assign continue_label = section.settings.continue_shopping_label | default: 'Continuer mes achats' -%}
           <button type="button" is="close-button" class="button button--xl button--outline">{{ continue_label }}</button>
+        {%- endif -%}
+        {%- if section.settings.show_checkout_button -%}
+          {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl' -%}
         {%- endif -%}
       </form>
     </div>
