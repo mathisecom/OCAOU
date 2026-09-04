@@ -1366,6 +1366,7 @@
         "item_9VQRWx": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_31_aout_2026_15_48_25.png",
             "column_size": "3",
             "title": "Adaptée aux petites portions",
             "heading_tag": "h3",
@@ -1391,6 +1392,7 @@
         "item_qJKQ4V": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/format_34_copie_3.png",
             "column_size": "3",
             "title": "Résiste au chaud comme au froid",
             "heading_tag": "h3",
