@@ -134,7 +134,9 @@ par _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en d
       if (combi) break;
     }
     if (combi && combi.prixBarre && combi.prixBarre > combi.prix) {
-      var prixEl = info.querySelector('.v-stack .price-list, .v-stack price-list, .v-stack');
+      // querySelector rend le premier element du document, pas le premier selecteur :
+      // on essaie les cibles dans l'ordre voulu.
+      var prixEl = info.querySelector('price-list') || info.querySelector('.price-list') || info.querySelector('.v-stack');
       if (prixEl && !prixEl.querySelector('.ocaou-compo__barre')) {
         var barre = texte('ocaou-compo__barre', (combi.prixBarre / 100).toFixed(2).replace('.', ',') + ' €', 's');
         prixEl.appendChild(barre);
