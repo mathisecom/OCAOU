@@ -193,12 +193,88 @@
         "enable_animation": false
       }
     },
+    "image_link_blocks_FfKVrJ": {
+      "type": "image-link-blocks",
+      "blocks": {
+        "item_kwemEA": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_55_58.png",
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_9r7QGN": {
+          "type": "item",
+          "settings": {
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_FV3DHU": {
+          "type": "item",
+          "settings": {
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_ErMAyc": {
+          "type": "item",
+          "settings": {
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "item_kwemEA",
+        "item_9r7QGN",
+        "item_FV3DHU",
+        "item_ErMAyc"
+      ],
+      "name": "Image link blocks",
+      "settings": {
+        "full_width": false,
+        "block_size": "medium",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
     "grillecollections_9B6eBk": {
       "type": "grillecollections",
       "blocks": {
         "carte_dhKigz": {
           "type": "carte",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_55_58.png",
             "label": "Les sacs à dos",
             "collection": "",
             "link": ""
@@ -1455,6 +1531,7 @@
   },
   "order": [
     "heromedia_zwA498",
+    "image_link_blocks_FfKVrJ",
     "grillecollections_9B6eBk",
     "logoscroll_WxkMyg",
     "grillecollections_HyQXcx",
