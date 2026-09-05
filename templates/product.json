@@ -861,7 +861,7 @@
           "type": "carte",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_23_10_33.png",
-            "label": "Pour langer",
+            "label": "Langer",
             "collection": "",
             "link": ""
           }
@@ -870,7 +870,7 @@
           "type": "carte",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_23_07_34.png",
-            "label": "Pour l'école",
+            "label": "l'école",
             "collection": "",
             "link": ""
           }
@@ -878,7 +878,8 @@
         "carte_Ck8k7w": {
           "type": "carte",
           "settings": {
-            "label": "Le repas",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_14_00_30.png",
+            "label": "Les activités",
             "collection": "",
             "link": ""
           }
@@ -886,7 +887,8 @@
         "carte_gj83dz": {
           "type": "carte",
           "settings": {
-            "label": "Les carreaux",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_14_02_54.png",
+            "label": "se balader",
             "collection": "",
             "link": ""
           }
@@ -894,15 +896,8 @@
         "carte_UgtDiG": {
           "type": "carte",
           "settings": {
-            "label": "Les gourdes",
-            "collection": "",
-            "link": ""
-          }
-        },
-        "carte_gBkGnU": {
-          "type": "carte",
-          "settings": {
-            "label": "Les coffrets",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_14_06_36.png",
+            "label": "Les nuitées",
             "collection": "",
             "link": ""
           }
@@ -913,12 +908,11 @@
         "carte_hxUqXb",
         "carte_Ck8k7w",
         "carte_gj83dz",
-        "carte_UgtDiG",
-        "carte_gBkGnU"
+        "carte_UgtDiG"
       ],
       "name": "Grille de collections",
       "settings": {
-        "heading": "",
+        "heading": "MULTIFONCTIONS,UN SAC POUR:",
         "heading_align": "center",
         "heading_color": "#1d2153",
         "full_width": true,
