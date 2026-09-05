@@ -312,7 +312,8 @@
         "carte_4PJ63A": {
           "type": "carte",
           "settings": {
-            "label": "Les sacs à dos",
+            "image": "shopify://shop_images/matias_margaux.png",
+            "label": "POUSSETTE",
             "collection": "",
             "link": ""
           }
@@ -320,7 +321,8 @@
         "carte_EpFVYX": {
           "type": "carte",
           "settings": {
-            "label": "Le bain rayé",
+            "image": "shopify://shop_images/cargo.png",
+            "label": "VÉLO",
             "collection": "",
             "link": ""
           }
@@ -368,7 +370,7 @@
       ],
       "name": "Grille de collections",
       "settings": {
-        "heading": "",
+        "heading": "Avec ses attaches intégrées, il s'accroche partout !",
         "heading_align": "center",
         "heading_color": "#1d2153",
         "full_width": true,
@@ -994,7 +996,7 @@
       ],
       "name": "Grille de collections",
       "settings": {
-        "heading": "MULTIFONCTIONS,UN SAC POUR:",
+        "heading": "Multifonctions, un sac pour:",
         "heading_align": "center",
         "heading_color": "#1d2153",
         "full_width": true,
