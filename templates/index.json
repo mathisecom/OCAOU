@@ -193,6 +193,61 @@
         "enable_animation": false
       }
     },
+    "grillecollections_9B6eBk": {
+      "type": "grillecollections",
+      "blocks": {
+        "carte_dhKigz": {
+          "type": "carte",
+          "settings": {
+            "label": "Les sacs à dos",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_rLa8zx": {
+          "type": "carte",
+          "settings": {
+            "label": "Le bain rayé",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_gLdiq3": {
+          "type": "carte",
+          "settings": {
+            "label": "Le repas",
+            "collection": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "carte_dhKigz",
+        "carte_rLa8zx",
+        "carte_gLdiq3"
+      ],
+      "name": "Grille de collections",
+      "settings": {
+        "heading": "",
+        "heading_align": "center",
+        "heading_color": "#1d2153",
+        "full_width": true,
+        "columns_desktop": 6,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "ratio": "3 / 4",
+        "gap": 12,
+        "gap_mobile": 10,
+        "radius": 0,
+        "label_bg": "#b3946a",
+        "label_bg_hover": "#9a7d55",
+        "label_color": "#ffffff",
+        "bg_color": "#faf6ef",
+        "side_padding": 20,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "logoscroll_WxkMyg": {
       "type": "logoscroll",
       "blocks": {
@@ -1400,6 +1455,7 @@
   },
   "order": [
     "heromedia_zwA498",
+    "grillecollections_9B6eBk",
     "logoscroll_WxkMyg",
     "grillecollections_HyQXcx",
     "featured_collection_Dzf4fX",
