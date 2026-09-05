@@ -336,20 +336,20 @@
             "link": ""
           }
         },
-        "carte_aY9bNV": {
-          "type": "carte",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_17_46.png",
-            "label": "arbres",
-            "collection": "",
-            "link": ""
-          }
-        },
         "carte_Wyt8ra": {
           "type": "carte",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_55_58.png",
             "label": "lit bébé",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_aY9bNV": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_17_46.png",
+            "label": "arbres",
             "collection": "",
             "link": ""
           }
@@ -368,8 +368,8 @@
         "carte_4PJ63A",
         "carte_EpFVYX",
         "carte_JejhNd",
-        "carte_aY9bNV",
         "carte_Wyt8ra",
+        "carte_aY9bNV",
         "carte_YPtTJ3"
       ],
       "name": "Grille de collections",
@@ -385,7 +385,7 @@
         "gap": 12,
         "gap_mobile": 10,
         "radius": 0,
-        "label_bg": "#AF6C67",
+        "label_bg": "#af6c67",
         "label_bg_hover": "#9a7d55",
         "label_color": "#ffffff",
         "bg_color": "#faf6ef",
@@ -1011,7 +1011,7 @@
         "gap": 12,
         "gap_mobile": 10,
         "radius": 0,
-        "label_bg": "#AF6C67",
+        "label_bg": "#af6c67",
         "label_bg_hover": "#9a7d55",
         "label_color": "#ffffff",
         "bg_color": "#faf6ef",
