@@ -330,7 +330,8 @@
         "carte_JejhNd": {
           "type": "carte",
           "settings": {
-            "label": "Le repas",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_13_30.png",
+            "label": "siège auto",
             "collection": "",
             "link": ""
           }
@@ -338,7 +339,8 @@
         "carte_aY9bNV": {
           "type": "carte",
           "settings": {
-            "label": "Les carreaux",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_17_46.png",
+            "label": "arbres",
             "collection": "",
             "link": ""
           }
@@ -346,7 +348,8 @@
         "carte_Wyt8ra": {
           "type": "carte",
           "settings": {
-            "label": "Les gourdes",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_55_58.png",
+            "label": "lit bébé",
             "collection": "",
             "link": ""
           }
@@ -354,7 +357,8 @@
         "carte_YPtTJ3": {
           "type": "carte",
           "settings": {
-            "label": "Les coffrets",
+            "image": "shopify://shop_images/no_change_3.png",
+            "label": "partout !",
             "collection": "",
             "link": ""
           }
