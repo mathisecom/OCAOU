@@ -81,6 +81,9 @@ _scripts/ocaou-coffrets.py cote ISOMORPH.
       table = t;
       coffret = estCoffret(t);
       if (!coffret) return;
+      // Coffret Pour Maman et Coffret Balades : un seul article se choisit, et le coffret a
+      // ses propres photos par couleur. On laisse le theme faire, la photo montre le coffret.
+      if ((coffret.articles || []).length < 2) return;
       document.addEventListener('change', function (e) {
         if (!e.target || e.target.type !== 'radio' || !e.target.closest('variant-picker')) return;
         var avant = composants(varianteChoisie());

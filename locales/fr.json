@@ -347,8 +347,8 @@
       "remove_with_title": "Supprimer {{ title }}"
     },
     "free_shipping_bar": {
-      "limit_unreached_html": "Dépensez {{ remaining_amount }} de plus pour bénéficier des frais de livraison offerts.",
-      "limit_reached_html": "Frais de livraison offerts !"
+      "limit_unreached_html": "Dépensez {{ remaining_amount }} de plus pour la livraison offerte en point relais.",
+      "limit_reached_html": "Livraison offerte en point relais !"
     },
     "shipping_estimator": {
       "estimate_shipping": "Estimer les frais de livraison",

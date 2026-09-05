@@ -36,6 +36,7 @@ par _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en d
     font-size: 11px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase;
   }
   .ocaou-compo__item--offert .ocaou-compo__nom { font-weight: 600; }
+  .ocaou-compo__barre { margin-left: 8px; opacity: .55; }
 
   /* Cadeau ajoute en ligne separee : il se lit sous l'article qui l'offre. */
   line-item.ocaou-ligne-cadeau { position: relative; padding-left: 18px; }
@@ -122,6 +123,23 @@ par _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en d
       if (p.offert) li.appendChild(texte('ocaou-compo__offert', 'Offert'));
       ul.appendChild(li);
     });
+
+    // Le prix barre du coffret : la ligne de panier ne le montre pas d'elle-meme.
+    var combi = null;
+    for (var i2 = 0; i2 < table.coffrets.length; i2++) {
+      var c2 = table.coffrets[i2];
+      for (var k2 in c2.combinaisons) {
+        if (String(c2.combinaisons[k2].variante) === vid) { combi = c2.combinaisons[k2]; break; }
+      }
+      if (combi) break;
+    }
+    if (combi && combi.prixBarre && combi.prixBarre > combi.prix) {
+      var prixEl = info.querySelector('.v-stack .price-list, .v-stack price-list, .v-stack');
+      if (prixEl && !prixEl.querySelector('.ocaou-compo__barre')) {
+        var barre = texte('ocaou-compo__barre', (combi.prixBarre / 100).toFixed(2).replace('.', ',') + ' €', 's');
+        prixEl.appendChild(barre);
+      }
+    }
 
     var apres = titreVariante || info.querySelector('.v-stack');
     if (apres && apres.parentNode === info) info.insertBefore(ul, apres.nextSibling);
