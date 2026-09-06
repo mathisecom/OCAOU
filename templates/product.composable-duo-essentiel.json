@@ -667,8 +667,8 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#FCF9F5",
-        "text_color": "#AF6C67",
+        "bg_color": "#fcf9f5",
+        "text_color": "#af6c67",
         "border_color": "#e8ddd3",
         "border_width": 0,
         "height_desktop": 56,
@@ -996,6 +996,65 @@
         "padding_bottom_mobile": 40,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
+      }
+    },
+    "multi_column_V3WrVm": {
+      "type": "multi-column",
+      "blocks": {
+        "item_MLczhi": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Avoir l'essentiel sous la main",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_cwMUhA": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Organisé et bien hydraté",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_pU87gY": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Un look stylé",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_MLczhi",
+        "item_cwMUhA",
+        "item_pU87gY"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "30retours_YLhBEm": {
@@ -1462,6 +1521,7 @@
     "multi_column_FnzMQb",
     "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
+    "multi_column_V3WrVm",
     "30retours_YLhBEm",
     "logoscroll_Lyixnk",
     "faq_RLPihW",
