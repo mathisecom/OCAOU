@@ -47,6 +47,20 @@
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
       "blocks": {
+        "image_tN3Ani": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_24_50.png",
+            "url": ""
+          }
+        },
+        "image_fFKPyw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0055.heic",
+            "url": ""
+          }
+        },
         "image_eUWmYp": {
           "type": "image",
           "settings": {
@@ -89,6 +103,13 @@
             "url": ""
           }
         },
+        "image_hCTqwc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_28_18.png",
+            "url": ""
+          }
+        },
         "image_ryYMnT": {
           "type": "image",
           "settings": {
@@ -126,12 +147,15 @@
         }
       },
       "block_order": [
+        "image_tN3Ani",
+        "image_fFKPyw",
         "image_eUWmYp",
         "image_DkrWqw",
         "image_KWJB43",
         "image_HPXExF",
         "image_xbeczT",
         "image_7BfKiH",
+        "image_hCTqwc",
         "image_ryYMnT",
         "image_XWbcJF",
         "image_GCdPNQ",
