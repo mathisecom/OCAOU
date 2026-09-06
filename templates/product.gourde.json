@@ -333,14 +333,14 @@
             "padding_horizontal": 24,
             "padding_vertical_mobile": 24,
             "padding_horizontal_mobile": 16,
-            "background_color": "#F4EDE1",
-            "card_background": "#FFFFFF",
-            "heading_color": "#1A1A1A",
-            "text_color": "#1A1A1A",
+            "background_color": "#f4ede1",
+            "card_background": "#ffffff",
+            "heading_color": "#1a1a1a",
+            "text_color": "#1a1a1a",
             "muted_color": "#677279",
-            "placeholder_color": "#EDE8E0",
-            "button_background": "#CD9438",
-            "button_text_color": "#FFFFFF",
+            "placeholder_color": "#ede8e0",
+            "button_background": "#cd9438",
+            "button_text_color": "#ffffff",
             "border_radius": 16,
             "card_radius": 16,
             "button_radius": 24
@@ -353,36 +353,6 @@
       ],
       "name": "Produits achetés ensemble",
       "settings": {}
-    },
-    "featured_collection_pcRQcR": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "collection": "",
-        "products": [
-          "coffret-premier-repas-1",
-          "coffret-comme-les-grands-1",
-          "duo-essentiel"
-        ],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_count": 3,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "Il existe aussi en coffret ou en duo",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
     },
     "avisparents_byECTe": {
       "type": "avisparents",
@@ -962,6 +932,90 @@
         "pause_on_hover": false
       }
     },
+    "grillecollections_dEaaLB": {
+      "type": "grillecollections",
+      "blocks": {
+        "carte_kFUKi6": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_11_08.png",
+            "label": "Les sacs à dos",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_tLwLNm": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/format_34_1b0ca69c-6021-4ac1-8310-c1a8157f8f8b.png",
+            "label": "Le bain rayé",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_PyxNBj": {
+          "type": "carte",
+          "settings": {
+            "label": "Le repas",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_efWRcL": {
+          "type": "carte",
+          "settings": {
+            "label": "Les carreaux",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_ez8Ngd": {
+          "type": "carte",
+          "settings": {
+            "label": "Les gourdes",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_kFW7aH": {
+          "type": "carte",
+          "settings": {
+            "label": "Les coffrets",
+            "collection": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "carte_kFUKi6",
+        "carte_tLwLNm",
+        "carte_PyxNBj",
+        "carte_efWRcL",
+        "carte_ez8Ngd",
+        "carte_kFW7aH"
+      ],
+      "name": "Grille de collections",
+      "settings": {
+        "heading": "",
+        "heading_align": "center",
+        "heading_color": "#1d2153",
+        "full_width": true,
+        "columns_desktop": 6,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "ratio": "3 / 4",
+        "gap": 12,
+        "gap_mobile": 10,
+        "radius": 0,
+        "label_bg": "#b3946a",
+        "label_bg_hover": "#9a7d55",
+        "label_color": "#ffffff",
+        "bg_color": "#faf6ef",
+        "side_padding": 20,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "ocacoufriseage_LWBwAr": {
       "type": "ocacoufriseage",
       "blocks": {
@@ -1519,7 +1573,6 @@
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
     "blocks_JT4JG4",
-    "featured_collection_pcRQcR",
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
@@ -1527,6 +1580,7 @@
     "shop_the_look_BrdzWG",
     "avantageicons_k7faYm",
     "bandedefilante_6mBxhe",
+    "grillecollections_dEaaLB",
     "ocacoufriseage_LWBwAr",
     "logoscroll_Lyixnk",
     "30retours_YLhBEm",
