@@ -291,6 +291,7 @@
       "block_order": [
         "heading_tMJ6Yp"
       ],
+      "disabled": true,
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
