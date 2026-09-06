@@ -623,68 +623,6 @@
         "header_margin_bottom_mobile": 30
       }
     },
-    "bandedefilante_6mBxhe": {
-      "type": "bandedefilante",
-      "blocks": {
-        "marquee_item_7NfyzF": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒",
-            "icon_image": "shopify://shop_images/icone_1.png"
-          }
-        },
-        "marquee_item_qcCcnL": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Prêt en quelques secondes",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/CLAIR.png"
-          }
-        },
-        "marquee_item_PGEcxn": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Encourage l'autonomie",
-            "icon_text": "🌈",
-            "icon_image": "shopify://shop_images/icone.png"
-          }
-        },
-        "marquee_item_7XteVb": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Complice des familles",
-            "icon_text": "🌷",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_item_7NfyzF",
-        "marquee_item_qcCcnL",
-        "marquee_item_PGEcxn",
-        "marquee_item_7XteVb"
-      ],
-      "name": "Bande défilante premium",
-      "settings": {
-        "bg_color": "#fcf9f5",
-        "text_color": "#af6c67",
-        "border_color": "#e8ddd3",
-        "border_width": 0,
-        "height_desktop": 56,
-        "height_mobile": 52,
-        "font_size_desktop": 13,
-        "font_size_mobile": 10,
-        "font_weight": "600",
-        "letter_spacing": 1.5,
-        "uppercase": true,
-        "icon_size": 20,
-        "gap_desktop": 65,
-        "gap_mobile": 50,
-        "speed": 52,
-        "pause_on_hover": false
-      }
-    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
@@ -833,6 +771,68 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "bandedefilante_6mBxhe": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_7NfyzF": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Tout est à sa place",
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_1.png"
+          }
+        },
+        "marquee_item_qcCcnL": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Prêt en quelques secondes",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/CLAIR.png"
+          }
+        },
+        "marquee_item_PGEcxn": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Encourage l'autonomie",
+            "icon_text": "🌈",
+            "icon_image": "shopify://shop_images/icone.png"
+          }
+        },
+        "marquee_item_7XteVb": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Complice des familles",
+            "icon_text": "🌷",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_7NfyzF",
+        "marquee_item_qcCcnL",
+        "marquee_item_PGEcxn",
+        "marquee_item_7XteVb"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#fcf9f5",
+        "text_color": "#af6c67",
+        "border_color": "#e8ddd3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 52,
+        "font_size_desktop": 13,
+        "font_size_mobile": 10,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 65,
+        "gap_mobile": 50,
+        "speed": 52,
+        "pause_on_hover": false
       }
     },
     "image_with_text_overlay_MqfmTV": {
@@ -1516,12 +1516,12 @@
     "imagewithtexticons_4VMEKy",
     "image_with_text_overlay_wrRh6T",
     "sectionsicones_Y3DFyV",
-    "bandedefilante_6mBxhe",
     "imagewithtexticons_pncmHL",
     "multi_column_FnzMQb",
     "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
     "multi_column_V3WrVm",
+    "bandedefilante_6mBxhe",
     "30retours_YLhBEm",
     "logoscroll_Lyixnk",
     "faq_RLPihW",
