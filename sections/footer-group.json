@@ -203,6 +203,17 @@
     "testimonials_LKV3kq": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_PAByn8": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Elodie O.",
+            "title": "couverture légère",
+            "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.</p>"
+          }
+        },
         "testimonial_WUWxXP": {
           "type": "testimonial",
           "settings": {
@@ -326,6 +337,7 @@
         }
       },
       "block_order": [
+        "testimonial_PAByn8",
         "testimonial_WUWxXP",
         "testimonial_PE3qw8",
         "testimonial_BpQWPf",
