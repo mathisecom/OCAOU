@@ -203,6 +203,17 @@
     "testimonials_LKV3kq": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_DTTqzy": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Delphine K.",
+            "title": "coussinets discrets",
+            "content": "<p>J'adore mes coussinets! Même si on ne les vois pas, ça me fais du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable, vraiment pratique.</p>"
+          }
+        },
         "testimonial_PAByn8": {
           "type": "testimonial",
           "settings": {
@@ -337,6 +348,7 @@
         }
       },
       "block_order": [
+        "testimonial_DTTqzy",
         "testimonial_PAByn8",
         "testimonial_WUWxXP",
         "testimonial_PE3qw8",
