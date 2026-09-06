@@ -666,6 +666,68 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "bandedefilante_6mBxhe": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_qcCcnL": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "compartimenté",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_QqECnx": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "ergonomique",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_zzBhhz": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Incassable",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_dJGWc3": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "hermétique",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_qcCcnL",
+        "marquee_item_QqECnx",
+        "marquee_item_zzBhhz",
+        "marquee_item_dJGWc3"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#fcf9f5",
+        "text_color": "#af6c67",
+        "border_color": "#e8ddd3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 52,
+        "font_size_desktop": 13,
+        "font_size_mobile": 10,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 65,
+        "gap_mobile": 50,
+        "speed": 52,
+        "pause_on_hover": false
+      }
+    },
     "multi_column_FnzMQb": {
       "type": "multi-column",
       "blocks": {
@@ -822,68 +884,6 @@
         "padding_bottom_mobile": 60,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
-      }
-    },
-    "bandedefilante_6mBxhe": {
-      "type": "bandedefilante",
-      "blocks": {
-        "marquee_item_qcCcnL": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "compartimenté",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        },
-        "marquee_item_QqECnx": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "ergonomique",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        },
-        "marquee_item_zzBhhz": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Incassable",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        },
-        "marquee_item_dJGWc3": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "hermétique",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_item_qcCcnL",
-        "marquee_item_QqECnx",
-        "marquee_item_zzBhhz",
-        "marquee_item_dJGWc3"
-      ],
-      "name": "Bande défilante premium",
-      "settings": {
-        "bg_color": "#fcf9f5",
-        "text_color": "#af6c67",
-        "border_color": "#e8ddd3",
-        "border_width": 0,
-        "height_desktop": 56,
-        "height_mobile": 52,
-        "font_size_desktop": 13,
-        "font_size_mobile": 10,
-        "font_weight": "600",
-        "letter_spacing": 1.5,
-        "uppercase": true,
-        "icon_size": 20,
-        "gap_desktop": 65,
-        "gap_mobile": 50,
-        "speed": 52,
-        "pause_on_hover": false
       }
     },
     "ocacoufriseage_LWBwAr": {
@@ -1447,9 +1447,9 @@
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
+    "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
     "avantageicons_k7faYm",
-    "bandedefilante_6mBxhe",
     "ocacoufriseage_LWBwAr",
     "logoscroll_Lyixnk",
     "30retours_YLhBEm",
