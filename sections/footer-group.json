@@ -203,6 +203,17 @@
     "testimonials_LKV3kq": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_DzKV7A": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Cécile G.",
+            "title": "Compartiments très pratiques",
+            "content": "<p>Lunch box compartimentée très pratique. Rien ne se mélange.</p>"
+          }
+        },
         "testimonial_cxK7qF": {
           "type": "testimonial",
           "settings": {
@@ -282,6 +293,7 @@
         }
       },
       "block_order": [
+        "testimonial_DzKV7A",
         "testimonial_cxK7qF",
         "testimonial_J4K6jM",
         "testimonial_DnV3QU",
