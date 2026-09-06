@@ -698,9 +698,9 @@
           "type": "item",
           "settings": {
             "column_size": "3",
-            "title": "Pensé pour bouger",
+            "title": "Facile à nettoyer",
             "heading_tag": "h3",
-            "content": "<p>Un kit simple et pratique pour les repas à la maison, en sortie ou en voyage.</p>",
+            "content": "<p><strong>Passe au lave-vaisselle.</strong> En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
