@@ -935,11 +935,29 @@
     "grillecollections_dEaaLB": {
       "type": "grillecollections",
       "blocks": {
+        "carte_efWRcL": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0302.heic",
+            "label": "",
+            "collection": "",
+            "link": ""
+          }
+        },
+        "carte_ez8Ngd": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_27_39.png",
+            "label": "",
+            "collection": "",
+            "link": ""
+          }
+        },
         "carte_kFUKi6": {
           "type": "carte",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_11_08.png",
-            "label": "Les sacs à dos",
+            "label": "",
             "collection": "",
             "link": ""
           }
@@ -948,7 +966,7 @@
           "type": "carte",
           "settings": {
             "image": "shopify://shop_images/format_34_1b0ca69c-6021-4ac1-8310-c1a8157f8f8b.png",
-            "label": "Le bain rayé",
+            "label": "",
             "collection": "",
             "link": ""
           }
@@ -956,23 +974,8 @@
         "carte_PyxNBj": {
           "type": "carte",
           "settings": {
-            "label": "Le repas",
-            "collection": "",
-            "link": ""
-          }
-        },
-        "carte_efWRcL": {
-          "type": "carte",
-          "settings": {
-            "label": "Les carreaux",
-            "collection": "",
-            "link": ""
-          }
-        },
-        "carte_ez8Ngd": {
-          "type": "carte",
-          "settings": {
-            "label": "Les gourdes",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_21_29.png",
+            "label": "",
             "collection": "",
             "link": ""
           }
@@ -980,18 +983,19 @@
         "carte_kFW7aH": {
           "type": "carte",
           "settings": {
-            "label": "Les coffrets",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_31_01.png",
+            "label": "",
             "collection": "",
             "link": ""
           }
         }
       },
       "block_order": [
+        "carte_efWRcL",
+        "carte_ez8Ngd",
         "carte_kFUKi6",
         "carte_tLwLNm",
         "carte_PyxNBj",
-        "carte_efWRcL",
-        "carte_ez8Ngd",
         "carte_kFW7aH"
       ],
       "name": "Grille de collections",
