@@ -386,7 +386,7 @@
         "gap_mobile": 10,
         "radius": 0,
         "label_bg": "#af6c67",
-        "label_bg_hover": "#AF6C67",
+        "label_bg_hover": "#af6c67",
         "label_color": "#ffffff",
         "bg_color": "#faf6ef",
         "side_padding": 20,
@@ -898,7 +898,7 @@
         "carte_Yxdt4y": {
           "type": "carte",
           "settings": {
-            "image": "shopify://shop_images/no_change_1.png",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_14_14_42.png",
             "label": "",
             "collection": "",
             "link": ""
