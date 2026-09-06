@@ -91,7 +91,6 @@
         },
         "image_HPXExF": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_6298.heic",
             "url": ""
@@ -100,7 +99,7 @@
         "image_MK3rYP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/BANNER_MOBILE_-_2026-06-29T141106.558.jpg",
+            "image": "shopify://shop_images/IMG_6301.heic",
             "url": ""
           }
         }
