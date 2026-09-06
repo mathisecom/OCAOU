@@ -252,14 +252,14 @@
             "padding_horizontal": 24,
             "padding_vertical_mobile": 24,
             "padding_horizontal_mobile": 16,
-            "background_color": "#F4EDE1",
-            "card_background": "#FFFFFF",
-            "heading_color": "#1A1A1A",
-            "text_color": "#1A1A1A",
+            "background_color": "#f4ede1",
+            "card_background": "#ffffff",
+            "heading_color": "#1a1a1a",
+            "text_color": "#1a1a1a",
             "muted_color": "#677279",
-            "placeholder_color": "#EDE8E0",
-            "button_background": "#CD9438",
-            "button_text_color": "#FFFFFF",
+            "placeholder_color": "#ede8e0",
+            "button_background": "#cd9438",
+            "button_text_color": "#ffffff",
             "border_radius": 16,
             "card_radius": 16,
             "button_radius": 24
@@ -652,8 +652,8 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#FCF9F5",
-        "text_color": "#AF6C67",
+        "bg_color": "#fcf9f5",
+        "text_color": "#af6c67",
         "border_color": "#e8ddd3",
         "border_width": 0,
         "height_desktop": 56,
@@ -981,6 +981,65 @@
         "padding_bottom_mobile": 40,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
+      }
+    },
+    "multi_column_7yeHgd": {
+      "type": "multi-column",
+      "blocks": {
+        "item_RNNXUm": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Pour TOUT prévoir",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_YwNNyT": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Léger et molletonné",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_bhF4V6": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Ranger en étant stylé",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_RNNXUm",
+        "item_YwNNyT",
+        "item_bhF4V6"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "30retours_YLhBEm": {
@@ -1447,6 +1506,7 @@
     "multi_column_FnzMQb",
     "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
+    "multi_column_7yeHgd",
     "30retours_YLhBEm",
     "logoscroll_Lyixnk",
     "faq_RLPihW",
