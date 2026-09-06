@@ -601,15 +601,15 @@
         "marquee_item_7NfyzF": {
           "type": "marquee_item",
           "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒",
+            "text": "lave vaisselle",
+            "icon_text": "✹",
             "icon_image": "shopify://shop_images/icone_1.png"
           }
         },
         "marquee_item_qcCcnL": {
           "type": "marquee_item",
           "settings": {
-            "text": "Prêt en quelques secondes",
+            "text": "compartimentée",
             "icon_text": "✹",
             "icon_image": "shopify://shop_images/CLAIR.png"
           }
@@ -618,15 +618,15 @@
           "type": "marquee_item",
           "settings": {
             "text": "Encourage l'autonomie",
-            "icon_text": "🌈",
+            "icon_text": "",
             "icon_image": "shopify://shop_images/icone.png"
           }
         },
         "marquee_item_7XteVb": {
           "type": "marquee_item",
           "settings": {
-            "text": "Complice des familles",
-            "icon_text": "🌷",
+            "text": "micro-onde et congélateur",
+            "icon_text": "",
             "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
@@ -639,8 +639,8 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#151515",
-        "text_color": "#ffffff",
+        "bg_color": "#FCF9F5",
+        "text_color": "#AF6C67",
         "border_color": "#e8ddd3",
         "border_width": 0,
         "height_desktop": 56,
