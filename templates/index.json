@@ -277,6 +277,53 @@
         "lazy": true
       }
     },
+    "image_with_text_overlay_xeN3nf": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_tMJ6Yp": {
+          "type": "heading",
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tMJ6Yp"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/Produits_avec_Ombre_Legere.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 15
+      }
+    },
+    "impact_text_jwCEdV": {
+      "type": "impact-text",
+      "name": "Impact text",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
     "grillecollections_HyQXcx": {
       "type": "grillecollections",
       "blocks": {
@@ -1401,6 +1448,8 @@
   "order": [
     "heromedia_zwA498",
     "logoscroll_WxkMyg",
+    "image_with_text_overlay_xeN3nf",
+    "impact_text_jwCEdV",
     "grillecollections_HyQXcx",
     "featured_collection_Dzf4fX",
     "offrecoffret_Tj4hcD",
