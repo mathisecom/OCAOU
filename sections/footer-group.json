@@ -247,6 +247,17 @@
             "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.</p>"
           }
         },
+        "testimonial_DnV3QU": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sandrine C.",
+            "title": "La taille est parfaite!",
+            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires.Il est vraiment ingénieux et bien pensé. La taille est parfaite!”</p>"
+          }
+        },
         "testimonial_WUWxXP": {
           "type": "testimonial",
           "settings": {
@@ -278,6 +289,17 @@
             "author": "Aurore P.",
             "title": "Fourre-tout beau et spacieux",
             "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.</p>"
+          }
+        },
+        "testimonial_cdKCDw": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Caroline M.",
+            "title": "Je l'utilise non-stop",
+            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊</p>"
           }
         },
         "testimonial_DzKV7A": {
@@ -334,28 +356,6 @@
             "title": "Il est encore plus génial en vrai !",
             "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.</p>"
           }
-        },
-        "testimonial_DnV3QU": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Sandrine C.",
-            "title": "La taille est parfaite!",
-            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires.Il est vraiment ingénieux et bien pensé. La taille est parfaite!”</p>"
-          }
-        },
-        "testimonial_cdKCDw": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Caroline M.",
-            "title": "Je l'utilise non-stop",
-            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊</p>"
-          }
         }
       },
       "block_order": [
@@ -363,16 +363,16 @@
         "testimonial_hD44TM",
         "testimonial_xEqXey",
         "testimonial_PAByn8",
+        "testimonial_DnV3QU",
         "testimonial_WUWxXP",
         "testimonial_PE3qw8",
         "testimonial_BpQWPf",
+        "testimonial_cdKCDw",
         "testimonial_DzKV7A",
         "testimonial_VmiL9x",
         "testimonial_cxK7qF",
         "testimonial_J4K6jM",
-        "testimonial_tnLDK4",
-        "testimonial_DnV3QU",
-        "testimonial_cdKCDw"
+        "testimonial_tnLDK4"
       ],
       "name": "Testimonials",
       "settings": {
