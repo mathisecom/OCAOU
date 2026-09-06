@@ -173,7 +173,7 @@
           {%- endif -%}
 
           <div class="footer__copyright v-stack gap-1">
-            <p class="text-sm text-subdued">© {{ 'now' | date: '%Y' }}, {{ shop.name }}. {{ powered_by_link }}</p>
+            <p class="text-sm text-subdued">© {{ 'now' | date: '%Y' }}, {{ shop.name }}. {{ powered_by_link }} <a href="https://agenceweblocal.com" target="_blank" rel="noopener" class="link-faded">Créé par Agence Web Local</a></p>
 
             {%- if section.settings.show_policy_links and shop.policies.size > 0 -%}
               <ul class="footer__policy-links unstyled-list">
