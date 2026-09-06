@@ -386,7 +386,7 @@
         "gap_mobile": 10,
         "radius": 0,
         "label_bg": "#af6c67",
-        "label_bg_hover": "#9a7d55",
+        "label_bg_hover": "#AF6C67",
         "label_color": "#ffffff",
         "bg_color": "#faf6ef",
         "side_padding": 20,
