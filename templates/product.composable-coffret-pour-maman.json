@@ -640,9 +640,22 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_2_sept._2026_15_22_08_1.png",
             "column_size": "3",
-            "title": "Pensé pour Maman",
+            "title": "Prendre soin de Maman",
             "heading_tag": "h3",
             "content": "<p>Un sac, des coussinets d’allaitement et des lingettes lavables réunis dans un coffret pratique et tout doux.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_rRTD9L": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_2_sept._2026_15_22_09_3.png",
+            "column_size": "3",
+            "title": "Pour féliciter Maman",
+            "heading_tag": "h3",
+            "content": "<p>Un coffret utile et joli, parfait à offrir dès la maternité.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -655,20 +668,7 @@
             "column_size": "3",
             "title": "Doux et Réutilisable",
             "heading_tag": "h3",
-            "content": "<p>Des essentiels en bambou, agréables pour la peau et faciles à laver au quotidien.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
-        "item_rRTD9L": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_2_sept._2026_15_22_09_3.png",
-            "column_size": "3",
-            "title": "Une attention qui fait plaisir",
-            "heading_tag": "h3",
-            "content": "<p>Un coffret utile et joli, parfait à offrir à une jeune maman.</p>",
+            "content": "<p>Des essentiels en bambou, doux pour la peau et faciles à laver au quotidien.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -677,8 +677,8 @@
       },
       "block_order": [
         "item_wXyMTV",
-        "item_KhaUjE",
-        "item_rRTD9L"
+        "item_rRTD9L",
+        "item_KhaUjE"
       ],
       "name": "Multi-column",
       "settings": {
