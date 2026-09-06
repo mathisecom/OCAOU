@@ -666,6 +666,66 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "multi_column_FnzMQb": {
+      "type": "multi-column",
+      "blocks": {
+        "item_wXyMTV": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_59_04.png",
+            "column_size": "3",
+            "title": "Un kit repas complet",
+            "heading_tag": "h3",
+            "content": "<p>Un coffret complet avec gourde, lunch box et couverts pour accompagner les premiers repas en autonomie.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_KhaUjE": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Pratique au quotidien",
+            "heading_tag": "h3",
+            "content": "<p>Léger, hermétique et facile à nettoyer, il se glisse facilement dans le sac isotherme O’CAOU.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_rRTD9L": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Facile à nettoyer",
+            "heading_tag": "h3",
+            "content": "<p><strong>Passe au lave-vaisselle.</strong> En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_wXyMTV",
+        "item_KhaUjE",
+        "item_rRTD9L"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "bandedefilante_6mBxhe": {
       "type": "bandedefilante",
       "blocks": {
@@ -726,66 +786,6 @@
         "gap_mobile": 50,
         "speed": 52,
         "pause_on_hover": false
-      }
-    },
-    "multi_column_FnzMQb": {
-      "type": "multi-column",
-      "blocks": {
-        "item_wXyMTV": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_59_04.png",
-            "column_size": "3",
-            "title": "Un kit repas complet",
-            "heading_tag": "h3",
-            "content": "<p>Un coffret complet avec gourde, lunch box et couverts pour accompagner les premiers repas en autonomie.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
-        "item_KhaUjE": {
-          "type": "item",
-          "settings": {
-            "column_size": "3",
-            "title": "Pratique au quotidien",
-            "heading_tag": "h3",
-            "content": "<p>Léger, hermétique et facile à nettoyer, il se glisse facilement dans le sac isotherme O’CAOU.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
-        "item_rRTD9L": {
-          "type": "item",
-          "settings": {
-            "column_size": "3",
-            "title": "Facile à nettoyer",
-            "heading_tag": "h3",
-            "content": "<p><strong>Passe au lave-vaisselle.</strong> En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        }
-      },
-      "block_order": [
-        "item_wXyMTV",
-        "item_KhaUjE",
-        "item_rRTD9L"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "full_width": true,
-        "stack_on_mobile": false,
-        "gap": "medium",
-        "text_alignment": "center",
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
       }
     },
     "avantageicons_k7faYm": {
@@ -1447,8 +1447,8 @@
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
-    "bandedefilante_6mBxhe",
     "multi_column_FnzMQb",
+    "bandedefilante_6mBxhe",
     "avantageicons_k7faYm",
     "ocacoufriseage_LWBwAr",
     "logoscroll_Lyixnk",
