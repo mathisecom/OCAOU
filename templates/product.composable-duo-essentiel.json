@@ -201,34 +201,50 @@
         "input_text_color": ""
       }
     },
-    "featured_collection_MXYA7g": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "collection": "les-coffrets",
-        "products": [
-          "coffret-pour-maman",
-          "coffret-comme-les-grands"
-        ],
-        "full_width": true,
-        "stack_products": false,
-        "show_progress_bar": true,
-        "products_count": 2,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 2,
-        "subheading": "",
-        "title": "Existe aussi en coffret",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "#f4ede1",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
+    "blocks_8t4Vh6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4e66e81_irgY99": {
+          "type": "ai_gen_block_4e66e81",
+          "settings": {
+            "heading": "Souvent achetés ensemble",
+            "products": [
+              "doudou",
+              "coffret-comme-les-grands-1"
+            ],
+            "button_label": "Découvrir",
+            "show_prices": true,
+            "desktop_width_percent": 100,
+            "columns_desktop": "4",
+            "columns_mobile": "2",
+            "alignment": "left",
+            "gap": 16,
+            "heading_size": 26,
+            "heading_size_mobile": 22,
+            "padding_vertical": 32,
+            "padding_horizontal": 24,
+            "padding_vertical_mobile": 24,
+            "padding_horizontal_mobile": 16,
+            "background_color": "#F4EDE1",
+            "card_background": "#FFFFFF",
+            "heading_color": "#1A1A1A",
+            "text_color": "#1A1A1A",
+            "muted_color": "#677279",
+            "placeholder_color": "#EDE8E0",
+            "button_background": "#CD9438",
+            "button_text_color": "#FFFFFF",
+            "border_radius": 16,
+            "card_radius": 16,
+            "button_radius": 24
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4e66e81_irgY99"
+      ],
+      "name": "Produits achetés ensemble",
+      "settings": {}
     },
     "shop_the_look_zAW9Nh": {
       "type": "shop-the-look",
@@ -773,68 +789,6 @@
         "text_color": ""
       }
     },
-    "bandedefilante_6mBxhe": {
-      "type": "bandedefilante",
-      "blocks": {
-        "marquee_item_7NfyzF": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒",
-            "icon_image": "shopify://shop_images/icone_1.png"
-          }
-        },
-        "marquee_item_qcCcnL": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Prêt en quelques secondes",
-            "icon_text": "✹",
-            "icon_image": "shopify://shop_images/CLAIR.png"
-          }
-        },
-        "marquee_item_PGEcxn": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Encourage l'autonomie",
-            "icon_text": "🌈",
-            "icon_image": "shopify://shop_images/icone.png"
-          }
-        },
-        "marquee_item_7XteVb": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Complice des familles",
-            "icon_text": "🌷",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_item_7NfyzF",
-        "marquee_item_qcCcnL",
-        "marquee_item_PGEcxn",
-        "marquee_item_7XteVb"
-      ],
-      "name": "Bande défilante premium",
-      "settings": {
-        "bg_color": "#fcf9f5",
-        "text_color": "#af6c67",
-        "border_color": "#e8ddd3",
-        "border_width": 0,
-        "height_desktop": 56,
-        "height_mobile": 52,
-        "font_size_desktop": 13,
-        "font_size_mobile": 10,
-        "font_weight": "600",
-        "letter_spacing": 1.5,
-        "uppercase": true,
-        "icon_size": 20,
-        "gap_desktop": 65,
-        "gap_mobile": 50,
-        "speed": 52,
-        "pause_on_hover": false
-      }
-    },
     "image_with_text_overlay_MqfmTV": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -1055,6 +1009,68 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "bandedefilante_6mBxhe": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_7NfyzF": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Tout est à sa place",
+            "icon_text": "🍒",
+            "icon_image": "shopify://shop_images/icone_1.png"
+          }
+        },
+        "marquee_item_qcCcnL": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Prêt en quelques secondes",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/CLAIR.png"
+          }
+        },
+        "marquee_item_PGEcxn": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Encourage l'autonomie",
+            "icon_text": "🌈",
+            "icon_image": "shopify://shop_images/icone.png"
+          }
+        },
+        "marquee_item_7XteVb": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Complice des familles",
+            "icon_text": "🌷",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_7NfyzF",
+        "marquee_item_qcCcnL",
+        "marquee_item_PGEcxn",
+        "marquee_item_7XteVb"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#fcf9f5",
+        "text_color": "#af6c67",
+        "border_color": "#e8ddd3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 52,
+        "font_size_desktop": 13,
+        "font_size_mobile": 10,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 65,
+        "gap_mobile": 50,
+        "speed": 52,
+        "pause_on_hover": false
       }
     },
     "30retours_YLhBEm": {
@@ -1509,7 +1525,7 @@
   },
   "order": [
     "main",
-    "featured_collection_MXYA7g",
+    "blocks_8t4Vh6",
     "shop_the_look_zAW9Nh",
     "rich_text_7LA3LQ",
     "logoscroll_rVRFrN",
