@@ -142,7 +142,7 @@
     "insta_enable_hover_zoom": true,
     "insta_enable_hover_darken": false,
     "insta_mobile_scroll": true,
-    "insta_mobile_card_width": 50,
+    "insta_mobile_card_width": 40,
     "insta_bg_color": "#ffffff",
     "insta_placeholder_bg": "#f2f2f2",
     "insta_placeholder_text_color": "#777777",
