@@ -47,10 +47,10 @@
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
       "blocks": {
-        "image_xbeczT": {
+        "image_eUWmYp": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_7538.heic",
+            "image": "shopify://shop_images/IMG_6907.png",
             "url": ""
           }
         },
@@ -75,10 +75,10 @@
             "url": ""
           }
         },
-        "image_XWbcJF": {
+        "image_xbeczT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_19_35.png",
+            "image": "shopify://shop_images/IMG_7538.heic",
             "url": ""
           }
         },
@@ -93,6 +93,13 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/IMG_0366.png",
+            "url": ""
+          }
+        },
+        "image_XWbcJF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_19_35.png",
             "url": ""
           }
         },
@@ -119,13 +126,14 @@
         }
       },
       "block_order": [
-        "image_xbeczT",
+        "image_eUWmYp",
         "image_DkrWqw",
         "image_KWJB43",
         "image_HPXExF",
-        "image_XWbcJF",
+        "image_xbeczT",
         "image_7BfKiH",
         "image_ryYMnT",
+        "image_XWbcJF",
         "image_GCdPNQ",
         "image_MK3rYP",
         "image_U9YqTk"
