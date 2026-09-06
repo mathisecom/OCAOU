@@ -203,6 +203,17 @@
     "testimonials_LKV3kq": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_J4K6jM": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "",
+            "title": "Testimonial",
+            "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.</p>"
+          }
+        },
         "testimonial_DnV3QU": {
           "type": "testimonial",
           "settings": {
@@ -260,6 +271,7 @@
         }
       },
       "block_order": [
+        "testimonial_J4K6jM",
         "testimonial_DnV3QU",
         "testimonial_VmiL9x",
         "testimonial_xEqXey",
