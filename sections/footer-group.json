@@ -203,6 +203,17 @@
     "testimonials_LKV3kq": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_PE3qw8": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Séverine F.",
+            "title": "Veilleuse baladeuse",
+            "content": "<p>Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.</p>"
+          }
+        },
         "testimonial_BpQWPf": {
           "type": "testimonial",
           "settings": {
@@ -304,6 +315,7 @@
         }
       },
       "block_order": [
+        "testimonial_PE3qw8",
         "testimonial_BpQWPf",
         "testimonial_DzKV7A",
         "testimonial_cxK7qF",
