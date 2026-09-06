@@ -630,7 +630,7 @@
         "links": {
           "type": "links",
           "settings": {
-            "menu": "main-menu",
+            "menu": "footer",
             "show_menu_title": true,
             "menu_title": "Menu"
           }
