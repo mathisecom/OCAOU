@@ -181,14 +181,14 @@
             "padding_horizontal": 24,
             "padding_vertical_mobile": 24,
             "padding_horizontal_mobile": 16,
-            "background_color": "#F4EDE1",
-            "card_background": "#FFFFFF",
-            "heading_color": "#1A1A1A",
-            "text_color": "#1A1A1A",
+            "background_color": "#f4ede1",
+            "card_background": "#ffffff",
+            "heading_color": "#1a1a1a",
+            "text_color": "#1a1a1a",
             "muted_color": "#677279",
-            "placeholder_color": "#EDE8E0",
-            "button_background": "#CD9438",
-            "button_text_color": "#FFFFFF",
+            "placeholder_color": "#ede8e0",
+            "button_background": "#cd9438",
+            "button_text_color": "#ffffff",
             "border_radius": 16,
             "card_radius": 16,
             "button_radius": 24
@@ -595,6 +595,65 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "multi_column_V7gND3": {
+      "type": "multi-column",
+      "blocks": {
+        "item_zBNPHB": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Pour manger comme un grand",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_QwVBNL": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Souple et léger",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_cLjTRf": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Se nettoie très facilement",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_zBNPHB",
+        "item_QwVBNL",
+        "item_cLjTRf"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "bandedefilante_6mBxhe": {
       "type": "bandedefilante",
       "blocks": {
@@ -639,8 +698,8 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#FCF9F5",
-        "text_color": "#AF6C67",
+        "bg_color": "#fcf9f5",
+        "text_color": "#af6c67",
         "border_color": "#e8ddd3",
         "border_width": 0,
         "height_desktop": 56,
@@ -1430,6 +1489,7 @@
     "imagewithtexticons_4VMEKy",
     "image_with_text_overlay_wrRh6T",
     "sectionsicones_Y3DFyV",
+    "multi_column_V7gND3",
     "bandedefilante_6mBxhe",
     "imagewithtexticons_pncmHL",
     "multi_column_FnzMQb",
