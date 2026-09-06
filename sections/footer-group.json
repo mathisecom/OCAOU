@@ -214,6 +214,17 @@
             "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.</p>"
           }
         },
+        "testimonial_xEqXey": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Sophia M.",
+            "title": "Sac hyper utile et très pratique!",
+            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!</p>"
+          }
+        },
         "testimonial_DTTqzy": {
           "type": "testimonial",
           "settings": {
@@ -266,7 +277,7 @@
             "rating": 5,
             "author": "Aurore P.",
             "title": "Fourre-tout beau et spacieux",
-            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. Même sans bébé, je le porte!</p>"
+            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.</p>"
           }
         },
         "testimonial_DzKV7A": {
@@ -278,6 +289,17 @@
             "author": "Cécile G.",
             "title": "Compartiments très pratiques",
             "content": "<p>Lunch box compartimentée très pratique. Rien ne se mélange.</p>"
+          }
+        },
+        "testimonial_VmiL9x": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Marion C.",
+            "title": "Coup de cœur pour ce sac",
+            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”</p>"
           }
         },
         "testimonial_cxK7qF": {
@@ -302,6 +324,17 @@
             "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.</p>"
           }
         },
+        "testimonial_tnLDK4": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Iris C.",
+            "title": "Il est encore plus génial en vrai !",
+            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.</p>"
+          }
+        },
         "testimonial_DnV3QU": {
           "type": "testimonial",
           "settings": {
@@ -311,28 +344,6 @@
             "author": "Sandrine C.",
             "title": "La taille est parfaite!",
             "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires.Il est vraiment ingénieux et bien pensé. La taille est parfaite!”</p>"
-          }
-        },
-        "testimonial_VmiL9x": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Marion C.",
-            "title": "Coup de cœur pour ce sac",
-            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”</p>"
-          }
-        },
-        "testimonial_xEqXey": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "Sophia M.",
-            "title": "Sac hyper utile et très pratique!",
-            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!</p>"
           }
         },
         "testimonial_cdKCDw": {
@@ -345,34 +356,23 @@
             "title": "Je l'utilise non-stop",
             "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊</p>"
           }
-        },
-        "testimonial_tnLDK4": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Iris C.",
-            "title": "Il est encore plus génial en vrai !",
-            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.</p>"
-          }
         }
       },
       "block_order": [
         "testimonial_hD44TM",
+        "testimonial_xEqXey",
         "testimonial_DTTqzy",
         "testimonial_PAByn8",
         "testimonial_WUWxXP",
         "testimonial_PE3qw8",
         "testimonial_BpQWPf",
         "testimonial_DzKV7A",
+        "testimonial_VmiL9x",
         "testimonial_cxK7qF",
         "testimonial_J4K6jM",
+        "testimonial_tnLDK4",
         "testimonial_DnV3QU",
-        "testimonial_VmiL9x",
-        "testimonial_xEqXey",
-        "testimonial_cdKCDw",
-        "testimonial_tnLDK4"
+        "testimonial_cdKCDw"
       ],
       "name": "Testimonials",
       "settings": {
