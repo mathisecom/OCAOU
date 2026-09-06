@@ -203,6 +203,17 @@
     "testimonials_LKV3kq": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_hD44TM": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Laura J.",
+            "title": "Lingettes pour tout",
+            "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.</p>"
+          }
+        },
         "testimonial_DTTqzy": {
           "type": "testimonial",
           "settings": {
@@ -348,6 +359,7 @@
         }
       },
       "block_order": [
+        "testimonial_hD44TM",
         "testimonial_DTTqzy",
         "testimonial_PAByn8",
         "testimonial_WUWxXP",
