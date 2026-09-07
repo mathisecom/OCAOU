@@ -26,10 +26,25 @@
   /* Barre d'achat collante : sur un coffret, les trois nuanciers la faisaient monter
      a plus de 400 px de haut et masquer la page. Elle garde la photo, le titre, le
      prix et le bouton ; les couleurs se choisissent dans la fiche, plus haut. */
-  .product-quick-add { max-width: 460px; }
-  /* Le titre tenait sur une ligne tronquee a trois lettres : il passe a la ligne. */
-  .product-quick-add .text-truncate,
-  .product-quick-add a { white-space: normal; overflow: visible; text-overflow: clip; }
+  .product-quick-add { max-width: min(680px, 92vw); }
+
+  /* Chaque couleur tient sur une ligne : intitule a gauche, pastilles a droite.
+     Sans cela, un coffret a trois nuanciers montait a 650 px de haut. */
+  .product-quick-add .variant-picker { gap: 8px; }
+  .product-quick-add .variant-picker__option {
+    display: grid;
+    grid-template-columns: minmax(0, auto) 1fr;
+    align-items: center;
+    column-gap: 12px;
+  }
+  .product-quick-add .variant-picker__option-info,
+  .product-quick-add .variant-picker__option-info .h-stack { gap: 4px; margin: 0; }
+  .product-quick-add .variant-picker__option-values { gap: 6px; }
+  .product-quick-add .color-swatch { width: 22px; height: 22px; }
+  .product-quick-add .product-quick-add__variant-picker { padding: 0; }
+
+  /* Le titre reste sur une ligne : la barre est un rappel, pas une fiche. */
+  .product-quick-add a.bold { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
   /* Une croix pour la refermer : elle revient au rechargement de la page. */
   .ocaou-fermer-barre {
