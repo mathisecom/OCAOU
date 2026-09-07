@@ -699,6 +699,7 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/no_change_3_copie.png",
             "column_size": "3",
             "title": "Pratique au quotidien",
             "heading_tag": "h3",
@@ -711,6 +712,7 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/no_change_3_b1181cba-420e-4329-ad4a-8ee6bf7fdcb6.png",
             "column_size": "3",
             "title": "Facile à nettoyer",
             "heading_tag": "h3",
