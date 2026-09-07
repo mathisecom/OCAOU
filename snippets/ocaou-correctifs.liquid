@@ -105,9 +105,14 @@
       border-radius: 16px;
       box-shadow: 0 6px 20px rgba(0,0,0,.14);
       padding: 12px 14px;
-      width: calc(100vw - 24px);
-      max-width: calc(100vw - 24px);
+      /* Le theme l'ancre a droite : sur mobile on la tient par les deux bords,
+         elle se centre d'elle-meme. */
+      left: 12px;
+      right: 12px;
+      width: auto;
+      max-width: none;
     }
+    .product-quick-add .variant-picker__option-values { overflow-x: auto; }
     .product-quick-add a.bold { font-size: 15px; }
     .product-quick-add price-list { font-size: 14px; }
     .product-quick-add .product-quick-add__variant {
