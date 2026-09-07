@@ -93,6 +93,27 @@
     font: inherit; font-size: 17px; line-height: 1;
   }
   .ocaou-fermer-barre:hover { background: rgba(0,0,0,.12); }
+
+  /* Sur mobile, le theme masque le panneau a pastilles et ne laisse que le bouton.
+     On l'affiche aussi, en deux rangees, et on retire le bouton en double. */
+  @media screen and (max-width: 699px) {
+    .product-quick-add .product-quick-add__variant {
+      display: grid !important;
+      grid-template-columns: 56px minmax(0, 1fr);
+      column-gap: 10px;
+      row-gap: 10px;
+      align-items: center;
+      padding: 4px 0;
+    }
+    .product-quick-add .product-quick-add__variant > buy-buttons { grid-column: 1 / -1; }
+    .product-quick-add .product-quick-add__variant > buy-buttons .button { width: 100%; }
+    .product-quick-add > buy-buttons { display: none; }
+    .product-quick-add variant-media img { width: 56px; height: 56px; }
+    .product-quick-add .variant-picker__option { grid-template-columns: 104px minmax(0, 1fr); column-gap: 8px; }
+    .product-quick-add .variant-picker__option-info { font-size: 13px; }
+    .product-quick-add .color-swatch { width: 18px; height: 18px; }
+    .product-quick-add .variant-picker__option-values { gap: 5px; }
+  }
 </style>
 
 <script>
