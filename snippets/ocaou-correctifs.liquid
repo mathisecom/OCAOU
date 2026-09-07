@@ -50,6 +50,12 @@
     /* Colonne d'intitule de largeur fixe : les trois rangees de pastilles
        commencent alors au meme endroit. */
     grid-template-columns: 165px minmax(0, 1fr);
+  }
+
+  /* Une seule couleur a choisir : la colonne se cale sur le libelle, la fenetre
+     ne fait plus la largeur d'un coffret a trois nuanciers. */
+  .product-quick-add .variant-picker:not(:has(.variant-picker__option + .variant-picker__option)) .variant-picker__option {
+    grid-template-columns: max-content minmax(0, 1fr);
     align-items: center;
     column-gap: 12px;
   }
