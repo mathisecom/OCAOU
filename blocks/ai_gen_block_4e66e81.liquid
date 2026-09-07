@@ -84,6 +84,12 @@
     font-weight: 600;
   }
 
+  .ai-bought-together-{{ ai_gen_id }}__price-barre {
+    margin-left: 8px;
+    font-weight: 400;
+    color: {{ block.settings.muted_color }};
+  }
+
   .ai-bought-together-{{ ai_gen_id }}__button {
     display: inline-flex;
     align-items: center;
@@ -134,7 +140,7 @@
           </a>
           <div class="ai-bought-together-{{ ai_gen_id }}__content">
             <h3 class="ai-bought-together-{{ ai_gen_id }}__title"><a href="{{ product.url }}">{{ product.title | escape }}</a></h3>
-            {% if block.settings.show_prices %}<div class="ai-bought-together-{{ ai_gen_id }}__price">{{ product.price | money }}</div>{% endif %}
+            {% if block.settings.show_prices %}<div class="ai-bought-together-{{ ai_gen_id }}__price">{{ product.price | money }}{% if product.compare_at_price > product.price %}<s class="ai-bought-together-{{ ai_gen_id }}__price-barre">{{ product.compare_at_price | money }}</s>{% endif %}</div>{% endif %}
             <a class="ai-bought-together-{{ ai_gen_id }}__button" href="{{ product.url }}">{{ block.settings.button_label | escape }}</a>
           </div>
         </article>
