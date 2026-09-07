@@ -1021,6 +1021,7 @@
         "item_bhF4V6": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_17.30.53.png",
             "column_size": "3",
             "title": "Ranger en étant stylé",
             "heading_tag": "h4",
