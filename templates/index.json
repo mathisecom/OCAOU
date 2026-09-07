@@ -472,7 +472,7 @@
         "content": "",
         "link_url": "",
         "link_text": "Découvrir tous les coffrets",
-        "background": "",
+        "background": "#FCF9F5",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -746,7 +746,7 @@
       ],
       "name": "Bande défilante premium",
       "settings": {
-        "bg_color": "#fcf9f5",
+        "bg_color": "#FFFFFF",
         "text_color": "#af6c67",
         "border_color": "#fcf9f5",
         "border_width": 0,
