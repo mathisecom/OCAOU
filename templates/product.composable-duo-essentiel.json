@@ -965,6 +965,7 @@
         "item_MLczhi": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_23_07_34_62007c62-06aa-48e6-9132-ec88a278a878.png",
             "column_size": "3",
             "title": "Avoir l'essentiel sous la main",
             "heading_tag": "h4",
@@ -977,6 +978,7 @@
         "item_cwMUhA": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_7_sept._2026_18_16_13.png",
             "column_size": "3",
             "title": "Organisé et bien hydraté",
             "heading_tag": "h4",
@@ -989,7 +991,7 @@
         "item_pU87gY": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_14.40.15.png",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_00_13_55_35e6d0d3-fe5f-4aae-b2de-be7025f6ff41.png",
             "column_size": "3",
             "title": "Un look stylé",
             "heading_tag": "h4",
