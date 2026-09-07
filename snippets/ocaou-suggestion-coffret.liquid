@@ -312,9 +312,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       titre: 'Passez au ' + c.titre,
       prix: trouve.combi.prix,
       barre: trouve.combi.prixBarre,
-      // Annoncer les deux montants : « pour X de plus » se lit comme un supplement a payer.
-      detail: 'Votre article + ' + liste(trouve.enPlus.map(function (i) { return i.nom; })) +
-              '. Votre panier passe de ' + prix(trouve.actuel) + ' à ' + prix(trouve.combi.prix) + '.'
+      detail: 'Votre article + ' + liste(trouve.enPlus.map(function (i) { return i.nom; })) + '.'
     });
 
     var non = bloc('ocaou-sugg__non', 'Compris', 'button');
