@@ -1008,6 +1008,7 @@
         "item_YwNNyT": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/no_change_4_dcbd30f5-32ed-40ab-b043-cb560fa179b6.png",
             "column_size": "3",
             "title": "Léger et molletonné",
             "heading_tag": "h4",
