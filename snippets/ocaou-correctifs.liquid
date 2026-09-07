@@ -51,7 +51,13 @@
   }
   .product-quick-add .variant-picker__option-info,
   .product-quick-add .variant-picker__option-info .h-stack { gap: 4px; margin: 0; }
-  .product-quick-add .variant-picker__option-values { gap: 6px; }
+  .product-quick-add .variant-picker__option-values {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .product-quick-add .variant-picker__option-info { white-space: nowrap; }
   .product-quick-add .color-swatch { width: 20px; height: 20px; }
   .product-quick-add .product-quick-add__variant-picker { padding: 0; }
 
