@@ -97,6 +97,19 @@
   /* Sur mobile, le theme masque le panneau a pastilles et ne laisse que le bouton.
      On l'affiche aussi, en deux rangees, et on retire le bouton en double. */
   @media screen and (max-width: 699px) {
+    /* Le fond blanc du panneau n'existe que sur grand ecran dans le theme :
+       sans lui, la page se voit au travers. */
+    .product-quick-add {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.10);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.14);
+      padding: 12px 14px;
+      width: calc(100vw - 24px);
+      max-width: calc(100vw - 24px);
+    }
+    .product-quick-add a.bold { font-size: 15px; }
+    .product-quick-add price-list { font-size: 14px; }
     .product-quick-add .product-quick-add__variant {
       display: grid !important;
       grid-template-columns: 56px minmax(0, 1fr);
