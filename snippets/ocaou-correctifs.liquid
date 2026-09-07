@@ -22,4 +22,49 @@
      les lignes de texte deviennent trop longues et les blocs partent en largeur. */
   .product-info { max-width: 480px; }
   @media screen and (max-width: 999px) { .product-info { max-width: none; } }
+
+  /* Barre d'achat collante : sur un coffret, les trois nuanciers la faisaient monter
+     a plus de 400 px de haut et masquer la page. Elle garde la photo, le titre, le
+     prix et le bouton ; les couleurs se choisissent dans la fiche, plus haut. */
+  .product-quick-add { max-width: 420px; }
+  .product-quick-add variant-picker { display: none; }
+
+  /* Une croix pour la refermer : elle revient au rechargement de la page. */
+  .ocaou-fermer-barre {
+    position: absolute; top: 6px; right: 6px;
+    width: 26px; height: 26px; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    border: 0; border-radius: 50%; cursor: pointer;
+    background: rgba(0,0,0,.06); color: inherit;
+    font: inherit; font-size: 17px; line-height: 1;
+  }
+  .ocaou-fermer-barre:hover { background: rgba(0,0,0,.12); }
 </style>
+
+<script>
+(function () {
+  // La barre d'achat collante se referme, comme n'importe quelle fenetre surgissante.
+  function pose() {
+    document.querySelectorAll('product-quick-add').forEach(function (barre) {
+      if (barre.querySelector('.ocaou-fermer-barre')) return;
+      if (getComputedStyle(barre).position === 'static') barre.style.position = 'relative';
+      var croix = document.createElement('button');
+      croix.type = 'button';
+      croix.className = 'ocaou-fermer-barre';
+      croix.setAttribute('aria-label', 'Fermer');
+      croix.textContent = '\u00d7';
+      croix.addEventListener('click', function () {
+        barre.style.display = 'none';
+      });
+      barre.appendChild(croix);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', pose);
+  var minuteur = null;
+  new MutationObserver(function () {
+    clearTimeout(minuteur);
+    minuteur = setTimeout(pose, 150);
+  }).observe(document.documentElement, { childList: true, subtree: true });
+  pose();
+})();
+</script>
