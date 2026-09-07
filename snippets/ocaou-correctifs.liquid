@@ -28,7 +28,7 @@
      prix et le bouton ; les couleurs se choisissent dans la fiche, plus haut. */
   /* La fenetre prend la largeur de son contenu : large sur un coffret a trois
      nuanciers, courte sur un article a une seule couleur. */
-  .product-quick-add { width: auto; max-width: min(780px, 94vw); }
+  .product-quick-add { width: auto; max-width: min(780px, 94vw); border-radius: 16px; }
 
   /* La colonne du milieu prend la place libre : sinon les pastilles se rangent
      sur trois rangs et la barre monte a 480 px de haut. */
@@ -107,10 +107,10 @@
       padding: 12px 14px;
       /* Le theme l'ancre a droite : sur mobile on la tient par les deux bords,
          elle se centre d'elle-meme. */
-      left: 12px;
-      right: 12px;
-      width: auto;
-      max-width: none;
+      left: 12px !important;
+      right: 12px !important;
+      width: auto !important;
+      max-width: none !important;
     }
     .product-quick-add .variant-picker__option-values { overflow-x: auto; }
     .product-quick-add a.bold { font-size: 15px; }
