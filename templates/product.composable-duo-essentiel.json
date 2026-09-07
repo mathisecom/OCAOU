@@ -989,6 +989,7 @@
         "item_pU87gY": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_14.40.15.png",
             "column_size": "3",
             "title": "Un look stylé",
             "heading_tag": "h4",
