@@ -38,7 +38,11 @@
 
   /* Chaque couleur tient sur une ligne : intitule a gauche, pastilles a droite.
      Sans cela, un coffret a trois nuanciers montait a 650 px de haut. */
-  .product-quick-add .variant-picker { gap: 8px; }
+  .product-quick-add .variant-picker { gap: 6px; }
+  /* Titre et prix sur la meme ligne : deux lignes gagnees. */
+  .product-quick-add .product-quick-add__variant .v-stack { gap: 6px; }
+  .product-quick-add .product-quick-add__variant > .v-stack > a.bold { display: inline; }
+  .product-quick-add price-list { display: inline-flex; gap: 8px; margin-left: 10px; }
   .product-quick-add .variant-picker__option {
     display: grid;
     grid-template-columns: minmax(0, auto) 1fr;
@@ -48,7 +52,7 @@
   .product-quick-add .variant-picker__option-info,
   .product-quick-add .variant-picker__option-info .h-stack { gap: 4px; margin: 0; }
   .product-quick-add .variant-picker__option-values { gap: 6px; }
-  .product-quick-add .color-swatch { width: 22px; height: 22px; }
+  .product-quick-add .color-swatch { width: 20px; height: 20px; }
   .product-quick-add .product-quick-add__variant-picker { padding: 0; }
 
   /* Le titre reste sur une ligne : la barre est un rappel, pas une fiche. */
