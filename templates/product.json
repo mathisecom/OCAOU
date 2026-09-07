@@ -206,6 +206,58 @@
     "blocks_wGbWEC": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_b03fe76_REGaaG": {
+          "type": "ai_gen_block_b03fe76",
+          "settings": {
+            "heading": "Découvrez nos vidéos",
+            "heading_font": "poppins_n6",
+            "heading_alignment": "center",
+            "heading_size": 24,
+            "mobile_heading_size": 20,
+            "heading_spacing": 20,
+            "desktop_width_percent": 100,
+            "desktop_columns": 5,
+            "mobile_columns": "2",
+            "card_ratio": "4 / 5",
+            "gap": 12,
+            "mobile_gap": 8,
+            "card_radius": 16,
+            "side_padding": 24,
+            "mobile_side_padding": 12,
+            "padding_top": 24,
+            "padding_bottom": 24,
+            "background_color": "#FFFFFF",
+            "text_color": "#1A1A1A",
+            "placeholder_color": "#F2F2F2",
+            "placeholder_text_color": "#555555",
+            "focus_color": "#1E316A",
+            "video_1_enabled": true,
+            "video_1_url": "",
+            "video_1_label": "Vidéo verticale 1",
+            "video_2_enabled": true,
+            "video_2_url": "",
+            "video_2_label": "Vidéo verticale 2",
+            "video_3_enabled": true,
+            "video_3_url": "",
+            "video_3_label": "Vidéo verticale 3",
+            "video_4_enabled": true,
+            "video_4_url": "",
+            "video_4_label": "Vidéo verticale 4",
+            "video_5_enabled": true,
+            "video_5_url": "",
+            "video_5_label": "Vidéo verticale 5",
+            "video_6_enabled": false,
+            "video_6_url": "",
+            "video_6_label": "Vidéo verticale 6",
+            "video_7_enabled": false,
+            "video_7_url": "",
+            "video_7_label": "Vidéo verticale 7",
+            "video_8_enabled": false,
+            "video_8_url": "",
+            "video_8_label": "Vidéo verticale 8"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_4e66e81_xF8bN3": {
           "type": "ai_gen_block_4e66e81",
           "settings": {
@@ -243,6 +295,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_b03fe76_REGaaG",
         "ai_gen_block_4e66e81_xF8bN3"
       ],
       "name": "Produits achetés ensemble",
@@ -989,15 +1042,6 @@
             "collection": "",
             "link": ""
           }
-        },
-        "carte_J3pWYH": {
-          "type": "carte",
-          "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_14.40.15.png",
-            "label": "être stylé",
-            "collection": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
@@ -1005,8 +1049,7 @@
         "carte_hxUqXb",
         "carte_Ck8k7w",
         "carte_gj83dz",
-        "carte_UgtDiG",
-        "carte_J3pWYH"
+        "carte_UgtDiG"
       ],
       "name": "Grille de collections",
       "settings": {
