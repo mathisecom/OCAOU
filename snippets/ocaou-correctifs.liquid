@@ -132,8 +132,13 @@
 <script>
 (function () {
   // La barre d'achat collante se referme, comme n'importe quelle fenetre surgissante.
+  // Le theme la reconstruit a chaque changement de couleur : une fois fermee, elle le reste
+  // jusqu'au chargement suivant, sinon elle revient a chaque clic sur une pastille.
+  var fermee = false;
+
   function pose() {
     document.querySelectorAll('product-quick-add').forEach(function (barre) {
+      if (fermee) { barre.style.display = 'none'; return; }
       if (barre.querySelector('.ocaou-fermer-barre')) return;
       if (getComputedStyle(barre).position === 'static') barre.style.position = 'relative';
       var croix = document.createElement('button');
@@ -142,6 +147,7 @@
       croix.setAttribute('aria-label', 'Fermer');
       croix.textContent = '\u00d7';
       croix.addEventListener('click', function () {
+        fermee = true;
         barre.style.display = 'none';
       });
       barre.appendChild(croix);
