@@ -609,6 +609,7 @@
         "item_zBNPHB": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/IMG_6827.heic",
             "column_size": "3",
             "title": "Pour manger comme un grand",
             "heading_tag": "h4",
@@ -621,6 +622,7 @@
         "item_QwVBNL": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/format_34_11e0bce8-1f1d-4231-817b-f9ca974513d1.png",
             "column_size": "3",
             "title": "Souple et léger",
             "heading_tag": "h4",
@@ -633,6 +635,7 @@
         "item_cLjTRf": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_7_sept._2026_19_04_26.png",
             "column_size": "3",
             "title": "Se nettoie très facilement",
             "heading_tag": "h4",
