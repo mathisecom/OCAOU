@@ -45,7 +45,9 @@
   .product-quick-add price-list { display: inline-flex; gap: 8px; margin-left: 10px; }
   .product-quick-add .variant-picker__option {
     display: grid;
-    grid-template-columns: minmax(0, auto) 1fr;
+    /* Colonne d'intitule de largeur fixe : les trois rangees de pastilles
+       commencent alors au meme endroit. */
+    grid-template-columns: 165px minmax(0, 1fr);
     align-items: center;
     column-gap: 12px;
   }
