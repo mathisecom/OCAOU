@@ -26,12 +26,14 @@
   /* Barre d'achat collante : sur un coffret, les trois nuanciers la faisaient monter
      a plus de 400 px de haut et masquer la page. Elle garde la photo, le titre, le
      prix et le bouton ; les couleurs se choisissent dans la fiche, plus haut. */
-  .product-quick-add { width: min(780px, 94vw); max-width: min(780px, 94vw); }
+  /* La fenetre prend la largeur de son contenu : large sur un coffret a trois
+     nuanciers, courte sur un article a une seule couleur. */
+  .product-quick-add { width: auto; max-width: min(780px, 94vw); }
 
   /* La colonne du milieu prend la place libre : sinon les pastilles se rangent
      sur trois rangs et la barre monte a 480 px de haut. */
   .product-quick-add .product-quick-add__variant {
-    width: 100%;
+    width: auto;
     grid-template-columns: 80px minmax(0, 1fr) auto;
     align-items: center;
   }
