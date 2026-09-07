@@ -428,9 +428,9 @@
               <span class="now">{{ coffret_cents | money }}</span>
             </div>
 
-            <div class="cof-advantages">
+            <div class="cof-advantages">{%- assign pochon_money = pochon_cents | money -%}{%- assign pochon_custom = block.settings.pochon_texte | replace: '{valeur}', pochon_money -%}{%- if pochon_custom != blank -%}<p>{{ pochon_custom }}</p>{%- else -%}
               <p>🎁 Pochon cadeau « O’CAOU c’est pour offrir » — valeur {{ pochon_cents | money }} OFFERT</p>
-              {% assign seuil_cents = settings.cart_free_shipping_threshold | default: 79 | times: 100 | round %}{% if coffret_cents >= seuil_cents %}<p>🚚 LIVRAISON OFFERTE</p>{% endif %}
+              {%- endif -%}{%- if block.settings.ligne_extra != blank -%}<p>{{ block.settings.ligne_extra }}</p>{%- endif -%}{% assign seuil_cents = settings.cart_free_shipping_threshold | default: 79 | times: 100 | round %}{% if coffret_cents >= seuil_cents %}<p>🚚 LIVRAISON OFFERTE</p>{% endif %}
               <p
                 class="cof-advantage-final"
                 data-advantage-base="Votre avantage : {{ avantage_cents | money }}{% if coffret_cents >= seuil_cents %} + la livraison offerte{% endif %}"
@@ -1182,7 +1182,7 @@
           "type": "number",
           "id": "pochon_valeur",
           "label": "Valeur du pochon offert (en euros)",
-          "default": 7.9
+          "default": 7.9 }, { "type": "text", "id": "pochon_texte", "label": "Ligne cadeau", "info": "Laissez vide pour garder le texte actuel. Utilisez {valeur} pour afficher le montant du pochon." }, { "type": "text", "id": "ligne_extra", "label": "Ligne supplémentaire (optionnel)", "info": "Ligne de texte en plus, sous la ligne cadeau. Laissez vide pour ne rien afficher."
         },
         {
           "type": "text",
