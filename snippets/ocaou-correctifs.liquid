@@ -55,9 +55,18 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: flex-end;
     gap: 6px;
+    min-width: 0;
   }
-  .product-quick-add .variant-picker__option-info { white-space: nowrap; }
+  /* L'intitule ne deborde pas sur les pastilles : il se coupe proprement. */
+  .product-quick-add .variant-picker__option-info {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .product-quick-add .variant-picker__option-info .h-stack { min-width: 0; }
   .product-quick-add .color-swatch { width: 20px; height: 20px; }
   .product-quick-add .product-quick-add__variant-picker { padding: 0; }
 
