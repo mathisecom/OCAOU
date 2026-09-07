@@ -285,7 +285,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   function carteInfo(info) {
     var m = carte({
       image: info.image,
-      titre: 'Vos articles ont été réunis dans le ' + info.titre,
+      titre: 'Vos articles forment le ' + info.titre,
       prix: null,
       detail: mentionAjouts(info.offerts)
     });
@@ -312,11 +312,12 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       titre: 'Passez au ' + c.titre,
       prix: trouve.combi.prix,
       barre: trouve.combi.prixBarre,
+      // Annoncer les deux montants : « pour X de plus » se lit comme un supplement a payer.
       detail: 'Votre article + ' + liste(trouve.enPlus.map(function (i) { return i.nom; })) +
-              ', pour ' + prix(-trouve.economie) + ' de plus.'
+              '. Votre panier passe de ' + prix(trouve.actuel) + ' à ' + prix(trouve.combi.prix) + '.'
     });
 
-    var non = bloc('ocaou-sugg__non', 'Non merci', 'button');
+    var non = bloc('ocaou-sugg__non', 'Compris', 'button');
     non.type = 'button';
     non.addEventListener('click', function () {
       refuses.push(c.id);
