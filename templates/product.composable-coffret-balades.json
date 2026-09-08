@@ -751,21 +751,23 @@
           "type": "marquee_item",
           "settings": {
             "text": "stylé",
-            "icon_text": ""
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         },
         "marquee_item_kgqtJ9": {
           "type": "marquee_item",
           "settings": {
             "text": "grande capacité",
-            "icon_text": ""
+            "icon_text": "✹"
           }
         },
         "marquee_item_ANRRH7": {
           "type": "marquee_item",
           "settings": {
             "text": "léger",
-            "icon_text": ""
+            "icon_text": "",
+            "icon_image": "shopify://shop_images/icone_24.png"
           }
         }
       },
