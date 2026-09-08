@@ -912,13 +912,23 @@
             "collection": "",
             "link": ""
           }
+        },
+        "carte_P4znxG": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_8_sept._2026_23_29_04.png",
+            "label": "",
+            "collection": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "carte_fPbR6h",
         "carte_FjxDGB",
         "carte_Yxdt4y",
-        "carte_WAiM9m"
+        "carte_WAiM9m",
+        "carte_P4znxG"
       ],
       "name": "Grille de collections",
       "settings": {
@@ -1093,48 +1103,6 @@
         "text_color": ""
       }
     },
-    "image_with_text_overlay_MqfmTV": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "subheading_XnDBDp": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_MdDYh3": {
-          "type": "heading",
-          "settings": {
-            "text": "Un organiseur de vie",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_QJwNGX": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_XnDBDp",
-        "heading_MdDYh3",
-        "richtext_QJwNGX"
-      ],
-      "name": "Image with text overlay",
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_11_57_14.png",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 15
-      }
-    },
     "avantageicons_k7faYm": {
       "type": "avantageicons",
       "blocks": {
@@ -1252,6 +1220,48 @@
         "padding_bottom_mobile": 40,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
+      }
+    },
+    "image_with_text_overlay_MqfmTV": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_XnDBDp": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_MdDYh3": {
+          "type": "heading",
+          "settings": {
+            "text": "Un organiseur de vie",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_QJwNGX": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XnDBDp",
+        "heading_MdDYh3",
+        "richtext_QJwNGX"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_11_57_14.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 15
       }
     },
     "30retours_YLhBEm": {
@@ -1719,8 +1729,8 @@
     "grillecollections_33TLNT",
     "grillecollections_7p7pti",
     "multi_column_FnzMQb",
-    "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
+    "image_with_text_overlay_MqfmTV",
     "30retours_YLhBEm",
     "logoscroll_Lyixnk",
     "faq_RLPihW",
