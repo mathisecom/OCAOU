@@ -996,6 +996,7 @@
         "item_RNNXUm": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/no_change_1.jpg",
             "column_size": "3",
             "title": "Pour TOUT prévoir",
             "heading_tag": "h4",
