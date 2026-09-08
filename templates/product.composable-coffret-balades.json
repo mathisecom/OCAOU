@@ -197,6 +197,13 @@
         "collapsible_text_HKATAV",
         "liquid_7PLJAn"
       ],
+      "custom_css": [
+        ".product-info__block-item:has(.fp-product-title-custom) {margin-bottom: 0 !important;}",
+        ".product-info__block-item:has(.product-info__price) {margin-top: 0 !important;}",
+        ".product-info__price sale-price {font-size: 22px !important; font-weight: 600 !important; line-height: 1.2 !important; color: #af6c67 !important;}",
+        ".product-info__price compare-at-price {font-size: 17px !important; font-weight: 400 !important; color: #9a9a9a !important;}",
+        "@media (max-width: 749px) {.product-info__price sale-price {font-size: 19px !important; }}"
+      ],
       "settings": {
         "full_width": false,
         "show_fixed_add_to_cart": true,
