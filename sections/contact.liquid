@@ -19,9 +19,9 @@
       {%- endif -%}
 
       {%- if section.settings.title != blank -%}
-        <h2 class="h2">
+        <h1 class="h2">
           {%- render 'styled-text', content: section.settings.title, text_color: section.settings.heading_color, gradient: section.settings.heading_gradient -%}
-        </h2>
+        </h1>
       {%- endif -%}
 
       {{- section.settings.content -}}
