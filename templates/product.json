@@ -945,15 +945,6 @@
     "grillecollections_7p7pti": {
       "type": "grillecollections",
       "blocks": {
-        "carte_GiBYX9": {
-          "type": "carte",
-          "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_14.40.15.png",
-            "label": "être stylé",
-            "collection": "",
-            "link": ""
-          }
-        },
         "carte_gFWLMW": {
           "type": "carte",
           "settings": {
@@ -998,15 +989,24 @@
             "collection": "",
             "link": ""
           }
+        },
+        "carte_GiBYX9": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_14.40.15.png",
+            "label": "être stylé",
+            "collection": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "carte_GiBYX9",
         "carte_gFWLMW",
         "carte_hxUqXb",
         "carte_Ck8k7w",
         "carte_gj83dz",
-        "carte_UgtDiG"
+        "carte_UgtDiG",
+        "carte_GiBYX9"
       ],
       "name": "Grille de collections",
       "settings": {
@@ -1022,7 +1022,7 @@
         "gap_mobile": 10,
         "radius": 0,
         "label_bg": "#af6c67",
-        "label_bg_hover": "#9a7d55",
+        "label_bg_hover": "#AF6C67",
         "label_color": "#ffffff",
         "bg_color": "#faf6ef",
         "side_padding": 20,
