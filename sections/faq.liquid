@@ -16,7 +16,7 @@
         <p class="subheading">{{ section.settings.subheading | escape }}</p>
       {%- endif -%}
 
-      {%- if section.settings.title != blank -%}
+      {%- assign faq_tag = 'h2' -%}{%- if page.handle == 'faq' -%}{%- assign faq_tag = 'h1' -%}{%- endif -%}{%- if section.settings.title != blank -%}
         <{{ faq_tag }} class="h2">
           {%- render 'styled-text', content: section.settings.title, text_color: section.settings.heading_color, gradient: section.settings.heading_gradient -%}
         </{{ faq_tag }}>
