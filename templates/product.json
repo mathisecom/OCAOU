@@ -945,6 +945,15 @@
     "grillecollections_7p7pti": {
       "type": "grillecollections",
       "blocks": {
+        "carte_GiBYX9": {
+          "type": "carte",
+          "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_14.40.15.png",
+            "label": "être stylé",
+            "collection": "",
+            "link": ""
+          }
+        },
         "carte_gFWLMW": {
           "type": "carte",
           "settings": {
@@ -992,6 +1001,7 @@
         }
       },
       "block_order": [
+        "carte_GiBYX9",
         "carte_gFWLMW",
         "carte_hxUqXb",
         "carte_Ck8k7w",
