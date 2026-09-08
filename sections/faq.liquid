@@ -19,7 +19,7 @@
       {%- if section.settings.title != blank -%}
         <{{ faq_tag }} class="h2">
           {%- render 'styled-text', content: section.settings.title, text_color: section.settings.heading_color, gradient: section.settings.heading_gradient -%}
-        </h2>
+        </{{ faq_tag }}>
       {%- endif -%}
 
       {{- section.settings.content -}}
