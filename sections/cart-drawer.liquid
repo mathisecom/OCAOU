@@ -128,7 +128,8 @@
           {%- endif -%}
         {%- endif -%}
 
-        {%- if section.settings.show_cart_note -%}
+        {%- capture gift_note_allowed -%}{%- render 'gift-note-allowed' -%}{%- endcapture -%}
+      {%- if section.settings.show_cart_note and gift_note_allowed contains 'true' -%}
           <button type="button" class="justify-self-start" aria-controls="cart-drawer-note">
             <span class="link text-sm text-subdued">
               {%- if cart.note == blank -%}
