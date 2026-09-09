@@ -30,7 +30,7 @@
           { "value": "tag", "label": "Si un produit du panier porte un tag" },
           { "value": "collection", "label": "Si un produit du panier est dans une collection" }
         ],
-        "default": "always"
+        "default": "tag"
       },
       {
         "type": "number",
