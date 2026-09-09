@@ -35,10 +35,12 @@
     "cart-drawer": {
       "type": "cart-drawer",
       "settings": {
-        "show_cart_note": false,
+        "show_cart_note": true,
         "show_shipping_text": false,
         "show_view_cart_button": false,
         "show_checkout_button": true,
+        "show_continue_shopping_button": true,
+        "continue_shopping_label": "Continuer mes achats",
         "recommendations_title": "Trending this month",
         "products": [],
         "product_card_background": "#f2f2f2",
