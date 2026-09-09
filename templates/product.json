@@ -1021,23 +1021,13 @@
             "collection": "",
             "link": ""
           }
-        },
-        "carte_P4znxG": {
-          "type": "carte",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_8_sept._2026_23_29_04.png",
-            "label": "",
-            "collection": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "carte_fPbR6h",
         "carte_FjxDGB",
         "carte_Yxdt4y",
-        "carte_WAiM9m",
-        "carte_P4znxG"
+        "carte_WAiM9m"
       ],
       "name": "Grille de collections",
       "settings": {
