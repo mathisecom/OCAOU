@@ -1,0 +1,38 @@
+{%- comment -%} O'CAOU / AWL - Petit mot cadeau : renvoie true ou false selon Reglages du theme > Petit mot cadeau {%- endcomment -%}
+{%- liquid
+  assign gift_ok = false
+  assign cond = settings.gift_note_condition
+  if settings.gift_note_enabled
+    if cond == 'min_amount'
+      assign threshold = settings.gift_note_min_amount | times: 100
+      if cart.total_price >= threshold
+        assign gift_ok = true
+      endif
+    elsif cond == 'tag'
+      assign wanted = settings.gift_note_product_tag | downcase | strip
+      if wanted != blank
+        for item in cart.items
+          assign tags = item.product.tags | join: ',' | downcase
+          if tags contains wanted
+            assign gift_ok = true
+            break
+          endif
+        endfor
+      endif
+    elsif cond == 'collection'
+      assign wanted_handle = settings.gift_note_collection.handle
+      if wanted_handle != blank
+        for item in cart.items
+          assign handles = item.product.collections | map: 'handle' | join: ','
+          if handles contains wanted_handle
+            assign gift_ok = true
+            break
+          endif
+        endfor
+      endif
+    else
+      assign gift_ok = true
+    endif
+  endif
+  echo gift_ok
+-%}
