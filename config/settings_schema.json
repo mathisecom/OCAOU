@@ -8,6 +8,52 @@
     "theme_support_url": "https://support.maestrooo.com/article/203-contact-us"
   },
   {
+    "name": "Petit mot cadeau",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Gère le champ petit mot affiché dans le panier tiroir et sur la page panier. Le champ doit aussi rester activé dans la section Panier tiroir de l'éditeur de thème."
+      },
+      {
+        "type": "checkbox",
+        "id": "gift_note_enabled",
+        "label": "Activer le petit mot cadeau",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "gift_note_condition",
+        "label": "Quand afficher le champ",
+        "options": [
+          { "value": "always", "label": "Toujours, pour tous les produits" },
+          { "value": "min_amount", "label": "A partir d'un montant de panier" },
+          { "value": "tag", "label": "Si un produit du panier porte un tag" },
+          { "value": "collection", "label": "Si un produit du panier est dans une collection" }
+        ],
+        "default": "always"
+      },
+      {
+        "type": "number",
+        "id": "gift_note_min_amount",
+        "label": "Montant minimum du panier, en euros",
+        "info": "Utilisé uniquement avec l'option A partir d'un montant de panier",
+        "default": 50
+      },
+      {
+        "type": "text",
+        "id": "gift_note_product_tag",
+        "label": "Tag produit",
+        "info": "Utilisé uniquement avec l'option Si un produit du panier porte un tag. Exemple : cadeau"
+      },
+      {
+        "type": "collection",
+        "id": "gift_note_collection",
+        "label": "Collection",
+        "info": "Utilisée uniquement avec l'option Si un produit du panier est dans une collection"
+      }
+    ]
+  },
+  {
     "name": "Appearance and spacing",
     "settings": [
       {
