@@ -140,10 +140,13 @@
                     </div>
 
                   {%- when 'cart_note' -%}
+      {%- capture gift_note_allowed -%}{%- render 'gift-note-allowed' -%}{%- endcapture -%}
+      {%- if gift_note_allowed contains 'true' -%}
                     <cart-note class="cart-form__note block" {{ block.shopify_attributes }}>
                       {%- assign order_note = 'cart.general.order_note' | t -%}
                       {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note, maxlength: block.settings.maxlength -%}
                     </cart-note>
+      {%- endif -%}
 
                   {%- when 'text' -%}
                     {%- if block.settings.content != blank -%}
