@@ -50,98 +50,98 @@
         "image_tN3Ani": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_24_50.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_24_50.png",
             "url": ""
           }
         },
         "image_fFKPyw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0055.heic",
+            "image": "shopify:\/\/shop_images\/IMG_0055.heic",
             "url": ""
           }
         },
         "image_eUWmYp": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_6907.png",
+            "image": "shopify:\/\/shop_images\/IMG_6907.png",
             "url": ""
           }
         },
         "image_DkrWqw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_13_55.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_13_55.png",
             "url": ""
           }
         },
         "image_KWJB43": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/20260809_172116.jpg",
+            "image": "shopify:\/\/shop_images\/20260809_172116.jpg",
             "url": ""
           }
         },
         "image_HPXExF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_6298.heic",
+            "image": "shopify:\/\/shop_images\/IMG_6298.heic",
             "url": ""
           }
         },
         "image_xbeczT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_7538.heic",
+            "image": "shopify:\/\/shop_images\/IMG_7538.heic",
             "url": ""
           }
         },
         "image_7BfKiH": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_12_16.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_12_16.png",
             "url": ""
           }
         },
         "image_hCTqwc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_28_18.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_28_18.png",
             "url": ""
           }
         },
         "image_ryYMnT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0366.png",
+            "image": "shopify:\/\/shop_images\/IMG_0366.png",
             "url": ""
           }
         },
         "image_XWbcJF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_19_35.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_19_35.png",
             "url": ""
           }
         },
         "image_GCdPNQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0538.heic",
+            "image": "shopify:\/\/shop_images\/IMG_0538.heic",
             "url": ""
           }
         },
         "image_MK3rYP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_6301.heic",
+            "image": "shopify:\/\/shop_images\/IMG_6301.heic",
             "url": ""
           }
         },
         "image_U9YqTk": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/PANA7813.jpg",
+            "image": "shopify:\/\/shop_images\/PANA7813.jpg",
             "url": ""
           }
         }
@@ -211,7 +211,7 @@
             "rating": 5,
             "author": "Delphine K.",
             "title": "coussinets discrets",
-            "content": "<p>Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.</p>"
+            "content": "<p>Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.<\/p>"
           }
         },
         "testimonial_hD44TM": {
@@ -222,7 +222,7 @@
             "rating": 5,
             "author": "Laura J.",
             "title": "Lingettes pour tout",
-            "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.</p>"
+            "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.<\/p>"
           }
         },
         "testimonial_xEqXey": {
@@ -233,7 +233,7 @@
             "rating": 5,
             "author": "Sophia M.",
             "title": "Sac hyper utile et très pratique!",
-            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!</p>"
+            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!<\/p>"
           }
         },
         "testimonial_PAByn8": {
@@ -244,7 +244,7 @@
             "rating": 5,
             "author": "Elodie O.",
             "title": "couverture légère",
-            "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.</p>"
+            "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.<\/p>"
           }
         },
         "testimonial_DnV3QU": {
@@ -255,7 +255,7 @@
             "rating": 5,
             "author": "Sandrine C.",
             "title": "La taille est parfaite!",
-            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires.Il est vraiment ingénieux et bien pensé. La taille est parfaite!”</p>"
+            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite!”<\/p>"
           }
         },
         "testimonial_WUWxXP": {
@@ -266,7 +266,7 @@
             "rating": 5,
             "author": "Nadia T.",
             "title": "Poche couvert idéale",
-            "content": "<p>Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus tâché...</p>"
+            "content": "<p>Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...<\/p>"
           }
         },
         "testimonial_PE3qw8": {
@@ -277,7 +277,7 @@
             "rating": 5,
             "author": "Séverine F.",
             "title": "Veilleuse baladeuse",
-            "content": "<p>Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.</p>"
+            "content": "<p>Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.<\/p>"
           }
         },
         "testimonial_BpQWPf": {
@@ -288,7 +288,7 @@
             "rating": 5,
             "author": "Aurore P.",
             "title": "Fourre-tout beau et spacieux",
-            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.</p>"
+            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.<\/p>"
           }
         },
         "testimonial_cdKCDw": {
@@ -299,7 +299,7 @@
             "rating": 5,
             "author": "Caroline M.",
             "title": "Je l'utilise non-stop",
-            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊</p>"
+            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊<\/p>"
           }
         },
         "testimonial_DzKV7A": {
@@ -310,7 +310,7 @@
             "rating": 5,
             "author": "Cécile G.",
             "title": "Compartiments très pratiques",
-            "content": "<p> Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.</p>"
+            "content": "<p> Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.<\/p>"
           }
         },
         "testimonial_VmiL9x": {
@@ -321,7 +321,7 @@
             "rating": 5,
             "author": "Marion C.",
             "title": "Coup de cœur pour ce sac",
-            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”</p>"
+            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”<\/p>"
           }
         },
         "testimonial_cxK7qF": {
@@ -332,7 +332,7 @@
             "rating": 5,
             "author": "Gaëlle C.",
             "title": "Un bec à croquer",
-            "content": "<p>Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.</p>"
+            "content": "<p>Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.<\/p>"
           }
         },
         "testimonial_J4K6jM": {
@@ -343,7 +343,7 @@
             "rating": 5,
             "author": "Catherine H.",
             "title": "Paille adaptée aux petits",
-            "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.</p>"
+            "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.<\/p>"
           }
         },
         "testimonial_tnLDK4": {
@@ -354,7 +354,7 @@
             "rating": 5,
             "author": "Iris C.",
             "title": "Il est encore plus génial en vrai !",
-            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.</p>"
+            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.<\/p>"
           }
         }
       },
@@ -398,8 +398,8 @@
         "video_fxCYTT": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Ocaou.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/Ocaou.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -407,8 +407,8 @@
         "video_Cj7DmL": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/lv_0_20250723165810.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/lv_0_20250723165810.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -416,8 +416,8 @@
         "video_EWCWpz": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/le compagnon des vacances apaisées.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/le compagnon des vacances apaisées.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -425,8 +425,8 @@
         "video_YgwTmQ": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/vidéo usages montée.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/vidéo usages montée.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -558,7 +558,7 @@
           "type": "item",
           "settings": {
             "icon": "picto-box",
-            "custom_icon": "shopify://shop_images/icone_3.svg",
+            "custom_icon": "shopify:\/\/shop_images\/icone_3.svg",
             "mobile_icon_width": 36,
             "icon_width": 36,
             "icon_background_type": "none",
@@ -572,7 +572,7 @@
           "type": "item",
           "settings": {
             "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/icone_1.svg",
+            "custom_icon": "shopify:\/\/shop_images\/icone_1.svg",
             "mobile_icon_width": 36,
             "icon_width": 36,
             "icon_background_type": "none",
@@ -586,7 +586,7 @@
           "type": "item",
           "settings": {
             "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/icone.svg",
+            "custom_icon": "shopify:\/\/shop_images\/icone.svg",
             "mobile_icon_width": 36,
             "icon_width": 36,
             "icon_background_type": "none",
@@ -620,7 +620,7 @@
         "newsletter": {
           "type": "newsletter",
           "settings": {
-            "image": "shopify://shop_images/logo-ocaou_56b51743-dbfb-4827-af50-88751e26e34a.svg",
+            "image": "shopify:\/\/shop_images\/logo-ocaou_56b51743-dbfb-4827-af50-88751e26e34a.svg",
             "image_width": 120,
             "heading_size": "h3",
             "title": "Newsletter Rejoignez la Famille Organisée",
@@ -647,7 +647,7 @@
           "type": "text",
           "settings": {
             "title": "Contactez-nous",
-            "content": "<p>E-Mail : hello@ocaou.com</p><p>O'CAOU<br/>2 rue de la chapelle<br/>résidence Beau Rivage<br/>83270 Saint-Cyr-sur-Mer</p><p>Siret : 930544200 00023</p>",
+            "content": "<p>E-Mail : hello@ocaou.com<\/p><p>O'CAOU<br\/>2 rue de la chapelle<br\/>résidence Beau Rivage<br\/>83270 Saint-Cyr-sur-Mer<\/p><p>Siret : 930544200 00023<\/p>",
             "enable_follow_on_shop": true
           }
         }
