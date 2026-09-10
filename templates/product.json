@@ -244,7 +244,7 @@
             "video_4_enabled": true,
             "video_4_url": "https://cdn.shopify.com/videos/c/o/v/83dfb4b682f44b64b48c8101d0ea9d84.mp4",
             "video_4_label": "Vidéo verticale 4",
-            "video_5_enabled": true,
+            "video_5_enabled": false,
             "video_5_url": "",
             "video_5_label": "Vidéo verticale 5",
             "video_6_enabled": false,
