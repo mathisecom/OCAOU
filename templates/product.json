@@ -1660,13 +1660,12 @@
         "accordion_text_color": ""
       }
     },
-    "instagram_M4jpkB": {
+    "instagram_AMBrUp": {
       "type": "instagram",
       "blocks": {
-        "image_nhdWPm": {
+        "image_CaqmDx": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/20260903_170758.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1675,10 +1674,9 @@
             "overlay_position": "center"
           }
         },
-        "image_VhqDh9": {
+        "image_nengJL": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1687,10 +1685,9 @@
             "overlay_position": "center"
           }
         },
-        "image_wqqLgr": {
+        "image_xM6rRN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/20250711_184524.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1699,10 +1696,9 @@
             "overlay_position": "center"
           }
         },
-        "image_CtfXtG": {
+        "image_MiHf6r": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/sac-ocaou-terracotta-motif-chien_d138feb2-f1e3-4b47-b662-da4a150cec10.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1711,10 +1707,9 @@
             "overlay_position": "center"
           }
         },
-        "image_zwtFik": {
+        "image_pDENfN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1723,10 +1718,9 @@
             "overlay_position": "center"
           }
         },
-        "image_QFCYbh": {
+        "image_Jy6pFh": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-enfant-poussette.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1737,27 +1731,27 @@
         }
       },
       "block_order": [
-        "image_nhdWPm",
-        "image_VhqDh9",
-        "image_wqqLgr",
-        "image_CtfXtG",
-        "image_zwtFik",
-        "image_QFCYbh"
+        "image_CaqmDx",
+        "image_nengJL",
+        "image_xM6rRN",
+        "image_MiHf6r",
+        "image_pDENfN",
+        "image_Jy6pFh"
       ],
       "name": "Follow us galerie",
       "settings": {
         "show_title": true,
-        "title": "SUIVEZ NOUS @ocaou",
+        "title": "FOLLOW US",
         "title_uppercase": true,
         "title_alignment": "center",
         "title_color": "#111111",
-        "title_size_desktop": 16,
-        "title_size_mobile": 15,
-        "title_weight": "600",
+        "title_size_desktop": 18,
+        "title_size_mobile": 18,
+        "title_weight": "700",
         "title_letter_spacing": 2,
         "title_letter_spacing_mobile": 2,
         "title_margin_bottom": 24,
-        "title_margin_bottom_mobile": 25,
+        "title_margin_bottom_mobile": 14,
         "full_width": true,
         "max_width": 1600,
         "columns_desktop": 6,
@@ -1771,17 +1765,17 @@
         "force_height_mobile": false,
         "image_height_mobile": 210,
         "image_fit": "cover",
-        "image_radius": 16,
+        "image_radius": 0,
         "enable_hover_zoom": true,
         "enable_hover_darken": false,
-        "mobile_scroll": true,
-        "mobile_card_width": 45,
+        "mobile_scroll": false,
+        "mobile_card_width": 70,
         "bg_color": "#ffffff",
         "placeholder_bg": "#f2f2f2",
         "placeholder_text_color": "#777777",
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 0,
-        "padding_top_mobile": 20,
+        "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "side_padding_desktop": 0,
         "side_padding_mobile": 0,
@@ -1833,6 +1827,6 @@
     "30retours_YLhBEm",
     "logoscroll_Lyixnk",
     "faq_RLPihW",
-    "instagram_M4jpkB"
+    "instagram_AMBrUp"
   ]
 }
