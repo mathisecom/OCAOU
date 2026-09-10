@@ -22,22 +22,22 @@
         "item_EwXYL9": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "Livrez-vous en dehors de la France ?",
+            "content": "<p>Nous livrons en France métropolitaine, ainsi qu'en Belgique, Allemagne, Pays-Bas, Luxembourg, Italie, Espagne, Portugal et Autriche. Les frais de livraison sont calculés et affichés avant la validation de la commande.<\/p>"
           }
         },
         "item_cGfP4P": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Quel est le délai de livraison ?",
+            "content": "<p>Comptez 1 à 2 jours ouvrés pour une livraison à domicile en France métropolitaine, et 3 à 5 jours ouvrés pour un point relais ou une livraison en Europe.<\/p>"
           }
         },
         "item_gfRiWq": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Une autre question ?",
+            "content": "<p>Vous pouvez nous contacter via notre page de contact, nous serons ravis de vous aider.<\/p>"
           }
         }
       },

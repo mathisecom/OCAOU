@@ -19,17 +19,17 @@
         "show_only_on_index": true,
         "show_only_for_visitors": true,
         "show_only_once": true,
-        "title": "Signup for our newsletter",
-        "button_text": "Subscribe",
-        "subtext": "Describe what your customers will receive when subscribing to your newsletter."
+        "title": "Inscrivez-vous à la newsletter",
+        "button_text": "S'inscrire",
+        "subtext": "Nos nouveautés et nos bons plans, directement dans votre boîte mail."
       }
     },
     "privacy-banner": {
       "type": "privacy-banner",
       "disabled": true,
       "settings": {
-        "privacy_bar_title": "Cookie policy",
-        "privacy_bar_content": "<p>We use cookies and similar technologies to provide the best experience on our website. Refer to our Privacy Policy for more information.</p>"
+        "privacy_bar_title": "Politique de cookies",
+        "privacy_bar_content": "<p>Nous utilisons des cookies et technologies similaires afin d'offrir la meilleure expérience possible sur notre site. Pour en savoir plus, consultez notre politique de confidentialité.<\/p>"
       }
     },
     "cart-drawer": {
@@ -41,7 +41,7 @@
         "show_checkout_button": true,
         "show_continue_shopping_button": true,
         "continue_shopping_label": "Continuer mes achats",
-        "recommendations_title": "Trending this month",
+        "recommendations_title": "Tendance du mois",
         "products": [],
         "product_card_background": "#f2f2f2",
         "product_card_text_color": ""
