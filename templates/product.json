@@ -488,7 +488,7 @@
         "heading_color": "#1d2153",
         "full_width": true,
         "columns_desktop": 6,
-        "columns_tablet": 4,
+        "columns_tablet": 3,
         "columns_mobile": "2",
         "ratio": "3 / 4",
         "gap": 12,
