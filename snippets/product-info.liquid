@@ -438,6 +438,48 @@ Supported variables
               {%- render 'icon' with 'share' -%} {{- 'general.social.share' | t -}}
             </button>
           </div>
+        {%- when 'ocaou_duo' -%}
+          {%- comment -%}
+            Bloc O'CAOU — Offres Duo (prix modifiables depuis le customizer).
+            Les settings du bloc alimentent le snippet ocaou-duo-produit.liquid.
+          {%- endcomment -%}
+          {%- render 'ocaou-duo-produit',
+            product: product,
+            titre_bloc: block.settings.titre_bloc,
+            seuil_livraison: block.settings.seuil_livraison,
+            duo1_handle: block.settings.duo1_handle,
+            duo1_titre: block.settings.duo1_titre,
+            duo1_prix: block.settings.duo1_prix,
+            duo1_badge: block.settings.duo1_badge,
+            duo1_cadeau_handle: block.settings.duo1_cadeau_handle,
+            duo1_cadeau_mot: block.settings.duo1_cadeau_mot,
+            duo2_handle: block.settings.duo2_handle,
+            duo2_titre: block.settings.duo2_titre,
+            duo2_prix: block.settings.duo2_prix,
+            duo2_badge: block.settings.duo2_badge,
+            duo2_cadeau_handle: block.settings.duo2_cadeau_handle,
+            duo2_cadeau_mot: block.settings.duo2_cadeau_mot,
+            duo3_handle: block.settings.duo3_handle,
+            duo3_titre: block.settings.duo3_titre,
+            duo3_prix: block.settings.duo3_prix,
+            duo3_badge: block.settings.duo3_badge,
+            duo3_cadeau_handle: block.settings.duo3_cadeau_handle,
+            duo3_cadeau_mot: block.settings.duo3_cadeau_mot
+          -%}
+
+        {%- when 'ocaou_kit' -%}
+          {%- comment -%}
+            Bloc O'CAOU — Kit Repas Nomade (prix modifiables depuis le customizer).
+            Les settings du bloc alimentent le snippet ocaou-kit-repas.liquid.
+            Les prix sont en centimes (ex : 4990 = 49,90 €).
+          {%- endcomment -%}
+          {%- render 'ocaou-kit-repas',
+            product: product,
+            pack1_prix: block.settings.pack1_prix,
+            pack2_prix: block.settings.pack2_prix,
+            pack3_prix: block.settings.pack3_prix
+          -%}
+
       {%- endcase -%}
     {%- endcapture -%}
 
