@@ -326,7 +326,7 @@
             "desktop_width_percent": 100,
             "columns_desktop": "4",
             "columns_mobile": "2",
-            "alignment": "left",
+            "alignment": "center",
             "gap": 16,
             "heading_size": 26,
             "heading_size_mobile": 22,
