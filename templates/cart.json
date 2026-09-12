@@ -12,6 +12,12 @@
     "main": {
       "type": "main-cart",
       "blocks": {
+        "point_relais_isomorph_point_relais_main": {
+          "type": "shopify://apps/point-relais-isomorph/blocks/point-relais/01a08fa5-e84c-7f8e-8d2b-cbc4b0d93138",
+          "settings": {
+            "api_url": "https://shopify-point-relais-proxy.vercel.app"
+          }
+        },
         "totals": {
           "type": "totals",
           "settings": {}
@@ -26,32 +32,15 @@
         }
       },
       "block_order": [
+        "point_relais_isomorph_point_relais_main",
         "totals",
         "cart_note",
         "checkout_button"
       ],
       "settings": {}
-    },
-    "point-relais-section": {
-      "type": "apps",
-      "blocks": {
-        "point_relais_isomorph_point_relais_main": {
-          "type": "shopify://apps/point-relais-isomorph/blocks/point-relais/01a08fa5-e84c-7f8e-8d2b-cbc4b0d93138",
-          "settings": {
-            "api_url": "https://shopify-point-relais-proxy.vercel.app"
-          }
-        }
-      },
-      "block_order": [
-        "point_relais_isomorph_point_relais_main"
-      ],
-      "settings": {
-        "remove_vertical_spacing": true
-      }
     }
   },
   "order": [
-    "point-relais-section",
     "main"
   ]
 }
