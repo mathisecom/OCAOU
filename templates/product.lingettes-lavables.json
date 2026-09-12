@@ -85,11 +85,8 @@
           }
         },
         "liquid_89n964": {
-          "type": "liquid",
-          "disabled": true,
-          "settings": {
-            "liquid": "{% render 'ocaou-duo-produit', product: product %}"
-          }
+          "type": "ocaou_duo",
+          "settings": {}
         },
         "liquid_RFPgnk": {
           "type": "liquid",

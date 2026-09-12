@@ -77,10 +77,8 @@
           }
         },
         "liquid_WGWhLx": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "{% render 'ocaou-kit-repas', product: product %}"
-          }
+          "type": "ocaou_kit",
+          "settings": {}
         },
         "liquid_RFPgnk": {
           "type": "liquid",

@@ -43,9 +43,16 @@
 
   # ── PRIX DES PACKS (en centimes : 4990 = 49,90 €) ──
   # L'ancien prix barré est calculé tout seul à partir des vrais prix produits.
-  assign pack1_prix = 4990
-  assign pack2_prix = 6990
-  assign pack3_prix = 9990
+  # Ces valeurs peuvent être surchargées depuis le customizer via le bloc "O'CAOU — Kit Repas Nomade".
+  unless pack1_prix
+    assign pack1_prix = 4990
+  endunless
+  unless pack2_prix
+    assign pack2_prix = 6990
+  endunless
+  unless pack3_prix
+    assign pack3_prix = 9990
+  endunless
 
   assign titre_bloc = 'Complétez votre Kit Repas Nomade :'
   assign couleur_accent = '#9f6b69'

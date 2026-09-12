@@ -1400,6 +1400,177 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       ]
     },
     {
+      "type": "ocaou_duo",
+      "name": "O'CAOU — Offres Duo",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Paramètres généraux"
+        },
+        {
+          "type": "text",
+          "id": "titre_bloc",
+          "label": "Titre du bloc",
+          "default": "Complétez avec un Indispensable :"
+        },
+        {
+          "type": "number",
+          "id": "seuil_livraison",
+          "label": "Seuil livraison offerte (€)",
+          "default": 79,
+          "info": "Affiche l'annonce point relais offert si le prix du duo dépasse ce seuil."
+        },
+        {
+          "type": "header",
+          "content": "Duo 1"
+        },
+        {
+          "type": "text",
+          "id": "duo1_handle",
+          "label": "Handle produit complémentaire",
+          "default": "gourde",
+          "info": "Dernière partie de l'URL de la fiche produit (ex : gourde)."
+        },
+        {
+          "type": "text",
+          "id": "duo1_titre",
+          "label": "Titre affiché",
+          "default": "Le Duo Gourde"
+        },
+        {
+          "type": "number",
+          "id": "duo1_prix",
+          "label": "Prix promo (€)",
+          "default": 89
+        },
+        {
+          "type": "text",
+          "id": "duo1_badge",
+          "label": "Badge (facultatif)",
+          "default": "Le préféré ♥"
+        },
+        {
+          "type": "text",
+          "id": "duo1_cadeau_handle",
+          "label": "Handle cadeau offert (facultatif)",
+          "default": "poignee-nomade"
+        },
+        {
+          "type": "text",
+          "id": "duo1_cadeau_mot",
+          "label": "Mot cadeau (OFFERT / OFFERTE…)",
+          "default": "OFFERTE"
+        },
+        {
+          "type": "header",
+          "content": "Duo 2"
+        },
+        {
+          "type": "text",
+          "id": "duo2_handle",
+          "label": "Handle produit complémentaire",
+          "default": "cabas-ocaou"
+        },
+        {
+          "type": "text",
+          "id": "duo2_titre",
+          "label": "Titre affiché",
+          "default": "Le Duo Cabas"
+        },
+        {
+          "type": "number",
+          "id": "duo2_prix",
+          "label": "Prix promo (€)",
+          "default": 99
+        },
+        {
+          "type": "text",
+          "id": "duo2_badge",
+          "label": "Badge (facultatif)"
+        },
+        {
+          "type": "text",
+          "id": "duo2_cadeau_handle",
+          "label": "Handle cadeau offert (facultatif)",
+          "default": "pochon"
+        },
+        {
+          "type": "text",
+          "id": "duo2_cadeau_mot",
+          "label": "Mot cadeau",
+          "default": "OFFERT"
+        },
+        {
+          "type": "header",
+          "content": "Duo 3 (facultatif)"
+        },
+        {
+          "type": "text",
+          "id": "duo3_handle",
+          "label": "Handle produit complémentaire (vide = masqué)"
+        },
+        {
+          "type": "text",
+          "id": "duo3_titre",
+          "label": "Titre affiché"
+        },
+        {
+          "type": "number",
+          "id": "duo3_prix",
+          "label": "Prix promo (€)",
+          "default": 0
+        },
+        {
+          "type": "text",
+          "id": "duo3_badge",
+          "label": "Badge (facultatif)"
+        },
+        {
+          "type": "text",
+          "id": "duo3_cadeau_handle",
+          "label": "Handle cadeau offert (facultatif)"
+        },
+        {
+          "type": "text",
+          "id": "duo3_cadeau_mot",
+          "label": "Mot cadeau",
+          "default": "OFFERT"
+        }
+      ]
+    },
+    {
+      "type": "ocaou_kit",
+      "name": "O'CAOU — Kit Repas Nomade",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Les prix sont en centimes : 4990 = 49,90 €. Le prix barré est calculé automatiquement à partir des vrais prix Shopify."
+        },
+        {
+          "type": "number",
+          "id": "pack1_prix",
+          "label": "Étape 1 — Prix (centimes)",
+          "default": 4990,
+          "info": "Gourde + Lunch box. Ex : 4990 = 49,90 €."
+        },
+        {
+          "type": "number",
+          "id": "pack2_prix",
+          "label": "Étape 2 — Prix (centimes)",
+          "default": 6990,
+          "info": "Gourde + Lunch box + Couverts. Ex : 6990 = 69,90 €."
+        },
+        {
+          "type": "number",
+          "id": "pack3_prix",
+          "label": "Étape 3 — Prix (centimes)",
+          "default": 9990,
+          "info": "Kit complet avec Sac isotherme. Ex : 9990 = 99,90 €."
+        }
+      ]
+    },
+    {
       "type": "offer",
       "name": "Offer",
       "settings": [
