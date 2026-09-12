@@ -51,7 +51,7 @@
     }
   },
   "order": [
-    "main",
-    "point-relais-section"
+    "point-relais-section",
+    "main"
   ]
 }
