@@ -316,10 +316,10 @@
           "settings": {
             "heading": "Souvent acheté ensemble",
             "products": [
+              "duo-miam",
               "coffret-premier-repas-1",
-              "coffret-comme-les-grands-1",
               "duo-essentiel",
-              "duo-miam"
+              "coffret-comme-les-grands-1"
             ],
             "button_label": "Découvrir",
             "show_prices": true,
