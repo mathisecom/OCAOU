@@ -61,6 +61,11 @@
                           <a href="{{ link.url }}" class="inline-block link-faded break-all">{{ link.title }}</a>
                         </li>
                       {%- endfor -%}
+                      {%- if block.settings.menu == 'commande' -%}
+                        <li>
+                          <a href="#" class="inline-block link-faded break-all" onclick="event.preventDefault(); window.privacyBanner.showPreferences();">Préférences cookies</a>
+                        </li>
+                      {%- endif -%}
                     </ul>
                   </div>
                 {%- endif -%}
