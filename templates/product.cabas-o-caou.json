@@ -151,7 +151,6 @@
         },
         "collapsible_text_BgHqca": {
           "type": "collapsible_text",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
