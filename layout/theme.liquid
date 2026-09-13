@@ -76,6 +76,13 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
     {{ content_for_header }}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+
+    <style>
+      .shopify-pc__banner__dialog button,
+      .shopify-pc__prefs__header-actions button {
+        border-radius: 60px !important;
+      }
+    </style>
   </head>
 
   <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
