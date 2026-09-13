@@ -221,7 +221,7 @@
         "ai_gen_block_4e66e81_YyTRQ8": {
           "type": "ai_gen_block_4e66e81",
           "settings": {
-            "heading": "Souvent achetés ensemble",
+            "heading": "Souvent acheté ensemble",
             "products": [
               "gourde",
               "couverts",
@@ -943,7 +943,7 @@
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "CONFORT",
-            "text": "Léger facile à porter, compact et moletonné"
+            "text": "Léger facile à porter, compact et molletonné"
           }
         }
       },
@@ -1219,7 +1219,7 @@
           "type": "item",
           "settings": {
             "title": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glisser dans le sac en mode sac à dos.</p>"
+            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glissé dans le sac en mode sac à dos.</p>"
           }
         },
         "item_gjnpnD": {
