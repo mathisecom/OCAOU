@@ -142,7 +142,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "Composition Textile",
-            "content": "<p>Extérieur: 100% Coton</p><p>Intérieur: 100% coton</p><p>Filet: 100% polyester</p><p>Rembourrage : 100% polyurétane</p><p><strong>Sac sherpa</strong></p><p>Extérieur: 100% polyesther</p><p></p>",
+            "content": "<p>Extérieur: 100% Coton</p><p>Intérieur: 100% coton</p><p>Filet: 100% polyester</p><p>Rembourrage : 100% polyurétane</p><p><strong>Sac sherpa</strong></p><p>Extérieur: 100% polyester</p><p></p>",
             "page": ""
           }
         },
@@ -319,7 +319,9 @@
             "heading": "Existe aussi en coffret",
             "products": [
               "coffret-pour-maman-1",
-              "coffret-comme-les-grands-1"
+              "coffret-comme-les-grands-1",
+              "duo-essentiel",
+              "duo-pratique"
             ],
             "button_label": "Découvrir",
             "show_prices": true,
@@ -1252,7 +1254,7 @@
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "CONFORT",
-            "text": "Léger facile à porter, compact et moletonné"
+            "text": "Léger facile à porter, compact et molletonné"
           }
         },
         "benefit_RyBCLy": {
@@ -1578,7 +1580,7 @@
           "type": "item",
           "settings": {
             "title": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glisser dans le sac en mode sac à dos.</p>"
+            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glissé dans le sac en mode sac à dos.</p>"
           }
         },
         "item_gjnpnD": {
