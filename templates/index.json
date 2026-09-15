@@ -193,6 +193,38 @@
         "enable_animation": false
       }
     },
+    "video_8TEnKB": {
+      "type": "video",
+      "blocks": {
+        "play_WekmR6": {
+          "type": "play",
+          "settings": {}
+        },
+        "heading_BPHqMz": {
+          "type": "heading",
+          "settings": {
+            "text": "Video",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "play_WekmR6",
+        "heading_BPHqMz"
+      ],
+      "name": "Video",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": false,
+        "video_size": "auto",
+        "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
+        "external_video_url": "",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "logoscroll_WxkMyg": {
       "type": "logoscroll",
       "blocks": {
@@ -1497,6 +1529,7 @@
   },
   "order": [
     "heromedia_zwA498",
+    "video_8TEnKB",
     "logoscroll_WxkMyg",
     "image_with_text_overlay_xeN3nf",
     "impact_text_jwCEdV",
