@@ -1,0 +1,513 @@
+{%- comment -%}
+  Bandeau d'accueil vidéo (ISOMORPH, 17/09/2026)
+  Vidéo de fond en lecture automatique muette et en boucle, titre en bas à gauche.
+  - Affiche d'abord l'image de couverture, la vidéo n'est chargée qu'à l'entrée dans l'écran.
+  - Bouton de pause obligatoire (RGAA 4.1, critère 13.8 : contenu en mouvement contrôlable).
+  - Mouvement réduit demandé par le visiteur : la vidéo ne démarre pas, l'affiche reste.
+{%- endcomment -%}
+
+{%- liquid
+  assign video = section.settings.video
+  assign mobile_video = section.settings.mobile_video
+  assign poster_image = section.settings.poster | default: video.preview_image
+
+  comment
+    Shopify n'expose au thème qu'un seul fichier mp4, celui de plus haute définition.
+    Le script retient la définition la plus proche de la largeur de l'écran parmi
+    celles qui sont disponibles, et s'abstient sur une connexion lente.
+  endcomment
+
+  assign liste_desktop = ''
+  for source in video.sources
+    if source.format == 'mp4'
+      assign entree = '{"u":"' | append: source.url | append: '","w":' | append: source.width | append: '}'
+      if liste_desktop == ''
+        assign liste_desktop = entree
+      else
+        assign liste_desktop = liste_desktop | append: ',' | append: entree
+      endif
+    endif
+  endfor
+  assign sources_desktop = '[' | append: liste_desktop | append: ']'
+
+  assign liste_mobile = ''
+  for source in mobile_video.sources
+    if source.format == 'mp4'
+      assign entree = '{"u":"' | append: source.url | append: '","w":' | append: source.width | append: '}'
+      if liste_mobile == ''
+        assign liste_mobile = entree
+      else
+        assign liste_mobile = liste_mobile | append: ',' | append: entree
+      endif
+    endif
+  endfor
+  assign sources_mobile = '[' | append: liste_mobile | append: ']'
+-%}
+<style>
+  #shopify-section-{{ section.id }} {
+    --section-outer-spacing-block: 0;
+    margin-block: 0;
+  }
+
+  #shopify-section-{{ section.id }} .isohv {
+    position: relative;
+    width: 100%;
+    height: {{ section.settings.height_mobile }}svh;
+    min-height: {{ section.settings.min_height_mobile }}px;
+    overflow: hidden;
+    background-color: {{ section.settings.background }};
+    isolation: isolate;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__media,
+  #shopify-section-{{ section.id }} .isohv__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: {{ section.settings.focus_mobile }};
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__media {
+    opacity: 0;
+    transition: opacity .6s ease;
+  }
+
+  #shopify-section-{{ section.id }} .isohv[data-playing='true'] .isohv__media {
+    opacity: 1;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgb({{ section.settings.scrim_color.rgb }} / {{ section.settings.scrim_opacity | divided_by: 100.0 }}) 0%,
+      rgb({{ section.settings.scrim_color.rgb }} / {{ section.settings.scrim_opacity | times: 0.55 | divided_by: 100.0 }}) 28%,
+      rgb({{ section.settings.scrim_color.rgb }} / 0) 62%
+    );
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 20px 28px;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__title {
+    margin: 0;
+    max-width: 100%;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.title_size_mobile }}px;
+    font-weight: {{ section.settings.title_weight }};
+    line-height: {{ section.settings.title_line_height }};
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__pause {
+    position: absolute;
+    inset-block-end: 20px;
+    inset-inline-end: 20px;
+    inline-size: 40px;
+    block-size: 40px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(0 0 0 / .45);
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__pause:hover {
+    background: rgb(0 0 0 / .65);
+  }
+
+  #shopify-section-{{ section.id }} .isohv__pause:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__pause svg {
+    inline-size: 15px;
+    block-size: 15px;
+    fill: currentColor;
+  }
+
+  #shopify-section-{{ section.id }} .isohv__pause .isohv__icon--play {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .isohv[data-playing='false'] .isohv__pause .isohv__icon--play {
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .isohv[data-playing='false'] .isohv__pause .isohv__icon--pause {
+    display: none;
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} .isohv {
+      height: {{ section.settings.height_desktop }}svh;
+      min-height: {{ section.settings.min_height_desktop }}px;
+      max-height: {{ section.settings.max_height_desktop }}px;
+    }
+
+    #shopify-section-{{ section.id }} .isohv__media,
+    #shopify-section-{{ section.id }} .isohv__poster {
+      object-position: {{ section.settings.focus_desktop }};
+    }
+
+    #shopify-section-{{ section.id }} .isohv__inner {
+      padding: 0 clamp(32px, 4vw, 64px) clamp(32px, 4vw, 56px);
+    }
+
+    #shopify-section-{{ section.id }} .isohv__title {
+      font-size: {{ section.settings.title_size_desktop }}px;
+      max-width: 40ch;
+    }
+
+    #shopify-section-{{ section.id }} .isohv__pause {
+      inset-block-end: clamp(32px, 4vw, 56px);
+      inset-inline-end: clamp(32px, 4vw, 64px);
+    }
+  }
+</style>
+
+<div class="isohv" data-playing="false" data-sources-desktop="{{ sources_desktop | escape }}" data-sources-mobile="{{ sources_mobile | escape }}">
+  {%- if poster_image != blank -%}
+    {{ poster_image | image_url: width: 2200 | image_tag: class: 'isohv__poster', alt: '', sizes: '100vw', widths: '600,800,1000,1200,1600,2000,2200', fetchpriority: 'high' }}
+  {%- endif -%}
+
+  {%- if video != blank -%}
+    <video class="isohv__media" playsinline muted loop preload="none" aria-hidden="true" tabindex="-1"></video>
+  {%- endif -%}
+
+  <div class="isohv__scrim"></div>
+
+  <div class="isohv__inner">
+    {%- if section.settings.title != blank -%}
+      <{{ section.settings.heading_tag }} class="isohv__title">{{ section.settings.title | escape | newline_to_br }}</{{ section.settings.heading_tag }}>
+    {%- endif -%}
+  </div>
+
+  {%- if video != blank -%}
+    <button class="isohv__pause" type="button" hidden data-label-pause="{{ section.settings.label_pause | escape }}" data-label-play="{{ section.settings.label_play | escape }}" aria-label="{{ section.settings.label_pause | escape }}">
+      <svg class="isohv__icon--pause" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg>
+      <svg class="isohv__icon--play" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 2l10 6-10 6z"/></svg>
+    </button>
+  {%- endif -%}
+</div>
+
+<script>
+  (function () {
+    var root = document.querySelector('#shopify-section-{{ section.id }} .isohv');
+    if (!root || root.dataset.ready === 'true') return;
+    root.dataset.ready = 'true';
+
+    var video = root.querySelector('.isohv__media');
+    var button = root.querySelector('.isohv__pause');
+    if (!video) return;
+
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var petit = window.matchMedia('(max-width: 699px)').matches;
+    var reseau = navigator.connection || {};
+    var economie = reseau.saveData === true;
+    // Connexion lente annoncee par le navigateur : l'affiche de couverture suffit.
+    var reseau_lent = petit && reseau.effectiveType && reseau.effectiveType !== '4g';
+
+    function lire_liste(valeur) {
+      try { return JSON.parse(valeur || '[]'); } catch (e) { return []; }
+    }
+
+    function choisir(liste, largeur_max) {
+      var tenables = liste.filter(function (s) { return s.w && s.w <= largeur_max; });
+      var retenue = tenables.sort(function (a, b) { return b.w - a.w; })[0];
+      return retenue ? retenue.u : '';
+    }
+
+    var liste_mobile = lire_liste(root.dataset.sourcesMobile);
+    var liste_desktop = lire_liste(root.dataset.sourcesDesktop);
+    if (!liste_mobile.length) liste_mobile = liste_desktop;
+
+    var source = petit ? choisir(liste_mobile, 1920) : choisir(liste_desktop, 1920);
+
+    function etat(joue) {
+      root.dataset.playing = joue ? 'true' : 'false';
+      if (button) button.setAttribute('aria-label', joue ? button.dataset.labelPause : button.dataset.labelPlay);
+    }
+
+    function charger() {
+      if (video.dataset.loaded === 'true') return;
+      video.dataset.loaded = 'true';
+      video.src = source;
+      video.load();
+      video.play().then(function () { etat(true); }).catch(function () { etat(false); });
+    }
+
+    if (button) {
+      button.hidden = false;
+      button.addEventListener('click', function () {
+        if (video.paused) {
+          charger();
+          video.play().then(function () { etat(true); }).catch(function () {});
+        } else {
+          video.pause();
+          etat(false);
+        }
+      });
+    }
+
+    video.addEventListener('playing', function () { etat(true); });
+    video.addEventListener('pause', function () { etat(false); });
+
+    if (reduced || economie || reseau_lent || !source) {
+      etat(false);
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observateur = new IntersectionObserver(function (entrees) {
+        entrees.forEach(function (entree) {
+          if (entree.isIntersecting) {
+            charger();
+          } else if (video.dataset.loaded === 'true' && !video.paused) {
+            video.pause();
+          }
+        });
+      }, { rootMargin: '200px' });
+      observateur.observe(root);
+    } else {
+      charger();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Bandeau d'accueil vidéo",
+  "tag": "section",
+  "class": "shopify-section--iso-hero-video",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
+  },
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Vidéo"
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "Vidéo mobile",
+      "info": "Facultatif. Sans vidéo mobile, la vidéo principale est utilisée."
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Image de couverture",
+      "info": "Affichée avant le démarrage de la vidéo. Par défaut, la miniature de la vidéo."
+    },
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Titre",
+      "default": "O’CAOU, la solution à tous les \" au cas où . . . \" du quotidien",
+      "info": "Un retour à la ligne dans ce champ force un retour à la ligne à l'écran."
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Balise du titre",
+      "default": "h1",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "p",
+          "label": "Paragraphe"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille sur ordinateur",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille sur mobile",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "label": "Graisse",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "default": 900
+    },
+    {
+      "type": "text",
+      "id": "title_line_height",
+      "label": "Interligne",
+      "default": "1.2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du titre",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Hauteur"
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Hauteur sur ordinateur",
+      "min": 40,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 78
+    },
+    {
+      "type": "range",
+      "id": "min_height_desktop",
+      "label": "Hauteur minimale sur ordinateur",
+      "min": 320,
+      "max": 720,
+      "step": 10,
+      "unit": "px",
+      "default": 480
+    },
+    {
+      "type": "range",
+      "id": "max_height_desktop",
+      "label": "Hauteur maximale sur ordinateur",
+      "min": 480,
+      "max": 1100,
+      "step": 10,
+      "unit": "px",
+      "default": 820
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Hauteur sur mobile",
+      "min": 40,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "label": "Hauteur minimale sur mobile",
+      "min": 280,
+      "max": 640,
+      "step": 10,
+      "unit": "px",
+      "default": 420
+    },
+    {
+      "type": "text",
+      "id": "focus_desktop",
+      "label": "Cadrage sur ordinateur",
+      "default": "center center",
+      "info": "Par exemple : center center, center top, 40% 60%."
+    },
+    {
+      "type": "text",
+      "id": "focus_mobile",
+      "label": "Cadrage sur mobile",
+      "default": "center center"
+    },
+    {
+      "type": "header",
+      "content": "Lisibilité"
+    },
+    {
+      "type": "color",
+      "id": "scrim_color",
+      "label": "Voile bas",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "scrim_opacity",
+      "label": "Intensité du voile",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Fond avant chargement",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "header",
+      "content": "Accessibilité"
+    },
+    {
+      "type": "text",
+      "id": "label_pause",
+      "label": "Libellé du bouton de pause",
+      "default": "Mettre la vidéo en pause"
+    },
+    {
+      "type": "text",
+      "id": "label_play",
+      "label": "Libellé du bouton de lecture",
+      "default": "Lire la vidéo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bandeau d'accueil vidéo"
+    }
+  ]
+}
+{% endschema %}
