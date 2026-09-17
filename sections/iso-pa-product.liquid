@@ -1,0 +1,822 @@
+{%- comment -%}
+  Piste A « Continuité » : zone d'achat (maquette build/piste-a.js, fonction buy, qui fait foi).
+  Arbitrages :
+  - RGAA : vrais contrôles (radios pour les couleurs et les formules, details, boutons nommés), focus
+    visible, cibles 44 px, textes 13 px minimum, un seul H1, textes alternatifs de repli construits
+    depuis le nom du produit et la couleur (les médias n'ont pas de description).
+  - Éco / perf : photo principale en priorité haute avec le même srcset et le même sizes en version
+    ordinateur et mobile (un seul téléchargement), autres photos en chargement différé ; JS « defer »
+    sans bibliothèque ; graisse 500 de Poppins servie par la bibliothèque de polices Shopify.
+  - Sécu : aucune donnée sensible ; ajout au panier par window.OCAOUCart (snippets/ocaou-cart-add).
+  Formules : composition et prix repris de snippets/ocaou-kit-repas (gourde) et de
+  snippets/ocaou-duo-produit (sac, appel du bloc liquid_89n964 de templates/product.json) :
+  prix promo déclarés dans les blocs « formule », prix barré = somme des prix réels des articles
+  (variantes choisies), cadeaux ajoutés avec la propriété « Cadeau offert avec », mention
+  « Point relais offert » quand le prix atteint le seuil de livraison du thème.
+{%- endcomment -%}
+{{ 'iso-pa.css' | asset_url | stylesheet_tag }}
+{%- assign f500 = settings.text_font | font_modify: 'weight', '500' -%}
+{%- if f500 -%}<style>{{ f500 | font_face: font_display: 'swap' }}</style>{%- endif -%}
+<script src="{{ 'iso-pa.js' | asset_url }}" defer></script>
+{%- liquid
+  assign uid = section.id
+  assign sel = product.selected_or_first_available_variant
+  assign nom = section.settings.titre | default: product.title
+  assign hero = sel.featured_media | default: product.featured_media
+  assign mimg = sel.featured_image | default: product.featured_image
+  assign seuil = settings.cart_free_shipping_threshold | default: 79 | times: 100 | round
+  assign sizes_main = '(min-width: 960px) min(780px, calc(56vw - 170px)), 86vw'
+  assign widths_main = '360,540,720,900,1080,1296,1560'
+
+  # Position (base 1) de la photo de la couleur choisie, et rang de cette couleur.
+  assign nmed = product.media.size
+  assign opt = product.options_with_values.first
+  assign hero_pos = 1
+  for m in product.media
+    if m.id == hero.id
+      assign hero_pos = forloop.index
+      break
+    endif
+  endfor
+  assign acti = 0
+  if opt
+    for val in opt.values
+      if val == sel.option1
+        assign acti = forloop.index0
+        break
+      endif
+    endfor
+  endif
+
+  # Photos rangées par couleur, comme la fiche en ligne (demande du 17/09) : dans le catalogue Shopify, la
+  # photo d'une couleur ouvre son groupe et les médias qui suivent lui appartiennent, jusqu'à la photo de
+  # la couleur suivante. Le rangement n'est retenu que si le premier média ouvre un groupe, si aucune
+  # couleur ne partage sa photo et si chaque groupe compte au moins deux photos ; sinon la galerie garde
+  # l'ordre du réglage, commun à toutes les couleurs (cas de la gourde, où seule la photo de tête change).
+  assign ncol = 0
+  unless product.has_only_default_variant
+    assign ncol = opt.values.size
+  endunless
+  assign grouped = false
+  assign heads = ''
+  if ncol > 1 and nmed > 1
+    assign grouped = true
+    for val in opt.values
+      assign hp = 0
+      for v in product.variants
+        if v.option1 == val and v.featured_media != blank
+          for m in product.media
+            if m.id == v.featured_media.id
+              assign hp = forloop.index
+              break
+            endif
+          endfor
+          break
+        endif
+      endfor
+      assign hkey = ',' | append: hp | append: ','
+      if hp == 0 or heads contains hkey
+        assign grouped = false
+        break
+      endif
+      assign heads = heads | append: hp | append: ','
+    endfor
+  endif
+  assign ends = ''
+  if grouped
+    assign heads = heads | remove_last: ',' | split: ','
+    assign first_head = nmed
+    for h in heads
+      assign hp = h | plus: 0
+      if hp < first_head
+        assign first_head = hp
+      endif
+      assign fin = nmed
+      for h2 in heads
+        assign hp2 = h2 | plus: 0
+        if hp2 > hp and hp2 <= fin
+          assign fin = hp2 | minus: 1
+        endif
+      endfor
+      assign len = fin | minus: hp | plus: 1
+      if len < 2
+        assign grouped = false
+        break
+      endif
+      assign ends = ends | append: fin | append: ','
+    endfor
+    if first_head != 1
+      assign grouped = false
+    endif
+  endif
+
+  # Ordre des photos, réglage « galerie ». Galerie rangée par couleur : ce sont les rangs dans le groupe
+  # (1 = la photo de la couleur, 2 = la suivante), appliqués à chaque couleur ; les rangs absents suivent
+  # dans l'ordre du catalogue. Sinon : les positions des médias, la première cédant sa place à la photo de
+  # la couleur choisie.
+  assign plan = ''
+  if grouped
+    assign ends = ends | remove_last: ',' | split: ','
+    assign wanted = ''
+    if section.settings.galerie != blank
+      assign src = section.settings.galerie | remove: ' ' | split: ','
+      for p in src
+        assign pn = p | plus: 0
+        assign key = ',' | append: pn | append: ','
+        unless pn < 1 or wanted contains key
+          assign wanted = wanted | append: pn | append: ','
+        endunless
+      endfor
+    endif
+    assign wanted = wanted | split: ','
+    for h in heads
+      assign hp = h | plus: 0
+      assign fin = ends[forloop.index0] | plus: 0
+      assign len = fin | minus: hp | plus: 1
+      assign line = ''
+      assign taken = ','
+      for w in wanted
+        assign rn = w | plus: 0
+        if rn <= len
+          assign pos = hp | plus: rn | minus: 1
+          assign line = line | append: pos | append: ','
+          assign taken = taken | append: rn | append: ','
+        endif
+      endfor
+      for k in (1..len)
+        assign key = ',' | append: k | append: ','
+        unless taken contains key
+          assign pos = hp | plus: k | minus: 1
+          assign line = line | append: pos | append: ','
+        endunless
+      endfor
+      assign plan = plan | append: line | remove_last: ',' | append: '|'
+    endfor
+  else
+    assign line = hero_pos | append: ','
+    if section.settings.galerie != blank
+      assign src = section.settings.galerie | remove: ' ' | split: ','
+      for p in src offset: 1
+        assign pn = p | plus: 0
+        if pn >= 1 and pn <= nmed and pn != hero_pos
+          assign line = line | append: pn | append: ','
+        endif
+      endfor
+    else
+      assign vmedia = ','
+      for v in product.variants
+        if v.featured_media
+          assign vmedia = vmedia | append: v.featured_media.id | append: ','
+        endif
+      endfor
+      for m in product.media
+        assign key = ',' | append: m.id | append: ','
+        unless vmedia contains key or forloop.index == hero_pos
+          assign line = line | append: forloop.index | append: ','
+        endunless
+      endfor
+    endif
+    assign plan = line | remove_last: ','
+  endif
+  assign plan = plan | remove_last: '|' | split: '|'
+
+  # Photos du groupe affiché : nombre et photo de tête (celle que reçoit la place principale).
+  assign act_line = plan[0]
+  if grouped
+    assign act_line = plan[acti]
+  endif
+  assign act_ps = act_line | split: ','
+  assign n = act_ps.size
+  if nmed == 0
+    assign n = 0
+  endif
+  assign fmi = act_ps[0] | minus: 1
+  assign hero_med = product.media[fmi]
+  assign act_col = ''
+  if grouped
+    assign act_col = opt.values[acti]
+  endif
+
+  # Formules valides (tous les articles existent). Aucune n'est cochée au départ : le bouton affiche le
+  # prix du produit seul (demande du 15/09, les formules complètent l'achat).
+  assign valid = ','
+  assign first_pack = sel.price
+  for b in section.blocks
+    if b.type != 'formule'
+      continue
+    endif
+    assign hs = b.settings.produits | remove: ' ' | split: ','
+    assign ok = true
+    assign sum = sel.price
+    for h in hs
+      assign pp = all_products[h]
+      if pp == blank or pp.id == blank
+        assign ok = false
+        break
+      endif
+      assign sum = sum | plus: pp.selected_or_first_available_variant.price
+    endfor
+    unless ok
+      continue
+    endunless
+    assign valid = valid | append: b.id | append: ','
+  endfor
+
+  # Pastilles couleur : réglage « couleurs » de la section (teintes relevées sur la photo de chaque
+  # produit), puis color_swatch_config du thème. Rendu par snippets/iso-pa-sw.
+  assign swcfg = settings.color_swatch_config | newline_to_br | split: '<br />'
+  assign cfg = section.settings.couleurs | newline_to_br | split: '<br />'
+  assign leo_list = section.settings.leopard | downcase | newline_to_br | strip_newlines | replace: '<br />', ',' | prepend: ',' | append: ','
+
+  # Ordre des pastilles de la fiche : le coloris de la photo affichée passe en tête, les autres
+  # gardent l'ordre de Shopify. opt.values n'est pas touché : la galerie s'y repère par index.
+  assign vals_main = ''
+  if opt.values contains sel.option1
+    assign vals_main = sel.option1 | append: '|~|'
+  endif
+  for val in opt.values
+    unless val == sel.option1
+      assign vals_main = vals_main | append: val | append: '|~|'
+    endunless
+  endfor
+  assign vals_main = vals_main | split: '|~|'
+-%}
+<div class="iso-pa" id="pa-achat" data-pa-product>
+<div class="pa-w pa-buy">
+
+{%- if n > 0 -%}
+{%- comment -%}
+  Galerie : toutes les couleurs sont dans la page, une seule est visible (attribut hidden, aucune photo
+  téléchargée pour les autres). Changer de couleur montre son groupe, déjà présent : plus de photo à
+  attendre au clic sur une pastille.
+{%- endcomment -%}
+<div class="pa-gal">
+  <div class="pa-rail" role="group" aria-label="Photos du produit">
+    {%- for line in plan -%}
+      {%- assign gi = forloop.index0 -%}
+      {%- assign ps = line | split: ',' -%}
+      {%- assign gn = ps.size -%}
+      {%- assign gval = '' -%}
+      {%- assign ghid = false -%}
+      {%- if grouped -%}
+        {%- assign gval = opt.values[gi] -%}
+        {%- unless gi == acti -%}{%- assign ghid = true -%}{%- endunless -%}
+      {%- endif -%}
+      {%- for p in ps -%}
+        {%- assign mi = p | minus: 1 -%}
+        {%- assign md = product.media[mi] -%}
+        {%- assign im = md.preview_image -%}
+        {%- capture ss -%}{% render 'iso-pa-srcset', image: im, widths: widths_main %}{%- endcapture -%}
+        {%- capture alt -%}{% render 'iso-pa-alt', media: md, product: product, nom: nom, couleur: gval, i: forloop.index, n: gn %}{%- endcapture -%}
+        <button type="button" class="pa-th pa-mix" data-c="{{ gi }}" data-i="{{ forloop.index0 }}" aria-label="Photo {{ forloop.index }} sur {{ gn }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" data-src="{{ im | image_url: width: 900 }}" data-srcset="{{ ss | strip }}" data-alt="{{ alt | strip | escape }}"{% if ghid %} hidden{% endif %}><img src="{{ im | image_url: width: 136 }}" width="68" height="68" alt="" loading="lazy" decoding="async"{% if forloop.first and grouped == false %} data-pa-first="s"{% endif %}></button>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+  <div class="pa-main pa-mix">
+    {%- capture hero_alt -%}{% render 'iso-pa-alt', media: hero_med, product: product, nom: nom, couleur: act_col, i: 1, n: n %}{%- endcapture -%}
+    {%- render 'iso-pa-img', image: hero_med.preview_image, alt: hero_alt, sizes: sizes_main, widths: widths_main, cls: 'pa-main-img', eager: true -%}
+    <button type="button" class="pa-zoom" aria-label="Agrandir la photo" aria-pressed="false">{% render 'iso-pa-icon', name: 'zoom' %}</button>
+    {%- if n > 1 -%}<span class="pa-cur" aria-hidden="true"><span class="pa-cur-c">{% render 'iso-pa-icon', name: 'chevron-right' %}</span></span>{%- endif -%}
+  </div>
+</div>
+<div class="pa-mgal">
+  <div class="pa-mtrack pa-scroll pa-bleed" id="pa-mg-{{ uid }}" tabindex="0" role="region" aria-roledescription="carrousel" aria-label="Photos du produit">
+    {%- for line in plan -%}
+      {%- assign gi = forloop.index0 -%}
+      {%- assign ps = line | split: ',' -%}
+      {%- assign gn = ps.size -%}
+      {%- assign gval = '' -%}
+      {%- assign ghid = false -%}
+      {%- if grouped -%}
+        {%- assign gval = opt.values[gi] -%}
+        {%- unless gi == acti -%}{%- assign ghid = true -%}{%- endunless -%}
+      {%- endif -%}
+      {%- for p in ps -%}
+        {%- assign mi = p | minus: 1 -%}
+        {%- assign md = product.media[mi] -%}
+        {%- assign im = md.preview_image -%}
+        {%- capture alt -%}{% render 'iso-pa-alt', media: md, product: product, nom: nom, couleur: gval, i: forloop.index, n: gn %}{%- endcapture -%}
+        <div class="pa-slide pa-mix" data-c="{{ gi }}" role="group" aria-label="Photo {{ forloop.index }} sur {{ gn }}"{% if ghid %} hidden{% endif %}>
+          {%- if forloop.first and ghid == false -%}
+            {%- render 'iso-pa-img', image: im, alt: alt, sizes: sizes_main, widths: widths_main, eager: true, attrs: 'data-pa-first="l"' -%}
+          {%- else -%}
+            {%- render 'iso-pa-img', image: im, alt: alt, sizes: sizes_main, widths: widths_main -%}
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+  <span class="pa-count" aria-hidden="true"><span class="pa-count-i">1</span>/<span class="pa-count-n">{{ n }}</span></span>
+  {%- capture mgid -%}pa-mg-{{ uid }}{%- endcapture -%}
+  <div class="pa-mbar"><div class="pa-prog" aria-hidden="true"><span style="width:{{ 100.0 | divided_by: n }}%"></span></div>{% render 'iso-pa-carnav', id: mgid, prev: 'Photo précédente', next: 'Photo suivante' %}</div>
+</div>
+{%- endif -%}
+<div class="pa-info">
+  <nav class="pa-bc" aria-label="Fil d'Ariane"><ol>
+    <li><a href="{{ routes.root_url }}">Accueil</a>{% render 'iso-pa-icon', name: 'chevron-right' %}</li>
+    {%- assign col = section.settings.collection -%}
+    {%- if col != blank -%}<li><a href="{{ col.url }}">{{ col.title | strip | escape }}</a>{% render 'iso-pa-icon', name: 'chevron-right' %}</li>{%- endif -%}
+    <li aria-current="page">{{ nom | escape }}</li>
+  </ol></nav>
+  {%- if section.settings.badges != blank -%}
+    {%- assign badges = section.settings.badges | newline_to_br | split: '<br />' -%}
+    <ul class="pa-badges">{%- for x in badges -%}{%- assign xs = x | strip -%}{%- if xs != blank -%}<li class="pa-badge">{{ xs | escape }}</li>{%- endif -%}{%- endfor -%}</ul>
+  {%- endif -%}
+  <h1 class="pa-h1">{{ nom | escape }}{% if section.settings.accroche != blank %}<span class="pa-h1-tag">{{ section.settings.accroche | escape }}</span>{% endif %}</h1>
+  {%- if section.settings.note != blank -%}
+    <a class="pa-rate" href="#pa-avis">{% render 'iso-pa-stars' %}<span><span class="pa-sr">Note moyenne&nbsp;: </span>{{ section.settings.note | escape }}/5{% if section.settings.avis != blank %} · {{ section.settings.avis | escape }}{% endif %}</span></a>
+  {%- endif -%}
+  {%- assign cmp_v = 0 -%}
+  {%- if sel.compare_at_price > sel.price -%}{%- assign cmp_v = sel.compare_at_price -%}{%- endif -%}
+  <p class="pa-price"><span class="pa-sr">Prix&nbsp;: </span><span class="pa-price-v">{{ sel.price | money | replace: ' €', '&nbsp;€' }}</span><s class="pa-price-c"{% if cmp_v == 0 %} hidden{% endif %}><span class="pa-sr">au lieu de </span><span class="pa-price-cv">{% if cmp_v > 0 %}{{ cmp_v | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></s></p>
+  {%- comment -%} Tâche 1 : pastilles de couleur sous le prix.
+    Boucle sur opt.values (valeurs de la 1re option) pour n'afficher qu'une pastille par couleur,
+    même sur les produits multi-options (coffrets : 3 options × n variantes → 60+ variantes mais
+    seulement 4 couleurs de Gourde). La variante représentative privilégie la sélection courante.
+  {%- endcomment -%}
+  {%- unless product.has_only_default_variant -%}
+    <div class="pa-sw-bar">
+      <fieldset class="pa-colors"><legend class="pa-lg">{{ opt.name | escape }}&nbsp;: <b class="pa-cname">{{ sel.option1 | escape }}</b></legend>
+        <div class="pa-sws">
+          {%- assign sbar_sws = '' -%}
+          {%- for val in vals_main -%}
+            {%- liquid
+              assign rep_id = nil
+              assign is_available = false
+              for v in product.variants
+                if v.option1 == val
+                  if rep_id == nil or v.id == sel.id
+                    assign rep_id = v.id
+                  endif
+                  if v.available
+                    assign is_available = true
+                  endif
+                endif
+              endfor
+              assign is_checked = false
+              if sel.option1 == val
+                assign is_checked = true
+              endif
+            -%}
+            <label class="pa-sw"><input type="radio" name="pa-col-{{ uid }}" value="{{ rep_id }}" data-title="{{ val | escape }}"{% if is_checked %} checked{% endif %}>{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}<span class="pa-sr">{{ val | escape }}{% unless is_available %} (épuisé){% endunless %}</span></label>
+            {%- capture sbar_sw -%}<button type="button" class="pa-sbar-sw" data-v="{{ rep_id }}" aria-pressed="{{ is_checked }}" aria-label="{{ val | escape }}{% unless is_available %} (épuisé){% endunless %}">{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}</button>{%- endcapture -%}
+            {%- assign sbar_sws = sbar_sws | append: sbar_sw -%}
+          {%- endfor -%}
+        </div>
+      </fieldset>
+    </div>
+  {%- endunless -%}
+  {%- if section.settings.pitch_titre != blank or section.settings.pitch != blank -%}
+    <div class="pa-pitch">{% if section.settings.pitch_titre != blank %}<p class="pa-pitch-t">{{ section.settings.pitch_titre | escape }}</p>{% endif %}{% if section.settings.pitch != blank %}<p>{{ section.settings.pitch | escape }}</p>{% endif %}</div>
+  {%- endif -%}
+  {%- if section.settings.puces != blank -%}
+    {%- assign puces = section.settings.puces | newline_to_br | split: '<br />' -%}
+    <ul class="pa-chips">{%- for x in puces -%}{%- assign xs = x | strip -%}{%- if xs != blank -%}<li class="pa-chip">{% render 'iso-pa-icon', name: 'check' %}{{ xs | escape }}</li>{%- endif -%}{%- endfor -%}</ul>
+  {%- endif -%}
+  {%- comment -%} Compléments : produits liés, ajout direct au panier quand le produit n'a qu'une variante. Au-dessus du CTA par défaut ; « points_forts » les place ici avec une image de 64 px, 80 px dès 700 px (taille du bloc « associated_products » du thème en ligne, demande du 15/09 pour la Gourde). {%- endcomment -%}
+  {%- assign complements = section.blocks | where: 'type', 'complement' -%}
+  {%- assign comp_haut = false -%}
+  {%- if section.settings.complements_position == 'points_forts' -%}{%- assign comp_haut = true -%}{%- endif -%}
+  {%- capture comp_html -%}
+  {%- if complements.size > 0 -%}
+    <div class="pa-comp{% if comp_haut %} pa-comp--haut{% endif %}">
+      <p class="pa-comp-h">{{ section.settings.complements_titre | default: "Complétez avec un indispensable" | escape }}</p>
+      {%- for cb in complements -%}
+        {%- assign cprod = cb.settings.produit -%}
+        {%- if cprod -%}
+          <div class="pa-comp-it">
+            <span class="pa-comp-img">{%- if cprod.featured_image -%}{%- if comp_haut -%}<img src="{{ cprod.featured_image | image_url: width: 240 }}" width="80" height="80" alt="" loading="lazy" decoding="async">{%- else -%}<img src="{{ cprod.featured_image | image_url: width: 120 }}" width="48" height="48" alt="" loading="lazy" decoding="async">{%- endif -%}{%- endif -%}</span>
+            <span class="pa-comp-tx"><span class="pa-comp-n"><a class="pa-comp-a" href="{{ cprod.url }}">{{ cprod.title | escape }}</a>{% if cb.settings.badge != blank %}<span class="pa-comp-b">{{ cb.settings.badge | escape }}</span>{% endif %}</span><span class="pa-comp-p">{{ cprod.price | money | replace: ' €', '&nbsp;€' }}</span></span>
+            {%- if cprod.variants.size == 1 -%}
+              <button type="button" class="pa-comp-add" data-pa-add="{{ cprod.selected_or_first_available_variant.id }}" aria-label="Ajouter {{ cprod.title | escape }} au panier"{% unless cprod.available %} disabled{% endunless %}>{% render 'iso-pa-icon', name: 'plus' %}Ajouter</button>
+            {%- else -%}
+              <span class="pa-comp-go" aria-hidden="true">{% render 'iso-pa-icon', name: 'arrow-right' %}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+  {%- endcapture -%}
+  {%- if comp_haut -%}{{ comp_html }}{%- endif -%}
+
+  {%- if valid != ',' -%}
+  <fieldset class="pa-blk pa-offer"><legend class="pa-lg">{{ section.settings.offre_titre | escape }}</legend><div class="pa-opts">
+    {%- assign oi = 0 -%}
+    {%- for b in section.blocks -%}
+      {%- assign bkey = ',' | append: b.id | append: ',' -%}
+      {%- unless valid contains bkey -%}{%- continue -%}{%- endunless -%}
+      {%- liquid
+        assign hs = b.settings.produits | remove: ' ' | split: ','
+        assign sum = sel.price
+        for h in hs
+          assign sum = sum | plus: all_products[h].selected_or_first_available_variant.price
+        endfor
+        assign pack = sum
+        assign cmp = 0
+        assign relay = false
+        if b.settings.prix != blank
+          assign pack = b.settings.prix
+          if sum > pack
+            assign cmp = sum
+          endif
+          if section.settings.relais and pack >= seuil
+            assign relay = true
+          endif
+        endif
+      -%}
+      {%- comment -%} Ordre des pastilles de la formule : les lignes sont alignées à droite, donc un
+        coloris présent dans plusieurs lignes se retrouve dans la même colonne d'une ligne à l'autre.
+        Les coloris présents dans le moins de lignes passent à gauche, les plus partagés à droite ;
+        les motifs (léopard, Graou) comptent pour un seul et même coloris. {%- endcomment -%}
+      {%- liquid
+        assign rows = ''
+        unless product.has_only_default_variant
+          assign row = ','
+          for val in opt.values
+            assign vk = val | downcase | strip
+            assign lk = ',' | append: vk | append: ','
+            if leo_list contains lk
+              assign vk = 'leo'
+            endif
+            assign rk = ',' | append: vk | append: ','
+            unless row contains rk
+              assign row = row | append: vk | append: ','
+            endunless
+          endfor
+          assign rows = rows | append: row | append: '|'
+        endunless
+        for h in hs
+          assign pp = all_products[h]
+          if pp.variants.size > 1
+            assign row = ','
+            for v in pp.variants
+              assign vk = v.title | downcase | strip
+              assign lk = ',' | append: vk | append: ','
+              if leo_list contains lk
+                assign vk = 'leo'
+              endif
+              assign rk = ',' | append: vk | append: ','
+              unless row contains rk
+                assign row = row | append: vk | append: ','
+              endunless
+            endfor
+            assign rows = rows | append: row | append: '|'
+          endif
+        endfor
+        assign rowsa = rows | split: '|'
+        assign univ = ','
+        for r in rowsa
+          assign cs = r | split: ','
+          for c in cs
+            assign ck = ',' | append: c | append: ','
+            unless c == blank or univ contains ck
+              assign univ = univ | append: c | append: ','
+            endunless
+          endfor
+        endfor
+        assign ordre = ''
+        assign nr = rowsa.size
+        for lvl in (1..nr)
+          assign us = univ | split: ','
+          for c in us
+            if c == blank
+              continue
+            endif
+            assign ck = ',' | append: c | append: ','
+            assign cnt = 0
+            for r in rowsa
+              if r contains ck
+                assign cnt = cnt | plus: 1
+              endif
+            endfor
+            if cnt == lvl
+              assign ordre = ordre | append: c | append: ','
+            endif
+          endfor
+        endfor
+        assign ordre = ordre | split: ','
+      -%}
+      {%- capture gifts -%}
+        {%- for gi in (1..2) -%}
+          {%- assign gk = 'cadeau_' | append: gi -%}
+          {%- assign gh = b.settings[gk] | strip -%}
+          {%- if gh != blank -%}
+            {%- assign gp = all_products[gh] -%}
+            {%- if gp and gp.id -%}
+              {%- assign gtk = gk | append: '_texte' -%}
+              {%- assign gvk = gk | append: '_valeur' -%}
+              <span class="pa-gift">{% render 'iso-pa-icon', name: 'gift' %}<span>{{ b.settings[gtk] | default: gp.title | escape }}{% if b.settings[gvk] %} ({{ gp.selected_or_first_available_variant.price | money | replace: ' €', '&nbsp;€' }}){% endif %}</span></span>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if relay -%}<span class="pa-gift">{% render 'iso-pa-icon', name: 'gift' %}<span>Point relais offert</span></span>{%- endif -%}
+      {%- endcapture -%}
+      {%- comment -%} La liste des articles reste hors de l'étiquette : une étiquette ne peut contenir qu'une seule case. {%- endcomment -%}
+      <div class="pa-opt" {{ b.shopify_attributes }}>
+        <label class="pa-opt-hd">
+          <input class="pa-opt-in" type="checkbox" name="pa-off-{{ uid }}" value="{{ oi }}">
+          <span class="pa-opt-r" aria-hidden="true"></span>
+          <span class="pa-opt-main"><span class="pa-opt-t">{{ b.settings.libelle | escape }}</span>{% if b.settings.badge != blank %}<span class="pa-opt-b">{{ b.settings.badge | escape }}</span>{% endif %}</span>
+          <span class="pa-opt-p"><b>{{ pack | money | replace: ' €', '&nbsp;€' }}</b><s{% if cmp == 0 %} hidden{% endif %}><span class="pa-sr">au lieu de </span><span class="pa-cmp">{% if cmp > 0 %}{{ cmp | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></s><span class="pa-save"{% if cmp == 0 %} hidden{% endif %}>{% if cmp > 0 %}Économie {{ cmp | minus: pack | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></span>
+          <span class="pa-opt-more"><span class="pa-opt-th" aria-hidden="true">
+            {%- if mimg -%}<img src="{{ mimg | image_url: width: 120 }}" width="40" height="40" alt="" loading="lazy" decoding="async" data-pa-hero>{%- endif -%}
+            {%- for h in hs -%}
+              {%- assign pp = all_products[h] -%}
+              {%- assign pimg = pp.selected_or_first_available_variant.featured_image | default: pp.featured_image -%}
+              {%- if pimg -%}<img src="{{ pimg | image_url: width: 120 }}" width="40" height="40" alt="" loading="lazy" decoding="async" data-part="{{ forloop.index0 }}">{%- endif -%}
+            {%- endfor -%}
+            {%- if b.settings.vignette_cadeau -%}
+              {%- for gi in (1..2) -%}
+                {%- assign gk = 'cadeau_' | append: gi -%}
+                {%- assign gh = b.settings[gk] | strip -%}
+                {%- if gh != blank and all_products[gh].featured_image -%}<img src="{{ all_products[gh].featured_image | image_url: width: 120 }}" width="40" height="40" alt="" loading="lazy" decoding="async">{%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          </span>{% if gifts != blank %}<span class="pa-gifts">{{ gifts }}</span>{% endif %}</span>
+        </label>
+        <div class="pa-opt-parts" data-opt="{{ oi }}" inert><div class="pa-opt-list">
+          <div class="pa-opt-part"{% unless product.has_only_default_variant %} data-master{% endunless %}>
+            <span class="pa-opt-part-img">{%- if mimg -%}<img src="{{ mimg | image_url: width: 120 }}" width="40" height="40" alt="" loading="lazy" decoding="async" data-pa-hero>{%- endif -%}</span>
+            <span class="pa-opt-part-n" id="pa-pn-{{ uid }}-{{ oi }}-m">{{ nom | escape }}{% unless product.has_only_default_variant %}<span class="pa-sr">, {{ opt.name | downcase | escape }}&nbsp;:</span> <b class="pa-cname">{{ sel.option1 | escape }}</b>{% endunless %}</span>
+            {%- unless product.has_only_default_variant -%}
+              <div class="pa-sws" role="radiogroup" aria-labelledby="pa-pn-{{ uid }}-{{ oi }}-m">
+                {%- for ck in ordre -%}
+                {%- for val in opt.values -%}
+                  {%- liquid
+                    assign vk = val | downcase | strip
+                    assign lkey = ',' | append: vk | append: ','
+                    if leo_list contains lkey
+                      assign vk = 'leo'
+                    endif
+                  -%}
+                  {%- unless vk == ck -%}{%- continue -%}{%- endunless -%}
+                  {%- liquid
+                    assign rep_id = nil
+                    assign is_available = false
+                    for v in product.variants
+                      if v.option1 == val
+                        if rep_id == nil or v.id == sel.id
+                          assign rep_id = v.id
+                        endif
+                        if v.available
+                          assign is_available = true
+                        endif
+                      endif
+                    endfor
+                  -%}
+                  <label class="pa-sw"><input type="radio" name="pa-col-{{ uid }}-{{ oi }}" value="{{ rep_id }}" data-master data-title="{{ val | escape }}"{% if sel.option1 == val %} checked{% endif %}>{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}<span class="pa-sr">{{ val | escape }}{% unless is_available %} (épuisé){% endunless %}</span></label>
+                {%- endfor -%}
+                {%- endfor -%}
+              </div>
+            {%- endunless -%}
+          </div>
+          {%- for h in hs -%}
+            {%- assign pp = all_products[h] -%}
+            {%- assign pv = pp.selected_or_first_available_variant -%}
+            {%- assign pk = forloop.index0 -%}
+            {%- assign pimg = pv.featured_image | default: pp.featured_image -%}
+            <div class="pa-opt-part">
+              <span class="pa-opt-part-img">{%- if pimg -%}<img src="{{ pimg | image_url: width: 120 }}" width="40" height="40" alt="" loading="lazy" decoding="async" data-part="{{ pk }}">{%- endif -%}</span>
+              <span class="pa-opt-part-n" id="pa-pn-{{ uid }}-{{ oi }}-{{ pk }}">{{ pp.title | escape }}{% if pp.variants.size > 1 %}<span class="pa-sr">, coloris&nbsp;:</span> <b class="pa-cname">{{ pv.title | escape }}</b>{% endif %}</span>
+              {%- if pp.variants.size > 1 -%}
+                <div class="pa-sws" role="radiogroup" aria-labelledby="pa-pn-{{ uid }}-{{ oi }}-{{ pk }}">
+                  {%- for ck in ordre -%}
+                  {%- for v in pp.variants -%}
+                    {%- liquid
+                      assign vk = v.title | downcase | strip
+                      assign vkey = ',' | append: vk | append: ','
+                      if leo_list contains vkey
+                        assign vk = 'leo'
+                      endif
+                    -%}
+                    {%- unless vk == ck -%}{%- continue -%}{%- endunless -%}
+                    <label class="pa-sw"><input type="radio" name="pa-pv-{{ uid }}-{{ oi }}-{{ pk }}" value="{{ v.id }}" data-part="{{ pk }}" data-title="{{ v.title | escape }}"{% if v.id == pv.id %} checked{% endif %}{% unless v.available %} disabled{% endunless %}>{%- render 'iso-pa-sw', val: v.title, handle: pp.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}<span class="pa-sr">{{ v.title | escape }}{% unless v.available %} (épuisé){% endunless %}</span></label>
+                  {%- endfor -%}
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+          {%- if gifts != blank -%}<span class="pa-gifts">{{ gifts }}</span>{%- endif -%}
+        </div></div>
+      </div>
+      {%- assign oi = oi | plus: 1 -%}
+    {%- endfor -%}
+  </div>
+  </fieldset>
+  {%- endif -%}
+
+  {%- assign cp = section.settings.compat -%}
+  {%- if cp != blank -%}
+    <p class="pa-compat">{% render 'iso-pa-icon', name: 'check' %}<span>
+      {%- if cp contains '«' -%}{%- assign cpp = cp | escape | split: '«' -%}{{ cpp[0] }}<span class="pa-nw">«{{ cpp[1] }}</span>{%- else -%}{{ cp | escape }}{%- endif -%}
+    </span></p>
+  {%- endif -%}
+  <p class="pa-ship"><span class="pa-dot" aria-hidden="true"></span><span data-pa-ship="{{ section.settings.jours | default: 2 }}">Expédié sous {{ section.settings.jours | default: 2 }} jours ouvrés</span><span class="pa-vr" aria-hidden="true"></span>{% render 'iso-pa-icon', name: 'truck' %}<span>{{ section.settings.livraison | escape }}</span></p>
+  {%- comment -%} Tâche 4 : cadeaux inclus depuis le métachamp custom.cadeaux_inclus.
+    Affiché pour tout produit ayant ce métachamp rempli, ou dont le prix atteint le seuil
+    de livraison offerte (variable seuil calculée en tête de section).
+  {%- endcomment -%}
+  {%- assign cadeaux_inclus = product.metafields.custom.cadeaux_inclus.value -%}
+  {%- if cadeaux_inclus.size > 0 or product.price >= seuil -%}
+    {%- liquid
+      assign eco_cadeaux = 0
+      if product.compare_at_price > product.price
+        assign eco_cadeaux = product.compare_at_price | minus: product.price
+      endif
+      for cadeau in cadeaux_inclus
+        assign eco_cadeaux = eco_cadeaux | plus: cadeau.price
+      endfor
+    -%}
+    <div class="ocaou-gifts">
+      <p class="ocaou-gifts__title">Vos cadeaux inclus</p>
+      <ul class="ocaou-gifts__list">
+        {%- for cadeau in cadeaux_inclus -%}
+          <li>Cadeau inclus&nbsp;: <strong>{{ cadeau.title | escape }}</strong> <span>(valeur {{ cadeau.price | money }})</span></li>
+        {%- endfor -%}
+        {%- if product.price >= seuil -%}
+          <li>La <strong>livraison en point relais</strong> offerte</li>
+        {%- endif -%}
+      </ul>
+      {%- if eco_cadeaux > 0 -%}
+        <p class="ocaou-gifts__eco">Soit {{ eco_cadeaux | money }} d'avantages par rapport à l'achat séparé.</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  {%- unless comp_haut -%}{{ comp_html }}{%- endunless -%}
+  <button type="button" class="pa-cta"{% unless sel.available %} disabled{% endunless %}>{% render 'iso-pa-icon', name: 'bag' %}<span class="pa-cta-l">{% if sel.available %}Ajouter au panier{% else %}Épuisé{% endif %}</span><span class="pa-cta-sep" aria-hidden="true">·</span><span class="pa-cta-p">{{ first_pack | money | replace: ' €', '&nbsp;€' }}</span></button>
+  <p class="pa-sr" role="status" data-pa-status></p>
+  {%- comment -%} Tâche 5 : accordéon avec grille d'icônes administrable. {%- endcomment -%}
+  {%- assign accs = section.blocks | where: 'type', 'accordeon' -%}
+  {%- if accs.size > 0 -%}
+    <div class="pa-acc">
+      {%- for b in accs -%}
+        <details {{ b.shopify_attributes }}>
+          <summary>{{ b.settings.titre | escape }}{% render 'iso-pa-pm' %}</summary>
+          <div class="pa-acc-c">
+            {%- if b.settings.icones != blank -%}
+              {%- assign icl = b.settings.icones | newline_to_br | split: '<br />' -%}
+              <ul class="pa-acc-icons" aria-label="Caractéristiques">
+                {%- for il in icl -%}
+                  {%- assign ils = il | strip -%}
+                  {%- if ils != blank -%}
+                    {%- assign ilp = ils | split: ':' -%}
+                    {%- assign il_ic = ilp[0] | strip -%}
+                    {%- assign il_tx = ils | remove_first: il_ic | remove_first: ':' | strip -%}
+                    <li class="pa-acc-icon"><span class="pa-acc-icon-bg">{% render 'iso-pa-icon', name: il_ic %}</span><span>{{ il_tx | escape }}</span></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+            {%- if b.settings.contenu != blank -%}{{ b.settings.contenu }}{%- endif -%}
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+</div>
+{%- comment -%} Barre d'achat (mobile) et carte d'ajout rapide (ordinateur, reprise de la carte du thème en
+  ligne) : pastilles de couleur et croix affichées sur ordinateur seulement. {%- endcomment -%}
+<div class="pa-sbar" aria-hidden="true" inert>
+  <div class="pa-sbar-th pa-mix">{%- if mimg -%}<img src="{{ mimg | image_url: width: 136 }}" width="48" height="48" alt="" loading="lazy" decoding="async" data-pa-hero>{%- endif -%}</div>
+  <div class="pa-sbar-tx"><span class="pa-sbar-l1"><span class="pa-sbar-n">{{ nom | escape }}</span><span class="pa-sbar-p">{{ first_pack | money | replace: ' €', '&nbsp;€' }}</span></span>
+    {%- if sbar_sws != blank -%}<div class="pa-sbar-col"><span class="pa-sbar-lg">{{ opt.name | escape }}&nbsp;: <b class="pa-sbar-cn">{{ sel.option1 | escape }}</b></span><span class="pa-sbar-sws">{{ sbar_sws }}</span></div>{%- endif -%}
+  </div>
+  <button type="button" class="pa-sbar-b"{% unless sel.available %} disabled{% endunless %}>Ajouter au panier</button>
+  <button type="button" class="pa-sbar-x" aria-label="Fermer">×</button>
+</div>
+{%- comment -%} Données des couleurs et des formules pour assets/iso-pa.js (prix en centimes). {%- endcomment -%}
+<script type="application/json" data-pa-data>
+{
+  "money": {{ shop.money_format | json }},
+  "grouped": {{ grouped | json }},
+  "variants": [
+    {%- for v in product.variants -%}
+      {%- liquid
+        assign vm = v.featured_media | default: hero
+        assign vi = vm.preview_image
+        capture va
+          render 'iso-pa-alt', media: vm, product: product, nom: nom, couleur: v.title, i: 1, n: nmed
+        endcapture
+        assign va = va | strip
+        assign vci = -1
+        if opt
+          for val in opt.values
+            if val == v.option1
+              assign vci = forloop.index0
+              break
+            endif
+          endfor
+        endif
+      -%}
+      {%- capture vss -%}{%- if vi -%}{% render 'iso-pa-srcset', image: vi, widths: widths_main %}{%- endif -%}{%- endcapture -%}
+      {"id": {{ v.id }}, "c": {{ vci }}, "title": {{ v.title | json }}, "available": {{ v.available | json }}, "price": {{ v.price | json }}, "cmp": {% if v.compare_at_price > v.price %}{{ v.compare_at_price | json }}{% else %}0{% endif %}, "src": {% if vi %}{{ vi | image_url: width: 900 | json }}{% else %}null{% endif %}, "srcset": {{ vss | strip | json }}, "sm": {% if vi %}{{ vi | image_url: width: 136 | json }}{% else %}null{% endif %}, "alt": {{ va | json }}}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ],
+  "offers": [
+    {%- assign sep = '' -%}
+    {%- for b in section.blocks -%}
+      {%- assign bkey = ',' | append: b.id | append: ',' -%}
+      {%- unless valid contains bkey -%}{%- continue -%}{%- endunless -%}
+      {%- assign hs = b.settings.produits | remove: ' ' | split: ',' -%}
+      {{ sep }}{"price": {% if b.settings.prix != blank %}{{ b.settings.prix }}{% else %}null{% endif %}, "name": {{ b.settings.nom_offre | default: b.settings.libelle | json }}, "parts": [
+        {%- for h in hs -%}
+          {%- assign pp = all_products[h] -%}
+          {"def": {{ pp.selected_or_first_available_variant.id }}, "v": {
+            {%- for v in pp.variants -%}
+              {%- assign pim = v.featured_image | default: pp.featured_image -%}
+              "{{ v.id }}": {"p": {{ v.price }}, "a": {{ v.available | json }}, "sm": {% if pim %}{{ pim | image_url: width: 136 | json }}{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}
+            {%- endfor -%}
+          }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ], "gifts": [
+        {%- capture gj -%}
+          {%- for gi in (1..2) -%}
+            {%- assign gk = 'cadeau_' | append: gi -%}
+            {%- assign gh = b.settings[gk] | strip -%}
+            {%- if gh != blank -%}
+              {%- assign gp = all_products[gh] -%}
+              {%- if gp and gp.id -%}{"id": {{ gp.selected_or_first_available_variant.id }}, "a": {{ gp.selected_or_first_available_variant.available | json }}},{%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+        {{- gj | strip | remove_last: ',' -}}
+      ]}
+      {%- assign sep = ',' -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+</div>
+
+{% schema %}
+{
+  "name": "Zone d'achat",
+  "enabled_on": { "templates": ["product"] },
+  "settings": [
+    { "type": "header", "content": "Présentation" },
+    { "type": "text", "id": "titre", "label": "Nom affiché (titre principal)", "info": "Vide : titre du produit." },
+    { "type": "text", "id": "accroche", "label": "Accroche sous le nom" },
+    { "type": "collection", "id": "collection", "label": "Collection du fil d'Ariane" },
+    { "type": "textarea", "id": "badges", "label": "Pastilles (une par ligne)" },
+    { "type": "text", "id": "note", "label": "Note moyenne", "default": "4,8" },
+    { "type": "text", "id": "avis", "label": "Nombre d'avis", "default": "+ 500 avis" },
+    { "type": "text", "id": "pitch_titre", "label": "Titre de présentation" },
+    { "type": "textarea", "id": "pitch", "label": "Texte de présentation" },
+    { "type": "textarea", "id": "puces", "label": "Points forts (un par ligne)" },
+    { "type": "header", "content": "Photos et couleurs" },
+    { "type": "text", "id": "galerie", "label": "Ordre des photos", "info": "Photos rangées par couleur dans Shopify : rangs dans le groupe de la couleur, séparés par des virgules (1 = la photo de la couleur, 2 = la suivante) ; les rangs absents suivent. Sinon : positions des médias du produit, la première cédant sa place à la photo de la couleur choisie. Vide : toutes les photos." },
+    { "type": "textarea", "id": "leopard", "label": "Couleurs à motif léopard (une par ligne)", "default": "Léopard\nGraou" },
+    { "type": "textarea", "id": "couleurs", "label": "Couleur des pastilles", "info": "Une ligne par coloris : « produit/Coloris: #HEXA » pour la teinte relevée sur la photo de ce produit, « Coloris: #HEXA » pour tous les produits. Valeur « motif », suivie au besoin d'une couleur de fond, pour une pastille à motif léopard. Sans ligne : réglage des pastilles du thème.", "default": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE" },
+    { "type": "header", "content": "Formules" },
+    { "type": "text", "id": "offre_titre", "label": "Titre du bloc des formules" },
+    { "type": "checkbox", "id": "relais", "label": "Mention « Point relais offert » au-delà du seuil de livraison du thème", "default": true },
+    { "type": "text", "id": "compat", "label": "Mention de compatibilité" },
+    { "type": "header", "content": "Compléments" },
+    { "type": "text", "id": "complements_titre", "label": "Titre du bloc compléments", "default": "Complétez avec un indispensable" },
+    { "type": "select", "id": "complements_position", "label": "Emplacement du bloc compléments", "options": [{ "value": "bouton", "label": "Au-dessus du bouton d'ajout" }, { "value": "points_forts", "label": "Sous les points forts, grande image" }], "default": "bouton" },
+    { "type": "header", "content": "Livraison et paiement" },
+    { "type": "number", "id": "jours", "label": "Délai d'expédition (jours ouvrés)", "default": 2 },
+    { "type": "text", "id": "livraison", "label": "Mode de livraison", "default": "Livraison Suivie en France" }
+  ],
+  "blocks": [
+    {
+      "type": "formule",
+      "name": "Formule",
+      "settings": [
+        { "type": "text", "id": "libelle", "label": "Libellé" },
+        { "type": "text", "id": "badge", "label": "Pastille" },
+        { "type": "number", "id": "prix", "label": "Prix de la formule (en centimes)", "info": "Ex. 4990 = 49,90 €. Vide : somme des prix réels, sans prix barré." },
+        { "type": "text", "id": "produits", "label": "Articles ajoutés au produit (handles séparés par des virgules)" },
+        { "type": "text", "id": "nom_offre", "label": "Nom de l'offre", "info": "Mention « Cadeau offert avec » des cadeaux dans le panier." },
+        { "type": "text", "id": "cadeau_1", "label": "Cadeau 1 (handle)" },
+        { "type": "text", "id": "cadeau_1_texte", "label": "Cadeau 1 : libellé" },
+        { "type": "checkbox", "id": "cadeau_1_valeur", "label": "Cadeau 1 : afficher sa valeur", "default": false },
+        { "type": "text", "id": "cadeau_2", "label": "Cadeau 2 (handle)" },
+        { "type": "text", "id": "cadeau_2_texte", "label": "Cadeau 2 : libellé" },
+        { "type": "checkbox", "id": "cadeau_2_valeur", "label": "Cadeau 2 : afficher sa valeur", "default": false },
+        { "type": "checkbox", "id": "vignette_cadeau", "label": "Cadeaux visibles dans les vignettes", "default": false }
+      ]
+    },
+    {
+      "type": "accordeon",
+      "name": "Accordéon",
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Titre" },
+        { "type": "textarea", "id": "icones", "label": "Icônes (nom:libellé, une par ligne)", "info": "Format : nom_icone:Libellé. Noms disponibles : check, shield, leaf, lock, star, truck, gift, return, card." },
+        { "type": "richtext", "id": "contenu", "label": "Contenu (texte optionnel sous les icônes)" }
+      ]
+    },
+    {
+      "type": "complement",
+      "name": "Produit complémentaire",
+      "settings": [
+        { "type": "product", "id": "produit", "label": "Produit propose" },
+        { "type": "text", "id": "badge", "label": "Pastille (optionnel)", "info": "Ex. LE PREFERE" }
+      ]
+    }
+  ]
+}
+{% endschema %}

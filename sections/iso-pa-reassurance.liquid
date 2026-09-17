@@ -1,0 +1,36 @@
+{%- comment -%}
+  Piste A : bloc réassurance repensé (maquette, fonction reassurance). Titre de section masqué
+  visuellement mais lu par les lecteurs d'écran ; icônes décoratives.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+<div class="iso-pa">
+<section class="pa-sec pa-rs pa-cream" aria-labelledby="pa-rs-h-{{ sid }}"><div class="pa-w">
+  <h2 class="pa-sr" id="pa-rs-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
+  <ul>
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}><span class="pa-rs-ic" aria-hidden="true">{% render 'iso-pa-icon', name: block.settings.icone %}</span><p class="pa-rs-t">{{ block.settings.titre | escape }}</p>{% if block.settings.texte != blank %}<p class="pa-rs-c">{{ block.settings.texte | escape }}</p>{% endif %}</li>
+    {%- endfor -%}
+  </ul>
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Réassurance",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre (lu par les lecteurs d'écran)", "default": "Nos engagements" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Engagement",
+      "settings": [
+        { "type": "select", "id": "icone", "label": "Icône", "options": [ { "value": "relay", "label": "Point relais" }, { "value": "card", "label": "Carte de paiement" }, { "value": "return", "label": "Retour" }, { "value": "truck", "label": "Camion" }, { "value": "gift", "label": "Cadeau" }, { "value": "shield", "label": "Bouclier" }, { "value": "leaf", "label": "Feuille" }, { "value": "check", "label": "Coche" } ], "default": "relay" },
+        { "type": "text", "id": "titre", "label": "Titre" },
+        { "type": "text", "id": "texte", "label": "Précision" }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}
