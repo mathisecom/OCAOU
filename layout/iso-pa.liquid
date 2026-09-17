@@ -1,0 +1,234 @@
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing this theme as much as we did for
+  developing it. We have put a lot of work to make this theme as developer friendly as possible by offering you
+  hooks to integrate into critical parts of the theme. You will find the complete technical documentation (including
+  all events, dependencies...) in the "documentation.txt" file, located in the Assets folder.
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<!doctype html>
+
+<html lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
+    <meta name="theme-color" content="{{ settings.header_background }}">
+
+    <title>{% if page_title == blank %}{{ shop.name }}{% else %}{{ page_title }}{% if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% endif %}</title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">
+    {%- endif -%}
+
+    {%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+
+    {%- unless settings.heading_font.system? -%}
+      <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- unless settings.text_font.system? -%}
+      <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- render 'social-meta-tags' -%}
+    {%- render 'microdata-schema' -%}
+    {%- render 'css-variables' -%}
+    {%- render 'js-variables' -%}
+
+    <script>
+      if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
+        const importMapPolyfill = document.createElement('script');
+        importMapPolyfill.async = true;
+        importMapPolyfill.src = "{{ 'es-module-shims.min.js' | asset_url }}";
+
+        document.head.appendChild(importMapPolyfill);
+      }
+    </script>
+
+    <script type="importmap">
+      {%- comment -%}On Safari 16.3 and lower, a polyfill is used to load importmap{%- endcomment -%}
+      {
+        "imports": {
+          "vendor": "{{ 'vendor.min.js' | asset_url }}",
+          "theme": "{{ 'theme.js' | asset_url }}",
+          "photoswipe": "{{ 'photoswipe.min.js' | asset_url }}"
+        }
+      }
+    </script>
+
+    <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+
+    {{ content_for_header }}
+
+    {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+
+    <style>
+      .shopify-pc__banner__dialog button,
+      .shopify-pc__prefs__header-actions button {
+        height: 60px !important;
+        padding: 0 40px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 60px !important;
+        border: none !important;
+      }
+
+      #shopify-pc__banner__btn-accept,
+      #shopify-pc__prefs__header-accept {
+        background: #cd9438 !important;
+        color: #ffffff !important;
+      }
+
+      #shopify-pc__banner__btn-decline,
+      #shopify-pc__prefs__header-decline,
+      #shopify-pc__prefs__header-save {
+        background: transparent !important;
+        color: #cd9438 !important;
+      }
+
+      .shopify-pc__banner__dialog button:focus,
+      .shopify-pc__prefs__header-actions button:focus,
+      #shopify-pc__prefs__header-close:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      .shopify-pc__banner__dialog button:focus-visible,
+      .shopify-pc__prefs__header-actions button:focus-visible,
+      #shopify-pc__prefs__header-close:focus-visible {
+        outline: none !important;
+        box-shadow: 0 0 0 4px hsl(201deg, 90%, 80%, 100%) !important;
+      }
+
+      .shopify-pc__prefs__option label input:focus ~ span svg {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      .shopify-pc__prefs__option label input:focus-visible ~ span svg {
+        outline: none !important;
+        box-shadow: 0 0 0 4px hsl(201deg, 90%, 80%, 100%) !important;
+      }
+
+      .shopify-pc__prefs__header-actions {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        top: auto !important;
+        margin: 0 !important;
+        padding: 20px 32px !important;
+        background: rgb(244, 237, 225) !important;
+        border-top: 1px solid rgba(51, 51, 51, 0.12) !important;
+        justify-content: flex-end !important;
+        gap: 16px !important;
+        z-index: 2 !important;
+      }
+
+      #shopify-pc__prefs__header-decline {
+        order: 1 !important;
+      }
+
+      #shopify-pc__prefs__header-save {
+        order: 2 !important;
+      }
+
+      #shopify-pc__prefs__header-accept {
+        order: 3 !important;
+      }
+
+      .shopify-pc__prefs__scrollable {
+        padding-bottom: 100px !important;
+      }
+
+      {%- comment -%}
+        Sous 750px, le theme Shopify empile les 3 boutons (colonne) au lieu de les
+        aligner en ligne : la barre devient bien plus haute, il faut reserver plus
+        de place en bas pour ne pas couvrir les dernieres cases a cocher.
+      {%- endcomment -%}
+      @media screen and (max-width: 750px) {
+        .shopify-pc__prefs__scrollable {
+          padding-bottom: 280px !important;
+        }
+      }
+
+      #shopify-pc__prefs__header-close {
+        top: 32px !important;
+      }
+    </style>
+    <script>
+      document.addEventListener('click', function (event) {
+        if (event.target && event.target.id === 'shopify-pc__prefs__overlay') {
+          var closeBtn = document.getElementById('shopify-pc__prefs__header-close');
+          if (closeBtn) closeBtn.click();
+        }
+      });
+    </script>
+  </head>
+
+  <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
+    {%- render 'shadow-dom-templates' -%}
+
+    <a href="#main" class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    {%- if request.page_type != 'password' -%}
+      {%- sections 'header-group' -%}
+      {%- sections 'overlay-group' -%}
+
+      {%- if settings.cart_type == 'popover' -%}
+        <cart-notification-drawer open-from="bottom" class="quick-buy-drawer drawer"></cart-notification-drawer>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if request.page_type == 'customers/account' or request.page_type == 'customers/order' or request.page_type == 'customers/addresses' -%}
+      {%- section 'account-banner' -%}
+    {%- endif -%}
+
+    <main role="main" id="main" class="anchor">
+      {{ content_for_layout }}
+
+      {%- comment -%}
+      O'CAOU : blocs communs à toutes les fiches de la maquette. Une seule instance, réglée une seule
+      fois dans l'éditeur de thème, rendue sur chaque page qui utilise ce modèle.
+      Fichier : sections/iso-pa-commun-group.json
+      {%- endcomment -%}
+      {%- if request.page_type != 'password' -%}
+        {%- sections 'iso-pa-commun-group' -%}
+      {%- endif -%}
+
+      {%- comment -%}
+      IMPLEMENTATION NOTE: due to the very complex logic of margin/padding collapsing in Impact, the footer group is
+      added into the main element to ensure that dynamic sections added into the footer group are properly laid out.
+      {%- endcomment -%}
+      {%- if request.page_type != 'password' -%}
+        {%- sections 'iso-pa-footer-group' -%}
+      {%- endif -%}
+    </main>
+    {%- comment -%}O'CAOU — helper panier pour les blocs bundle{%- endcomment -%}
+    {%- render 'ocaou-cart-add' -%}
+    {%- comment -%}O'CAOU — suggestion de coffret (fiche produit et panier){%- endcomment -%}
+    {%- render 'ocaou-suggestion-coffret' -%}
+    {%- render 'ocaou-detail-panier' -%}
+    {%- render 'ocaou-photo-coffret' -%}
+    {%- comment -%}O'CAOU — correctifs d'affichage transversaux{%- endcomment -%}
+    {%- render 'ocaou-correctifs' -%}
+  </body>
+</html>
