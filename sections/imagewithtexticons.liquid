@@ -111,6 +111,52 @@
     font-weight: 900;
   }
 
+{%- if s.layout == 'reperes' -%}
+  /* ── Repères posés sur la photo (mise en page « Repères sur la photo ») ── */
+  #ocaou-{{ uid }} .ocaou-pockets--reperes {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    display: block;
+    pointer-events: none;
+  }
+  #ocaou-{{ uid }} .ocaou-pockets--reperes .ocaou-pocket {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    max-width: 46%;
+    white-space: nowrap;
+    font-size: {{ s.marker_size }}px;
+    padding: 8px 13px;
+    box-shadow: 0 6px 16px rgba(58, 44, 34, .18);
+  }
+  #ocaou-{{ uid }} .ocaou-pockets--reperes .ocaou-pocket .check { display: none; }
+  #ocaou-{{ uid }} .ocaou-pockets--reperes .ocaou-pocket::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -13px;
+    width: 1px;
+    height: 11px;
+    background: {{ s.accent_color }};
+    transform: translateX(-50%);
+  }
+  #ocaou-{{ uid }} .ocaou-pockets--reperes .t-haut::after { bottom: auto; top: -13px; }
+  #ocaou-{{ uid }} .ocaou-pockets--reperes .t-gauche::after {
+    bottom: auto; top: 50%; left: -13px; width: 11px; height: 1px; transform: translateY(-50%);
+  }
+  #ocaou-{{ uid }} .ocaou-pockets--reperes .t-droite::after {
+    bottom: auto; top: 50%; left: auto; right: -13px; width: 11px; height: 1px; transform: translateY(-50%);
+  }
+  #ocaou-{{ uid }} .ocaou-pockets--reperes .t-aucun::after { display: none; }
+  #ocaou-{{ uid }} .ocaou-pockets--mobile { display: none; }
+{%- for block in section.blocks -%}
+  #ocaou-{{ uid }} .ocaou-pocket--{{ forloop.index }} {
+    left: {{ block.settings.x }}%;
+    top: {{ block.settings.y }}%;
+  }
+{%- endfor -%}
+{%- endif -%}
+
   /* ── Encadré / mantra ── */
   #ocaou-{{ uid }} .ocaou-mantra {
     border-left: 4px solid {{ s.mantra_border_color }};
@@ -166,6 +212,12 @@
     #ocaou-{{ uid }} .ocaou-pocket   { font-size: {{ s.pill_size_mobile }}px; padding: 9px 14px; }
     #ocaou-{{ uid }} .ocaou-mantra   { font-size: {{ s.mantra_size_mobile }}px; }
     #ocaou-{{ uid }} .ocaou-btn      { font-size: {{ s.btn_size_mobile }}px; width: 100%; text-align: center; }
+
+{%- if s.layout == 'reperes' -%}
+    /* Sur téléphone, les repères posés sur la photo seraient illisibles : la liste reprend sa place sous le texte. */
+    #ocaou-{{ uid }} .ocaou-pockets--reperes { display: none; }
+    #ocaou-{{ uid }} .ocaou-pockets--mobile  { display: flex; }
+{%- endif -%}
   }
 </style>
 
@@ -191,6 +243,16 @@
           {%- else -%}
             <div class="ocaou-media-placeholder">🍼</div>
           {%- endif -%}
+
+          {%- if s.layout == 'reperes' and section.blocks.size > 0 -%}
+            <ul class="ocaou-pockets ocaou-pockets--reperes">
+              {%- for block in section.blocks -%}
+                <li class="ocaou-pocket ocaou-pocket--{{ forloop.index }} t-{{ block.settings.tail | default: 'bas' }}" {{ block.shopify_attributes }}>
+                  <span class="check">✔</span>{{ block.settings.label }}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
         </div>
       </div>
 
@@ -210,7 +272,7 @@
         {%- endif -%}
 
         {%- if section.blocks.size > 0 -%}
-          <div class="ocaou-pockets">
+          <div class="ocaou-pockets{% if s.layout == 'reperes' %} ocaou-pockets--mobile{% endif %}">
             {%- for block in section.blocks -%}
               <span class="ocaou-pocket" {{ block.shopify_attributes }}>
                 <span class="check">✔</span>{{ block.settings.label }}
@@ -238,6 +300,25 @@
   "tag": "section",
   "class": "ocaou-image-texte",
   "settings": [
+    { "type": "header", "content": "🧩 Mise en page" },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Disposition des pastilles",
+      "options": [
+        { "value": "liste", "label": "Sous le texte (par défaut)" },
+        { "value": "reperes", "label": "Repères posés sur la photo" }
+      ],
+      "default": "liste",
+      "info": "Repères : chaque pastille se place sur la photo, à l'endroit de la poche qu'elle nomme. Sur téléphone, elles repassent automatiquement sous la photo."
+    },
+    {
+      "type": "range",
+      "id": "marker_size",
+      "label": "Taille des repères (PC)",
+      "min": 11, "max": 22, "step": 1, "unit": "px",
+      "default": 14
+    },
     { "type": "header", "content": "🖼️ Image" },
     {
       "type": "image_picker",
@@ -538,6 +619,34 @@
           "id": "label",
           "label": "Texte de la pastille",
           "default": "Biberon"
+        },
+        { "type": "header", "content": "Position sur la photo", "info": "Utilisé uniquement avec la disposition « Repères posés sur la photo »." },
+        {
+          "type": "range",
+          "id": "x",
+          "label": "Position horizontale",
+          "min": 0, "max": 100, "step": 1, "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "y",
+          "label": "Position verticale",
+          "min": 0, "max": 100, "step": 1, "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "tail",
+          "label": "Trait de rappel",
+          "options": [
+            { "value": "bas", "label": "Vers le bas" },
+            { "value": "haut", "label": "Vers le haut" },
+            { "value": "gauche", "label": "Vers la gauche" },
+            { "value": "droite", "label": "Vers la droite" },
+            { "value": "aucun", "label": "Aucun" }
+          ],
+          "default": "bas"
         }
       ]
     }
