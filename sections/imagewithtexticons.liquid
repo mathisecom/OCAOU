@@ -214,9 +214,18 @@
     #ocaou-{{ uid }} .ocaou-btn      { font-size: {{ s.btn_size_mobile }}px; width: 100%; text-align: center; }
 
 {%- if s.layout == 'reperes' -%}
-    /* Sur téléphone, les repères posés sur la photo seraient illisibles : la liste reprend sa place sous le texte. */
-    #ocaou-{{ uid }} .ocaou-pockets--reperes { display: none; }
-    #ocaou-{{ uid }} .ocaou-pockets--mobile  { display: flex; }
+    /* Sur téléphone, les repères restent sur la photo : étiquettes et traits réduits pour tenir dans la largeur. */
+    #ocaou-{{ uid }} .ocaou-pockets--mobile { display: none; }
+    #ocaou-{{ uid }} .ocaou-pockets--reperes .ocaou-pocket {
+      font-size: {{ s.marker_size | minus: 3 }}px;
+      padding: 6px 10px;
+      max-width: 52%;
+      box-shadow: 0 4px 12px rgba(58, 44, 34, .20);
+    }
+    #ocaou-{{ uid }} .ocaou-pockets--reperes .ocaou-pocket::after { bottom: -9px; height: 8px; }
+    #ocaou-{{ uid }} .ocaou-pockets--reperes .t-haut::after { bottom: auto; top: -9px; }
+    #ocaou-{{ uid }} .ocaou-pockets--reperes .t-gauche::after { left: -9px; width: 8px; }
+    #ocaou-{{ uid }} .ocaou-pockets--reperes .t-droite::after { right: -9px; width: 8px; }
 {%- endif -%}
   }
 </style>
