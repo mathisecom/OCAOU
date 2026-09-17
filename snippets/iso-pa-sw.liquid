@@ -1,0 +1,67 @@
+{%- comment -%}
+  Pastille de couleur. Résolution, de la plus précise à la plus générale :
+  1. réglage « couleurs » de la section, ligne « handle/couleur » (teinte relevée sur la photo du produit) ;
+  2. réglage « couleurs » de la section, ligne « couleur » (toutes gammes confondues) ;
+  3. réglage « leopard » de la section (motif) ;
+  4. réglage color_swatch_config du thème ;
+  5. rien : pastille neutre.
+  Valeur « motif », seule ou suivie d'une couleur : pastille à motif léopard, la couleur servant de fond.
+  Paramètres : val (nom du coloris), handle (produit), cfg (réglage couleurs découpé), swcfg, leo (,liste,).
+{%- endcomment -%}
+{%- liquid
+  assign dl = val | downcase | strip
+  assign k1 = handle | append: '/' | append: dl
+  assign hit = ''
+  assign gen = ''
+  for item in cfg
+    assign p = item | split: ':'
+    assign nm = p.first | downcase | strip
+    if nm == k1
+      assign hit = p.last | strip
+    elsif nm == dl and gen == blank
+      assign gen = p.last | strip
+    endif
+  endfor
+  if hit == blank
+    assign hit = gen
+  endif
+
+  assign is_leo = false
+  assign bg = ''
+  if hit != blank
+    if hit contains 'motif'
+      assign is_leo = true
+      assign bg = hit | remove: 'motif' | strip
+    else
+      assign bg = hit
+    endif
+  else
+    assign lkey = ',' | append: dl | append: ','
+    if leo contains lkey
+      assign is_leo = true
+    else
+      for item in swcfg
+        assign p = item | split: ':'
+        assign nm = p.first | downcase | strip
+        if nm == dl
+          assign bg = p.last | strip
+          break
+        endif
+      endfor
+    endif
+  endif
+
+  assign st = ''
+  if is_leo
+    if bg != blank
+      assign st = '--pa-leo-bg:' | append: bg
+    endif
+  elsif bg != blank
+    if bg contains 'gradient'
+      assign st = 'background:' | append: bg
+    else
+      assign st = 'background-color:' | append: bg
+    endif
+  endif
+-%}
+<span class="pa-sw-c{% if is_leo %} pa-leo{% endif %}"{% if st != blank %} style="{{ st | escape }}"{% endif %}></span>

@@ -1,0 +1,23 @@
+{%- comment -%}
+  Piste A : attribut srcset d'une image Shopify, sans agrandissement au-delà de la largeur d'origine
+  (éco : le navigateur ne télécharge que la taille utile).
+  Paramètres : image (objet image), widths (« 360,540,720 »…, facultatif).
+{%- endcomment -%}
+{%- liquid
+  assign ws = widths | default: '360,540,720,900,1080,1296' | split: ','
+  assign out = ''
+  assign last = 0
+  for w in ws
+    assign wn = w | strip | plus: 0
+    if wn <= image.width
+      assign u = image | image_url: width: wn
+      assign out = out | append: u | append: ' ' | append: wn | append: 'w, '
+      assign last = wn
+    endif
+  endfor
+  if image.width > last and image.width <= 2048
+    assign u = image | image_url: width: image.width
+    assign out = out | append: u | append: ' ' | append: image.width | append: 'w, '
+  endif
+  echo out | remove_last: ', '
+-%}
