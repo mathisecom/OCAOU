@@ -1,0 +1,5 @@
+{%- comment -%}
+  Piste A : boutons Précédent / Suivant d'un carrousel (RGAA : boutons nommés, aria-controls).
+  Paramètres : id (identifiant de la piste qui défile), prev, next (libellés), cls (classe en plus).
+{%- endcomment -%}
+<div class="pa-carnav{% if cls != blank %} {{ cls }}{% endif %}" data-for="{{ id }}"><button type="button" class="pa-arr" data-dir="-1" aria-label="{{ prev | default: 'Précédent' }}" aria-controls="{{ id }}">{% render 'iso-pa-icon', name: 'chevron-left' %}</button><button type="button" class="pa-arr" data-dir="1" aria-label="{{ next | default: 'Suivant' }}" aria-controls="{{ id }}">{% render 'iso-pa-icon', name: 'chevron-right' %}</button></div>

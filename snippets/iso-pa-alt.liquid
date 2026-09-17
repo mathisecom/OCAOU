@@ -1,0 +1,33 @@
+{%- comment -%}
+  Piste A : texte alternatif d'une photo de la galerie. Les médias du produit n'ont pas de description
+  (Shopify renvoie alors le titre du produit, identique pour toutes) : repli construit avec le nom du
+  produit, la couleur du groupe (galerie rangée par couleur) ou la couleur de la variante à laquelle la
+  photo est rattachée, et le rang de la photo.
+  Paramètres : media, product, nom, couleur (facultatif), i (rang, base 1), n (nombre de photos).
+{%- endcomment -%}
+{%- liquid
+  assign a = media.alt | strip
+  # Sans description saisie, Shopify renvoie le titre du produit : les six photos auraient le même texte.
+  if a == product.title
+    assign a = ''
+  endif
+  if a == blank
+    if couleur != blank
+      assign a = nom | append: ', coloris ' | append: couleur
+      if i > 1
+        assign a = a | append: ', photo ' | append: i | append: ' sur ' | append: n
+      endif
+    else
+      for v in product.variants
+        if v.featured_media.id == media.id
+          assign a = nom | append: ', coloris ' | append: v.title
+          break
+        endif
+      endfor
+    endif
+  endif
+  if a == blank
+    assign a = nom | append: ', photo ' | append: i | append: ' sur ' | append: n
+  endif
+  echo a
+-%}
