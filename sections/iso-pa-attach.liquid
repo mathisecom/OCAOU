@@ -1,0 +1,62 @@
+{%- comment -%}
+  Piste A : « Avec ses attaches intégrées, il s'accroche partout ».
+  Texte réel du backup-theme (product.composable-duo-miam.json, lignes ~830-860) :
+  « Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l'accrocher
+    facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé. »
+  Slider mobile ratio 1.25 (cartes à 80vw), photos vides (image_picker).
+  Arbitrages :
+  - RGAA : carrousel avec role region + aria-label, boutons de navigation nommés, textes alternatifs.
+  - Éco : images vides acceptées (fond ivoire seul), aucun script ajouté (carrousels gérés par iso-pa.js).
+  - Perf : chargement différé sur toutes les photos.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{%- capture tid -%}pa-att-{{ sid }}{%- endcapture -%}
+<div class="iso-pa">
+<section class="pa-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-att-h-{{ sid }}"><div class="pa-w">
+  <div class="pa-head">
+    {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
+    <h2 class="pa-h2" id="pa-att-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
+  </div>
+  {%- if section.blocks.size > 0 -%}
+  <div class="pa-att-track pa-scroll pa-bleed" id="{{ tid }}" tabindex="0" role="region" aria-roledescription="carrousel" aria-label="{{ section.settings.titre | escape }}">
+    {%- for block in section.blocks -%}
+      <div class="pa-att-slide pa-mix" role="group" aria-label="Photo {{ forloop.index }} sur {{ section.blocks.size }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.image -%}
+          {%- render 'iso-pa-img', image: block.settings.image, alt: block.settings.alt, sizes: '(min-width: 960px) clamp(300px, 30vw, 500px), 80vw', widths: '360,540,720,960', eager: forloop.first -%}
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+  {%- render 'iso-pa-carnav', id: tid -%}
+  {%- endif -%}
+  <div class="pa-att-txt">
+    {%- if section.settings.texte != blank -%}<p class="pa-lead">{{ section.settings.texte | escape }}</p>{%- endif -%}
+    {%- if section.settings.complement != blank -%}<p>{{ section.settings.complement | escape }}</p>{%- endif -%}
+  </div>
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "PA : s'accroche partout",
+  "settings": [
+    { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Avec ses attaches intégrées, il s'accroche partout" },
+    { "type": "textarea", "id": "texte", "label": "Texte principal", "default": "Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l'accrocher facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé." },
+    { "type": "textarea", "id": "complement", "label": "Texte complémentaire (optionnel)" },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Photo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif RGAA)" }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

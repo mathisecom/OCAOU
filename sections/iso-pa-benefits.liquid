@@ -1,0 +1,159 @@
+{%- comment -%}
+  Piste A : benefices (grille 3 colonnes x 2 lignes en ordinateur, carrousel en mobile).
+  Blocs de type "item" : contenu reel (ne pas modifier).
+  Blocs de type "design" (max 3) : 3 mises en page alternatives empilees sous le composant actuel.
+  Arbitrages :
+  - RGAA : images alt, liste semantique, navigation carrousel nommee.
+  - Eco : aucun script ajoute, images lazy par defaut.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{%- capture tid -%}pa-ben-{{ sid }}{%- endcapture -%}
+{%- assign item_blocks = section.blocks | where: "type", "item" -%}
+{%- assign design_blocks = section.blocks | where: "type", "design" -%}
+{%- assign item_count = item_blocks | size -%}
+{%- if item_count > 4 -%}{%- assign ben_sizes = '(min-width: 960px) min(520px, calc((100vw - 144px) / 3)), 80vw' -%}{%- else -%}{%- assign ben_sizes = '(min-width: 960px) min(390px, calc((100vw - 168px) / 4)), 80vw' -%}{%- endif -%}
+<div class="iso-pa">
+
+{%- comment -%} Composant actuel : grille 3 col / carrousel mobile {%- endcomment -%}
+<section class="pa-sec pa-ben-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}"{% if section.settings.titre != blank %} aria-labelledby="pa-ben-h-{{ sid }}"{% endif %}><div class="pa-w">
+  {%- if section.settings.titre != blank -%}<div class="pa-head"><h2 class="pa-h2" id="pa-ben-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>{%- endif -%}
+  <ul class="pa-ben pa-scroll pa-bleed{% if item_count > 4 %} pa-ben--3{% endif %}" id="{{ tid }}">
+    {%- for block in item_blocks -%}
+      <li {{ block.shopify_attributes }}><div class="pa-ben-img">{%- if block.settings.image -%}{%- render 'iso-pa-img', image: block.settings.image, alt: block.settings.alt, sizes: ben_sizes, widths: '360,540,720,900,1080' -%}{%- endif -%}</div><h3 class="pa-h3">{{ block.settings.titre | escape }}</h3><p>{{ block.settings.texte | escape }}</p>
+        {%- if block.settings.badges != blank -%}
+          {%- assign bdl = block.settings.badges | newline_to_br | split: '<br />' -%}
+          <ul class="pa-ben-badges">
+            {%- for bd in bdl -%}
+              {%- assign bds = bd | strip -%}
+              {%- if bds != blank -%}
+                {%- assign bdp = bds | split: ':' -%}
+                {%- assign bd_ic = bdp[0] | strip -%}
+                {%- assign bd_tx = bds | remove_first: bd_ic | remove_first: ':' | strip -%}
+                <li class="pa-acc-icon"><span class="pa-acc-icon-bg">{% render 'iso-pa-icon', name: bd_ic %}</span><span>{{ bd_tx | escape }}</span></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+  {%- render 'iso-pa-carnav', id: tid, cls: 'pa-carnav--m' -%}
+</div></section>
+
+{%- comment -%} Designs alternatifs A, B, C empiles sous le composant actuel {%- endcomment -%}
+{%- if design_blocks.size > 0 -%}
+  {%- for db in design_blocks -%}
+    {%- assign di = forloop.index0 -%}
+    <section class="pa-sec pa-cream pa-rule" aria-label="{{ db.settings.libelle | escape }} : {{ db.settings.titre | escape }}">
+      <div class="pa-w">
+        <p class="pa-cmp-lbl">{{ db.settings.libelle | escape }} — {{ db.settings.titre | escape }}</p>
+
+        {%- if di == 0 -%}
+          {%- comment -%} Design A : liste verticale alternee image gauche/droite {%- endcomment -%}
+          <ul class="pa-ben-da">
+            {%- for item in item_blocks -%}
+              {%- assign pos = forloop.index0 | modulo: 2 -%}
+              <li class="pa-ben-da-it{% if pos == 1 %} pa-ben-da-it--r{% endif %}">
+                <div class="pa-ben-da-img">
+                  {%- if item.settings.image -%}
+                    {%- render 'iso-pa-img', image: item.settings.image, alt: item.settings.alt, sizes: '(min-width: 960px) 50vw, 100vw', widths: '480,720,960' -%}
+                  {%- endif -%}
+                </div>
+                <div class="pa-ben-da-txt">
+                  <h3 class="pa-h3">{{ item.settings.titre | escape }}</h3>
+                  <p>{{ item.settings.texte | escape }}</p>
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+
+        {%- elsif di == 1 -%}
+          {%- comment -%} Design B : premier item en grand format, 5 autres en mini-grille {%- endcomment -%}
+          <div class="pa-ben-db">
+            {%- assign feat = item_blocks | first -%}
+            <div class="pa-ben-db-feat">
+              <div class="pa-ben-db-feat-img">
+                {%- if feat.settings.image -%}
+                  {%- render 'iso-pa-img', image: feat.settings.image, alt: feat.settings.alt, sizes: '(min-width: 960px) 40vw, 100vw', widths: '480,720,960' -%}
+                {%- endif -%}
+              </div>
+              <div class="pa-ben-db-feat-txt">
+                <h3 class="pa-h3">{{ feat.settings.titre | escape }}</h3>
+                <p>{{ feat.settings.texte | escape }}</p>
+              </div>
+            </div>
+            <ul class="pa-ben-db-rest">
+              {%- for item in item_blocks -%}
+                {%- unless forloop.first -%}
+                  <li class="pa-ben-db-li">
+                    <div class="pa-ben-db-li-img">
+                      {%- if item.settings.image -%}
+                        {%- render 'iso-pa-img', image: item.settings.image, alt: item.settings.alt, sizes: '(min-width: 960px) 20vw, 45vw', widths: '240,360,480' -%}
+                      {%- endif -%}
+                    </div>
+                    <h3 class="pa-h3">{{ item.settings.titre | escape }}</h3>
+                    <p>{{ item.settings.texte | escape }}</p>
+                  </li>
+                {%- endunless -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+
+        {%- elsif di == 2 -%}
+          {%- comment -%} Design C : bandes horizontales, photo ronde a gauche {%- endcomment -%}
+          <ul class="pa-ben-dc">
+            {%- for item in item_blocks -%}
+              <li class="pa-ben-dc-it">
+                <div class="pa-ben-dc-img">
+                  {%- if item.settings.image -%}
+                    {%- render 'iso-pa-img', image: item.settings.image, alt: item.settings.alt, sizes: '96px', widths: '96,192' -%}
+                  {%- endif -%}
+                </div>
+                <div class="pa-ben-dc-txt">
+                  <h3 class="pa-h3">{{ item.settings.titre | escape }}</h3>
+                  <p>{{ item.settings.texte | escape }}</p>
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+      </div>
+    </section>
+  {%- endfor -%}
+{%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Bénéfices",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre" },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Creme" } ], "default": "creme" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de separation en haut", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Bénéfice",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif)" },
+        { "type": "text", "id": "titre", "label": "Titre" },
+        { "type": "textarea", "id": "texte", "label": "Texte" },
+        { "type": "textarea", "id": "badges", "label": "Badges (nom:libelle, un par ligne)", "info": "Format : nom_icone:Libelle. Noms disponibles : utensils, lfgb, bpa-free, dishwasher, sun, snowflake, microwave, check, shield, leaf, lock, star, truck, gift, return, card." }
+      ]
+    },
+    {
+      "type": "design",
+      "name": "Design alternatif",
+      "settings": [
+        { "type": "text", "id": "libelle", "label": "Etiquette (Design A, B ou C)" },
+        { "type": "text", "id": "titre", "label": "Description de l'approche" }
+      ]
+    }
+  ],
+  "max_blocks": 9
+}
+{% endschema %}
