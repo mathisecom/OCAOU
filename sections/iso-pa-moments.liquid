@@ -1,0 +1,69 @@
+{%- comment -%}
+  Piste A : section « moments » — carrousel à défilement manuel d'illustrations de situations
+  d'usage (langer, l'école, les activités, se balader, les nuitées). Ordinateur et téléphone.
+  Arbitrages :
+  - RGAA : aucune animation automatique, piste atteignable au clavier, flèches nommées
+    (snippet iso-pa-carnav, comportement dans iso-pa.js), textes alternatifs obligatoires.
+  - Éco : image_picker vide accepté (fondu sur la couleur de fond), aucune bibliothèque externe,
+    une seule copie des cartes dans la page.
+  - Perf : chargement différé sur toutes les photos.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{%- capture tid -%}pa-mq-{{ sid }}{%- endcapture -%}
+<div class="iso-pa">
+<section class="pa-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-mq-h-{{ sid }}">
+  <div class="pa-w">
+    <div class="pa-head">
+      {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
+      <h2 class="pa-h2" id="pa-mq-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
+      {%- if section.settings.texte != blank -%}<p class="pa-lead">{{ section.settings.texte | escape }}</p>{%- endif -%}
+    </div>
+  </div>
+  {%- if section.blocks.size > 0 -%}
+    {%- if section.settings.affichage == 'grille' -%}
+      <div class="pa-w">
+        <div class="pa-mq-grid">
+          {%- for block in section.blocks -%}
+            {%- render 'iso-pa-moment', block: block, cls: 'pa-mq-c--g', tailles: '(min-width: 960px) 240px, 45vw' -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- else -%}
+      <div class="pa-w">
+        <div class="pa-mq pa-scroll pa-bleed" id="{{ tid }}" role="region" aria-label="{{ section.settings.titre | escape }}">
+          {%- for block in section.blocks -%}
+            {%- render 'iso-pa-moment', block: block -%}
+          {%- endfor -%}
+        </div>
+        {%- render 'iso-pa-carnav', id: tid, prev: 'Moment précédent', next: 'Moment suivant' -%}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</section>
+</div>
+
+{% schema %}
+{
+  "name": "Moments",
+  "settings": [
+    { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
+    { "type": "text", "id": "titre", "label": "Titre" },
+    { "type": "textarea", "id": "texte", "label": "Texte (optionnel)" },
+    { "type": "select", "id": "affichage", "label": "Affichage", "options": [ { "value": "defile", "label": "Carrousel" }, { "value": "grille", "label": "Grille" } ], "default": "defile" },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "moment",
+      "name": "Moment",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif RGAA)" },
+        { "type": "text", "id": "label", "label": "Étiquette (ex. Langer)" }
+      ]
+    }
+  ],
+  "max_blocks": 20
+}
+{% endschema %}

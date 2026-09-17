@@ -1,0 +1,102 @@
+{%- comment -%}
+  Piste A : pied de page (maquette, fonction footer).
+  - Lettre d'information : vrai formulaire client Shopify (tag « newsletter »), validé côté serveur.
+  - Colonnes : menu du thème (link_list) ou liens aux adresses réelles de la boutique.
+  - RGAA : titres de niveau 2, contact en address, mailto, cibles de 44 px au mobile.
+{%- endcomment -%}
+{%- liquid
+  assign sid = section.id
+  assign fid = 'pa-nl-' | append: sid
+-%}
+<div class="iso-pa">
+<footer class="pa-ft">
+<div class="pa-ft-c"><div class="pa-w">
+  <div class="pa-nl">
+    <h2 class="pa-h2" id="pa-nl-h-{{ sid }}">{{ section.settings.nl_titre | escape }}</h2>
+    {%- form 'customer', id: fid, class: 'pa-nl-f' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <label class="pa-sr" for="pa-nl-in-{{ sid }}">{{ section.settings.nl_champ | escape }}</label>
+      <input id="pa-nl-in-{{ sid }}" type="email" name="contact[email]" autocomplete="email" placeholder="{{ section.settings.nl_champ | escape }}" required>
+      <button type="submit">{{ section.settings.nl_bouton | escape }}</button>
+      {%- if form.posted_successfully? -%}
+        <p class="pa-nl-msg" role="status">Inscription enregistrée.</p>
+      {%- elsif form.errors -%}
+        <div class="pa-nl-msg pa-nl-msg--err" role="alert">{{ form.errors | default_errors }}</div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+  <div class="pa-ft-cols">
+    {%- for block in section.blocks -%}
+      {%- if block.type != 'colonne' -%}{%- continue -%}{%- endif -%}
+      <div class="pa-ft-col" {{ block.shopify_attributes }}><h2 class="pa-h3">{{ block.settings.titre | escape }}</h2><ul>
+        {%- if block.settings.menu != blank -%}
+          {%- for link in linklists[block.settings.menu].links -%}<li><a href="{{ link.url }}">{{ link.title | strip | escape }}</a></li>{%- endfor -%}
+        {%- endif -%}
+        {%- for i in (1..6) -%}
+          {%- assign kt = 'lien_' | append: i | append: '_texte' -%}
+          {%- assign ku = 'lien_' | append: i | append: '_url' -%}
+          {%- if block.settings[kt] != blank and block.settings[ku] != blank -%}<li><a href="{{ block.settings[ku] }}">{{ block.settings[kt] | escape }}</a></li>{%- endif -%}
+        {%- endfor -%}
+      </ul></div>
+    {%- endfor -%}
+    <div class="pa-ft-col pa-ft-col--ct"><h2 class="pa-h3">Contact</h2><address>{% if section.settings.email != blank %}<a class="pa-ft-mail" href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a><br>{% endif %}{{ section.settings.adresse | escape }}</address></div>
+  </div>
+  <div class="pa-ft-bot">
+    <ul class="pa-ft-leg">
+      {%- for i in (1..3) -%}
+        {%- assign kt = 'legal_' | append: i | append: '_texte' -%}
+        {%- assign ku = 'legal_' | append: i | append: '_url' -%}
+        {%- if section.settings[kt] != blank and section.settings[ku] != blank -%}<li><a href="{{ section.settings[ku] }}">{{ section.settings[kt] | escape }}</a></li>{%- endif -%}
+      {%- endfor -%}
+    </ul>
+    <p>{% if section.settings.siret != blank %}{{ section.settings.siret | escape }} · {% endif %}© {{ 'now' | date: '%Y' }} {{ section.settings.marque | default: shop.name | escape }}</p>
+  </div>
+</div></div>
+</footer>
+</div>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    { "type": "header", "content": "Lettre d'information" },
+    { "type": "text", "id": "nl_titre", "label": "Titre" },
+    { "type": "text", "id": "nl_champ", "label": "Libellé du champ", "default": "Adresse e-mail" },
+    { "type": "text", "id": "nl_bouton", "label": "Bouton", "default": "S’inscrire" },
+    { "type": "header", "content": "Contact et mentions" },
+    { "type": "text", "id": "email", "label": "E-mail de contact" },
+    { "type": "textarea", "id": "adresse", "label": "Adresse" },
+    { "type": "text", "id": "legal_1_texte", "label": "Lien légal 1 : libellé" },
+    { "type": "url", "id": "legal_1_url", "label": "Lien légal 1 : adresse" },
+    { "type": "text", "id": "legal_2_texte", "label": "Lien légal 2 : libellé" },
+    { "type": "url", "id": "legal_2_url", "label": "Lien légal 2 : adresse" },
+    { "type": "text", "id": "legal_3_texte", "label": "Lien légal 3 : libellé" },
+    { "type": "url", "id": "legal_3_url", "label": "Lien légal 3 : adresse" },
+    { "type": "text", "id": "siret", "label": "SIRET" },
+    { "type": "text", "id": "marque", "label": "Nom après ©" }
+  ],
+  "blocks": [
+    {
+      "type": "colonne",
+      "name": "Colonne de liens",
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Titre" },
+        { "type": "link_list", "id": "menu", "label": "Menu", "info": "Ses liens s'affichent avant les liens ci-dessous." },
+        { "type": "text", "id": "lien_1_texte", "label": "Lien 1 : libellé" },
+        { "type": "url", "id": "lien_1_url", "label": "Lien 1 : adresse" },
+        { "type": "text", "id": "lien_2_texte", "label": "Lien 2 : libellé" },
+        { "type": "url", "id": "lien_2_url", "label": "Lien 2 : adresse" },
+        { "type": "text", "id": "lien_3_texte", "label": "Lien 3 : libellé" },
+        { "type": "url", "id": "lien_3_url", "label": "Lien 3 : adresse" },
+        { "type": "text", "id": "lien_4_texte", "label": "Lien 4 : libellé" },
+        { "type": "url", "id": "lien_4_url", "label": "Lien 4 : adresse" },
+        { "type": "text", "id": "lien_5_texte", "label": "Lien 5 : libellé" },
+        { "type": "url", "id": "lien_5_url", "label": "Lien 5 : adresse" },
+        { "type": "text", "id": "lien_6_texte", "label": "Lien 6 : libellé" },
+        { "type": "url", "id": "lien_6_url", "label": "Lien 6 : adresse" }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

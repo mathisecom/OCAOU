@@ -1,0 +1,54 @@
+{%- comment -%}
+  Piste A : composant à points « + » posés sur la photo, détail affiché à côté (maquette, fonction
+  hotspots). RGAA : chaque point est un bouton nommé (aria-expanded, aria-controls) synchronisé avec
+  la liste, qui reste lisible sans la photo.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+<div class="iso-pa">
+<section class="pa-sec pa-hs-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-hs-h-{{ sid }}"><div class="pa-w">
+<div class="pa-hs">
+  <div class="pa-hs-media">
+    {%- if section.settings.image -%}{%- render 'iso-pa-img', image: section.settings.image, alt: section.settings.alt, sizes: '(min-width: 960px) min(672px, calc(42vw - 40px)), 100vw', widths: '480,720,960,1200' -%}{%- endif -%}
+    {%- for block in section.blocks -%}
+      <button type="button" class="pa-hs-pt" data-i="{{ forloop.index0 }}" style="left:{{ block.settings.x }}%;top:{{ block.settings.y }}%" aria-label="{{ block.settings.titre | escape }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="pa-hs-{{ sid }}-{{ forloop.index0 }}"><span class="pa-hs-dot">{% render 'iso-pa-icon', name: 'plus' %}</span></button>
+    {%- endfor -%}
+  </div>
+  <div class="pa-hs-side">
+    <div class="pa-hs-head">{% if section.settings.surtitre != blank %}<p class="pa-eyebrow">{{ section.settings.surtitre | escape }}</p>{% endif %}<h2 class="pa-h2" id="pa-hs-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>{% if section.settings.intro != blank %}<p class="pa-lead">{{ section.settings.intro | escape }}</p>{% endif %}</div>
+    <ul class="pa-hs-list">
+      {%- for block in section.blocks -%}
+        <li class="pa-hs-li" {{ block.shopify_attributes }}><button type="button" class="pa-hs-btn" data-i="{{ forloop.index0 }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="pa-hs-{{ sid }}-{{ forloop.index0 }}"><span>{{ block.settings.titre | escape }}</span><span class="pa-pm" aria-hidden="true">{% render 'iso-pa-icon', name: 'plus' %}</span></button><div class="pa-hs-d" id="pa-hs-{{ sid }}-{{ forloop.index0 }}"{% unless forloop.first %} hidden{% endunless %}><p>{{ block.settings.texte | escape }}</p></div></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Points photo",
+  "settings": [
+    { "type": "text", "id": "surtitre", "label": "Surtitre" },
+    { "type": "text", "id": "titre", "label": "Titre" },
+    { "type": "textarea", "id": "intro", "label": "Introduction" },
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif)" },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Titre" },
+        { "type": "textarea", "id": "texte", "label": "Détail" },
+        { "type": "range", "id": "x", "label": "Position horizontale", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 50 },
+        { "type": "range", "id": "y", "label": "Position verticale", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 50 }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}
