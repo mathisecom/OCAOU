@@ -14,7 +14,6 @@
       "name": "Bandeau d'accueil vidéo",
       "settings": {
         "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
-        "poster": "",
         "title": "O’CAOU, la solution à tous les\n\" au cas où . . . \" du quotidien",
         "heading_tag": "h1",
         "title_size_desktop": 32,
@@ -222,45 +221,40 @@
       }
     },
     "logoscroll_WxkMyg": {
-      "type": "iso-presse",
+      "type": "logoscroll",
       "blocks": {
         "image_6zMMdX": {
-          "type": "logo",
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/biba.png",
-            "nom": "BIBA",
             "url": ""
           }
         },
         "image_cEQXkh": {
-          "type": "logo",
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
-            "nom": "Doolittle",
             "url": ""
           }
         },
         "image_8n3Rnx": {
-          "type": "logo",
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
-            "nom": "Marie Claire",
             "url": ""
           }
         },
         "image_Ydgfth": {
-          "type": "logo",
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/la-maison-des-maternelles.webp",
-            "nom": "La Maison des Maternelles",
             "url": ""
           }
         },
         "image_E6ATmJ": {
-          "type": "logo",
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
-            "nom": "Yoopala",
             "url": ""
           }
         }
@@ -272,13 +266,42 @@
         "image_Ydgfth",
         "image_E6ATmJ"
       ],
-      "name": "Recommandé par",
+      "name": "SS - Scrolling logo cloud #5",
       "settings": {
-        "titre": "Recommandé par",
-        "titre_tag": "h2",
-        "titre_color": "#121212",
-        "grayscale": false,
-        "bg_color": "#ffffff"
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "<p>RECOMMANDÉ PAR</p>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 10,
+        "heading_size_mobile": 8,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 20,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 30,
+        "card_width_desktop": 130,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#ffffff",
+        "layout_border_color": "#121212",
+        "background_color": "#ffffff",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
       }
     },
     "image_with_text_overlay_xeN3nf": {
@@ -796,20 +819,20 @@
             "title": "Préparation Rapide"
           }
         },
-        "icon_VHNHwk": {
-          "type": "icon",
-          "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_48.png",
-            "icon_alt": "Icône avantage",
-            "title": "Doudou ligotés en sécurité"
-          }
-        },
         "icon_yKJirQ": {
           "type": "icon",
           "settings": {
             "icon_image": "shopify://shop_images/ADS_IMAGE_9.png",
             "icon_alt": "Icône avantage",
             "title": "Biberon/Gourde Facile D’accès"
+          }
+        },
+        "icon_VHNHwk": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Design_sans_titre_48.png",
+            "icon_alt": "Icône avantage",
+            "title": "Doudou ligotés en sécurité"
           }
         },
         "icon_KixXBn": {
@@ -825,8 +848,8 @@
         "icon_MGMfaU",
         "icon_AEPRaf",
         "icon_iFFUyC",
-        "icon_VHNHwk",
         "icon_yKJirQ",
+        "icon_VHNHwk",
         "icon_KixXBn"
       ],
       "name": "Clean Omega icônes",
@@ -1087,7 +1110,6 @@
         "image_nV4MxC",
         "image_CYit8M"
       ],
-      "disabled": true,
       "name": "Follow us galerie",
       "settings": {
         "show_title": true,
