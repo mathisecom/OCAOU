@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Pied de page piste A",
+  "sections": {
+    "reassurance": {
+      "type": "iso-pa-reassurance",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icone": "relay",
+            "titre": "Point relais offert à partir de 79 €",
+            "texte": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icone": "card",
+            "titre": "Paiement sécurisé et en 3 fois",
+            "texte": "CB, Visa, Mastercard, Amex, PayPal, Apple Pay"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icone": "return",
+            "titre": "Retour facile sous 14 jours",
+            "texte": "Vous changez d’avis ? Vous avez 14 jours pour nous le dire."
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icone": "truck",
+            "titre": "Expédié sous 2 jours ouvrés",
+            "texte": "Livraison Suivie en France"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "titre": "Nos engagements"
+      }
+    },
+    "pied": {
+      "type": "iso-pa-footer",
+      "blocks": {
+        "colonne_1": {
+          "type": "colonne",
+          "settings": {
+            "titre": "Boutique",
+            "menu": "main-menu"
+          }
+        },
+        "colonne_2": {
+          "type": "colonne",
+          "settings": {
+            "titre": "La marque",
+            "lien_1_texte": "Pourquoi O’CAOU",
+            "lien_1_url": "https://ocaou.com/#shopify-section-template--29953933869390__ocaoujaibesoin_bxqEpT",
+            "lien_2_texte": "L’esprit",
+            "lien_2_url": "shopify://pages/pourquoi-o-caou",
+            "lien_3_texte": "Ils parlent de nous",
+            "lien_3_url": "shopify://pages/ils-parlent-de-nous",
+            "lien_4_texte": "Le coin des parents",
+            "lien_4_url": "shopify://blogs/le-coin-des-parents",
+            "lien_5_texte": "Où nous trouver",
+            "lien_5_url": "shopify://pages/ou-nous-trouver"
+          }
+        },
+        "colonne_3": {
+          "type": "colonne",
+          "settings": {
+            "titre": "Aide",
+            "lien_1_texte": "Livraisons & retours",
+            "lien_1_url": "shopify://pages/livraisons-retours",
+            "lien_2_texte": "Retourner un article",
+            "lien_2_url": "/policies/refund-policy",
+            "lien_3_texte": "Mes commandes",
+            "lien_3_url": "https://shopify.com/88049680718/account/orders",
+            "lien_4_texte": "Nous contacter",
+            "lien_4_url": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "colonne_1",
+        "colonne_2",
+        "colonne_3"
+      ],
+      "settings": {
+        "nl_titre": "Rejoignez la famille organisée",
+        "nl_champ": "Adresse e-mail",
+        "nl_bouton": "S’inscrire",
+        "email": "hello@ocaou.com",
+        "adresse": "2 rue de la Chapelle, résidence Beau Rivage, 83270 Saint-Cyr-sur-Mer",
+        "legal_1_texte": "Mentions légales",
+        "legal_1_url": "shopify://pages/mentions-legales",
+        "legal_2_texte": "Conditions générales de vente",
+        "legal_2_url": "shopify://pages/conditions-generales-de-ventes",
+        "legal_3_texte": "Politique de confidentialité",
+        "legal_3_url": "shopify://pages/politique-de-confidentialite",
+        "siret": "SIRET 930 544 200 00023",
+        "marque": "O’CAOU"
+      }
+    }
+  },
+  "order": [
+    "reassurance",
+    "pied"
+  ]
+}
