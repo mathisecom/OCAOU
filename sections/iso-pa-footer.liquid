@@ -64,7 +64,7 @@
         {%- if section.settings[kt] != blank and section.settings[ku] != blank -%}<li><a href="{{ section.settings[ku] }}">{{ section.settings[kt] | escape }}</a></li>{%- endif -%}
       {%- endfor -%}
     </ul>
-    <p>© {{ 'now' | date: '%Y' }} {{ section.settings.marque | default: shop.name | escape }}</p>
+    <p>© {{ 'now' | date: '%Y' }} Tous droits réservés · {{ section.settings.marque | default: shop.name | escape }}</p>
   </div>
 </div></div>
 </footer>
