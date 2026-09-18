@@ -15,7 +15,8 @@
         "point_relais_isomorph_point_relais_main": {
           "type": "shopify://apps/point-relais-isomorph/blocks/point-relais/01a08fa5-e84c-7f8e-8d2b-cbc4b0d93138",
           "settings": {
-            "api_url": "https://shopify-point-relais-proxy.vercel.app"
+            "api_url": "https://shopify-point-relais-proxy.vercel.app",
+            "variante_supplement": "60861573071182"
           }
         },
         "totals": {
