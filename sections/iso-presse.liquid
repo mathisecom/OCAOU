@@ -1,0 +1,190 @@
+{%- comment -%}
+  Bandeau « Recommandé par » (ISOMORPH, 18/09/2026)
+  Logos fixes et centrés, sans défilement : cinq logos tiennent sur une ligne,
+  une animation permanente n'apporte rien et coûte en lisibilité.
+  - Liste sémantique, texte alternatif = nom du média (RGAA 4.1, critère 1.1).
+  - Images servies aux bonnes dimensions, chargement différé hors premier écran.
+  - Remplace « SS - Scrolling logo cloud #5 » et « Presse » : un seul composant.
+{%- endcomment -%}
+
+{%- liquid
+  assign titre = section.settings.titre
+  assign largeur = section.settings.logo_width
+  assign largeur_mobile = section.settings.logo_width_mobile
+  assign espacement = section.settings.gap
+  assign espacement_mobile = section.settings.gap_mobile
+  assign gris = section.settings.grayscale
+  assign filtre = 'isopresse-gris-' | append: section.id
+  assign attr_sizes = '(min-width: 700px) ' | append: largeur | append: 'px, ' | append: largeur_mobile | append: 'px'
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --section-outer-spacing-block: 0;
+    background-color: {{ section.settings.bg_color }};
+    padding-block: {{ section.settings.padding_block_mobile }}px;
+    margin-block: 0;
+  }
+
+  #shopify-section-{{ section.id }} .isopresse {
+    max-width: {{ section.settings.content_width }}px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .isopresse__titre {
+    margin: 0 0 {{ section.settings.titre_gap_mobile }}px;
+    color: {{ section.settings.titre_color }};
+    font-size: {{ section.settings.titre_size_mobile }}px;
+    font-weight: {{ section.settings.titre_weight }};
+    letter-spacing: 0.12em;
+    text-transform: {% if section.settings.titre_uppercase %}uppercase{% else %}none{% endif %};
+  }
+
+  #shopify-section-{{ section.id }} .isopresse__liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: {{ espacement_mobile }}px;
+  }
+
+  #shopify-section-{{ section.id }} .isopresse__item {
+    flex: 0 0 auto;
+    width: {{ largeur_mobile }}px;
+    max-width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .isopresse__item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    {% if gris %}filter: url(#{{ filtre }});{% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .isopresse__filtre {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} {
+      padding-block: {{ section.settings.padding_block }}px;
+    }
+
+    #shopify-section-{{ section.id }} .isopresse__titre {
+      margin-bottom: {{ section.settings.titre_gap }}px;
+      font-size: {{ section.settings.titre_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .isopresse__liste {
+      gap: {{ espacement }}px;
+    }
+
+    #shopify-section-{{ section.id }} .isopresse__item {
+      width: {{ largeur }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="isopresse"{% if titre != blank %} aria-labelledby="isopresse-{{ section.id }}"{% endif %}>
+  {%- if gris -%}
+    <svg class="isopresse__filtre" aria-hidden="true" focusable="false">
+      <filter id="{{ filtre }}" color-interpolation-filters="sRGB">
+        <feColorMatrix type="saturate" values="0" />
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="0.42 0.44 0.47 0.53 1" />
+          <feFuncG type="table" tableValues="0.42 0.44 0.47 0.53 1" />
+          <feFuncB type="table" tableValues="0.42 0.44 0.47 0.53 1" />
+        </feComponentTransfer>
+      </filter>
+    </svg>
+  {%- endif -%}
+
+  {%- if titre != blank -%}
+    <{{ section.settings.titre_tag }} class="isopresse__titre" id="isopresse-{{ section.id }}">{{ titre | escape }}</{{ section.settings.titre_tag }}>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <ul class="isopresse__liste">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.image != blank -%}
+          <li class="isopresse__item" {{ block.shopify_attributes }}>
+            {%- capture image -%}
+              {{ block.settings.image | image_url: width: 480 | image_tag: loading: 'lazy', widths: '120, 180, 240, 360, 480', sizes: attr_sizes, alt: block.settings.nom }}
+            {%- endcapture -%}
+            {%- if block.settings.url != blank -%}
+              <a href="{{ block.settings.url }}">{{ image }}</a>
+            {%- else -%}
+              {{ image }}
+            {%- endif -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Recommandé par",
+  "tag": "section",
+  "class": "iso-presse",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Recommandé par" },
+    {
+      "type": "select",
+      "id": "titre_tag",
+      "label": "Niveau de titre",
+      "options": [
+        { "value": "h2", "label": "Titre de section (h2)" },
+        { "value": "h3", "label": "Sous-titre (h3)" },
+        { "value": "p", "label": "Texte simple" }
+      ],
+      "default": "h2"
+    },
+    { "type": "range", "id": "titre_size", "label": "Taille du titre sur ordinateur", "min": 9, "max": 24, "step": 1, "unit": "px", "default": 12 },
+    { "type": "range", "id": "titre_size_mobile", "label": "Taille du titre sur mobile", "min": 8, "max": 20, "step": 1, "unit": "px", "default": 11 },
+    { "type": "range", "id": "titre_weight", "label": "Graisse du titre", "min": 300, "max": 700, "step": 100, "default": 600 },
+    { "type": "checkbox", "id": "titre_uppercase", "label": "Titre en majuscules", "default": true },
+    { "type": "color", "id": "titre_color", "label": "Couleur du titre", "default": "#121212" },
+    { "type": "range", "id": "titre_gap", "label": "Espace sous le titre sur ordinateur", "min": 0, "max": 64, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "titre_gap_mobile", "label": "Espace sous le titre sur mobile", "min": 0, "max": 48, "step": 2, "unit": "px", "default": 16 },
+    { "type": "header", "content": "Logos" },
+    { "type": "range", "id": "logo_width", "label": "Largeur d'un logo sur ordinateur", "min": 60, "max": 260, "step": 5, "unit": "px", "default": 130 },
+    { "type": "range", "id": "logo_width_mobile", "label": "Largeur d'un logo sur mobile", "min": 50, "max": 200, "step": 5, "unit": "px", "default": 90 },
+    { "type": "range", "id": "gap", "label": "Espace entre les logos sur ordinateur", "min": 8, "max": 120, "step": 2, "unit": "px", "default": 56 },
+    { "type": "range", "id": "gap_mobile", "label": "Espace entre les logos sur mobile", "min": 8, "max": 80, "step": 2, "unit": "px", "default": 28 },
+    { "type": "checkbox", "id": "grayscale", "label": "Harmoniser les logos en gris", "default": false, "info": "Ramène tous les logos à la même teinte grise." },
+    { "type": "header", "content": "Bandeau" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#ffffff" },
+    { "type": "range", "id": "content_width", "label": "Largeur maximale du contenu", "min": 600, "max": 1600, "step": 20, "unit": "px", "default": 1200 },
+    { "type": "range", "id": "padding_block", "label": "Hauteur des marges sur ordinateur", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding_block_mobile", "label": "Hauteur des marges sur mobile", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 28 }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo" },
+        { "type": "text", "id": "nom", "label": "Nom du média", "info": "Lu par les lecteurs d'écran à la place de l'image." },
+        { "type": "url", "id": "url", "label": "Lien (facultatif)" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Recommandé par",
+      "blocks": [{ "type": "logo" }, { "type": "logo" }, { "type": "logo" }, { "type": "logo" }, { "type": "logo" }]
+    }
+  ]
+}
+{% endschema %}
