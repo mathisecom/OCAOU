@@ -44,28 +44,28 @@
           "type": "accordeon",
           "settings": {
             "titre": "Description",
-            "contenu": "<p>O’CAOU, le sac intelligent qui pense à TOUT ! 6 poches étiquetées pour vous guider et transporter à boire, à manger, de quoi se changer et câliner. Évolutif, il suit les familles de la maternité à la maternelle. Un sac à langer mais aussi pour l’école et se balader.<\/p>"
+            "contenu": "<p>O’CAOU, le sac intelligent qui pense à TOUT ! 6 poches étiquetées pour vous guider et transporter à boire, à manger, de quoi se changer et câliner. Évolutif, il suit les familles de la maternité à la maternelle. Un sac à langer mais aussi pour l’école et se balader.</p>"
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
             "titre": "Dimensions (en cm)",
-            "contenu": "<p>Fermé : L 34 × H 27 × P 10 cm. Ouvert : L 34 × H 62 cm.<\/p>"
+            "contenu": "<p>Fermé : L 34 × H 27 × P 10 cm. Ouvert : L 34 × H 62 cm.</p>"
           }
         },
         "accordeon_3": {
           "type": "accordeon",
           "settings": {
             "titre": "Composition textile",
-            "contenu": "<p>Extérieur : 100 % coton. Intérieur : 100 % coton. Filet : 100 % polyester. Rembourrage : 100 % polyuréthane. Sac sherpa, extérieur : 100 % polyester.<\/p>"
+            "contenu": "<p>Extérieur : 100 % coton. Intérieur : 100 % coton. Filet : 100 % polyester. Rembourrage : 100 % polyuréthane. Sac sherpa, extérieur : 100 % polyester.</p>"
           }
         },
         "accordeon_4": {
           "type": "accordeon",
           "settings": {
             "titre": "Entretien",
-            "contenu": "<p>Laver séparément, délicatement, à la main, à l’eau froide. Ne pas faire tremper. Essorer à la main. Remodeler avant séchage. Séchage à plat. Ne pas sécher au sèche-linge. Ne pas repasser. Ne pas utiliser d’agent de blanchiment.<\/p>"
+            "contenu": "<p>Laver séparément, délicatement, à la main, à l’eau froide. Ne pas faire tremper. Essorer à la main. Remodeler avant séchage. Séchage à plat. Ne pas sécher au sèche-linge. Ne pas repasser. Ne pas utiliser d’agent de blanchiment.</p>"
           }
         }
       },
@@ -87,13 +87,14 @@
         "pitch_titre": "Un organiseur de vie",
         "pitch": "Le premier sac à dos qui se transforme en organiseur. Il vous suit de la maternité à la maternelle. Un sac pour langer, l’école ou juste se balader. Un sac à dos malin pour avoir tout sous la main, juste au cas où…",
         "puces": "Organisation facile\nSac évolutif\nNomade\nPlus d’autonomie\nPersonnalisable",
-        "galerie": "1,3,5,4,2,6",
+        "galerie": "1,2,3,4,5,6",
         "leopard": "Léopard\nGraou",
         "offre_titre": "Complétez avec un indispensable",
         "relais": true,
         "compat": "",
         "jours": 2,
-        "livraison": "Livraison Suivie en France"
+        "livraison": "Livraison Suivie en France",
+        "couleurs": "Rose: #E8898A"
       }
     },
     "videos": {
@@ -102,43 +103,43 @@
         "video_1": {
           "type": "video",
           "settings": {
-            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/51a7490505004bd5aec54a3588ff4dfe\/51a7490505004bd5aec54a3588ff4dfe.HD-720p-4.5Mbps-94560348.mp4",
-            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/51a7490505004bd5aec54a3588ff4dfe.thumbnail.0000000000.jpg?v=1789540857"
+            "src": "https://cdn.shopify.com/videos/c/vp/51a7490505004bd5aec54a3588ff4dfe/51a7490505004bd5aec54a3588ff4dfe.HD-720p-4.5Mbps-94560348.mp4",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/51a7490505004bd5aec54a3588ff4dfe.thumbnail.0000000000.jpg?v=1789540857"
           }
         },
         "video_2": {
           "type": "video",
           "settings": {
-            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/2448e8bf027d4d82900286cdf31a999e\/2448e8bf027d4d82900286cdf31a999e.HD-720p-4.5Mbps-94560431.mp4",
-            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/2448e8bf027d4d82900286cdf31a999e.thumbnail.0000000000.jpg?v=1789540925"
+            "src": "https://cdn.shopify.com/videos/c/vp/2448e8bf027d4d82900286cdf31a999e/2448e8bf027d4d82900286cdf31a999e.HD-720p-4.5Mbps-94560431.mp4",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/2448e8bf027d4d82900286cdf31a999e.thumbnail.0000000000.jpg?v=1789540925"
           }
         },
         "video_3": {
           "type": "video",
           "settings": {
-            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/7012a45d0f204fa38455177284024f5c\/7012a45d0f204fa38455177284024f5c.HD-720p-4.5Mbps-94560256.mp4",
-            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/7012a45d0f204fa38455177284024f5c.thumbnail.0000000000.jpg?v=1789540799"
+            "src": "https://cdn.shopify.com/videos/c/vp/7012a45d0f204fa38455177284024f5c/7012a45d0f204fa38455177284024f5c.HD-720p-4.5Mbps-94560256.mp4",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/7012a45d0f204fa38455177284024f5c.thumbnail.0000000000.jpg?v=1789540799"
           }
         },
         "video_4": {
           "type": "video",
           "settings": {
-            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/5d065e00e9844caa88f4f42a05d20eb4\/5d065e00e9844caa88f4f42a05d20eb4.HD-720p-4.5Mbps-94560535.mp4",
-            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/5d065e00e9844caa88f4f42a05d20eb4.thumbnail.0000000000.jpg?v=1789541007"
+            "src": "https://cdn.shopify.com/videos/c/vp/5d065e00e9844caa88f4f42a05d20eb4/5d065e00e9844caa88f4f42a05d20eb4.HD-720p-4.5Mbps-94560535.mp4",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5d065e00e9844caa88f4f42a05d20eb4.thumbnail.0000000000.jpg?v=1789541007"
           }
         },
         "video_5": {
           "type": "video",
           "settings": {
-            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/ff997877065f489e901412361c64ab3d\/ff997877065f489e901412361c64ab3d.HD-720p-4.5Mbps-94560597.mp4",
-            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/ff997877065f489e901412361c64ab3d.thumbnail.0000000000.jpg?v=1789541064"
+            "src": "https://cdn.shopify.com/videos/c/vp/ff997877065f489e901412361c64ab3d/ff997877065f489e901412361c64ab3d.HD-720p-4.5Mbps-94560597.mp4",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/ff997877065f489e901412361c64ab3d.thumbnail.0000000000.jpg?v=1789541064"
           }
         },
         "video_6": {
           "type": "video",
           "settings": {
-            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/5dd1349eee07408c9b5332b3566d9d0c\/5dd1349eee07408c9b5332b3566d9d0c.HD-720p-4.5Mbps-94490259.mp4",
-            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/5dd1349eee07408c9b5332b3566d9d0c.thumbnail.0000000000.jpg?v=1789486921"
+            "src": "https://cdn.shopify.com/videos/c/vp/5dd1349eee07408c9b5332b3566d9d0c/5dd1349eee07408c9b5332b3566d9d0c.HD-720p-4.5Mbps-94490259.mp4",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5dd1349eee07408c9b5332b3566d9d0c.thumbnail.0000000000.jpg?v=1789486921"
           }
         }
       },
@@ -153,7 +154,7 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "fond": "blanc",
+        "bg_color": "#FFFFFF",
         "filet": true
       }
     },
@@ -166,8 +167,8 @@
           "coffret-comme-les-grands-1",
           "duo-essentiel"
         ],
-        "fond": "blanc",
-        "filet": false
+        "bg_color": "#FFFFFF",
+        "filet": true
       }
     },
     "attaches": {
@@ -176,7 +177,7 @@
         "moment_1": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/matias_margaux.png",
+            "image": "shopify://shop_images/matias_margaux.png",
             "alt": "Deux sacs O'CAOU accrochés aux guidons de poussettes, un enfant installé dans l'une d'elles",
             "label": "Poussette"
           }
@@ -184,7 +185,7 @@
         "moment_2": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cargo.png",
+            "image": "shopify://shop_images/cargo.png",
             "alt": "Sac O'CAOU accroché à la barre avant d'un vélo, deux enfants casqués installés derrière",
             "label": "Vélo"
           }
@@ -192,7 +193,7 @@
         "moment_3": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_5_sept._2026_16_13_30.png",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_13_30.png",
             "alt": "Sac O'CAOU ouvert et accroché au dossier d'un siège auto, gourde, doudou et livres rangés dans les poches",
             "label": "Siège auto"
           }
@@ -200,7 +201,7 @@
         "moment_4": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_5_sept._2026_16_55_58.png",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_55_58.png",
             "alt": "Sac O'CAOU suspendu par ses attaches aux barreaux d'un lit à barreaux en bois",
             "label": "Lit bébé"
           }
@@ -208,7 +209,7 @@
         "moment_5": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_5_sept._2026_16_17_46.png",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_16_17_46.png",
             "alt": "Sac O'CAOU ouvert et suspendu à une branche en forêt, affaires de change rangées dans les poches",
             "label": "Arbres"
           }
@@ -216,7 +217,7 @@
         "moment_6": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/no_change_3.png",
+            "image": "shopify://shop_images/no_change_3.png",
             "alt": "Sac O'CAOU bleu posé sur le dossier d'une chaise en bois, dans une chambre",
             "label": "Partout !"
           }
@@ -233,46 +234,51 @@
       "settings": {
         "accroche": "Un sac multifonctions",
         "titre": "Avec ses attaches intégrées, il s'accroche partout !",
-        "fond": "blanc",
-        "filet": false
+        "bg_color": "#FFFFFF",
+        "filet": true
       }
     },
     "presse": {
-      "type": "iso-pa-press",
+      "type": "iso-presse",
       "blocks": {
         "logo_1": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
-            "nom": "La Maison des Maternelles"
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
           }
         },
         "logo_2": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
-            "nom": "Marie Claire"
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
           }
         },
         "logo_3": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
-            "nom": "Doolittle"
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
           }
         },
         "logo_4": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
-            "nom": "Yoopala"
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
           }
         },
         "logo_5": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/biba.png",
-            "nom": "BIBA"
+            "image": "shopify://shop_images/biba.png",
+            "nom": "BIBA",
+            "url": ""
           }
         }
       },
@@ -283,32 +289,37 @@
         "logo_4",
         "logo_5"
       ],
+      "name": "Recommandé par",
       "settings": {
-        "titre": "Recommandé par"
+        "titre": "Recommandé par",
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
       }
     },
     "sac_story": {
       "type": "iso-pa-sac-story",
       "settings": {
+        "accroche": "Pour les parents",
         "titre": "Avant tout, un sac à langer pour ranger les essentiels de bébé",
         "sous_titre": "5 poches pensées pour ne plus jamais chercher :",
-        "mantra": "Avec ses étiquettes et ses filets : Tout est visible. Tout est organisé. Plus besoin de chercher. La charge mentale est soulagée.",
-        "fond": "blanc",
-        "filet": false,
-        "accroche": "Pour les parents",
         "puces": "Biberon\nDoudou\nCouches & lange\nTétine\nRepas",
-        "image": "shopify:\/\/shop_images\/ChatGPT_Image_25_aout_2026_10_43_57.png",
+        "mantra": "Avec ses étiquettes et ses filets : Tout est visible. Tout est organisé. Plus besoin de chercher. La charge mentale est soulagée.",
+        "dispo_puces": "reperes",
+        "reperes_pos": "22,25,droite\n15,68,haut\n33,84,haut\n69,35,gauche\n48,40,haut",
+        "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_43_57.png",
         "alt": "Sac O'CAOU bleu fermé, à côté de son organiseur déplié : biberon, tétine, doudou, couches et lange rangés dans les poches en filet",
         "cote": "gauche",
-        "dispo_puces": "reperes",
-        "reperes_pos": "30,19,bas\n15,68,haut\n33,84,haut\n71,28,gauche\n48,40,haut",
-        "bouton": "Acheter maintenant"
+        "bouton": "Acheter maintenant",
+        "bg_color": "#FFFFFF",
+        "filet": true
       }
     },
     "styl": {
       "type": "iso-pa-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/ChatGPT_Image_25_aout_2026_10_21_32.png",
+        "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_21_32.png",
         "alt": "Six femmes de dos portent le sac O'CAOU, un coloris différent pour chacune",
         "titre": "Un sac pour langer tout en restant stylé",
         "voile": 45
@@ -384,9 +395,9 @@
         "surtitre": "Tout est à sa place",
         "titre": "Le sac intelligent qui pense à tout !",
         "intro": "Le sac O’CAOU se transforme en organiseur où tout est catégorisé. Un pense-bête étiqueté imaginé pour vous soulager.",
-        "image": "shopify:\/\/shop_images\/le_sac_intelligent_qui_pense_a_tout.png",
+        "image": "shopify://shop_images/le_sac_intelligent_qui_pense_a_tout.png",
         "alt": "Sac O’CAOU ouvert et rangé : gourde, goûter, livre et jouets dans les poches étiquetées, doudou posé à côté",
-        "fond": "blanc",
+        "bg_color": "#FFFFFF",
         "filet": false
       }
     },
@@ -398,149 +409,11 @@
         "sous_titre": "Les poches restent les mêmes, mais les objets évoluent :",
         "puces": "Gourde\nDoudou\nVêtements\nJouets\nGoûter",
         "mantra": "Avec ses étiquettes et ses filets : il apprend à lire en rangeant. Il retrouve ses affaires facilement. Il devient autonome, comme un grand.",
-        "image": "shopify:\/\/shop_images\/ChatGPT_Image_24_aout_2026_19_25_29.png",
+        "image": "shopify://shop_images/ChatGPT_Image_24_aout_2026_19_25_29.png",
         "alt": "Deux enfants portent leur sac O'CAOU devant un muret en bord de plage, un bébé les regarde depuis sa poussette",
         "cote": "droite",
-        "fond": "creme",
-        "filet": false,
-        "bouton": "Acheter maintenant"
-      }
-    },
-    "moments": {
-      "type": "iso-pa-moments",
-      "blocks": {
-        "moment_1": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_24_50.png",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_2": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_0055.heic",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_3": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_6907.png",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_4": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_13_55.png",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_5": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/20260809_172116.jpg",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_6": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_6298.heic",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_7": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_7538.heic",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_8": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_12_16.png",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_9": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_28_18.png",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_10": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_0366.png",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_11": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_19_35.png",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_12": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_0538.heic",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_13": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_6301.heic",
-            "alt": "",
-            "label": ""
-          }
-        },
-        "moment_14": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/PANA7813.jpg",
-            "alt": "",
-            "label": ""
-          }
-        }
-      },
-      "block_order": [
-        "moment_1",
-        "moment_2",
-        "moment_3",
-        "moment_4",
-        "moment_5",
-        "moment_6",
-        "moment_7",
-        "moment_8",
-        "moment_9",
-        "moment_10",
-        "moment_11",
-        "moment_12",
-        "moment_13",
-        "moment_14"
-      ],
-      "settings": {
-        "titre": "Les moments de vie",
-        "fond": "blanc",
+        "bouton": "Acheter maintenant",
+        "bg_color": "#F4EDE1",
         "filet": false
       }
     },
@@ -550,7 +423,7 @@
         "carte_1": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_4_sept._2026_23_10_33.png",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_23_10_33.png",
             "alt": "Sac ouvert : biberon, lingettes, couches et doudou rangés dans les poches étiquetées",
             "label": "Langer"
           }
@@ -558,7 +431,7 @@
         "carte_2": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_4_sept._2026_23_07_34.png",
+            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_23_07_34.png",
             "alt": "Sac ouvert : gourde, goûter, cahier et petits jouets rangés par poche",
             "label": "L'école"
           }
@@ -566,7 +439,7 @@
         "carte_3": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_5_sept._2026_14_00_30.png",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_14_00_30.png",
             "alt": "Sac ouvert : doudou, tenue de rechange et chaussons",
             "label": "Les activités"
           }
@@ -574,7 +447,7 @@
         "carte_4": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_5_sept._2026_14_02_54.png",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_14_02_54.png",
             "alt": "Sac ouvert : gourde, boîte repas et fruits frais",
             "label": "Se balader"
           }
@@ -582,7 +455,7 @@
         "carte_5": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_5_sept._2026_14_06_36.png",
+            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_14_06_36.png",
             "alt": "Sac ouvert : peluches, livre d'histoire, gourde et vêtements",
             "label": "Les nuitées"
           }
@@ -590,7 +463,7 @@
         "carte_6": {
           "type": "moment",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2026-09-07_a_14.40.15.png",
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_14.40.15.png",
             "alt": "Rabats du sac O'CAOU dans six matières et coloris, vus de près",
             "label": "Être stylé"
           }
@@ -607,7 +480,7 @@
       "settings": {
         "titre": "Multifonctions, un sac pour :",
         "affichage": "grille",
-        "fond": "blanc",
+        "bg_color": "#FFFFFF",
         "filet": false
       }
     },
@@ -617,7 +490,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Montagephotositewebenfantscopie2.png",
+            "image": "shopify://shop_images/Montagephotositewebenfantscopie2.png",
             "alt": "Six coloris du sac portés sur le dos",
             "titre": "Évolutif",
             "texte": "Bretelles réglables. Un sac adapté aux parents et aux enfants."
@@ -626,7 +499,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_0055.heic",
+            "image": "shopify://shop_images/IMG_0055.heic",
             "alt": "Sac accroché à une poussette",
             "titre": "Pratique",
             "texte": "Attaches poussette intégrées. Deux poignées pour transporter ou accrocher."
@@ -635,7 +508,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_25_aout_2026_10_30_23.png",
+            "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_30_23.png",
             "alt": "Poches étiquetées du sac ouvert",
             "titre": "Fonctionnel & pédagogique",
             "texte": "Des poches et des étiquettes pour tout catégoriser."
@@ -644,7 +517,7 @@
         "item_4": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2_532497e1-b851-4592-92b1-7bbdd15df387.png",
+            "image": "shopify://shop_images/2_532497e1-b851-4592-92b1-7bbdd15df387.png",
             "alt": "Détails du sac léopard : bretelle réglable, attaches poussette, tissu déperlant",
             "titre": "Déperlant",
             "texte": "O’CAOU il pleut… revêtement extérieur et intérieur déperlant."
@@ -653,7 +526,7 @@
         "item_5": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_14_14_42.png",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_14_14_42.png",
             "alt": "Enfant vu de dos avec le sac bleu",
             "titre": "Confort",
             "texte": "Léger, facile à porter, compact et molletonné."
@@ -662,7 +535,7 @@
         "item_6": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_00_13_55.png",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_00_13_55.png",
             "alt": "Enfant qui marche avec le sac bleu sur le dos",
             "titre": "Ergonomique",
             "texte": "Tirettes faciles à ouvrir, même pour les petites mains."
@@ -679,14 +552,14 @@
       ],
       "settings": {
         "titre": "Vous allez adorer le sac O’CAOU parce que…",
-        "fond": "creme",
+        "bg_color": "#F4EDE1",
         "filet": false
       }
     },
     "organiseur": {
       "type": "iso-pa-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/ChatGPT_Image_25_aout_2026_11_57_14.png",
+        "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_11_57_14.png",
         "alt": "Six organiseurs O'CAOU suspendus, chacun avec son sac assorti posé en dessous",
         "titre": "Un organiseur de vie",
         "voile": 45
@@ -736,7 +609,7 @@
             "rating": 5,
             "author": "Delphine K.",
             "title": "coussinets discrets",
-            "content": "<p>Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.<\/p>"
+            "content": "<p>Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.</p>"
           }
         },
         "testimonial_hD44TM": {
@@ -747,7 +620,7 @@
             "rating": 5,
             "author": "Laura J.",
             "title": "Lingettes pour tout",
-            "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.<\/p>"
+            "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.</p>"
           }
         },
         "testimonial_xEqXey": {
@@ -758,7 +631,7 @@
             "rating": 5,
             "author": "Sophia M.",
             "title": "Sac hyper utile et très pratique!",
-            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!<\/p>"
+            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!</p>"
           }
         },
         "testimonial_PAByn8": {
@@ -769,7 +642,7 @@
             "rating": 5,
             "author": "Elodie O.",
             "title": "couverture légère",
-            "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.<\/p>"
+            "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.</p>"
           }
         },
         "testimonial_DnV3QU": {
@@ -780,7 +653,7 @@
             "rating": 5,
             "author": "Sandrine C.",
             "title": "La taille est parfaite!",
-            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite!”<\/p>"
+            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite!”</p>"
           }
         },
         "testimonial_WUWxXP": {
@@ -791,7 +664,7 @@
             "rating": 5,
             "author": "Nadia T.",
             "title": "Poche couvert idéale",
-            "content": "<p>Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...<\/p>"
+            "content": "<p>Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...</p>"
           }
         },
         "testimonial_PE3qw8": {
@@ -802,7 +675,7 @@
             "rating": 5,
             "author": "Séverine F.",
             "title": "Veilleuse baladeuse",
-            "content": "<p>Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.<\/p>"
+            "content": "<p>Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.</p>"
           }
         },
         "testimonial_BpQWPf": {
@@ -813,7 +686,7 @@
             "rating": 5,
             "author": "Aurore P.",
             "title": "Fourre-tout beau et spacieux",
-            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.<\/p>"
+            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.</p>"
           }
         },
         "testimonial_cdKCDw": {
@@ -824,7 +697,7 @@
             "rating": 5,
             "author": "Caroline M.",
             "title": "Je l'utilise non-stop",
-            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊<\/p>"
+            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊</p>"
           }
         },
         "testimonial_DzKV7A": {
@@ -835,7 +708,7 @@
             "rating": 5,
             "author": "Cécile G.",
             "title": "Compartiments très pratiques",
-            "content": "<p> Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.<\/p>"
+            "content": "<p> Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.</p>"
           }
         },
         "testimonial_VmiL9x": {
@@ -846,7 +719,7 @@
             "rating": 5,
             "author": "Marion C.",
             "title": "Coup de cœur pour ce sac",
-            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”<\/p>"
+            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”</p>"
           }
         },
         "testimonial_cxK7qF": {
@@ -857,7 +730,7 @@
             "rating": 5,
             "author": "Gaëlle C.",
             "title": "Un bec à croquer",
-            "content": "<p>Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.<\/p>"
+            "content": "<p>Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.</p>"
           }
         },
         "testimonial_J4K6jM": {
@@ -868,7 +741,7 @@
             "rating": 5,
             "author": "Catherine H.",
             "title": "Paille adaptée aux petits",
-            "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.<\/p>"
+            "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.</p>"
           }
         },
         "testimonial_tnLDK4": {
@@ -879,7 +752,7 @@
             "rating": 5,
             "author": "Iris C.",
             "title": "Il est encore plus génial en vrai !",
-            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.<\/p>"
+            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.</p>"
           }
         }
       },
@@ -924,77 +797,77 @@
           "type": "question",
           "settings": {
             "question": "Le sac à dos est-il pour les enfants ou pour les parents ?",
-            "reponse": "<p>Il est conçu pour les deux ! Les bretelles sont réglables, ce qui permet aussi bien aux enfants qu’aux parents de le porter.<\/p>"
+            "reponse": "<p>Il est conçu pour les deux ! Les bretelles sont réglables, ce qui permet aussi bien aux enfants qu’aux parents de le porter.</p>"
           }
         },
         "question_2": {
           "type": "question",
           "settings": {
             "question": "À partir de quel âge un enfant peut-il le porter ?",
-            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il pourra y mettre ses affaires pour la crèche, la maternelle, la nounou, les activités ou les sorties.<\/p>"
+            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il pourra y mettre ses affaires pour la crèche, la maternelle, la nounou, les activités ou les sorties.</p>"
           }
         },
         "question_3": {
           "type": "question",
           "settings": {
             "question": "À quoi sert ce sac à dos ?",
-            "reponse": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance.<\/p>"
+            "reponse": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance.</p>"
           }
         },
         "question_4": {
           "type": "question",
           "settings": {
             "question": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
-            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », on range ou on retire facilement vêtements de rechange, jouets ou autres objets.<\/p>"
+            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », on range ou on retire facilement vêtements de rechange, jouets ou autres objets.</p>"
           }
         },
         "question_5": {
           "type": "question",
           "settings": {
             "question": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "reponse": "<p>Oui, comme dans un sac à dos classique : bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange…<\/p>"
+            "reponse": "<p>Oui, comme dans un sac à dos classique : bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange…</p>"
           }
         },
         "question_6": {
           "type": "question",
           "settings": {
             "question": "Comment peut-on accrocher le sac à dos ?",
-            "reponse": "<p>Deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher à une poussette, à un siège auto ou même aux barreaux du lit bébé.<\/p>"
+            "reponse": "<p>Deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher à une poussette, à un siège auto ou même aux barreaux du lit bébé.</p>"
           }
         },
         "question_7": {
           "type": "question",
           "settings": {
             "question": "Combien y a-t-il de poches de rangement ?",
-            "reponse": "<p>6 poches : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures. Une grande poche est en filet pour voir en un coup d’œil ce qu’elle contient.<\/p>"
+            "reponse": "<p>6 poches : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures. Une grande poche est en filet pour voir en un coup d’œil ce qu’elle contient.</p>"
           }
         },
         "question_8": {
           "type": "question",
           "settings": {
             "question": "Pourquoi y a-t-il des étiquettes dans le sac ?",
-            "reponse": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.<\/p>"
+            "reponse": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.</p>"
           }
         },
         "question_9": {
           "type": "question",
           "settings": {
             "question": "Peut-on personnaliser le sac à dos ?",
-            "reponse": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.<\/p>"
+            "reponse": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.</p>"
           }
         },
         "question_10": {
           "type": "question",
           "settings": {
             "question": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
-            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !<\/p>"
+            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
           }
         },
         "question_11": {
           "type": "question",
           "settings": {
             "question": "Quel est le poids du sac à dos ?",
-            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !<\/p>"
+            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !</p>"
           }
         }
       },
@@ -1013,8 +886,8 @@
       ],
       "settings": {
         "titre": "Questions fréquentes",
-        "fond": "blanc",
-        "filet": false
+        "bg_color": "#FFFFFF",
+        "filet": true
       }
     }
   },
@@ -1028,7 +901,6 @@
     "styl",
     "points",
     "croissance",
-    "moments",
     "multi",
     "benefices",
     "organiseur",

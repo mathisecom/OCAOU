@@ -7,7 +7,7 @@
 navigateur ne la télécharge qu'une fois. {%- endcomment -%}
 {{ 'iso-pa-footer.css' | asset_url | stylesheet_tag }}
 <div class="iso-pa">
-<section class="pa-sec pa-rs" aria-labelledby="pa-rs-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
+<section class="pa-sec pa-rs{% if section.settings.filet %} pa-rule{% endif %}{% if section.settings.filet_bas %} pa-rule-b{% endif %}" aria-labelledby="pa-rs-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
   <h2 class="pa-sr" id="pa-rs-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
   <ul>
     {%- for block in section.blocks -%}
@@ -32,6 +32,18 @@ navigateur ne la télécharge qu'une fois. {%- endcomment -%}
       "id": "titre",
       "label": "Titre (lu par les lecteurs d'écran)",
       "default": "Nos engagements"
+    },
+    {
+      "type": "checkbox",
+      "id": "filet",
+      "label": "Filet de séparation en haut",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "filet_bas",
+      "label": "Filet de séparation en bas",
+      "default": false
     }
   ],
   "blocks": [
@@ -95,5 +107,6 @@ navigateur ne la télécharge qu'une fois. {%- endcomment -%}
   "max_blocks": 4
 }
 {% endschema %}
+
 
 
