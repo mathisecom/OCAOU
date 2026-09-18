@@ -168,7 +168,7 @@
           "duo-essentiel"
         ],
         "bg_color": "#FFFFFF",
-        "filet": true
+        "filet": false
       }
     },
     "attaches": {
@@ -235,7 +235,7 @@
         "accroche": "Un sac multifonctions",
         "titre": "Avec ses attaches intégrées, il s'accroche partout !",
         "bg_color": "#FFFFFF",
-        "filet": true
+        "filet": false
       }
     },
     "presse": {
@@ -313,7 +313,7 @@
         "cote": "gauche",
         "bouton": "Acheter maintenant",
         "bg_color": "#FFFFFF",
-        "filet": true
+        "filet": false
       }
     },
     "styl": {
@@ -887,7 +887,7 @@
       "settings": {
         "titre": "Questions fréquentes",
         "bg_color": "#FFFFFF",
-        "filet": true
+        "filet": false
       }
     }
   },

@@ -54,9 +54,7 @@
         "item_4"
       ],
       "settings": {
-        "titre": "Nos engagements",
-        "filet": true,
-        "filet_bas": true
+        "titre": "Nos engagements"
       }
     },
     "pied": {
