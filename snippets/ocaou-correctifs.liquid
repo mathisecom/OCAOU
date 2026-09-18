@@ -18,6 +18,17 @@
     font-size: 15px;
   }
 
+  /* Bouton de commande de la page panier : largeur de son libelle, centre.
+     Le bloc recapitulatif est une grille, un bouton y prend toute la largeur
+     par defaut, ce qui donnait une barre de plus de 1800 px de long. */
+  .cart-order__recap .cart-form button[name="checkout"] {
+    width: fit-content;
+    min-width: 240px;
+    justify-self: center;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
   /* Colonne de droite des fiches produit tenue a une largeur de lecture : au dela,
      les lignes de texte deviennent trop longues et les blocs partent en largeur. */
   .product-info { max-width: 480px; }
