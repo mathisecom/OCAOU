@@ -76,3 +76,14 @@ body:has(.pa-sbar) .iso-pa .pa-ft-bot{padding-bottom:100px}
   .iso-pa .pa-ft-soc{order:0}
   .iso-pa .pa-ft-soc a{width:36px;height:36px}
 }
+
+
+/* Sur les fiches produit, le socle iso-pa.css se charge avant ce fichier : la copie du socle
+   ci-dessus le repasse alors par-dessus et lui reprend deux reglages. On les lui rend ici.
+   Le titre du bandeau redevient blanc sur sa photo, et les titres de section retrouvent
+   leur taille sur grand ecran. */
+.iso-pa .pa-ban-h,.iso-pa .pa-ban-l{color:#fff;max-width:36rem;text-shadow:0 1px 14px rgba(31,23,17,.45)}
+.iso-pa .pa-ban-eyebrow{color:#fff;opacity:.92}
+@media screen and (min-width: 960px){
+  .iso-pa .pa-h2{font-size:26px}
+}
