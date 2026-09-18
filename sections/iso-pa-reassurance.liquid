@@ -3,6 +3,9 @@
   visuellement mais lu par les lecteurs d'écran ; icônes décoratives.
 {%- endcomment -%}
 {%- assign sid = section.id -%}
+{%- comment -%} Feuille commune au pied de page : la même balise dans les deux sections, le
+navigateur ne la télécharge qu'une fois. {%- endcomment -%}
+{{ 'iso-pa-footer.css' | asset_url | stylesheet_tag }}
 <div class="iso-pa">
 <section class="pa-sec pa-rs pa-cream" aria-labelledby="pa-rs-h-{{ sid }}"><div class="pa-w">
   <h2 class="pa-sr" id="pa-rs-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
@@ -34,3 +37,4 @@
   "max_blocks": 4
 }
 {% endschema %}
+

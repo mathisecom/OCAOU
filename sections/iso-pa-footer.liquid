@@ -1,13 +1,22 @@
 {%- comment -%}
-  Piste A : pied de page (maquette, fonction footer).
+  Pied de page O'CAOU, utilisé sur tout le site (fiches produit et reste des pages).
   - Lettre d'information : vrai formulaire client Shopify (tag « newsletter »), validé côté serveur.
   - Colonnes : menu du thème (link_list) ou liens aux adresses réelles de la boutique.
+  - Réseaux sociaux : adresses tenues dans les préférences du thème (mêmes réglages que le
+    reste du site), aucune adresse écrite ici.
   - RGAA : titres de niveau 2, contact en address, mailto, cibles de 44 px au mobile.
 {%- endcomment -%}
 {%- liquid
   assign sid = section.id
   assign fid = 'pa-nl-' | append: sid
+  assign fb = settings.social_facebook | default: shop.brand.metafields.social_links.facebook
+  assign ig = settings.social_instagram | default: shop.brand.metafields.social_links.instagram
 -%}
+{{ 'iso-pa-footer.css' | asset_url | stylesheet_tag }}
+{%- assign f500 = settings.text_font | font_modify: 'weight', '500' -%}
+{%- assign f600 = settings.text_font | font_modify: 'weight', '600' -%}
+{%- if f500 -%}<style>{{ f500 | font_face: font_display: 'swap' }}</style>{%- endif -%}
+{%- if f600 -%}<style>{{ f600 | font_face: font_display: 'swap' }}</style>{%- endif -%}
 <div class="iso-pa">
 <footer class="pa-ft">
 <div class="pa-ft-c"><div class="pa-w">
@@ -42,6 +51,12 @@
     <div class="pa-ft-col pa-ft-col--ct"><h2 class="pa-h3">Contact</h2><address>{% if section.settings.email != blank %}<a class="pa-ft-mail" href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a><br>{% endif %}{{ section.settings.adresse | escape }}</address></div>
   </div>
   <div class="pa-ft-bot">
+    {%- if fb != blank or ig != blank -%}
+      <ul class="pa-ft-soc">
+        {%- if fb != blank -%}<li><a href="{{ fb }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Facebook' }}">{%- render 'icon' with 'facebook', width: 20, height: 20 -%}</a></li>{%- endif -%}
+        {%- if ig != blank -%}<li><a href="{{ ig }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Instagram' }}">{%- render 'icon' with 'instagram', width: 20, height: 20 -%}</a></li>{%- endif -%}
+      </ul>
+    {%- endif -%}
     <ul class="pa-ft-leg">
       {%- for i in (1..3) -%}
         {%- assign kt = 'legal_' | append: i | append: '_texte' -%}
@@ -49,7 +64,7 @@
         {%- if section.settings[kt] != blank and section.settings[ku] != blank -%}<li><a href="{{ section.settings[ku] }}">{{ section.settings[kt] | escape }}</a></li>{%- endif -%}
       {%- endfor -%}
     </ul>
-    <p>{% if section.settings.siret != blank %}{{ section.settings.siret | escape }} · {% endif %}© {{ 'now' | date: '%Y' }} {{ section.settings.marque | default: shop.name | escape }}</p>
+    <p>© {{ 'now' | date: '%Y' }} {{ section.settings.marque | default: shop.name | escape }}</p>
   </div>
 </div></div>
 </footer>
@@ -72,8 +87,9 @@
     { "type": "url", "id": "legal_2_url", "label": "Lien légal 2 : adresse" },
     { "type": "text", "id": "legal_3_texte", "label": "Lien légal 3 : libellé" },
     { "type": "url", "id": "legal_3_url", "label": "Lien légal 3 : adresse" },
-    { "type": "text", "id": "siret", "label": "SIRET" },
-    { "type": "text", "id": "marque", "label": "Nom après ©" }
+    { "type": "text", "id": "marque", "label": "Nom après ©" },
+    { "type": "header", "content": "Réseaux sociaux" },
+    { "type": "paragraph", "content": "Les adresses Facebook et Instagram se saisissent dans Boutique en ligne > Thèmes > Personnaliser > Préférences du thème." }
   ],
   "blocks": [
     {

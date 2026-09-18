@@ -1,0 +1,78 @@
+/* Pied de page O'CAOU : bande de réassurance et pied de page du nouveau design, utilisés sur
+   tout le site. Feuille autonome (les pages hors fiche produit ne chargent pas iso-pa.css) :
+   elle reprend le socle de iso-pa.css, aux mêmes valeurs, puis les règles des deux sections.
+   RGAA : focus visible, cibles de 44 px au mobile, textes de 13 px au minimum. */
+
+/* Styles imposés par le thème Impact aux éléments nus, neutralisés sous la racine. */
+.iso-pa :where(h1,h2,h3,h4,p,ul,ol,li,button,input,select,a,img,fieldset,legend,details,summary,figure,blockquote,address){margin:0;padding:0;border:0;background:none;font:inherit;color:inherit;letter-spacing:inherit;text-transform:none;text-decoration:none;box-shadow:none}
+
+.iso-pa{--gold:#CD9438;--gold-h:#DAA551;--gold-d:#B98331;--on-gold:#2B1F17;--rose:#AF6C67;--rt:#8E4F4B;--cream:#F4EDE1;--ivory:#FBF6EF;--ink:#333;--brown:#3A2C22;--muted:#6B5E55;--line:#E9DFD0;--line2:#8A7B70;--green:#1F7A4E;--r:20px;--sec:48px;--pad:20px;
+  background:#fff;color:var(--ink);font:400 16px/1.6 Poppins,ui-sans-serif,system-ui,sans-serif;overflow-x:clip;letter-spacing:normal;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.iso-pa *,.iso-pa *::before,.iso-pa *::after{box-sizing:border-box}
+.iso-pa img{display:block;max-width:100%;height:auto}
+.iso-pa [hidden]{display:none!important}
+.iso-pa h1,.iso-pa h2,.iso-pa h3,.iso-pa p,.iso-pa ul,.iso-pa ol,.iso-pa figure,.iso-pa blockquote,.iso-pa fieldset,.iso-pa address{margin:0;padding:0;font-style:normal}
+.iso-pa ul,.iso-pa ol{list-style:none}
+.iso-pa a{color:inherit;text-decoration:none}
+.iso-pa button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-align:inherit}
+.iso-pa .ic{width:20px;height:20px;flex:none;display:block}
+.iso-pa :focus-visible{outline:2px solid var(--brown);outline-offset:3px;border-radius:6px}
+.iso-pa .pa-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+/* Largeur et marges de l'en-tête du thème : le pied de page s'aligne sur le logo et les icônes. */
+.iso-pa .pa-w{margin:0 auto;padding:0 max(var(--container-gutter, var(--pad)), 50% - var(--container-max-width, 1600px) / 2)}
+.iso-pa .pa-sec{padding:var(--sec) 0}
+.iso-pa .pa-cream{background:var(--cream)}
+.iso-pa .pa-h2{font-size:22px;font-weight:600;line-height:1.2;color:var(--brown);text-wrap:balance}
+.iso-pa .pa-h3{font-size:17px;font-weight:600;line-height:1.3;color:var(--brown)}
+
+/* réassurance */
+.iso-pa .pa-rs ul{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px}
+.iso-pa .pa-rs li{display:flex;flex-direction:column;align-items:center;text-align:center}
+.iso-pa .pa-rs-ic{width:56px;height:56px;border-radius:50%;background:#fff;color:var(--rt);display:grid;place-items:center}
+.iso-pa .pa-rs-ic .ic{width:26px;height:26px}
+.iso-pa .pa-rs-t{margin-top:14px;font-weight:600;line-height:1.35;color:var(--brown);max-width:24ch}
+.iso-pa .pa-rs-c{margin-top:4px;font-size:13px;line-height:1.5;color:var(--muted);max-width:30ch}
+
+/* pied de page */
+.iso-pa .pa-ft-c{background:var(--cream)}
+.iso-pa .pa-nl{display:flex;flex-direction:column;gap:16px;padding:40px 0 32px;border-bottom:1px solid var(--line)}
+.iso-pa .pa-nl-f{display:flex;flex-wrap:wrap;gap:8px}
+.iso-pa .pa-nl-f input{flex:1;min-width:0;height:52px;border-radius:999px;border:1px solid var(--line2);background:#fff;padding:0 20px;font:inherit;font-size:16px;color:var(--ink)}
+.iso-pa .pa-nl-f input::placeholder{color:#766A61}
+.iso-pa .pa-nl-f input:focus-visible{outline:2px solid var(--brown);outline-offset:2px}
+.iso-pa .pa-nl-f button{flex:none;height:52px;padding:0 22px;border-radius:999px;background:var(--gold);color:#fff;font-weight:600;transition:background-color .15s}
+.iso-pa .pa-nl-msg{flex:1 0 100%;font-size:13px;line-height:1.5;color:var(--green)}
+.iso-pa .pa-nl-msg--err{color:var(--rt)}
+.iso-pa .pa-ft-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px;padding:32px 0}
+.iso-pa .pa-ft-cols .pa-h3{margin-bottom:6px}
+.iso-pa .pa-ft-cols a{display:inline-block;padding:10px 0;line-height:1.5}
+.iso-pa .pa-ft-cols address{line-height:1.6}
+.iso-pa .pa-ft-mail{color:var(--rt);font-weight:500}
+.iso-pa .pa-ft-bot{display:flex;flex-direction:column;gap:14px;padding:20px 0 28px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+/* Fiche produit : place laissée sous la barre d'achat qui reste au bas de l'écran. */
+body:has(.pa-sbar) .iso-pa .pa-ft-bot{padding-bottom:100px}
+.iso-pa .pa-ft-leg{display:flex;flex-wrap:wrap;gap:0 18px}
+.iso-pa .pa-ft-leg a{display:inline-block;padding:8px 0}
+
+/* réseaux sociaux : adresses tenues dans Boutique en ligne > Préférences du thème */
+.iso-pa .pa-ft-soc{display:flex;gap:8px;order:-1}
+.iso-pa .pa-ft-soc a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--brown);transition:background-color .15s,color .15s}
+.iso-pa .pa-ft-soc svg{width:20px;height:20px;display:block}
+
+@media (hover:hover){
+  .iso-pa .pa-ft-cols a:hover,.iso-pa .pa-ft-leg a:hover{color:var(--rt);text-decoration:underline;text-underline-offset:3px}
+  .iso-pa .pa-nl-f button:hover{background:var(--gold-d)}
+  .iso-pa .pa-ft-soc a:hover{background:#fff;color:var(--rt)}
+}
+
+@media screen and (min-width: 960px){
+  .iso-pa .pa-rs ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+  .iso-pa .pa-nl{flex-direction:row;align-items:center;justify-content:space-between;gap:40px;padding:48px 0 40px}
+  .iso-pa .pa-nl-f{flex:0 1 520px}
+  .iso-pa .pa-ft-cols{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;padding:40px 0 44px}
+  .iso-pa .pa-ft-cols a{padding:5px 0}
+  .iso-pa .pa-ft-bot,body:has(.pa-sbar) .iso-pa .pa-ft-bot{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:20px 0 28px}
+  .iso-pa .pa-ft-leg a{padding:4px 0}
+  .iso-pa .pa-ft-soc{order:0}
+  .iso-pa .pa-ft-soc a{width:36px;height:36px}
+}
