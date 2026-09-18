@@ -8,6 +8,14 @@
     une seule copie des cartes dans la page.
   - Perf : chargement différé sur toutes les photos.
 {%- endcomment -%}
+{%- comment -%}
+  Hors fiche produit (accueil), la section apporte sa feuille de style et son script : sur les
+  fiches, la section produit les charge deja, d'ou la condition sur le gabarit.
+{%- endcomment -%}
+{%- unless template.suffix contains 'iso-pa' -%}
+  {{ 'iso-pa.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'iso-pa.js' | asset_url }}" defer></script>
+{%- endunless -%}
 {%- assign sid = section.id -%}
 {%- capture tid -%}pa-mq-{{ sid }}{%- endcapture -%}
 <div class="iso-pa">

@@ -1533,6 +1533,202 @@
         "padding_bottom_mobile": 48
       },
       "disabled": true
+    },
+    "moments_de_vie": {
+      "type": "iso-pa-moments",
+      "name": "Les moments de vie",
+      "blocks": {
+        "moment_AcbkR9": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/lison.jpg",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_pxztgN": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_37_22.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_13": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_6301.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_9": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_28_18.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_kayjYf": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-18_a_15.53.22.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_6": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_6298.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_rUE9zd": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/20260818_124108.jpg",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_8": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_12_16.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_jVEVRi": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/format_34_ca91a964-5a41-4d1a-93e6-72a5fd6eea5b.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_1": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_24_50.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_4": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_13_55.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_10": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0366.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_7": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7538.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_EYrbH8": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0062.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_QHg9Pa": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/isaac_rempli_LB.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_EJzTaY": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/isaac_veilleuse.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_5": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/20260809_172116.jpg",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_3": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_6907.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_12": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0538.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_14": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/PANA7813.jpg",
+            "alt": "",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "moment_AcbkR9",
+        "moment_pxztgN",
+        "moment_13",
+        "moment_9",
+        "moment_kayjYf",
+        "moment_6",
+        "moment_rUE9zd",
+        "moment_8",
+        "moment_jVEVRi",
+        "moment_1",
+        "moment_4",
+        "moment_10",
+        "moment_7",
+        "moment_EYrbH8",
+        "moment_QHg9Pa",
+        "moment_EJzTaY",
+        "moment_5",
+        "moment_3",
+        "moment_12",
+        "moment_14"
+      ],
+      "settings": {
+        "accroche": "",
+        "titre": "Les moments de vie",
+        "texte": "",
+        "affichage": "defile",
+        "filet": false,
+        "bg_color": "#FFFFFF"
+      }
     }
   },
   "order": [
@@ -1547,6 +1743,7 @@
     "blocks_9niDCt",
     "featured_collection_HH8gmJ",
     "offrecoffret_Tj4hcD",
+    "moments_de_vie",
     "bandedefilante_AkFDNj",
     "sectionsicones_JdQXN9",
     "rich_text_TrB4qN",
