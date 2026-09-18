@@ -101,3 +101,4 @@ body:has(.pa-sbar) .iso-pa .pa-ft-bot{padding-bottom:100px}
 /* Pastille flottante des services anti-robot : masquee. Le controle lui-meme reste actif. */
 .grecaptcha-badge{visibility:hidden!important}
 .h-captcha[data-size="invisible"]{display:none!important}
+
