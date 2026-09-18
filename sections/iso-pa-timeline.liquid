@@ -4,7 +4,7 @@
 {%- endcomment -%}
 {%- assign sid = section.id -%}
 <div class="iso-pa">
-<section class="pa-sec pa-tl-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-tl-h-{{ sid }}"><div class="pa-w">
+<section class="pa-sec pa-tl-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-tl-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head">{% if section.settings.surtitre != blank %}<p class="pa-eyebrow">{{ section.settings.surtitre | escape }}</p>{% endif %}<h2 class="pa-h2" id="pa-tl-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
   <ol class="pa-tl">
     {%- for block in section.blocks -%}
@@ -22,7 +22,7 @@
     { "type": "text", "id": "surtitre", "label": "Surtitre" },
     { "type": "text", "id": "titre", "label": "Titre" },
     { "type": "text", "id": "slogan", "label": "Phrase de conclusion" },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
   ],
   "blocks": [
@@ -40,3 +40,4 @@
   "max_blocks": 4
 }
 {% endschema %}
+
