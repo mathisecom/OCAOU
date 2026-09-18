@@ -705,69 +705,6 @@
         "padding_bottom_mobile": 40
       }
     },
-    "bandedefilante_AkFDNj": {
-      "type": "bandedefilante",
-      "blocks": {
-        "marquee_item_FPy68m": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Tout est à sa place",
-            "icon_text": "🍒",
-            "icon_image": "shopify://shop_images/icone_1.png"
-          }
-        },
-        "marquee_item_THwWM6": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Prêt en quelques secondes",
-            "icon_text": "",
-            "icon_image": "shopify://shop_images/CLAIR.png"
-          }
-        },
-        "marquee_item_deX74F": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Encourage l'autonomie",
-            "icon_text": "🌈",
-            "icon_image": "shopify://shop_images/icone.png"
-          }
-        },
-        "marquee_item_fbRmh4": {
-          "type": "marquee_item",
-          "settings": {
-            "text": "Complice des familles",
-            "icon_text": "🌷",
-            "icon_image": "shopify://shop_images/icone_2.png"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_item_FPy68m",
-        "marquee_item_THwWM6",
-        "marquee_item_deX74F",
-        "marquee_item_fbRmh4"
-      ],
-      "disabled": true,
-      "name": "Bande défilante premium",
-      "settings": {
-        "bg_color": "#ffffff",
-        "text_color": "#af6c67",
-        "border_color": "#fcf9f5",
-        "border_width": 0,
-        "height_desktop": 56,
-        "height_mobile": 44,
-        "font_size_desktop": 13,
-        "font_size_mobile": 11,
-        "font_weight": "600",
-        "letter_spacing": 1.5,
-        "uppercase": true,
-        "icon_size": 20,
-        "gap_desktop": 70,
-        "gap_mobile": 45,
-        "speed": 55,
-        "pause_on_hover": false
-      }
-    },
     "sectionsicones_JdQXN9": {
       "type": "sectionsicones",
       "blocks": {
@@ -1744,7 +1681,6 @@
     "featured_collection_HH8gmJ",
     "offrecoffret_Tj4hcD",
     "moments_de_vie",
-    "bandedefilante_AkFDNj",
     "sectionsicones_JdQXN9",
     "rich_text_TrB4qN",
     "avantageicons_9NE3Mb",
