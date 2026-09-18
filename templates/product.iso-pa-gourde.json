@@ -131,8 +131,8 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "fond": "blanc",
-        "filet": true
+        "filet": true,
+        "bg_color": "#FFFFFF"
       },
       "blocks": {
         "video_1": {
@@ -165,8 +165,8 @@
           "duo-essentiel",
           "duo-miam"
         ],
-        "fond": "blanc",
-        "filet": true
+        "filet": true,
+        "bg_color": "#FFFFFF"
       }
     },
     "benefices": {
@@ -221,8 +221,8 @@
       ],
       "settings": {
         "titre": "Vous allez adorer la gourde O’CAOU parce que…",
-        "fond": "creme",
-        "filet": false
+        "filet": false,
+        "bg_color": "#F4EDE1"
       }
     },
     "frise": {
@@ -275,8 +275,8 @@
         "surtitre": "Pensée pour durer",
         "titre": "Une gourde pensée pour grandir avec votre enfant",
         "slogan": "Une seule gourde. Des centaines d’aventures.",
-        "fond": "blanc",
-        "filet": false
+        "filet": false,
+        "bg_color": "#FFFFFF"
       }
     },
     "moments": {
@@ -413,8 +413,8 @@
       ],
       "settings": {
         "titre": "Les moments de vie",
-        "fond": "blanc",
-        "filet": false
+        "filet": false,
+        "bg_color": "#FFFFFF"
       }
     },
     "avis_titre": {

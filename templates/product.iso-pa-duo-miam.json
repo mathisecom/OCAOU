@@ -41,7 +41,7 @@
           "coffret-premier-repas-1",
           "sac-isotherme"
         ],
-        "fond": "blanc",
+        "bg_color": "#FFFFFF",
         "filet": true
       }
     },
@@ -799,7 +799,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "fond": "creme",
+        "bg_color": "#F4EDE1",
         "filet": false
       }
     },
@@ -849,22 +849,9 @@
       "settings": {
         "titre": "Recommandé par",
         "titre_tag": "h2",
-        "titre_size": 12,
-        "titre_size_mobile": 11,
-        "titre_weight": 600,
-        "titre_uppercase": true,
         "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 150,
-        "logo_width_mobile": 90,
-        "gap": 56,
-        "gap_mobile": 28,
         "grayscale": true,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
+        "bg_color": "#ffffff"
       }
     },
     "benefices": {
@@ -908,7 +895,7 @@
       ],
       "settings": {
         "titre": "",
-        "fond": "creme",
+        "bg_color": "#F4EDE1",
         "filet": false
       }
     }
