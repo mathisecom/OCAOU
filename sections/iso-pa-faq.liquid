@@ -1,0 +1,46 @@
+{%- comment -%}
+  Piste A : questions fréquentes sur deux colonnes à l'ordinateur (maquette, fonction faq).
+  RGAA : details / summary natifs, ouverture au clavier sans script.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{%- assign half = section.blocks.size | plus: 1 | divided_by: 2 -%}
+<div class="iso-pa">
+<section class="pa-sec pa-faq-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-faq-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
+  <div class="pa-head"><h2 class="pa-h2" id="pa-faq-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
+  <div class="pa-faq">
+    <div class="pa-faq-col">
+      {%- for block in section.blocks limit: half -%}
+        <details class="pa-q" {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}{% render 'iso-pa-pm' %}</summary><div class="pa-q-a">{{ block.settings.reponse }}</div></details>
+      {%- endfor -%}
+    </div>
+    <div class="pa-faq-col">
+      {%- for block in section.blocks offset: half -%}
+        <details class="pa-q" {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}{% render 'iso-pa-pm' %}</summary><div class="pa-q-a">{{ block.settings.reponse }}</div></details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Questions",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Questions fréquentes" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "reponse", "label": "Réponse" }
+      ]
+    }
+  ],
+  "max_blocks": 20
+}
+{% endschema %}
+

@@ -7,7 +7,7 @@
 navigateur ne la télécharge qu'une fois. {%- endcomment -%}
 {{ 'iso-pa-footer.css' | asset_url | stylesheet_tag }}
 <div class="iso-pa">
-<section class="pa-sec pa-rs pa-cream" aria-labelledby="pa-rs-h-{{ sid }}"><div class="pa-w">
+<section class="pa-sec pa-rs" aria-labelledby="pa-rs-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
   <h2 class="pa-sr" id="pa-rs-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
   <ul>
     {%- for block in section.blocks -%}
@@ -21,20 +21,79 @@ navigateur ne la télécharge qu'une fois. {%- endcomment -%}
 {
   "name": "Réassurance",
   "settings": [
-    { "type": "text", "id": "titre", "label": "Titre (lu par les lecteurs d'écran)", "default": "Nos engagements" }
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#F4EDE1"
+    },
+    {
+      "type": "text",
+      "id": "titre",
+      "label": "Titre (lu par les lecteurs d'écran)",
+      "default": "Nos engagements"
+    }
   ],
   "blocks": [
     {
       "type": "item",
       "name": "Engagement",
       "settings": [
-        { "type": "select", "id": "icone", "label": "Icône", "options": [ { "value": "relay", "label": "Point relais" }, { "value": "card", "label": "Carte de paiement" }, { "value": "return", "label": "Retour" }, { "value": "truck", "label": "Camion" }, { "value": "gift", "label": "Cadeau" }, { "value": "shield", "label": "Bouclier" }, { "value": "leaf", "label": "Feuille" }, { "value": "check", "label": "Coche" } ], "default": "relay" },
-        { "type": "text", "id": "titre", "label": "Titre" },
-        { "type": "text", "id": "texte", "label": "Précision" }
+        {
+          "type": "select",
+          "id": "icone",
+          "label": "Icône",
+          "options": [
+            {
+              "value": "relay",
+              "label": "Point relais"
+            },
+            {
+              "value": "card",
+              "label": "Carte de paiement"
+            },
+            {
+              "value": "return",
+              "label": "Retour"
+            },
+            {
+              "value": "truck",
+              "label": "Camion"
+            },
+            {
+              "value": "gift",
+              "label": "Cadeau"
+            },
+            {
+              "value": "shield",
+              "label": "Bouclier"
+            },
+            {
+              "value": "leaf",
+              "label": "Feuille"
+            },
+            {
+              "value": "check",
+              "label": "Coche"
+            }
+          ],
+          "default": "relay"
+        },
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Titre"
+        },
+        {
+          "type": "text",
+          "id": "texte",
+          "label": "Précision"
+        }
       ]
     }
   ],
   "max_blocks": 4
 }
 {% endschema %}
+
 

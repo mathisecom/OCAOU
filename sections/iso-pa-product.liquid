@@ -241,7 +241,7 @@
   endfor
   assign vals_main = vals_main | split: '|~|'
 -%}
-<div class="iso-pa" id="pa-achat" data-pa-product>
+<div class="iso-pa" id="pa-achat" data-pa-product style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}">
 <div class="pa-w pa-buy">
 
 {%- if n > 0 -%}
@@ -754,69 +754,268 @@
 {% schema %}
 {
   "name": "Zone d'achat",
-  "enabled_on": { "templates": ["product"] },
+  "enabled_on": {
+    "templates": [
+      "product"
+    ]
+  },
   "settings": [
-    { "type": "header", "content": "Présentation" },
-    { "type": "text", "id": "titre", "label": "Nom affiché (titre principal)", "info": "Vide : titre du produit." },
-    { "type": "text", "id": "accroche", "label": "Accroche sous le nom" },
-    { "type": "collection", "id": "collection", "label": "Collection du fil d'Ariane" },
-    { "type": "textarea", "id": "badges", "label": "Pastilles (une par ligne)" },
-    { "type": "text", "id": "note", "label": "Note moyenne", "default": "4,8" },
-    { "type": "text", "id": "avis", "label": "Nombre d'avis", "default": "+ 500 avis" },
-    { "type": "text", "id": "pitch_titre", "label": "Titre de présentation" },
-    { "type": "textarea", "id": "pitch", "label": "Texte de présentation" },
-    { "type": "textarea", "id": "puces", "label": "Points forts (un par ligne)" },
-    { "type": "header", "content": "Photos et couleurs" },
-    { "type": "text", "id": "galerie", "label": "Ordre des photos", "info": "Photos rangées par couleur dans Shopify : rangs dans le groupe de la couleur, séparés par des virgules (1 = la photo de la couleur, 2 = la suivante) ; les rangs absents suivent. Sinon : positions des médias du produit, la première cédant sa place à la photo de la couleur choisie. Vide : toutes les photos." },
-    { "type": "textarea", "id": "leopard", "label": "Couleurs à motif léopard (une par ligne)", "default": "Léopard\nGraou" },
-    { "type": "textarea", "id": "couleurs", "label": "Couleur des pastilles", "info": "Une ligne par coloris : « produit/Coloris: #HEXA » pour la teinte relevée sur la photo de ce produit, « Coloris: #HEXA » pour tous les produits. Valeur « motif », suivie au besoin d'une couleur de fond, pour une pastille à motif léopard. Sans ligne : réglage des pastilles du thème.", "default": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE" },
-    { "type": "header", "content": "Formules" },
-    { "type": "text", "id": "offre_titre", "label": "Titre du bloc des formules" },
-    { "type": "checkbox", "id": "relais", "label": "Mention « Point relais offert » au-delà du seuil de livraison du thème", "default": true },
-    { "type": "text", "id": "compat", "label": "Mention de compatibilité" },
-    { "type": "header", "content": "Compléments" },
-    { "type": "text", "id": "complements_titre", "label": "Titre du bloc compléments", "default": "Complétez avec un indispensable" },
-    { "type": "select", "id": "complements_position", "label": "Emplacement du bloc compléments", "options": [{ "value": "bouton", "label": "Au-dessus du bouton d'ajout" }, { "value": "points_forts", "label": "Sous les points forts, grande image" }], "default": "bouton" },
-    { "type": "header", "content": "Livraison et paiement" },
-    { "type": "number", "id": "jours", "label": "Délai d'expédition (jours ouvrés)", "default": 2 },
-    { "type": "text", "id": "livraison", "label": "Mode de livraison", "default": "Livraison Suivie en France" }
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Présentation"
+    },
+    {
+      "type": "text",
+      "id": "titre",
+      "label": "Nom affiché (titre principal)",
+      "info": "Vide : titre du produit."
+    },
+    {
+      "type": "text",
+      "id": "accroche",
+      "label": "Accroche sous le nom"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection du fil d'Ariane"
+    },
+    {
+      "type": "textarea",
+      "id": "badges",
+      "label": "Pastilles (une par ligne)"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note moyenne",
+      "default": "4,8"
+    },
+    {
+      "type": "text",
+      "id": "avis",
+      "label": "Nombre d'avis",
+      "default": "+ 500 avis"
+    },
+    {
+      "type": "text",
+      "id": "pitch_titre",
+      "label": "Titre de présentation"
+    },
+    {
+      "type": "textarea",
+      "id": "pitch",
+      "label": "Texte de présentation"
+    },
+    {
+      "type": "textarea",
+      "id": "puces",
+      "label": "Points forts (un par ligne)"
+    },
+    {
+      "type": "header",
+      "content": "Photos et couleurs"
+    },
+    {
+      "type": "text",
+      "id": "galerie",
+      "label": "Ordre des photos",
+      "info": "Photos rangées par couleur dans Shopify : rangs dans le groupe de la couleur, séparés par des virgules (1 = la photo de la couleur, 2 = la suivante) ; les rangs absents suivent. Sinon : positions des médias du produit, la première cédant sa place à la photo de la couleur choisie. Vide : toutes les photos."
+    },
+    {
+      "type": "textarea",
+      "id": "leopard",
+      "label": "Couleurs à motif léopard (une par ligne)",
+      "default": "Léopard\nGraou"
+    },
+    {
+      "type": "textarea",
+      "id": "couleurs",
+      "label": "Couleur des pastilles",
+      "info": "Une ligne par coloris : « produit/Coloris: #HEXA » pour la teinte relevée sur la photo de ce produit, « Coloris: #HEXA » pour tous les produits. Valeur « motif », suivie au besoin d'une couleur de fond, pour une pastille à motif léopard. Sans ligne : réglage des pastilles du thème.",
+      "default": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE"
+    },
+    {
+      "type": "header",
+      "content": "Formules"
+    },
+    {
+      "type": "text",
+      "id": "offre_titre",
+      "label": "Titre du bloc des formules"
+    },
+    {
+      "type": "checkbox",
+      "id": "relais",
+      "label": "Mention « Point relais offert » au-delà du seuil de livraison du thème",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "compat",
+      "label": "Mention de compatibilité"
+    },
+    {
+      "type": "header",
+      "content": "Compléments"
+    },
+    {
+      "type": "text",
+      "id": "complements_titre",
+      "label": "Titre du bloc compléments",
+      "default": "Complétez avec un indispensable"
+    },
+    {
+      "type": "select",
+      "id": "complements_position",
+      "label": "Emplacement du bloc compléments",
+      "options": [
+        {
+          "value": "bouton",
+          "label": "Au-dessus du bouton d'ajout"
+        },
+        {
+          "value": "points_forts",
+          "label": "Sous les points forts, grande image"
+        }
+      ],
+      "default": "bouton"
+    },
+    {
+      "type": "header",
+      "content": "Livraison et paiement"
+    },
+    {
+      "type": "number",
+      "id": "jours",
+      "label": "Délai d'expédition (jours ouvrés)",
+      "default": 2
+    },
+    {
+      "type": "text",
+      "id": "livraison",
+      "label": "Mode de livraison",
+      "default": "Livraison Suivie en France"
+    }
   ],
   "blocks": [
     {
       "type": "formule",
       "name": "Formule",
       "settings": [
-        { "type": "text", "id": "libelle", "label": "Libellé" },
-        { "type": "text", "id": "badge", "label": "Pastille" },
-        { "type": "number", "id": "prix", "label": "Prix de la formule (en centimes)", "info": "Ex. 4990 = 49,90 €. Vide : somme des prix réels, sans prix barré." },
-        { "type": "text", "id": "produits", "label": "Articles ajoutés au produit (handles séparés par des virgules)" },
-        { "type": "text", "id": "nom_offre", "label": "Nom de l'offre", "info": "Mention « Cadeau offert avec » des cadeaux dans le panier." },
-        { "type": "text", "id": "cadeau_1", "label": "Cadeau 1 (handle)" },
-        { "type": "text", "id": "cadeau_1_texte", "label": "Cadeau 1 : libellé" },
-        { "type": "checkbox", "id": "cadeau_1_valeur", "label": "Cadeau 1 : afficher sa valeur", "default": false },
-        { "type": "text", "id": "cadeau_2", "label": "Cadeau 2 (handle)" },
-        { "type": "text", "id": "cadeau_2_texte", "label": "Cadeau 2 : libellé" },
-        { "type": "checkbox", "id": "cadeau_2_valeur", "label": "Cadeau 2 : afficher sa valeur", "default": false },
-        { "type": "checkbox", "id": "vignette_cadeau", "label": "Cadeaux visibles dans les vignettes", "default": false }
+        {
+          "type": "text",
+          "id": "libelle",
+          "label": "Libellé"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Pastille"
+        },
+        {
+          "type": "number",
+          "id": "prix",
+          "label": "Prix de la formule (en centimes)",
+          "info": "Ex. 4990 = 49,90 €. Vide : somme des prix réels, sans prix barré."
+        },
+        {
+          "type": "text",
+          "id": "produits",
+          "label": "Articles ajoutés au produit (handles séparés par des virgules)"
+        },
+        {
+          "type": "text",
+          "id": "nom_offre",
+          "label": "Nom de l'offre",
+          "info": "Mention « Cadeau offert avec » des cadeaux dans le panier."
+        },
+        {
+          "type": "text",
+          "id": "cadeau_1",
+          "label": "Cadeau 1 (handle)"
+        },
+        {
+          "type": "text",
+          "id": "cadeau_1_texte",
+          "label": "Cadeau 1 : libellé"
+        },
+        {
+          "type": "checkbox",
+          "id": "cadeau_1_valeur",
+          "label": "Cadeau 1 : afficher sa valeur",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "cadeau_2",
+          "label": "Cadeau 2 (handle)"
+        },
+        {
+          "type": "text",
+          "id": "cadeau_2_texte",
+          "label": "Cadeau 2 : libellé"
+        },
+        {
+          "type": "checkbox",
+          "id": "cadeau_2_valeur",
+          "label": "Cadeau 2 : afficher sa valeur",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "vignette_cadeau",
+          "label": "Cadeaux visibles dans les vignettes",
+          "default": false
+        }
       ]
     },
     {
       "type": "accordeon",
       "name": "Accordéon",
       "settings": [
-        { "type": "text", "id": "titre", "label": "Titre" },
-        { "type": "textarea", "id": "icones", "label": "Icônes (nom:libellé, une par ligne)", "info": "Format : nom_icone:Libellé. Noms disponibles : check, shield, leaf, lock, star, truck, gift, return, card." },
-        { "type": "richtext", "id": "contenu", "label": "Contenu (texte optionnel sous les icônes)" }
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Titre"
+        },
+        {
+          "type": "textarea",
+          "id": "icones",
+          "label": "Icônes (nom:libellé, une par ligne)",
+          "info": "Format : nom_icone:Libellé. Noms disponibles : check, shield, leaf, lock, star, truck, gift, return, card."
+        },
+        {
+          "type": "richtext",
+          "id": "contenu",
+          "label": "Contenu (texte optionnel sous les icônes)"
+        }
       ]
     },
     {
       "type": "complement",
       "name": "Produit complémentaire",
       "settings": [
-        { "type": "product", "id": "produit", "label": "Produit propose" },
-        { "type": "text", "id": "badge", "label": "Pastille (optionnel)", "info": "Ex. LE PREFERE" }
+        {
+          "type": "product",
+          "id": "produit",
+          "label": "Produit propose"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Pastille (optionnel)",
+          "info": "Ex. LE PREFERE"
+        }
       ]
     }
   ]
 }
 {% endschema %}
+

@@ -15,7 +15,7 @@
 <div class="iso-pa">
 
 {%- comment -%} Composant actuel : grille 3 col / carrousel mobile {%- endcomment -%}
-<section class="pa-sec pa-ben-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}"{% if section.settings.titre != blank %} aria-labelledby="pa-ben-h-{{ sid }}"{% endif %}><div class="pa-w">
+<section class="pa-sec pa-ben-sec{% if section.settings.filet %} pa-rule{% endif %}"{% if section.settings.titre != blank %} aria-labelledby="pa-ben-h-{{ sid }}"{% endif %} style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
   {%- if section.settings.titre != blank -%}<div class="pa-head"><h2 class="pa-h2" id="pa-ben-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>{%- endif -%}
   <ul class="pa-ben pa-scroll pa-bleed{% if item_count > 4 %} pa-ben--3{% endif %}" id="{{ tid }}">
     {%- for block in item_blocks -%}
@@ -130,7 +130,7 @@
   "name": "Bénéfices",
   "settings": [
     { "type": "text", "id": "titre", "label": "Titre" },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Creme" } ], "default": "creme" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#F4EDE1" },
     { "type": "checkbox", "id": "filet", "label": "Filet de separation en haut", "default": false }
   ],
   "blocks": [
@@ -157,3 +157,4 @@
   "max_blocks": 9
 }
 {% endschema %}
+

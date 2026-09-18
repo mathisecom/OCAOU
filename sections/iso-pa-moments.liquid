@@ -11,7 +11,7 @@
 {%- assign sid = section.id -%}
 {%- capture tid -%}pa-mq-{{ sid }}{%- endcapture -%}
 <div class="iso-pa">
-<section class="pa-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-mq-h-{{ sid }}">
+<section class="pa-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-mq-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}">
   <div class="pa-w">
     <div class="pa-head">
       {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
@@ -50,7 +50,7 @@
     { "type": "text", "id": "titre", "label": "Titre" },
     { "type": "textarea", "id": "texte", "label": "Texte (optionnel)" },
     { "type": "select", "id": "affichage", "label": "Affichage", "options": [ { "value": "defile", "label": "Carrousel" }, { "value": "grille", "label": "Grille" } ], "default": "defile" },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
   ],
   "blocks": [
@@ -67,3 +67,4 @@
   "max_blocks": 20
 }
 {% endschema %}
+

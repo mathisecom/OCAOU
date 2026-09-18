@@ -10,7 +10,7 @@
 {%- assign liste = section.settings.produits -%}
 {%- if liste.size > 0 or request.design_mode -%}
 <div class="iso-pa">
-<section class="pa-sec pa-rel-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}"><div class="pa-w">
+<section class="pa-sec pa-rel-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head"><h2 class="pa-h2" id="pa-rel-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
   <ul class="pa-rel pa-scroll pa-bleed" id="{{ tid }}">
     {%- for rp in liste -%}
@@ -47,8 +47,9 @@
   "settings": [
     { "type": "text", "id": "titre", "label": "Titre", "default": "Souvent achetés ensemble" },
     { "type": "product_list", "id": "produits", "label": "Produits", "info": "Jusqu'à 6 produits, dans l'ordre d'affichage.", "limit": 6 },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
   ]
 }
 {% endschema %}
+

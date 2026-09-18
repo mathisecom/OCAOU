@@ -27,7 +27,7 @@
 {%- capture tid -%}pa-vid-{{ sid }}{%- endcapture -%}
 {%- if nb > 0 -%}
 <div class="iso-pa">
-<section class="pa-sec pa-vid-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-vid-h-{{ sid }}"><div class="pa-w">
+<section class="pa-sec pa-vid-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-vid-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head">
     {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
     <h2 class="pa-h2" id="pa-vid-h-{{ sid }}">{{ titre }}</h2>
@@ -116,7 +116,7 @@
   "settings": [
     { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
     { "type": "text", "id": "titre", "label": "Titre", "default": "{titre} en vidéo", "info": "« {titre} » est remplacé par le nom du produit." },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false },
     { "type": "header", "content": "Sans vidéo ci-dessous" },
     { "type": "paragraph", "content": "La section prend alors les vidéos du champ méta de la fiche produit." },
@@ -138,3 +138,4 @@
   "max_blocks": 12
 }
 {% endschema %}
+

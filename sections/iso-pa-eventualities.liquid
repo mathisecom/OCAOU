@@ -1,0 +1,66 @@
+{%- comment -%}
+  Piste A : « Parés à toutes les éventualités. Juste O'CAOU. »
+  Deux dispositions, réglage « Disposition » :
+  - « Côte à côte » (par défaut, retenue le 17/09) : le texte sort de la photo. Filet doré, titre et
+    texte sur le fond de la section, photo entière à côté (aucun voile, aucun recadrage large).
+  - « Texte sur la photo » : disposition d'origine, grande image sur toute la carte et voile ivoire
+    en dégradé depuis le coin du texte.
+  Photo par défaut : celle du bandeau du site en ligne (réglage retours_product_image, ocaou-photo-1.png).
+  Arbitrages :
+  - RGAA : titre h2 relié à la section, texte brun sur fond de section (contraste supérieur à 10:1) en
+    côte à côte, sur voile ivoire (supérieur à 7:1) en texte sur photo ; texte alternatif administrable ;
+    le texte précède l'image dans le code, le côté ne change que l'ordre affiché.
+  - Éco : aucun script, image différée (section sous la ligne de flottaison), largeurs servies bornées
+    à la taille d'origine et à la colonne réellement occupée.
+  - Cadrage : la photo est en portrait. En côte à côte elle est servie en 3/4 sur ordinateur (cadrage
+    d'origine) et en 4/5 sur mobile ; le cadrage vertical reste réglable. Chaque point suivi d'une
+    espace passe à la ligne dans le titre.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+{%- capture texte -%}
+  {%- if s.accroche != blank -%}<p class="pa-eyebrow">{{ s.accroche | escape }}</p>{%- endif -%}
+  <h2 class="pa-evt-h" id="pa-evt-h-{{ section.id }}">{{ s.titre | escape | replace: '. ', '.<br>' }}</h2>
+  {%- if s.texte != blank -%}<p class="pa-lead">{{ s.texte | escape }}</p>{%- endif -%}
+{%- endcapture -%}
+<div class="iso-pa">
+<section class="pa-sec{% if s.filet %} pa-rule{% endif %}" aria-labelledby="pa-evt-h-{{ section.id }}" style="background:{{ s.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
+  {%- if s.dispo == 'overlay' -%}
+    <div class="pa-evt{% if s.cote == 'droite' %} pa-evt--r{% endif %}{% unless s.image %} pa-evt--vide{% endunless %}">
+      {%- if s.image -%}
+        {%- capture pos -%}style="object-position:50% {{ s.cadrage }}%"{%- endcapture -%}
+        {%- render 'iso-pa-img', image: s.image, alt: s.alt, cls: 'pa-evt-bg', attrs: pos, w: 1200, sizes: '(min-width: 960px) min(1520px, calc(100vw - 96px)), calc(100vw - 40px)', widths: '480,720,960,1200,1500' -%}
+      {%- endif -%}
+      <div class="pa-evt-txt">{{ texte }}</div>
+    </div>
+  {%- else -%}
+    <div class="pa-evtc{% if s.cote == 'droite' %} pa-evtc--r{% endif %}{% unless s.image %} pa-evtc--vide{% endunless %}">
+      <div class="pa-evtc-txt"><span class="pa-evtc-bar" aria-hidden="true"></span>{{ texte }}</div>
+      {%- if s.image -%}
+        {%- capture pos -%}style="object-position:50% {{ s.cadrage }}%"{%- endcapture -%}
+        <div class="pa-evtc-shot">
+          {%- render 'iso-pa-img', image: s.image, alt: s.alt, attrs: pos, w: 900, sizes: '(min-width: 960px) min(760px, 48vw), calc(100vw - 40px)', widths: '420,600,760,900,1100' -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Éventualités",
+  "settings": [
+    { "type": "select", "id": "dispo", "label": "Disposition", "options": [ { "value": "cote", "label": "Côte à côte" }, { "value": "overlay", "label": "Texte sur la photo" } ], "default": "cote" },
+    { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Parés à toutes les éventualités. Juste O'CAOU.", "info": "Retour à la ligne après chaque point." },
+    { "type": "textarea", "id": "texte", "label": "Texte" },
+    { "type": "image_picker", "id": "image", "label": "Grande image" },
+    { "type": "text", "id": "alt", "label": "Description de l'image (texte alternatif)" },
+    { "type": "range", "id": "cadrage", "label": "Cadrage vertical de l'image", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 50, "info": "0 : haut de la photo, 100 : bas." },
+    { "type": "select", "id": "cote", "label": "Texte sur ordinateur", "options": [ { "value": "gauche", "label": "À gauche" }, { "value": "droite", "label": "À droite" } ], "default": "gauche" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#F4EDE1" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ]
+}
+{% endschema %}
+

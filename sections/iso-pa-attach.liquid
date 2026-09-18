@@ -12,7 +12,7 @@
 {%- assign sid = section.id -%}
 {%- capture tid -%}pa-att-{{ sid }}{%- endcapture -%}
 <div class="iso-pa">
-<section class="pa-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-att-h-{{ sid }}"><div class="pa-w">
+<section class="pa-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-att-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head">
     {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
     <h2 class="pa-h2" id="pa-att-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
@@ -44,7 +44,7 @@
     { "type": "text", "id": "titre", "label": "Titre", "default": "Avec ses attaches intégrées, il s'accroche partout" },
     { "type": "textarea", "id": "texte", "label": "Texte principal", "default": "Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l'accrocher facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé." },
     { "type": "textarea", "id": "complement", "label": "Texte complémentaire (optionnel)" },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
   ],
   "blocks": [
@@ -60,3 +60,4 @@
   "max_blocks": 8
 }
 {% endschema %}
+

@@ -17,7 +17,7 @@
 {%- comment -%} Sans avis, la section ne s'affiche pas (fiches dont les avis restent à saisir). {%- endcomment -%}
 {%- if section.blocks.size > 0 -%}
 <div class="iso-pa">
-<section class="pa-sec pa-rv-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" id="pa-avis" aria-labelledby="pa-rv-h-{{ sid }}"><div class="pa-w">
+<section class="pa-sec pa-rv-sec{% if section.settings.filet %} pa-rule{% endif %}" id="pa-avis" aria-labelledby="pa-rv-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
   <div class="pa-head pa-rv-head">
     <h2 class="pa-h2" id="pa-rv-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
     {%- if section.settings.note != blank -%}
@@ -73,7 +73,7 @@
     { "type": "text", "id": "titre", "label": "Titre", "default": "Ils en parlent mieux que nous" },
     { "type": "text", "id": "note", "label": "Note moyenne", "default": "4,8" },
     { "type": "text", "id": "total", "label": "Nombre d'avis" },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "creme" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#F4EDE1" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
   ],
   "blocks": [
@@ -97,3 +97,4 @@
   "max_blocks": 20
 }
 {% endschema %}
+

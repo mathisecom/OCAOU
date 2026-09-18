@@ -5,7 +5,7 @@
 {%- endcomment -%}
 {%- assign sid = section.id -%}
 <div class="iso-pa">
-<section class="pa-sec pa-hs-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-hs-h-{{ sid }}"><div class="pa-w">
+<section class="pa-sec pa-hs-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-hs-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
 <div class="pa-hs">
   <div class="pa-hs-media">
     {%- if section.settings.image -%}{%- render 'iso-pa-img', image: section.settings.image, alt: section.settings.alt, sizes: '(min-width: 960px) min(672px, calc(42vw - 40px)), 100vw', widths: '480,720,960,1200' -%}{%- endif -%}
@@ -34,7 +34,7 @@
     { "type": "textarea", "id": "intro", "label": "Introduction" },
     { "type": "image_picker", "id": "image", "label": "Photo" },
     { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif)" },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
   ],
   "blocks": [
@@ -52,3 +52,4 @@
   "max_blocks": 8
 }
 {% endschema %}
+

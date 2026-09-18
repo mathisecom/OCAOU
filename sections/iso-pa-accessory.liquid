@@ -1,0 +1,51 @@
+{%- comment -%}
+  Piste A : bloc accessoire (ex. « Compatible avec la poignée nomade »).
+  Image administrable à gauche, texte + CTA à droite. Inséré uniquement dans la fiche gourde.
+  Arbitrages :
+  - RGAA : image alt obligatoire, lien CTA avec texte explicite, bouton 44 px min.
+  - Éco : image_picker vide accepté (section masquée côté visuel), aucun script ajouté.
+  - Perf : chargement différé de la photo (hors LCP).
+{%- endcomment -%}
+<div class="iso-pa">
+<section class="pa-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-acc2-h-{{ section.id }}" style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
+  <div class="pa-acc2">
+    <div class="pa-acc2-img">
+      {%- if section.settings.image -%}
+        {%- render 'iso-pa-img', image: section.settings.image, alt: section.settings.alt, sizes: '(min-width: 960px) min(768px, calc(48vw - 46px)), 100vw', widths: '480,720,960' -%}
+      {%- endif -%}
+    </div>
+    <div class="pa-acc2-txt">
+      {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
+      <h2 class="pa-h2" id="pa-acc2-h-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      {%- if section.settings.texte != blank -%}<p class="pa-lead">{{ section.settings.texte | escape }}</p>{%- endif -%}
+      {%- if section.settings.cta_texte != blank and section.settings.cta_lien != blank -%}
+        <a class="pa-acc2-cta" href="{{ section.settings.cta_lien }}" {% if section.settings.cta_nouvel_onglet %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          {% render 'iso-pa-icon', name: 'arrow-right' %}
+          {{ section.settings.cta_texte | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Accessoire",
+  "settings": [
+    { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
+    { "type": "text", "id": "titre", "label": "Titre" },
+    { "type": "textarea", "id": "texte", "label": "Texte" },
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif)" },
+    { "type": "header", "content": "Bouton (CTA)" },
+    { "type": "text", "id": "cta_texte", "label": "Texte du bouton" },
+    { "type": "url", "id": "cta_lien", "label": "Lien" },
+    { "type": "checkbox", "id": "cta_nouvel_onglet", "label": "Ouvrir dans un nouvel onglet", "default": false },
+    { "type": "header", "content": "Apparence" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#F4EDE1" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ]
+}
+{% endschema %}
+

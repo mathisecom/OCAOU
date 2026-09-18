@@ -19,7 +19,7 @@
 {%- if f600 -%}<style>{{ f600 | font_face: font_display: 'swap' }}</style>{%- endif -%}
 <div class="iso-pa">
 <footer class="pa-ft">
-<div class="pa-ft-c"><div class="pa-w">
+<div class="pa-ft-c" style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
   <div class="pa-nl">
     <h2 class="pa-h2" id="pa-nl-h-{{ sid }}">{{ section.settings.nl_titre | escape }}</h2>
     {%- form 'customer', id: fid, class: 'pa-nl-f' -%}
@@ -74,45 +74,171 @@
 {
   "name": "Pied de page",
   "settings": [
-    { "type": "header", "content": "Lettre d'information" },
-    { "type": "text", "id": "nl_titre", "label": "Titre" },
-    { "type": "text", "id": "nl_champ", "label": "Libellé du champ", "default": "Adresse e-mail" },
-    { "type": "text", "id": "nl_bouton", "label": "Bouton", "default": "S’inscrire" },
-    { "type": "header", "content": "Contact et mentions" },
-    { "type": "text", "id": "email", "label": "E-mail de contact" },
-    { "type": "textarea", "id": "adresse", "label": "Adresse" },
-    { "type": "text", "id": "legal_1_texte", "label": "Lien légal 1 : libellé" },
-    { "type": "url", "id": "legal_1_url", "label": "Lien légal 1 : adresse" },
-    { "type": "text", "id": "legal_2_texte", "label": "Lien légal 2 : libellé" },
-    { "type": "url", "id": "legal_2_url", "label": "Lien légal 2 : adresse" },
-    { "type": "text", "id": "legal_3_texte", "label": "Lien légal 3 : libellé" },
-    { "type": "url", "id": "legal_3_url", "label": "Lien légal 3 : adresse" },
-    { "type": "text", "id": "marque", "label": "Nom après ©" },
-    { "type": "header", "content": "Réseaux sociaux" },
-    { "type": "paragraph", "content": "Les adresses Facebook et Instagram se saisissent dans Boutique en ligne > Thèmes > Personnaliser > Préférences du thème." }
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#F4EDE1"
+    },
+    {
+      "type": "header",
+      "content": "Lettre d'information"
+    },
+    {
+      "type": "text",
+      "id": "nl_titre",
+      "label": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "nl_champ",
+      "label": "Libellé du champ",
+      "default": "Adresse e-mail"
+    },
+    {
+      "type": "text",
+      "id": "nl_bouton",
+      "label": "Bouton",
+      "default": "S’inscrire"
+    },
+    {
+      "type": "header",
+      "content": "Contact et mentions"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "E-mail de contact"
+    },
+    {
+      "type": "textarea",
+      "id": "adresse",
+      "label": "Adresse"
+    },
+    {
+      "type": "text",
+      "id": "legal_1_texte",
+      "label": "Lien légal 1 : libellé"
+    },
+    {
+      "type": "url",
+      "id": "legal_1_url",
+      "label": "Lien légal 1 : adresse"
+    },
+    {
+      "type": "text",
+      "id": "legal_2_texte",
+      "label": "Lien légal 2 : libellé"
+    },
+    {
+      "type": "url",
+      "id": "legal_2_url",
+      "label": "Lien légal 2 : adresse"
+    },
+    {
+      "type": "text",
+      "id": "legal_3_texte",
+      "label": "Lien légal 3 : libellé"
+    },
+    {
+      "type": "url",
+      "id": "legal_3_url",
+      "label": "Lien légal 3 : adresse"
+    },
+    {
+      "type": "text",
+      "id": "marque",
+      "label": "Nom après ©"
+    },
+    {
+      "type": "header",
+      "content": "Réseaux sociaux"
+    },
+    {
+      "type": "paragraph",
+      "content": "Les adresses Facebook et Instagram se saisissent dans Boutique en ligne > Thèmes > Personnaliser > Préférences du thème."
+    }
   ],
   "blocks": [
     {
       "type": "colonne",
       "name": "Colonne de liens",
       "settings": [
-        { "type": "text", "id": "titre", "label": "Titre" },
-        { "type": "link_list", "id": "menu", "label": "Menu", "info": "Ses liens s'affichent avant les liens ci-dessous." },
-        { "type": "text", "id": "lien_1_texte", "label": "Lien 1 : libellé" },
-        { "type": "url", "id": "lien_1_url", "label": "Lien 1 : adresse" },
-        { "type": "text", "id": "lien_2_texte", "label": "Lien 2 : libellé" },
-        { "type": "url", "id": "lien_2_url", "label": "Lien 2 : adresse" },
-        { "type": "text", "id": "lien_3_texte", "label": "Lien 3 : libellé" },
-        { "type": "url", "id": "lien_3_url", "label": "Lien 3 : adresse" },
-        { "type": "text", "id": "lien_4_texte", "label": "Lien 4 : libellé" },
-        { "type": "url", "id": "lien_4_url", "label": "Lien 4 : adresse" },
-        { "type": "text", "id": "lien_5_texte", "label": "Lien 5 : libellé" },
-        { "type": "url", "id": "lien_5_url", "label": "Lien 5 : adresse" },
-        { "type": "text", "id": "lien_6_texte", "label": "Lien 6 : libellé" },
-        { "type": "url", "id": "lien_6_url", "label": "Lien 6 : adresse" }
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Titre"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "info": "Ses liens s'affichent avant les liens ci-dessous."
+        },
+        {
+          "type": "text",
+          "id": "lien_1_texte",
+          "label": "Lien 1 : libellé"
+        },
+        {
+          "type": "url",
+          "id": "lien_1_url",
+          "label": "Lien 1 : adresse"
+        },
+        {
+          "type": "text",
+          "id": "lien_2_texte",
+          "label": "Lien 2 : libellé"
+        },
+        {
+          "type": "url",
+          "id": "lien_2_url",
+          "label": "Lien 2 : adresse"
+        },
+        {
+          "type": "text",
+          "id": "lien_3_texte",
+          "label": "Lien 3 : libellé"
+        },
+        {
+          "type": "url",
+          "id": "lien_3_url",
+          "label": "Lien 3 : adresse"
+        },
+        {
+          "type": "text",
+          "id": "lien_4_texte",
+          "label": "Lien 4 : libellé"
+        },
+        {
+          "type": "url",
+          "id": "lien_4_url",
+          "label": "Lien 4 : adresse"
+        },
+        {
+          "type": "text",
+          "id": "lien_5_texte",
+          "label": "Lien 5 : libellé"
+        },
+        {
+          "type": "url",
+          "id": "lien_5_url",
+          "label": "Lien 5 : adresse"
+        },
+        {
+          "type": "text",
+          "id": "lien_6_texte",
+          "label": "Lien 6 : libellé"
+        },
+        {
+          "type": "url",
+          "id": "lien_6_url",
+          "label": "Lien 6 : adresse"
+        }
       ]
     }
   ],
   "max_blocks": 12
 }
 {% endschema %}
+

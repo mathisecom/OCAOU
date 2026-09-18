@@ -16,14 +16,14 @@
       "settings": {
         "accroche": "",
         "titre": "Parés à toutes les éventualités. Juste O'CAOU.",
-        "fond": "creme",
         "filet": false,
-        "image": "shopify:\/\/shop_images\/ocaou-photo-1.png",
+        "image": "shopify://shop_images/ocaou-photo-1.png",
         "alt": "Cabas léopard O'CAOU « je prends TOUT » porté à l'épaule, gourde accrochée à l'anse",
         "cadrage": 55,
         "cote": "gauche",
         "dispo": "cote",
-        "texte": ""
+        "texte": "",
+        "bg_color": "#F4EDE1"
       }
     }
   },

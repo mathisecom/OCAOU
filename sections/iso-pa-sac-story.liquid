@@ -9,7 +9,7 @@
   - Perf : photo principale chargée en priorité haute (eager).
 {%- endcomment -%}
 <div class="iso-pa">
-<section class="pa-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-story-h-{{ section.id }}"><div class="pa-w">
+<section class="pa-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-story-h-{{ section.id }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-story{% if section.settings.cote == 'droite' %} pa-story--r{% endif %}">
     {%- assign rep = false -%}
     {%- if section.settings.dispo_puces == 'reperes' and section.settings.puces != blank -%}{%- assign rep = true -%}{%- endif -%}
@@ -114,8 +114,9 @@
     { "type": "image_picker", "id": "image_d", "label": "Design D (vignette)" },
     { "type": "text", "id": "alt_d", "label": "Description design D" },
     { "type": "header", "content": "Apparence" },
-    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
   ]
 }
 {% endschema %}
+
