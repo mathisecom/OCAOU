@@ -199,7 +199,8 @@
         "border_thickness": 0,
         "section_radius": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "testimonials_LKV3kq": {
       "type": "testimonials",
