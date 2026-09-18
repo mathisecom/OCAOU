@@ -11,21 +11,6 @@
   "type": "footer",
   "name": "Blocs communs (toutes fiches)",
   "sections": {
-    "eventualities": {
-      "type": "iso-pa-eventualities",
-      "settings": {
-        "accroche": "",
-        "titre": "Parés à toutes les éventualités. Juste O'CAOU.",
-        "filet": false,
-        "image": "shopify://shop_images/ocaou-photo-1.png",
-        "alt": "Cabas léopard O'CAOU « je prends TOUT » porté à l'épaule, gourde accrochée à l'anse",
-        "cadrage": 55,
-        "cote": "gauche",
-        "dispo": "cote",
-        "texte": "",
-        "bg_color": "#F4EDE1"
-      }
-    },
     "moments": {
       "type": "iso-pa-moments",
       "blocks": {
@@ -219,6 +204,21 @@
         "affichage": "defile",
         "filet": true,
         "bg_color": "#FFFFFF"
+      }
+    },
+    "eventualities": {
+      "type": "iso-pa-eventualities",
+      "settings": {
+        "accroche": "",
+        "titre": "Parés à toutes les éventualités. Juste O'CAOU.",
+        "filet": false,
+        "image": "shopify://shop_images/ocaou-photo-1.png",
+        "alt": "Cabas léopard O'CAOU « je prends TOUT » porté à l'épaule, gourde accrochée à l'anse",
+        "cadrage": 55,
+        "cote": "gauche",
+        "dispo": "cote",
+        "texte": "",
+        "bg_color": "#F4EDE1"
       }
     }
   },
