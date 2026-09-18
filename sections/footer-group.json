@@ -613,9 +613,9 @@
           "settings": {
             "titre": "La marque",
             "lien_1_texte": "Pourquoi O’CAOU",
-            "lien_1_url": "https://ocaou.com/#shopify-section-template--29953933869390__ocaoujaibesoin_bxqEpT",
-            "lien_2_texte": "L’esprit",
-            "lien_2_url": "shopify://pages/pourquoi-o-caou",
+            "lien_1_url": "shopify://pages/pourquoi-o-caou",
+            "lien_2_texte": "",
+            "lien_2_url": "",
             "lien_3_texte": "Ils parlent de nous",
             "lien_3_url": "shopify://pages/ils-parlent-de-nous",
             "lien_4_texte": "Le coin des parents",
