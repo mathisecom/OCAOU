@@ -1,0 +1,656 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "iso-pa",
+  "sections": {
+    "main": {
+      "type": "iso-pa-product",
+      "blocks": {
+        "formule_2": {
+          "type": "formule",
+          "settings": {
+            "libelle": "Gourde + Lunchbox",
+            "badge": "DUO MIAM",
+            "prix": 4990,
+            "produits": "lunch-box",
+            "nom_offre": "Duo Miam",
+            "cadeau_1": "poignee-nomade",
+            "cadeau_1_texte": "Poignée nomade offerte",
+            "cadeau_1_valeur": true,
+            "cadeau_2": "",
+            "cadeau_2_texte": "",
+            "cadeau_2_valeur": false,
+            "vignette_cadeau": false
+          }
+        },
+        "formule_3": {
+          "type": "formule",
+          "settings": {
+            "libelle": "+ Les couverts",
+            "badge": "COFFRET PREMIER REPAS",
+            "prix": 6990,
+            "produits": "lunch-box, couverts",
+            "nom_offre": "Kit Repas Nomade + couverts",
+            "cadeau_1": "pochon",
+            "cadeau_1_texte": "Pochon O’CAOU offert",
+            "cadeau_1_valeur": true,
+            "cadeau_2": "poignee-nomade",
+            "cadeau_2_texte": "Poignée nomade offerte",
+            "cadeau_2_valeur": true,
+            "vignette_cadeau": false
+          }
+        },
+        "formule_4": {
+          "type": "formule",
+          "settings": {
+            "libelle": "+ Sac isotherme",
+            "badge": "KIT REPAS COMPLET",
+            "prix": 9990,
+            "produits": "lunch-box, couverts, sac-isotherme",
+            "nom_offre": "Kit Repas Nomade complet",
+            "cadeau_1": "poignee-nomade",
+            "cadeau_1_texte": "Poignée nomade offerte",
+            "cadeau_1_valeur": true,
+            "cadeau_2": "pochon",
+            "cadeau_2_texte": "Pochon O’CAOU offert",
+            "cadeau_2_valeur": true,
+            "vignette_cadeau": true
+          }
+        },
+        "accordeon_1": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Pourquoi choisir la gourde O’CAOU ?",
+            "icones": "",
+            "contenu": "<ul><li>Sans goût ni odeur<\/li><li>Pensée pour durer et accompagner les enfants pendant des années<\/li><\/ul>"
+          }
+        },
+        "accordeon_2": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Entretien",
+            "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
+            "contenu": "<p>Passe au lave-vaisselle. Peut être stérilisée dans l’eau bouillante ou à la vapeur.<\/p>"
+          }
+        },
+        "accordeon_3": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques",
+            "icones": "",
+            "contenu": "<ul><li>Dimensions : H 190,2 mm<\/li><li>Capacité : 350 ml<\/li><li>Composition : silicone alimentaire<\/li><\/ul>"
+          }
+        },
+        "complement_1": {
+          "type": "complement",
+          "settings": {
+            "produit": "poignee-nomade",
+            "badge": ""
+          }
+        }
+      },
+      "block_order": [
+        "formule_2",
+        "formule_3",
+        "formule_4",
+        "accordeon_1",
+        "accordeon_2",
+        "accordeon_3",
+        "complement_1"
+      ],
+      "settings": {
+        "titre": "Gourde",
+        "accroche": "O'Caou j'ai faim",
+        "collection": "repas",
+        "badges": "",
+        "note": "4,8",
+        "avis": "+ 500 avis",
+        "pitch_titre": "La gourde qui survit aux enfants",
+        "pitch": "Une gourde en silicone qui accompagne votre enfant partout : à la crèche, à la maternelle, au sport, en balade ou en voyage. C’est la gourde des Petits Grands. Pensée pour les petites mains. Imaginée pour les grandes aventures.",
+        "puces": "Incassable\nDéveloppe l’autonomie\nSouple & légère\nBouchon anti-fuite",
+        "galerie": "1,4,2,3,8,10,11",
+        "leopard": "Léopard\nGraou",
+        "offre_titre": "Complétez votre Kit Repas Nomade",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Compatible avec la poignée nomade \"Je l'emporte partout !\"",
+        "complements_position": "points_forts",
+        "jours": 2,
+        "livraison": "Livraison Suivie en France"
+      }
+    },
+    "videos": {
+      "type": "iso-pa-videos",
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "fond": "blanc",
+        "filet": true
+      },
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/e4a7990fdc1245e98ba13ed17ad2b4a0\/e4a7990fdc1245e98ba13ed17ad2b4a0.HD-720p-4.5Mbps-94499649.mp4",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/e4a7990fdc1245e98ba13ed17ad2b4a0.thumbnail.0000000000.jpg?v=1789491768"
+          }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/c203730451e74f4d8fd81a2e7d20d893\/c203730451e74f4d8fd81a2e7d20d893.HD-720p-4.5Mbps-94565373.mp4",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/c203730451e74f4d8fd81a2e7d20d893.thumbnail.0000000000.jpg?v=1789543602"
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2"
+      ]
+    },
+    "associes": {
+      "type": "iso-pa-related",
+      "settings": {
+        "titre": "Souvent achetés ensemble",
+        "produits": [
+          "coffret-premier-repas-1",
+          "coffret-comme-les-grands-1",
+          "duo-essentiel",
+          "duo-miam"
+        ],
+        "fond": "blanc",
+        "filet": true
+      }
+    },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_20_11_08.png",
+            "alt": "Enfant qui boit à sa gourde léopard",
+            "titre": "Souple",
+            "texte": "Silicone flexible et incassable. Une gourde qui résiste aux chutes et aux jeux les plus fous.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPTImage6sept.2026_20_02_28_30564ab5-fe49-4388-9107-36357badb56e.png",
+            "alt": "Bouchons à paille de la gourde, en quatre coloris",
+            "titre": "Pratique",
+            "texte": "Bouchon anti-fuite et paille amovible. Douce pour les dents, facile à ouvrir, facile à nettoyer.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPTImage26aout2026_12_12_04.png",
+            "alt": "Base hexagonale de la gourde, marquée 350 ml",
+            "titre": "Hygiène",
+            "texte": "Passe au lave-vaisselle et se stérilise à l’eau bouillante ou à la vapeur.",
+            "badges": ""
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPTImage26aout2026_11_53_21.png",
+            "alt": "Les quatre coloris de la gourde O’CAOU",
+            "titre": "Protection",
+            "texte": "Silicone alimentaire LFGB, sans BPA, sans PVC, sans phtalates. Sans goût ni odeur.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "titre": "Vous allez adorer la gourde O’CAOU parce que…",
+        "fond": "creme",
+        "filet": false
+      }
+    },
+    "frise": {
+      "type": "iso-pa-timeline",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_0302.heic",
+            "alt": "Enfant qui boit à sa gourde beige",
+            "age": "À 1 an",
+            "texte": "Il apprend à boire tout seul"
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_5_sept._2026_14_32_24.png",
+            "alt": "Enfant souriante avec le sac léopard ouvert",
+            "age": "À 3 ans",
+            "texte": "Elle l’accompagne à la maternelle"
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ocaou-sac-enfant-poussette.jpg",
+            "alt": "Enfant qui boit à sa gourde près d’une poussette",
+            "age": "À 5 ans",
+            "texte": "Elle hydrate au sport"
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_20_21_29.png",
+            "alt": "Bébé qui tient une gourde rose à la plage",
+            "age": "À 7 ans",
+            "texte": "Elle voyage avec lui"
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "surtitre": "Pensée pour durer",
+        "titre": "Une gourde pensée pour grandir avec votre enfant",
+        "slogan": "Une seule gourde. Des centaines d’aventures.",
+        "fond": "blanc",
+        "filet": false
+      }
+    },
+    "moments": {
+      "type": "iso-pa-moments",
+      "blocks": {
+        "moment_1": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_24_50.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_2": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_0055.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_3": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_6907.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_4": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_13_55.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_5": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20260809_172116.jpg",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_6": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_6298.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_7": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_7538.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_8": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_12_16.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_9": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_28_18.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_10": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_0366.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_11": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_19_35.png",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_12": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_0538.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_13": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_6301.heic",
+            "alt": "",
+            "label": ""
+          }
+        },
+        "moment_14": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PANA7813.jpg",
+            "alt": "",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "moment_1",
+        "moment_2",
+        "moment_3",
+        "moment_4",
+        "moment_5",
+        "moment_6",
+        "moment_7",
+        "moment_8",
+        "moment_9",
+        "moment_10",
+        "moment_11",
+        "moment_12",
+        "moment_13",
+        "moment_14"
+      ],
+      "settings": {
+        "titre": "Les moments de vie",
+        "fond": "blanc",
+        "filet": false
+      }
+    },
+    "avis_titre": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_dxbRyg": {
+          "type": "subheading",
+          "settings": {
+            "text": "ILS EN PARLENT MIEUX QUE NOUS"
+          }
+        },
+        "heading_VwLx79": {
+          "type": "heading",
+          "settings": {
+            "text": "+500 PARENTS CONQUIS",
+            "heading_tag": "h3",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_dxbRyg",
+        "heading_VwLx79"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "#000000"
+      }
+    },
+    "avis": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_DTTqzy": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Delphine K.",
+            "title": "coussinets discrets",
+            "content": "<p>Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.<\/p>"
+          }
+        },
+        "testimonial_hD44TM": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Laura J.",
+            "title": "Lingettes pour tout",
+            "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.<\/p>"
+          }
+        },
+        "testimonial_xEqXey": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sophia M.",
+            "title": "Sac hyper utile et très pratique!",
+            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!<\/p>"
+          }
+        },
+        "testimonial_PAByn8": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Elodie O.",
+            "title": "couverture légère",
+            "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.<\/p>"
+          }
+        },
+        "testimonial_DnV3QU": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sandrine C.",
+            "title": "La taille est parfaite!",
+            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite!”<\/p>"
+          }
+        },
+        "testimonial_WUWxXP": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Nadia T.",
+            "title": "Poche couvert idéale",
+            "content": "<p>Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...<\/p>"
+          }
+        },
+        "testimonial_PE3qw8": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Séverine F.",
+            "title": "Veilleuse baladeuse",
+            "content": "<p>Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.<\/p>"
+          }
+        },
+        "testimonial_BpQWPf": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Aurore P.",
+            "title": "Fourre-tout beau et spacieux",
+            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.<\/p>"
+          }
+        },
+        "testimonial_cdKCDw": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Caroline M.",
+            "title": "Je l'utilise non-stop",
+            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊<\/p>"
+          }
+        },
+        "testimonial_DzKV7A": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Cécile G.",
+            "title": "Compartiments très pratiques",
+            "content": "<p> Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.<\/p>"
+          }
+        },
+        "testimonial_VmiL9x": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Marion C.",
+            "title": "Coup de cœur pour ce sac",
+            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”<\/p>"
+          }
+        },
+        "testimonial_cxK7qF": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Gaëlle C.",
+            "title": "Un bec à croquer",
+            "content": "<p>Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.<\/p>"
+          }
+        },
+        "testimonial_J4K6jM": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Catherine H.",
+            "title": "Paille adaptée aux petits",
+            "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.<\/p>"
+          }
+        },
+        "testimonial_tnLDK4": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Iris C.",
+            "title": "Il est encore plus génial en vrai !",
+            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_DTTqzy",
+        "testimonial_hD44TM",
+        "testimonial_xEqXey",
+        "testimonial_PAByn8",
+        "testimonial_DnV3QU",
+        "testimonial_WUWxXP",
+        "testimonial_PE3qw8",
+        "testimonial_BpQWPf",
+        "testimonial_cdKCDw",
+        "testimonial_DzKV7A",
+        "testimonial_VmiL9x",
+        "testimonial_cxK7qF",
+        "testimonial_J4K6jM",
+        "testimonial_tnLDK4"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": false,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "#fcf9f5",
+        "testimonial_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "videos",
+    "associes",
+    "benefices",
+    "frise",
+    "moments",
+    "avis_titre",
+    "avis"
+  ]
+}
