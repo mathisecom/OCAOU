@@ -63,12 +63,39 @@
         {%- assign ku = 'legal_' | append: i | append: '_url' -%}
         {%- if section.settings[kt] != blank and section.settings[ku] != blank -%}<li><a href="{{ section.settings[ku] }}">{{ section.settings[kt] | escape }}</a></li>{%- endif -%}
       {%- endfor -%}
+      {%- if section.settings.cookies_texte != blank -%}
+        <li><button type="button" class="pa-ft-cookies" hidden>{{ section.settings.cookies_texte | escape }}</button></li>
+      {%- endif -%}
     </ul>
     <p>© {{ 'now' | date: '%Y' }} Tous droits réservés · {{ section.settings.marque | default: shop.name | escape }}</p>
   </div>
 </div></div>
 </footer>
 </div>
+
+{%- if section.settings.cookies_texte != blank -%}
+  {%- comment -%}
+    Le bouton reste caché tant que la fenêtre de préférences de Shopify n'a pas répondu :
+    un lien qui n'ouvre rien vaut moins que pas de lien du tout.
+  {%- endcomment -%}
+  <script>
+    (function () {
+      var bouton = document.querySelector('#shopify-section-{{ section.id }} .pa-ft-cookies');
+      if (!bouton) return;
+      function brancher() {
+        if (!window.privacyBanner || typeof window.privacyBanner.showPreferences !== 'function') return false;
+        bouton.hidden = false;
+        bouton.addEventListener('click', function () { window.privacyBanner.showPreferences(); });
+        return true;
+      }
+      if (brancher()) return;
+      var essais = 0;
+      var minuteur = setInterval(function () {
+        if (brancher() || ++essais > 20) clearInterval(minuteur);
+      }, 500);
+    })();
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
@@ -144,6 +171,12 @@
       "type": "url",
       "id": "legal_3_url",
       "label": "Lien légal 3 : adresse"
+    },
+    {
+      "type": "text",
+      "id": "cookies_texte",
+      "label": "Lien de gestion des cookies",
+      "info": "Ouvre la fenêtre de préférences de cookies. Laisser vide pour ne pas afficher le lien."
     },
     {
       "type": "text",

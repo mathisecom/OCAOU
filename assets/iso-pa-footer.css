@@ -52,7 +52,9 @@
 /* Fiche produit : place laissée sous la barre d'achat qui reste au bas de l'écran. */
 body:has(.pa-sbar) .iso-pa .pa-ft-bot{padding-bottom:100px}
 .iso-pa .pa-ft-leg{display:flex;flex-wrap:wrap;gap:0 18px}
-.iso-pa .pa-ft-leg a{display:inline-block;padding:8px 0}
+.iso-pa .pa-ft-leg a,.iso-pa .pa-ft-leg button{display:inline-block;padding:8px 0}
+.iso-pa .pa-ft-leg button{appearance:none;-webkit-appearance:none;background:none;border:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+.iso-pa .pa-ft-leg button[hidden]{display:none}
 
 /* réseaux sociaux : adresses tenues dans Boutique en ligne > Préférences du thème */
 .iso-pa .pa-ft-soc{display:flex;gap:8px;order:-1}
@@ -60,7 +62,7 @@ body:has(.pa-sbar) .iso-pa .pa-ft-bot{padding-bottom:100px}
 .iso-pa .pa-ft-soc svg{width:20px;height:20px;display:block}
 
 @media (hover:hover){
-  .iso-pa .pa-ft-cols a:hover,.iso-pa .pa-ft-leg a:hover{color:var(--rt);text-decoration:underline;text-underline-offset:3px}
+  .iso-pa .pa-ft-cols a:hover,.iso-pa .pa-ft-leg a:hover,.iso-pa .pa-ft-leg button:hover{color:var(--rt);text-decoration:underline;text-underline-offset:3px}
   .iso-pa .pa-nl-f button:hover{background:var(--gold-d)}
   .iso-pa .pa-ft-soc a:hover{background:#fff;color:var(--rt)}
 }
@@ -72,7 +74,7 @@ body:has(.pa-sbar) .iso-pa .pa-ft-bot{padding-bottom:100px}
   .iso-pa .pa-ft-cols{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;padding:40px 0 44px}
   .iso-pa .pa-ft-cols a{padding:5px 0}
   .iso-pa .pa-ft-bot,body:has(.pa-sbar) .iso-pa .pa-ft-bot{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:20px 0 28px}
-  .iso-pa .pa-ft-leg a{padding:4px 0}
+  .iso-pa .pa-ft-leg a,.iso-pa .pa-ft-leg button{padding:4px 0}
   .iso-pa .pa-ft-soc{order:0}
   .iso-pa .pa-ft-soc a{width:36px;height:36px}
 }
