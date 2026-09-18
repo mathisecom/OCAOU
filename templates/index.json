@@ -1207,11 +1207,338 @@
         "accordion_background": "",
         "accordion_text_color": ""
       }
+    },
+    "video_8TEnKB": {
+      "type": "video",
+      "blocks": {
+        "play_WekmR6": {
+          "type": "play",
+          "settings": {}
+        },
+        "heading_BPHqMz": {
+          "type": "heading",
+          "settings": {
+            "text": "Video",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "play_WekmR6",
+        "heading_BPHqMz"
+      ],
+      "name": "Video",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": false,
+        "video_size": "auto",
+        "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
+        "external_video_url": "",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      },
+      "disabled": true
+    },
+    "avantageicons_9NE3Mb": {
+      "type": "avantageicons",
+      "blocks": {
+        "benefit_3FhiFX": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_1.png",
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "ÉVOLUTIF",
+            "text": "Bretelles réglables. Un sac adapté aux parents et aux enfants."
+          }
+        },
+        "benefit_DEAXEw": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/pratique_icon_18797a95-652f-49b9-b119-fc3edb891af2.svg",
+            "icon_alt": "Icône bénéfice",
+            "icon": "wash",
+            "title": "PRATIQUE",
+            "text": "Attaches poussette intégrées."
+          }
+        },
+        "benefit_nA8ApQ": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/organisation_icon_5198e099-038e-4ec6-9cb7-3cba71eba6eb.svg",
+            "icon_alt": "Icône bénéfice",
+            "icon": "clock",
+            "title": "FONCTIONNEL & PÉDAGOGIQUE",
+            "text": "Des poches et des étiquettes pour tout catégoriser."
+          }
+        },
+        "benefit_FtDVLR": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/protection_icon_90ab697e-d2e6-4553-bb30-d71f04f6efdf.svg",
+            "icon_alt": "Icône bénéfice",
+            "icon": "truck",
+            "title": "DÉPERLANT",
+            "text": "O’CAOU il pleut…revêtement extérieur et intérieur déperlant"
+          }
+        },
+        "benefit_xpPJ8M": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_430x_a68f05be-4066-4bad-982e-5e94e5dc1870.png",
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "CONFORT",
+            "text": "Léger facile à porter, compact et molletonné"
+          }
+        },
+        "benefit_ipbNa9": {
+          "type": "benefit",
+          "settings": {
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_11.png",
+            "icon_alt": "Icône bénéfice",
+            "icon": "smile",
+            "title": "ERGONOMIQUE",
+            "text": "Tirettes faciles à ouvrir, même pour les petites mains."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_3FhiFX",
+        "benefit_DEAXEw",
+        "benefit_nA8ApQ",
+        "benefit_FtDVLR",
+        "benefit_xpPJ8M",
+        "benefit_ipbNa9"
+      ],
+      "name": "Avantages icônes",
+      "settings": {
+        "title": "Vous allez adorer le sac O’CAOU parce que...",
+        "title_alignment": "center",
+        "title_color": "#000000",
+        "title_size_desktop": 30,
+        "title_size_mobile": 24,
+        "title_weight": "700",
+        "title_margin_bottom_desktop": 80,
+        "title_margin_bottom_mobile": 44,
+        "full_width": false,
+        "max_width": 1200,
+        "columns_desktop": 3,
+        "columns_mobile": 2,
+        "column_gap_desktop": 56,
+        "row_gap_desktop": 30,
+        "column_gap_mobile": 28,
+        "row_gap_mobile": 44,
+        "icon_circle_bg": "#af6c67",
+        "icon_color": "#ffffff",
+        "icon_circle_size_desktop": 90,
+        "icon_circle_size_mobile": 80,
+        "icon_size_desktop": 54,
+        "icon_size_mobile": 42,
+        "icon_margin_bottom_desktop": 18,
+        "icon_margin_bottom_mobile": 16,
+        "benefit_title_color": "#000000",
+        "text_color": "#000000",
+        "benefit_title_size_desktop": 16,
+        "benefit_title_size_mobile": 15,
+        "benefit_title_weight": "700",
+        "benefit_title_margin_bottom": 16,
+        "benefit_title_margin_bottom_mobile": 14,
+        "text_size_desktop": 15,
+        "text_size_mobile": 12,
+        "text_weight": "400",
+        "text_max_width_desktop": 260,
+        "text_max_width_mobile": 170,
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 16,
+        "padding_bottom_desktop": 52,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 40,
+        "side_padding_desktop": 40,
+        "side_padding_mobile": 14
+      },
+      "disabled": true
+    },
+    "ocaoujaibesoin_bxqEpT": {
+      "type": "ocaoujaibesoin",
+      "blocks": {
+        "message_DnBDHi": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où  j'ai soif",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#ffffff",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": -1
+          }
+        },
+        "message_ydHNfC": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où j'ai faim",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#ffffff",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": 1
+          }
+        },
+        "message_YrrFYK": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où j'ai froid",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#ffffff",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": -1
+          }
+        },
+        "message_xNdDBV": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où j'ai peur",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#fcf9f5",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": 1
+          }
+        },
+        "message_cRRzwn": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où je prends TOUT !",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#ffffff",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": -1
+          }
+        },
+        "message_wxwVYP": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où c'est chaud/froid",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#ffffff",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": 2
+          }
+        },
+        "message_9FwdFz": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où je mange",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#ffffff",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": -1
+          }
+        },
+        "message_fJmXEA": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où j'allaite",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#ffffff",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": 1
+          }
+        },
+        "message_CTbnYx": {
+          "type": "message",
+          "settings": {
+            "text": "Au cas où…ça coule",
+            "icon": "",
+            "icon_position": "right",
+            "background_color": "#af6c67",
+            "text_color": "#fcf9f5",
+            "desktop_width": "medium",
+            "font_size": 15,
+            "border_radius": 10,
+            "rotation": -1
+          }
+        }
+      },
+      "block_order": [
+        "message_DnBDHi",
+        "message_ydHNfC",
+        "message_YrrFYK",
+        "message_xNdDBV",
+        "message_cRRzwn",
+        "message_wxwVYP",
+        "message_9FwdFz",
+        "message_fJmXEA",
+        "message_CTbnYx"
+      ],
+      "name": "Notre histoire O'CAOU",
+      "settings": {
+        "eyebrow": "NOTRE HISTOIRE",
+        "title": "Pourquoi O'CAOU ?",
+        "heading_tag": "h2",
+        "subtitle": "Parce qu'on le dit 10 fois par jour !",
+        "intro_text": "<p>Le plus grand défi ? NE RIEN OUBLIER</p>",
+        "transition_text": "<p>Parce qu'être parent, c'est penser à TOUT: <strong>ranger, anticiper, s'organiser.</strong></p><h4>Parce qu'on veut du bien à nos enfants, qu'ils soient bien. </h4>",
+        "challenge_prefix": "O'CAOU, c'est une solution pour",
+        "challenge_highlight": "chaque petit au cas où... du quotidien.",
+        "main_text": "<p>Alors<strong> O'CAOU prévoit: </strong>pour vous et vos petits.<strong> </strong>O'CAOU imagine des essentiels pratiques et ludiques qui accompagnent les familles de la <strong>maternité à la maternelle</strong>. Des accessoires pour être parés à toutes les éventualités : avec O'CAOU, vous aurez des solutions pour tous les <strong>imprévus du quotidien.</strong></p>",
+        "final_text": "<p>Des <strong>étiquettes </strong>partout pour guider, pour vous soulager. Les petits gagnent en <strong>autonomie </strong>: ils lisent en rangeant et préparent leurs affaires tout seuls, comme des grands.<br/>O'CAOU c'est l'allié des parents et des enfants! </p>",
+        "text_alignment": "center",
+        "content_width": 1060,
+        "chips_width": 800,
+        "mobile_chip_columns": "2",
+        "chip_gap": 14,
+        "background_color": "#f4ede1",
+        "text_color": "#2d2926",
+        "title_color": "#2d2926",
+        "accent_color": "#af6c67",
+        "title_size": 38,
+        "title_size_mobile": 30,
+        "subtitle_size": 19,
+        "body_size": 14,
+        "padding_top": 64,
+        "padding_bottom": 72,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 48
+      },
+      "disabled": true
     }
   },
   "order": [
     "hero_video",
     "heromedia_zwA498",
+    "video_8TEnKB",
     "logoscroll_WxkMyg",
     "image_with_text_overlay_xeN3nf",
     "impact_text_jwCEdV",
@@ -1223,6 +1550,8 @@
     "bandedefilante_AkFDNj",
     "sectionsicones_JdQXN9",
     "rich_text_TrB4qN",
+    "avantageicons_9NE3Mb",
+    "ocaoujaibesoin_bxqEpT",
     "30retours_rDewFa",
     "instagram_gw8WKA",
     "faq"
