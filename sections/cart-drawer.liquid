@@ -1,3 +1,18 @@
+{%- comment -%}O'CAOU — les deux boutons du volet tiennent sur une ligne, moitié-moitié{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .buy-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  #shopify-section-{{ section.id }} .buy-buttons > * {
+    width: 100%;
+    min-width: 0;
+  }
+{%- endstyle -%}
+
 <cart-drawer {% if request.design_mode %}handle-section-events{% endif %} class="cart-drawer drawer drawer--lg" id="cart-drawer">
   {%- if cart.item_count == 0 -%}
     <button is="close-button" aria-label="{{ 'general.accessibility.close' | t | escape }}">
