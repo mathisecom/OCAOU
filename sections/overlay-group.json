@@ -29,7 +29,7 @@
       "disabled": true,
       "settings": {
         "privacy_bar_title": "Politique de cookies",
-        "privacy_bar_content": "<p>Nous utilisons des cookies et technologies similaires afin d'offrir la meilleure expérience possible sur notre site. Pour en savoir plus, consultez notre politique de confidentialité.<\/p>"
+        "privacy_bar_content": "<p>Nous utilisons des cookies et technologies similaires afin d'offrir la meilleure expérience possible sur notre site. Pour en savoir plus, consultez notre politique de confidentialité.</p>"
       }
     },
     "cart-drawer": {
@@ -38,7 +38,7 @@
         "show_cart_note": true,
         "show_shipping_text": false,
         "show_view_cart_button": false,
-        "show_checkout_button": true,
+        "show_checkout_button": false,
         "show_continue_shopping_button": true,
         "continue_shopping_label": "Continuer mes achats",
         "recommendations_title": "Tendance du mois",
