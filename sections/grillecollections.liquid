@@ -114,7 +114,12 @@
       gap: {{ section.settings.gap_mobile }}px;
     }
     .cgrid-{{ section.id }} .cgrid__heading { font-size: 21px; margin-bottom: 16px; }
-    .cgrid-{{ section.id }} .cgrid__label { bottom: 10px; }
+    .cgrid-{{ section.id }} .cgrid__label {
+      bottom: 10px;
+      max-width: calc(100% - 12px);
+      padding: .5em .7em;
+      font-size: clamp(11px, 7.2cqw, 14px);
+    }
   }
 </style>
 
