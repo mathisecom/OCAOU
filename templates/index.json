@@ -13,7 +13,7 @@
       "type": "iso-hero-video",
       "name": "Bandeau d'accueil vidéo",
       "settings": {
-        "video": "shopify:\/\/files\/videos\/Clip 3 Film de marque sans son.mp4",
+        "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
         "poster": "",
         "title": "O’CAOU, la solution à tous les\n\" au cas où . . . \" du quotidien",
         "heading_tag": "h1",
@@ -42,28 +42,28 @@
         "avatar_aRLTzC": {
           "type": "avatar",
           "settings": {
-            "avatar_image": "shopify:\/\/shop_images\/IMG_0341.heic",
+            "avatar_image": "shopify://shop_images/IMG_0341.heic",
             "avatar_alt": "Client satisfait"
           }
         },
         "avatar_48iALN": {
           "type": "avatar",
           "settings": {
-            "avatar_image": "shopify:\/\/shop_images\/IMG_9937.heic",
+            "avatar_image": "shopify://shop_images/IMG_9937.heic",
             "avatar_alt": "Client satisfait"
           }
         },
         "avatar_hWyfyf": {
           "type": "avatar",
           "settings": {
-            "avatar_image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_14_23_24.png",
+            "avatar_image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_14_23_24.png",
             "avatar_alt": "Client satisfait"
           }
         },
         "avatar_t9cWai": {
           "type": "avatar",
           "settings": {
-            "avatar_image": "shopify:\/\/shop_images\/IMG_0089.heic",
+            "avatar_image": "shopify://shop_images/IMG_0089.heic",
             "avatar_alt": "Client satisfait"
           }
         },
@@ -101,7 +101,7 @@
       "disabled": true,
       "name": "Hero OCAOU",
       "settings": {
-        "main_image": "shopify:\/\/shop_images\/no_change_1_34041875-d36c-429e-9f49-6fa64f59de28.png",
+        "main_image": "shopify://shop_images/no_change_1_34041875-d36c-429e-9f49-6fa64f59de28.png",
         "image_fit": "cover",
         "image_position": "center center",
         "image_ratio": 90,
@@ -130,7 +130,7 @@
         "star_count": 5,
         "star_symbol": "★",
         "stars_label": "Note de 4,8 sur 5",
-        "rating_text": "<strong>4,8\/5<\/strong> | <strong>+500 Avis<\/strong>",
+        "rating_text": "<strong>4,8/5</strong> | <strong>+500 Avis</strong>",
         "avatar_size": 46,
         "avatar_border_width": 3,
         "avatar_border_color": "#ffffff",
@@ -151,7 +151,7 @@
         "italic_weight": 400,
         "heading_line_height": "1.3",
         "heading_line_height_mobile": "1.2",
-        "description": "<p>Des essentiels pensés pour être paré à toutes les éventualités, juste au cas où...car on ne sait jamais. O'CAOU simplifie et accompagne la vie des familles de la naissance vers plus d'autonomie.<\/p><p>Des produits-solutions qui répondent à tous les O'CAOU du quotidien<\/p>",
+        "description": "<p>Des essentiels pensés pour être paré à toutes les éventualités, juste au cas où...car on ne sait jamais. O'CAOU simplifie et accompagne la vie des familles de la naissance vers plus d'autonomie.</p><p>Des produits-solutions qui répondent à tous les O'CAOU du quotidien</p>",
         "description_width": 620,
         "body_size": 13,
         "body_size_mobile": 13,
@@ -222,40 +222,45 @@
       }
     },
     "logoscroll_WxkMyg": {
-      "type": "logoscroll",
+      "type": "iso-presse",
       "blocks": {
         "image_6zMMdX": {
-          "type": "image",
+          "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/biba.png",
+            "image": "shopify://shop_images/biba.png",
+            "nom": "BIBA",
             "url": ""
           }
         },
         "image_cEQXkh": {
-          "type": "image",
+          "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
             "url": ""
           }
         },
         "image_8n3Rnx": {
-          "type": "image",
+          "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
             "url": ""
           }
         },
         "image_Ydgfth": {
-          "type": "image",
+          "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
             "url": ""
           }
         },
         "image_E6ATmJ": {
-          "type": "image",
+          "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
             "url": ""
           }
         }
@@ -267,42 +272,26 @@
         "image_Ydgfth",
         "image_E6ATmJ"
       ],
-      "name": "SS - Scrolling logo cloud #5",
+      "name": "Recommandé par",
       "settings": {
-        "layout_radius": 30,
-        "layout_border_thickness": 0,
-        "heading": "<p>RECOMMANDÉ PAR<\/p>",
-        "heading_custom": false,
-        "heading_font": "josefin_sans_n4",
-        "heading_size": 10,
-        "heading_size_mobile": 8,
-        "heading_height": 130,
-        "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 20,
-        "scrolling_direction": "left",
-        "pause_hover": false,
-        "scrolling_gap": 70,
-        "scrolling_gap_mobile": 30,
-        "card_width_desktop": 130,
-        "card_width_mobile": 100,
-        "heading_color": "#121212",
-        "layout_bg_color": "#ffffff",
-        "layout_border_color": "#121212",
-        "background_color": "#ffffff",
-        "border_color": "#121212",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "margin_horizontal": 0,
-        "margin_horizontal_mobile": 0,
-        "padding_top": 16,
-        "padding_bottom": 0,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 0,
-        "full_width": true,
+        "titre": "Recommandé par",
+        "titre_tag": "h2",
+        "titre_size": 10,
+        "titre_size_mobile": 8,
+        "titre_weight": 600,
+        "titre_uppercase": true,
+        "titre_color": "#121212",
+        "titre_gap": 24,
+        "titre_gap_mobile": 16,
+        "logo_width": 130,
+        "logo_width_mobile": 100,
+        "gap": 70,
+        "gap_mobile": 30,
+        "grayscale": false,
+        "bg_color": "#ffffff",
         "content_width": 1200,
-        "border_thickness": 0,
-        "section_radius": 0,
-        "lazy": true
+        "padding_block": 40,
+        "padding_block_mobile": 28
       }
     },
     "image_with_text_overlay_xeN3nf": {
@@ -326,7 +315,7 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify:\/\/shop_images\/Produits_avec_Ombre_Legere.png",
+        "image": "shopify://shop_images/Produits_avec_Ombre_Legere.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -359,7 +348,7 @@
         "carte_Y7LJak": {
           "type": "carte",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Tezza-4596.jpg",
+            "image": "shopify://shop_images/Tezza-4596.jpg",
             "label": "Naissance",
             "collection": "naissance",
             "link": ""
@@ -368,7 +357,7 @@
         "carte_pCQgxk": {
           "type": "carte",
           "settings": {
-            "image": "shopify:\/\/shop_images\/20260822_190753.jpg",
+            "image": "shopify://shop_images/20260822_190753.jpg",
             "label": "Pour maman",
             "collection": "pour-maman",
             "link": ""
@@ -377,7 +366,7 @@
         "carte_HRQYa9": {
           "type": "carte",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Gemini_Generated_Image_rxx7errxx7errxx7.jpg",
+            "image": "shopify://shop_images/Gemini_Generated_Image_rxx7errxx7errxx7.jpg",
             "label": "Crèche & Maternelle",
             "collection": "creches-maternelle",
             "link": ""
@@ -386,7 +375,7 @@
         "carte_VRxatd": {
           "type": "carte",
           "settings": {
-            "image": "shopify:\/\/shop_images\/repas_81369cc5-379f-49c9-b312-e6b5331615f2.png",
+            "image": "shopify://shop_images/repas_81369cc5-379f-49c9-b312-e6b5331615f2.png",
             "label": "Repas",
             "collection": "repas",
             "link": ""
@@ -395,7 +384,7 @@
         "carte_CwnzDJ": {
           "type": "carte",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cargo.png",
+            "image": "shopify://shop_images/cargo.png",
             "label": "Sorties",
             "collection": "sorties",
             "link": ""
@@ -404,7 +393,7 @@
         "carte_PqKnFx": {
           "type": "carte",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pochonnoeud.png",
+            "image": "shopify://shop_images/pochonnoeud.png",
             "label": "Idées cadeaux ",
             "collection": "les-coffrets",
             "link": ""
@@ -428,7 +417,7 @@
         "columns_desktop": 6,
         "columns_tablet": 3,
         "columns_mobile": "2",
-        "ratio": "3 \/ 4",
+        "ratio": "3 / 4",
         "gap": 20,
         "gap_mobile": 10,
         "radius": 16,
@@ -498,7 +487,7 @@
         "subheading": "",
         "title": "Les Coffrets O'CAOU",
         "content": "",
-        "link_url": "shopify:\/\/collections\/les-coffrets",
+        "link_url": "shopify://collections/les-coffrets",
         "link_text": "Découvrir tous les coffrets",
         "background": "#fcf9f5",
         "background_gradient": "",
@@ -519,7 +508,7 @@
             "titre": "Coffret Naissance",
             "composition": "",
             "composition_generique": "",
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_7_aout_2026_15_44_21_1.png",
+            "image": "shopify://shop_images/ChatGPT_Image_7_aout_2026_15_44_21_1.png",
             "emoji1": "",
             "emoji2": "",
             "emoji3": "",
@@ -545,7 +534,7 @@
             "titre": "Coffret Pour Maman",
             "composition": "",
             "composition_generique": "",
-            "image": "shopify:\/\/shop_images\/ChatGPTImage7aout2026_15_21_01_2.png",
+            "image": "shopify://shop_images/ChatGPTImage7aout2026_15_21_01_2.png",
             "emoji1": "",
             "emoji2": "",
             "emoji3": "",
@@ -571,7 +560,7 @@
             "titre": "Coffret Premier Repas",
             "composition": "",
             "composition_generique": "",
-            "image": "shopify:\/\/shop_images\/ChatGPTImage7aout2026_15_30_48_3.png",
+            "image": "shopify://shop_images/ChatGPTImage7aout2026_15_30_48_3.png",
             "emoji1": "🧸",
             "emoji2": "🛏️",
             "emoji3": "💡",
@@ -597,7 +586,7 @@
             "titre": "Coffret Comme Les Grands",
             "composition": "",
             "composition_generique": "",
-            "image": "shopify:\/\/shop_images\/Gemini_Generated_Image_j185ctj185ctj185.jpg",
+            "image": "shopify://shop_images/Gemini_Generated_Image_j185ctj185ctj185.jpg",
             "emoji1": "",
             "emoji2": "",
             "emoji3": "",
@@ -623,7 +612,7 @@
             "titre": "Coffret Balade",
             "composition": "",
             "composition_generique": "",
-            "image": "shopify:\/\/shop_images\/no_change_1_308c1961-0e40-4c41-93c8-a0198d769ce5.png",
+            "image": "shopify://shop_images/no_change_1_308c1961-0e40-4c41-93c8-a0198d769ce5.png",
             "emoji1": "🧸",
             "emoji2": "🛏️",
             "emoji3": "💡",
@@ -657,7 +646,7 @@
         "title": "Les coffrets O'CAOU",
         "subtitle": "Des coffrets pour chaque moment de vie. Un joli pochon cadeau « O'CAOU c'est pour offrir » offert.",
         "footer_text": "Voir tous les coffrets",
-        "footer_link": "shopify:\/\/collections\/les-coffrets",
+        "footer_link": "shopify://collections/les-coffrets",
         "columns_desktop": 3,
         "columns_mobile": "1",
         "max_width": 1200,
@@ -738,7 +727,7 @@
           "settings": {
             "text": "Tout est à sa place",
             "icon_text": "🍒",
-            "icon_image": "shopify:\/\/shop_images\/icone_1.png"
+            "icon_image": "shopify://shop_images/icone_1.png"
           }
         },
         "marquee_item_THwWM6": {
@@ -746,7 +735,7 @@
           "settings": {
             "text": "Prêt en quelques secondes",
             "icon_text": "",
-            "icon_image": "shopify:\/\/shop_images\/CLAIR.png"
+            "icon_image": "shopify://shop_images/CLAIR.png"
           }
         },
         "marquee_item_deX74F": {
@@ -754,7 +743,7 @@
           "settings": {
             "text": "Encourage l'autonomie",
             "icon_text": "🌈",
-            "icon_image": "shopify:\/\/shop_images\/icone.png"
+            "icon_image": "shopify://shop_images/icone.png"
           }
         },
         "marquee_item_fbRmh4": {
@@ -762,7 +751,7 @@
           "settings": {
             "text": "Complice des familles",
             "icon_text": "🌷",
-            "icon_image": "shopify:\/\/shop_images\/icone_2.png"
+            "icon_image": "shopify://shop_images/icone_2.png"
           }
         }
       },
@@ -799,7 +788,7 @@
         "icon_MGMfaU": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_51.png",
+            "icon_image": "shopify://shop_images/Design_sans_titre_51.png",
             "icon_alt": "Icône avantage",
             "title": "Étiquettes Pratiques"
           }
@@ -807,7 +796,7 @@
         "icon_AEPRaf": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_46.png",
+            "icon_image": "shopify://shop_images/Design_sans_titre_46.png",
             "icon_alt": "Icône avantage",
             "title": "Tout au Même Endroit"
           }
@@ -815,7 +804,7 @@
         "icon_iFFUyC": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_47.png",
+            "icon_image": "shopify://shop_images/Design_sans_titre_47.png",
             "icon_alt": "Icône avantage",
             "title": "Préparation Rapide"
           }
@@ -823,7 +812,7 @@
         "icon_VHNHwk": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_48.png",
+            "icon_image": "shopify://shop_images/Design_sans_titre_48.png",
             "icon_alt": "Icône avantage",
             "title": "Doudou ligotés en sécurité"
           }
@@ -831,15 +820,15 @@
         "icon_yKJirQ": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/ADS_IMAGE_9.png",
+            "icon_image": "shopify://shop_images/ADS_IMAGE_9.png",
             "icon_alt": "Icône avantage",
-            "title": "Biberon\/Gourde Facile D’accès"
+            "title": "Biberon/Gourde Facile D’accès"
           }
         },
         "icon_KixXBn": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_50.png",
+            "icon_image": "shopify://shop_images/Design_sans_titre_50.png",
             "icon_alt": "Icône avantage",
             "title": "Rangement Sans Stress"
           }
@@ -872,7 +861,7 @@
         "subtitle_max_width_mobile": 360,
         "subtitle_margin_top": 14,
         "subtitle_margin_top_mobile": 12,
-        "main_image": "shopify:\/\/shop_images\/bebe_tour_sac_ouvert.png",
+        "main_image": "shopify://shop_images/bebe_tour_sac_ouvert.png",
         "main_image_alt": "Image produit",
         "image_max_width_desktop": 720,
         "image_max_width_mobile": 400,
@@ -962,7 +951,7 @@
       "settings": {
         "title": "PARÉS À TOUTES LES ÉVENTUALITÉS. JUSTE O’CAOU…",
         "subtitle": "",
-        "product_image": "shopify:\/\/shop_images\/ocaou-photo-1.png",
+        "product_image": "shopify://shop_images/ocaou-photo-1.png",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
         "bg_position_mobile": "center center",
@@ -1033,7 +1022,7 @@
         "image_fHAfbM": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Tezza-0095.jpg",
+            "image": "shopify://shop_images/Tezza-0095.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1045,7 +1034,7 @@
         "image_VQrL6Y": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lison.jpg",
+            "image": "shopify://shop_images/lison.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1057,7 +1046,7 @@
         "image_EpGDJK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Tezza-7035_8f3a8c37-1112-4d45-89c8-613bb98cd67f.jpg",
+            "image": "shopify://shop_images/Tezza-7035_8f3a8c37-1112-4d45-89c8-613bb98cd67f.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1069,7 +1058,7 @@
         "image_hpVMVa": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_20_37_22.png",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_37_22.png",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1081,7 +1070,7 @@
         "image_nV4MxC": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_04_30.png",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_04_30.png",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1093,7 +1082,7 @@
         "image_CYit8M": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/20260818_124108.jpg",
+            "image": "shopify://shop_images/20260818_124108.jpg",
             "alt_text": "Photo Instagram",
             "link": "",
             "open_new_tab": true,
@@ -1131,8 +1120,8 @@
         "columns_mobile": 2,
         "gap_desktop": 4,
         "gap_mobile": 2,
-        "image_ratio": "1 \/ 1",
-        "image_ratio_mobile": "1 \/ 1",
+        "image_ratio": "1 / 1",
+        "image_ratio_mobile": "1 / 1",
         "force_height_desktop": false,
         "image_height_desktop": 320,
         "force_height_mobile": false,
@@ -1186,21 +1175,21 @@
           "type": "item",
           "settings": {
             "title": "Livrez-vous en dehors de la France ?",
-            "content": "<p>Nous livrons en France métropolitaine, ainsi qu'en Belgique, Allemagne, Pays-Bas, Luxembourg, Italie, Espagne, Portugal et Autriche. Les frais de livraison sont calculés et affichés avant la validation de la commande.<\/p>"
+            "content": "<p>Nous livrons en France métropolitaine, ainsi qu'en Belgique, Allemagne, Pays-Bas, Luxembourg, Italie, Espagne, Portugal et Autriche. Les frais de livraison sont calculés et affichés avant la validation de la commande.</p>"
           }
         },
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
             "title": "Quel est le délai de livraison ?",
-            "content": "<p>Comptez 1 à 2 jours ouvrés pour une livraison à domicile en France métropolitaine, et 3 à 5 jours ouvrés pour un point relais ou une livraison en Europe.<\/p>"
+            "content": "<p>Comptez 1 à 2 jours ouvrés pour une livraison à domicile en France métropolitaine, et 3 à 5 jours ouvrés pour un point relais ou une livraison en Europe.</p>"
           }
         },
         "166442457738b23caf-2": {
           "type": "item",
           "settings": {
             "title": "Une autre question ?",
-            "content": "<p>Vous pouvez nous contacter via notre page de contact, nous serons ravis de vous aider.<\/p>"
+            "content": "<p>Vous pouvez nous contacter via notre page de contact, nous serons ravis de vous aider.</p>"
           }
         }
       },
@@ -1214,7 +1203,7 @@
         "full_width": false,
         "subheading": "",
         "title": "FAQ",
-        "content": "<p>Les réponses aux questions les plus fréquentes sur nos produits et la livraison.<\/p>",
+        "content": "<p>Les réponses aux questions les plus fréquentes sur nos produits et la livraison.</p>",
         "team_avatar_width": 160,
         "support_hours": "",
         "answer_time": "",

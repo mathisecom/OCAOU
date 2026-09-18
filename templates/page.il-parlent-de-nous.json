@@ -16,33 +16,37 @@
       }
     },
     "logoscroll_EixnWc": {
-      "type": "logoscroll",
+      "type": "iso-presse",
       "blocks": {
         "image_WFQKFd": {
-          "type": "image",
+          "type": "logo",
           "settings": {
             "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
             "url": ""
           }
         },
         "image_JUR4cR": {
-          "type": "image",
+          "type": "logo",
           "settings": {
             "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
             "url": ""
           }
         },
         "image_MhTMW6": {
-          "type": "image",
+          "type": "logo",
           "settings": {
             "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
             "url": ""
           }
         },
         "image_R89UY8": {
-          "type": "image",
+          "type": "logo",
           "settings": {
             "image": "shopify://shop_images/biba.png",
+            "nom": "BIBA",
             "url": ""
           }
         }
@@ -53,42 +57,26 @@
         "image_MhTMW6",
         "image_R89UY8"
       ],
-      "name": "SS - Scrolling logo cloud #5",
+      "name": "Recommandé par",
       "settings": {
-        "layout_radius": 30,
-        "layout_border_thickness": 0,
-        "heading": "",
-        "heading_custom": false,
-        "heading_font": "josefin_sans_n4",
-        "heading_size": 18,
-        "heading_size_mobile": 18,
-        "heading_height": 130,
-        "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 12,
-        "scrolling_direction": "left",
-        "pause_hover": false,
-        "scrolling_gap": 70,
-        "scrolling_gap_mobile": 30,
-        "card_width_desktop": 130,
-        "card_width_mobile": 100,
-        "heading_color": "#121212",
-        "layout_bg_color": "#ffffff",
-        "layout_border_color": "#121212",
-        "background_color": "#ffffff",
-        "border_color": "#121212",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "margin_horizontal": 0,
-        "margin_horizontal_mobile": 0,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 0,
-        "full_width": false,
+        "titre": "",
+        "titre_tag": "h2",
+        "titre_size": 18,
+        "titre_size_mobile": 18,
+        "titre_weight": 600,
+        "titre_uppercase": true,
+        "titre_color": "#121212",
+        "titre_gap": 24,
+        "titre_gap_mobile": 16,
+        "logo_width": 130,
+        "logo_width_mobile": 100,
+        "gap": 70,
+        "gap_mobile": 30,
+        "grayscale": false,
+        "bg_color": "#ffffff",
         "content_width": 1200,
-        "border_thickness": 0,
-        "section_radius": 0,
-        "lazy": true
+        "padding_block": 40,
+        "padding_block_mobile": 28
       }
     },
     "media_with_text_NtUGen": {
