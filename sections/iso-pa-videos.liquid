@@ -1,0 +1,140 @@
+{%- comment -%}
+  Piste A : vidéos du produit, format vertical, défilement horizontal.
+  Deux sources, dans cet ordre :
+  1. les vidéos posées dans la section (reprises du bloc « Découvrez nos vidéos » du site en ligne) ;
+  2. sinon, le champ méta produit custom.product_videos (« Fichier (liste) ») : la cliente ajoute,
+     retire et réordonne ses vidéos depuis la fiche produit, sans toucher au thème.
+  Sans vidéo d'un côté ni de l'autre, la section ne s'affiche pas.
+  Arbitrages :
+  - RGAA 13.8 : lecture automatique muette, mais chaque vidéo a son bouton de pause, et le choix de
+    l'internaute est gardé ; mouvement réduit demandé : aucune lecture automatique, l'affiche attend.
+  - Éco / perf : rendu 480p (les cartes font au plus 300 px de large), preload="none", lecture
+    seulement quand la vidéo est à l'écran et arrêt dès qu'elle en sort, affiche demandée en 540 px.
+  - Le titre reprend le nom du produit : « {titre} » dans le réglage est remplacé par ce nom.
+{%- endcomment -%}
+{%- liquid
+  assign ns = section.settings.mf_namespace | default: 'custom'
+  assign cle = section.settings.mf_key | default: 'product_videos'
+  assign mfv = product.metafields[ns][cle].value
+  assign nb = section.blocks.size
+  if nb == 0
+    assign nb = mfv.size | default: 0
+  endif
+  assign nom = product.title | escape
+  assign titre = section.settings.titre | default: '{titre} en vidéo' | escape | replace: '{titre}', nom
+  assign sid = section.id
+-%}
+{%- capture tid -%}pa-vid-{{ sid }}{%- endcapture -%}
+{%- if nb > 0 -%}
+<div class="iso-pa">
+<section class="pa-sec pa-vid-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-vid-h-{{ sid }}"><div class="pa-w">
+  <div class="pa-head">
+    {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
+    <h2 class="pa-h2" id="pa-vid-h-{{ sid }}">{{ titre }}</h2>
+  </div>
+  <ul class="pa-vid-track pa-scroll pa-bleed" id="{{ tid }}" tabindex="0" role="region" aria-roledescription="carrousel" aria-label="{{ titre }}">
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign v = block.settings.video
+          assign src = block.settings.src
+          assign mime = 'video/mp4'
+          assign poster = block.settings.poster
+          if v != blank
+            assign src = ''
+            assign best = 0
+            for s in v.sources
+              if s.format == 'mp4' and s.height <= 540 and s.height > best
+                assign src = s.url
+                assign mime = s.mime_type
+                assign best = s.height
+              endif
+            endfor
+            if src == ''
+              for s in v.sources
+                if s.format == 'mp4'
+                  assign src = s.url
+                  assign mime = s.mime_type
+                  break
+                endif
+              endfor
+            endif
+            if poster == blank and v.preview_image
+              assign poster = v.preview_image | image_url: width: 540
+            endif
+          elsif poster != blank and poster contains '?'
+            assign poster = poster | append: '&width=540'
+          endif
+          assign lbl = block.settings.titre | default: nom | escape
+        -%}
+        {%- render 'iso-pa-vidcard', src: src, mime: mime, poster: poster, label: lbl, i: forloop.index, n: nb -%}
+      {%- endfor -%}
+    {%- else -%}
+      {%- for v in mfv -%}
+        {%- liquid
+          assign src = ''
+          assign mime = 'video/mp4'
+          assign best = 0
+          for s in v.sources
+            if s.format == 'mp4' and s.height <= 540 and s.height > best
+              assign src = s.url
+              assign mime = s.mime_type
+              assign best = s.height
+            endif
+          endfor
+          if src == ''
+            for s in v.sources
+              if s.format == 'mp4'
+                assign src = s.url
+                assign mime = s.mime_type
+                break
+              endif
+            endfor
+          endif
+          assign poster = ''
+          if v.preview_image
+            assign poster = v.preview_image | image_url: width: 540
+          endif
+          assign lbl = v.alt | default: nom | escape
+        -%}
+        {%- render 'iso-pa-vidcard', src: src, mime: mime, poster: poster, label: lbl, i: forloop.index, n: nb -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </ul>
+  {%- render 'iso-pa-carnav', id: tid -%}
+</div></section>
+</div>
+{%- elsif request.design_mode -%}
+<div class="iso-pa"><section class="pa-sec"><div class="pa-w">
+  <p class="pa-vid-none">Section « vidéos » : aucune vidéo posée dans la section, et le champ méta {{ ns }}.{{ cle }} de ce produit est vide. Ce message n'apparaît que dans l'éditeur.</p>
+</div></section></div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Vidéos",
+  "settings": [
+    { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
+    { "type": "text", "id": "titre", "label": "Titre", "default": "{titre} en vidéo", "info": "« {titre} » est remplacé par le nom du produit." },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false },
+    { "type": "header", "content": "Sans vidéo ci-dessous" },
+    { "type": "paragraph", "content": "La section prend alors les vidéos du champ méta de la fiche produit." },
+    { "type": "text", "id": "mf_namespace", "label": "Espace du champ méta", "default": "custom" },
+    { "type": "text", "id": "mf_key", "label": "Clé du champ méta", "default": "product_videos" }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Vidéo",
+      "settings": [
+        { "type": "video", "id": "video", "label": "Vidéo" },
+        { "type": "text", "id": "src", "label": "Adresse de la vidéo", "info": "Utilisée si aucune vidéo n'est choisie ci-dessus." },
+        { "type": "text", "id": "poster", "label": "Adresse de l'affiche" },
+        { "type": "text", "id": "titre", "label": "Description pour les lecteurs d'écran" }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+{%- comment -%}
+  Piste A : « Souvent achetés ensemble » (maquette, fonction related). Les produits se choisissent
+  dans le sélecteur Shopify du panneau de droite (recherche par nom, ordre par glisser-déposer).
+  Vrai titre, vrai prix (barré quand la fiche a un prix barré), vrai lien. Un article à variante
+  unique s'ajoute directement au panier ; un article à choisir (couleurs, coffret composable) mène à
+  sa fiche, pour ne jamais ajouter une couleur que le client n'a pas choisie.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{%- capture tid -%}pa-rel-{{ sid }}{%- endcapture -%}
+{%- assign liste = section.settings.produits -%}
+{%- if liste.size > 0 or request.design_mode -%}
+<div class="iso-pa">
+<section class="pa-sec pa-rel-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}"><div class="pa-w">
+  <div class="pa-head"><h2 class="pa-h2" id="pa-rel-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
+  <ul class="pa-rel pa-scroll pa-bleed" id="{{ tid }}">
+    {%- for rp in liste -%}
+      {%- if rp == blank or rp.id == blank -%}{%- continue -%}{%- endif -%}
+      <li><article class="pa-pc">
+        {%- comment -%} Jusqu'à 4 photos : la 2e au survol sur ordinateur, les 4 en défilement sur mobile. {%- endcomment -%}
+        <div class="pa-pc-img pa-mix">
+          {%- if rp.images.size > 0 -%}
+            <a class="pa-pc-sl" href="{{ rp.url }}" tabindex="-1" aria-hidden="true"{% if rp.images.size > 1 %} data-pa-sl{% endif %}>
+              {%- for im in rp.images limit: 4 -%}<span class="pa-pc-sli">{%- render 'iso-pa-img', image: im, alt: '', sizes: '(min-width: 960px) min(520px, calc((100vw - 144px) / 3)), 70vw', widths: '360,540,720,900,1080' -%}</span>{%- endfor -%}
+            </a>
+            {%- if rp.images.size > 1 -%}<span class="pa-pc-dots" aria-hidden="true">{%- for im in rp.images limit: 4 -%}<i{% if forloop.first %} class="is-on"{% endif %}></i>{%- endfor -%}</span>{%- endif -%}
+          {%- endif -%}
+        </div>
+        <h3 class="pa-h3"><a class="pa-pc-a" href="{{ rp.url }}">{{ rp.title | escape }}</a></h3>
+        {%- assign cmp = rp.compare_at_price | default: 0 -%}
+        <p class="pa-pc-pr">{% if rp.price_varies %}Dès {% endif %}{{ rp.price | money | replace: ' €', '&nbsp;€' }}{% if cmp > rp.price and rp.price_varies == false %} <s><span class="pa-sr">au lieu de </span>{{ cmp | money | replace: ' €', '&nbsp;€' }}</s>{% endif %}</p>
+        {%- if rp.variants.size == 1 -%}
+          <button type="button" class="pa-pc-b" data-pa-add="{{ rp.selected_or_first_available_variant.id }}" aria-label="Ajouter {{ rp.title | escape }} au panier"{% unless rp.available %} disabled{% endunless %}>{% render 'iso-pa-icon', name: 'plus' %}Ajouter</button>
+        {%- else -%}
+          <a class="pa-pc-b" href="{{ rp.url }}" aria-label="Choisir {{ rp.title | escape }}">{% render 'iso-pa-icon', name: 'arrow-right' %}Choisir</a>
+        {%- endif -%}
+      </article></li>
+    {%- endfor -%}
+  </ul>
+  {%- render 'iso-pa-carnav', id: tid, cls: 'pa-carnav--m' -%}
+</div></section>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Associés",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Souvent achetés ensemble" },
+    { "type": "product_list", "id": "produits", "label": "Produits", "info": "Jusqu'à 6 produits, dans l'ordre d'affichage.", "limit": 6 },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ]
+}
+{% endschema %}

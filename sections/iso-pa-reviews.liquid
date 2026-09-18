@@ -1,0 +1,99 @@
+{%- comment -%}
+  Piste A : avis clients, style Respire (grande photo carrée en haut, étoiles, prénom, texte, vignette du
+  produit concerné sur fond beige en bas à gauche).
+  Arbitrages :
+  - RGAA : le carrousel a un rôle region et aria-label, les boutons de navigation ont des labels explicites,
+    les étoiles sont décoratives et doublées d'un texte pour les lecteurs d'écran (« Note : 4 sur 5 »),
+    textes alternatifs obligatoires sur les photos.
+  - Éco : aucune bibliothèque, le défilement est natif (scroll-snap), aucune image inventée
+    (image_picker vide acceptée : carte sans photo en mode texte ; sans produit ni vignette, pas de vignette).
+  - Photos toutes au format carré : cartes de même hauteur, quel que soit le format d'origine.
+  - Notes : 5 sur 5 pour chaque avis repris du site en ligne (sections testimonials et avisparents).
+  - Perf : chargement différé pour toutes les photos, priorité haute pour la première carte.
+  Ancre #pa-avis visée par la note dans la zone d'achat.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{%- capture tid -%}pa-rv-t-{{ sid }}{%- endcapture -%}
+{%- comment -%} Sans avis, la section ne s'affiche pas (fiches dont les avis restent à saisir). {%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+<div class="iso-pa">
+<section class="pa-sec pa-rv-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" id="pa-avis" aria-labelledby="pa-rv-h-{{ sid }}"><div class="pa-w">
+  <div class="pa-head pa-rv-head">
+    <h2 class="pa-h2" id="pa-rv-h-{{ sid }}">{{ section.settings.titre | escape }}</h2>
+    {%- if section.settings.note != blank -%}
+      <p class="pa-rv-note">
+        {% render 'iso-pa-stars' %}
+        <b>{{ section.settings.note | escape }}/5</b>
+        {%- if section.settings.total != blank -%}<span>&nbsp;·&nbsp;{{ section.settings.total | escape }}</span>{%- endif -%}
+      </p>
+    {%- endif -%}
+  </div>
+  <ul class="pa-rv2-track pa-scroll pa-bleed" id="{{ tid }}" aria-label="Avis clients" tabindex="0" role="region" aria-roledescription="carrousel">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign nb = block.settings.note | default: 5 | round
+        assign pr = block.settings.produit_ref
+        assign vg = block.settings.vignette | default: pr.featured_image
+        assign pn = block.settings.produit | default: pr.title
+      -%}
+      <li class="pa-rv2{% unless block.settings.image %} pa-rv2--tx{% endunless %}" role="group" aria-label="Avis {{ forloop.index }} sur {{ section.blocks.size }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.image -%}
+          <div class="pa-rv2-ph">
+            {%- render 'iso-pa-img', image: block.settings.image, alt: block.settings.alt, sizes: '(min-width: 960px) 320px, 280px', widths: '300,480,640', eager: forloop.first -%}
+          </div>
+        {%- endif -%}
+        <div class="pa-rv2-body">
+          <p class="pa-rv2-note">{% render 'iso-pa-stars', n: nb %}<b aria-hidden="true">{{ nb }}/5</b><span class="pa-sr">Note&nbsp;: {{ nb }} sur 5</span></p>
+          {%- if block.settings.titre != blank -%}<p class="pa-rv2-t">{{ block.settings.titre | escape }}</p>{%- endif -%}
+          <p class="pa-rv2-x">{{ block.settings.texte | escape }}</p>
+          <div class="pa-rv2-footer">
+            {%- if vg -%}
+              <div class="pa-rv2-vg pa-mix" aria-hidden="true">
+                {%- render 'iso-pa-img', image: vg, alt: '', w: 135, sizes: '45px', widths: '90,135' -%}
+              </div>
+            {%- endif -%}
+            <div class="pa-rv2-who">
+              <p class="pa-rv2-meta">{{ block.settings.auteur | escape }}{% if block.settings.enfant != blank %}, maman de {{ block.settings.enfant | escape }}{% endif %}</p>
+              {%- if pn != blank -%}<p class="pa-rv2-prod"><span class="pa-sr">Avis sur </span>{{ pn | escape }}</p>{%- endif -%}
+            </div>
+          </div>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+  {%- render 'iso-pa-carnav', id: tid, prev: 'Avis précédents', next: 'Avis suivants', cls: 'pa-rv-nav' -%}
+</div></section>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Avis",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Ils en parlent mieux que nous" },
+    { "type": "text", "id": "note", "label": "Note moyenne", "default": "4,8" },
+    { "type": "text", "id": "total", "label": "Nombre d'avis" },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "creme" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "avis",
+      "name": "Avis",
+      "settings": [
+        { "type": "text", "id": "auteur", "label": "Prénom" },
+        { "type": "text", "id": "enfant", "label": "Prénom de l'enfant", "info": "Vide : mention « maman de prénom » absente." },
+        { "type": "text", "id": "titre", "label": "Titre (accroche courte)" },
+        { "type": "textarea", "id": "texte", "label": "Avis" },
+        { "type": "range", "id": "note", "label": "Note", "min": 1, "max": 5, "step": 1, "unit": "/5", "default": 5 },
+        { "type": "product", "id": "produit_ref", "label": "Produit concerné", "info": "Son image sert de vignette, en bas à gauche de l'avis." },
+        { "type": "text", "id": "produit", "label": "Nom du produit affiché", "info": "Vide : nom du produit choisi ci-dessus." },
+        { "type": "image_picker", "id": "image", "label": "Grande photo (recadrée en carré)" },
+        { "type": "text", "id": "alt", "label": "Description de la photo" },
+        { "type": "image_picker", "id": "vignette", "label": "Autre vignette", "info": "Remplace l'image du produit." }
+      ]
+    }
+  ],
+  "max_blocks": 20
+}
+{% endschema %}

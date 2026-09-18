@@ -1,0 +1,121 @@
+{%- comment -%}
+  Piste A : histoire du sac — « Avant tout, un sac à langer pour ranger les essentiels de bébé »
+  Texte réel du backup-theme (templates-composables/product.composable-duo-miam.json, ligne ~356).
+  Version principale : grande image + titre + texte + liste de poches.
+  Designs B et C : deux vignettes alternatives administrables pour l'éditeur de thème.
+  Arbitrages :
+  - RGAA : images alt obligatoires, liste de poches balisée <ul>, contraste texte sur fond.
+  - Éco : aucun script ajouté, image_picker vide accepté.
+  - Perf : photo principale chargée en priorité haute (eager).
+{%- endcomment -%}
+<div class="iso-pa">
+<section class="pa-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-story-h-{{ section.id }}"><div class="pa-w">
+  <div class="pa-story{% if section.settings.cote == 'droite' %} pa-story--r{% endif %}">
+    {%- assign rep = false -%}
+    {%- if section.settings.dispo_puces == 'reperes' and section.settings.puces != blank -%}{%- assign rep = true -%}{%- endif -%}
+    {%- if section.settings.image -%}
+      <div class="pa-story-img{% if rep %} pa-story-img--rep{% endif %}">
+        {%- render 'iso-pa-img', image: section.settings.image, alt: section.settings.alt, sizes: '(min-width: 960px) min(672px, calc(42vw - 40px)), 100vw', widths: '480,720,960', eager: true -%}
+        {%- if rep -%}
+          {%- assign rlabels = section.settings.puces | newline_to_br | split: '<br />' -%}
+          {%- assign rpos = section.settings.reperes_pos | newline_to_br | split: '<br />' -%}
+          <ul class="pa-reps">
+            {%- for x in rlabels -%}
+              {%- assign xs = x | strip -%}
+              {%- if xs != blank -%}
+                {%- assign praw = rpos[forloop.index0] | strip -%}
+                {%- if praw == blank -%}{%- assign praw = '50,50,bas' -%}{%- endif -%}
+                {%- assign pp = praw | split: ',' -%}
+                {%- assign pt = pp[2] | strip -%}
+                {%- if pt == blank -%}{%- assign pt = 'bas' -%}{%- endif -%}
+                <li class="pa-rep pa-rep--{{ pt }}" style="left:{{ pp[0] | strip }}%;top:{{ pp[1] | strip }}%">{{ xs | escape }}</li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="pa-story-txt">
+      {%- if section.settings.accroche != blank -%}<p class="pa-eyebrow">{{ section.settings.accroche | escape }}</p>{%- endif -%}
+      <h2 class="pa-h2" id="pa-story-h-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      {%- if section.settings.sous_titre != blank -%}<p class="pa-h3" style="color:var(--brown);margin-top:6px">{{ section.settings.sous_titre | escape }}</p>{%- endif -%}
+      {%- if section.settings.texte != blank -%}<p class="pa-lead">{{ section.settings.texte | escape }}</p>{%- endif -%}
+      {%- if section.settings.puces != blank and rep == false -%}
+        {%- assign puces = section.settings.puces | newline_to_br | split: '<br />' -%}
+        <ul class="pa-chips" style="margin-top:12px">
+          {%- for x in puces -%}
+            {%- assign xs = x | strip -%}
+            {%- if xs != blank -%}
+              <li class="pa-chip">{% render 'iso-pa-icon', name: 'check' %}{{ xs | escape }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      {%- if section.settings.mantra != blank -%}
+        <p class="pa-lead" style="font-style:italic;color:var(--brown);margin-top:16px">{{ section.settings.mantra | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.bouton != blank -%}
+        {%- assign lien = section.settings.bouton_lien | default: '#pa-achat' -%}
+        <p style="margin-top:20px"><a class="pa-btn" href="{{ lien }}">{{ section.settings.bouton | escape }}</a></p>
+      {%- endif -%}
+      {%- comment -%} Designs alternatifs B et C. {%- endcomment -%}
+      {%- if section.settings.image_b or section.settings.image_c or section.settings.image_d -%}
+        <div class="pa-story-alts" style="margin-top:20px">
+          {%- if section.settings.image_b -%}
+            <div class="pa-story-alt">
+              {%- render 'iso-pa-img', image: section.settings.image_b, alt: section.settings.alt_b, sizes: '(min-width: 960px) 14vw, 32vw', widths: '200,300,480' -%}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.image_c -%}
+            <div class="pa-story-alt">
+              {%- render 'iso-pa-img', image: section.settings.image_c, alt: section.settings.alt_c, sizes: '(min-width: 960px) 14vw, 32vw', widths: '200,300,480' -%}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.image_d -%}
+            <div class="pa-story-alt">
+              {%- render 'iso-pa-img', image: section.settings.image_d, alt: section.settings.alt_d, sizes: '(min-width: 960px) 14vw, 32vw', widths: '200,300,480' -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Histoire du sac",
+  "settings": [
+    { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
+    { "type": "text", "id": "titre", "label": "Titre principal", "default": "Avant tout, un sac à langer pour ranger les essentiels de bébé" },
+    { "type": "text", "id": "sous_titre", "label": "Sous-titre", "default": "5 poches pensées pour ne plus jamais chercher :" },
+    { "type": "textarea", "id": "texte", "label": "Texte" },
+    { "type": "textarea", "id": "puces", "label": "Points clés (un par ligne)", "info": "Ex. : Tout est visible. Tout est organisé." },
+    { "type": "textarea", "id": "mantra", "label": "Mantra (texte en italique)", "default": "Avec ses étiquettes et ses filets : Tout est visible. Tout est organisé. Plus besoin de chercher. La charge mentale est soulagée." },
+    { "type": "header", "content": "Mise en page des poches" },
+    { "type": "select", "id": "dispo_puces", "label": "Affichage des poches",
+      "options": [
+        { "value": "liste", "label": "Sous le texte (par defaut)" },
+        { "value": "reperes", "label": "Reperes poses sur la photo" }
+      ], "default": "liste" },
+    { "type": "textarea", "id": "reperes_pos", "label": "Position des reperes",
+      "info": "Une ligne par poche, dans le meme ordre : position horizontale, position verticale, sens du trait (bas, haut, gauche, droite, aucun). Exemple : 30,19,bas" },
+    { "type": "image_picker", "id": "image", "label": "Photo principale" },
+    { "type": "text", "id": "alt", "label": "Description de la photo principale" },
+    { "type": "select", "id": "cote", "label": "Photo", "options": [ { "value": "gauche", "label": "À gauche" }, { "value": "droite", "label": "À droite" } ], "default": "gauche" },
+    { "type": "text", "id": "bouton", "label": "Bouton (vide : aucun bouton)" },
+    { "type": "url", "id": "bouton_lien", "label": "Lien du bouton", "info": "Vide : remonte au bloc d'achat de la fiche." },
+    { "type": "header", "content": "Designs alternatifs" },
+    { "type": "image_picker", "id": "image_b", "label": "Design B (vignette)" },
+    { "type": "text", "id": "alt_b", "label": "Description design B" },
+    { "type": "image_picker", "id": "image_c", "label": "Design C (vignette)" },
+    { "type": "text", "id": "alt_c", "label": "Description design C" },
+    { "type": "image_picker", "id": "image_d", "label": "Design D (vignette)" },
+    { "type": "text", "id": "alt_d", "label": "Description design D" },
+    { "type": "header", "content": "Apparence" },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ]
+}
+{% endschema %}

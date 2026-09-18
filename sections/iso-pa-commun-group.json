@@ -1,0 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Blocs communs (toutes fiches)",
+  "sections": {
+    "eventualities": {
+      "type": "iso-pa-eventualities",
+      "settings": {
+        "accroche": "",
+        "titre": "Parés à toutes les éventualités. Juste O'CAOU.",
+        "fond": "creme",
+        "filet": false,
+        "image": "shopify:\/\/shop_images\/ocaou-photo-1.png",
+        "alt": "Cabas léopard O'CAOU « je prends TOUT » porté à l'épaule, gourde accrochée à l'anse",
+        "cadrage": 55,
+        "cote": "gauche",
+        "dispo": "cote",
+        "texte": ""
+      }
+    }
+  },
+  "order": [
+    "eventualities"
+  ]
+}

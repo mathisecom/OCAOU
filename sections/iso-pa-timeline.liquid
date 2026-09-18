@@ -1,0 +1,42 @@
+{%- comment -%}
+  Piste A : frise « pensée pour grandir » (maquette, fonction timeline) : photos à la place des emoji,
+  liste ordonnée, âge en titre de niveau 3.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+<div class="iso-pa">
+<section class="pa-sec pa-tl-sec{% if section.settings.fond == 'creme' %} pa-cream{% endif %}{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-tl-h-{{ sid }}"><div class="pa-w">
+  <div class="pa-head">{% if section.settings.surtitre != blank %}<p class="pa-eyebrow">{{ section.settings.surtitre | escape }}</p>{% endif %}<h2 class="pa-h2" id="pa-tl-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
+  <ol class="pa-tl">
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}><div class="pa-tl-ph">{%- if block.settings.image -%}{%- render 'iso-pa-img', image: block.settings.image, alt: block.settings.alt, sizes: '140px', widths: '160,280', w: 280 -%}{%- endif -%}</div><h3 class="pa-tl-age">{{ block.settings.age | escape }}</h3><p>{{ block.settings.texte | escape }}</p></li>
+    {%- endfor -%}
+  </ol>
+  {%- if section.settings.slogan != blank -%}<p class="pa-slogan">{{ section.settings.slogan | escape }}</p>{%- endif -%}
+</div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Frise",
+  "settings": [
+    { "type": "text", "id": "surtitre", "label": "Surtitre" },
+    { "type": "text", "id": "titre", "label": "Titre" },
+    { "type": "text", "id": "slogan", "label": "Phrase de conclusion" },
+    { "type": "select", "id": "fond", "label": "Fond", "options": [ { "value": "blanc", "label": "Blanc" }, { "value": "creme", "label": "Crème" } ], "default": "blanc" },
+    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "etape",
+      "name": "Étape",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif)" },
+        { "type": "text", "id": "age", "label": "Âge" },
+        { "type": "text", "id": "texte", "label": "Texte" }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}
