@@ -895,14 +895,14 @@
           "type": "question",
           "settings": {
             "question": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "reponse": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glissé dans le sac en mode sac à dos.</p>"
+            "reponse": "<p>Oui, comme dans un sac à dos classique, on met tout dedans.</p>"
           }
         },
         "q_6": {
           "type": "question",
           "settings": {
             "question": "Comment peut-on accrocher le sac à dos ?",
-            "reponse": "<p>Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé. Il est très pratique, il s’accroche partout !</p>"
+            "reponse": "<p>Attaches poussettes intégrées, on peut aussi l'accrocher au siège auto et aux barreaux du lit bébé. Il y a 2 poignées aussi.</p>"
           }
         },
         "q_7": {
