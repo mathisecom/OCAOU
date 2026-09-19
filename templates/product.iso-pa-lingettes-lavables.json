@@ -17,13 +17,15 @@
           "type": "accordeon",
           "settings": {
             "titre": "Dimensions (en cm)",
-            "contenu": "<p>Pochette de transport 17x19cm</p><p>Lingettes : 20x20cm</p>"
+            "icones": "",
+            "contenu": "<ul><li>Pochette de transport 17x19cm</li><li>Lingettes : 20x20cm</li></ul>"
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
             "titre": "Composition",
+            "icones": "",
             "contenu": "<p>80% bambou-20%coton (certifié OEKO-TEX® Standard 100)</p>"
           }
         },
@@ -31,6 +33,7 @@
           "type": "accordeon",
           "settings": {
             "titre": "Entretien",
+            "icones": "",
             "contenu": "<ul><li>Lavage à 40°</li><li>Ne pas sécher au sèche linge</li><li>Ne pas utiliser d’agent de blanchiment</li></ul><p> </p>"
           }
         }
@@ -41,13 +44,24 @@
         "accordeon_3"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O'CAOU ça coule",
+        "collection": "",
         "badges": "Best Seller\nSac évolutif",
         "note": "4.8 / 5",
         "avis": "+ 500 avis",
         "pitch_titre": "À utiliser encore et encore",
         "pitch": "Ultra douces et réutilisables, ces lingettes en bambou prennent soin des peaux sensibles de toute la famille, à la maison comme en sortie.",
         "puces": "ÉVOLUTIF\nPRATIQUE\nORGANISATION\nDÉPERLANT",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +70,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -69,7 +88,7 @@
           "couverts",
           "coffret-pour-maman-1"
         ],
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -253,31 +272,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -291,6 +325,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -470,37 +506,97 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/format_34_00ab9f0c-9ba3-4fd6-8f5c-c154790cc53e.png",
+            "alt": "Bébé porté, lingette lavable posée sous son menton",
+            "titre": "Douces avec toutes les peaux",
+            "texte": "En bambou ultra doux, elles nettoient délicatement le visage, les mains, le siège de bébé ou la peau de maman pendant l'allaitement.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_a002a7ff-3d38-4917-880d-8e85f01db786.png",
+            "alt": "Bébé qui boit son biberon, lingette lavable glissée sous le menton",
+            "titre": "Absorbantes et polyvalentes",
+            "texte": "O'CAOU ça coule? Les lingettes sont là pour être parés à tous les petits accidents.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/lingettes_cabas.png",
+            "alt": "Pochette imperméable des lingettes rangée dans un cabas léopard",
+            "titre": "À réutiliser encore et encore",
+            "texte": "Lavables et réutilisables, elles vous accompagnent partout grâce à leur pochette imperméable incluse.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -514,6 +610,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
@@ -862,52 +960,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "bg_color": "#F4EDE1",
-        "filet": false
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/format_34_00ab9f0c-9ba3-4fd6-8f5c-c154790cc53e.png",
-            "alt": "Bébé porté, lingette lavable posée sous son menton",
-            "titre": "Douces avec toutes les peaux",
-            "texte": "En bambou ultra doux, elles nettoient délicatement le visage, les mains, le siège de bébé ou la peau de maman pendant l'allaitement.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_a002a7ff-3d38-4917-880d-8e85f01db786.png",
-            "alt": "Bébé qui boit son biberon, lingette lavable glissée sous le menton",
-            "titre": "Absorbantes et polyvalentes",
-            "texte": "O'CAOU ça coule? Les lingettes sont là pour être parés à tous les petits accidents.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/lingettes_cabas.png",
-            "alt": "Pochette imperméable des lingettes rangée dans un cabas léopard",
-            "titre": "À réutiliser encore et encore",
-            "texte": "Lavables et réutilisables, elles vous accompagnent partout grâce à leur pochette imperméable incluse.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
