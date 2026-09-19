@@ -17,6 +17,7 @@
           "type": "accordeon",
           "settings": {
             "titre": "Pensée pour les bébes et les Petits Grands",
+            "icones": "",
             "contenu": "<ul><li>Rassure au coucher</li><li>Aide à l'endormissement</li><li>Accompagne les réveils nocturnes</li><li>Nomade: facile à tenir grâce à son anse</li><li>Autonomie pour se déplacer</li><li>Toujours à portée de main</li></ul>"
           }
         },
@@ -24,7 +25,8 @@
           "type": "accordeon",
           "settings": {
             "titre": "Caractéristiques",
-            "contenu": "<p><span style=\"text-decoration:underline\">Dimensions</span> : 112mm x 126,5mm x 91,5mm</p><p><span style=\"text-decoration:underline\">Poids</span>= : 157g</p><p><span style=\"text-decoration:underline\">Composition</span> : silicone de haute qualité</p><p><span style=\"text-decoration:underline\">Entretien</span> : Nettoyer avec un chiffon doux et humide</p>"
+            "icones": "",
+            "contenu": "<ul><li>Dimensions : 112mm x 126,5mm x 91,5mm</li><li>Poids= : 157g</li><li>Composition : silicone de haute qualité</li><li>Entretien : Nettoyer avec un chiffon doux et humide</li></ul>"
           }
         }
       },
@@ -33,14 +35,24 @@
         "accordeon_2"
       ],
       "settings": {
+        "bg_color": "#ffffff",
         "titre": "Veilleuse Nomade",
         "accroche": "O'CAOU j'ai peur",
+        "collection": "",
         "badges": "Best Seller\nSac évolutif",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "La Veilleuse Baladeuse",
         "pitch": "La veilleuse qui rassure les tout-petits et illumine leurs premières nuits. Pensée pour les petites mains. Imaginée pour des nuits plus sereines.",
         "puces": "Minuteur 15'-30'\nTactile\nLumière douce : 2 intensités\nSilicone doux et résistant\nFacile à transporter avec son anse",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -49,7 +61,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "rich_text_7LA3LQ": {
@@ -232,31 +249,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -270,6 +302,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -458,7 +492,7 @@
           "couverture",
           "coffret-naissance-1"
         ],
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -495,6 +529,51 @@
         "product_card_mobile_background": "",
         "product_card_mobile_text_color": "",
         "background_dots": "#fff"
+      }
+    },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Tezza-4228.jpg",
+            "alt": "Veilleuse posée dans le lit à barreaux, bébé endormi à côté",
+            "titre": "Un coucher tout en douceur",
+            "texte": "Sa lumière douce rassure bébé et crée une ambiance apaisante au moment du coucher.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2803.heic",
+            "alt": "Bébé endormi qui garde la main sur sa veilleuse allumée",
+            "titre": "Pensée pour les petites mains",
+            "texte": "Sa forme toute ronde est facile à attraper, pour que bébé garde son petit compagnon près de lui.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/eden_couloir_veilleuse.png",
+            "alt": "Enfant qui marche dans le couloir en tirant sa veilleuse par l'anse",
+            "titre": "Elle vous suit partout",
+            "texte": "Grâce à son anse pratique, la veilleuse accompagne bébé à la maison, en voyage ou chez les grands-parents.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
       }
     },
     "avantageicons_k7faYm": {
@@ -792,52 +871,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "bg_color": "#F4EDE1",
-        "filet": false
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/Tezza-4228.jpg",
-            "alt": "Veilleuse posée dans le lit à barreaux, bébé endormi à côté",
-            "titre": "Un coucher tout en douceur",
-            "texte": "Sa lumière douce rassure bébé et crée une ambiance apaisante au moment du coucher.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2803.heic",
-            "alt": "Bébé endormi qui garde la main sur sa veilleuse allumée",
-            "titre": "Pensée pour les petites mains",
-            "texte": "Sa forme toute ronde est facile à attraper, pour que bébé garde son petit compagnon près de lui.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/eden_couloir_veilleuse.png",
-            "alt": "Enfant qui marche dans le couloir en tirant sa veilleuse par l'anse",
-            "titre": "Elle vous suit partout",
-            "texte": "Grâce à son anse pratique, la veilleuse accompagne bébé à la maison, en voyage ou chez les grands-parents.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
