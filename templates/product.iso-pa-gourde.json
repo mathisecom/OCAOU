@@ -182,7 +182,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_11_08.png",
+            "image": "shopify://shop_images/souple.png",
             "alt": "Enfant qui boit à sa gourde léopard",
             "titre": "Souple",
             "texte": "Silicone flexible et incassable. Une gourde qui résiste aux chutes et aux jeux les plus fous.",
@@ -238,7 +238,7 @@
         "etape_1": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/IMG_0302.heic",
+            "image": "shopify://shop_images/a_1_an.png",
             "alt": "Enfant qui boit à sa gourde beige",
             "age": "À 1 an",
             "texte": "Il apprend à boire tout seul"
@@ -247,7 +247,7 @@
         "etape_2": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_5_sept._2026_14_32_24.png",
+            "image": "shopify://shop_images/a_3_ans.png",
             "alt": "Enfant souriante avec le sac léopard ouvert",
             "age": "À 3 ans",
             "texte": "Elle l’accompagne à la maternelle"
@@ -256,7 +256,7 @@
         "etape_3": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-enfant-poussette.jpg",
+            "image": "shopify://shop_images/a_5_ans.png",
             "alt": "Enfant qui boit à sa gourde près d’une poussette",
             "age": "À 5 ans",
             "texte": "Elle hydrate au sport"
@@ -265,7 +265,7 @@
         "etape_4": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_21_29.png",
+            "image": "shopify://shop_images/IMG_0074.heic",
             "alt": "Bébé qui tient une gourde rose à la plage",
             "age": "À 7 ans",
             "texte": "Elle voyage avec lui"
