@@ -336,7 +336,7 @@
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
-        "bg_color": "#ffffff"
+        "bg_color": "#F4EDE1"
       }
     },
     "image_with_text_overlay_xeN3nf": {
@@ -1662,7 +1662,7 @@
         "titre": "Les moments de vie",
         "texte": "",
         "affichage": "defile",
-        "bg_color": "#ffffff",
+        "bg_color": "#F4EDE1",
         "filet": false
       }
     }
