@@ -42,8 +42,7 @@
         "background": "#ffffff",
         "background_gradient": "",
         "text_color": "#000000"
-      },
-      "disabled": true
+      }
     },
     "logoscroll_Lyixnk": {
       "type": "logoscroll",
@@ -58,7 +57,6 @@
         "image_fFKPyw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0055.heic",
             "url": ""
           }
         },
@@ -163,6 +161,7 @@
         "image_MK3rYP",
         "image_U9YqTk"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
@@ -199,8 +198,7 @@
         "border_thickness": 0,
         "section_radius": 0,
         "lazy": true
-      },
-      "disabled": true
+      }
     },
     "testimonials_LKV3kq": {
       "type": "testimonials",
@@ -596,7 +594,10 @@
         "item_4"
       ],
       "settings": {
-        "titre": "Nos engagements"
+        "bg_color": "#f4ede1",
+        "titre": "Nos engagements",
+        "filet": false,
+        "filet_bas": false
       }
     },
     "pied": {
@@ -606,13 +607,26 @@
           "type": "colonne",
           "settings": {
             "titre": "Boutique",
-            "menu": "main-menu"
+            "menu": "main-menu",
+            "lien_1_texte": "",
+            "lien_1_url": "",
+            "lien_2_texte": "",
+            "lien_2_url": "",
+            "lien_3_texte": "",
+            "lien_3_url": "",
+            "lien_4_texte": "",
+            "lien_4_url": "",
+            "lien_5_texte": "",
+            "lien_5_url": "",
+            "lien_6_texte": "",
+            "lien_6_url": ""
           }
         },
         "colonne_2": {
           "type": "colonne",
           "settings": {
             "titre": "La marque",
+            "menu": "",
             "lien_1_texte": "Pourquoi O’CAOU",
             "lien_1_url": "shopify://pages/pourquoi-o-caou",
             "lien_2_texte": "",
@@ -622,13 +636,16 @@
             "lien_4_texte": "Le coin des parents",
             "lien_4_url": "shopify://blogs/le-coin-des-parents",
             "lien_5_texte": "Où nous trouver",
-            "lien_5_url": "shopify://pages/ou-nous-trouver"
+            "lien_5_url": "shopify://pages/ou-nous-trouver",
+            "lien_6_texte": "",
+            "lien_6_url": ""
           }
         },
         "colonne_3": {
           "type": "colonne",
           "settings": {
             "titre": "Aide",
+            "menu": "",
             "lien_1_texte": "Livraisons & retours",
             "lien_1_url": "shopify://pages/livraisons-retours",
             "lien_2_texte": "Retourner un article",
@@ -636,7 +653,11 @@
             "lien_3_texte": "Mes commandes",
             "lien_3_url": "https://shopify.com/88049680718/account/orders",
             "lien_4_texte": "Nous contacter",
-            "lien_4_url": "shopify://pages/contact"
+            "lien_4_url": "shopify://pages/contact",
+            "lien_5_texte": "",
+            "lien_5_url": "",
+            "lien_6_texte": "",
+            "lien_6_url": ""
           }
         }
       },
@@ -646,6 +667,7 @@
         "colonne_3"
       ],
       "settings": {
+        "bg_color": "#f4ede1",
         "nl_titre": "Rejoignez la famille organisée",
         "nl_champ": "Adresse e-mail",
         "nl_bouton": "S’inscrire",
@@ -657,8 +679,8 @@
         "legal_2_url": "shopify://pages/conditions-generales-de-ventes",
         "legal_3_texte": "Politique de confidentialité",
         "legal_3_url": "shopify://pages/politique-de-confidentialite",
-        "marque": "O’CAOU",
-        "cookies_texte": "Cookies"
+        "cookies_texte": "Cookies",
+        "marque": "O’CAOU"
       }
     }
   },

@@ -274,7 +274,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": "#151515"
       }
@@ -336,7 +336,7 @@
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": false,
-        "bg_color": "#FFFFFF"
+        "bg_color": "#ffffff"
       }
     },
     "image_with_text_overlay_xeN3nf": {
@@ -534,7 +534,7 @@
         "content": "",
         "link_url": "shopify://collections/les-coffrets",
         "link_text": "Découvrir tous les coffrets",
-        "background": "#F4EDE1",
+        "background": "#f4ede1",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -888,7 +888,7 @@
         "mobile_image_position": "after_icons",
         "columns_gap_desktop": 70,
         "columns_gap_mobile": 34,
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "padding_top_desktop": 52,
         "padding_bottom_desktop": 52,
         "padding_top_mobile": 24,
@@ -897,33 +897,6 @@
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
         "header_margin_bottom_mobile": 30
-      }
-    },
-    "rich_text_TrB4qN": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_Yg7B8r": {
-          "type": "heading",
-          "settings": {
-            "text": "O'CAOU répond aux petits \"O'CAOU\" du quotidien des familles.",
-            "heading_tag": "h1",
-            "text_color": "",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_Yg7B8r"
-      ],
-      "disabled": true,
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
       }
     },
     "avantageicons_9NE3Mb": {
@@ -1708,7 +1681,6 @@
     "featured_collection_HH8gmJ",
     "offrecoffret_Tj4hcD",
     "sectionsicones_JdQXN9",
-    "rich_text_TrB4qN",
     "avantageicons_9NE3Mb",
     "ocaoujaibesoin_bxqEpT",
     "30retours_rDewFa",
