@@ -150,6 +150,7 @@
     },
     "associes": {
       "type": "iso-pa-related",
+      "disabled": true,
       "settings": {
         "titre": "Pochon inclu avec",
         "produits": [
