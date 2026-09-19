@@ -868,7 +868,7 @@
           "type": "question",
           "settings": {
             "question": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
-            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », on range ou on retire facilement vêtements de rechange, jouets ou autres objets.</p>"
+            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Toutes les cpoches sont accessibles en mode sac à dos.</p>"
           }
         },
         "question_5": {
@@ -882,21 +882,21 @@
           "type": "question",
           "settings": {
             "question": "Comment peut-on accrocher le sac à dos ?",
-            "reponse": "<p>Deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher à une poussette, à un siège auto ou même aux barreaux du lit bébé.</p>"
+            "reponse": "<p>Attaches poussettes intégrées, on peut aussi l'accrocher au siège auto ou même aux barreaux du lit bébé.</p>"
           }
         },
         "question_7": {
           "type": "question",
           "settings": {
             "question": "Combien y a-t-il de poches de rangement ?",
-            "reponse": "<p>6 poches : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures. Une grande poche est en filet pour voir en un coup d’œil ce qu’elle contient.</p>"
+            "reponse": "<p>6 poches : une à l'extérieure pour garder l’essentiel à portée de main, et 5 à l'intérieure. </p>"
           }
         },
         "question_8": {
           "type": "question",
           "settings": {
             "question": "Pourquoi y a-t-il des étiquettes dans le sac ?",
-            "reponse": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.</p>"
+            "reponse": "<p>Pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.</p>"
           }
         },
         "question_9": {
