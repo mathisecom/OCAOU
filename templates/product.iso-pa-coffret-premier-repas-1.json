@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Pourquoi choisir la Gourde O'CAOU ?",
             "icones": "utensils:Sans danger alimentaire\nlfgb:Silicone alimentaire LFGB\nbpa-free:Sans BPA, PVC ni phtalates",
-            "contenu": "<ul><li>Sans goût ni odeur</li><li>Pensé pour durer et accompagner les enfants pendant des années</li></ul>"
+            "contenu": ""
           }
         },
         "accordeon_2": {
@@ -26,22 +26,13 @@
           "settings": {
             "titre": "Entretien",
             "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
-            "contenu": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante ou à la vapeur.</li></ul>"
-          }
-        },
-        "accordeon_3": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Caractéristiques",
-            "icones": "",
-            "contenu": "<ul><li>Dimensions : H190,2mm</li><li>Capacité : 350ML</li><li>Composition : Silicone Alimentaire</li></ul>"
+            "contenu": ""
           }
         }
       },
       "block_order": [
         "accordeon_1",
-        "accordeon_2",
-        "accordeon_3"
+        "accordeon_2"
       ],
       "settings": {
         "bg_color": "#ffffff",
