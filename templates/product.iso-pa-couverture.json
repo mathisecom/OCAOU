@@ -17,20 +17,23 @@
           "type": "accordeon",
           "settings": {
             "titre": "Description",
-            "contenu": "<h5><strong>Le cocon des premiers instants</strong></h5><p>À la maternité, elle réchauffe bébé.<br/>À la maison, elle accompagne les câlins.<br/>En balade, elle protège les petits aventuriers.<br/>Une seule couverture.<br/>Des centaines de câlins.<br/>Des milliers de souvenirs.</p>"
+            "icones": "",
+            "contenu": "<h5><strong>Le cocon des premiers instants</strong></h5><p>À la maternité, elle réchauffe bébé.<br/>À la maison, elle accompagne les câlins.<br/>En balade, elle protège les petits aventuriers.</p>"
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
             "titre": "Caractéristiques",
-            "contenu": "<p><span style=\"text-decoration:underline\">Dimensions</span> : 80x100cm</p><p><span style=\"text-decoration:underline\">Composition </span>: 100 % coton certifié OEKO-TEX® STANDARD 100</p>"
+            "icones": "",
+            "contenu": "<ul><li>Dimensions : 80x100cm</li><li>Composition : 100 % coton </li></ul>"
           }
         },
         "accordeon_3": {
           "type": "accordeon",
           "settings": {
             "titre": "Pensée pour les bébés",
+            "icones": "",
             "contenu": "<ul><li>Réchauffe bébé</li><li>Accompagne les siestes</li><li>Parfaite pour les câlins</li><li>Facile à emporter</li></ul>"
           }
         }
@@ -41,12 +44,24 @@
         "accordeon_3"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O’CAOU j’ai froid",
+        "collection": "",
         "badges": "Best Seller",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "Un Cocon de Douceur",
         "pitch": "À la maternité, à la maison ou pour se balader, cette belle couverture en maille tricotée est parfaite pour envelopper bébé et accompagner plus tard nos Petits Grands devenus des aventuriers.",
+        "puces": "",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -55,7 +70,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -67,7 +87,7 @@
           "veilleuse",
           "coffret-naissance-1"
         ],
-        "fond": "blanc",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -137,28 +157,15 @@
         "image_DVxrBH",
         "image_78Tjqg"
       ],
+      "disabled": true,
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
         "titre_tag": "h2",
-        "titre_size": 13,
-        "titre_size_mobile": 8,
-        "titre_weight": 600,
-        "titre_uppercase": true,
         "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 130,
-        "logo_width_mobile": 100,
-        "gap": 70,
-        "gap_mobile": 30,
         "grayscale": false,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
-      },
-      "disabled": true
+        "bg_color": "#ffffff"
+      }
     },
     "avisparents_byECTe": {
       "type": "avisparents",
@@ -264,31 +271,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -302,6 +324,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -481,37 +505,97 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Tezza-3973.jpg",
+            "alt": "Couverture tricotée posée dans un couffin",
+            "titre": "Un cocon de douceur",
+            "texte": "Une maille tricotée souple et douce qui enveloppe bébé dès ses premiers jours.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2790.png",
+            "alt": "Couverture ajourée bleue étendue près d'un bébé, veilleuse posée à côté",
+            "titre": "Confort sans étouffer",
+            "texte": "Sa matière respirante et réconfortante garde bébé bien au chaud tout en le laissant respirer.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/couverture_blanche_sac_graou.png",
+            "alt": "Sac léopard ouvert, couverture blanche et tétine rangées dedans",
+            "titre": "Pensée pour le quotidien",
+            "texte": "Légère, lavable en machine et certifiée OEKO-TEX®, elle est facile à transporter pour vous suivre des années.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -525,6 +609,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
@@ -873,52 +959,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "fond": "creme",
-        "filet": false
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/Tezza-3973.jpg",
-            "alt": "Couverture tricotée posée dans un couffin",
-            "titre": "Un cocon de douceur",
-            "texte": "Une maille tricotée souple et douce qui enveloppe bébé dès ses premiers jours.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2790.png",
-            "alt": "Couverture ajourée bleue étendue près d'un bébé, veilleuse posée à côté",
-            "titre": "Confort sans étouffer",
-            "texte": "Sa matière respirante et réconfortante garde bébé bien au chaud tout en le laissant respirer.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/couverture_blanche_sac_graou.png",
-            "alt": "Sac léopard ouvert, couverture blanche et tétine rangées dedans",
-            "titre": "Pensée pour le quotidien",
-            "texte": "Légère, lavable en machine et certifiée OEKO-TEX®, elle est facile à transporter pour vous suivre des années.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "fond": "creme",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
