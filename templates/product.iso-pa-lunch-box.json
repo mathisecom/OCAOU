@@ -17,13 +17,15 @@
           "type": "accordeon",
           "settings": {
             "titre": "Pourquoi choisir O'CAOU ?",
-            "contenu": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA, PVC ni phtalates</p><p>✔Sans goût ni odeur</p><p>✔ Pensé pour durer et accompagner les enfants pendant des années.</p>"
+            "icones": "",
+            "contenu": "<ul><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li><li>Pensé pour durer et accompagner les enfants pendant des années.</li></ul>"
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
             "titre": "Caractéristiques",
+            "icones": "",
             "contenu": "<p>Dimensions : 183 × 132 × 55 mm</p><p>Capacité : 800 ml (400 + 200 + 200 ml)</p><p>Composition : Silicone alimentaire</p>"
           }
         },
@@ -31,6 +33,7 @@
           "type": "accordeon",
           "settings": {
             "titre": "Entretien",
+            "icones": "",
             "contenu": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante ou à la vapeur.</li></ul>"
           }
         }
@@ -41,13 +44,24 @@
         "accordeon_3"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O'CAOU j'ai faim",
+        "collection": "",
         "badges": "Best Seller\nSac évolutif",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "Le Repas bien Organisé",
         "pitch": "La lunch box des Petits Grands, compartimentée et facile à ouvrir, pensée pour accompagner votre enfant à la crèche, à l'école, en pique-nique et dans toutes ses aventures.",
         "puces": "Silicone souple et doux\nCompartimentée\nHermétique\nFacile à ouvrir\nMicro-ondes & lave-vaisselle",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +70,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "<style>product-recommendations p{font-weight:700!important;}</style>\n\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<style>product-recommendations p{font-weight:700!important;}</style>\n\n<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -69,7 +88,7 @@
           "lingettes-lavables",
           "coffret-premier-repas-1"
         ],
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -253,31 +272,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -291,6 +325,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -539,31 +575,46 @@
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -577,6 +628,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
@@ -919,16 +972,6 @@
         "accordion_text_color": ""
       }
     },
-    "avis": {
-      "type": "iso-pa-reviews",
-      "settings": {
-        "titre": "Ils en parlent mieux que nous",
-        "note": "4,8",
-        "total": "+500 parents conquis",
-        "bg_color": "#F4EDE1",
-        "filet": false
-      }
-    },
     "benefices": {
       "type": "iso-pa-benefits",
       "blocks": {
@@ -970,7 +1013,17 @@
       ],
       "settings": {
         "titre": "",
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
+    "avis": {
+      "type": "iso-pa-reviews",
+      "settings": {
+        "titre": "Ils en parlent mieux que nous",
+        "note": "4,8",
+        "total": "+500 parents conquis",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
