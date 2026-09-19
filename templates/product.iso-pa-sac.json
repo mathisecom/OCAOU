@@ -532,7 +532,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Montagephotositewebenfantscopie2.png",
+            "image": "shopify://shop_images/78.png",
             "alt": "Six coloris du sac portés sur le dos",
             "titre": "Évolutif",
             "texte": "Bretelles réglables. Un sac adapté aux parents et aux enfants.",
@@ -542,6 +542,7 @@
         "item_2": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/poussette_mathilde.png",
             "alt": "Sac accroché à une poussette",
             "titre": "Pratique",
             "texte": "Attaches poussette intégrées. Deux poignées pour transporter ou accrocher.",
@@ -551,7 +552,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_30_23.png",
+            "image": "shopify://shop_images/bebe_sur_la_tour.png",
             "alt": "Poches étiquetées du sac ouvert",
             "titre": "Fonctionnel & pédagogique",
             "texte": "Des poches et des étiquettes pour tout catégoriser.",
@@ -561,7 +562,7 @@
         "item_4": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/2_532497e1-b851-4592-92b1-7bbdd15df387.png",
+            "image": "shopify://shop_images/deperlant_TC_rose.png",
             "alt": "Détails du sac léopard : bretelle réglable, attaches poussette, tissu déperlant",
             "titre": "Déperlant",
             "texte": "O’CAOU il pleut… revêtement extérieur et intérieur déperlant.",
@@ -581,7 +582,7 @@
         "item_6": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_00_13_55.png",
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-17_a_21.06.10.png",
             "alt": "Enfant qui marche avec le sac bleu sur le dos",
             "titre": "Ergonomique",
             "texte": "Tirettes faciles à ouvrir, même pour les petites mains.",
