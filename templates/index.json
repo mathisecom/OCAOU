@@ -18,7 +18,7 @@
         "heading_tag": "h1",
         "title_size_desktop": 32,
         "title_size_mobile": 20,
-        "title_weight": 500,
+        "title_weight": 700,
         "title_line_height": "1.2",
         "text_color": "#ffffff",
         "height_desktop": 78,
@@ -336,7 +336,7 @@
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
-        "bg_color": "#F4EDE1"
+        "bg_color": "#f4ede1"
       }
     },
     "image_with_text_overlay_xeN3nf": {
@@ -1662,7 +1662,7 @@
         "titre": "Les moments de vie",
         "texte": "",
         "affichage": "defile",
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
