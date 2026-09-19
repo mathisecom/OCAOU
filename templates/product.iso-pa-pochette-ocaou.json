@@ -34,7 +34,7 @@
           "settings": {
             "titre": "Composition textile",
             "icones": "",
-            "contenu": "<p>Extérieur : 100 % coton</p><p>Intérieur : 30 % coton / 70 % polyester</p>"
+            "contenu": "<ul><li>Extérieur : 100 % coton</li><li>Intérieur : 30 % coton / 70 % polyester</li></ul>"
           }
         }
       },
