@@ -888,7 +888,7 @@
         "mobile_image_position": "after_icons",
         "columns_gap_desktop": 70,
         "columns_gap_mobile": 34,
-        "bg_color": "#f4ede1",
+        "bg_color": "#FFFFFF",
         "padding_top_desktop": 52,
         "padding_bottom_desktop": 52,
         "padding_top_mobile": 24,
