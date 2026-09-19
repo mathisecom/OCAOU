@@ -12,42 +12,25 @@
   "sections": {
     "main": {
       "type": "iso-pa-product",
-      "blocks": {
-        "accordeon_1": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Pourquoi choisir la Gourde O'CAOU ?",
-            "contenu": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA,PVC ni phtalates</p><p>✔ Sans goût ni odeur</p><p>✔ Pensé pour durer et accompagner les  enfants pendant<br/>des années<br/><br/><br/><br/></p>"
-          }
-        },
-        "accordeon_2": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Entretien",
-            "contenu": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante ou à la vapeur.</li></ul>"
-          }
-        },
-        "accordeon_3": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Caractéristiques",
-            "contenu": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordeon_1",
-        "accordeon_2",
-        "accordeon_3"
-      ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "Cabas + Sac Isotherme",
+        "collection": "",
         "badges": "Best Seller\nSac évolutif",
         "note": "4,8 / 5",
         "avis": "+ 500 avis",
         "pitch_titre": "O’CAOU je sors",
         "pitch": "Un coffret parfait pour se promener en toute sérénité. Un grand sac isotherme pour garder au chaud ou au frais le repas de bébé, et un grand fourre-tout pour ne rien manquer de la journée.",
-        "puces": "Grande capacité\nLéger\nSouple et léger\nTrès stylé\nFLEXIBLE\nPRATIQUE\nORGANISATION\nPROTECTION",
+        "puces": "Grande capacité\nLéger\nSouple et léger\nTrès stylé",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +39,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "rich_text_7LA3LQ": {
@@ -83,6 +71,57 @@
         "text_color": ""
       }
     },
+    "presse": {
+      "type": "iso-presse",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4"
+      ],
+      "name": "Recommandé par",
+      "settings": {
+        "titre": "Recommandé par",
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
+      }
+    },
     "associes": {
       "type": "iso-pa-related",
       "settings": {
@@ -91,7 +130,7 @@
           "pochette-ocaou",
           "lingettes-lavables"
         ],
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -199,31 +238,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -237,6 +291,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -414,6 +470,51 @@
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
         "header_margin_bottom_mobile": 30
+      }
+    },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_3_5128d3b5-7d47-4dd3-8fab-79f47bb7d937.png",
+            "alt": "Sac isotherme rose accroché à la poussette, dans un jardin",
+            "titre": "Tout pour la balade",
+            "texte": "Un cabas et un sac isotherme pour partir sereinement avec tout ce qu’il faut pour bébé.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_3_copie_2.png",
+            "alt": "Sac isotherme ouvert : lunch box rose, couverts et gourde rangés à l'intérieur",
+            "titre": "Pratique et spacieux",
+            "texte": "De la place pour le repas, les affaires et les petits indispensables de la journée.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_4.png",
+            "alt": "Cabas rose porté au bras, gourde accrochée sur le côté",
+            "titre": "Beau et facile à emporter",
+            "texte": "Un duo léger, souple et stylé, parfait pour les sorties du quotidien.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
       }
     },
     "avantageicons_k7faYm": {
@@ -739,103 +840,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "bg_color": "#F4EDE1",
-        "filet": false
-      }
-    },
-    "presse": {
-      "type": "iso-presse",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
-            "nom": "La Maison des Maternelles",
-            "url": ""
-          }
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
-            "nom": "Marie Claire",
-            "url": ""
-          }
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
-            "nom": "Doolittle",
-            "url": ""
-          }
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
-            "nom": "Yoopala",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4"
-      ],
-      "name": "Recommandé par",
-      "settings": {
-        "titre": "Recommandé par",
-        "titre_tag": "h2",
-        "titre_color": "#121212",
-        "grayscale": true,
-        "bg_color": "#ffffff"
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_3_5128d3b5-7d47-4dd3-8fab-79f47bb7d937.png",
-            "alt": "Sac isotherme rose accroché à la poussette, dans un jardin",
-            "titre": "Tout pour la balade",
-            "texte": "Un cabas et un sac isotherme pour partir sereinement avec tout ce qu’il faut pour bébé.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_3_copie_2.png",
-            "alt": "Sac isotherme ouvert : lunch box rose, couverts et gourde rangés à l'intérieur",
-            "titre": "Pratique et spacieux",
-            "texte": "De la place pour le repas, les affaires et les petits indispensables de la journée.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_4.png",
-            "alt": "Cabas rose porté au bras, gourde accrochée sur le côté",
-            "titre": "Beau et facile à emporter",
-            "texte": "Un duo léger, souple et stylé, parfait pour les sorties du quotidien.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
