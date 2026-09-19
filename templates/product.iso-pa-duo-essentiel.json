@@ -909,14 +909,14 @@
           "type": "question",
           "settings": {
             "question": "Combien y a-t-il de poches de rangement ?",
-            "reponse": "<p>Le sac à dos possède 6 poches pour organiser facilement toutes les affaires : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures pour bien compartimenter le contenu. </p><p>Une grande poche est en filet, ce qui permet de voir en un coup d’œil ce qu’elle contient. Cela facilite le rangement et l’organisation.</p>"
+            "reponse": "<p>6 poches : une à l'extérieure pour garder l’essentiel à portée de main, et 5 à l'intérieure. </p>"
           }
         },
         "q_8": {
           "type": "question",
           "settings": {
             "question": "Pourquoi y a-t-il des étiquettes dans le sac ?",
-            "reponse": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. </p><p>Il apprend à lire en rangeant, gagne en autonomie et s’amuse en organisant ses affaires. Le sac devient ainsi un véritable support pédagogique, à la fois ludique et pratique.</p>"
+            "reponse": "<p>Pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.</p>"
           }
         },
         "q_9": {
@@ -930,14 +930,14 @@
           "type": "question",
           "settings": {
             "question": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
-            "reponse": "<p>Le surplus de sangle se glisse facilement dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
+            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
           }
         },
         "q_11": {
           "type": "question",
           "settings": {
             "question": "Quel est le poids du sac à dos ?",
-            "reponse": "<p>Le sac pèse entre 360 et 480 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! </p>"
+            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !</p>"
           }
         }
       },
