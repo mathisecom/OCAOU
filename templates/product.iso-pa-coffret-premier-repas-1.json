@@ -33,6 +33,7 @@
           "type": "accordeon",
           "settings": {
             "titre": "Caractéristiques",
+            "icones": "",
             "contenu": "<ul><li>Dimensions : H190,2mm</li><li>Capacité : 350ML</li><li>Composition : Silicone Alimentaire</li></ul>"
           }
         }
@@ -43,13 +44,24 @@
         "accordeon_3"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "Gourde + Lunch Box + Couverts + Poche De Protection",
+        "collection": "",
         "badges": "Best Seller",
         "note": "4.8",
         "avis": "+ 500 avis",
         "pitch_titre": "O’CAOU je deviens autonome",
         "pitch": "Un coffret parfait pour manger comme les grands. Un kit complet pour voyager partout bien équipé.",
         "puces": "FLEXIBLE\nPRATIQUE\nORGANISATION\nPROTECTION",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie"
       }
@@ -58,7 +70,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -68,7 +85,7 @@
         "produits": [
           "sac-isotherme"
         ],
-        "fond": "blanc",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -94,6 +111,57 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "presse": {
+      "type": "iso-presse",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4"
+      ],
+      "name": "Recommandé par",
+      "settings": {
+        "titre": "Recommandé par",
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
       }
     },
     "avisparents_byECTe": {
@@ -200,31 +268,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -238,6 +321,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -415,6 +500,51 @@
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
         "header_margin_bottom_mobile": 30
+      }
+    },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_59_04.png",
+            "alt": "Enfant en pique-nique qui mange dans sa lunch box compartimentée",
+            "titre": "Un kit repas complet",
+            "texte": "Un coffret complet avec gourde, lunch box et couverts pour accompagner les premiers repas en autonomie.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_3_copie.png",
+            "alt": "Sac isotherme ouvert sur l'herbe, lunch box rose et couverts à l'intérieur",
+            "titre": "Pratique au quotidien",
+            "texte": "Léger, hermétique et facile à nettoyer, il se glisse facilement dans le sac isotherme O’CAOU.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_3_b1181cba-420e-4329-ad4a-8ee6bf7fdcb6.png",
+            "alt": "Couverts, lunch box et gourde rincés à l'eau",
+            "titre": "Facile à nettoyer",
+            "texte": "Passe au lave-vaisselle. En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
       }
     },
     "avantageicons_k7faYm": {
@@ -753,116 +883,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "fond": "creme",
-        "filet": false
-      }
-    },
-    "presse": {
-      "type": "iso-presse",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
-            "nom": "La Maison des Maternelles",
-            "url": ""
-          }
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
-            "nom": "Marie Claire",
-            "url": ""
-          }
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
-            "nom": "Doolittle",
-            "url": ""
-          }
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
-            "nom": "Yoopala",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4"
-      ],
-      "name": "Recommandé par",
-      "settings": {
-        "titre": "Recommandé par",
-        "titre_tag": "h2",
-        "titre_size": 12,
-        "titre_size_mobile": 11,
-        "titre_weight": 600,
-        "titre_uppercase": true,
-        "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 150,
-        "logo_width_mobile": 90,
-        "gap": 56,
-        "gap_mobile": 28,
-        "grayscale": true,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_59_04.png",
-            "alt": "Enfant en pique-nique qui mange dans sa lunch box compartimentée",
-            "titre": "Un kit repas complet",
-            "texte": "Un coffret complet avec gourde, lunch box et couverts pour accompagner les premiers repas en autonomie.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_3_copie.png",
-            "alt": "Sac isotherme ouvert sur l'herbe, lunch box rose et couverts à l'intérieur",
-            "titre": "Pratique au quotidien",
-            "texte": "Léger, hermétique et facile à nettoyer, il se glisse facilement dans le sac isotherme O’CAOU.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_3_b1181cba-420e-4329-ad4a-8ee6bf7fdcb6.png",
-            "alt": "Couverts, lunch box et gourde rincés à l'eau",
-            "titre": "Facile à nettoyer",
-            "texte": "Passe au lave-vaisselle. En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "fond": "creme",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
