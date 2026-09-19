@@ -979,30 +979,30 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_31_aout_2026_15_48_25.png",
+            "image": "shopify://shop_images/ChatGPT_Image_16_sept._2026_11_35_56.png",
             "alt": "Enfant assis sur un plaid qui mange un sandwich, lunch box ouverte devant lui",
-            "titre": "Adaptée aux petites portions",
-            "texte": "Pour des repas équilibrés et bien organisés.",
+            "titre": "Un couvercle hermétique avec séparateur intégré",
+            "texte": "Pour éviter les fuites et garder les aliments bien séparés, sans les mélanger.",
             "badges": ""
           }
         },
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_4_sept._2026_16_36_41.png",
+            "image": "shopify://shop_images/ChatGPT_Image_16_sept._2026_11_40_06.png",
             "alt": "Lunch box ouverte avec son séparateur : fraises et amandes de chaque côté, couvercle posé à côté",
-            "titre": "Un couvercle hermétique avec séparateur intégré",
-            "texte": "Pour éviter les fuites et garder les aliments bien séparés, sans les mélanger.",
+            "titre": "Résiste au chaud comme au froid",
+            "texte": "Compatible avec le lave-vaisselle et le congélateur, pour des repas aussi bien chauds que frais.",
             "badges": ""
           }
         },
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/format_34_copie_3.png",
+            "image": "shopify://shop_images/eden_pic_nic.png",
             "alt": "Lunch box remplie de tomates et de gressins, posée près du sac isotherme",
-            "titre": "Résiste au chaud comme au froid",
-            "texte": "Compatible avec le lave-vaisselle et le congélateur, pour des repas aussi bien chauds que frais.",
+            "titre": "Adaptée aux petites portions",
+            "texte": "Pour des repas équilibrés et bien organisés.",
             "badges": ""
           }
         }
