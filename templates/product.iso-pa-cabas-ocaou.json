@@ -17,6 +17,7 @@
           "type": "accordeon",
           "settings": {
             "titre": "Dimensions (en cm)",
+            "icones": "",
             "contenu": "<p><strong>Dimensions</strong> : 45x35x12cm</p>"
           }
         },
@@ -24,13 +25,15 @@
           "type": "accordeon",
           "settings": {
             "titre": "Composition",
-            "contenu": "<p>Extérieur : 100 % coton</p><p>Intérieur : 30 % coton / 70 % polyester</p>"
+            "icones": "",
+            "contenu": "<ul><li>Extérieur : 100 % coton</li><li>Intérieur : 30 % coton / 70 % polyester</li></ul>"
           }
         },
         "accordeon_3": {
           "type": "accordeon",
           "settings": {
             "titre": "Entretien",
+            "icones": "",
             "contenu": "<ul><li>Lavage à 30°</li><li>Ne pas sécher au sèche linge</li><li>Ne pas utiliser d’agent de blanchiment</li></ul>"
           }
         }
@@ -41,13 +44,24 @@
         "accordeon_3"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O'CAOU je prends TOUT",
+        "collection": "",
         "badges": "Best Seller",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "Le Cabas à TOUT faire",
         "pitch": "Un cabas pour porter, ranger, pour surtout ne plus rien oublier. Un fourre-tout pour TOUT emporter avec vous. Vous aurez vraiment TOUT, juste au cas où…",
         "puces": "ÉVOLUTIF\nPRATIQUE\nORGANISATION\nDÉPERLANT",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +70,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -68,7 +87,7 @@
           "coffret-balades-1",
           "duo-pratique"
         ],
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -286,31 +305,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -324,6 +358,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -503,37 +539,97 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_4_ac0d7252-86ef-46d6-a94e-3ec99f19ebdc.png",
+            "alt": "Cabas léopard posé sur un tabouret, gourde et petites affaires glissées dedans",
+            "titre": "Prendre TOUT au cas où...",
+            "texte": "Sa grande capacité permet d’emporter facilement les affaires de bébé et celles de toute la famille.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_4_copie.png",
+            "alt": "Cabas bleu porté à l'épaule, doudou accroché à l'anse",
+            "titre": "Léger et facile à vivre",
+            "texte": "Léger et pratique, ce cabas se plie facilement et vous accompagne partout au quotidien.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/format_34_3c256a3a-22a4-4bae-9216-fcfaec0b6947.png",
+            "alt": "Intérieur d'un cabas rose : poche zippée, lunettes de soleil et petits jouets",
+            "titre": "Être organisé et stylé",
+            "texte": "Une poche intérieure pratique pour organiser et garder les essentiels à portée de main.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -547,6 +643,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
@@ -895,52 +993,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "bg_color": "#F4EDE1",
-        "filet": false
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_4_ac0d7252-86ef-46d6-a94e-3ec99f19ebdc.png",
-            "alt": "Cabas léopard posé sur un tabouret, gourde et petites affaires glissées dedans",
-            "titre": "Prendre TOUT au cas où...",
-            "texte": "Sa grande capacité permet d’emporter facilement les affaires de bébé et celles de toute la famille.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_4_copie.png",
-            "alt": "Cabas bleu porté à l'épaule, doudou accroché à l'anse",
-            "titre": "Léger et facile à vivre",
-            "texte": "Léger et pratique, ce cabas se plie facilement et vous accompagne partout au quotidien.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/format_34_3c256a3a-22a4-4bae-9216-fcfaec0b6947.png",
-            "alt": "Intérieur d'un cabas rose : poche zippée, lunettes de soleil et petits jouets",
-            "titre": "Être organisé et stylé",
-            "texte": "Une poche intérieure pratique pour organiser et garder les essentiels à portée de main.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
