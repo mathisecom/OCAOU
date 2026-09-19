@@ -17,37 +17,33 @@
           "type": "accordeon",
           "settings": {
             "titre": "Caractéristiques",
-            "contenu": "<p>Longueur sangle: 17 cm<br/><br/>Diamètre mousqueton: 40mm</p><p>Sangle: polyester<br/><br/>Mousqueton: acier</p>"
-          }
-        },
-        "accordeon_2": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Composition Textile",
-            "contenu": "<p>Extérieur: 100% Coton</p><p>Intérieur: 100% coton</p><p>Filet: 100% polyester</p><p>Rembourrage : 100% polyurétane</p><p><strong>Sac sherpa</strong></p><p>Extérieur: 100% polyester</p><p></p>"
-          }
-        },
-        "accordeon_3": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Entretien",
-            "contenu": "<ul><li>Laver séparément délicatement à la main à l'eau froide</li><li>Ne pas faire tremper</li><li>Essorer à la main</li><li>Remodeler avant séchage</li><li>Séchage à plat</li><li>Ne pas sécher au sèche linge</li><li>Ne pas repasser</li><li>Ne pas utiliser d'agent de blanchiment</li></ul>"
+            "icones": "",
+            "contenu": "<ul><li>Longueur sangle: 17 cm</li><li>Diamètre mousqueton: 40mm</li><li>Sangle: polyester</li><li>Mousqueton: acier</li></ul>"
           }
         }
       },
       "block_order": [
-        "accordeon_1",
-        "accordeon_2",
-        "accordeon_3"
+        "accordeon_1"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O'CAOU Je l’emporte partout !",
+        "collection": "",
         "badges": "Best Seller\nSac évolutif",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "La Sangle des Aventuriers",
         "pitch": "O’CAOU je l’emporte partout ! Une poignée pratique pensée pour les petites mains : les enfants transportent facilement leur gourde et restent hydratés toute la journée. Ils gardent leur doudou à portée de main pour ne pas manquer de câlin.",
         "puces": "Pensée pour les petites mains\nS’accroche partout\nOuverture facile et rapide\nIdéale pour les sorties",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +52,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -68,9 +69,10 @@
           "coffret-premier-repas-1",
           "duo-essentiel",
           "coffret-naissance-1",
-          "coffret-comme-les-grands-1"
+          "coffret-comme-les-grands-1",
+          "kit-repas-complet"
         ],
-        "fond": "blanc",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -162,37 +164,103 @@
         "text_color": ""
       }
     },
+    "presse": {
+      "type": "iso-presse",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4"
+      ],
+      "name": "Recommandé par",
+      "settings": {
+        "titre": "Recommandé par",
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
+      }
+    },
     "imagewithtexticons_4VMEKy": {
       "type": "imagewithtexticons",
       "blocks": {
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & lange"
+            "label": "Couches & lange",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -206,6 +274,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_43_57.png",
         "image_position": "left",
         "image_first_mobile": true,
@@ -427,31 +497,46 @@
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -465,6 +550,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ChatGPT_Image_24_aout_2026_19_25_29.png",
         "image_position": "right",
         "image_first_mobile": true,
@@ -734,6 +821,51 @@
         "side_padding_mobile": 14
       }
     },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_3_sept._2026_13_04_07.png",
+            "alt": "Poignées nomades accrochées à une patère, enfant en tenue de danse assis au sol",
+            "titre": "LÉGÈRE ET PRATIQUE",
+            "texte": "Petite, cette poignée se glisse et s'accroche partout.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/20260823_130455.jpg",
+            "alt": "Poignée jaune accrochée à l'anse d'un sac",
+            "titre": "MOUSQUETON FACILE À ATTACHER",
+            "texte": "Les enfants peuvent accrocher tout seuls leur gourde ou leur doudou, pour boire et câliner tout au long de la journée.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_ruwrgoruwrgoruwr.jpg",
+            "alt": "Enfant à vélo, doudou accroché au guidon par sa poignée",
+            "titre": "DESIGN STYLÉ",
+            "texte": "Une poignée fun pour accompagner les enfants dans toutes leurs aventures.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
     "faq_RLPihW": {
       "type": "faq",
       "blocks": {
@@ -858,116 +990,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "fond": "creme",
-        "filet": false
-      }
-    },
-    "presse": {
-      "type": "iso-presse",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
-            "nom": "La Maison des Maternelles",
-            "url": ""
-          }
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
-            "nom": "Marie Claire",
-            "url": ""
-          }
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
-            "nom": "Doolittle",
-            "url": ""
-          }
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
-            "nom": "Yoopala",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4"
-      ],
-      "name": "Recommandé par",
-      "settings": {
-        "titre": "Recommandé par",
-        "titre_tag": "h2",
-        "titre_size": 12,
-        "titre_size_mobile": 11,
-        "titre_weight": 600,
-        "titre_uppercase": true,
-        "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 150,
-        "logo_width_mobile": 90,
-        "gap": 56,
-        "gap_mobile": 28,
-        "grayscale": true,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_3_sept._2026_13_04_07.png",
-            "alt": "Poignées nomades accrochées à une patère, enfant en tenue de danse assis au sol",
-            "titre": "LÉGÈRE ET PRATIQUE",
-            "texte": "Petite, cette poignée se glisse et s'accroche partout.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/20260823_130455.jpg",
-            "alt": "Poignée jaune accrochée à l'anse d'un sac",
-            "titre": "MOUSQUETON FACILE À ATTACHER",
-            "texte": "Les enfants peuvent accrocher tout seuls leur gourde ou leur doudou, pour boire et câliner tout au long de la journée.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_ruwrgoruwrgoruwr.jpg",
-            "alt": "Enfant à vélo, doudou accroché au guidon par sa poignée",
-            "titre": "DESIGN STYLÉ",
-            "texte": "Une poignée fun pour accompagner les enfants dans toutes leurs aventures.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "fond": "creme",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
