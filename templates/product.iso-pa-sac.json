@@ -186,9 +186,10 @@
       "settings": {
         "titre": "Souvent achetés ensemble",
         "produits": [
-          "coffret-premier-repas-1",
           "coffret-comme-les-grands-1",
-          "duo-essentiel"
+          "duo-essentiel",
+          "coffret-pour-maman-1",
+          "duo-pratique"
         ],
         "bg_color": "#ffffff",
         "filet": false
