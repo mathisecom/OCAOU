@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Usages",
             "icones": "",
-            "contenu": "<p>Pour maman : maquillage, coussinets, telephone…</p><p>Crèche & maternelle : change,rechange, tétine…</p><p>Sorties : lunettes, lingettes, mouchoirs…</p>"
+            "contenu": "<ul><li>Pour maman : maquillage, coussinets, telephone…</li><li>Crèche & maternelle : change,rechange, tétine…</li><li>Sorties : lunettes, lingettes, mouchoirs…</li></ul>"
           }
         },
         "accordeon_2": {
