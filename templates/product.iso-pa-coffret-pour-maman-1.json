@@ -12,42 +12,25 @@
   "sections": {
     "main": {
       "type": "iso-pa-product",
-      "blocks": {
-        "accordeon_1": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Pourquoi choisir la Gourde O'CAOU ?",
-            "contenu": "<p>✔ Silicone alimentaire LFGB</p><p>✔ Sans BPA,PVC ni phtalates</p><p>✔ Sans goût ni odeur</p><p>✔ Pensé pour durer et accompagner les  enfants pendant<br/>des années<br/><br/><br/><br/></p>"
-          }
-        },
-        "accordeon_2": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Entretien",
-            "contenu": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante ou à la vapeur.</li></ul>"
-          }
-        },
-        "accordeon_3": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Caractéristiques",
-            "contenu": "<p><span style=\"text-decoration:underline\">Dimensions</span> : H190,2mm</p><p><span style=\"text-decoration:underline\">Capacité</span> : 350ML</p><p><span style=\"text-decoration:underline\">Composition</span> : Silicone Alimentaire</p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordeon_1",
-        "accordeon_2",
-        "accordeon_3"
-      ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "Sac O'CAOU + Coussinets d’allaitement + Lingettes Lavables",
+        "collection": "",
         "badges": "Best Seller",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "O’CAOU maman a accouché",
         "pitch": "Un coffret pour prendre soin de maman : un sac pour tout organiser et avoir l’essentiel à portée de main, des lingettes et coussinets d’allaitement en bambou tout doux pour sa peau. Un cadeau idéal pour faire plaisir aux mamans.",
         "puces": "FLEXIBLE\nPRATIQUE\nORGANISATION\nPROTECTION",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +39,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n\n<div id='ss-product-videos'></div>\n\n"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "rich_text_7LA3LQ": {
@@ -81,6 +69,57 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "presse": {
+      "type": "iso-presse",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4"
+      ],
+      "name": "Recommandé par",
+      "settings": {
+        "titre": "Recommandé par",
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
       }
     },
     "avisparents_byECTe": {
@@ -187,31 +226,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -225,6 +279,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -402,6 +458,51 @@
         "side_padding_mobile": 16,
         "header_margin_bottom_desktop": 52,
         "header_margin_bottom_mobile": 30
+      }
+    },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/format_34_9b532eda-deac-403b-b6a3-3c36b7669723.png",
+            "alt": "Sac bleu ouvert : pochette rose, lingettes et coussinets rangés dedans",
+            "titre": "Prendre soin de Maman",
+            "texte": "Un sac, des coussinets d’allaitement et des lingettes lavables réunis dans un coffret pratique et tout doux.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/20260907_152634.jpg",
+            "alt": "Pochette rose, coussinets d'allaitement et lingettes lavables présentés côte à côte",
+            "titre": "Pour féliciter Maman",
+            "texte": "Un coffret utile et joli, parfait à offrir dès la maternité.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/20260907_161049.jpg",
+            "alt": "Gros plan de lingettes lavables empilées, face éponge et face tissu",
+            "titre": "Doux et Réutilisable",
+            "texte": "Des essentiels en bambou, doux pour la peau et faciles à laver au quotidien.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
       }
     },
     "avantageicons_k7faYm": {
@@ -727,116 +828,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "fond": "creme",
-        "filet": false
-      }
-    },
-    "presse": {
-      "type": "iso-presse",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
-            "nom": "La Maison des Maternelles",
-            "url": ""
-          }
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
-            "nom": "Marie Claire",
-            "url": ""
-          }
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
-            "nom": "Doolittle",
-            "url": ""
-          }
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
-            "nom": "Yoopala",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4"
-      ],
-      "name": "Recommandé par",
-      "settings": {
-        "titre": "Recommandé par",
-        "titre_tag": "h2",
-        "titre_size": 12,
-        "titre_size_mobile": 11,
-        "titre_weight": 600,
-        "titre_uppercase": true,
-        "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 150,
-        "logo_width_mobile": 90,
-        "gap": 56,
-        "gap_mobile": 28,
-        "grayscale": true,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/format_34_9b532eda-deac-403b-b6a3-3c36b7669723.png",
-            "alt": "Sac bleu ouvert : pochette rose, lingettes et coussinets rangés dedans",
-            "titre": "Prendre soin de Maman",
-            "texte": "Un sac, des coussinets d’allaitement et des lingettes lavables réunis dans un coffret pratique et tout doux.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/20260907_152634.jpg",
-            "alt": "Pochette rose, coussinets d'allaitement et lingettes lavables présentés côte à côte",
-            "titre": "Pour féliciter Maman",
-            "texte": "Un coffret utile et joli, parfait à offrir dès la maternité.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/20260907_161049.jpg",
-            "alt": "Gros plan de lingettes lavables empilées, face éponge et face tissu",
-            "titre": "Doux et Réutilisable",
-            "texte": "Des essentiels en bambou, doux pour la peau et faciles à laver au quotidien.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "fond": "creme",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
