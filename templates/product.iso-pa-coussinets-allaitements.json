@@ -17,20 +17,23 @@
           "type": "accordeon",
           "settings": {
             "titre": "Dimensions",
-            "contenu": "<p>Pochette de transport 17x19cm</p><p>Filet : 20x20cm</p><p>Coussinets 3D : 12cm</p>"
+            "icones": "",
+            "contenu": "<ul><li>Pochette de transport 17x19cm</li><li>Filet : 20x20cm</li><li>Coussinets 3D : 12cm</li></ul>"
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
             "titre": "Composition",
-            "contenu": "<p>Extérieur :80% bambou-20%coton (certifié OEKO-TEX® Standard 100)</p><p>Cœur absorbant : Microfibre </p><p>Couche extérieure : membrane imperméable</p>"
+            "icones": "",
+            "contenu": "<ul><li>Extérieur :80% bambou-20%coton</li><li>Cœur absorbant : Microfibre </li><li>Couche extérieure : membrane imperméable</li></ul>"
           }
         },
         "accordeon_3": {
           "type": "accordeon",
           "settings": {
             "titre": "Entretien",
+            "icones": "",
             "contenu": "<ul><li>Lavage à 40°</li><li>Ne pas sécher au sèche linge</li><li>Ne pas utiliser d’agent de blanchiment</li></ul>"
           }
         }
@@ -41,13 +44,24 @@
         "accordeon_3"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O’CAOU j’allaite",
+        "collection": "",
         "badges": "Best Seller\nSac évolutif",
         "note": "4.8 / 5",
         "avis": "+ 500 avis",
         "pitch_titre": "La douceur du bambou, le confort des mamans",
         "pitch": "Doux, respirants et absorbants, ces coussinets lavables protègent vos vêtements pendant l’allaitement. Certifiés OEKO-TEX® Standard 100, ils sont accompagnés d’une pochette imperméable et d’un filet de lavage.",
         "puces": "ÉVOLUTIF\nPRATIQUE\nORGANISATION\nDÉPERLANT",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +70,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -67,7 +86,7 @@
           "lingettes-lavables",
           "coffret-pour-maman-1"
         ],
-        "fond": "blanc",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -137,28 +156,15 @@
         "image_DVxrBH",
         "image_78Tjqg"
       ],
+      "disabled": true,
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
         "titre_tag": "h2",
-        "titre_size": 13,
-        "titre_size_mobile": 8,
-        "titre_weight": 600,
-        "titre_uppercase": true,
         "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 130,
-        "logo_width_mobile": 100,
-        "gap": 70,
-        "gap_mobile": 30,
         "grayscale": false,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
-      },
-      "disabled": true
+        "bg_color": "#ffffff"
+      }
     },
     "avisparents_byECTe": {
       "type": "avisparents",
@@ -264,31 +270,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -302,6 +323,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -481,37 +504,97 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/20260903_133006.jpg",
+            "alt": "Coussinets d'allaitement posés sur une table en bois",
+            "titre": "Tout doux pour votre peau",
+            "texte": "En bambou ultra doux, ils respectent les peaux sensibles et apportent plus de confort pendant l’allaitement.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/20260903_160212.jpg",
+            "alt": "Coussinet d'allaitement posé sur un haut de nuit bleu",
+            "titre": "Une protection qui reste discrète",
+            "texte": "Très absorbants, respirants et imperméables, ils aident à garder vos vêtements au sec tout au long de la journée.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/format_34.png",
+            "alt": "Sac ouvert : pochette rose, doudou et coussinets rangés à l'intérieur",
+            "titre": "À laver et à réutiliser",
+            "texte": "Lavables et réutilisables, ils s’utilisent encore et encore pour une solution pratique au quotidien.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -525,6 +608,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
@@ -873,52 +958,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "fond": "creme",
-        "filet": false
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/20260903_133006.jpg",
-            "alt": "Coussinets d'allaitement posés sur une table en bois",
-            "titre": "Tout doux pour votre peau",
-            "texte": "En bambou ultra doux, ils respectent les peaux sensibles et apportent plus de confort pendant l’allaitement.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/20260903_160212.jpg",
-            "alt": "Coussinet d'allaitement posé sur un haut de nuit bleu",
-            "titre": "Une protection qui reste discrète",
-            "texte": "Très absorbants, respirants et imperméables, ils aident à garder vos vêtements au sec tout au long de la journée.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/format_34.png",
-            "alt": "Sac ouvert : pochette rose, doudou et coussinets rangés à l'intérieur",
-            "titre": "À laver et à réutiliser",
-            "texte": "Lavables et réutilisables, ils s’utilisent encore et encore pour une solution pratique au quotidien.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "fond": "creme",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
