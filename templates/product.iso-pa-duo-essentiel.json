@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Dimensions (en cm)",
             "icones": "",
-            "contenu": "<p><strong>Dimensions fermées:</strong><br/>L34cm x H27cm x P10cm</p><p><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm </p>"
+            "contenu": "<ul><li><strong>Dimensions fermées:</strong><br/>L34cm x H27cm x P10cm</li><li><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm </li></ul>"
           }
         },
         "accordeon_2": {
