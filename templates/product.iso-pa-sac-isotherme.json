@@ -17,6 +17,7 @@
           "type": "accordeon",
           "settings": {
             "titre": "Pourquoi choisir O'CAOU ?",
+            "icones": "",
             "contenu": "<ul><li>Isolation thermique</li><li>Grande capacité 5,2 L</li><li>Sangle de transport</li><li>Complète parfaitement la gamme repas O'CAOU</li></ul>"
           }
         },
@@ -24,13 +25,15 @@
           "type": "accordeon",
           "settings": {
             "titre": "Caractéristiques",
-            "contenu": "<p>• Capacité : 5,2 L • Dimensions: H 23x diamètre 17cm<br/>• Matière : Polyesther, intérieur PEVA<br/>• Entretien : nettoyage facile avec un chiffon humide</p>"
+            "icones": "",
+            "contenu": "<p>• Capacité : 5,2 L <br/>• Dimensions: H 23x diamètre 17cm<br/>• Matière : Polyesther, intérieur PEVA<br/>• Entretien : nettoyage facile avec un chiffon humide</p>"
           }
         },
         "accordeon_3": {
           "type": "accordeon",
           "settings": {
             "titre": "Pensé pour les enfants",
+            "icones": "",
             "contenu": "<ul><li>Transport facile</li><li>Repas toujours à portée de main</li><li>Idéal pour la crèche, la maternelle, les sorties et les vacances</li></ul>"
           }
         }
@@ -41,13 +44,24 @@
         "accordeon_3"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O'CAOU c'est chaud - O'CAOU c'est froid",
+        "collection": "",
         "badges": "Best Seller\nSac évolutif",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "Le Compagnon de tous les quotidiens",
         "pitch": "De la crèche aux vacances, il accompagne toutes les aventures des Petits Grands et garde leurs repas bien au chaud ou bien au frais.",
         "puces": "Grande capacité 5,2 L\nGarde le chaud et le froid\nLéger, étanche et facile à nettoyer\nSangle pratique à accrocher partout",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -56,7 +70,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "\n\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -68,7 +87,7 @@
           "lunch-box",
           "coffret-balades-1"
         ],
-        "fond": "blanc",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -172,28 +191,15 @@
         "image_DVxrBH",
         "image_78Tjqg"
       ],
+      "disabled": true,
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
         "titre_tag": "h2",
-        "titre_size": 13,
-        "titre_size_mobile": 8,
-        "titre_weight": 600,
-        "titre_uppercase": true,
         "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 130,
-        "logo_width_mobile": 100,
-        "gap": 70,
-        "gap_mobile": 30,
         "grayscale": false,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
-      },
-      "disabled": true
+        "bg_color": "#ffffff"
+      }
     },
     "avisparents_byECTe": {
       "type": "avisparents",
@@ -299,31 +305,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -337,6 +358,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -516,37 +539,97 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/recadree.png",
+            "alt": "Sac isotherme ouvert : assiette compartimentée et repas préparé",
+            "titre": "Tout son repas trouve sa place",
+            "texte": "Avec sa grande capacité de 5,2 L, il accueille facilement repas, goûter, boisson et petits essentiels.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_2_dc7d11e6-be12-4ffe-9de2-455eeb1b6e8b.png",
+            "alt": "Sac isotherme ouvert avec lunch box, tomates et gressins",
+            "titre": "Chaud ou frais, comme il faut",
+            "texte": "Son intérieur isotherme aide à conserver les aliments au chaud ou au frais pendant les trajets et les sorties.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_2.png",
+            "alt": "Sac isotherme accroché à la poussette par sa sangle, en extérieur",
+            "titre": "Pratique dans toutes les aventures",
+            "texte": "Léger, étanche et facile à nettoyer, il s’accroche facilement grâce à sa sangle et suit les Petits Grands partout.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -560,6 +643,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
@@ -908,52 +993,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "fond": "creme",
-        "filet": false
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/recadree.png",
-            "alt": "Sac isotherme ouvert : assiette compartimentée et repas préparé",
-            "titre": "Tout son repas trouve sa place",
-            "texte": "Avec sa grande capacité de 5,2 L, il accueille facilement repas, goûter, boisson et petits essentiels.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/Design_sans_titre_2_dc7d11e6-be12-4ffe-9de2-455eeb1b6e8b.png",
-            "alt": "Sac isotherme ouvert avec lunch box, tomates et gressins",
-            "titre": "Chaud ou frais, comme il faut",
-            "texte": "Son intérieur isotherme aide à conserver les aliments au chaud ou au frais pendant les trajets et les sorties.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/no_change_2.png",
-            "alt": "Sac isotherme accroché à la poussette par sa sangle, en extérieur",
-            "titre": "Pratique dans toutes les aventures",
-            "texte": "Léger, étanche et facile à nettoyer, il s’accroche facilement grâce à sa sangle et suit les Petits Grands partout.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "fond": "creme",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
