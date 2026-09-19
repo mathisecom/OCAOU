@@ -202,23 +202,23 @@
         "titre": "Les moments de vie",
         "texte": "",
         "affichage": "defile",
-        "filet": false,
-        "bg_color": "#FFFFFF"
+        "bg_color": "#ffffff",
+        "filet": false
       }
     },
     "eventualities": {
       "type": "iso-pa-eventualities",
       "settings": {
+        "dispo": "cote",
         "accroche": "",
-        "titre": "Parés à toutes les éventualités. Juste O'CAOU.",
-        "filet": false,
-        "image": "shopify://shop_images/ocaou-photo-1.png",
+        "titre": "Parés à toutes les éventualités. Juste O'CAOU...",
+        "texte": "",
+        "image": "shopify://shop_images/no_change_1_af2b05db-2610-4de1-82c5-b7ae5943913f.png",
         "alt": "Cabas léopard O'CAOU « je prends TOUT » porté à l'épaule, gourde accrochée à l'anse",
         "cadrage": 55,
         "cote": "gauche",
-        "dispo": "cote",
-        "texte": "",
-        "bg_color": "#F4EDE1"
+        "bg_color": "#f4ede1",
+        "filet": false
       }
     }
   },
