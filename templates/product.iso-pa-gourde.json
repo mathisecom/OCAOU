@@ -77,7 +77,7 @@
           "settings": {
             "titre": "Entretien",
             "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
-            "contenu": "<p>Passe au lave-vaisselle. Peut être stérilisée dans l’eau bouillante ou à la vapeur.</p>"
+            "contenu": ""
           }
         },
         "accordeon_3": {
@@ -106,6 +106,7 @@
         "complement_1"
       ],
       "settings": {
+        "bg_color": "#ffffff",
         "titre": "Gourde",
         "accroche": "O'Caou j'ai faim",
         "collection": "repas",
@@ -117,44 +118,48 @@
         "puces": "Incassable\nDéveloppe l’autonomie\nSouple & légère\nBouchon anti-fuite",
         "galerie": "",
         "leopard": "Léopard\nGraou",
+        "couleurs": "Rose: #E8898A",
         "offre_titre": "Complétez votre Kit Repas Nomade",
         "relais": true,
         "compat": "",
         "complements_titre": "Compatible avec la poignée nomade \"Je l'emporte partout !\"",
         "complements_position": "points_forts",
         "jours": 2,
-        "livraison": "Livraison Suivie en France",
-        "couleurs": "Rose: #E8898A"
+        "livraison": "Livraison Suivie en France"
       }
     },
     "videos": {
       "type": "iso-pa-videos",
-      "settings": {
-        "accroche": "",
-        "titre": "{titre} en vidéo",
-        "filet": true,
-        "bg_color": "#FFFFFF"
-      },
       "blocks": {
         "video_1": {
           "type": "video",
           "settings": {
             "src": "https://cdn.shopify.com/videos/c/vp/e4a7990fdc1245e98ba13ed17ad2b4a0/e4a7990fdc1245e98ba13ed17ad2b4a0.HD-720p-4.5Mbps-94499649.mp4",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/e4a7990fdc1245e98ba13ed17ad2b4a0.thumbnail.0000000000.jpg?v=1789491768"
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/e4a7990fdc1245e98ba13ed17ad2b4a0.thumbnail.0000000000.jpg?v=1789491768",
+            "titre": ""
           }
         },
         "video_2": {
           "type": "video",
           "settings": {
             "src": "https://cdn.shopify.com/videos/c/vp/c203730451e74f4d8fd81a2e7d20d893/c203730451e74f4d8fd81a2e7d20d893.HD-720p-4.5Mbps-94565373.mp4",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c203730451e74f4d8fd81a2e7d20d893.thumbnail.0000000000.jpg?v=1789543602"
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c203730451e74f4d8fd81a2e7d20d893.thumbnail.0000000000.jpg?v=1789543602",
+            "titre": ""
           }
         }
       },
       "block_order": [
         "video_1",
         "video_2"
-      ]
+      ],
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#ffffff",
+        "filet": true,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
+      }
     },
     "associes": {
       "type": "iso-pa-related",
@@ -166,8 +171,8 @@
           "duo-essentiel",
           "duo-miam"
         ],
-        "filet": true,
-        "bg_color": "#FFFFFF"
+        "bg_color": "#ffffff",
+        "filet": true
       }
     },
     "benefices": {
@@ -222,8 +227,8 @@
       ],
       "settings": {
         "titre": "Vous allez adorer la gourde O’CAOU parce que…",
-        "filet": false,
-        "bg_color": "#F4EDE1"
+        "bg_color": "#f4ede1",
+        "filet": false
       }
     },
     "frise": {
@@ -276,8 +281,8 @@
         "surtitre": "Pensée pour durer",
         "titre": "Une gourde pensée pour grandir avec votre enfant",
         "slogan": "Une seule gourde. Des centaines d’aventures.",
-        "filet": false,
-        "bg_color": "#FFFFFF"
+        "bg_color": "#ffffff",
+        "filet": false
       }
     },
     "avis_titre": {
