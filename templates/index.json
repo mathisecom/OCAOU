@@ -261,7 +261,7 @@
           "settings": {
             "text": "Une solution pour tous les petits AU CAS OÙ... du quotidien",
             "heading_tag": "h1",
-            "text_color": "",
+            "text_color": "#151515",
             "gradient": ""
           }
         }
@@ -276,7 +276,7 @@
         "text_position": "center",
         "background": "#FFFFFF",
         "background_gradient": "",
-        "text_color": ""
+        "text_color": "#151515"
       }
     },
     "logoscroll_WxkMyg": {
@@ -534,7 +534,7 @@
         "content": "",
         "link_url": "shopify://collections/les-coffrets",
         "link_text": "Découvrir tous les coffrets",
-        "background": "#fcf9f5",
+        "background": "#FFFFFF",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
