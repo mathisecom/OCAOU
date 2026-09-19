@@ -25,8 +25,8 @@
           "type": "accordeon",
           "settings": {
             "titre": "Entretien",
-            "icones": "",
-            "contenu": "<ul><li>Passe au lave-vaisselle. </li><li>Peut être stérilisée dans l'eau bouillante ou la stérilisation à la vapeur.</li></ul>"
+            "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
+            "contenu": ""
           }
         },
         "accordeon_3": {
