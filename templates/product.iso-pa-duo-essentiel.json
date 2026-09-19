@@ -867,28 +867,28 @@
           "type": "question",
           "settings": {
             "question": "Le sac à dos est-il pour les enfants ou pour les parents ?",
-            "reponse": "<p>Il est conçu pour les deux ! Les bretelles sont réglables, ce qui permet aussi bien aux enfants qu’aux parents de le porter.</p>"
+            "reponse": "<p>Les deux ! Les bretelles sont réglables, parents et enfants peuvent le porter.</p>"
           }
         },
         "q_2": {
           "type": "question",
           "settings": {
             "question": "À partir de quel âge un enfant peut-il le porter ?",
-            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il pourra y mettre ses affaires pour la crèche, la maternelle, la nounou, les activités ou les sorties.</p>"
+            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il peut préparer son sac TOUT SEUL comme un grand.</p>"
           }
         },
         "q_3": {
           "type": "question",
           "settings": {
             "question": "À quoi sert ce sac à dos ?",
-            "reponse": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance : on y range les affaires selon l’âge de l’enfant et ses besoins.</p>"
+            "reponse": "<p>Multifonctions : pour langer, crèche, maternelle, nounou, sport, balades, voyages. Évolutif, il s’adapte à chaque étape de l’enfance.</p>"
           }
         },
         "q_4": {
           "type": "question",
           "settings": {
             "question": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
-            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Il n’est pas nécessaire de l’ouvrir entièrement pour le remplir ou le vider. </p><p>Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », vous pouvez facilement ranger ou retirer des vêtements de rechange, des jouets ou d’autres objets — que ce soit en mode organiseur ou en mode sac à dos.</p>"
+            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Toutes les poches sont accessibles en mode sac à dos.</p>"
           }
         },
         "q_5": {
