@@ -875,7 +875,7 @@
           "type": "question",
           "settings": {
             "question": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "reponse": "<p>Oui, comme dans un sac à dos classique : bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange…</p>"
+            "reponse": "<p>Oui, comme dans un sac à dos classique, on met tout dedans.</p>"
           }
         },
         "question_6": {
