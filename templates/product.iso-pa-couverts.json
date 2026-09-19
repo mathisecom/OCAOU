@@ -13,12 +13,12 @@
     "main": {
       "type": "iso-pa-product",
       "blocks": {
-        "accordeon_1": {
+        "accordeon_4": {
           "type": "accordeon",
           "settings": {
-            "titre": "Dimensions",
+            "titre": "Pourquoi choisir O'CAOU ?",
             "icones": "",
-            "contenu": "<ul><li>Poche de rangement : L17cm</li><li>Couvert : L14cm</li></ul><p></p>"
+            "contenu": "<ul><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li><li> Pensé pour durer et accompagner les enfants pendant des années.</li></ul>"
           }
         },
         "accordeon_2": {
@@ -34,23 +34,14 @@
           "settings": {
             "titre": "Caractéristiques",
             "icones": "",
-            "contenu": "<ul><li>Couverts en acier inoxydable </li><li>Manches en silicone alimentaire </li><li>Pochette de protection en silicone</li></ul>"
-          }
-        },
-        "accordeon_4": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Pourquoi choisir O'CAOU ?",
-            "icones": "",
-            "contenu": "<ul><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li><li> Pensé pour durer et accompagner les enfants pendant des années.</li></ul>"
+            "contenu": "<ul><li>Poche de rangement : L17cm</li><li>Couvert : L14cm</li><li>Couverts en acier inoxydable </li><li>Manches en silicone alimentaire </li><li>Pochette de protection en silicone</li></ul><p></p>"
           }
         }
       },
       "block_order": [
-        "accordeon_1",
+        "accordeon_4",
         "accordeon_2",
-        "accordeon_3",
-        "accordeon_4"
+        "accordeon_3"
       ],
       "settings": {
         "bg_color": "#ffffff",
