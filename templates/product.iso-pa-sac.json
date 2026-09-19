@@ -69,7 +69,7 @@
           "settings": {
             "titre": "Composition textile",
             "icones": "",
-            "contenu": "<p>Extérieur : 100 % coton (certifié OEKO-TEX® Standard 100)<br/>Intérieur : 100 % coton (certifié OEKO-TEX® Standard 100)<br/>Filet : 100 % polyester. <br/>Rembourrage : 100 % polyuréthane. <br/><br/><strong>Sac sherpa</strong>, extérieur : 100 % polyester.</p>"
+            "contenu": "<ul><li>Extérieur : 100 % coton (certifié OEKO-TEX® Standard 100)</li><li>Intérieur : 100 % coton (certifié OEKO-TEX® Standard 100)</li><li>Filet : 100 % polyester. </li><li>Rembourrage : 100 % polyuréthane. </li><li><strong>Sac sherpa</strong>, extérieur : 100 % polyester.</li></ul>"
           }
         },
         "accordeon_4": {
