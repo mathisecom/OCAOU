@@ -17,13 +17,15 @@
           "type": "accordeon",
           "settings": {
             "titre": "Caractéristiques",
-            "contenu": "<p>Matière : 100% Polyesther </p><p>Dimension: L30cm</p><p>Entretien: Machine 30°</p>"
+            "icones": "",
+            "contenu": "<ul><li>Matière : 100% Polyesther </li><li>Dimension: L30cm</li><li>Entretien: Machine 30°</li></ul>"
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
             "titre": "Pensé pour les bébés",
+            "icones": "",
             "contenu": "<ul><li>Rassure au moment du coucher</li><li>Accompagne les premiers câlins</li><li>Doux au toucher</li><li>Léger et Facile à transporter</li><li>S’accroche partout avec  la poignée nomade</li></ul>"
           }
         }
@@ -33,12 +35,24 @@
         "accordeon_2"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
         "accroche": "O’CAOU je veux un câlin",
+        "collection": "",
         "badges": "Best Seller",
         "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "Le Compagnon des Petits Grands",
         "pitch": "Le doudou qui rassure les tout-petits, parce qu’un câlin c’est juste TROP TROP bien. Pensé pour les petites mains. Imaginé pour les grands câlins.",
+        "puces": "",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -47,7 +61,12 @@
       "type": "custom-liquid",
       "settings": {
         "full_width": true,
-        "liquid": "<style>product-recommendations p{font-weight:700!important;}</style>\n\n<div id='ss-product-videos'></div>"
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<style>product-recommendations p{font-weight:700!important;}</style>\n\n<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "associes": {
@@ -60,7 +79,7 @@
           "coffret-naissance-1",
           "coffret-comme-les-grands-1"
         ],
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": true
       }
     },
@@ -244,31 +263,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & linge"
+            "label": "Couches & linge",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -282,6 +316,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
@@ -461,37 +497,97 @@
         "header_margin_bottom_mobile": 30
       }
     },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_2_ed3b6f00-6f22-4f28-afc4-1a3603dfa27f.png",
+            "alt": "Enfant debout qui attrape un doudou rose à deux mains",
+            "titre": "Facile à attraper",
+            "texte": "Des formes souples pensées pour les petites mains. Des ailes et un bec pour que Bébé puisse facilement l'attraper et le serrer.",
+            "badges": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/lumiere-matias_doudou_poussette_copie.png",
+            "alt": "Bébé installé dans son siège, doudou bleu contre lui",
+            "titre": "Un câlin tout en douceur",
+            "texte": "Ultra doux et réconfortant, ce doudou rassure bébé à tout moment de la journée.",
+            "badges": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/mayol_epuisette_doudou.png",
+            "alt": "Enfant au bord de l'eau, doudou bleu dans son filet",
+            "titre": "Un doudou pour durer",
+            "texte": "Léger et lavable en machine, il accompagne bébé dès la naissance,mais aussi les petits aventuriers.",
+            "badges": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
     "imagewithtexticons_pncmHL": {
       "type": "imagewithtexticons",
       "blocks": {
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -505,6 +601,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
@@ -1132,52 +1230,7 @@
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
-        "bg_color": "#F4EDE1",
-        "filet": false
-      }
-    },
-    "benefices": {
-      "type": "iso-pa-benefits",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/Design_sans_titre_2_ed3b6f00-6f22-4f28-afc4-1a3603dfa27f.png",
-            "alt": "Enfant debout qui attrape un doudou rose à deux mains",
-            "titre": "Facile à attraper",
-            "texte": "Des formes souples pensées pour les petites mains. Des ailes et un bec pour que Bébé puisse facilement l'attraper et le serrer.",
-            "badges": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/lumiere-matias_doudou_poussette_copie.png",
-            "alt": "Bébé installé dans son siège, doudou bleu contre lui",
-            "titre": "Un câlin tout en douceur",
-            "texte": "Ultra doux et réconfortant, ce doudou rassure bébé à tout moment de la journée.",
-            "badges": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/mayol_epuisette_doudou.png",
-            "alt": "Enfant au bord de l'eau, doudou bleu dans son filet",
-            "titre": "Un doudou pour durer",
-            "texte": "Léger et lavable en machine, il accompagne bébé dès la naissance,mais aussi les petits aventuriers.",
-            "badges": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "titre": "",
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "filet": false
       }
     }
