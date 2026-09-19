@@ -77,7 +77,7 @@
           "settings": {
             "titre": "Entretien",
             "icones": "",
-            "contenu": "<p>Laver séparément, délicatement, à la main, à l’eau froide. Ne pas faire tremper. Essorer à la main. Remodeler avant séchage. Séchage à plat. Ne pas sécher au sèche-linge. Ne pas repasser. Ne pas utiliser d’agent de blanchiment.</p>"
+            "contenu": "<ul><li>Laver séparément, délicatement, à la main, à l’eau froide. </li><li>Ne pas faire tremper. </li><li>Essorer à la main. </li><li>Remodeler avant séchage. </li><li>Séchage à plat. </li><li>Ne pas sécher au sèche-linge. </li><li>Ne pas repasser. </li><li>Ne pas utiliser d’agent de blanchiment.</li></ul>"
           }
         }
       },
