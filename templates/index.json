@@ -21,32 +21,6 @@
         "voile": 0
       }
     },
-    "hero_video": {
-      "type": "iso-hero-video",
-      "name": "Bandeau d'accueil vidéo",
-      "settings": {
-        "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
-        "title": "",
-        "heading_tag": "h1",
-        "title_size_desktop": 32,
-        "title_size_mobile": 20,
-        "title_weight": 500,
-        "title_line_height": "1.2",
-        "text_color": "#ffffff",
-        "height_desktop": 78,
-        "min_height_desktop": 480,
-        "max_height_desktop": 820,
-        "height_mobile": 72,
-        "min_height_mobile": 420,
-        "focus_desktop": "center center",
-        "focus_mobile": "center center",
-        "scrim_color": "#000000",
-        "scrim_opacity": 60,
-        "background": "#1c1c1c",
-        "label_pause": "Mettre la vidéo en pause",
-        "label_play": "Lire la vidéo"
-      }
-    },
     "heromedia_zwA498": {
       "type": "heromedia",
       "blocks": {
@@ -748,6 +722,32 @@
         "padding_bottom": 64,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
+      }
+    },
+    "hero_video": {
+      "type": "iso-hero-video",
+      "name": "Bandeau d'accueil vidéo",
+      "settings": {
+        "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
+        "title": "",
+        "heading_tag": "h1",
+        "title_size_desktop": 32,
+        "title_size_mobile": 20,
+        "title_weight": 500,
+        "title_line_height": "1.2",
+        "text_color": "#ffffff",
+        "height_desktop": 78,
+        "min_height_desktop": 480,
+        "max_height_desktop": 820,
+        "height_mobile": 72,
+        "min_height_mobile": 420,
+        "focus_desktop": "center center",
+        "focus_mobile": "center center",
+        "scrim_color": "#000000",
+        "scrim_opacity": 60,
+        "background": "#1c1c1c",
+        "label_pause": "Mettre la vidéo en pause",
+        "label_play": "Lancer la lecture"
       }
     },
     "sectionsicones_JdQXN9": {
