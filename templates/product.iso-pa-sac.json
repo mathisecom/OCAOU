@@ -115,6 +115,14 @@
     "videos": {
       "type": "iso-pa-videos",
       "blocks": {
+        "video_JjxwRY": {
+          "type": "video",
+          "settings": {
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        },
         "video_1": {
           "type": "video",
           "settings": {
@@ -165,6 +173,7 @@
         }
       },
       "block_order": [
+        "video_JjxwRY",
         "video_1",
         "video_2",
         "video_3",
