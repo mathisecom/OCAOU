@@ -13,7 +13,7 @@
       "type": "iso-pa-banner",
       "name": "Bandeau",
       "settings": {
-        "image": "shopify://shop_images/tous_les_o_caou_2.png",
+        "image": "shopify://shop_images/tous_les_o_caou_4.png",
         "alt": "",
         "accroche": "",
         "titre": "Pour tous les petits au cas où...du quotidien",
@@ -1655,7 +1655,6 @@
   },
   "order": [
     "iso_pa_banner_pEpiUR",
-    "hero_video",
     "heromedia_zwA498",
     "video_8TEnKB",
     "logoscroll_WxkMyg",
@@ -1666,6 +1665,7 @@
     "blocks_9niDCt",
     "featured_collection_HH8gmJ",
     "offrecoffret_Tj4hcD",
+    "hero_video",
     "sectionsicones_JdQXN9",
     "avantageicons_9NE3Mb",
     "ocaoujaibesoin_bxqEpT",
