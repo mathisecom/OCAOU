@@ -259,9 +259,9 @@
         "heading_QwEPbN": {
           "type": "heading",
           "settings": {
-            "text": "Une solution pour tous les petits AU CAS OÙ... du quotidien",
-            "heading_tag": "h1",
-            "text_color": "#FCF9F5",
+            "text": "Pour tous les petits AU CAS OÙ... du quotidien",
+            "heading_tag": "h2",
+            "text_color": "#151515",
             "gradient": ""
           }
         }
@@ -274,7 +274,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#151515",
+        "background": "#F4EDE1",
         "background_gradient": "",
         "text_color": "#151515"
       }
@@ -497,7 +497,7 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "#f4ede1",
+        "background": "#FFFFFF",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -534,7 +534,7 @@
         "content": "",
         "link_url": "shopify://collections/les-coffrets",
         "link_text": "Découvrir tous les coffrets",
-        "background": "#f4ede1",
+        "background": "#FFFFFF",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -888,7 +888,7 @@
         "mobile_image_position": "after_icons",
         "columns_gap_desktop": 70,
         "columns_gap_mobile": 34,
-        "bg_color": "#ffffff",
+        "bg_color": "#F4EDE1",
         "padding_top_desktop": 52,
         "padding_bottom_desktop": 52,
         "padding_top_mobile": 24,
@@ -1662,7 +1662,7 @@
         "titre": "Les moments de vie",
         "texte": "",
         "affichage": "defile",
-        "bg_color": "#f4ede1",
+        "bg_color": "#FFFFFF",
         "filet": false
       }
     }
