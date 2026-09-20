@@ -133,6 +133,7 @@
     },
     "iso_pa_banner_ycLfYX": {
       "type": "iso-pa-banner",
+      "disabled": true,
       "name": "Bandeau",
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_20_sept._2026_15_14_05.png",
