@@ -26,7 +26,7 @@
       "name": "Bandeau d'accueil vidéo",
       "settings": {
         "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
-        "title": "Parés à toutes les éventualités.\nJuste O'CAOU...",
+        "title": "",
         "heading_tag": "h1",
         "title_size_desktop": 32,
         "title_size_mobile": 20,
@@ -263,32 +263,6 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
-      }
-    },
-    "rich_text_U7Gwt6": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_QwEPbN": {
-          "type": "heading",
-          "settings": {
-            "text": "Pour tous les petits \"au cas où...\"du quotidien",
-            "heading_tag": "h2",
-            "text_color": "#151515",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_QwEPbN"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "#F3EDE2",
-        "background_gradient": "",
-        "text_color": "#151515"
       }
     },
     "logoscroll_WxkMyg": {
@@ -1684,7 +1658,6 @@
     "hero_video",
     "heromedia_zwA498",
     "video_8TEnKB",
-    "rich_text_U7Gwt6",
     "logoscroll_WxkMyg",
     "image_with_text_overlay_xeN3nf",
     "impact_text_jwCEdV",
