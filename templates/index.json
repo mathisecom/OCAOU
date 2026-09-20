@@ -261,7 +261,7 @@
           "settings": {
             "text": "Une solution pour tous les petits AU CAS OÙ... du quotidien",
             "heading_tag": "h1",
-            "text_color": "#151515",
+            "text_color": "#FCF9F5",
             "gradient": ""
           }
         }
@@ -274,7 +274,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#ffffff",
+        "background": "#151515",
         "background_gradient": "",
         "text_color": "#151515"
       }
@@ -336,7 +336,7 @@
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
-        "bg_color": "#f4ede1"
+        "bg_color": "#FFFFFF"
       }
     },
     "image_with_text_overlay_xeN3nf": {
