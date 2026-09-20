@@ -53,7 +53,7 @@
         "max_width": 1600,
         "desktop_alignment": "center",
         "mobile_layout": "scroll",
-        "bg_color": "#AF6C67",
+        "bg_color": "#af6c67",
         "text_color": "#ffffff",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
@@ -120,7 +120,7 @@
         "message"
       ],
       "settings": {
-        "enable_sticky": true,
+        "enable_sticky": false,
         "autoplay": false,
         "cycle_speed": 6,
         "text_size": "text-xs",
@@ -129,6 +129,18 @@
         "background": "#cf9a2e",
         "background_gradient": "",
         "text_color": "#ffffff"
+      }
+    },
+    "iso_pa_banner_ycLfYX": {
+      "type": "iso-pa-banner",
+      "name": "Bandeau",
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_20_sept._2026_15_14_05.png",
+        "alt": "",
+        "accroche": "",
+        "titre": "",
+        "texte": "",
+        "voile": 45
       }
     },
     "blocks_PNGETL": {
@@ -141,6 +153,7 @@
     "barreannonce_YMpT9q",
     "header",
     "announcement-bar",
+    "iso_pa_banner_ycLfYX",
     "blocks_PNGETL"
   ]
 }
