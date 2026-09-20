@@ -61,22 +61,9 @@
       "settings": {
         "titre": "",
         "titre_tag": "h2",
-        "titre_size": 18,
-        "titre_size_mobile": 18,
-        "titre_weight": 600,
-        "titre_uppercase": true,
         "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 130,
-        "logo_width_mobile": 100,
-        "gap": 70,
-        "gap_mobile": 30,
-        "grayscale": false,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
+        "grayscale": true,
+        "bg_color": "#ffffff"
       }
     },
     "media_with_text_NtUGen": {
@@ -187,42 +174,6 @@
         "spacing": "none"
       }
     },
-    "media_with_text_dU7kDX": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_pigGck": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/biba-n533.webp",
-            "media_width": 50,
-            "media_position": "start",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "",
-            "title": "BIBA",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "background": "#ffffff",
-            "background_gradient": "",
-            "text_color": "#000000",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_pigGck"
-      ],
-      "name": "Media with text",
-      "settings": {
-        "full_width": true,
-        "alternate_media_position": false,
-        "spacing": "none"
-      }
-    },
     "media_with_text_nrJ9Y4": {
       "type": "media-with-text",
       "blocks": {
@@ -251,6 +202,42 @@
       },
       "block_order": [
         "image_LgVm4Y"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "full_width": true,
+        "alternate_media_position": false,
+        "spacing": "none"
+      }
+    },
+    "media_with_text_dU7kDX": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_pigGck": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/biba-n533.webp",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "BIBA",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text_color": "#000000",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_pigGck"
       ],
       "name": "Media with text",
       "settings": {
