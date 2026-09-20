@@ -9,6 +9,48 @@
  */
 {
   "sections": {
+    "image_with_text_overlay_3cjydE": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_maamkf": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_dwYgfc": {
+          "type": "heading",
+          "settings": {
+            "text": "Pour tous les petits au cas où...du quotidien",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_Mq6fMr": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_maamkf",
+        "heading_dwYgfc",
+        "richtext_Mq6fMr"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/tous_les_o_caou_4.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 15
+      }
+    },
     "ocaoujaibesoin": {
       "type": "ocaoujaibesoin",
       "blocks": {
@@ -18,7 +60,7 @@
             "text": "Au cas où  j'ai soif",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -32,7 +74,7 @@
             "text": "Au cas où j'ai faim",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -46,7 +88,7 @@
             "text": "Au cas où j'ai froid",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -60,7 +102,7 @@
             "text": "Au cas où j'ai peur",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -74,7 +116,7 @@
             "text": "Au cas où je prends TOUT !",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -88,7 +130,7 @@
             "text": "Au cas où c'est chaud/froid",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -102,7 +144,7 @@
             "text": "Au cas où je mange",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -116,7 +158,7 @@
             "text": "Au cas où j'allaite",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -130,7 +172,7 @@
             "text": "Au cas où…ça coule",
             "icon": "",
             "icon_position": "right",
-            "background_color": "#F4EDE1",
+            "background_color": "#f4ede1",
             "text_color": "#151515",
             "desktop_width": "medium",
             "font_size": 15,
@@ -167,7 +209,7 @@
         "chips_width": 800,
         "mobile_chip_columns": "2",
         "chip_gap": 14,
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "text_color": "#2d2926",
         "title_color": "#2d2926",
         "accent_color": "#151515",
@@ -183,6 +225,7 @@
     }
   },
   "order": [
+    "image_with_text_overlay_3cjydE",
     "ocaoujaibesoin"
   ]
 }
