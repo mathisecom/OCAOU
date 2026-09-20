@@ -611,7 +611,7 @@
       ],
       "settings": {
         "titre": "Vous allez adorer le sac O’CAOU parce que…",
-        "bg_color": "#f4ede1",
+        "bg_color": "#FFFFFF",
         "filet": false
       }
     },
@@ -624,39 +624,6 @@
         "titre": "Un organiseur de vie",
         "texte": "",
         "voile": 15
-      }
-    },
-    "avis_titre": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_dxbRyg": {
-          "type": "subheading",
-          "settings": {
-            "text": "ILS EN PARLENT MIEUX QUE NOUS"
-          }
-        },
-        "heading_VwLx79": {
-          "type": "heading",
-          "settings": {
-            "text": "+500 PARENTS CONQUIS",
-            "heading_tag": "h3",
-            "text_color": "",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_dxbRyg",
-        "heading_VwLx79"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "#ffffff",
-        "background_gradient": "",
-        "text_color": "#000000"
       }
     },
     "faq": {
@@ -765,6 +732,39 @@
         "titre": "Questions fréquentes",
         "bg_color": "#ffffff",
         "filet": false
+      }
+    },
+    "avis_titre": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_dxbRyg": {
+          "type": "subheading",
+          "settings": {
+            "text": "ILS EN PARLENT MIEUX QUE NOUS"
+          }
+        },
+        "heading_VwLx79": {
+          "type": "heading",
+          "settings": {
+            "text": "+500 PARENTS CONQUIS",
+            "heading_tag": "h3",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_dxbRyg",
+        "heading_VwLx79"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "#000000"
       }
     },
     "avis": {
