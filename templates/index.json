@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "iso_pa_banner_pEpiUR": {
+      "type": "iso-pa-banner",
+      "name": "Bandeau",
+      "settings": {
+        "image": "shopify://shop_images/tous_les_o_caou_2.png",
+        "alt": "",
+        "accroche": "",
+        "titre": "Pour tous les petits au cas où...du quotidien",
+        "texte": "",
+        "voile": 0
+      }
+    },
     "hero_video": {
       "type": "iso-hero-video",
       "name": "Bandeau d'accueil vidéo",
@@ -1668,6 +1680,7 @@
     }
   },
   "order": [
+    "iso_pa_banner_pEpiUR",
     "hero_video",
     "heromedia_zwA498",
     "video_8TEnKB",
