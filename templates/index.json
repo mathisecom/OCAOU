@@ -259,7 +259,7 @@
         "heading_QwEPbN": {
           "type": "heading",
           "settings": {
-            "text": "Pour tous les petits AU CAS OÙ... du quotidien",
+            "text": "Pour tous les petits \"au cas où...\"du quotidien",
             "heading_tag": "h2",
             "text_color": "#151515",
             "gradient": ""
@@ -274,7 +274,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#FCF9F5",
+        "background": "#fcf9f5",
         "background_gradient": "",
         "text_color": "#151515"
       }
