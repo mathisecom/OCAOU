@@ -131,6 +131,18 @@
         "text_color": "#ffffff"
       }
     },
+    "iso_pa_banner_GbfTdN": {
+      "type": "iso-pa-banner",
+      "name": "Bandeau",
+      "settings": {
+        "image": "shopify://shop_images/tous_les_o_caou_2.png",
+        "alt": "",
+        "accroche": "",
+        "titre": "",
+        "texte": "",
+        "voile": 0
+      }
+    },
     "iso_pa_banner_ycLfYX": {
       "type": "iso-pa-banner",
       "disabled": true,
@@ -154,6 +166,7 @@
     "barreannonce_YMpT9q",
     "header",
     "announcement-bar",
+    "iso_pa_banner_GbfTdN",
     "iso_pa_banner_ycLfYX",
     "blocks_PNGETL"
   ]
