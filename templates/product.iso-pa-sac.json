@@ -847,7 +847,7 @@
           "type": "question",
           "settings": {
             "question": "Commet on accroche le doudou?",
-            "reponse": "<p>Deux solutions : coincez le doudou sous <strong>l’élastique au centre du sac</strong>, ou accrochez-le au <strong>long élastique muni de 2 boucles</strong>, adaptées aux petits comme aux gros doudous. Gardez-les <strong>dans l</strong>e sac ou laissez-les<strong> pendre à l’extérieur</strong> : ils restent <strong>faciles à attraper et à ranger</strong>.</p>"
+            "reponse": "<p>Deux solutions : coincez le doudou sous <strong>l’élastique au centre du sac</strong>, ou accrochez-le au <strong>long élastique muni de 2 boucles</strong>, adaptées aux petits comme aux gros doudous. Gardez-les <strong>dans </strong>le sac ou laissez-les<strong> pendre à l’extérieur</strong> : ils restent <strong>faciles à attraper et à ranger</strong>.</p>"
           }
         },
         "question_1": {
