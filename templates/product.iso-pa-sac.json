@@ -115,9 +115,10 @@
     "videos": {
       "type": "iso-pa-videos",
       "blocks": {
-        "video_JjxwRY": {
+        "video_G97g9A": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/Clip 2 sac a dos vierge.mp4",
             "src": "",
             "poster": "",
             "titre": ""
@@ -126,6 +127,7 @@
         "video_1": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/ouverture sac sans son.mov",
             "src": "https://cdn.shopify.com/videos/c/vp/51a7490505004bd5aec54a3588ff4dfe/51a7490505004bd5aec54a3588ff4dfe.HD-720p-4.5Mbps-94560348.mp4",
             "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/51a7490505004bd5aec54a3588ff4dfe.thumbnail.0000000000.jpg?v=1789540857",
             "titre": ""
@@ -173,7 +175,7 @@
         }
       },
       "block_order": [
-        "video_JjxwRY",
+        "video_G97g9A",
         "video_1",
         "video_2",
         "video_3",
