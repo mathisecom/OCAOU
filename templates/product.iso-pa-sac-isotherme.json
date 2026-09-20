@@ -66,18 +66,6 @@
         "livraison": "Livraison Suivie en France"
       }
     },
-    "legacy_contenu": {
-      "type": "custom-liquid",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "liquid": "<div id='ss-product-videos'></div>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "associes": {
       "type": "iso-pa-related",
       "settings": {
@@ -1000,7 +988,6 @@
   },
   "order": [
     "main",
-    "legacy_contenu",
     "associes",
     "shop_the_look_Dm8yCV",
     "rich_text_7LA3LQ",
