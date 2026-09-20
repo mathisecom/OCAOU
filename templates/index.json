@@ -274,7 +274,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#F4EDE1",
+        "background": "#FCF9F5",
         "background_gradient": "",
         "text_color": "#151515"
       }
@@ -336,7 +336,7 @@
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
-        "bg_color": "#FFFFFF"
+        "bg_color": "#ffffff"
       }
     },
     "image_with_text_overlay_xeN3nf": {
@@ -497,7 +497,7 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -534,7 +534,7 @@
         "content": "",
         "link_url": "shopify://collections/les-coffrets",
         "link_text": "Découvrir tous les coffrets",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -888,7 +888,7 @@
         "mobile_image_position": "after_icons",
         "columns_gap_desktop": 70,
         "columns_gap_mobile": 34,
-        "bg_color": "#F4EDE1",
+        "bg_color": "#f4ede1",
         "padding_top_desktop": 52,
         "padding_bottom_desktop": 52,
         "padding_top_mobile": 24,
@@ -1662,7 +1662,7 @@
         "titre": "Les moments de vie",
         "texte": "",
         "affichage": "defile",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": false
       }
     }
