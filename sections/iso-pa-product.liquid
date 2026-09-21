@@ -654,7 +654,7 @@
   {%- if accs.size > 0 -%}
     <div class="pa-acc">
       {%- for b in accs -%}
-        <details {{ b.shopify_attributes }}>
+        <details is="accordion-disclosure" {{ b.shopify_attributes }}>
           <summary>{{ b.settings.titre | escape }}{% render 'iso-pa-pm' %}</summary>
           <div class="pa-acc-c">
             {%- if b.settings.icones != blank -%}
@@ -1020,5 +1020,6 @@
   ]
 }
 {% endschema %}
+
 
 
