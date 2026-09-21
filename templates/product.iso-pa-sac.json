@@ -957,7 +957,8 @@
         "heading_gradient": "",
         "testimonial_card_background": "#fcf9f5",
         "testimonial_card_text_color": ""
-      }
+      },
+      "disabled": true
     }
   },
   "order": [
