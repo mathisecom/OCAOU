@@ -292,9 +292,9 @@
             "heading": "Souvent acheté ensemble",
             "products": [
               "duo-miam",
-              "coffret-premier-repas",
+              "coffret-premier-repas-ancien",
               "duo-essentiel",
-              "coffret-comme-les-grands"
+              "coffret-comme-les-grands-ancien"
             ],
             "button_label": "Découvrir",
             "show_prices": true,
@@ -720,7 +720,7 @@
         "product_crRUa8": {
           "type": "product",
           "settings": {
-            "product": "coffret-premier-repas",
+            "product": "coffret-premier-repas-ancien",
             "horizontal_position": 52,
             "vertical_position": 40
           }

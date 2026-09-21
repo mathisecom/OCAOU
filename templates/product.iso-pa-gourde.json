@@ -166,8 +166,8 @@
       "settings": {
         "titre": "Souvent achetés ensemble",
         "produits": [
-          "coffret-premier-repas",
-          "coffret-comme-les-grands",
+          "coffret-premier-repas-ancien",
+          "coffret-comme-les-grands-ancien",
           "duo-essentiel",
           "duo-miam",
           "kit-repas-complet"
@@ -493,6 +493,7 @@
         "testimonial_J4K6jM",
         "testimonial_tnLDK4"
       ],
+      "disabled": true,
       "name": "Testimonials",
       "settings": {
         "full_width": true,
@@ -509,8 +510,7 @@
         "heading_gradient": "",
         "testimonial_card_background": "#fcf9f5",
         "testimonial_card_text_color": ""
-      },
-      "disabled": true
+      }
     }
   },
   "order": [

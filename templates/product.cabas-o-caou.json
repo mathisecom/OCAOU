@@ -216,7 +216,7 @@
             "heading": "Souvent acheté ensemble",
             "products": [
               "pochette-ocaou",
-              "coffret-balades",
+              "coffret-balades-ancien",
               "duo-pratique"
             ],
             "button_label": "Découvrir",
@@ -259,7 +259,7 @@
         "product_NMBQGK": {
           "type": "product",
           "settings": {
-            "product": "coffret-balades",
+            "product": "coffret-balades-ancien",
             "horizontal_position": 52,
             "vertical_position": 35
           }

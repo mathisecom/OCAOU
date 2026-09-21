@@ -188,7 +188,7 @@
             "products": [
               "couverts",
               "lingettes-lavables",
-              "coffret-premier-repas",
+              "coffret-premier-repas-ancien",
               "sac-isotherme"
             ],
             "button_label": "Découvrir",
@@ -231,7 +231,7 @@
         "product_Bpc3gQ": {
           "type": "product",
           "settings": {
-            "product": "coffret-pour-maman",
+            "product": "coffret-pour-maman-ancien",
             "horizontal_position": 52,
             "vertical_position": 40
           }
