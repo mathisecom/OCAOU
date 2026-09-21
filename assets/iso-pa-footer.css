@@ -104,15 +104,5 @@ body:has(.pa-sbar) .iso-pa .pa-ft-bot{padding-bottom:100px}
 
 
 
-.pa-ft-pays{order:-2;font-size:13px}
-.pa-ft-pays p{margin:0;padding:8px 0}
-.pa-ft-pays summary{display:inline-flex;align-items:center;gap:6px;padding:8px 0;cursor:pointer;list-style:none}
-.pa-ft-pays summary::-webkit-details-marker{display:none}
-.pa-ft-pays summary::after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
-.pa-ft-pays details[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
-.pa-ft-pays form{margin:0}
-.pa-ft-pays ul{max-height:240px;overflow-y:auto;margin:4px 0 0;padding:6px;border:1px solid var(--line);border-radius:10px;background:#fff}
-.iso-pa .pa-ft-pays button{display:block;width:100%;min-height:36px;padding:6px 10px;appearance:none;-webkit-appearance:none;background:none;border:0;border-radius:8px;font:inherit;color:inherit;text-align:left;cursor:pointer}
-.iso-pa .pa-ft-pays button:hover{background:rgba(0,0,0,.05)}
-.iso-pa .pa-ft-pays button[aria-current]{font-weight:600}
-@media (min-width:720px){.pa-ft-pays ul{column-count:3;column-gap:12px}}
+.iso-pa .pa-ft-pays{order:-2;display:flex;align-items:center;gap:8px;font-size:13px}
+.iso-pa .pa-ft-pays .popover-listbox__option{display:flex;justify-content:start;align-items:center;gap:var(--spacing-2);width:100%;padding:var(--spacing-1) var(--spacing-10) var(--spacing-1) var(--spacing-6);line-height:1.7;font-size:var(--text-sm);text-align:left}

@@ -53,21 +53,8 @@
   <div class="pa-ft-bot">
     {%- if section.settings.pays_visible -%}
       <div class="pa-ft-pays">
-        {%- if localization.available_countries.size > 1 -%}
-          <details>
-            <summary>Livraison&nbsp;: <b>{{ localization.country.name }}</b></summary>
-            {%- form 'localization' -%}
-              <input type="hidden" name="return_to" value="{{ request.path }}">
-              <ul>
-                {%- for c in localization.available_countries -%}
-                  <li><button type="submit" name="country_code" value="{{ c.iso_code }}"{% if c.iso_code == localization.country.iso_code %} aria-current="true"{% endif %}>{{ c.name }}</button></li>
-                {%- endfor -%}
-              </ul>
-            {%- endform -%}
-          </details>
-        {%- else -%}
-          <p>Livraison&nbsp;: <b>{{ localization.country.name }}</b></p>
-        {%- endif -%}
+        <span>Livraison&nbsp;:</span>
+        {%- render 'localization-selector', type: 'country', show_country_name: true, show_country_flag: true, popover_horizontal_position: 'start' -%}
       </div>
     {%- endif -%}
     {%- if fb != blank or ig != blank -%}
@@ -152,7 +139,7 @@
       "id": "pays_visible",
       "label": "Afficher le pays de livraison",
       "default": true,
-      "info": "Hors Union européenne, la boutique affiche les prix sans la TVA. Ce repère dit sur quel pays le visiteur se trouve."
+      "info": "Montre le pays vers lequel la boutique livre, et permet d'en changer."
     },
     {
       "type": "header",
