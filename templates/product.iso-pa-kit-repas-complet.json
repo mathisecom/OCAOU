@@ -230,7 +230,8 @@
         "gap_mobile": 50,
         "speed": 52,
         "pause_on_hover": false
-      }
+      },
+      "disabled": true
     },
     "retours": {
       "type": "30retours",
@@ -302,7 +303,8 @@
         "shadow_opacity": 20,
         "subtitle_margin_top_desktop": 12,
         "subtitle_margin_top_mobile": 10
-      }
+      },
+      "disabled": true
     },
     "instagram": {
       "type": "instagram",
@@ -454,7 +456,8 @@
         "button_text_color": "#ffffff",
         "button_hover_bg": "#333333",
         "button_hover_text_color": "#ffffff"
-      }
+      },
+      "disabled": true
     }
   },
   "order": [
@@ -465,5 +468,6 @@
     "bande",
     "retours",
     "instagram"
-  ]
+  ],
+  "layout": "iso-pa"
 }
