@@ -278,22 +278,9 @@
       "settings": {
         "titre": "Recommandé par",
         "titre_tag": "h2",
-        "titre_size": 13,
-        "titre_size_mobile": 8,
-        "titre_weight": 600,
-        "titre_uppercase": true,
         "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 130,
-        "logo_width_mobile": 100,
-        "gap": 70,
-        "gap_mobile": 30,
         "grayscale": false,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
+        "bg_color": "#ffffff"
       }
     },
     "blocks_JT4JG4": {
@@ -305,9 +292,9 @@
             "heading": "Souvent acheté ensemble",
             "products": [
               "duo-miam",
-              "coffret-premier-repas-1",
+              "coffret-premier-repas",
               "duo-essentiel",
-              "coffret-comme-les-grands-1"
+              "coffret-comme-les-grands"
             ],
             "button_label": "Découvrir",
             "show_prices": true,
@@ -733,7 +720,7 @@
         "product_crRUa8": {
           "type": "product",
           "settings": {
-            "product": "coffret-premier-repas-1",
+            "product": "coffret-premier-repas",
             "horizontal_position": 52,
             "vertical_position": 40
           }

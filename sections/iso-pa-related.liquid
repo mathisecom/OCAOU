@@ -8,14 +8,12 @@
 {%- assign sid = section.id -%}
 {%- capture tid -%}pa-rel-{{ sid }}{%- endcapture -%}
 {%- assign liste = section.settings.produits -%}
-{%- comment -%} La grille suit le nombre de produits choisis : pas de case vide a droite (demande du 19/09). {%- endcomment -%}
-{%- assign rel_n = 0 -%}{%- for rp in liste -%}{%- unless rp == blank or rp.id == blank -%}{%- assign rel_n = rel_n | plus: 1 -%}{%- endunless -%}{%- endfor -%}
-{%- if rel_n > 4 or rel_n == 3 -%}{%- assign rel_cols = 3 -%}{%- elsif rel_n == 2 -%}{%- assign rel_cols = 2 -%}{%- elsif rel_n == 1 -%}{%- assign rel_cols = 1 -%}{%- else -%}{%- assign rel_cols = 4 -%}{%- endif -%}
+{%- comment -%} Toujours 4 colonnes, quel que soit le nombre de produits choisis (demande du 21/09). {%- endcomment -%}
 {%- if liste.size > 0 or request.design_mode -%}
 <div class="iso-pa">
 <section class="pa-sec pa-rel-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head"><h2 class="pa-h2" id="pa-rel-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
-  <ul class="pa-rel pa-scroll pa-bleed pa-cols--{{ rel_cols }}" id="{{ tid }}">
+  <ul class="pa-rel pa-scroll pa-bleed pa-cols--4" id="{{ tid }}">
     {%- for rp in liste -%}
       {%- if rp == blank or rp.id == blank -%}{%- continue -%}{%- endif -%}
       <li><article class="pa-pc">
@@ -23,7 +21,7 @@
         <div class="pa-pc-img pa-mix">
           {%- if rp.images.size > 0 -%}
             <a class="pa-pc-sl" href="{{ rp.url }}" tabindex="-1" aria-hidden="true"{% if rp.images.size > 1 %} data-pa-sl{% endif %}>
-              {%- for im in rp.images limit: 4 -%}<span class="pa-pc-sli">{%- render 'iso-pa-img', image: im, alt: '', sizes: '(min-width: 960px) min(520px, calc((100vw - 144px) / 3)), 70vw', widths: '360,540,720,900,1080' -%}</span>{%- endfor -%}
+              {%- for im in rp.images limit: 4 -%}<span class="pa-pc-sli">{%- render 'iso-pa-img', image: im, alt: '', sizes: '(min-width: 960px) min(400px, calc((100vw - 168px) / 4)), 70vw', widths: '360,540,720,900,1080' -%}</span>{%- endfor -%}
             </a>
             {%- if rp.images.size > 1 -%}<span class="pa-pc-dots" aria-hidden="true">{%- for im in rp.images limit: 4 -%}<i{% if forloop.first %} class="is-on"{% endif %}></i>{%- endfor -%}</span>{%- endif -%}
           {%- endif -%}
@@ -56,6 +54,7 @@
   "presets": [{ "name": "Associés" }]
 }
 {% endschema %}
+
 
 
 
