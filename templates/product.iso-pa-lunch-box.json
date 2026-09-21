@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Pourquoi choisir O'CAOU ?",
             "icones": "",
-            "contenu": "<ul><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li><li>Pensé pour durer et accompagner les enfants pendant des années.</li></ul>"
+            "contenu": "<ul><li>Silicone alimentaire LFGB<\/li><li>Sans BPA, PVC ni phtalates<\/li><li>Sans goût ni odeur<\/li><li>Pensé pour durer et accompagner les enfants pendant des années.<\/li><\/ul>"
           }
         },
         "accordeon_2": {
@@ -26,7 +26,7 @@
           "settings": {
             "titre": "Caractéristiques",
             "icones": "",
-            "contenu": "<ul><li>Dimensions : 183 × 132 × 55 mm</li><li>Capacité : 800 ml (400 + 200 + 200 ml)</li><li>Composition : Silicone alimentaire</li></ul>"
+            "contenu": "<ul><li>Dimensions : 183 × 132 × 55 mm<\/li><li>Capacité : 800 ml (400 + 200 + 200 ml)<\/li><li>Composition : Silicone alimentaire<\/li><\/ul>"
           }
         },
         "accordeon_3": {
@@ -56,7 +56,7 @@
         "puces": "Silicone souple et doux\nCompartimentée\nHermétique\nFacile à ouvrir\nMicro-ondes & lave-vaisselle",
         "galerie": "",
         "leopard": "Léopard\nGraou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED",
+        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Léopard: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Léopard: motif #E9E5DC\nlunch-box\/Léopard: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Léopard: motif #F1F1ED",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -72,7 +72,7 @@
         "full_width": true,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
-        "liquid": "<style>product-recommendations p{font-weight:700!important;}</style>\n\n<div id='ss-product-videos'></div>",
+        "liquid": "<style>product-recommendations p{font-weight:700!important;}<\/style>\n\n<div id='ss-product-videos'><\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -99,7 +99,7 @@
         "richtext_ghPgw6": {
           "type": "richtext",
           "settings": {
-            "content": "<h6>RECOMMANDÉ PAR</h6>"
+            "content": "<h6>RECOMMANDÉ PAR<\/h6>"
           }
         }
       },
@@ -123,7 +123,7 @@
         "image_VR6k8z": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -131,7 +131,7 @@
         "image_QqYbtG": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -139,7 +139,7 @@
         "image_DVxrBH": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -147,7 +147,7 @@
         "image_78Tjqg": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -175,7 +175,7 @@
         "review_item_QxaHeN": {
           "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/IMG_0604.jpg",
+            "image": "shopify:\/\/shop_images\/IMG_0604.jpg",
             "image_alt": "Photo client",
             "quote": "Mon fils de 3 ans adore ranger ses petites affaires.Il est vraiment ingénieux et bien pensé.La taille est parfaite!",
             "author": "Sandrine C.",
@@ -186,7 +186,7 @@
         "review_item_YAT8UW": {
           "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
+            "image": "shopify:\/\/shop_images\/ocaou-sac-pour-poussette.jpg",
             "image_alt": "Photo client",
             "quote": "Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.",
             "author": "Marion C.",
@@ -197,7 +197,7 @@
         "review_item_FyV4Br": {
           "type": "review_item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-a-dos-enfant.jpg",
+            "image": "shopify:\/\/shop_images\/ocaou-sac-a-dos-enfant.jpg",
             "image_alt": "Photo client",
             "quote": "Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!",
             "author": "Sophia M.",
@@ -328,16 +328,16 @@
       "settings": {
         "layout": "liste",
         "marker_size": 14,
-        "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
+        "image": "shopify:\/\/shop_images\/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
-        "image_ratio": "1 / 1",
+        "image_ratio": "1 \/ 1",
         "image_radius": 16,
         "placeholder_color": "#e9a94e",
         "eyebrow": "Pour les parents",
         "title": "Avant tout, un sac à langer pour ranger les essentiels de bébé",
         "subtitle": "5 poches pensées pour ne plus jamais chercher :",
-        "mantra": "<p>Avec ses étiquettes et ses filets :<br/><strong>Tout est visible. Tout est organisé.</strong><br/>Plus besoin de chercher. La charge mentale est soulagée.</p>",
+        "mantra": "<p>Avec ses étiquettes et ses filets :<br\/><strong>Tout est visible. Tout est organisé.<\/strong><br\/>Plus besoin de chercher. La charge mentale est soulagée.<\/p>",
         "eyebrow_size": 12,
         "title_size": 32,
         "subtitle_size": 16,
@@ -377,7 +377,7 @@
         "icon_JhiEzm": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_51.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_51.png",
             "icon_alt": "Icône avantage",
             "title": "Étiquettes Pratiques"
           }
@@ -385,7 +385,7 @@
         "icon_d6dMpf": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_46.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_46.png",
             "icon_alt": "Icône avantage",
             "title": "Tout au Même Endroit"
           }
@@ -393,7 +393,7 @@
         "icon_UincGC": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_47.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_47.png",
             "icon_alt": "Icône avantage",
             "title": "Préparation Rapide"
           }
@@ -401,7 +401,7 @@
         "icon_3f9ARX": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_48.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_48.png",
             "icon_alt": "Icône avantage",
             "title": "Doudou Toujours Retrouvé"
           }
@@ -409,7 +409,7 @@
         "icon_43MEdK": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_49.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_49.png",
             "icon_alt": "Icône avantage",
             "title": "Gourde Facile D’accès"
           }
@@ -417,7 +417,7 @@
         "icon_iNqmJ9": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_50.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_50.png",
             "icon_alt": "Icône avantage",
             "title": "Rangement Sans Stress"
           }
@@ -451,7 +451,7 @@
         "subtitle_max_width_mobile": 360,
         "subtitle_margin_top": 14,
         "subtitle_margin_top_mobile": 15,
-        "main_image": "shopify://shop_images/sac-ocaou-etiquettes-rangement_646eac9e-b98d-4c62-bc83-276b9768adf7.jpg",
+        "main_image": "shopify:\/\/shop_images\/sac-ocaou-etiquettes-rangement_646eac9e-b98d-4c62-bc83-276b9768adf7.jpg",
         "main_image_alt": "Image produit",
         "image_max_width_desktop": 720,
         "image_max_width_mobile": 400,
@@ -513,11 +513,11 @@
         "item_wXyMTV": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/home_background-mobile.jpg",
+            "image": "shopify:\/\/shop_images\/home_background-mobile.jpg",
             "column_size": "3",
             "title": "Tout est organisé, même les imprévus",
             "heading_tag": "h3",
-            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.</p>",
+            "content": "<p>Des poches étiquetées pour ranger facilement biberon, goûter, doudou et affaires du quotidien.<\/p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -526,11 +526,11 @@
         "item_KhaUjE": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20241102_110225.jpg",
+            "image": "shopify:\/\/shop_images\/20241102_110225.jpg",
             "column_size": "3",
             "title": "Un sac qui grandit avec votre enfant",
             "heading_tag": "h3",
-            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.</p>",
+            "content": "<p>Du sac à langer au sac de maternelle, il s'adapte à l'âge et aux besoins de l'enfant.<\/p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -539,11 +539,11 @@
         "item_rRTD9L": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
+            "image": "shopify:\/\/shop_images\/ocaou-sac-poussette.jpg",
             "column_size": "3",
             "title": "Pratique partout, tout le temps",
             "heading_tag": "h3",
-            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant : un sac pensé pour suivre toutes les sorties.</p>",
+            "content": "<p>Bretelles réglables, attaches poussette intégrées et tissus déperlant : un sac pensé pour suivre toutes les sorties.<\/p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -631,16 +631,16 @@
       "settings": {
         "layout": "liste",
         "marker_size": 14,
-        "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
+        "image": "shopify:\/\/shop_images\/ocaou-sac-pour-enfants-parents.jpg",
         "image_position": "right",
         "image_first_mobile": true,
-        "image_ratio": "1 / 1",
+        "image_ratio": "1 \/ 1",
         "image_radius": 16,
         "placeholder_color": "#e9a94e",
         "eyebrow": "Pour les Petits Grands",
         "title": "Puis… le sac O'CAOU devient l'allié de votre enfant qui grandit",
         "subtitle": "Les poches restent les mêmes, mais les objets évoluent. Il retrouve ses affaires facilement.",
-        "mantra": "<p>Avec ses étiquettes et ses filets :<br/><strong>Il apprend à lire en rangeant. </strong>Il retrouve ses affaires facilement.<br/>Il devient autonome, <strong>comme un grand.</strong></p>",
+        "mantra": "<p>Avec ses étiquettes et ses filets :<br\/><strong>Il apprend à lire en rangeant. <\/strong>Il retrouve ses affaires facilement.<br\/>Il devient autonome, <strong>comme un grand.<\/strong><\/p>",
         "eyebrow_size": 12,
         "title_size": 32,
         "subtitle_size": 15,
@@ -680,7 +680,7 @@
         "benefit_6jE3Lc": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_41.png",
+            "custom_icon": "shopify:\/\/shop_images\/Design_sans_titre_41.png",
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "ÉVOLUTIF",
@@ -690,7 +690,7 @@
         "benefit_h4bTWg": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_42.png",
+            "custom_icon": "shopify:\/\/shop_images\/Design_sans_titre_42.png",
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
             "title": "PRATIQUE",
@@ -700,7 +700,7 @@
         "benefit_Lpj498": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_43.png",
+            "custom_icon": "shopify:\/\/shop_images\/Design_sans_titre_43.png",
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
             "title": "FONCTIONNEL & PÉDAGOGIQUE",
@@ -710,7 +710,7 @@
         "benefit_J8aV6U": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_44.png",
+            "custom_icon": "shopify:\/\/shop_images\/Design_sans_titre_44.png",
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
             "title": "DÉPERLANT",
@@ -789,12 +789,12 @@
       "settings": {
         "title": "Retours Faciles sous 14 Jours",
         "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
-        "product_image": "shopify://shop_images/no_change_copie_3.jpg",
+        "product_image": "shopify:\/\/shop_images\/no_change_copie_3.jpg",
         "product_image_alt": "Image produit garantie",
         "bg_position": "center center",
         "bg_position_mobile": "center center",
         "show_default_icon": true,
-        "custom_icon": "shopify://shop_images/Design_sans_titre_40.png",
+        "custom_icon": "shopify:\/\/shop_images\/Design_sans_titre_40.png",
         "icon_alt": "Icône garantie",
         "icon_size_desktop": 56,
         "icon_size_mobile": 44,
@@ -862,77 +862,77 @@
           "type": "item",
           "settings": {
             "title": "Le sac à dos est-il pour les enfants ou pour les parents ?",
-            "content": "<p>Il est conçu pour les deux ! Les bretelles sont réglables, ce qui permet aussi bien aux enfants qu’aux parents de le porter.</p>"
+            "content": "<p>Il est conçu pour les deux ! Les bretelles sont réglables, ce qui permet aussi bien aux enfants qu’aux parents de le porter.<\/p>"
           }
         },
         "item_e3WRir": {
           "type": "item",
           "settings": {
             "title": "À partir de quel âge un enfant peut-il le porter ?",
-            "content": "<p>Dès 2 ans, un enfant peut le porter seul. Il pourra y mettre ses affaires pour la crèche, la maternelle, la nounou, les activités ou les sorties.</p>"
+            "content": "<p>Dès 2 ans, un enfant peut le porter seul. Il pourra y mettre ses affaires pour la crèche, la maternelle, la nounou, les activités ou les sorties.<\/p>"
           }
         },
         "item_Ukfjeg": {
           "type": "item",
           "settings": {
             "title": "À quoi sert ce sac à dos ?",
-            "content": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance : on y range les affaires selon l’âge de l’enfant et ses besoins.</p>"
+            "content": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance : on y range les affaires selon l’âge de l’enfant et ses besoins.<\/p>"
           }
         },
         "item_k7rMLg": {
           "type": "item",
           "settings": {
             "title": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
-            "content": "<p>Non, il s’utilise aussi comme un sac à dos classique. Il n’est pas nécessaire de l’ouvrir entièrement pour le remplir ou le vider. </p><p>Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », vous pouvez facilement ranger ou retirer des vêtements de rechange, des jouets ou d’autres objets — que ce soit en mode organiseur ou en mode sac à dos.</p>"
+            "content": "<p>Non, il s’utilise aussi comme un sac à dos classique. Il n’est pas nécessaire de l’ouvrir entièrement pour le remplir ou le vider. <\/p><p>Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », vous pouvez facilement ranger ou retirer des vêtements de rechange, des jouets ou d’autres objets — que ce soit en mode organiseur ou en mode sac à dos.<\/p>"
           }
         },
         "item_CUbCC4": {
           "type": "item",
           "settings": {
             "title": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glissé dans le sac en mode sac à dos.</p>"
+            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glissé dans le sac en mode sac à dos.<\/p>"
           }
         },
         "item_gjnpnD": {
           "type": "item",
           "settings": {
             "title": "Comment peut-on accrocher le sac à dos ?",
-            "content": "<p>Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé. Il est très pratique, il s’accroche partout !</p>"
+            "content": "<p>Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé. Il est très pratique, il s’accroche partout !<\/p>"
           }
         },
         "item_jpcpPn": {
           "type": "item",
           "settings": {
             "title": "Combien y a-t-il de poches de rangement ?",
-            "content": "<p>Le sac à dos possède 6 poches pour organiser facilement toutes les affaires : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures pour bien compartimenter le contenu. </p><p>Une grande poche est en filet, ce qui permet de voir en un coup d’œil ce qu’elle contient. Cela facilite le rangement et l’organisation.</p>"
+            "content": "<p>Le sac à dos possède 6 poches pour organiser facilement toutes les affaires : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures pour bien compartimenter le contenu. <\/p><p>Une grande poche est en filet, ce qui permet de voir en un coup d’œil ce qu’elle contient. Cela facilite le rangement et l’organisation.<\/p>"
           }
         },
         "item_YMqBiG": {
           "type": "item",
           "settings": {
             "title": "Pourquoi y a-t-il des étiquettes dans le sac ?",
-            "content": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. </p><p>Il apprend à lire en rangeant, gagne en autonomie et s’amuse en organisant ses affaires. Le sac devient ainsi un véritable support pédagogique, à la fois ludique et pratique.</p>"
+            "content": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. <\/p><p>Il apprend à lire en rangeant, gagne en autonomie et s’amuse en organisant ses affaires. Le sac devient ainsi un véritable support pédagogique, à la fois ludique et pratique.<\/p>"
           }
         },
         "item_FTrFa7": {
           "type": "item",
           "settings": {
             "title": "Peut-on personnaliser le sac à dos ?",
-            "content": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.</p>"
+            "content": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.<\/p>"
           }
         },
         "item_V4a3MT": {
           "type": "item",
           "settings": {
             "title": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
-            "content": "<p>Le surplus de sangle se glisse facilement dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
+            "content": "<p>Le surplus de sangle se glisse facilement dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !<\/p>"
           }
         },
         "item_EYfz3a": {
           "type": "item",
           "settings": {
             "title": "Quel est le poids du sac à dos ?",
-            "content": "<p>Le sac pèse entre 380 et 422 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! De plus, les bretelles sont rembourrées.</p>"
+            "content": "<p>Le sac pèse entre 380 et 422 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! De plus, les bretelles sont rembourrées.<\/p>"
           }
         }
       },
@@ -979,7 +979,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_16_sept._2026_11_35_56.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_16_sept._2026_11_35_56.png",
             "alt": "Enfant assis sur un plaid qui mange un sandwich, lunch box ouverte devant lui",
             "titre": "Un couvercle hermétique avec séparateur intégré",
             "texte": "Pour éviter les fuites et garder les aliments bien séparés, sans les mélanger.",
@@ -989,7 +989,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_16_sept._2026_11_40_06.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_16_sept._2026_11_40_06.png",
             "alt": "Lunch box ouverte avec son séparateur : fraises et amandes de chaque côté, couvercle posé à côté",
             "titre": "Résiste au chaud comme au froid",
             "texte": "Compatible avec le lave-vaisselle et le congélateur, pour des repas aussi bien chauds que frais.",
@@ -999,7 +999,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/eden_pic_nic.png",
+            "image": "shopify:\/\/shop_images\/eden_pic_nic.png",
             "alt": "Lunch box remplie de tomates et de gressins, posée près du sac isotherme",
             "titre": "Adaptée aux petites portions",
             "texte": "Pour des repas équilibrés et bien organisés.",
@@ -1047,3 +1047,4 @@
     "avis"
   ]
 }
+
