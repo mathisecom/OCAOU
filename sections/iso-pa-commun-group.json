@@ -221,164 +221,202 @@
         "filet": false
       }
     },
-    "reviews": {
-      "type": "iso-pa-reviews",
+    "avis_verts": {
+      "type": "testimonials",
       "blocks": {
-        "avis_01": {
-          "type": "avis",
+        "testimonial_DTTqzy": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Delphine K.",
-            "titre": "coussinets discrets",
-            "texte": "Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Delphine K.",
+            "title": "coussinets discrets",
+            "content": "<p>Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.</p>"
           }
         },
-        "avis_02": {
-          "type": "avis",
+        "testimonial_hD44TM": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Laura J.",
-            "titre": "Lingettes pour tout",
-            "texte": "J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Laura J.",
+            "title": "Lingettes pour tout",
+            "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.</p>"
           }
         },
-        "avis_03": {
-          "type": "avis",
+        "testimonial_xEqXey": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Sophia M.",
-            "titre": "Sac hyper utile et très pratique!",
-            "texte": "Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sophia M.",
+            "title": "Sac hyper utile et très pratique!",
+            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!</p>"
           }
         },
-        "avis_04": {
-          "type": "avis",
+        "testimonial_PAByn8": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Elodie O.",
-            "titre": "couverture légère",
-            "texte": "La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Elodie O.",
+            "title": "couverture légère",
+            "content": "<p>La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.</p>"
           }
         },
-        "avis_05": {
-          "type": "avis",
+        "testimonial_DnV3QU": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Sandrine C.",
-            "titre": "La taille est parfaite!",
-            "texte": "« Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite! »",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sandrine C.",
+            "title": "La taille est parfaite!",
+            "content": "<p>“Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite!”</p>"
           }
         },
-        "avis_06": {
-          "type": "avis",
+        "testimonial_WUWxXP": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Nadia T.",
-            "titre": "Poche couvert idéale",
-            "texte": "Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Nadia T.",
+            "title": "Poche couvert idéale",
+            "content": "<p>Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...</p>"
           }
         },
-        "avis_07": {
-          "type": "avis",
+        "testimonial_PE3qw8": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Séverine F.",
-            "titre": "Veilleuse baladeuse",
-            "texte": "Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Séverine F.",
+            "title": "Veilleuse baladeuse",
+            "content": "<p>Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.</p>"
           }
         },
-        "avis_08": {
-          "type": "avis",
+        "testimonial_BpQWPf": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Aurore P.",
-            "titre": "Fourre-tout beau et spacieux",
-            "texte": "Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Aurore P.",
+            "title": "Fourre-tout beau et spacieux",
+            "content": "<p>Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.</p>"
           }
         },
-        "avis_09": {
-          "type": "avis",
+        "testimonial_cdKCDw": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Caroline M.",
-            "titre": "Je l'utilise non-stop",
-            "texte": "Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Caroline M.",
+            "title": "Je l'utilise non-stop",
+            "content": "<p>Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊</p>"
           }
         },
-        "avis_10": {
-          "type": "avis",
+        "testimonial_DzKV7A": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Cécile G.",
-            "titre": "Compartiments très pratiques",
-            "texte": "Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Cécile G.",
+            "title": "Compartiments très pratiques",
+            "content": "<p> Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.</p>"
           }
         },
-        "avis_11": {
-          "type": "avis",
+        "testimonial_VmiL9x": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Marion C.",
-            "titre": "Coup de cœur pour ce sac",
-            "texte": "« Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée. »",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Marion C.",
+            "title": "Coup de cœur pour ce sac",
+            "content": "<p>“Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée.”</p>"
           }
         },
-        "avis_12": {
-          "type": "avis",
+        "testimonial_cxK7qF": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Gaëlle C.",
-            "titre": "Un bec à croquer",
-            "texte": "Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Gaëlle C.",
+            "title": "Un bec à croquer",
+            "content": "<p>Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.</p>"
           }
         },
-        "avis_13": {
-          "type": "avis",
+        "testimonial_J4K6jM": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Catherine H.",
-            "titre": "Paille adaptée aux petits",
-            "texte": "La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Catherine H.",
+            "title": "Paille adaptée aux petits",
+            "content": "<p>La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.</p>"
           }
         },
-        "avis_14": {
-          "type": "avis",
+        "testimonial_tnLDK4": {
+          "type": "testimonial",
           "settings": {
-            "auteur": "Iris C.",
-            "titre": "Il est encore plus génial en vrai !",
-            "texte": "On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.",
-            "note": 5
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Iris C.",
+            "title": "Il est encore plus génial en vrai !",
+            "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.</p>"
           }
         }
       },
       "block_order": [
-        "avis_01",
-        "avis_02",
-        "avis_03",
-        "avis_04",
-        "avis_05",
-        "avis_06",
-        "avis_07",
-        "avis_08",
-        "avis_09",
-        "avis_10",
-        "avis_11",
-        "avis_12",
-        "avis_13",
-        "avis_14"
+        "testimonial_DTTqzy",
+        "testimonial_hD44TM",
+        "testimonial_xEqXey",
+        "testimonial_PAByn8",
+        "testimonial_DnV3QU",
+        "testimonial_WUWxXP",
+        "testimonial_PE3qw8",
+        "testimonial_BpQWPf",
+        "testimonial_cdKCDw",
+        "testimonial_DzKV7A",
+        "testimonial_VmiL9x",
+        "testimonial_cxK7qF",
+        "testimonial_J4K6jM",
+        "testimonial_tnLDK4"
       ],
+      "name": "Testimonials",
       "settings": {
-        "titre": "Ils en parlent mieux que nous",
-        "note": "4,8",
-        "total": "+500 parents conquis",
-        "bg_color": "#f4ede1",
-        "filet": false
+        "full_width": true,
+        "stack_testimonials": false,
+        "subheading": "Ils en parlent mieux que nous",
+        "title": "+500 parents conquis",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#f4ede1",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "#fcf9f5",
+        "testimonial_card_text_color": ""
       }
     }
   },
   "order": [
     "moments",
-    "reviews",
+    "avis_verts",
     "eventualities"
   ]
 }
