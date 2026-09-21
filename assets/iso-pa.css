@@ -410,6 +410,9 @@
 
   .iso-pa .pa-ben{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;overflow:visible;margin:0;padding:0}
   .iso-pa .pa-ben--3{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+  .iso-pa .pa-ben.pa-cols--3,.iso-pa .pa-rel.pa-cols--3{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+  .iso-pa .pa-ben.pa-cols--2,.iso-pa .pa-rel.pa-cols--2{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
+  .iso-pa .pa-ben.pa-cols--1,.iso-pa .pa-rel.pa-cols--1{grid-template-columns:minmax(0,1fr);row-gap:40px}
   .iso-pa .pa-ben>li{width:auto}
   .iso-pa .pa-carnav--m{display:none}
 
@@ -731,3 +734,4 @@
 .iso-pa .pa-price-c{font-size:16px;font-weight:500;color:var(--muted)}
 .iso-pa .pa-price [hidden]{display:none}
 .iso-pa .pa-leo{background-color:var(--pa-leo-bg,#EFE3CB)}
+

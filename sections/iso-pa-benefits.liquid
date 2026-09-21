@@ -11,13 +11,16 @@
 {%- assign item_blocks = section.blocks | where: "type", "item" -%}
 {%- assign design_blocks = section.blocks | where: "type", "design" -%}
 {%- assign item_count = item_blocks | size -%}
-{%- if item_count > 4 -%}{%- assign ben_sizes = '(min-width: 960px) min(520px, calc((100vw - 144px) / 3)), 80vw' -%}{%- else -%}{%- assign ben_sizes = '(min-width: 960px) min(390px, calc((100vw - 168px) / 4)), 80vw' -%}{%- endif -%}
+{%- comment -%} La grille suit le nombre de benefices : 4 colonnes pour 4 blocs, 3 au-dela, sinon autant de
+  colonnes que de blocs. Aucune case vide a droite (demande du 19/09). {%- endcomment -%}
+{%- if item_count > 4 or item_count == 3 -%}{%- assign ben_cols = 3 -%}{%- elsif item_count == 2 -%}{%- assign ben_cols = 2 -%}{%- elsif item_count == 1 -%}{%- assign ben_cols = 1 -%}{%- else -%}{%- assign ben_cols = 4 -%}{%- endif -%}
+{%- if ben_cols == 4 -%}{%- assign ben_sizes = '(min-width: 960px) min(390px, calc((100vw - 168px) / 4)), 80vw' -%}{%- elsif ben_cols == 3 -%}{%- assign ben_sizes = '(min-width: 960px) min(520px, calc((100vw - 144px) / 3)), 80vw' -%}{%- elsif ben_cols == 2 -%}{%- assign ben_sizes = '(min-width: 960px) min(660px, calc((100vw - 120px) / 2)), 80vw' -%}{%- else -%}{%- assign ben_sizes = '(min-width: 960px) min(900px, calc(100vw - 96px)), 80vw' -%}{%- endif -%}
 <div class="iso-pa">
 
 {%- comment -%} Composant actuel : grille 3 col / carrousel mobile {%- endcomment -%}
 <section class="pa-sec pa-ben-sec{% if section.settings.filet %} pa-rule{% endif %}"{% if section.settings.titre != blank %} aria-labelledby="pa-ben-h-{{ sid }}"{% endif %} style="background:{{ section.settings.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
   {%- if section.settings.titre != blank -%}<div class="pa-head"><h2 class="pa-h2" id="pa-ben-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>{%- endif -%}
-  <ul class="pa-ben pa-scroll pa-bleed{% if item_count > 4 %} pa-ben--3{% endif %}" id="{{ tid }}">
+  <ul class="pa-ben pa-scroll pa-bleed pa-cols--{{ ben_cols }}" id="{{ tid }}">
     {%- for block in item_blocks -%}
       <li {{ block.shopify_attributes }}><div class="pa-ben-img">{%- if block.settings.image -%}{%- render 'iso-pa-img', image: block.settings.image, alt: block.settings.alt, sizes: ben_sizes, widths: '360,540,720,900,1080' -%}{%- endif -%}</div><h3 class="pa-h3">{{ block.settings.titre | escape }}</h3><p>{{ block.settings.texte | escape }}</p>
         {%- if block.settings.badges != blank -%}
@@ -131,7 +134,7 @@
   "settings": [
     { "type": "text", "id": "titre", "label": "Titre" },
     { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#F4EDE1" },
-    { "type": "checkbox", "id": "filet", "label": "Filet de separation en haut", "default": false }
+    { "type": "checkbox", "id": "filet", "label": "Trait de séparation au-dessus", "default": false }
   ],
   "blocks": [
     {
@@ -158,5 +161,6 @@
   "presets": [{ "name": "Bénéfices" }]
 }
 {% endschema %}
+
 
 

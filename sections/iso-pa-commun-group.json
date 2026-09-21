@@ -220,10 +220,165 @@
         "bg_color": "#f4ede1",
         "filet": false
       }
+    },
+    "reviews": {
+      "type": "iso-pa-reviews",
+      "blocks": {
+        "avis_01": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Delphine K.",
+            "titre": "coussinets discrets",
+            "texte": "Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.",
+            "note": 5
+          }
+        },
+        "avis_02": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Laura J.",
+            "titre": "Lingettes pour tout",
+            "texte": "J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.",
+            "note": 5
+          }
+        },
+        "avis_03": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Sophia M.",
+            "titre": "Sac hyper utile et très pratique!",
+            "texte": "Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!",
+            "note": 5
+          }
+        },
+        "avis_04": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Elodie O.",
+            "titre": "couverture légère",
+            "texte": "La maille est très jolie, le bleu est superbe. Je l'emmène partout car elle est souple et de taille idéale.",
+            "note": 5
+          }
+        },
+        "avis_05": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Sandrine C.",
+            "titre": "La taille est parfaite!",
+            "texte": "« Mon fils de 3 ans adore ranger ses petites affaires. Il est vraiment ingénieux et bien pensé. La taille est parfaite! »",
+            "note": 5
+          }
+        },
+        "avis_06": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Nadia T.",
+            "titre": "Poche couvert idéale",
+            "texte": "Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...",
+            "note": 5
+          }
+        },
+        "avis_07": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Séverine F.",
+            "titre": "Veilleuse baladeuse",
+            "texte": "Enfin une veilleuse pratique. Avec sa sangle on l'accroche partout, hyper pratique.",
+            "note": 5
+          }
+        },
+        "avis_08": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Aurore P.",
+            "titre": "Fourre-tout beau et spacieux",
+            "texte": "Le cabas est génial, très bien pour compléter le sac à dos malin. Poche intérieure très pratique. À porter même sans bébé.",
+            "note": 5
+          }
+        },
+        "avis_09": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Caroline M.",
+            "titre": "Je l'utilise non-stop",
+            "texte": "Je l'utilise non-stop depuis et très franchement j'en suis très satisfaite c'est un gain de place et beaucoup mieux organisé! Je recommande ++ 😊",
+            "note": 5
+          }
+        },
+        "avis_10": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Cécile G.",
+            "titre": "Compartiments très pratiques",
+            "texte": "Rien ne se mélange. Je peux mettre la purée et les légumes et tout dissocier.",
+            "note": 5
+          }
+        },
+        "avis_11": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Marion C.",
+            "titre": "Coup de cœur pour ce sac",
+            "texte": "« Coup de cœur pour ce sac ultra pratique pour les têtes en l'air comme moi, qui aiment être organisée. »",
+            "note": 5
+          }
+        },
+        "avis_12": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Gaëlle C.",
+            "titre": "Un bec à croquer",
+            "texte": "Doudou facile à tenir, un bec mou parfait pour croquer quand bébé fait ses dents. Le message sur l'étiquette est trop mignon.",
+            "note": 5
+          }
+        },
+        "avis_13": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Catherine H.",
+            "titre": "Paille adaptée aux petits",
+            "texte": "La paille est souple et douce, parfaite pour les petites bouches des jeunes enfants.",
+            "note": 5
+          }
+        },
+        "avis_14": {
+          "type": "avis",
+          "settings": {
+            "auteur": "Iris C.",
+            "titre": "Il est encore plus génial en vrai !",
+            "texte": "On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.",
+            "note": 5
+          }
+        }
+      },
+      "block_order": [
+        "avis_01",
+        "avis_02",
+        "avis_03",
+        "avis_04",
+        "avis_05",
+        "avis_06",
+        "avis_07",
+        "avis_08",
+        "avis_09",
+        "avis_10",
+        "avis_11",
+        "avis_12",
+        "avis_13",
+        "avis_14"
+      ],
+      "settings": {
+        "titre": "Ils en parlent mieux que nous",
+        "note": "4,8",
+        "total": "+500 parents conquis",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
     }
   },
   "order": [
     "moments",
+    "reviews",
     "eventualities"
   ]
 }

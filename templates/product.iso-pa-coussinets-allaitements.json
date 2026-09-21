@@ -56,7 +56,7 @@
         "puces": "ÉVOLUTIF\nPRATIQUE\nORGANISATION\nDÉPERLANT",
         "galerie": "",
         "leopard": "Léopard\nGraou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #D1B49A\ncouverts/Rose: #EC9887\ncouverts/Bleu: #97BDE7\ncouverts/Graou: #FBE9CE",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -960,7 +960,8 @@
         "total": "+500 parents conquis",
         "bg_color": "#f4ede1",
         "filet": false
-      }
+      },
+      "disabled": true
     }
   },
   "order": [

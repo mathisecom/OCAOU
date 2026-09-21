@@ -8,11 +8,14 @@
 {%- assign sid = section.id -%}
 {%- capture tid -%}pa-rel-{{ sid }}{%- endcapture -%}
 {%- assign liste = section.settings.produits -%}
+{%- comment -%} La grille suit le nombre de produits choisis : pas de case vide a droite (demande du 19/09). {%- endcomment -%}
+{%- assign rel_n = 0 -%}{%- for rp in liste -%}{%- unless rp == blank or rp.id == blank -%}{%- assign rel_n = rel_n | plus: 1 -%}{%- endunless -%}{%- endfor -%}
+{%- if rel_n > 4 or rel_n == 3 -%}{%- assign rel_cols = 3 -%}{%- elsif rel_n == 2 -%}{%- assign rel_cols = 2 -%}{%- elsif rel_n == 1 -%}{%- assign rel_cols = 1 -%}{%- else -%}{%- assign rel_cols = 4 -%}{%- endif -%}
 {%- if liste.size > 0 or request.design_mode -%}
 <div class="iso-pa">
 <section class="pa-sec pa-rel-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head"><h2 class="pa-h2" id="pa-rel-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
-  <ul class="pa-rel pa-scroll pa-bleed" id="{{ tid }}">
+  <ul class="pa-rel pa-scroll pa-bleed pa-cols--{{ rel_cols }}" id="{{ tid }}">
     {%- for rp in liste -%}
       {%- if rp == blank or rp.id == blank -%}{%- continue -%}{%- endif -%}
       <li><article class="pa-pc">
@@ -48,8 +51,11 @@
     { "type": "text", "id": "titre", "label": "Titre", "default": "Souvent achetés ensemble" },
     { "type": "product_list", "id": "produits", "label": "Produits", "info": "Jusqu'à 6 produits, dans l'ordre d'affichage.", "limit": 6 },
     { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
-    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
-  ]
+    { "type": "checkbox", "id": "filet", "label": "Trait de séparation au-dessus", "default": false }
+  ],
+  "presets": [{ "name": "Associés" }]
 }
 {% endschema %}
+
+
 

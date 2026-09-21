@@ -50,9 +50,11 @@
 
   # Photos rangées par couleur, comme la fiche en ligne (demande du 17/09) : dans le catalogue Shopify, la
   # photo d'une couleur ouvre son groupe et les médias qui suivent lui appartiennent, jusqu'à la photo de
-  # la couleur suivante. Le rangement n'est retenu que si le premier média ouvre un groupe, si aucune
-  # couleur ne partage sa photo et si chaque groupe compte au moins deux photos ; sinon la galerie garde
-  # l'ordre du réglage, commun à toutes les couleurs (cas de la gourde, où seule la photo de tête change).
+  # la couleur suivante. Le rangement est retenu dès que chaque couleur a sa photo et qu'aucune couleur
+  # n'en partage une avec une autre ; un groupe d'une seule photo est accepté (demande du 19/09 : ne voir
+  # que les photos du coloris choisi). Les photos placées avant la première photo de coloris appartiennent
+  # à tout le monde et suivent chaque groupe. Sinon la galerie garde l'ordre du réglage, commun à toutes
+  # les couleurs (cas d'une fiche dont les coloris n'ont pas encore leur photo).
   assign ncol = 0
   unless product.has_only_default_variant
     assign ncol = opt.values.size
@@ -83,6 +85,7 @@
     endfor
   endif
   assign ends = ''
+  assign commun = ''
   if grouped
     assign heads = heads | remove_last: ',' | split: ','
     assign first_head = nmed
@@ -98,15 +101,13 @@
           assign fin = hp2 | minus: 1
         endif
       endfor
-      assign len = fin | minus: hp | plus: 1
-      if len < 2
-        assign grouped = false
-        break
-      endif
       assign ends = ends | append: fin | append: ','
     endfor
-    if first_head != 1
-      assign grouped = false
+    if first_head > 1
+      assign avant = first_head | minus: 1
+      for k in (1..avant)
+        assign commun = commun | append: k | append: ','
+      endfor
     endif
   endif
 
@@ -150,6 +151,7 @@
           assign line = line | append: pos | append: ','
         endunless
       endfor
+      assign line = line | append: commun
       assign plan = plan | append: line | remove_last: ',' | append: '|'
     endfor
   else
@@ -1018,4 +1020,5 @@
   ]
 }
 {% endschema %}
+
 
