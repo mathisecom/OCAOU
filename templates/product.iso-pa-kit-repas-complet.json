@@ -1,0 +1,469 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "iso-pa-product",
+      "blocks": {
+        "accordeon_1": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Pourquoi choisir la Gourde O'CAOU ?",
+            "icones": "lfgb:Silicone alimentaire LFGB\nbpa-free:Sans BPA, PVC ni phtalates\ncheck:Sans goût ni odeur",
+            "contenu": "<p>Pensé pour durer et accompagner les enfants pendant des années.</p>"
+          }
+        },
+        "accordeon_2": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Entretien",
+            "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante ou à la vapeur",
+            "contenu": ""
+          }
+        },
+        "accordeon_3": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques",
+            "icones": "",
+            "contenu": "<p><strong>Dimensions</strong> : H190,2mm</p><p><strong>Capacité</strong> : 350ML</p><p><strong>Composition</strong> : Silicone Alimentaire</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordeon_1",
+        "accordeon_2",
+        "accordeon_3"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "titre": "",
+        "accroche": "Gourde + Lunch Box + Couverts + Sac Isotherme",
+        "collection": "",
+        "badges": "Best Seller",
+        "note": "4.8",
+        "avis": "+ 500 avis",
+        "pitch_titre": "O’CAOU je deviens autonome",
+        "pitch": "Un coffret parfait pour manger comme les grands. Un kit complet pour voyager partout bien équipé.",
+        "puces": "Silicone souple\nDéveloppe l’autonomie\nLéger, facile à nettoyer\nHermétique\nRentre dans le sac isotherme O’CAOU",
+        "galerie": "",
+        "leopard": "Léopard\nGraou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED\ncoffret-premier-repas/Rose: #E3A5A0\ncoffret-premier-repas/Bleu: #6C89B2\ncoffret-premier-repas/Léopard: motif #E3D4B5\ncoffret-premier-repas/Beige: #BBAA96",
+        "offre_titre": "",
+        "relais": true,
+        "compat": "",
+        "complements_titre": "Complétez avec un indispensable",
+        "complements_position": "bouton",
+        "jours": 2,
+        "livraison": "Livraison Suivie"
+      }
+    },
+    "legacy_contenu": {
+      "type": "custom-liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div id='ss-product-videos'></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "presse": {
+      "type": "iso-presse",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4"
+      ],
+      "name": "Recommandé par",
+      "settings": {
+        "titre": "Recommandé par",
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
+      }
+    },
+    "benefices": {
+      "type": "iso-pa-benefits",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_59_04.png",
+            "alt": "Gourde, lunch box et couverts O'CAOU posés ensemble",
+            "titre": "Un kit repas complet",
+            "texte": "Un coffret parfait pour manger en toute autonomie. Les petits vont pouvoir préparer leur repas comme des grands."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/no_change_3_copie.png",
+            "alt": "Le kit repas rangé dans le sac isotherme O'CAOU",
+            "titre": "Pratique à transporter",
+            "texte": "Le kit complet se glisse facilement dans le sac isotherme O’CAOU. Avec sa sangle il s'accroche partout, poussette, vélo ou siège auto."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_7_sept._2026_19_04_26.png",
+            "alt": "Le kit repas en silicone rincé à l'eau",
+            "titre": "Facile à nettoyer",
+            "texte": "Passe au lave-vaisselle. En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "titre": "",
+        "bg_color": "#f4ede1",
+        "filet": false
+      }
+    },
+    "bande": {
+      "type": "bandedefilante",
+      "blocks": {
+        "marquee_item_qcCcnL": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "compartimenté",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_QqECnx": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "ergonomique",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_zzBhhz": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "Incassable",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        },
+        "marquee_item_dJGWc3": {
+          "type": "marquee_item",
+          "settings": {
+            "text": "hermétique",
+            "icon_text": "✹",
+            "icon_image": "shopify://shop_images/icone_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_qcCcnL",
+        "marquee_item_QqECnx",
+        "marquee_item_zzBhhz",
+        "marquee_item_dJGWc3"
+      ],
+      "name": "Bande défilante premium",
+      "settings": {
+        "bg_color": "#fcf9f5",
+        "text_color": "#af6c67",
+        "border_color": "#e8ddd3",
+        "border_width": 0,
+        "height_desktop": 56,
+        "height_mobile": 52,
+        "font_size_desktop": 13,
+        "font_size_mobile": 10,
+        "font_weight": "600",
+        "letter_spacing": 1.5,
+        "uppercase": true,
+        "icon_size": 20,
+        "gap_desktop": 65,
+        "gap_mobile": 50,
+        "speed": 52,
+        "pause_on_hover": false
+      }
+    },
+    "retours": {
+      "type": "30retours",
+      "name": "Bannière garantie produit",
+      "settings": {
+        "title": "Retours Faciles sous 14 Jours",
+        "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
+        "product_image": "shopify://shop_images/no_change_copie_3.jpg",
+        "product_image_alt": "Image produit garantie",
+        "bg_position": "center center",
+        "bg_position_mobile": "center center",
+        "show_default_icon": true,
+        "custom_icon": "shopify://shop_images/Design_sans_titre_40.png",
+        "icon_alt": "Icône garantie",
+        "icon_size_desktop": 56,
+        "icon_size_mobile": 44,
+        "icon_margin_bottom_desktop": 12,
+        "icon_margin_bottom_mobile": 25,
+        "icon_color": "#ffffff",
+        "section_bg_color": "#ffffff",
+        "card_bg_color": "#af6c67",
+        "overlay_color": "#fcf9f5",
+        "overlay_opacity": 30,
+        "title_color": "#101010",
+        "subtitle_color": "#101010",
+        "title_size_desktop": 31,
+        "title_line_height_desktop": 105,
+        "subtitle_size_desktop": 14,
+        "subtitle_line_height_desktop": 135,
+        "title_weight": "700",
+        "subtitle_weight": "400",
+        "title_letter_spacing": 0,
+        "title_size_mobile": 29,
+        "title_line_height_mobile": 95,
+        "subtitle_size_mobile": 13,
+        "subtitle_line_height_mobile": 135,
+        "full_width": false,
+        "max_width": 1400,
+        "card_height_desktop": 310,
+        "card_radius_desktop": 16,
+        "card_padding_x_desktop": 100,
+        "card_padding_y_desktop": 50,
+        "text_column_width": 2,
+        "image_column_width": 2,
+        "column_gap_desktop": 40,
+        "text_max_width_desktop": 620,
+        "text_alignment_desktop": "left",
+        "product_width_desktop": 430,
+        "product_offset_y_desktop": 70,
+        "product_alignment_desktop": "center",
+        "card_radius_mobile": 16,
+        "card_padding_x_mobile": 22,
+        "card_padding_y_mobile": 36,
+        "card_padding_bottom_mobile": 0,
+        "column_gap_mobile": 28,
+        "text_max_width_mobile": 350,
+        "text_alignment_mobile": "center",
+        "product_width_mobile": 310,
+        "product_offset_y_mobile": 10,
+        "product_alignment_mobile": "center",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 120,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0,
+        "side_padding_desktop": 40,
+        "side_padding_mobile": 16,
+        "shadow_y": 10,
+        "shadow_blur": 30,
+        "shadow_opacity": 20,
+        "subtitle_margin_top_desktop": 12,
+        "subtitle_margin_top_mobile": 10
+      }
+    },
+    "instagram": {
+      "type": "instagram",
+      "blocks": {
+        "image_nhdWPm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/20241102_110225.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_VhqDh9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ocaou-sac-poussette.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_wqqLgr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/20250711_184524.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_CtfXtG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sac-ocaou-terracotta-motif-chien_d138feb2-f1e3-4b47-b662-da4a150cec10.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_zwtFik": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ocaou-sac-pour-poussette.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        },
+        "image_QFCYbh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ocaou-sac-enfant-poussette.jpg",
+            "alt_text": "Photo Instagram",
+            "link": "",
+            "open_new_tab": true,
+            "image_position": "center center",
+            "overlay_text": "",
+            "overlay_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_nhdWPm",
+        "image_VhqDh9",
+        "image_wqqLgr",
+        "image_CtfXtG",
+        "image_zwtFik",
+        "image_QFCYbh"
+      ],
+      "name": "Follow us galerie",
+      "settings": {
+        "show_title": true,
+        "title": "SUIVEZ NOUS @ocaou",
+        "title_uppercase": true,
+        "title_alignment": "center",
+        "title_color": "#111111",
+        "title_size_desktop": 16,
+        "title_size_mobile": 15,
+        "title_weight": "600",
+        "title_letter_spacing": 2,
+        "title_letter_spacing_mobile": 2,
+        "title_margin_bottom": 24,
+        "title_margin_bottom_mobile": 25,
+        "full_width": true,
+        "max_width": 1600,
+        "columns_desktop": 6,
+        "columns_mobile": 2,
+        "gap_desktop": 4,
+        "gap_mobile": 2,
+        "image_ratio": "1 / 1",
+        "image_ratio_mobile": "1 / 1",
+        "force_height_desktop": false,
+        "image_height_desktop": 320,
+        "force_height_mobile": false,
+        "image_height_mobile": 210,
+        "image_fit": "cover",
+        "image_radius": 16,
+        "enable_hover_zoom": true,
+        "enable_hover_darken": false,
+        "mobile_scroll": true,
+        "mobile_card_width": 45,
+        "bg_color": "#ffffff",
+        "placeholder_bg": "#f2f2f2",
+        "placeholder_text_color": "#777777",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "side_padding_desktop": 0,
+        "side_padding_mobile": 0,
+        "shadow_y": 0,
+        "shadow_blur": 0,
+        "shadow_opacity": 0,
+        "overlay_text_color": "#ffffff",
+        "overlay_size_desktop": 14,
+        "overlay_size_mobile": 12,
+        "overlay_weight": "600",
+        "overlay_letter_spacing": 1,
+        "overlay_padding": 16,
+        "overlay_shadow_opacity": 35,
+        "show_button": false,
+        "button_text": "Suivez-nous",
+        "button_link": "",
+        "button_new_tab": true,
+        "button_alignment": "center",
+        "button_margin_top": 24,
+        "button_height": 44,
+        "button_padding_x": 28,
+        "button_radius": 30,
+        "button_font_size": 14,
+        "button_weight": "600",
+        "button_bg": "#111111",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#333333",
+        "button_hover_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "legacy_contenu",
+    "presse",
+    "benefices",
+    "bande",
+    "retours",
+    "instagram"
+  ]
+}

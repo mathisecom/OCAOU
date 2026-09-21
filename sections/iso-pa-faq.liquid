@@ -10,12 +10,12 @@
   <div class="pa-faq">
     <div class="pa-faq-col">
       {%- for block in section.blocks limit: half -%}
-        <details class="pa-q" {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}{% render 'iso-pa-pm' %}</summary><div class="pa-q-a">{{ block.settings.reponse }}</div></details>
+        <details is="accordion-disclosure" class="pa-q" {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}{% render 'iso-pa-pm' %}</summary><div class="pa-q-a">{{ block.settings.reponse }}</div></details>
       {%- endfor -%}
     </div>
     <div class="pa-faq-col">
       {%- for block in section.blocks offset: half -%}
-        <details class="pa-q" {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}{% render 'iso-pa-pm' %}</summary><div class="pa-q-a">{{ block.settings.reponse }}</div></details>
+        <details is="accordion-disclosure" class="pa-q" {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}{% render 'iso-pa-pm' %}</summary><div class="pa-q-a">{{ block.settings.reponse }}</div></details>
       {%- endfor -%}
     </div>
   </div>
@@ -44,6 +44,7 @@
   "presets": [{ "name": "Questions" }]
 }
 {% endschema %}
+
 
 
 
