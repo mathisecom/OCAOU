@@ -901,16 +901,6 @@
         "accordion_background": "#fcf9f5",
         "accordion_text_color": ""
       }
-    },
-    "avis": {
-      "type": "iso-pa-reviews",
-      "settings": {
-        "titre": "Ils en parlent mieux que nous",
-        "note": "4,8",
-        "total": "+500 parents conquis",
-        "bg_color": "#f4ede1",
-        "filet": false
-      }
     }
   },
   "order": [
@@ -926,7 +916,6 @@
     "multi_column_FnzMQb",
     "avantageicons_k7faYm",
     "30retours_YLhBEm",
-    "faq_RLPihW",
-    "avis"
+    "faq_RLPihW"
   ]
 }

@@ -85,7 +85,7 @@
         "produits": [
           "lunch-box",
           "lingettes-lavables",
-          "coffret-premier-repas-ancien",
+          "coffret-premier-repas",
           "kit-repas-complet"
         ],
         "bg_color": "#ffffff",
@@ -907,16 +907,6 @@
         "bg_color": "#f4ede1",
         "filet": false
       }
-    },
-    "avis": {
-      "type": "iso-pa-reviews",
-      "settings": {
-        "titre": "Ils en parlent mieux que nous",
-        "note": "4,8",
-        "total": "+500 parents conquis",
-        "bg_color": "#f4ede1",
-        "filet": false
-      }
     }
   },
   "order": [
@@ -933,7 +923,6 @@
     "avantageicons_k7faYm",
     "30retours_YLhBEm",
     "faq_RLPihW",
-    "benefices",
-    "avis"
+    "benefices"
   ]
 }
