@@ -318,8 +318,8 @@
           "settings": {
             "heading": "Existe aussi en coffret",
             "products": [
-              "coffret-pour-maman-1",
-              "coffret-comme-les-grands-1",
+              "coffret-pour-maman",
+              "coffret-comme-les-grands",
               "duo-essentiel",
               "duo-pratique"
             ],
@@ -365,7 +365,7 @@
         "product_Bpc3gQ": {
           "type": "product",
           "settings": {
-            "product": "coffret-pour-maman-1",
+            "product": "coffret-pour-maman",
             "horizontal_position": 52,
             "vertical_position": 40
           }
@@ -551,22 +551,9 @@
       "settings": {
         "titre": "Recommandé par",
         "titre_tag": "h2",
-        "titre_size": 13,
-        "titre_size_mobile": 8,
-        "titre_weight": 600,
-        "titre_uppercase": true,
         "titre_color": "#121212",
-        "titre_gap": 24,
-        "titre_gap_mobile": 16,
-        "logo_width": 130,
-        "logo_width_mobile": 100,
-        "gap": 70,
-        "gap_mobile": 30,
         "grayscale": false,
-        "bg_color": "#ffffff",
-        "content_width": 1200,
-        "padding_block": 40,
-        "padding_block_mobile": 28
+        "bg_color": "#ffffff"
       }
     },
     "imagewithtexticons_4VMEKy": {
@@ -627,6 +614,8 @@
       ],
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "reperes",
+        "marker_size": 14,
         "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_43_57.png",
         "image_position": "left",
         "image_first_mobile": true,
@@ -667,9 +656,7 @@
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
-        "padding_bottom_mobile": 8,
-        "layout": "reperes",
-        "marker_size": 14
+        "padding_bottom_mobile": 8
       }
     },
     "image_with_text_overlay_wrRh6T": {
