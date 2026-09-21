@@ -992,8 +992,7 @@
         "total": "+500 parents conquis",
         "bg_color": "#f4ede1",
         "filet": false
-      },
-      "disabled": true
+      }
     }
   },
   "order": [

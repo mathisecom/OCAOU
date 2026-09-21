@@ -28,11 +28,19 @@
             "icones": "",
             "contenu": "<ul><li>Rassure au moment du coucher</li><li>Accompagne les premiers câlins</li><li>Doux au toucher</li><li>Léger et Facile à transporter</li><li>S’accroche partout avec  la poignée nomade</li></ul>"
           }
+        },
+        "compl_poignee": {
+          "type": "complement",
+          "settings": {
+            "produit": "poignee-nomade",
+            "badge": ""
+          }
         }
       },
       "block_order": [
         "accordeon_1",
-        "accordeon_2"
+        "accordeon_2",
+        "compl_poignee"
       ],
       "settings": {
         "bg_color": "#ffffff",
@@ -51,8 +59,8 @@
         "offre_titre": "",
         "relais": true,
         "compat": "",
-        "complements_titre": "Complétez avec un indispensable",
-        "complements_position": "bouton",
+        "complements_titre": "Compatible avec la poignée nomade \"Je l'emporte partout !\"",
+        "complements_position": "points_forts",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
       }
@@ -1232,8 +1240,7 @@
         "total": "+500 parents conquis",
         "bg_color": "#f4ede1",
         "filet": false
-      },
-      "disabled": true
+      }
     }
   },
   "order": [
