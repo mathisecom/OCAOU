@@ -51,6 +51,25 @@
     <div class="pa-ft-col pa-ft-col--ct"><h2 class="pa-h3">Contact</h2><address>{% if section.settings.email != blank %}<a class="pa-ft-mail" href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a><br>{% endif %}{{ section.settings.adresse | escape }}</address></div>
   </div>
   <div class="pa-ft-bot">
+    {%- if section.settings.pays_visible -%}
+      <div class="pa-ft-pays">
+        {%- if localization.available_countries.size > 1 -%}
+          <details>
+            <summary>Livraison&nbsp;: <b>{{ localization.country.name }}</b></summary>
+            {%- form 'localization' -%}
+              <input type="hidden" name="return_to" value="{{ request.path }}">
+              <ul>
+                {%- for c in localization.available_countries -%}
+                  <li><button type="submit" name="country_code" value="{{ c.iso_code }}"{% if c.iso_code == localization.country.iso_code %} aria-current="true"{% endif %}>{{ c.name }}</button></li>
+                {%- endfor -%}
+              </ul>
+            {%- endform -%}
+          </details>
+        {%- else -%}
+          <p>Livraison&nbsp;: <b>{{ localization.country.name }}</b></p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
     {%- if fb != blank or ig != blank -%}
       <ul class="pa-ft-soc">
         {%- if fb != blank -%}<li><a href="{{ fb }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Facebook' }}">{%- render 'icon' with 'facebook', width: 20, height: 20 -%}</a></li>{%- endif -%}
@@ -127,6 +146,13 @@
       "id": "nl_bouton",
       "label": "Bouton",
       "default": "S’inscrire"
+    },
+    {
+      "type": "checkbox",
+      "id": "pays_visible",
+      "label": "Afficher le pays de livraison",
+      "default": true,
+      "info": "Hors Union européenne, la boutique affiche les prix sans la TVA. Ce repère dit sur quel pays le visiteur se trouve."
     },
     {
       "type": "header",
@@ -274,4 +300,5 @@
   "max_blocks": 12
 }
 {% endschema %}
+
 
