@@ -307,11 +307,15 @@
       allSlides.forEach(function (sl) { sl.hidden = sl.dataset.c !== c; });
       thumbs = visible(allThumbs);
       slides = visible(allSlides);
-      var im = slides[0] && slides[0].querySelector("img");
-      if (im && im.loading === "lazy") {
+      /* Toutes les photos du coloris sont demandees des le changement : la premiere en priorite haute,
+         les suivantes en priorite basse. Sans cela, faire defiler juste apres le changement laissait un
+         cadre blanc le temps du telechargement (retour du 21/09). */
+      slides.concat(thumbs).forEach(function (el, i) {
+        var im = el.querySelector("img");
+        if (!im || im.loading !== "lazy") return;
         im.loading = "eager";
-        if ("fetchPriority" in im) im.fetchPriority = "high";
-      }
+        if ("fetchPriority" in im) im.fetchPriority = i === 0 ? "high" : "low";
+      });
       if (countN) countN.textContent = slides.length;
       if (countI) countI.textContent = "1";
       if (prog) prog.style.width = (slides.length ? 100 / slides.length : 100) + "%";
@@ -739,10 +743,38 @@
     });
   }
 
+  /* Le navigateur ne telecharge une photo differee qu'au moment ou elle entre dans le cadre : la carte
+     suivante d'un carrousel restait blanche le temps qu'elle arrive. Des qu'une section approche de
+     l'ecran, ses photos sont demandees, en priorite basse pour ne pas retarder le reste de la page. Les
+     photos d'un coloris masque sont laissees de cote : elles sont demandees au changement de coloris. */
+  function photosPretes(scope) {
+    var zones = all(scope, ".iso-pa");
+    if (scope.matches && scope.matches(".iso-pa")) zones.push(scope);
+    function servir(zone) {
+      if (zone.dataset.paImgs) return;
+      zone.dataset.paImgs = "1";
+      all(zone, "img[loading='lazy']").forEach(function (im) {
+        if (im.closest && im.closest("[hidden]")) return;
+        if ("fetchPriority" in im) im.fetchPriority = "low";
+        im.loading = "eager";
+      });
+    }
+    zones.forEach(function (zone) {
+      if (!window.IntersectionObserver) { servir(zone); return; }
+      var obs = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { servir(e.target); obs.unobserve(e.target); }
+        });
+      }, { rootMargin: "600px" });
+      obs.observe(zone);
+    });
+  }
+
   function init(scope) {
     all(scope, ".iso-pa[data-pa-product]").forEach(product);
     if (scope.matches && scope.matches(".iso-pa[data-pa-product]")) product(scope);
     carousels(scope);
+    photosPretes(scope);
     hotspots(scope);
     related(scope);
     shipDates(scope);
@@ -779,3 +811,4 @@
   /* Éditeur de thème : une section rechargée repart de zéro. */
   document.addEventListener("shopify:section:load", function (e) { init(e.target); });
 })();
+

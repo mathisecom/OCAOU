@@ -59,7 +59,7 @@
     { "type": "textarea", "id": "texte", "label": "Texte (optionnel)" },
     { "type": "select", "id": "affichage", "label": "Affichage", "options": [ { "value": "defile", "label": "Carrousel" }, { "value": "grille", "label": "Grille" } ], "default": "defile" },
     { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
-    { "type": "checkbox", "id": "filet", "label": "Filet de séparation en haut", "default": false }
+    { "type": "checkbox", "id": "filet", "label": "Trait de séparation au-dessus", "default": false }
   ],
   "blocks": [
     {
@@ -72,7 +72,10 @@
       ]
     }
   ],
-  "max_blocks": 20
+  "max_blocks": 20,
+  "presets": [{ "name": "Moments" }]
 }
 {% endschema %}
+
+
 
