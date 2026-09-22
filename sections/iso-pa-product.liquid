@@ -647,6 +647,27 @@
     </div>
   {%- endif -%}
   {%- unless comp_haut -%}{{ comp_html }}{%- endunless -%}
+  {%- comment -%} Carte cadeau : envoi direct au destinataire (courriel, date, message).
+    Les noms des champs sont ceux attendus par Shopify, qui se charge de l'envoi. {%- endcomment -%}
+  {%- if product.gift_card? -%}
+    <div class="pa-gc" data-pa-gc>
+      <label class="pa-gc-hd">
+        <input type="checkbox" class="pa-gc-in" data-pa-gc-on>
+        <span class="pa-gc-bx" aria-hidden="true">{% render 'iso-pa-icon', name: 'check' %}</span>
+        <span class="pa-gc-lb">Envoyer la carte directement au destinataire</span>
+      </label>
+      <div class="pa-gc-f" data-pa-gc-f hidden>
+        <p class="pa-gc-fl"><label for="pa-gc-mail">Adresse e-mail du destinataire</label>
+          <input type="email" id="pa-gc-mail" data-pa-gc-mail autocomplete="off" spellcheck="false" required></p>
+        <p class="pa-gc-fl"><label for="pa-gc-nom">Nom du destinataire</label>
+          <input type="text" id="pa-gc-nom" data-pa-gc-nom autocomplete="off"></p>
+        <p class="pa-gc-fl"><label for="pa-gc-date">Date d'envoi</label>
+          <input type="date" id="pa-gc-date" data-pa-gc-date></p>
+        <p class="pa-gc-fl"><label for="pa-gc-msg">Message</label>
+          <textarea id="pa-gc-msg" data-pa-gc-msg rows="3" maxlength="200"></textarea></p>
+      </div>
+    </div>
+  {%- endif -%}
   <button type="button" class="pa-cta"{% unless sel.available %} disabled{% endunless %}>{% render 'iso-pa-icon', name: 'bag' %}<span class="pa-cta-l">{% if sel.available %}Ajouter au panier{% else %}Épuisé{% endif %}</span><span class="pa-cta-sep" aria-hidden="true">·</span><span class="pa-cta-p">{{ first_pack | money | replace: ' €', '&nbsp;€' }}</span></button>
   <p class="pa-sr" role="status" data-pa-status></p>
   {%- comment -%} Tâche 5 : accordéon avec grille d'icônes administrable. {%- endcomment -%}

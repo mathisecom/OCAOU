@@ -346,6 +346,15 @@
     var priceC = $(".pa-price-c"), priceCV = $(".pa-price-cv");
     var busy = false;
 
+    /* Carte cadeau : les champs du destinataire n'apparaissent qu'une fois la case cochee. */
+    var gc = $("[data-pa-gc]"), gcOn = gc && gc.querySelector("[data-pa-gc-on]"), gcF = gc && gc.querySelector("[data-pa-gc-f]");
+    if (gcOn && gcF) {
+      gcOn.addEventListener("change", function () {
+        gcF.hidden = !gcOn.checked;
+        if (gcOn.checked) { var m = gcF.querySelector("[data-pa-gc-mail]"); if (m) m.focus(); }
+      });
+    }
+
     /* Aucune formule cochée : -1, le produit seul. */
     function offIdx() {
       for (var i = 0; i < offerInputs.length; i++) if (offerInputs[i].checked) return +offerInputs[i].value;
@@ -637,6 +646,22 @@
         if (busy || cta.disabled) return;
         var oi = offIdx(), o = offers[oi];
         var items = [{ id: variant.id, quantity: 1 }];
+        if (gc && gcOn && gcOn.checked) {
+          var mail = gc.querySelector("[data-pa-gc-mail]");
+          if (!mail || !mail.value.trim() || !mail.checkValidity()) {
+            if (mail) { mail.setAttribute("aria-invalid", "true"); mail.focus(); }
+            say("Indiquez l'adresse e-mail du destinataire.");
+            return;
+          }
+          mail.removeAttribute("aria-invalid");
+          var props = { "__shopify_send_gift_card_to_recipient": "true", "Recipient email": mail.value.trim() };
+          var nom = gc.querySelector("[data-pa-gc-nom]"), dat = gc.querySelector("[data-pa-gc-date]"), msg = gc.querySelector("[data-pa-gc-msg]");
+          if (nom && nom.value.trim()) props["Recipient name"] = nom.value.trim();
+          if (dat && dat.value) props["Send on"] = dat.value;
+          if (msg && msg.value.trim()) props["Message"] = msg.value.trim();
+          props["__shopify_offset"] = String(new Date().getTimezoneOffset());
+          items[0].properties = props;
+        }
         if (o) {
           o.parts.forEach(function (p, k) { items.push({ id: partVariant(oi, k).id, quantity: 1 }); });
           (o.gifts || []).forEach(function (g) {
