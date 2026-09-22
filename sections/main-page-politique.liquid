@@ -23,7 +23,9 @@
   {%- elsif h contains 'conditions-generales' -%}{{ page.content }}
   {%- else -%}{{ shop.terms_of_sale }}{%- endif -%}
 {%- endcapture -%}
-{%- assign corps = corps | strip -%}
+{%- comment -%} Deux espaces de suite, l'un insecable : coquille de saisie, invisible a la
+  relecture dans l'editeur mais visible sur la page. {%- endcomment -%}
+{%- assign corps = corps | strip | replace: '&nbsp; ', ' ' | replace: ' &nbsp;', ' ' | replace: '  ', ' ' | replace: '  ', ' ' -%}
 
 <div class="container">
   <div class="page-spacer">
