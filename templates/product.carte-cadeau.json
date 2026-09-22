@@ -315,7 +315,7 @@
         "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
-        "grayscale": false,
+        "grayscale": true,
         "bg_color": "#ffffff"
       }
     },
