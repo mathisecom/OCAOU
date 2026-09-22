@@ -8,12 +8,23 @@
 {%- assign sid = section.id -%}
 {%- capture tid -%}pa-rel-{{ sid }}{%- endcapture -%}
 {%- assign liste = section.settings.produits -%}
-{%- comment -%} Toujours 4 colonnes, quel que soit le nombre de produits choisis (demande du 21/09). {%- endcomment -%}
+{%- comment -%}
+  Nombre de cartes par ligne (ordinateur). « Automatique » remplit toujours la largeur sans laisser
+  de case vide : autant de colonnes que de produits jusqu'a 5, et 3 colonnes pour 6 produits
+  (deux lignes pleines). Sur telephone la liste defile horizontalement, quel que soit ce reglage.
+{%- endcomment -%}
+{%- assign nb = liste.size -%}
+{%- assign cols = section.settings.cols | default: 'auto' -%}
+{%- if cols == 'auto' -%}
+  {%- if nb == 6 -%}{%- assign cols = 3 -%}
+  {%- elsif nb > 0 and nb <= 5 -%}{%- assign cols = nb -%}
+  {%- else -%}{%- assign cols = 4 -%}{%- endif -%}
+{%- endif -%}
 {%- if liste.size > 0 or request.design_mode -%}
 <div class="iso-pa">
 <section class="pa-sec pa-rel-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head"><h2 class="pa-h2" id="pa-rel-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
-  <ul class="pa-rel pa-scroll pa-bleed pa-cols--4" id="{{ tid }}">
+  <ul class="pa-rel pa-scroll pa-bleed pa-cols--{{ cols }}" id="{{ tid }}">
     {%- for rp in liste -%}
       {%- if rp == blank or rp.id == blank -%}{%- continue -%}{%- endif -%}
       <li><article class="pa-pc">
@@ -48,12 +59,22 @@
   "settings": [
     { "type": "text", "id": "titre", "label": "Titre", "default": "Souvent achetés ensemble" },
     { "type": "product_list", "id": "produits", "label": "Produits", "info": "Jusqu'à 6 produits, dans l'ordre d'affichage.", "limit": 6 },
+    { "type": "select", "id": "cols", "label": "Cartes par ligne (ordinateur)", "default": "auto",
+      "info": "Automatique : la ligne se remplit toute seule, sans case vide.",
+      "options": [
+        { "value": "auto", "label": "Automatique" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" }
+      ] },
     { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Trait de séparation au-dessus", "default": false }
   ],
   "presets": [{ "name": "Associés" }]
 }
 {% endschema %}
+
 
 
 
