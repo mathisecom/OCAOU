@@ -69,7 +69,19 @@ Supported variables
             {%- if property.last contains '/uploads/' -%}
               <a href="{{ property.last }}" class="link">{{ property.last | split: '/' | last }}</a>
             {%- else -%}
-              {{ property.first }}: {{ property.last }}
+              {%- comment -%} Carte cadeau : Shopify impose des noms de champ en anglais. {%- endcomment -%}
+              {%- liquid
+                assign nom = property.first
+                case nom
+                  when 'Recipient email'
+                    assign nom = "Adresse e-mail du destinataire"
+                  when 'Recipient name'
+                    assign nom = "Nom du destinataire"
+                  when 'Send on'
+                    assign nom = "Date d'envoi"
+                endcase
+              -%}
+              {{ nom }}&nbsp;: {{ property.last }}
             {%- endif -%}
           </li>
         {%- endfor -%}
