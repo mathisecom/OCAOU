@@ -1,3 +1,4 @@
+{{ 'iso-pa.css' | asset_url | stylesheet_tag }}
 {%- comment -%}
   Piste A : composant à points « + » posés sur la photo, détail affiché à côté (maquette, fonction
   hotspots). RGAA : chaque point est un bouton nommé (aria-expanded, aria-controls) synchronisé avec
@@ -49,7 +50,9 @@
       ]
     }
   ],
-  "max_blocks": 8
+  "max_blocks": 8,
+  "presets": [{ "name": "Points photo" }]
 }
 {% endschema %}
+
 

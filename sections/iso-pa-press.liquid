@@ -1,0 +1,40 @@
+{{ 'iso-pa.css' | asset_url | stylesheet_tag }}
+{%- comment -%}
+  Piste A : bandeau « Recommandé par » (maquette, fonction press). Logos ramenés au même gris doux
+  par un filtre SVG (niveaux de gris puis courbe tonale), texte alternatif = nom du média.
+{%- endcomment -%}
+{%- assign fid = 'pa-f-' | append: section.id -%}
+{%- assign fattr = 'style="filter:url(#' | append: fid | append: ')"' -%}
+<div class="iso-pa">
+<section class="pa-press" aria-labelledby="pa-press-{{ section.id }}"><div class="pa-w"><div class="pa-press-in">
+  <svg aria-hidden="true" focusable="false"><filter id="{{ fid }}" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues="0.42 0.44 0.47 0.53 1"/><feFuncG type="table" tableValues="0.42 0.44 0.47 0.53 1"/><feFuncB type="table" tableValues="0.42 0.44 0.47 0.53 1"/></feComponentTransfer></filter></svg>
+  <h2 class="pa-press-h" id="pa-press-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+  <ul>
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}>{%- if block.settings.image -%}{%- render 'iso-pa-img', image: block.settings.image, alt: block.settings.nom, sizes: '(min-width: 960px) 200px, 22vw', widths: '160,240,320', w: 320, attrs: fattr -%}{%- endif -%}</li>
+    {%- endfor -%}
+  </ul>
+</div></div></section>
+</div>
+
+{% schema %}
+{
+  "name": "Presse",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Recommandé par" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo" },
+        { "type": "text", "id": "nom", "label": "Nom du média (texte alternatif)" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Presse" }]
+}
+{% endschema %}
+
