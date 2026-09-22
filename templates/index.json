@@ -26,7 +26,7 @@
         "titre_taille": "grand",
         "titre_une_ligne": true,
         "bouton_texte": "Découvrir la collection",
-        "bouton_url": "/collections/all"
+        "bouton_url": "#nos-collections"
       }
     },
     "heromedia_zwA498": {
