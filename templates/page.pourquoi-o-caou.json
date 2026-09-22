@@ -224,19 +224,70 @@
         "padding_bottom_mobile": 48
       }
     },
-    "iso_pa_benefits_8eUEYb": {
-      "type": "iso-pa-benefits",
-      "name": "Bénéfices",
+    "rich_text_gU8Qdp": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_3FFUnG": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_fD9Gak": {
+          "type": "heading",
+          "settings": {
+            "text": "À CHAQUE IMPRÉVU, SA SOLUTION",
+            "heading_tag": "h1",
+            "text_color": "#AF6C67",
+            "gradient": ""
+          }
+        },
+        "richtext_FJgHHU": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_3FFUnG",
+        "heading_fD9Gak",
+        "richtext_FJgHHU"
+      ],
+      "name": "Rich text",
       "settings": {
-        "titre": "À CHAQUE IMPRÉVU, SA SOLUTION.",
-        "bg_color": "#FFFFFF",
-        "filet": true
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "#FFFFFF",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "impact_text_HgAbg3": {
+      "type": "impact-text",
+      "name": "Impact text",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
       }
     }
   },
   "order": [
     "image_with_text_overlay_3cjydE",
     "ocaoujaibesoin",
-    "iso_pa_benefits_8eUEYb"
+    "rich_text_gU8Qdp",
+    "impact_text_HgAbg3"
   ]
 }
