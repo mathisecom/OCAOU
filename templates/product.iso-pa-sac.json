@@ -193,6 +193,67 @@
         "mf_key": "product_videos"
       }
     },
+    "presse": {
+      "type": "iso-presse",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
+          }
+        },
+        "logo_5": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/biba.png",
+            "nom": "BIBA",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4",
+        "logo_5"
+      ],
+      "name": "Recommandé par",
+      "settings": {
+        "titre": "Recommandé par",
+        "filet": false,
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
+      }
+    },
     "associes": {
       "type": "iso-pa-related",
       "settings": {
@@ -276,67 +337,6 @@
         "affichage": "defile",
         "bg_color": "#ffffff",
         "filet": false
-      }
-    },
-    "presse": {
-      "type": "iso-presse",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
-            "nom": "La Maison des Maternelles",
-            "url": ""
-          }
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
-            "nom": "Marie Claire",
-            "url": ""
-          }
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
-            "nom": "Doolittle",
-            "url": ""
-          }
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
-            "nom": "Yoopala",
-            "url": ""
-          }
-        },
-        "logo_5": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/biba.png",
-            "nom": "BIBA",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4",
-        "logo_5"
-      ],
-      "name": "Recommandé par",
-      "settings": {
-        "titre": "Recommandé par",
-        "filet": false,
-        "titre_tag": "h2",
-        "titre_color": "#121212",
-        "grayscale": true,
-        "bg_color": "#ffffff"
       }
     },
     "sac_story": {
@@ -756,9 +756,9 @@
   "order": [
     "main",
     "videos",
+    "presse",
     "associes",
     "attaches",
-    "presse",
     "sac_story",
     "styl",
     "points",
