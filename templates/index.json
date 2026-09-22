@@ -19,7 +19,14 @@
         "accroche": "",
         "titre": "Pour tous les petits au cas où...du quotidien",
         "texte": "",
-        "voile": 0
+        "voile": 0,
+        "hauteur": "haute",
+        "cadrage": "center",
+        "cadrage_mobile": "center",
+        "titre_taille": "grand",
+        "titre_une_ligne": true,
+        "bouton_texte": "Découvrir la collection",
+        "bouton_url": "/collections/all"
       }
     },
     "heromedia_zwA498": {

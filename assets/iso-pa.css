@@ -756,5 +756,5 @@
 .iso-pa .pa-ban-img{object-position:var(--pa-ban-pos,center)}
 .iso-pa .pa-ban--haute,.iso-pa .pa-ban--haute .pa-ban-img{min-height:min(620px,52vw)}
 .iso-pa .pa-ban--tres-haute,.iso-pa .pa-ban--tres-haute .pa-ban-img{min-height:min(760px,64vw)}
-.iso-pa .pa-ban-h--1l{max-width:none;white-space:nowrap}
+.iso-pa .pa-ban-h--1l{max-width:min(96%,1100px)}
 }
