@@ -210,6 +210,12 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       added into the main element to ensure that dynamic sections added into the footer group are properly laid out.
       {%- endcomment -%}
       {%- if request.page_type != 'password' -%}
+        {%- comment -%}
+          O'CAOU 22/09 : le bloc d'avis vit dans un seul fichier, iso-pa-commun-group.
+          Les pages qui passent par cette mise en page l'affichaient en double exemplaire,
+          avec son propre texte et son propre nombre de parents. Un seul endroit a modifier.
+        {%- endcomment -%}
+        {%- sections 'iso-pa-commun-group' -%}
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
