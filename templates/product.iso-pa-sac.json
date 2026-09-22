@@ -90,6 +90,7 @@
         "accordeon_4"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "Sac O’CAOU",
         "accroche": "Le sac à dos malin",
@@ -118,7 +119,7 @@
         "video_G97g9A": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Clip 2 sac a dos vierge.mp4",
+            "video": "shopify://files/videos/le sac des petits aventuriers.mov",
             "src": "",
             "poster": "",
             "titre": ""
@@ -202,6 +203,8 @@
           "duo-essentiel",
           "duo-pratique"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": false
       }
@@ -329,6 +332,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
@@ -363,9 +367,16 @@
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_21_32.png",
         "alt": "Six femmes de dos portent le sac O'CAOU, un coloris différent pour chacune",
+        "hauteur": "standard",
+        "cadrage": "center",
+        "cadrage_mobile": "center",
         "accroche": "",
         "titre": "Un sac pour langer tout en restant stylé",
+        "titre_taille": "normal",
+        "titre_une_ligne": false,
         "texte": "",
+        "bouton_texte": "",
+        "bouton_url": "",
         "voile": 15
       }
     },
@@ -611,7 +622,7 @@
       ],
       "settings": {
         "titre": "Vous allez adorer le sac O’CAOU parce que…",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": false
       }
     },
@@ -620,9 +631,16 @@
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_11_57_14.png",
         "alt": "Six organiseurs O'CAOU suspendus, chacun avec son sac assorti posé en dessous",
+        "hauteur": "standard",
+        "cadrage": "center",
+        "cadrage_mobile": "center",
         "accroche": "",
         "titre": "Un organiseur de vie",
+        "titre_taille": "normal",
+        "titre_une_ligne": false,
         "texte": "",
+        "bouton_texte": "",
+        "bouton_url": "",
         "voile": 15
       }
     },
