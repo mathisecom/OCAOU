@@ -249,12 +249,21 @@
       if (button) button.setAttribute('aria-label', joue ? button.dataset.labelPause : button.dataset.labelPlay);
     }
 
+    function lancer() {
+      var promesse = video.play();
+      if (promesse && promesse.then) {
+        promesse.then(function () { etat(true); }).catch(function () { etat(false); });
+      }
+    }
+
     function charger() {
-      if (video.dataset.loaded === 'true') return;
+      if (video.dataset.loaded === 'true') { lancer(); return; }
       video.dataset.loaded = 'true';
       video.src = source;
-      video.load();
-      video.play().then(function () { etat(true); }).catch(function () { etat(false); });
+      // Une lecture demandee avant les premieres images est annulee par le navigateur :
+      // on la redemande des qu'elles arrivent.
+      video.addEventListener('loadeddata', lancer, { once: true });
+      lancer();
     }
 
     if (button) {
@@ -263,7 +272,6 @@
         if (video.paused) {
           pause_voulue = false;
           charger();
-          video.play().then(function () { etat(true); }).catch(function () {});
         } else {
           pause_voulue = true;
           video.pause();
@@ -287,7 +295,7 @@
             if (video.dataset.loaded !== 'true') {
               charger();
             } else if (video.paused && !pause_voulue) {
-              video.play().then(function () { etat(true); }).catch(function () {});
+              lancer();
             }
           } else if (video.dataset.loaded === 'true' && !video.paused) {
             video.pause();
