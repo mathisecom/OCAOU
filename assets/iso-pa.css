@@ -738,6 +738,7 @@
 /* 2026-09-22 : Associes, la ligne se remplit sans case vide et les cartes s'alignent. */
 @media screen and (min-width:960px){
 .iso-pa .pa-rel.pa-cols--5{grid-template-columns:repeat(5,minmax(0,1fr));row-gap:40px}
+.iso-pa .pa-rel.pa-cols--1{grid-template-columns:minmax(0,360px);justify-content:center}
 .iso-pa .pa-rel>li{display:flex}
 .iso-pa .pa-rel>li>.pa-pc{width:100%}
 .iso-pa .pa-rel .pa-pc-pr{margin-bottom:12px}
