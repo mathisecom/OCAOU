@@ -44,13 +44,14 @@
         "accordeon_3"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "O'CAOU j'ai faim",
         "collection": "",
         "badges": "",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "Le Repas bien Organisé",
         "pitch": "La lunch box des Petits Grands, compartimentée et facile à ouvrir, pensée pour accompagner votre enfant à la crèche, à l'école, en pique-nique et dans toutes ses aventures.",
         "puces": "Silicone souple et doux\nCompartimentée\nHermétique\nFacile à ouvrir\nMicro-ondes & lave-vaisselle",
@@ -64,6 +65,39 @@
         "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
+      }
+    },
+    "videos": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/2642ade4b47f4da99469f52ae5a58d77.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/2642ade4b47f4da99469f52ae5a58d77.thumbnail.0000000000.jpg?v=1789489191",
+            "titre": ""
+          }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/b4fefd67c2174b55a56ef5bceca83ba7.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/b4fefd67c2174b55a56ef5bceca83ba7.thumbnail.0000000000.jpg?v=1789545443",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2"
+      ],
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#ffffff",
+        "filet": true,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
       }
     },
     "legacy_contenu": {
@@ -89,6 +123,8 @@
           "coffret-premier-repas",
           "kit-repas-complet"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -163,6 +199,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": false,
@@ -918,39 +955,6 @@
         "titre": "",
         "bg_color": "#f4ede1",
         "filet": false
-      }
-    },
-    "videos": {
-      "type": "iso-pa-videos",
-      "blocks": {
-        "video_1": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/2642ade4b47f4da99469f52ae5a58d77.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/2642ade4b47f4da99469f52ae5a58d77.thumbnail.0000000000.jpg?v=1789489191",
-            "titre": ""
-          }
-        },
-        "video_2": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/b4fefd67c2174b55a56ef5bceca83ba7.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/b4fefd67c2174b55a56ef5bceca83ba7.thumbnail.0000000000.jpg?v=1789545443",
-            "titre": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_1",
-        "video_2"
-      ],
-      "settings": {
-        "accroche": "",
-        "titre": "{titre} en vidéo",
-        "bg_color": "#ffffff",
-        "filet": true,
-        "mf_namespace": "custom",
-        "mf_key": "product_videos"
       }
     }
   },
