@@ -13,13 +13,14 @@
     "main": {
       "type": "iso-pa-product",
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "Cabas + Sac Isotherme",
         "collection": "",
         "badges": "",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "O’CAOU je sors",
         "pitch": "Un coffret parfait pour se promener en toute sérénité. Un grand sac isotherme pour garder au chaud ou au frais le repas de bébé, et un grand fourre-tout pour ne rien manquer de la journée.",
         "puces": "Grande capacité\nLéger\nSouple et léger\nTrès stylé",
@@ -116,6 +117,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
@@ -130,6 +132,8 @@
           "pochette-ocaou",
           "lingettes-lavables"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }

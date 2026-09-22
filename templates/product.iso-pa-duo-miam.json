@@ -13,13 +13,14 @@
     "main": {
       "type": "iso-pa-product",
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "Gourde + Lunch Box",
         "collection": "",
         "badges": "Best Seller",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "Pour Manger Comme un Grand",
         "pitch": "Un duo pour devenir un vrai Petit Grand et manger tout seul en toute autonomie. En silicone souple et doux, le duo résiste aux hautes et basses températures. Compartimenté, rien ne se mélange, votre petit aventurier peut emporter partout un bon repas équilibré.",
         "puces": "Silicone souple et doux\nLave-vaisselle\nMicro-ondes\nCongélateur",
@@ -54,9 +55,11 @@
         "produits": [
           "couverts",
           "lingettes-lavables",
-          "coffret-premier-repas-ancien",
+          "coffret-premier-repas",
           "sac-isotherme"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -67,7 +70,7 @@
         "product_Bpc3gQ": {
           "type": "product",
           "settings": {
-            "product": "coffret-pour-maman-ancien",
+            "product": "coffret-pour-maman",
             "horizontal_position": 52,
             "vertical_position": 40
           }
@@ -164,6 +167,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
@@ -938,17 +942,6 @@
         "accordion_background": "#f4ede1",
         "accordion_text_color": ""
       }
-    },
-    "avis": {
-      "type": "iso-pa-reviews",
-      "disabled": true,
-      "settings": {
-        "titre": "Ils en parlent mieux que nous",
-        "note": "4,8",
-        "total": "+500 parents conquis",
-        "bg_color": "#f4ede1",
-        "filet": false
-      }
     }
   },
   "order": [
@@ -966,7 +959,6 @@
     "multi_column_FnzMQb",
     "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
-    "faq_RLPihW",
-    "avis"
+    "faq_RLPihW"
   ]
 }
