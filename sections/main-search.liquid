@@ -135,6 +135,12 @@
                     {%- assign product_results = search.results | where: 'object_type', 'product' -%}
 
                     {%- for product in product_results -%}
+                      {%- comment -%}
+                      O'CAOU 22/09 : un produit marque hors-catalogue (supplement de livraison,
+                      article de service) ne s'affiche pas dans les listes. Il reste vendable
+                      par son adresse directe.
+                    {%- endcomment -%}
+                    {%- if product.tags contains 'hors-catalogue' -%}{%- continue -%}{%- endif -%}
                       {%- render 'product-card', product: product, stacked: true, position: forloop.index, show_badges: true -%}
                     {%- endfor -%}
                   </product-list>

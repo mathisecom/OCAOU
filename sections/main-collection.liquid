@@ -137,6 +137,12 @@
               <reveal-items selector=".product-list > *">
                 <product-list class="product-list" role="region" aria-live="polite">
                   {%- for product in collection.products -%}
+                    {%- comment -%}
+                      O'CAOU 22/09 : un produit marque hors-catalogue (supplement de livraison,
+                      article de service) ne s'affiche pas dans les listes. Il reste vendable
+                      par son adresse directe.
+                    {%- endcomment -%}
+                    {%- if product.tags contains 'hors-catalogue' -%}{%- continue -%}{%- endif -%}
                     {%- for block in section.blocks -%}
                       {%- if forloop.parentloop.index != block.settings.position -%}
                         {%- continue -%}
