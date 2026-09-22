@@ -650,10 +650,12 @@
           var mail = gc.querySelector("[data-pa-gc-mail]");
           if (!mail || !mail.value.trim() || !mail.checkValidity()) {
             if (mail) { mail.setAttribute("aria-invalid", "true"); mail.focus(); }
+            if (gcEr) gcEr.hidden = false;
             say("Indiquez l'adresse e-mail du destinataire.");
             return;
           }
           mail.removeAttribute("aria-invalid");
+          if (gcEr) gcEr.hidden = true;
           var props = { "__shopify_send_gift_card_to_recipient": "true", "Recipient email": mail.value.trim() };
           var nom = gc.querySelector("[data-pa-gc-nom]"), dat = gc.querySelector("[data-pa-gc-date]"), msg = gc.querySelector("[data-pa-gc-msg]");
           if (nom && nom.value.trim()) props["Recipient name"] = nom.value.trim();
