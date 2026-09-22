@@ -9,6 +9,9 @@
   #shopify-section-{{ section.id }} {
     --page-max-width: {{ section.settings.content_width }};
   }
+  /* Le theme affiche ces fragments de phrase en bloc : l'espace qui les precede disparaissait
+     et deux mots se retrouvaient colles. */
+  #shopify-section-{{ section.id }} .prose * + span:not(:empty) { display: inline; }
 </style>
 
 {%- assign h = page.handle -%}
