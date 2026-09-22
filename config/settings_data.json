@@ -36,7 +36,7 @@
     "text_font_size_mobile": 16,
     "text_font_size_desktop": 16,
     "heading_apparition": "split_fade",
-    "color_swatch_config": "Bleu: #97B0CE\nRose: #BE6E76\nBleu: #93AFD5\nÉcru: #BAB7AD\nNude: #EADACB\nGraou: #C39939\nBlanc: #F2EFE6\nLéopard: #C39939\nNavy: #4D709C\nBeige: #D9D0BD",
+    "color_swatch_config": "Bleu: #97B0CE\nRose: #BE6E76\nBleu: #93AFD5\nÉcru: #BAB7AD\nNude: #EADACB\nGraou: ocaou-swatch-leopard.png\nBlanc: #F2EFE6\nLéopard: ocaou-swatch-leopard.png\nNavy: #4D709C\nBeige: #D9D0BD",
     "show_quick_buy": false,
     "show_sold_out_badge": false,
     "show_discount": false,
