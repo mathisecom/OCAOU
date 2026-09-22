@@ -17,6 +17,8 @@ Supported variables
 {%- case type -%}
   {%- when 'product' -%}
     {%- assign product = item -%}
+    {%- comment -%}O'CAOU 22/09 : hors-catalogue, le produit ne sort pas non plus dans les suggestions.{%- endcomment -%}
+    {%- if product.tags contains 'hors-catalogue' -%}{%- continue -%}{%- endif -%}
 
     <a href="{{ product.url }}" data-instant class="predictive-search-result group">
       {%- if product.featured_media -%}
