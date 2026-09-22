@@ -26,13 +26,14 @@
         "accordeon_1"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "O'CAOU c'est pour offrir",
         "collection": "",
         "badges": "",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "Pochon OFFERT avec tous nos coffrets et duo",
         "pitch": "Un joli pochon en coton qui accompagne toute la famille au quotidien. Pour offrir, protéger, ranger ou transporter avec élégance.",
         "puces": "Coton tout doux\nGrand format\nProtège et range\nMulti-usages\nRéutilisable à l’infini",
@@ -161,6 +162,8 @@
           "coffret-pour-maman",
           "coffret-comme-les-grands"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -210,6 +213,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
