@@ -1,7 +1,9 @@
 {%- comment -%}
-  Pages legales. Le texte affiche vient des Parametres > Politiques de la boutique : une seule
-  source, modifiable dans les Parametres, et les liens du pied de page y renvoient directement.
-  Si la politique correspondante est vide, la page garde son propre contenu (aucune page blanche).
+  Pages legales. Mentions, confidentialite, livraison et retours viennent des Parametres >
+  Politiques de la boutique : une seule source, et les liens du pied de page y renvoient.
+  Les conditions generales de vente font exception : elles vivent dans la page elle-meme
+  (Contenu > Pages), parce que le texte complet y est ecrit.
+  Si la source correspondante est vide, la page garde son propre contenu (aucune page blanche).
 {%- endcomment -%}
 <style>
   #shopify-section-{{ section.id }} {
@@ -15,6 +17,7 @@
   {%- elsif h contains 'confidentialite' -%}{{ shop.privacy_policy }}
   {%- elsif h contains 'livraison' -%}{{ shop.shipping_policy }}{{ shop.refund_policy }}
   {%- elsif h contains 'retour' -%}{{ shop.refund_policy }}
+  {%- elsif h contains 'condition' or h contains 'cgv' -%}{{ page.content }}
   {%- else -%}{{ shop.terms_of_sale }}{%- endif -%}
 {%- endcapture -%}
 {%- assign corps = corps | strip -%}
