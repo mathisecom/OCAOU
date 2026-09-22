@@ -24,13 +24,14 @@
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
-            "titre": "Dimensions",
+            "titre": "Caractéristiques",
             "icones": "",
-            "contenu": "<p>Dimensions : 29 × 20 cm</p>"
+            "contenu": "<ul><li>Dimensions : 29 × 20 cm</li><li>Extérieur : 100 % coton</li><li>Intérieur : 30 % coton / 70 % polyester</li></ul>"
           }
         },
         "accordeon_3": {
           "type": "accordeon",
+          "disabled": true,
           "settings": {
             "titre": "Composition textile",
             "icones": "",
@@ -44,6 +45,7 @@
         "accordeon_3"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "O'CAOU je range TOUT",
@@ -87,6 +89,8 @@
           "sac-ocaou",
           "duo-pratique"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -206,6 +210,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": false,
