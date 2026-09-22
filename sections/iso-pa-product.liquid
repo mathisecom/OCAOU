@@ -615,7 +615,9 @@
       {%- if cp contains '«' -%}{%- assign cpp = cp | escape | split: '«' -%}{{ cpp[0] }}<span class="pa-nw">«{{ cpp[1] }}</span>{%- else -%}{{ cp | escape }}{%- endif -%}
     </span></p>
   {%- endif -%}
+{%- unless product.gift_card? -%}
   <p class="pa-ship"><span class="pa-dot" aria-hidden="true"></span><span data-pa-ship="{{ section.settings.jours | default: 2 }}">Expédié sous {{ section.settings.jours | default: 2 }} jours ouvrés</span><span class="pa-vr" aria-hidden="true"></span>{% render 'iso-pa-icon', name: 'truck' %}<span>{{ section.settings.livraison | escape }}</span></p>
+  {%- endunless -%}
   {%- comment -%} Tâche 4 : cadeaux inclus depuis le métachamp custom.cadeaux_inclus.
     Affiché pour tout produit ayant ce métachamp rempli, ou dont le prix atteint le seuil
     de livraison offerte (variable seuil calculée en tête de section).

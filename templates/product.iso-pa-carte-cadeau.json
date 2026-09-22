@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "iso-pa",
+  "sections": {
+    "main": {
+      "type": "iso-pa-product",
+      "blocks": {
+        "accordeon_1": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Comment ça marche",
+            "icones": "",
+            "contenu": "<p>Après le paiement, vous recevrez un code par e-mail à transmettre à la personne de votre choix.</p><p>Elle n’aura qu’à l’appliquer lors de sa commande, simple comme bonjour !</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordeon_1"
+      ],
+      "settings": {
+        "photo_bg": "#fbf6ef",
+        "bg_color": "#ffffff",
+        "titre": "",
+        "accroche": "Le cadeau qui ne se trompe jamais",
+        "collection": "",
+        "badges": "",
+        "note": "",
+        "avis": "",
+        "pitch_titre": "",
+        "pitch": "Vous ne connaissez pas ses goûts ? Offrez la carte cadeau O’CAOU. Naissance, anniversaire, baby shower : laissez vos proches choisir leur coloris préféré. Ici, plus d’erreur, que du bonheur.",
+        "puces": "Pas d’erreur\nCode par e-mail\nCadeau idéal\nValable sur toute la boutique",
+        "galerie": "",
+        "opt_texte": true,
+        "leopard": "",
+        "couleurs": "",
+        "offre_titre": "",
+        "relais": false,
+        "compat": "",
+        "complements_titre": "",
+        "complements_position": "bouton",
+        "jours": 2,
+        "livraison": "Livraison Suivie"
+      }
+    },
+    "presse": {
+      "type": "iso-presse",
+      "blocks": {
+        "image_VR6k8z": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "nom": "La Maison des Maternelles",
+            "url": ""
+          }
+        },
+        "image_QqYbtG": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "nom": "Marie Claire",
+            "url": ""
+          }
+        },
+        "image_DVxrBH": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "nom": "Doolittle",
+            "url": ""
+          }
+        },
+        "image_78Tjqg": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "nom": "Yoopala",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_VR6k8z",
+        "image_QqYbtG",
+        "image_DVxrBH",
+        "image_78Tjqg"
+      ],
+      "name": "Recommandé par",
+      "settings": {
+        "titre": "Recommandé par",
+        "filet": false,
+        "titre_tag": "h2",
+        "titre_color": "#121212",
+        "grayscale": true,
+        "bg_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "presse"
+  ]
+}
