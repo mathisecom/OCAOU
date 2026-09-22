@@ -16,54 +16,45 @@
         "accordeon_1": {
           "type": "accordeon",
           "settings": {
-            "titre": "Dimensions (en cm)",
-            "icones": "",
-            "contenu": "<ul><li>Pochette de transport 17x19cm</li><li>Lingettes : 20x20cm</li></ul>"
+            "titre": "Pourquoi choisir la Gourde O'CAOU ?",
+            "icones": "utensils:Sans danger alimentaire\nlfgb:Silicone alimentaire LFGB\nbpa-free:Sans BPA, PVC ni phtalates",
+            "contenu": ""
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
-            "titre": "Composition",
-            "icones": "",
-            "contenu": "<p>80% bambou-20%coton (certifié OEKO-TEX® Standard 100)</p>"
-          }
-        },
-        "accordeon_3": {
-          "type": "accordeon",
-          "settings": {
             "titre": "Entretien",
-            "icones": "",
-            "contenu": "<ul><li>Lavage à 40°</li><li>Ne pas sécher au sèche linge</li><li>Ne pas utiliser d’agent de blanchiment</li></ul><p> </p>"
+            "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
+            "contenu": ""
           }
         }
       },
       "block_order": [
         "accordeon_1",
-        "accordeon_2",
-        "accordeon_3"
+        "accordeon_2"
       ],
       "settings": {
         "bg_color": "#ffffff",
         "titre": "",
-        "accroche": "O'CAOU ça coule",
+        "accroche": "Gourde + Lunch Box + Couverts + Poche De Protection",
         "collection": "",
-        "badges": "",
+        "badges": "Best Seller",
         "note": "4,8",
         "avis": "+ 500 avis",
-        "pitch_titre": "À utiliser encore et encore",
-        "pitch": "Ultra douces et réutilisables, ces lingettes en bambou prennent soin des peaux sensibles de toute la famille, à la maison comme en sortie.",
-        "puces": "ÉVOLUTIF\nPRATIQUE\nORGANISATION\nDÉPERLANT",
+        "pitch_titre": "O’CAOU je deviens autonome",
+        "pitch": "Un coffret parfait pour manger comme les grands. Un kit complet pour voyager partout bien équipé.",
+        "puces": "FLEXIBLE\nPRATIQUE\nORGANISATION\nPROTECTION",
         "galerie": "",
         "leopard": "Léopard\nGraou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED\ncoffret-premier-repas/Rose: #E3A5A0\ncoffret-premier-repas/Bleu: #6C89B2\ncoffret-premier-repas/Léopard: motif #E3D4B5\ncoffret-premier-repas/Beige: #BBAA96",
         "offre_titre": "",
         "relais": true,
         "compat": "",
         "complements_titre": "Complétez avec un indispensable",
         "complements_position": "bouton",
         "jours": 2,
-        "livraison": "Livraison Suivie en France"
+        "livraison": "Livraison Suivie"
       }
     },
     "legacy_contenu": {
@@ -81,12 +72,9 @@
     "associes": {
       "type": "iso-pa-related",
       "settings": {
-        "titre": "Souvent achetées ensemble",
+        "titre": "Souvent acheté ensemble",
         "produits": [
-          "coussinets-allaitements",
-          "lunch-box",
-          "couverts",
-          "coffret-pour-maman"
+          "sac-isotherme"
         ],
         "bg_color": "#ffffff",
         "filet": true
@@ -116,10 +104,10 @@
         "text_color": ""
       }
     },
-    "logoscroll_rVRFrN": {
+    "presse": {
       "type": "iso-presse",
       "blocks": {
-        "image_VR6k8z": {
+        "logo_1": {
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/la-maison-des-maternelles.webp",
@@ -127,7 +115,7 @@
             "url": ""
           }
         },
-        "image_QqYbtG": {
+        "logo_2": {
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
@@ -135,7 +123,7 @@
             "url": ""
           }
         },
-        "image_DVxrBH": {
+        "logo_3": {
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
@@ -143,7 +131,7 @@
             "url": ""
           }
         },
-        "image_78Tjqg": {
+        "logo_4": {
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
@@ -153,18 +141,17 @@
         }
       },
       "block_order": [
-        "image_VR6k8z",
-        "image_QqYbtG",
-        "image_DVxrBH",
-        "image_78Tjqg"
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4"
       ],
-      "disabled": true,
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
         "titre_tag": "h2",
         "titre_color": "#121212",
-        "grayscale": false,
+        "grayscale": true,
         "bg_color": "#ffffff"
       }
     },
@@ -344,7 +331,7 @@
         "mantra_size": 16,
         "btn_size": 15,
         "eyebrow_size_mobile": 11,
-        "title_size_mobile": 20,
+        "title_size_mobile": 18,
         "subtitle_size_mobile": 15,
         "pill_size_mobile": 11,
         "mantra_size_mobile": 15,
@@ -358,7 +345,7 @@
         "pill_bg": "#ffffff",
         "pill_border": "#eadfce",
         "check_color": "#00b67a",
-        "mantra_border_color": "#cd9438",
+        "mantra_border_color": "#af6c67",
         "pill_radius": 10,
         "pill_shadow": false,
         "container_width": 1260,
@@ -434,17 +421,17 @@
       "name": "Clean icônes",
       "settings": {
         "title": "Le sac intelligent qui pense à tout !",
-        "subtitle": "Magique, mais surtout trop pratique! Le sac O'CAOU se transforme en organiseur où tout est catégorisé. Un pense-bête étiqueté imaginé pour vous soulager. C’est un sac multifonctions : 1001 fonctions, des années d’utilisation !",
+        "subtitle": "Magique, mais surtout trop pratique! Le sac O'CAOU se transforme en organiseur où tout est catégorisé. Un pense-bête étiqueté imaginé pour vous soulager.",
         "header_alignment": "center",
         "title_color": "#101010",
         "subtitle_color": "#101010",
         "title_size_desktop": 42,
-        "title_size_mobile": 28,
+        "title_size_mobile": 26,
         "title_weight": "700",
         "title_letter_spacing": 0,
         "title_letter_spacing_mobile": 0,
         "subtitle_size_desktop": 16,
-        "subtitle_size_mobile": 14,
+        "subtitle_size_mobile": 12,
         "subtitle_weight": "400",
         "subtitle_max_width": 780,
         "subtitle_max_width_mobile": 360,
@@ -512,30 +499,30 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/format_34_00ab9f0c-9ba3-4fd6-8f5c-c154790cc53e.png",
-            "alt": "Bébé porté, lingette lavable posée sous son menton",
-            "titre": "Douces avec toutes les peaux",
-            "texte": "En bambou ultra doux, elles nettoient délicatement le visage, les mains, le siège de bébé ou la peau de maman pendant l'allaitement.",
+            "image": "shopify://shop_images/romeo_LB.png",
+            "alt": "Enfant en pique-nique qui mange dans sa lunch box compartimentée",
+            "titre": "Pour manger TOUT seul !",
+            "texte": "Un coffret complet avec gourde, lunch box et couverts pour accompagner les premiers repas en autonomie.",
             "badges": ""
           }
         },
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/no_change_a002a7ff-3d38-4917-880d-8e85f01db786.png",
-            "alt": "Bébé qui boit son biberon, lingette lavable glissée sous le menton",
-            "titre": "Absorbantes et polyvalentes",
-            "texte": "O'CAOU ça coule? Les lingettes sont là pour être parés à tous les petits accidents.",
+            "image": "shopify://shop_images/matias_gourde_LB_plage.png",
+            "alt": "Sac isotherme ouvert sur l'herbe, lunch box rose et couverts à l'intérieur",
+            "titre": "Pratique au quotidien",
+            "texte": "Léger, pratique et hermétique, il vous accompagne dans toutes vos aventures.",
             "badges": ""
           }
         },
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/lingettes_cabas.png",
-            "alt": "Pochette imperméable des lingettes rangée dans un cabas léopard",
-            "titre": "À réutiliser encore et encore",
-            "texte": "Lavables et réutilisables, elles vous accompagnent partout grâce à leur pochette imperméable incluse.",
+            "image": "shopify://shop_images/no_change_3_b1181cba-420e-4329-ad4a-8ee6bf7fdcb6.png",
+            "alt": "Couverts, lunch box et gourde rincés à l'eau",
+            "titre": "Facile à nettoyer",
+            "texte": "Passe au lave-vaisselle. En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.",
             "badges": ""
           }
         }
@@ -551,160 +538,47 @@
         "filet": false
       }
     },
-    "imagewithtexticons_pncmHL": {
-      "type": "imagewithtexticons",
-      "blocks": {
-        "pastille_ijfLDd": {
-          "type": "pastille",
-          "settings": {
-            "label": "Gourde",
-            "x": 50,
-            "y": 50,
-            "tail": "bas"
-          }
-        },
-        "pastille_THqHaA": {
-          "type": "pastille",
-          "settings": {
-            "label": "Doudou",
-            "x": 50,
-            "y": 50,
-            "tail": "bas"
-          }
-        },
-        "pastille_RGEbFM": {
-          "type": "pastille",
-          "settings": {
-            "label": "Vêtements",
-            "x": 50,
-            "y": 50,
-            "tail": "bas"
-          }
-        },
-        "pastille_c6PkmD": {
-          "type": "pastille",
-          "settings": {
-            "label": "Jouets",
-            "x": 50,
-            "y": 50,
-            "tail": "bas"
-          }
-        },
-        "pastille_GEDQqY": {
-          "type": "pastille",
-          "settings": {
-            "label": "Goûter",
-            "x": 50,
-            "y": 50,
-            "tail": "bas"
-          }
-        }
-      },
-      "block_order": [
-        "pastille_ijfLDd",
-        "pastille_THqHaA",
-        "pastille_RGEbFM",
-        "pastille_c6PkmD",
-        "pastille_GEDQqY"
-      ],
-      "disabled": true,
-      "name": "O'CAOU — Image + Texte",
-      "settings": {
-        "layout": "liste",
-        "marker_size": 14,
-        "image": "shopify://shop_images/ocaou-sac-pour-enfants-parents.jpg",
-        "image_position": "right",
-        "image_first_mobile": true,
-        "image_ratio": "1 / 1",
-        "image_radius": 16,
-        "placeholder_color": "#e9a94e",
-        "eyebrow": "Pour les Petits Grands",
-        "title": "Puis… le sac O'CAOU devient l'allié de votre enfant qui grandit",
-        "subtitle": "Les poches restent les mêmes, mais les objets évoluent. Il retrouve ses affaires facilement.",
-        "mantra": "<p>Avec ses étiquettes et ses filets :<br/><strong>Il apprend à lire en rangeant. </strong>Il retrouve ses affaires facilement.<br/>Il devient autonome, <strong>comme un grand.</strong></p>",
-        "eyebrow_size": 12,
-        "title_size": 32,
-        "subtitle_size": 15,
-        "pill_size": 12,
-        "mantra_size": 16,
-        "btn_size": 15,
-        "eyebrow_size_mobile": 11,
-        "title_size_mobile": 20,
-        "subtitle_size_mobile": 14,
-        "pill_size_mobile": 11,
-        "mantra_size_mobile": 15,
-        "btn_size_mobile": 14,
-        "btn_label": "OBTENIR MAINTENANT",
-        "btn_link": "#shopify-section-template--29953933574478__main",
-        "btn_text_color": "#ffffff",
-        "bg_color": "#ffffff",
-        "text_color": "#3a2c22",
-        "accent_color": "#9f6b69",
-        "pill_bg": "#ffffff",
-        "pill_border": "#eadfce",
-        "check_color": "#00b67a",
-        "mantra_border_color": "#cd9438",
-        "pill_radius": 10,
-        "pill_shadow": false,
-        "container_width": 1260,
-        "gap_desktop": 60,
-        "gap_mobile": 28,
-        "padding_top": 80,
-        "padding_bottom": 80,
-        "padding_top_mobile": 8,
-        "padding_bottom_mobile": 8
-      }
-    },
     "avantageicons_k7faYm": {
       "type": "avantageicons",
       "blocks": {
         "benefit_6jE3Lc": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_41.png",
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_3.png",
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
-            "title": "ÉVOLUTIF",
-            "text": "Bretelles réglables. Un sac adapté aux parents et aux enfants."
+            "title": "SOUPLE",
+            "text": "Silicone flexible et incassable. Une gourde qui résiste aux chutes et aux jeux les plus fous."
           }
         },
         "benefit_h4bTWg": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_42.png",
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_4.png",
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
             "title": "PRATIQUE",
-            "text": "Attaches poussette intégrées. Deux poignées pour transporter ou accrocher."
+            "text": "Bouchon anti-fuite et paille amovible. Douce pour les dents, facile à ouvrir, facile à nettoyer."
           }
         },
         "benefit_Lpj498": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_43.png",
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_6.png",
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
-            "title": "FONCTIONNEL & PÉDAGOGIQUE",
-            "text": "Des poches et des étiquettes pour tout catégoriser."
+            "title": "HYGIÈNE",
+            "text": "Passe au lave-vaisselle et se stérilise à l'eau bouillante ou à la vapeur."
           }
         },
         "benefit_J8aV6U": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/Design_sans_titre_44.png",
+            "custom_icon": "shopify://shop_images/ADS_IMAGE_7.png",
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
-            "title": "DÉPERLANT",
-            "text": "O’CAOU il pleut…revêtement extérieur et intérieur déperlant"
-          }
-        },
-        "benefit_BqnDgY": {
-          "type": "benefit",
-          "settings": {
-            "icon_alt": "Icône bénéfice",
-            "icon": "smile",
-            "title": "CONFORT",
-            "text": "Léger facile à porter, compact et molletonné"
+            "title": "PROTECTION",
+            "text": "Silicone alimentaire LFGB, sans BPA, sans PVC, sans phtalates. Sans goût ni odeur."
           }
         }
       },
@@ -712,29 +586,28 @@
         "benefit_6jE3Lc",
         "benefit_h4bTWg",
         "benefit_Lpj498",
-        "benefit_J8aV6U",
-        "benefit_BqnDgY"
+        "benefit_J8aV6U"
       ],
       "disabled": true,
       "name": "Avantages icônes",
       "settings": {
-        "title": "Vous allez adorer le sac O’CAOU parce que...",
+        "title": "Vous allez adorer la gourde O’CAOU parce que...",
         "title_alignment": "center",
         "title_color": "#000000",
         "title_size_desktop": 30,
-        "title_size_mobile": 25,
+        "title_size_mobile": 23,
         "title_weight": "700",
         "title_margin_bottom_desktop": 80,
         "title_margin_bottom_mobile": 44,
         "full_width": false,
         "max_width": 1200,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "columns_mobile": 2,
         "column_gap_desktop": 56,
         "row_gap_desktop": 30,
         "column_gap_mobile": 28,
         "row_gap_mobile": 44,
-        "icon_circle_bg": "#fbf6ef",
+        "icon_circle_bg": "#f4ede1",
         "icon_color": "#ffffff",
         "icon_circle_size_desktop": 110,
         "icon_circle_size_mobile": 108,
@@ -754,86 +627,114 @@
         "text_weight": "400",
         "text_max_width_desktop": 260,
         "text_max_width_mobile": 170,
-        "bg_color": "#ffffff",
+        "bg_color": "#af6c67",
         "padding_top_desktop": 16,
         "padding_bottom_desktop": 52,
-        "padding_top_mobile": 36,
-        "padding_bottom_mobile": 40,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 60,
         "side_padding_desktop": 40,
         "side_padding_mobile": 14
       }
     },
-    "30retours_YLhBEm": {
-      "type": "30retours",
+    "ocacoufriseage_LWBwAr": {
+      "type": "ocacoufriseage",
+      "blocks": {
+        "etape_ynWtgx": {
+          "type": "etape",
+          "settings": {
+            "emoji": "🍼",
+            "label": "À 2 ans",
+            "text": "Il apprend à boire tout seul"
+          }
+        },
+        "etape_WRjKyq": {
+          "type": "etape",
+          "settings": {
+            "emoji": "🎒",
+            "label": "À 3 ans",
+            "text": "Elle l'accompagne à la maternelle"
+          }
+        },
+        "etape_CHTXfE": {
+          "type": "etape",
+          "settings": {
+            "emoji": "⚽",
+            "label": "À 5 ans",
+            "text": "Elle hydrate au sport"
+          }
+        },
+        "etape_ptFAHG": {
+          "type": "etape",
+          "settings": {
+            "emoji": "✈️",
+            "label": "À 6 ans",
+            "text": "Elle voyage avec lui"
+          }
+        }
+      },
+      "block_order": [
+        "etape_ynWtgx",
+        "etape_WRjKyq",
+        "etape_CHTXfE",
+        "etape_ptFAHG"
+      ],
       "disabled": true,
-      "name": "Bannière garantie produit",
+      "name": "Frise des âges",
       "settings": {
-        "title": "Retours Faciles sous 14 Jours",
-        "subtitle": "Nous en sommes convaincus. Mais O'CAOU… vous changez d'avis, vous avez 14 jours pour nous le dire.",
-        "product_image": "shopify://shop_images/no_change_copie_3.jpg",
-        "product_image_alt": "Image produit garantie",
-        "bg_position": "center center",
-        "bg_position_mobile": "center center",
-        "show_default_icon": true,
-        "custom_icon": "shopify://shop_images/Design_sans_titre_40.png",
-        "icon_alt": "Icône garantie",
-        "icon_size_desktop": 56,
-        "icon_size_mobile": 44,
-        "icon_margin_bottom_desktop": 12,
-        "icon_margin_bottom_mobile": 25,
-        "icon_color": "#ffffff",
-        "section_bg_color": "#ffffff",
-        "card_bg_color": "#af6c67",
-        "overlay_color": "#fcf9f5",
-        "overlay_opacity": 30,
-        "title_color": "#101010",
-        "subtitle_color": "#101010",
-        "title_size_desktop": 31,
-        "title_line_height_desktop": 105,
-        "subtitle_size_desktop": 14,
-        "subtitle_line_height_desktop": 135,
-        "title_weight": "700",
-        "subtitle_weight": "400",
-        "title_letter_spacing": 0,
-        "title_size_mobile": 29,
-        "title_line_height_mobile": 95,
-        "subtitle_size_mobile": 13,
-        "subtitle_line_height_mobile": 135,
-        "full_width": false,
-        "max_width": 1400,
-        "card_height_desktop": 310,
-        "card_radius_desktop": 16,
-        "card_padding_x_desktop": 100,
-        "card_padding_y_desktop": 50,
-        "text_column_width": 2,
-        "image_column_width": 2,
-        "column_gap_desktop": 40,
-        "text_max_width_desktop": 620,
-        "text_alignment_desktop": "left",
-        "product_width_desktop": 430,
-        "product_offset_y_desktop": 70,
-        "product_alignment_desktop": "center",
-        "card_radius_mobile": 16,
-        "card_padding_x_mobile": 22,
-        "card_padding_y_mobile": 36,
-        "card_padding_bottom_mobile": 0,
-        "column_gap_mobile": 28,
-        "text_max_width_mobile": 350,
-        "text_alignment_mobile": "center",
-        "product_width_mobile": 310,
-        "product_offset_y_mobile": 10,
-        "product_alignment_mobile": "center",
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 120,
-        "padding_top_mobile": 24,
-        "padding_bottom_mobile": 0,
-        "side_padding_desktop": 40,
-        "side_padding_mobile": 16,
-        "shadow_y": 10,
-        "shadow_blur": 30,
-        "shadow_opacity": 20,
-        "subtitle_margin_top_desktop": 12,
-        "subtitle_margin_top_mobile": 10
+        "eyebrow": "Pensée pour durer",
+        "eyebrow_color": "#af6c67",
+        "eyebrow_size": 13,
+        "eyebrow_size_mobile": 11,
+        "eyebrow_margin_bottom": 12,
+        "title": "Une gourde pensée pour grandir avec votre enfant",
+        "title_color": "#3a2c22",
+        "title_size": 34,
+        "title_size_mobile": 22,
+        "title_margin_bottom": 56,
+        "title_margin_bottom_mobile": 36,
+        "timeline_max_width": 900,
+        "columns_mobile": 2,
+        "col_gap": 10,
+        "col_gap_mobile": 14,
+        "row_gap_mobile": 30,
+        "timeline_margin_bottom": 44,
+        "timeline_margin_bottom_mobile": 24,
+        "line_color": "#bc4a33",
+        "line_opacity": 40,
+        "line_thickness": 2,
+        "line_inset": 10,
+        "hide_line_mobile": true,
+        "dot_bg": "#ffffff",
+        "dot_border_color": "#af6c67",
+        "dot_border_hover_color": "#bc4a33",
+        "dot_border_width": 3,
+        "dot_size": 80,
+        "dot_size_mobile": 68,
+        "icon_size": 32,
+        "icon_size_mobile": 26,
+        "dot_margin_bottom": 14,
+        "dot_margin_bottom_mobile": 10,
+        "label_color": "#af6c67",
+        "label_size": 16,
+        "label_size_mobile": 14,
+        "text_color": "#6b5a4c",
+        "text_size": 13,
+        "text_size_mobile": 12,
+        "slogan": "Une seule gourde. Des centaines d'aventures.",
+        "slogan_color": "#3a2c22",
+        "slogan_accent_color": "#e86a4b",
+        "slogan_size": 22,
+        "slogan_size_mobile": 18,
+        "bg_color": "#f4ede1",
+        "max_width": 1160,
+        "section_radius": 16,
+        "section_radius_mobile": 16,
+        "side_margin": 22,
+        "side_margin_mobile": 10,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
       }
     },
     "faq_RLPihW": {
@@ -953,6 +854,31 @@
         "accordion_background": "#fcf9f5",
         "accordion_text_color": ""
       }
+    },
+    "custom_liquid_pJwcwk": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "{%- comment -%}\n  ============================================================\n  O'CAOU — Cross-sell \"Kit Repas Nomade complet\"\n  A coller dans une section \"Liquid personnalisé\" (Custom Liquid)\n  sur le template produit : composable-coffret-premier-repas\n  Placer cette section À LA PLACE de la section app \"Souvent acheté ensemble\"\n  ============================================================\n  Réglages rapides :\n  - handle du produit complémentaire  -> assign complement_handle\n  - seuil de livraison offerte (en centimes) -> assign seuil_franco\n{%- endcomment -%}\n \n{%- assign complement_handle = 'sac-isotherme' -%}\n{%- assign seuil_franco = 7900 -%}\n \n{%- assign complement = all_products[complement_handle] -%}\n \n{%- if complement != blank and complement.available and product != blank -%}\n  {%- assign total_kit = product.price | plus: complement.price -%}\n  {%- assign var_id = complement.selected_or_first_available_variant.id -%}\n \n  <div class=\"knr\" id=\"knr-{{ section.id }}\">\n    <div class=\"knr-inner\">\n \n      {%- comment -%} ---------- Colonne visuelle ---------- {%- endcomment -%}\n      <div class=\"knr-visuel\">\n        <div class=\"knr-equation\">\n          <figure class=\"knr-vignette\">\n            {%- if product.featured_image -%}\n              <img src=\"{{ product.featured_image | image_url: width: 320 }}\" alt=\"{{ product.title | escape }}\" loading=\"lazy\" width=\"160\" height=\"160\">\n            {%- endif -%}\n            <figcaption>{{ product.title }}</figcaption>\n          </figure>\n \n          <span class=\"knr-signe\" aria-hidden=\"true\">+</span>\n \n          <figure class=\"knr-vignette\">\n            {%- if complement.featured_image -%}\n              <img src=\"{{ complement.featured_image | image_url: width: 320 }}\" alt=\"{{ complement.title | escape }}\" loading=\"lazy\" width=\"160\" height=\"160\">\n            {%- endif -%}\n            <figcaption>{{ complement.title }}</figcaption>\n          </figure>\n \n          <span class=\"knr-signe knr-signe--egal\" aria-hidden=\"true\">=</span>\n \n          <div class=\"knr-resultat\">\n            <span class=\"knr-resultat-badge\">Kit Repas<br>Nomade<br>complet</span>\n          </div>\n        </div>\n      </div>\n \n      {%- comment -%} ---------- Colonne texte + CTA ---------- {%- endcomment -%}\n      <div class=\"knr-contenu\">\n        <p class=\"knr-eyebrow\">Il ne manque qu'une chose</p>\n        <h2 class=\"knr-titre\">Ajoutez le {{ complement.title }} et vous avez le Kit Repas Nomade complet</h2>\n        <p class=\"knr-accroche\">\n          Le {{ product.title }} nourrit. Le {{ complement.title }} transporte.\n          Ensemble, c'est le repas de votre enfant prêt à partir : crèche, maternelle, balade, vacances.\n        </p>\n \n        <ul class=\"knr-avantages\">\n          <li><span class=\"knr-ico\">🎁</span> Le <strong>pochon O'CAOU offert</strong> <em>(valeur 7,90 €)</em></li>\n          <li><span class=\"knr-ico\">🎁</span> La <strong>poignée nomade offerte</strong> <em>(valeur 5,90 €)</em></li>\n          {%- if total_kit >= seuil_franco -%}\n            <li class=\"knr-franco\"><span class=\"knr-ico\">🚚</span> Le <strong>point relais offert</strong> <em>(dès {{ seuil_franco | money_without_trailing_zeros }} d'achat)</em></li>\n          {%- endif -%}\n          <li><span class=\"knr-ico\">❄️</span> Repas maintenus au frais, sans glacière encombrante</li>\n        </ul>\n \n        <div class=\"knr-prix\">\n          <span class=\"knr-detail\">{{ product.price | money }} <i>+</i> {{ complement.price | money }}</span>\n          <span class=\"knr-total\">{{ total_kit | money }}</span>\n          {%- if total_kit >= seuil_franco -%}\n            <span class=\"knr-pastille\">🚚 Livraison offerte</span>\n          {%- endif -%}\n        </div>\n \n        <button type=\"button\"\n                class=\"knr-btn\"\n                data-knr-add\n                data-variant=\"{{ var_id }}\">\n          Ajouter le {{ complement.title | downcase }} au panier · {{ complement.price | money }}\n        </button>\n \n        <p class=\"knr-note\">\n          Pensez à ajouter votre {{ product.title }} juste au-dessus, avec vos coloris.\n          <a href=\"{{ complement.url }}\">Voir le {{ complement.title | downcase }}</a>\n        </p>\n      </div>\n \n    </div>\n  </div>\n \n  <style>\n    #knr-{{ section.id }} {\n      padding: 28px 20px;\n      background: #FDFBF7;\n      border-top: 1px solid #EFE6D8;\n      border-bottom: 1px solid #EFE6D8;\n    }\n    #knr-{{ section.id }} .knr-inner {\n      max-width: 1100px;\n      margin: 0 auto;\n      display: grid;\n      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);\n      gap: 32px;\n      align-items: center;\n    }\n \n    /* --- visuel / équation --- */\n    #knr-{{ section.id }} .knr-equation {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      gap: 10px;\n    }\n    #knr-{{ section.id }} .knr-vignette {\n      margin: 0;\n      text-align: center;\n      width: 92px;\n      flex: 0 0 auto;\n    }\n    #knr-{{ section.id }} .knr-vignette img {\n      width: 92px;\n      height: 92px;\n      object-fit: cover;\n      border-radius: 14px;\n      background: #F0E9DC;\n      border: 2px solid #fff;\n      display: block;\n      box-shadow: 0 2px 10px rgba(0,0,0,.06);\n    }\n    #knr-{{ section.id }} .knr-vignette figcaption {\n      margin-top: 7px;\n      font-size: 11px;\n      line-height: 1.25;\n      font-weight: 600;\n      color: #6b5b4e;\n    }\n    #knr-{{ section.id }} .knr-signe {\n      font-size: 22px;\n      font-weight: 700;\n      color: #C9B79E;\n      margin-bottom: 22px;\n    }\n    #knr-{{ section.id }} .knr-resultat-badge {\n      display: inline-block;\n      padding: 14px 16px;\n      border-radius: 14px;\n      background: #9f6b69;\n      color: #fff;\n      font-size: 12.5px;\n      font-weight: 800;\n      line-height: 1.2;\n      text-transform: uppercase;\n      letter-spacing: .02em;\n      text-align: center;\n      margin-bottom: 22px;\n    }\n \n    /* --- contenu --- */\n    #knr-{{ section.id }} .knr-eyebrow {\n      margin: 0 0 6px;\n      font-size: 11px;\n      font-weight: 800;\n      letter-spacing: .12em;\n      text-transform: uppercase;\n      color: #9f6b69;\n    }\n    #knr-{{ section.id }} .knr-titre {\n      margin: 0 0 10px;\n      font-size: 24px;\n      line-height: 1.2;\n      font-weight: 700;\n      color: #2c2320;\n    }\n    #knr-{{ section.id }} .knr-accroche {\n      margin: 0 0 16px;\n      font-size: 14.5px;\n      line-height: 1.55;\n      color: #4a3f38;\n    }\n    #knr-{{ section.id }} .knr-avantages {\n      list-style: none;\n      margin: 0 0 18px;\n      padding: 0;\n      display: grid;\n      gap: 8px;\n    }\n    #knr-{{ section.id }} .knr-avantages li {\n      display: flex;\n      align-items: flex-start;\n      gap: 9px;\n      font-size: 14px;\n      line-height: 1.4;\n      color: #3a312b;\n    }\n    #knr-{{ section.id }} .knr-avantages em { font-style: normal; color: #8a7c70; }\n    #knr-{{ section.id }} .knr-franco { color: #2f6b4f; font-weight: 600; }\n    #knr-{{ section.id }} .knr-ico { flex: 0 0 auto; }\n \n    #knr-{{ section.id }} .knr-prix {\n      display: flex;\n      align-items: baseline;\n      flex-wrap: wrap;\n      gap: 10px;\n      margin-bottom: 14px;\n    }\n    #knr-{{ section.id }} .knr-detail { font-size: 13px; color: #8a7c70; }\n    #knr-{{ section.id }} .knr-detail i { font-style: normal; margin: 0 2px; }\n    #knr-{{ section.id }} .knr-total { font-size: 22px; font-weight: 800; color: #2c2320; }\n    #knr-{{ section.id }} .knr-pastille {\n      font-size: 11.5px;\n      font-weight: 700;\n      padding: 4px 10px;\n      border-radius: 999px;\n      background: #E7F1EA;\n      color: #2f6b4f;\n    }\n \n    #knr-{{ section.id }} .knr-btn {\n      width: 100%;\n      max-width: 420px;\n      padding: 15px 18px;\n      border: none;\n      border-radius: 999px;\n      background: #E8A94B;\n      color: #fff;\n      font: inherit;\n      font-size: 14.5px;\n      font-weight: 800;\n      cursor: pointer;\n      transition: filter .15s ease;\n    }\n    #knr-{{ section.id }} .knr-btn:hover { filter: brightness(.95); }\n    #knr-{{ section.id }} .knr-btn[disabled] { opacity: .7; cursor: wait; }\n    #knr-{{ section.id }} .knr-btn.is-added { background: #2f6b4f; }\n \n    #knr-{{ section.id }} .knr-note {\n      margin: 10px 0 0;\n      font-size: 12.5px;\n      color: #8a7c70;\n    }\n    #knr-{{ section.id }} .knr-note a { color: #9f6b69; text-decoration: underline; }\n \n    @media (max-width: 860px) {\n      #knr-{{ section.id }} .knr-inner { grid-template-columns: 1fr; gap: 22px; }\n      #knr-{{ section.id }} .knr-titre { font-size: 20px; }\n      #knr-{{ section.id }} .knr-vignette,\n      #knr-{{ section.id }} .knr-vignette img { width: 74px; }\n      #knr-{{ section.id }} .knr-vignette img { height: 74px; }\n      #knr-{{ section.id }} .knr-btn { max-width: none; }\n    }\n  </style>\n \n  <script>\n    (function () {\n      var root = document.getElementById('knr-{{ section.id }}');\n      if (!root) return;\n      var btn = root.querySelector('[data-knr-add]');\n      if (!btn) return;\n \n      btn.addEventListener('click', function () {\n        var id = parseInt(btn.dataset.variant, 10);\n        if (!id) return;\n        var initial = btn.textContent;\n        btn.disabled = true;\n        btn.textContent = 'Ajout en cours…';\n \n        var items = [{ id: id, quantity: 1 }];\n        var done = function () {\n          btn.disabled = false;\n          btn.classList.add('is-added');\n          btn.textContent = '✓ Ajouté au panier';\n        };\n        var fail = function () {\n          btn.disabled = false;\n          btn.textContent = 'Erreur — réessayez';\n          setTimeout(function () { btn.textContent = initial; }, 3000);\n        };\n \n        if (window.OCAOUCart && typeof window.OCAOUCart.add === 'function') {\n          window.OCAOUCart.add(items).then(done).catch(fail);\n        } else {\n          fetch('/cart/add.js', {\n            method: 'POST',\n            headers: { 'Content-Type': 'application/json' },\n            body: JSON.stringify({ items: items })\n          })\n          .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })\n          .then(function () { done(); window.location.reload(); })\n          .catch(fail);\n        }\n      });\n    })();\n  </script>\n{%- endif -%}",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "avis": {
+      "type": "iso-pa-reviews",
+      "settings": {
+        "titre": "Ils en parlent mieux que nous",
+        "note": "4,8",
+        "total": "+500 parents conquis",
+        "bg_color": "#f4ede1",
+        "filet": false
+      },
+      "disabled": true
     }
   },
   "order": [
@@ -960,14 +886,15 @@
     "legacy_contenu",
     "associes",
     "rich_text_7LA3LQ",
-    "logoscroll_rVRFrN",
+    "presse",
     "avisparents_byECTe",
     "imagewithtexticons_4VMEKy",
     "sectionsicones_Y3DFyV",
     "benefices",
-    "imagewithtexticons_pncmHL",
     "avantageicons_k7faYm",
-    "30retours_YLhBEm",
-    "faq_RLPihW"
+    "ocacoufriseage_LWBwAr",
+    "faq_RLPihW",
+    "custom_liquid_pJwcwk",
+    "avis"
   ]
 }

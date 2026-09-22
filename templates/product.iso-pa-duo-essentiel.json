@@ -49,14 +49,14 @@
         "accroche": "Sac O'CAOU + Gourde",
         "collection": "",
         "badges": "Best Seller\nSac Évolutif",
-        "note": "4.8",
+        "note": "4,8",
         "avis": "+ 500 avis",
         "pitch_titre": "Le Duo Malin",
         "pitch": "Le sac à dos qui se transforme en organiseur, et la gourde en silicone des Petits Grands. Dès la maternelle, votre enfant a tout sous la main, juste au cas où...",
         "puces": "ÉVOLUTIF\nPRATIQUE\nFONCTIONNEL & PÉDAGOGIQUE\nDÉPERLANT",
         "galerie": "",
         "leopard": "Léopard\nGraou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED\nduo-essentiel/Graou: motif #EBE9E3\nduo-essentiel/Nude: #ECDECC\nduo-essentiel/Navy: #4E74A4\nduo-essentiel/Bleu: #81A4CB\nduo-essentiel/Rose: #CE747F\nduo-essentiel/Blanc: #E8E1D3",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -84,7 +84,7 @@
         "titre": "Souvent achetés ensemble",
         "produits": [
           "doudou",
-          "coffret-comme-les-grands-1"
+          "coffret-comme-les-grands"
         ],
         "bg_color": "#ffffff",
         "filet": true
@@ -852,14 +852,14 @@
     },
     "avis": {
       "type": "iso-pa-reviews",
+      "disabled": true,
       "settings": {
         "titre": "Ils en parlent mieux que nous",
         "note": "4,8",
         "total": "+500 parents conquis",
         "bg_color": "#f4ede1",
         "filet": false
-      },
-      "disabled": true
+      }
     },
     "faq": {
       "type": "iso-pa-faq",
