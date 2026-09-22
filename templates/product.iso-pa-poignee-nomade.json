@@ -26,13 +26,14 @@
         "accordeon_1"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "O'CAOU Je l’emporte partout !",
         "collection": "",
         "badges": "",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "La Sangle des Aventuriers",
         "pitch": "O’CAOU je l’emporte partout ! Une poignée pratique pensée pour les petites mains : les enfants transportent facilement leur gourde et restent hydratés toute la journée. Ils gardent leur doudou à portée de main pour ne pas manquer de câlin.",
         "puces": "Pensée pour les petites mains\nS’accroche partout\nOuverture facile et rapide\nIdéale pour les sorties",
@@ -46,6 +47,48 @@
         "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
+      }
+    },
+    "videos": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/d309516fc5d04696bf14ec01f37c99f6.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/d309516fc5d04696bf14ec01f37c99f6.thumbnail.0000000000.jpg?v=1789543919",
+            "titre": ""
+          }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/5850a5a70746476da2c42e4b2dc374c3.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5850a5a70746476da2c42e4b2dc374c3.thumbnail.0000000000.jpg?v=1789487005",
+            "titre": ""
+          }
+        },
+        "video_3": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/e4a7990fdc1245e98ba13ed17ad2b4a0.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/e4a7990fdc1245e98ba13ed17ad2b4a0.thumbnail.0000000000.jpg?v=1789491768",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2",
+        "video_3"
+      ],
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#ffffff",
+        "filet": true,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
       }
     },
     "legacy_contenu": {
@@ -72,6 +115,8 @@
           "coffret-comme-les-grands",
           "kit-repas-complet"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -209,6 +254,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
@@ -982,48 +1028,6 @@
         "button_text_color": "",
         "accordion_background": "#f4ede1",
         "accordion_text_color": ""
-      }
-    },
-    "videos": {
-      "type": "iso-pa-videos",
-      "blocks": {
-        "video_1": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/d309516fc5d04696bf14ec01f37c99f6.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/d309516fc5d04696bf14ec01f37c99f6.thumbnail.0000000000.jpg?v=1789543919",
-            "titre": ""
-          }
-        },
-        "video_2": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/5850a5a70746476da2c42e4b2dc374c3.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5850a5a70746476da2c42e4b2dc374c3.thumbnail.0000000000.jpg?v=1789487005",
-            "titre": ""
-          }
-        },
-        "video_3": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/e4a7990fdc1245e98ba13ed17ad2b4a0.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/e4a7990fdc1245e98ba13ed17ad2b4a0.thumbnail.0000000000.jpg?v=1789491768",
-            "titre": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_1",
-        "video_2",
-        "video_3"
-      ],
-      "settings": {
-        "accroche": "",
-        "titre": "{titre} en vidéo",
-        "bg_color": "#ffffff",
-        "filet": true,
-        "mf_namespace": "custom",
-        "mf_key": "product_videos"
       }
     }
   },
