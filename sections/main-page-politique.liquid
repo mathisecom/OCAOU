@@ -1,0 +1,61 @@
+{%- comment -%}
+  Pages legales. Le texte affiche vient des Parametres > Politiques de la boutique : une seule
+  source, modifiable dans les Parametres, et les liens du pied de page y renvoient directement.
+  Si la politique correspondante est vide, la page garde son propre contenu (aucune page blanche).
+{%- endcomment -%}
+<style>
+  #shopify-section-{{ section.id }} {
+    --page-max-width: {{ section.settings.content_width }};
+  }
+</style>
+
+{%- assign h = page.handle -%}
+{%- capture corps -%}
+  {%- if h contains 'mention' -%}{{ shop.legal_notice }}
+  {%- elsif h contains 'confidentialite' -%}{{ shop.privacy_policy }}
+  {%- elsif h contains 'livraison' -%}{{ shop.shipping_policy }}{{ shop.refund_policy }}
+  {%- elsif h contains 'retour' -%}{{ shop.refund_policy }}
+  {%- else -%}{{ shop.terms_of_sale }}{%- endif -%}
+{%- endcapture -%}
+{%- assign corps = corps | strip -%}
+
+<div class="container">
+  <div class="page-spacer">
+    <div class="page">
+      <h1 class="h1 text-center">{{ page.title }}</h1>
+
+      {%- if corps != blank -%}
+        <div class="prose">
+          {{ corps }}
+        </div>
+      {%- elsif page.content != empty -%}
+        <div class="prose">
+          {{ page.content }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page légale",
+  "class": "shopify-section--main-page",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Largeur du texte",
+      "options": [
+        { "value": "60ch", "label": "Étroite" },
+        { "value": "80ch", "label": "Moyenne" },
+        { "value": "100ch", "label": "Large" },
+        { "value": "120ch", "label": "Très large" },
+        { "value": "100%", "label": "Pleine largeur" }
+      ],
+      "default": "80ch"
+    }
+  ]
+}
+{% endschema %}
