@@ -47,7 +47,7 @@
 .iso-pa .pa-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .iso-pa .pa-scroll::-webkit-scrollbar{display:none}
 .iso-pa .pa-scroll>*{scroll-snap-align:start;flex:none}
-.iso-pa .pa-mix{isolation:isolate;background:var(--ivory);overflow:clip}
+.iso-pa .pa-mix{isolation:isolate;background:var(--pa-photo-bg,var(--ivory));overflow:clip}
 .iso-pa .pa-mix img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
 
 /* carrousels : boutons Précédent / Suivant */

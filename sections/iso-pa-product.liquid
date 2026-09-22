@@ -243,7 +243,7 @@
   endfor
   assign vals_main = vals_main | split: '|~|'
 -%}
-<div class="iso-pa" id="pa-achat" data-pa-product style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}">
+<div class="iso-pa" id="pa-achat" data-pa-product style="background:{{ section.settings.bg_color | default: '#FFFFFF' }};--pa-photo-bg:{{ section.settings.photo_bg | default: '#FBF6EF' }}">
 <div class="pa-w pa-buy">
 
 {%- if n > 0 -%}
@@ -762,6 +762,13 @@
     ]
   },
   "settings": [
+    {
+      "type": "color",
+      "id": "photo_bg",
+      "label": "Fond des photos",
+      "info": "Blanc pour une photo sans teinte.",
+      "default": "#FBF6EF"
+    },
     {
       "type": "color",
       "id": "bg_color",
