@@ -35,13 +35,14 @@
         "accordeon_2"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "Veilleuse Nomade",
         "accroche": "O'CAOU j'ai peur",
         "collection": "",
         "badges": "",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "La Veilleuse Baladeuse",
         "pitch": "La veilleuse qui rassure les tout-petits et illumine leurs premières nuits. Pensée pour les petites mains. Imaginée pour des nuits plus sereines.",
         "puces": "Minuteur 15'-30'\nTactile\nLumière douce : 2 intensités\nSilicone doux et résistant\nFacile à transporter avec son anse",
@@ -55,6 +56,30 @@
         "complements_position": "bouton",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
+      }
+    },
+    "videos": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/83349d7f434b493bb72be85ee4693c40.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/83349d7f434b493bb72be85ee4693c40.thumbnail.0000000000.jpg?v=1789492821",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_1"
+      ],
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#ffffff",
+        "filet": true,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
       }
     },
     "legacy_contenu": {
@@ -139,6 +164,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": false,
@@ -394,6 +420,8 @@
           "couverture",
           "coffret-naissance"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -765,30 +793,6 @@
         "button_text_color": "",
         "accordion_background": "#fcf9f5",
         "accordion_text_color": ""
-      }
-    },
-    "videos": {
-      "type": "iso-pa-videos",
-      "blocks": {
-        "video_1": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/83349d7f434b493bb72be85ee4693c40.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/83349d7f434b493bb72be85ee4693c40.thumbnail.0000000000.jpg?v=1789492821",
-            "titre": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_1"
-      ],
-      "settings": {
-        "accroche": "",
-        "titre": "{titre} en vidéo",
-        "bg_color": "#ffffff",
-        "filet": true,
-        "mf_namespace": "custom",
-        "mf_key": "product_videos"
       }
     }
   },

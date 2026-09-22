@@ -43,13 +43,14 @@
         "compl_poignee"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "O’CAOU je veux un câlin",
         "collection": "",
         "badges": "Best Seller",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "Le Compagnon des Petits Grands",
         "pitch": "Le doudou qui rassure les tout-petits, parce qu’un câlin c’est juste TROP TROP bien. Pensé pour les petites mains. Imaginé pour les grands câlins.",
         "puces": "",
@@ -63,6 +64,57 @@
         "complements_position": "points_forts",
         "jours": 2,
         "livraison": "Livraison Suivie en France"
+      }
+    },
+    "videos": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/c2402815ba83414fa84b7b37d8cbaf8e.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c2402815ba83414fa84b7b37d8cbaf8e.thumbnail.0000000000.jpg?v=1789494653",
+            "titre": ""
+          }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/5850a5a70746476da2c42e4b2dc374c3.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5850a5a70746476da2c42e4b2dc374c3.thumbnail.0000000000.jpg?v=1789487005",
+            "titre": ""
+          }
+        },
+        "video_3": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/c5a1875eb05048738df3c7b9099e332b.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c5a1875eb05048738df3c7b9099e332b.thumbnail.0000000000.jpg?v=1789584635",
+            "titre": ""
+          }
+        },
+        "video_4": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/5dd1349eee07408c9b5332b3566d9d0c.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5dd1349eee07408c9b5332b3566d9d0c.thumbnail.0000000000.jpg?v=1789486921",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2",
+        "video_3",
+        "video_4"
+      ],
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#ffffff",
+        "filet": true,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
       }
     },
     "legacy_contenu": {
@@ -87,6 +139,8 @@
           "coffret-naissance",
           "coffret-comme-les-grands"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -161,6 +215,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": false,
@@ -887,57 +942,6 @@
         "button_text_color": "",
         "accordion_background": "#fcf9f5",
         "accordion_text_color": ""
-      }
-    },
-    "videos": {
-      "type": "iso-pa-videos",
-      "blocks": {
-        "video_1": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/c2402815ba83414fa84b7b37d8cbaf8e.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c2402815ba83414fa84b7b37d8cbaf8e.thumbnail.0000000000.jpg?v=1789494653",
-            "titre": ""
-          }
-        },
-        "video_2": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/5850a5a70746476da2c42e4b2dc374c3.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5850a5a70746476da2c42e4b2dc374c3.thumbnail.0000000000.jpg?v=1789487005",
-            "titre": ""
-          }
-        },
-        "video_3": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/c5a1875eb05048738df3c7b9099e332b.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c5a1875eb05048738df3c7b9099e332b.thumbnail.0000000000.jpg?v=1789584635",
-            "titre": ""
-          }
-        },
-        "video_4": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/5dd1349eee07408c9b5332b3566d9d0c.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5dd1349eee07408c9b5332b3566d9d0c.thumbnail.0000000000.jpg?v=1789486921",
-            "titre": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_1",
-        "video_2",
-        "video_3",
-        "video_4"
-      ],
-      "settings": {
-        "accroche": "",
-        "titre": "{titre} en vidéo",
-        "bg_color": "#ffffff",
-        "filet": true,
-        "mf_namespace": "custom",
-        "mf_key": "product_videos"
       }
     }
   },
