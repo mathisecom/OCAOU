@@ -360,8 +360,8 @@
                 assign is_checked = true
               endif
             -%}
-            <label class="pa-sw"><input type="radio" name="pa-col-{{ uid }}" value="{{ rep_id }}" data-title="{{ val | escape }}"{% if is_checked %} checked{% endif %}>{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}<span class="pa-sr">{{ val | escape }}{% unless is_available %} (épuisé){% endunless %}</span></label>
-            {%- capture sbar_sw -%}<button type="button" class="pa-sbar-sw" data-v="{{ rep_id }}" aria-pressed="{{ is_checked }}" aria-label="{{ val | escape }}{% unless is_available %} (épuisé){% endunless %}">{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}</button>{%- endcapture -%}
+            <label class="pa-sw{% if section.settings.opt_texte %} pa-swt{% endif %}"><input type="radio" name="pa-col-{{ uid }}" value="{{ rep_id }}" data-title="{{ val | escape }}"{% if is_checked %} checked{% endif %}>{%- if section.settings.opt_texte -%}<span class="pa-swt-c">{{ val | escape }}</span>{%- else -%}{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}{%- endif -%}<span class="pa-sr">{{ val | escape }}{% unless is_available %} (épuisé){% endunless %}</span></label>
+            {%- capture sbar_sw -%}<button type="button" class="pa-sbar-sw{% if section.settings.opt_texte %} pa-swt{% endif %}" data-v="{{ rep_id }}" aria-pressed="{{ is_checked }}" aria-label="{{ val | escape }}{% unless is_available %} (épuisé){% endunless %}">{%- if section.settings.opt_texte -%}<span class="pa-swt-c">{{ val | escape }}</span>{%- else -%}{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}{%- endif -%}</button>{%- endcapture -%}
             {%- assign sbar_sws = sbar_sws | append: sbar_sw -%}
           {%- endfor -%}
         </div>
@@ -857,6 +857,13 @@
       "id": "galerie",
       "label": "Ordre des photos",
       "info": "Photos rangées par couleur dans Shopify : rangs dans le groupe de la couleur, séparés par des virgules (1 = la photo de la couleur, 2 = la suivante) ; les rangs absents suivent. Sinon : positions des médias du produit, la première cédant sa place à la photo de la couleur choisie. Vide : toutes les photos."
+    },
+    {
+      "type": "checkbox",
+      "id": "opt_texte",
+      "label": "Afficher le choix en toutes lettres",
+      "info": "Pour une option qui n'est pas une couleur, un montant par exemple.",
+      "default": false
     },
     {
       "type": "textarea",

@@ -781,3 +781,12 @@
 .iso-pa .pa-gc-fl textarea{resize:vertical}
 .iso-pa .pa-gc-fl input:focus-visible,.iso-pa .pa-gc-fl textarea:focus-visible{outline:2px solid var(--brown);outline-offset:2px;border-color:var(--rt)}
 .iso-pa .pa-gc-fl input[aria-invalid="true"]{border-color:var(--rt);box-shadow:inset 0 0 0 1px var(--rt)}
+
+/* 2026-09-23 : choix d'une option affiche en toutes lettres (montant d'une carte cadeau). */
+.iso-pa .pa-sw.pa-swt{width:auto;height:auto}
+.iso-pa .pa-swt-c{display:grid;place-items:center;min-width:56px;min-height:44px;padding:0 14px;border:1px solid var(--line2);border-radius:12px;background:#fff;font-size:15px;font-weight:500;color:var(--brown);transition:border-color .15s,box-shadow .15s,background-color .15s}
+.iso-pa .pa-sw.pa-swt input:checked+.pa-swt-c{border-color:var(--rt);box-shadow:inset 0 0 0 1px var(--rt);background:var(--ivory)}
+.iso-pa .pa-sw.pa-swt input:focus-visible+.pa-swt-c{outline:2px solid var(--brown);outline-offset:3px}
+.iso-pa .pa-sbar-sw.pa-swt{width:auto;height:auto}
+.iso-pa .pa-sbar-sw.pa-swt .pa-swt-c{min-width:44px;min-height:32px;padding:0 10px;font-size:13px}
+.iso-pa .pa-sbar-sw.pa-swt[aria-pressed="true"] .pa-swt-c{border-color:var(--rt);box-shadow:inset 0 0 0 1px var(--rt);background:var(--ivory)}
