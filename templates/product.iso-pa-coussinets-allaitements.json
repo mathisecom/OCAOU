@@ -44,13 +44,14 @@
         "accordeon_3"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "O’CAOU j’allaite",
         "collection": "",
         "badges": "",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "La douceur du bambou, le confort des mamans",
         "pitch": "Doux, respirants et absorbants, ces coussinets lavables protègent vos vêtements pendant l’allaitement. Certifiés OEKO-TEX® Standard 100, ils sont accompagnés d’une pochette imperméable et d’un filet de lavage.",
         "puces": "ÉVOLUTIF\nPRATIQUE\nORGANISATION\nDÉPERLANT",
@@ -86,6 +87,8 @@
           "lingettes-lavables",
           "coffret-pour-maman"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -160,6 +163,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": false,
