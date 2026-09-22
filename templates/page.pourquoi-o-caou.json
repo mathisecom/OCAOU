@@ -223,10 +223,20 @@
         "padding_top_mobile": 44,
         "padding_bottom_mobile": 48
       }
+    },
+    "iso_pa_benefits_8eUEYb": {
+      "type": "iso-pa-benefits",
+      "name": "Bénéfices",
+      "settings": {
+        "titre": "À CHAQUE IMPRÉVU, SA SOLUTION.",
+        "bg_color": "#FFFFFF",
+        "filet": true
+      }
     }
   },
   "order": [
     "image_with_text_overlay_3cjydE",
-    "ocaoujaibesoin"
+    "ocaoujaibesoin",
+    "iso_pa_benefits_8eUEYb"
   ]
 }

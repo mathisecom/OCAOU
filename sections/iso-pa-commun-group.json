@@ -203,7 +203,7 @@
         "texte": "",
         "affichage": "defile",
         "bg_color": "#ffffff",
-        "filet": false
+        "filet": true
       }
     },
     "avis_verts": {
