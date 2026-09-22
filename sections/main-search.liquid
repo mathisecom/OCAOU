@@ -9,6 +9,11 @@
 {%- capture search_form -%}
   <form class="main-search-form" action="{{ routes.search_url }}" method="get" role="search">
     <input type="hidden" name="type" value="product">
+    {%- comment -%}
+      Recherche sur le nom, les mots-cles et le type du produit, pas sur les descriptions :
+      sans cela "carte cadeau" remontait des coffrets dont le texte contenait le mot.
+    {%- endcomment -%}
+    <input type="hidden" name="options[fields]" value="title,tag,product_type">
 
     <div class="v-stack gap-6 sm:gap-12">
       <div class="search-input">

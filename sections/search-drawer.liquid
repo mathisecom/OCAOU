@@ -16,6 +16,11 @@
     </style>
 
     <input type="hidden" name="type" value="product">
+    {%- comment -%}
+      Recherche sur le nom, les mots-cles et le type du produit, pas sur les descriptions :
+      sans cela "carte cadeau" remontait des coffrets dont le texte contenait le mot.
+    {%- endcomment -%}
+    <input type="hidden" name="options[fields]" value="title,tag,product_type">
 
     <predictive-search class="predictive-search" section-id="{{ section.id }}">
       {%- if section.settings.search_menu.links.size > 0 -%}
