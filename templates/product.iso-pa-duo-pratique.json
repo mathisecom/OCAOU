@@ -819,17 +819,6 @@
         "filet": false
       }
     },
-    "avis": {
-      "type": "iso-pa-reviews",
-      "settings": {
-        "titre": "Ils en parlent mieux que nous",
-        "note": "4,8",
-        "total": "+500 parents conquis",
-        "bg_color": "#f4ede1",
-        "filet": false
-      },
-      "disabled": true
-    },
     "faq": {
       "type": "iso-pa-faq",
       "blocks": {
@@ -947,7 +936,6 @@
     "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
     "benefices",
-    "avis",
     "faq"
   ]
 }
