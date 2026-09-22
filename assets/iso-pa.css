@@ -744,3 +744,17 @@
 .iso-pa .pa-rel .pa-pc-pr{margin-bottom:12px}
 .iso-pa .pa-rel .pa-pc-b{margin-top:auto}
 }
+
+/* 2026-09-22 : bandeau, hauteur, cadrage, taille de titre et bouton reglables. */
+.iso-pa .pa-ban-img{object-position:var(--pa-ban-pos-m,center)}
+.iso-pa .pa-ban--haute,.iso-pa .pa-ban--haute .pa-ban-img{min-height:440px}
+.iso-pa .pa-ban--tres-haute,.iso-pa .pa-ban--tres-haute .pa-ban-img{min-height:560px}
+.iso-pa .pa-ban-h--grand{font-size:clamp(28px,6.4vw,44px)}
+.iso-pa .pa-ban-h--tres-grand{font-size:clamp(32px,8vw,58px)}
+.iso-pa .pa-ban-cta{margin-top:6px}
+@media screen and (min-width:960px){
+.iso-pa .pa-ban-img{object-position:var(--pa-ban-pos,center)}
+.iso-pa .pa-ban--haute,.iso-pa .pa-ban--haute .pa-ban-img{min-height:min(620px,52vw)}
+.iso-pa .pa-ban--tres-haute,.iso-pa .pa-ban--tres-haute .pa-ban-img{min-height:min(760px,64vw)}
+.iso-pa .pa-ban-h--1l{max-width:none;white-space:nowrap}
+}

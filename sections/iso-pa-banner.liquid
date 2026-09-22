@@ -1,5 +1,8 @@
 {%- comment -%}
   Piste A : bandeau pleine largeur, titre posé sur la photo.
+  Réglages (demandes des 19 et 20/09) : hauteur de la photo, cadrage séparé ordinateur / téléphone
+  pour montrer autre chose que le centre, taille du titre, titre tenu sur une seule ligne, bouton.
+  Format de photo conseillé : 2400 x 1400 px minimum, sujet pas trop près des bords.
   Arbitrages :
   - RGAA : voile réglable sur la photo pour tenir le contraste du texte blanc (défaut 35 %),
     texte alternatif administrable, titre en <h2> pour garder la hiérarchie de la fiche.
@@ -7,16 +10,24 @@
   - Perf : chargement différé, largeurs multiples servies selon l'écran.
 {%- endcomment -%}
 {%- assign s = section.settings -%}
+{%- assign h_cls = s.hauteur | default: 'standard' -%}
+{%- assign pos_d = s.cadrage | default: 'center' -%}
+{%- assign pos_m = s.cadrage_mobile | default: 'center' -%}
+{%- assign t_cls = s.titre_taille | default: 'normal' -%}
 <div class="iso-pa">
-<section class="pa-ban" aria-labelledby="pa-ban-h-{{ section.id }}">
+<section class="pa-ban pa-ban--{{ h_cls }}" aria-labelledby="pa-ban-h-{{ section.id }}"
+  style="--pa-ban-pos:{{ pos_d }};--pa-ban-pos-m:{{ pos_m }}">
   {%- if s.image -%}
     {%- render 'iso-pa-img', image: s.image, alt: s.alt, cls: 'pa-ban-img', w: 1800, sizes: '100vw', widths: '640,960,1280,1600,2000' -%}
   {%- endif -%}
   <div class="pa-ban-voile" style="--voile:{{ s.voile | default: 35 | divided_by: 100.0 }}" aria-hidden="true"></div>
   <div class="pa-ban-txt">
     {%- if s.accroche != blank -%}<p class="pa-eyebrow pa-ban-eyebrow">{{ s.accroche | escape }}</p>{%- endif -%}
-    <h2 class="pa-h2 pa-ban-h" id="pa-ban-h-{{ section.id }}">{{ s.titre | escape }}</h2>
+    <h2 class="pa-h2 pa-ban-h pa-ban-h--{{ t_cls }}{% if s.titre_une_ligne %} pa-ban-h--1l{% endif %}" id="pa-ban-h-{{ section.id }}">{{ s.titre | escape }}</h2>
     {%- if s.texte != blank -%}<p class="pa-lead pa-ban-l">{{ s.texte | escape }}</p>{%- endif -%}
+    {%- if s.bouton_texte != blank and s.bouton_url != blank -%}
+      <a class="pa-cta pa-ban-cta" href="{{ s.bouton_url }}">{{ s.bouton_texte | escape }}</a>
+    {%- endif -%}
   </div>
 </section>
 </div>
@@ -25,11 +36,42 @@
 {
   "name": "Bandeau",
   "settings": [
-    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "image_picker", "id": "image", "label": "Photo", "info": "Format conseillé : 2400 x 1400 px minimum." },
     { "type": "text", "id": "alt", "label": "Description de la photo (texte alternatif RGAA)" },
+    { "type": "select", "id": "hauteur", "label": "Hauteur de la photo", "default": "standard",
+      "options": [
+        { "value": "standard", "label": "Standard" },
+        { "value": "haute", "label": "Haute" },
+        { "value": "tres-haute", "label": "Très haute" }
+      ] },
+    { "type": "select", "id": "cadrage", "label": "Partie de la photo montrée (ordinateur)", "default": "center",
+      "options": [
+        { "value": "center", "label": "Centre" },
+        { "value": "center top", "label": "Haut" },
+        { "value": "center bottom", "label": "Bas" },
+        { "value": "left center", "label": "Gauche" },
+        { "value": "right center", "label": "Droite" }
+      ] },
+    { "type": "select", "id": "cadrage_mobile", "label": "Partie de la photo montrée (téléphone)", "default": "center",
+      "options": [
+        { "value": "center", "label": "Centre" },
+        { "value": "center top", "label": "Haut" },
+        { "value": "center bottom", "label": "Bas" },
+        { "value": "left center", "label": "Gauche" },
+        { "value": "right center", "label": "Droite" }
+      ] },
     { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
     { "type": "text", "id": "titre", "label": "Titre" },
+    { "type": "select", "id": "titre_taille", "label": "Taille du titre", "default": "normal",
+      "options": [
+        { "value": "normal", "label": "Normale" },
+        { "value": "grand", "label": "Grande" },
+        { "value": "tres-grand", "label": "Très grande" }
+      ] },
+    { "type": "checkbox", "id": "titre_une_ligne", "label": "Titre sur une seule ligne (ordinateur)", "default": false },
     { "type": "textarea", "id": "texte", "label": "Texte (optionnel)" },
+    { "type": "text", "id": "bouton_texte", "label": "Texte du bouton", "info": "Laisser vide pour ne pas afficher de bouton." },
+    { "type": "url", "id": "bouton_url", "label": "Lien du bouton" },
     { "type": "range", "id": "voile", "label": "Voile sur la photo (%)", "min": 0, "max": 70, "step": 5, "default": 45, "info": "Sous 35 %, le texte blanc peut devenir illisible." }
   ],
   "presets": [ { "name": "Bandeau" } ]
