@@ -348,6 +348,14 @@
 
     /* Carte cadeau : les champs du destinataire n'apparaissent qu'une fois la case cochee. */
     var gc = $("[data-pa-gc]"), gcOn = gc && gc.querySelector("[data-pa-gc-on]"), gcF = gc && gc.querySelector("[data-pa-gc-f]");
+    var gcEr = gc && gc.querySelector("[data-pa-gc-er]");
+    if (gc) {
+      var gcM = gc.querySelector("[data-pa-gc-mail]");
+      if (gcM) gcM.addEventListener("input", function () {
+        gcM.removeAttribute("aria-invalid");
+        if (gcEr) gcEr.hidden = true;
+      });
+    }
     if (gcOn && gcF) {
       gcOn.addEventListener("change", function () {
         gcF.hidden = !gcOn.checked;
