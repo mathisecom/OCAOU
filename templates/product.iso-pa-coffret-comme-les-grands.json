@@ -13,13 +13,14 @@
     "main": {
       "type": "iso-pa-product",
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "Sac O'CAOU + Gourde + Doudou",
         "collection": "",
         "badges": "Best Seller\nSac Évolutif",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "O’CAOU je rentre en maternelle",
         "pitch": "Un coffret parfait pour l’entrée en maternelle. Un sac-organiseur pour préparer ses affaires tout seul comme un grand, une gourde pour boire en toute autonomie, et un doudou pour partager ses premières grandes aventures.",
         "puces": "Organisation\nDéveloppe l’autonomie\nRassurant\nÉvolutif",
@@ -116,6 +117,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
