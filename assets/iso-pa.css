@@ -751,7 +751,7 @@
 .iso-pa .pa-ban--tres-haute,.iso-pa .pa-ban--tres-haute .pa-ban-img{min-height:560px}
 .iso-pa .pa-ban-h--grand{font-size:clamp(28px,6.4vw,44px)}
 .iso-pa .pa-ban-h--tres-grand{font-size:clamp(32px,8vw,58px)}
-.iso-pa .pa-ban-cta{margin-top:6px}
+.iso-pa .pa-ban-cta{margin-top:6px;width:auto;min-width:240px;padding-inline:32px;height:52px}
 @media screen and (min-width:960px){
 .iso-pa .pa-ban-img{object-position:var(--pa-ban-pos,center)}
 .iso-pa .pa-ban--haute,.iso-pa .pa-ban--haute .pa-ban-img{min-height:min(620px,52vw)}
