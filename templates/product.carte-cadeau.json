@@ -52,7 +52,7 @@
         "liquid_EcDw3M": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .fp-product-benefits {\n    margin: 14px 0;\n    color: #333333;\n  }\n\n  .fp-product-benefits-text {\n    font-size: 16px;\n    font-weight: 500;\n    line-height: 1.4;\n    color: #333333;\n    margin: 0 0 18px;\n  }\n\n  .fp-product-benefits-grid {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px 14px;\n  }\n\n  .fp-product-benefit-pill {\n    display: inline-flex;\n    align-items: center;\n    gap: 7px;\n    background: #FBF6EF;\n    color: #333333;\n    border-radius: 4px;\n    padding: 7px 11px;\n    font-size: 15px;\n    font-weight: 500;\n    line-height: 1;\n    white-space: nowrap;\n  }\n\n  .fp-product-benefit-icon {\n    width: 16px;\n    height: 16px;\n    min-width: 16px;\n    border-radius: 50%;\n    background: #AF6C67;\n    color: #ffffff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .fp-product-benefit-icon svg {\n    width: 10px;\n    height: 10px;\n    display: block;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-product-benefits-text {\n      font-size: 14px;\n      margin-bottom: 14px;\n    }\n\n    .fp-product-benefits-grid {\n      gap: 8px;\n    }\n\n    .fp-product-benefit-pill {\n      font-size: 13px;\n      padding: 6px 9px;\n      gap: 6px;\n    }\n\n    .fp-product-benefit-icon {\n      width: 15px;\n      height: 15px;\n      min-width: 15px;\n    }\n\n    .fp-product-benefit-icon svg {\n      width: 9px;\n      height: 9px;\n    }\n  }\n</style>\n\n<div class=\"fp-product-benefits\">\n  <p class=\"fp-product-benefits-text\">\nVous ne connaissez pas ses goûts ? Offrez la carte cadeau O’CAOU. Naissance, anniversaire, baby shower : laissez vos proches choisir leur coloris préféré. Ici, plus d’erreur, que du bonheur.\n  </p>\n\n  <div class=\"fp-product-benefits-grid\">\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Aucun risque de se tromper</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Reçue par e-mail</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Le cadeau idéal</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Valable sur toute la boutique</span>\n    </div>\n  </div>\n</div>"
+            "liquid": "<style>\n  .fp-product-benefits {\n    margin: 14px 0;\n    color: #333333;\n  }\n\n  .fp-product-benefits-text {\n    font-size: 16px;\n    font-weight: 500;\n    line-height: 1.4;\n    color: #333333;\n    margin: 0 0 18px;\n  }\n\n  .fp-product-benefits-grid {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px 14px;\n  }\n\n  .fp-product-benefit-pill {\n    display: inline-flex;\n    align-items: center;\n    gap: 7px;\n    background: #FBF6EF;\n    color: #333333;\n    border-radius: 4px;\n    padding: 7px 11px;\n    font-size: 15px;\n    font-weight: 500;\n    line-height: 1;\n    white-space: nowrap;\n  }\n\n  .fp-product-benefit-icon {\n    width: 16px;\n    height: 16px;\n    min-width: 16px;\n    border-radius: 50%;\n    background: #AF6C67;\n    color: #ffffff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .fp-product-benefit-icon svg {\n    width: 10px;\n    height: 10px;\n    display: block;\n  }\n\n  @media screen and (max-width: 749px) {\n    .fp-product-benefits-text {\n      font-size: 14px;\n      margin-bottom: 14px;\n    }\n\n    .fp-product-benefits-grid {\n      gap: 8px;\n    }\n\n    .fp-product-benefit-pill {\n      font-size: 13px;\n      padding: 6px 9px;\n      gap: 6px;\n    }\n\n    .fp-product-benefit-icon {\n      width: 15px;\n      height: 15px;\n      min-width: 15px;\n    }\n\n    .fp-product-benefit-icon svg {\n      width: 9px;\n      height: 9px;\n    }\n  }\n</style>\n\n<div class=\"fp-product-benefits\">\n  <p class=\"fp-product-benefits-text\">\nVous ne connaissez pas ses goûts ? Offrez la carte cadeau O’CAOU. Naissance, anniversaire, baby shower : laissez vos proches choisir leur coloris préféré. Ici, plus d’erreur, que du bonheur.\n  </p>\n\n  <div class=\"fp-product-benefits-grid\">\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Pas d'erreur</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Code par e-mail</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span> Cadeau idéal</span>\n    </div>\n\n    <div class=\"fp-product-benefit-pill\">\n      <span class=\"fp-product-benefit-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n          <path d=\"M6 12.5L10 16.5L18 8.5\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </span>\n      <span>Valable sur toute la boutique</span>\n    </div>\n  </div>\n</div>"
           }
         },
         "variant_picker": {
@@ -312,6 +312,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": false,
@@ -324,31 +325,46 @@
         "pastille_W9UQHh": {
           "type": "pastille",
           "settings": {
-            "label": "Biberon"
+            "label": "Biberon",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_FYV9wT": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_M4mYEq": {
           "type": "pastille",
           "settings": {
-            "label": "Couches & lange"
+            "label": "Couches & lange",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_VK8hn9": {
           "type": "pastille",
           "settings": {
-            "label": "Tétine"
+            "label": "Tétine",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_xacKVt": {
           "type": "pastille",
           "settings": {
-            "label": "Repas"
+            "label": "Repas",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -362,6 +378,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ChatGPT_Image_25_aout_2026_10_43_57.png",
         "image_position": "left",
         "image_first_mobile": true,
@@ -583,31 +601,46 @@
         "pastille_ijfLDd": {
           "type": "pastille",
           "settings": {
-            "label": "Gourde"
+            "label": "Gourde",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_THqHaA": {
           "type": "pastille",
           "settings": {
-            "label": "Doudou"
+            "label": "Doudou",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_RGEbFM": {
           "type": "pastille",
           "settings": {
-            "label": "Vêtements"
+            "label": "Vêtements",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_c6PkmD": {
           "type": "pastille",
           "settings": {
-            "label": "Jouets"
+            "label": "Jouets",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         },
         "pastille_GEDQqY": {
           "type": "pastille",
           "settings": {
-            "label": "Goûter"
+            "label": "Goûter",
+            "x": 50,
+            "y": 50,
+            "tail": "bas"
           }
         }
       },
@@ -621,6 +654,8 @@
       "disabled": true,
       "name": "O'CAOU — Image + Texte",
       "settings": {
+        "layout": "liste",
+        "marker_size": 14,
         "image": "shopify://shop_images/ChatGPT_Image_24_aout_2026_19_25_29.png",
         "image_position": "right",
         "image_first_mobile": true,
