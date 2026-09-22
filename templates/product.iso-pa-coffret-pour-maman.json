@@ -26,7 +26,7 @@
         "puces": "ORGANISATION\nDOUX POUR LA PEAU\nALLAITEMENT SEREIN",
         "galerie": "",
         "leopard": "Léopard\nGraou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED\ncoffret-pour-maman/Graou: motif #EBE9E3\ncoffret-pour-maman/Nude: #ECDECC\ncoffret-pour-maman/Navy: #4E74A4\ncoffret-pour-maman/Bleu: #81A4CB\ncoffret-pour-maman/Rose: #CE747F\ncoffret-pour-maman/Blanc: #E8E1D3",
+        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Léopard: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Léopard: motif #E9E5DC\nlunch-box\/Léopard: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Léopard: motif #F1F1ED\ncoffret-pour-maman\/Graou: motif #EBE9E3\ncoffret-pour-maman\/Nude: #ECDECC\ncoffret-pour-maman\/Navy: #4E74A4\ncoffret-pour-maman\/Bleu: #81A4CB\ncoffret-pour-maman\/Rose: #CE747F\ncoffret-pour-maman\/Blanc: #E8E1D3",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -42,7 +42,7 @@
         "full_width": true,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
-        "liquid": "<div id='ss-product-videos'></div>",
+        "liquid": "<div id='ss-product-videos'><\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -54,7 +54,7 @@
         "richtext_ghPgw6": {
           "type": "richtext",
           "settings": {
-            "content": "<h6>RECOMMANDÉ PAR</h6>"
+            "content": "<h6>RECOMMANDÉ PAR<\/h6>"
           }
         }
       },
@@ -78,7 +78,7 @@
         "logo_1": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -86,7 +86,7 @@
         "logo_2": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -94,7 +94,7 @@
         "logo_3": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -102,7 +102,7 @@
         "logo_4": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -185,16 +185,16 @@
       "settings": {
         "layout": "liste",
         "marker_size": 14,
-        "image": "shopify://shop_images/ocaou-sac-bleu-vert-panda.jpg",
+        "image": "shopify:\/\/shop_images\/ocaou-sac-bleu-vert-panda.jpg",
         "image_position": "left",
         "image_first_mobile": true,
-        "image_ratio": "1 / 1",
+        "image_ratio": "1 \/ 1",
         "image_radius": 16,
         "placeholder_color": "#e9a94e",
         "eyebrow": "Pour les parents",
         "title": "Avant tout, un sac à langer pour ranger les essentiels de bébé",
         "subtitle": "5 poches pensées pour ne plus jamais chercher :",
-        "mantra": "<p>Avec ses étiquettes et ses filets :<br/><strong>Tout est visible. Tout est organisé.</strong><br/>Plus besoin de chercher. La charge mentale est soulagée.</p>",
+        "mantra": "<p>Avec ses étiquettes et ses filets :<br\/><strong>Tout est visible. Tout est organisé.<\/strong><br\/>Plus besoin de chercher. La charge mentale est soulagée.<\/p>",
         "eyebrow_size": 12,
         "title_size": 32,
         "subtitle_size": 16,
@@ -234,7 +234,7 @@
         "icon_JhiEzm": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_51.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_51.png",
             "icon_alt": "Icône avantage",
             "title": "Étiquettes Pratiques"
           }
@@ -242,7 +242,7 @@
         "icon_d6dMpf": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_46.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_46.png",
             "icon_alt": "Icône avantage",
             "title": "Tout au Même Endroit"
           }
@@ -250,7 +250,7 @@
         "icon_UincGC": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_47.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_47.png",
             "icon_alt": "Icône avantage",
             "title": "Préparation Rapide"
           }
@@ -258,7 +258,7 @@
         "icon_3f9ARX": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_48.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_48.png",
             "icon_alt": "Icône avantage",
             "title": "Doudou Toujours Retrouvé"
           }
@@ -266,7 +266,7 @@
         "icon_43MEdK": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_49.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_49.png",
             "icon_alt": "Icône avantage",
             "title": "Gourde Facile D’accès"
           }
@@ -274,7 +274,7 @@
         "icon_iNqmJ9": {
           "type": "icon",
           "settings": {
-            "icon_image": "shopify://shop_images/Design_sans_titre_50.png",
+            "icon_image": "shopify:\/\/shop_images\/Design_sans_titre_50.png",
             "icon_alt": "Icône avantage",
             "title": "Rangement Sans Stress"
           }
@@ -308,7 +308,7 @@
         "subtitle_max_width_mobile": 360,
         "subtitle_margin_top": 14,
         "subtitle_margin_top_mobile": 15,
-        "main_image": "shopify://shop_images/sac-ocaou-etiquettes-rangement_646eac9e-b98d-4c62-bc83-276b9768adf7.jpg",
+        "main_image": "shopify:\/\/shop_images\/sac-ocaou-etiquettes-rangement_646eac9e-b98d-4c62-bc83-276b9768adf7.jpg",
         "main_image_alt": "Image produit",
         "image_max_width_desktop": 720,
         "image_max_width_mobile": 400,
@@ -370,7 +370,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/format_34_9b532eda-deac-403b-b6a3-3c36b7669723.png",
+            "image": "shopify:\/\/shop_images\/format_34_9b532eda-deac-403b-b6a3-3c36b7669723.png",
             "alt": "Sac bleu ouvert : pochette rose, lingettes et coussinets rangés dedans",
             "titre": "Prendre soin de Maman",
             "texte": "Un sac, des coussinets d’allaitement et des lingettes lavables réunis dans un coffret pratique et tout doux.",
@@ -380,7 +380,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20260907_152634.jpg",
+            "image": "shopify:\/\/shop_images\/20260907_152634.jpg",
             "alt": "Pochette rose, coussinets d'allaitement et lingettes lavables présentés côte à côte",
             "titre": "Pour féliciter Maman",
             "texte": "Un coffret utile et joli, parfait à offrir dès la maternité.",
@@ -390,7 +390,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/20260907_161049.jpg",
+            "image": "shopify:\/\/shop_images\/20260907_161049.jpg",
             "alt": "Gros plan de lingettes lavables empilées, face éponge et face tissu",
             "titre": "Doux et Réutilisable",
             "texte": "Des essentiels en bambou, doux pour la peau et faciles à laver au quotidien.",
@@ -415,7 +415,7 @@
         "benefit_6jE3Lc": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/ADS_IMAGE_3.png",
+            "custom_icon": "shopify:\/\/shop_images\/ADS_IMAGE_3.png",
             "icon_alt": "Icône bénéfice",
             "icon": "smile",
             "title": "SOUPLE",
@@ -425,7 +425,7 @@
         "benefit_h4bTWg": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/ADS_IMAGE_4.png",
+            "custom_icon": "shopify:\/\/shop_images\/ADS_IMAGE_4.png",
             "icon_alt": "Icône bénéfice",
             "icon": "wash",
             "title": "PRATIQUE",
@@ -435,7 +435,7 @@
         "benefit_Lpj498": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/ADS_IMAGE_6.png",
+            "custom_icon": "shopify:\/\/shop_images\/ADS_IMAGE_6.png",
             "icon_alt": "Icône bénéfice",
             "icon": "clock",
             "title": "HYGIÈNE",
@@ -445,7 +445,7 @@
         "benefit_J8aV6U": {
           "type": "benefit",
           "settings": {
-            "custom_icon": "shopify://shop_images/ADS_IMAGE_7.png",
+            "custom_icon": "shopify:\/\/shop_images\/ADS_IMAGE_7.png",
             "icon_alt": "Icône bénéfice",
             "icon": "truck",
             "title": "PROTECTION",
@@ -615,84 +615,84 @@
           "type": "question",
           "settings": {
             "question": "Le sac à dos est-il pour les enfants ou pour les parents ?",
-            "reponse": "<p>Les deux ! Les bretelles sont réglables, parents et enfants peuvent le porter.</p>"
+            "reponse": "<p>Les deux ! Les bretelles sont réglables, parents et enfants peuvent le porter.<\/p>"
           }
         },
         "question_2": {
           "type": "question",
           "settings": {
             "question": "À partir de quel âge un enfant peut-il le porter ?",
-            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il peut préparer son sac TOUT SEUL comme un grand.</p>"
+            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il peut préparer son sac TOUT SEUL comme un grand.<\/p>"
           }
         },
         "question_3": {
           "type": "question",
           "settings": {
             "question": "À quoi sert ce sac à dos ?",
-            "reponse": "<p>Multifonctions : pour langer, crèche, maternelle, nounou, sport, balades, voyages. Évolutif, il s’adapte à chaque étape de l’enfance.</p>"
+            "reponse": "<p>Multifonctions : pour langer, crèche, maternelle, nounou, sport, balades, voyages. Évolutif, il s’adapte à chaque étape de l’enfance.<\/p>"
           }
         },
         "question_7M3rnp": {
           "type": "question",
           "settings": {
-            "question": "Commet on accroche le doudou?",
-            "reponse": "<p>Deux solutions : coincez le doudou sous <strong>l’élastique au centre du sac</strong>, ou accrochez-le au <strong>long élastique muni de 2 boucles</strong>, adaptées aux petits comme aux gros doudous. Gardez-les <strong>dans </strong>le sac ou laissez-les<strong> pendre à l’extérieur</strong> : ils restent <strong>faciles à attraper et à ranger</strong>.</p>"
+            "question": "Comment on accroche le doudou ?",
+            "reponse": "<p>Deux solutions : coincez le doudou sous <strong>l’élastique au centre du sac<\/strong>, ou accrochez-le au <strong>long élastique muni de 2 boucles<\/strong>, adaptées aux petits comme aux gros doudous. Gardez-les <strong>dans <\/strong>le sac ou laissez-les<strong> pendre à l’extérieur<\/strong> : ils restent <strong>faciles à attraper et à ranger<\/strong>.<\/p>"
           }
         },
         "question_4": {
           "type": "question",
           "settings": {
             "question": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
-            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Toutes les poches sont accessibles en mode sac à dos.</p>"
+            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Toutes les poches sont accessibles en mode sac à dos.<\/p>"
           }
         },
         "question_5": {
           "type": "question",
           "settings": {
             "question": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "reponse": "<p>Oui, comme dans un sac à dos classique, on met tout dedans.</p>"
+            "reponse": "<p>Oui, comme dans un sac à dos classique, on met tout dedans.<\/p>"
           }
         },
         "question_6": {
           "type": "question",
           "settings": {
             "question": "Comment peut-on accrocher le sac à dos ?",
-            "reponse": "<p>Attaches poussettes intégrées, on peut aussi l'accrocher au siège auto et aux barreaux du lit bébé. Il y a 2 poignées aussi.</p>"
+            "reponse": "<p>Attaches poussettes intégrées, on peut aussi l'accrocher au siège auto et aux barreaux du lit bébé. Il y a 2 poignées aussi.<\/p>"
           }
         },
         "question_7": {
           "type": "question",
           "settings": {
             "question": "Combien y a-t-il de poches de rangement ?",
-            "reponse": "<p>6 poches : une à l'extérieure pour garder l’essentiel à portée de main, et 5 à l'intérieure. </p>"
+            "reponse": "<p>6 poches : une à l'extérieure pour garder l’essentiel à portée de main, et 5 à l'intérieure. <\/p>"
           }
         },
         "question_8": {
           "type": "question",
           "settings": {
             "question": "Pourquoi y a-t-il des étiquettes dans le sac ?",
-            "reponse": "<p>Pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.</p>"
+            "reponse": "<p>Pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.<\/p>"
           }
         },
         "question_9": {
           "type": "question",
           "settings": {
             "question": "Peut-on personnaliser le sac à dos ?",
-            "reponse": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.</p>"
+            "reponse": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.<\/p>"
           }
         },
         "question_10": {
           "type": "question",
           "settings": {
             "question": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
-            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
+            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !<\/p>"
           }
         },
         "question_11": {
           "type": "question",
           "settings": {
             "question": "Quel est le poids du sac à dos ?",
-            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !</p>"
+            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !<\/p>"
           }
         }
       },
