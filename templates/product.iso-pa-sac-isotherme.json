@@ -15,6 +15,7 @@
       "blocks": {
         "accordeon_1": {
           "type": "accordeon",
+          "disabled": true,
           "settings": {
             "titre": "Pourquoi choisir O'CAOU ?",
             "icones": "",
@@ -34,7 +35,7 @@
           "settings": {
             "titre": "Pensé pour les enfants",
             "icones": "",
-            "contenu": "<ul><li>Transport facile</li><li>Repas toujours à portée de main</li><li>Idéal pour la crèche, la maternelle, les sorties et les vacances</li></ul>"
+            "contenu": "<ul><li>Transport facile avec sa sangle</li><li>Repas toujours à portée de main</li><li>Idéal pour la crèche, la maternelle, les sorties et les vacances</li></ul>"
           }
         }
       },
