@@ -67,18 +67,6 @@
         "livraison": "Livraison Suivie"
       }
     },
-    "legacy_contenu": {
-      "type": "custom-liquid",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "liquid": "<div id='ss-product-videos'></div>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "presse": {
       "type": "iso-presse",
       "blocks": {
@@ -468,7 +456,6 @@
   },
   "order": [
     "main",
-    "legacy_contenu",
     "presse",
     "benefices",
     "bande",
