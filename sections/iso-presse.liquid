@@ -21,6 +21,12 @@
     margin-block: 0;
   }
 
+  {%- if section.settings.filet -%}
+  #shopify-section-{{ section.id }} {
+    border-top: 1px solid #C9A227;
+  }
+  {%- endif -%}
+
   #shopify-section-{{ section.id }} .isopresse {
     max-width: 1200px;
     margin-inline: auto;
@@ -139,6 +145,12 @@
       "default": "Recommandé par"
     },
     {
+      "type": "checkbox",
+      "id": "filet",
+      "label": "Trait doré de séparation au-dessus",
+      "default": false
+    },
+    {
       "type": "select",
       "id": "titre_tag",
       "label": "Niveau de titre",
@@ -231,3 +243,4 @@
   ]
 }
 {% endschema %}
+

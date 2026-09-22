@@ -304,7 +304,8 @@
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
-        "bg_color": "#ffffff"
+        "bg_color": "#ffffff",
+        "filet": true
       }
     },
     "image_with_text_overlay_xeN3nf": {

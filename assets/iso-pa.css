@@ -758,3 +758,7 @@
 .iso-pa .pa-ban--tres-haute,.iso-pa .pa-ban--tres-haute .pa-ban-img{min-height:min(760px,64vw)}
 .iso-pa .pa-ban-h--1l{max-width:min(96%,1100px)}
 }
+
+/* 2026-09-22 : le trait de separation entre deux sections passe en dore. */
+.iso-pa .pa-rule>.pa-w::before,.iso-pa .pa-cream.pa-rule>.pa-w::before,.iso-pa .pa-rs.pa-rule>.pa-w::before{background:#C9A227}
+.iso-pa .pa-rule-b>.pa-w::after,.iso-pa .pa-cream.pa-rule-b>.pa-w::after,.iso-pa .pa-rs.pa-rule-b>.pa-w::after{background:#C9A227}
