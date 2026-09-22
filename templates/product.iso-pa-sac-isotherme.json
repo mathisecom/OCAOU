@@ -876,10 +876,35 @@
         "accordion_background": "#fcf9f5",
         "accordion_text_color": ""
       }
+    },
+    "videos": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/a21748f903f54bfbaff05fd2c0de9a1f.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/a21748f903f54bfbaff05fd2c0de9a1f.thumbnail.0000000000.jpg?v=1789491330",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_2"
+      ],
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#ffffff",
+        "filet": true,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
+      }
     }
   },
   "order": [
     "main",
+    "videos",
     "associes",
     "shop_the_look_Dm8yCV",
     "rich_text_7LA3LQ",
