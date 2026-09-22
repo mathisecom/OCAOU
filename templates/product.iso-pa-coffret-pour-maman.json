@@ -116,6 +116,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
@@ -700,7 +701,6 @@
         "item_V4a3MT",
         "item_EYfz3a"
       ],
-      "disabled": true,
       "name": "FAQ",
       "settings": {
         "full_width": true,
