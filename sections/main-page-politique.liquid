@@ -17,7 +17,7 @@
   {%- elsif h contains 'confidentialite' -%}{{ shop.privacy_policy }}
   {%- elsif h contains 'livraison' -%}{{ shop.shipping_policy }}{{ shop.refund_policy }}
   {%- elsif h contains 'retour' -%}{{ shop.refund_policy }}
-  {%- elsif h contains 'condition' or h contains 'cgv' -%}{{ page.content }}
+  {%- elsif h contains 'conditions-generales' -%}{{ page.content }}
   {%- else -%}{{ shop.terms_of_sale }}{%- endif -%}
 {%- endcapture -%}
 {%- assign corps = corps | strip -%}
