@@ -930,10 +930,19 @@
             "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/2642ade4b47f4da99469f52ae5a58d77.thumbnail.0000000000.jpg?v=1789489191",
             "titre": ""
           }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/b4fefd67c2174b55a56ef5bceca83ba7.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/b4fefd67c2174b55a56ef5bceca83ba7.thumbnail.0000000000.jpg?v=1789545443",
+            "titre": ""
+          }
         }
       },
       "block_order": [
-        "video_1"
+        "video_1",
+        "video_2"
       ],
       "settings": {
         "accroche": "",

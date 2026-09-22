@@ -880,6 +880,14 @@
     "videos": {
       "type": "iso-pa-videos",
       "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "src": "https://cdn.shopify.com/videos/c/o/v/bd7279697edd4422ad0a47b5d34936c6.mov",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/bd7279697edd4422ad0a47b5d34936c6.thumbnail.0000000000.jpg?v=1789544464",
+            "titre": ""
+          }
+        },
         "video_2": {
           "type": "video",
           "settings": {
@@ -890,6 +898,7 @@
         }
       },
       "block_order": [
+        "video_1",
         "video_2"
       ],
       "settings": {
