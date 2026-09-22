@@ -16,7 +16,7 @@
         "accordeon_1": {
           "type": "accordeon",
           "settings": {
-            "titre": "Pourquoi choisir la Gourde O'CAOU ?",
+            "titre": "Pourquoi choisir O'CAOU ?",
             "icones": "utensils:Sans danger alimentaire\nlfgb:Silicone alimentaire LFGB\nbpa-free:Sans BPA, PVC ni phtalates",
             "contenu": ""
           }
