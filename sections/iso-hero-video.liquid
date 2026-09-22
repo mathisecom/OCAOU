@@ -288,6 +288,14 @@
       return;
     }
 
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState !== 'visible' || pause_voulue) return;
+      var cadre = root.getBoundingClientRect();
+      var a_l_ecran = cadre.bottom > 0 && cadre.top < (window.innerHeight || 0);
+      if (!a_l_ecran) return;
+      if (video.dataset.loaded === 'true') { if (video.paused) lancer(); } else { charger(); }
+    });
+
     if ('IntersectionObserver' in window) {
       var observateur = new IntersectionObserver(function (entrees) {
         entrees.forEach(function (entree) {
