@@ -44,13 +44,14 @@
         "accordeon_3"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "Sac O'CAOU + Gourde",
         "collection": "",
         "badges": "Best Seller\nSac Évolutif",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "Le Duo Malin",
         "pitch": "Le sac à dos qui se transforme en organiseur, et la gourde en silicone des Petits Grands. Dès la maternelle, votre enfant a tout sous la main, juste au cas où...",
         "puces": "ÉVOLUTIF\nPRATIQUE\nFONCTIONNEL & PÉDAGOGIQUE\nDÉPERLANT",
@@ -86,6 +87,8 @@
           "doudou",
           "coffret-comme-les-grands"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -193,6 +196,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
@@ -850,17 +854,6 @@
         "filet": false
       }
     },
-    "avis": {
-      "type": "iso-pa-reviews",
-      "disabled": true,
-      "settings": {
-        "titre": "Ils en parlent mieux que nous",
-        "note": "4,8",
-        "total": "+500 parents conquis",
-        "bg_color": "#f4ede1",
-        "filet": false
-      }
-    },
     "faq": {
       "type": "iso-pa-faq",
       "blocks": {
@@ -985,7 +978,6 @@
     "image_with_text_overlay_MqfmTV",
     "avantageicons_k7faYm",
     "benefices",
-    "avis",
     "faq"
   ]
 }

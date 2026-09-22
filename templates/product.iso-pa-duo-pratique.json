@@ -13,13 +13,14 @@
     "main": {
       "type": "iso-pa-product",
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "Sac O'CAOU + Cabas",
         "collection": "",
         "badges": "Best Seller",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "Pour TOUT emporter",
         "pitch": "Un duo pour emporter vraiment TOUT avec vous. Un sac à dos malin pour les essentiels, et un grand fourre-tout pour compléter au cas où… pour ne rien manquer. Vous aurez vraiment TOUT sous la main, parés à toutes les éventualités.",
         "puces": "Organisation facile\nLéger et molletonné\nNombreuses poches\nEnsemble stylé",
@@ -113,6 +114,8 @@
           "pochette-ocaou",
           "sac-isotherme"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -162,6 +165,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
