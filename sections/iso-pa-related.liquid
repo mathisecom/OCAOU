@@ -9,23 +9,57 @@
 {%- capture tid -%}pa-rel-{{ sid }}{%- endcapture -%}
 {%- assign liste = section.settings.produits -%}
 {%- comment -%}
-  Nombre de cartes par ligne (ordinateur). « Automatique » remplit toujours la largeur sans laisser
-  de case vide : autant de colonnes que de produits jusqu'a 5, et 3 colonnes pour 6 produits
-  (deux lignes pleines). Sur telephone la liste defile horizontalement, quel que soit ce reglage.
+  Quatre cartes par ligne, toujours : la ligne se complete toute seule avec des produits de la
+  meme collection quand moins de quatre produits sont choisis, pour ne jamais laisser de case
+  vide (demande du 19/09). Le nombre de cartes par ligne reste reglable dans le panneau.
 {%- endcomment -%}
-{%- assign nb = liste.size -%}
 {%- assign cols = section.settings.cols | default: 'auto' -%}
-{%- if cols == 'auto' -%}
-  {%- if nb == 6 -%}{%- assign cols = 3 -%}
-  {%- elsif nb > 0 and nb <= 5 -%}{%- assign cols = nb -%}
-  {%- else -%}{%- assign cols = 4 -%}{%- endif -%}
+{%- if cols == 'auto' -%}{%- assign cols = 4 -%}{%- else -%}{%- assign cols = cols | times: 1 -%}{%- endif -%}
+
+{%- comment -%} Handles des produits choisis, dans l'ordre. {%- endcomment -%}
+{%- assign handles = '' -%}
+{%- assign nb = 0 -%}
+{%- for rp in liste -%}
+  {%- if rp != blank and rp.id != blank -%}
+    {%- assign handles = handles | append: rp.handle | append: ',' -%}
+    {%- assign nb = nb | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%} Cible : le multiple de `cols` juste au-dessus, plafonne a 12. {%- endcomment -%}
+{%- if nb > 0 -%}
+  {%- assign lignes = nb | plus: cols | minus: 1 | divided_by: cols -%}
+  {%- assign cible = lignes | times: cols -%}
+  {%- if cible > 12 -%}{%- assign cible = 12 -%}{%- endif -%}
+{%- else -%}
+  {%- assign cible = 0 -%}
 {%- endif -%}
+
+{%- comment -%} Complement : produits de la collection choisie, sinon de la premiere collection du produit. {%- endcomment -%}
+{%- assign reste = cible | minus: nb -%}
+{%- if reste > 0 -%}
+  {%- assign src = section.settings.collection -%}
+  {%- if src == blank -%}{%- assign src = product.collections.first -%}{%- endif -%}
+  {%- if src != blank -%}
+    {%- for cp in src.products -%}
+      {%- if reste <= 0 -%}{%- break -%}{%- endif -%}
+      {%- assign cle = cp.handle | append: ',' -%}
+      {%- unless handles contains cle or cp.handle == product.handle -%}
+        {%- assign handles = handles | append: cle -%}
+        {%- assign reste = reste | minus: 1 -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign cartes = handles | split: ',' -%}
+
 {%- if liste.size > 0 or request.design_mode -%}
 <div class="iso-pa">
 <section class="pa-sec pa-rel-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head"><h2 class="pa-h2" id="pa-rel-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
   <ul class="pa-rel pa-scroll pa-bleed pa-cols--{{ cols }}" id="{{ tid }}">
-    {%- for rp in liste -%}
+    {%- for h in cartes -%}
+      {%- assign rp = all_products[h] -%}
       {%- if rp == blank or rp.id == blank -%}{%- continue -%}{%- endif -%}
       <li><article class="pa-pc">
         {%- comment -%} Jusqu'à 4 photos : la 2e au survol sur ordinateur, les 4 en défilement sur mobile. {%- endcomment -%}
@@ -68,6 +102,8 @@
         { "value": "4", "label": "4" },
         { "value": "5", "label": "5" }
       ] },
+    { "type": "collection", "id": "collection", "label": "Collection pour compléter la ligne",
+      "info": "Sert à remplir la ligne quand moins de produits sont choisis. Vide : la collection du produit affiché." },
     { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Trait de séparation au-dessus", "default": false }
   ],
