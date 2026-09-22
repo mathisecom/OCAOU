@@ -281,6 +281,22 @@
       grid-template-columns: repeat({{ s.columns_mobile }}, minmax(0,1fr));
       gap: {{ s.col_gap_mobile }}px;
     }
+    {%- if s.defilement_mobile -%}
+    #coffrets-{{ uid }} .cof-grid {
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 78%;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 16px;
+      padding-inline: 16px;
+      margin-inline: -16px;
+      scrollbar-width: none;
+    }
+    #coffrets-{{ uid }} .cof-grid::-webkit-scrollbar { display: none; }
+    #coffrets-{{ uid }} .cof-grid > * { scroll-snap-align: center; }
+    {%- endif -%}
     #coffrets-{{ uid }} .cof-card { padding: {{ s.card_padding_mobile }}px; }
     #coffrets-{{ uid }} .cof-visu { height: {{ s.visu_height_mobile }}px; font-size: {{ s.emoji_size_mobile }}px; }
     #coffrets-{{ uid }} .cof-name { font-size: {{ s.card_title_size_mobile }}px; }
@@ -636,6 +652,13 @@
       "label": "Colonnes PC",
       "min": 1, "max": 5, "step": 1,
       "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "defilement_mobile",
+      "label": "Faire défiler les coffrets sur téléphone",
+      "info": "Les coffrets se font glisser de gauche à droite au lieu de s’empiler.",
+      "default": true
     },
     {
       "type": "select",
