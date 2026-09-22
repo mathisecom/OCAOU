@@ -16,17 +16,17 @@
       "settings": {
         "image": "shopify://shop_images/tous_les_o_caou_4.png",
         "alt": "",
-        "accroche": "",
-        "titre": "Pour tous les petits au cas où...du quotidien",
-        "texte": "",
-        "voile": 20,
         "hauteur": "haute",
         "cadrage": "center",
         "cadrage_mobile": "center",
+        "accroche": "",
+        "titre": "Pour tous les petits au cas où...du quotidien",
         "titre_taille": "grand",
         "titre_une_ligne": true,
+        "texte": "",
         "bouton_texte": "Découvrir la collection",
-        "bouton_url": "#nos-collections"
+        "bouton_url": "#nos-collections",
+        "voile": 20
       }
     },
     "heromedia_zwA498": {
@@ -301,11 +301,11 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": true,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
-        "bg_color": "#ffffff",
-        "filet": true
+        "bg_color": "#ffffff"
       }
     },
     "image_with_text_overlay_xeN3nf": {
@@ -503,7 +503,7 @@
         "content": "",
         "link_url": "shopify://collections/les-coffrets",
         "link_text": "Découvrir tous les coffrets",
-        "background": "#ffffff",
+        "background": "#F3EDE2",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
@@ -662,6 +662,7 @@
         "footer_text": "Voir tous les coffrets",
         "footer_link": "shopify://collections/les-coffrets",
         "columns_desktop": 3,
+        "defilement_mobile": true,
         "columns_mobile": "1",
         "max_width": 1200,
         "col_gap": 22,
