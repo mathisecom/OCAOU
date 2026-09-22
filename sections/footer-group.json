@@ -424,7 +424,7 @@
             "lien_1_texte": "Livraisons & retours",
             "lien_1_url": "shopify://pages/livraisons-retours",
             "lien_2_texte": "Retourner un article",
-            "lien_2_url": "/policies/refund-policy",
+            "lien_2_url": "/pages/livraisons-retours#retours",
             "lien_3_texte": "Mes commandes",
             "lien_3_url": "https://shopify.com/88049680718/account/orders",
             "lien_4_texte": "Nous contacter",
