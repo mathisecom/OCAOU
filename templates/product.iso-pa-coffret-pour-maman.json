@@ -608,121 +608,112 @@
         "padding_bottom_mobile": 40
       }
     },
-    "faq_RLPihW": {
-      "type": "faq",
+    "faq": {
+      "type": "iso-pa-faq",
       "blocks": {
-        "item_mJCRPw": {
-          "type": "item",
+        "question_1": {
+          "type": "question",
           "settings": {
-            "title": "Le sac à dos est-il pour les enfants ou pour les parents ?",
-            "content": "<p>Il est conçu pour les deux ! Les bretelles sont réglables, ce qui permet aussi bien aux enfants qu’aux parents de le porter.</p>"
+            "question": "Le sac à dos est-il pour les enfants ou pour les parents ?",
+            "reponse": "<p>Les deux ! Les bretelles sont réglables, parents et enfants peuvent le porter.</p>"
           }
         },
-        "item_e3WRir": {
-          "type": "item",
+        "question_2": {
+          "type": "question",
           "settings": {
-            "title": "À partir de quel âge un enfant peut-il le porter ?",
-            "content": "<p>Dès 2 ans, un enfant peut le porter seul. Il pourra y mettre ses affaires pour la crèche, la maternelle, la nounou, les activités ou les sorties.</p>"
+            "question": "À partir de quel âge un enfant peut-il le porter ?",
+            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il peut préparer son sac TOUT SEUL comme un grand.</p>"
           }
         },
-        "item_Ukfjeg": {
-          "type": "item",
+        "question_3": {
+          "type": "question",
           "settings": {
-            "title": "À quoi sert ce sac à dos ?",
-            "content": "<p>C’est un sac multifonctions : idéal comme sac à langer, pour la crèche, la maternelle, aller chez la nounou, pour le sport, les balades ou les voyages. Évolutif, il s’adapte à chaque étape de l’enfance : on y range les affaires selon l’âge de l’enfant et ses besoins.</p>"
+            "question": "À quoi sert ce sac à dos ?",
+            "reponse": "<p>Multifonctions : pour langer, crèche, maternelle, nounou, sport, balades, voyages. Évolutif, il s’adapte à chaque étape de l’enfance.</p>"
           }
         },
-        "item_k7rMLg": {
-          "type": "item",
+        "question_7M3rnp": {
+          "type": "question",
           "settings": {
-            "title": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
-            "content": "<p>Non, il s’utilise aussi comme un sac à dos classique. Il n’est pas nécessaire de l’ouvrir entièrement pour le remplir ou le vider. </p><p>Grâce aux deux fermetures éclair de la poche filet « O’CAOU mes affaires », vous pouvez facilement ranger ou retirer des vêtements de rechange, des jouets ou d’autres objets — que ce soit en mode organiseur ou en mode sac à dos.</p>"
+            "question": "Commet on accroche le doudou?",
+            "reponse": "<p>Deux solutions : coincez le doudou sous <strong>l’élastique au centre du sac</strong>, ou accrochez-le au <strong>long élastique muni de 2 boucles</strong>, adaptées aux petits comme aux gros doudous. Gardez-les <strong>dans </strong>le sac ou laissez-les<strong> pendre à l’extérieur</strong> : ils restent <strong>faciles à attraper et à ranger</strong>.</p>"
           }
         },
-        "item_CUbCC4": {
-          "type": "item",
+        "question_4": {
+          "type": "question",
           "settings": {
-            "title": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "content": "<p>Oui, on peut ranger des affaires supplémentaires, comme dans un sac à dos classique. Bouteille, gourde, biberon de rechange, tapis à langer, doudou, lange etc… Tout peut être glissé dans le sac en mode sac à dos.</p>"
+            "question": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
+            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Toutes les poches sont accessibles en mode sac à dos.</p>"
           }
         },
-        "item_gjnpnD": {
-          "type": "item",
+        "question_5": {
+          "type": "question",
           "settings": {
-            "title": "Comment peut-on accrocher le sac à dos ?",
-            "content": "<p>Le sac a deux poignées (une intérieure, une extérieure) et des attaches pour l’accrocher facilement à une poussette ou à un siège auto ou même aux barreaux du lit bébé. Il est très pratique, il s’accroche partout !</p>"
+            "question": "Peut-on ranger d’autres affaires que dans les poches ?",
+            "reponse": "<p>Oui, comme dans un sac à dos classique, on met tout dedans.</p>"
           }
         },
-        "item_jpcpPn": {
-          "type": "item",
+        "question_6": {
+          "type": "question",
           "settings": {
-            "title": "Combien y a-t-il de poches de rangement ?",
-            "content": "<p>Le sac à dos possède 6 poches pour organiser facilement toutes les affaires : une poche extérieure pour garder l’essentiel à portée de main, et 5 poches intérieures pour bien compartimenter le contenu. </p><p>Une grande poche est en filet, ce qui permet de voir en un coup d’œil ce qu’elle contient. Cela facilite le rangement et l’organisation.</p>"
+            "question": "Comment peut-on accrocher le sac à dos ?",
+            "reponse": "<p>Attaches poussettes intégrées, on peut aussi l'accrocher au siège auto et aux barreaux du lit bébé. Il y a 2 poignées aussi.</p>"
           }
         },
-        "item_YMqBiG": {
-          "type": "item",
+        "question_7": {
+          "type": "question",
           "settings": {
-            "title": "Pourquoi y a-t-il des étiquettes dans le sac ?",
-            "content": "<p>Toutes les poches sont étiquetées pour guider le rangement et aider l’enfant à catégoriser ses affaires. </p><p>Il apprend à lire en rangeant, gagne en autonomie et s’amuse en organisant ses affaires. Le sac devient ainsi un véritable support pédagogique, à la fois ludique et pratique.</p>"
+            "question": "Combien y a-t-il de poches de rangement ?",
+            "reponse": "<p>6 poches : une à l'extérieure pour garder l’essentiel à portée de main, et 5 à l'intérieure. </p>"
           }
         },
-        "item_FTrFa7": {
-          "type": "item",
+        "question_8": {
+          "type": "question",
           "settings": {
-            "title": "Peut-on personnaliser le sac à dos ?",
-            "content": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.</p>"
+            "question": "Pourquoi y a-t-il des étiquettes dans le sac ?",
+            "reponse": "<p>Pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.</p>"
           }
         },
-        "item_V4a3MT": {
-          "type": "item",
+        "question_9": {
+          "type": "question",
           "settings": {
-            "title": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
-            "content": "<p>Le surplus de sangle se glisse facilement dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
+            "question": "Peut-on personnaliser le sac à dos ?",
+            "reponse": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.</p>"
           }
         },
-        "item_EYfz3a": {
-          "type": "item",
+        "question_10": {
+          "type": "question",
           "settings": {
-            "title": "Quel est le poids du sac à dos ?",
-            "content": "<p>Le sac pèse entre 380 et 422 grammes, selon le modèle. Il est donc parfaitement adapté aux tout-petits ! De plus, les bretelles sont rembourrées.</p>"
+            "question": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
+            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
+          }
+        },
+        "question_11": {
+          "type": "question",
+          "settings": {
+            "question": "Quel est le poids du sac à dos ?",
+            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !</p>"
           }
         }
       },
       "block_order": [
-        "item_mJCRPw",
-        "item_e3WRir",
-        "item_Ukfjeg",
-        "item_k7rMLg",
-        "item_CUbCC4",
-        "item_gjnpnD",
-        "item_jpcpPn",
-        "item_YMqBiG",
-        "item_FTrFa7",
-        "item_V4a3MT",
-        "item_EYfz3a"
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_7M3rnp",
+        "question_4",
+        "question_5",
+        "question_6",
+        "question_7",
+        "question_8",
+        "question_9",
+        "question_10",
+        "question_11"
       ],
-      "name": "FAQ",
       "settings": {
-        "full_width": true,
-        "subheading": "",
-        "title": "Questions Fréquentes",
-        "content": "",
-        "team_avatar_width": 160,
-        "support_hours": "",
-        "answer_time": "",
-        "button_text": "",
-        "button_url": "",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "button_background": "",
-        "button_text_color": "",
-        "accordion_background": "#fcf9f5",
-        "accordion_text_color": ""
+        "titre": "Questions fréquentes",
+        "bg_color": "#ffffff",
+        "filet": false
       }
     }
   },
@@ -736,6 +727,6 @@
     "benefices",
     "avantageicons_k7faYm",
     "ocacoufriseage_LWBwAr",
-    "faq_RLPihW"
+    "faq"
   ]
 }
