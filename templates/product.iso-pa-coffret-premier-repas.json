@@ -35,16 +35,17 @@
         "accordeon_2"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "",
         "accroche": "Gourde + Lunch Box + Couverts + Poche De Protection",
         "collection": "",
         "badges": "Best Seller",
-        "note": "4,8",
-        "avis": "+ 500 avis",
+        "note": "",
+        "avis": "",
         "pitch_titre": "O’CAOU je deviens autonome",
         "pitch": "Un coffret parfait pour manger comme les grands. Un kit complet pour voyager partout bien équipé.",
-        "puces": "FLEXIBLE\nPRATIQUE\nORGANISATION\nPROTECTION",
+        "puces": "AUTONOMIE\nREPAS NOMADE\nFACILE À MANIPULER\nKIT COMPLET",
         "galerie": "",
         "leopard": "Léopard\nGraou",
         "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED\ncoffret-premier-repas/Rose: #E3A5A0\ncoffret-premier-repas/Bleu: #6C89B2\ncoffret-premier-repas/Léopard: motif #E3D4B5\ncoffret-premier-repas/Beige: #BBAA96",
@@ -76,6 +77,8 @@
         "produits": [
           "sac-isotherme"
         ],
+        "cols": "auto",
+        "collection": "",
         "bg_color": "#ffffff",
         "filet": true
       }
@@ -149,6 +152,7 @@
       "name": "Recommandé par",
       "settings": {
         "titre": "Recommandé par",
+        "filet": false,
         "titre_tag": "h2",
         "titre_color": "#121212",
         "grayscale": true,
