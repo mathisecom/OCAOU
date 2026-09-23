@@ -791,3 +791,5 @@
 .iso-pa .pa-sbar-sw.pa-swt{width:auto;height:auto}
 .iso-pa .pa-sbar-sw.pa-swt .pa-swt-c{min-width:44px;min-height:32px;padding:0 10px;font-size:13px}
 .iso-pa .pa-sbar-sw.pa-swt[aria-pressed="true"] .pa-swt-c{border-color:var(--rt);box-shadow:inset 0 0 0 1px var(--rt);background:var(--ivory)}
+
+.pa-sw-bar .pa-colors-x{margin:14px 0 0;padding:0;border:0;min-width:0}.pa-sw-bar .pa-colors-x .pa-sws{margin-top:8px}

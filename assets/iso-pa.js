@@ -619,10 +619,35 @@
 
     /* Couleur du produit courant : le choix du haut et celui de chaque formule restent synchronisés, sans boucle. */
     var colorSyncing = false;
+    /* Coffrets : la variante est celle qui réunit les couleurs choisies pour chaque article. */
+    var xGroups = $$(".pa-colors-x");
+    function byOpts() {
+      var m = $(".pa-colors input:checked"), t = [m ? m.dataset.title : ""];
+      xGroups.forEach(function (g) {
+        var c = g.querySelector("input:checked");
+        t[+g.dataset.pos] = c ? c.value : "";
+      });
+      for (var i = 0; i < variants.length; i++) {
+        var parts = String(variants[i].title).split(" / ");
+        if (parts.length === t.length && parts.every(function (x, j) { return x === t[j]; })) return variants[i];
+      }
+      return null;
+    }
+    xGroups.forEach(function (g) {
+      all(g, "input").forEach(function (inp) {
+        inp.addEventListener("change", function () {
+          if (!inp.checked) return;
+          var n = g.querySelector(".pa-cname-x");
+          if (n) n.textContent = inp.value;
+          var m = $(".pa-colors input:checked"), v = byOpts();
+          if (v) applyColor(v, m ? m.dataset.title : null);
+        });
+      });
+    });
     $$(".pa-colors input").forEach(function (inp) {
       inp.addEventListener("change", function () {
         if (!inp.checked) return;
-        applyColor(byId(+inp.value), inp.dataset.title);
+        applyColor((xGroups.length && byOpts()) || byId(+inp.value), inp.dataset.title);
         if (!colorSyncing) {
           colorSyncing = true;
           $$(".pa-opt-parts input[data-master]").forEach(function (ci) { ci.checked = ci.value === inp.value; });
@@ -646,8 +671,60 @@
       });
     });
 
-    /* Ajout au panier : composition exacte des blocs kit et duo (articles, puis cadeaux disponibles
-       avec la propriété « Cadeau offert avec »). */
+    /* Formule : le vrai coffret Shopify part au panier, une seule ligne au prix du coffret, cadeaux
+       compris. Retirer cette ligne retire tout le coffret. Un pochon ou une poignée déjà au panier
+       devient le cadeau du coffret : sa ligne payante perd un exemplaire. Coffret introuvable dans la
+       table (assets/ocaou-coffrets.json) : les articles partent seuls, sans cadeau. */
+    var tableP = null;
+    function table() {
+      if (!tableP) tableP = D.coffrets ? fetch(D.coffrets).then(function (r) { return r.json(); }).catch(function () { return null; }) : Promise.resolve(null);
+      return tableP;
+    }
+    if (offers.length) table();
+    function coffretDe(t, ids) {
+      if (!t || !t.coffrets) return null;
+      var prod = {};
+      t.coffrets.forEach(function (c) {
+        Object.keys(c.parVariante || {}).forEach(function (k) {
+          c.parVariante[k].forEach(function (x) { prod[x.variante] = x.produit; });
+        });
+      });
+      var pids = ids.map(function (i) { return prod[i]; });
+      if (pids.some(function (x) { return !x; })) return null;
+      var same = function (a, b) { return a.length === b.length && a.slice().sort().join() === b.slice().sort().join(); };
+      for (var i = 0; i < t.coffrets.length; i++) {
+        var c = t.coffrets[i];
+        var need = c.articles.concat(c.inclus.filter(function (x) { return !x.offert; }).map(function (x) { return x.produit; }));
+        if (!same(need, pids)) continue;
+        var key = ids.filter(function (v) { return c.articles.indexOf(prod[v]) !== -1; }).sort(function (a, b) { return a - b; }).join("-");
+        var combi = c.combinaisons[key];
+        if (combi && combi.dispo) return { c: c, combi: combi };
+      }
+      return null;
+    }
+    function enCoffret(o, items) {
+      return table().then(function (t) {
+        var f = coffretDe(t, items.map(function (it) { return it.id; }));
+        if (!f) return items;
+        var cadeaux = f.c.inclus.filter(function (x) { return x.offert; }).map(function (x) { return x.produit; });
+        var base = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || "/";
+        return fetch(base + "cart.js", { headers: { Accept: "application/json" } }).then(function (r) { return r.json(); }).then(function (cart) {
+          var suite = Promise.resolve();
+          cadeaux.forEach(function (pid) {
+            var l = (cart.items || []).filter(function (it) { return it.product_id === pid; })[0];
+            if (!l) return;
+            suite = suite.then(function () {
+              return fetch(base + "cart/change.js", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: l.key, quantity: l.quantity - 1 })
+              });
+            });
+          });
+          return suite;
+        }).catch(function () {}).then(function () { return [{ id: f.combi.variante, quantity: 1 }]; });
+      });
+    }
     function say(msg) { if (status) status.textContent = msg; }
     if (cta) {
       cta.addEventListener("click", function () {
@@ -672,18 +749,13 @@
           props["__shopify_offset"] = String(new Date().getTimezoneOffset());
           items[0].properties = props;
         }
-        if (o) {
-          o.parts.forEach(function (p, k) { items.push({ id: partVariant(oi, k).id, quantity: 1 }); });
-          (o.gifts || []).forEach(function (g) {
-            if (g.a) items.push({ id: g.id, quantity: 1, properties: { "Cadeau offert avec": o.name } });
-          });
-        }
+        if (o) o.parts.forEach(function (p, k) { items.push({ id: partVariant(oi, k).id, quantity: 1 }); });
         busy = true;
         cta.disabled = true;
         if (sbarB) sbarB.disabled = true;
         if (ctaL) ctaL.textContent = "Ajout en cours…";
         say("");
-        addToCart(items).then(function () {
+        (o ? enCoffret(o, items) : Promise.resolve(items)).then(addToCart).then(function () {
           busy = false;
           say("Ajouté au panier");
           refresh();

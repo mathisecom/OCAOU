@@ -366,6 +366,16 @@
           {%- endfor -%}
         </div>
       </fieldset>
+      {%- comment -%} Coffrets : un choix de couleur par article (options 2 et 3 de Shopify). {%- endcomment -%}
+      {%- for ox in product.options_with_values offset: 1 -%}
+        <fieldset class="pa-colors-x" data-pos="{{ forloop.index }}"><legend class="pa-lg">{{ ox.name | escape }}&nbsp;: <b class="pa-cname-x">{{ ox.selected_value | escape }}</b></legend>
+          <div class="pa-sws">
+            {%- for val in ox.values -%}
+              <label class="pa-sw{% if section.settings.opt_texte %} pa-swt{% endif %}"><input type="radio" name="pa-col-{{ uid }}-{{ forloop.parentloop.index }}" value="{{ val | escape }}"{% if ox.selected_value == val %} checked{% endif %}>{%- if section.settings.opt_texte -%}<span class="pa-swt-c">{{ val | escape }}</span>{%- else -%}{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}{%- endif -%}<span class="pa-sr">{{ val | escape }}</span></label>
+            {%- endfor -%}
+          </div>
+        </fieldset>
+      {%- endfor -%}
     </div>
   {%- endunless -%}
   {%- if section.settings.pitch_titre != blank or section.settings.pitch != blank -%}
@@ -717,6 +727,7 @@
 <script type="application/json" data-pa-data>
 {
   "money": {{ shop.money_format | json }},
+  "coffrets": {{ 'ocaou-coffrets.json' | asset_url | json }},
   "grouped": {{ grouped | json }},
   "variants": [
     {%- for v in product.variants -%}

@@ -373,6 +373,32 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       .then(function (panier) {
         document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
 
+        // Cadeau « offert avec » un coffret qui n'est plus au panier : il part avec lui.
+        var trouve = panier.items && panier.items.length >= 2 ? chercheCoffret(panier) : null;
+        // Seul un regroupement automatique les reprend (il les absorbe dans le coffret).
+        var orphelins = trouve && trouve.economie > 0 ? [] : (panier.items || []).filter(function (it) {
+          return Object.keys(it.properties || {}).some(function (k) { return /cadeau offert/i.test(k); });
+        });
+        if (orphelins.length) {
+          enCours = true;
+          var suite = Promise.resolve();
+          orphelins.forEach(function (l) {
+            suite = suite.then(function () {
+              return fetch(window.Shopify.routes.root + 'cart/change.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: l.key, quantity: 0 })
+              });
+            });
+          });
+          suite.then(function () {
+            enCours = false;
+            if (window.location.pathname.indexOf('/cart') !== -1) window.location.reload();
+            else if (window.OCAOUCart && window.OCAOUCart.refresh) window.OCAOUCart.refresh();
+          }, function () { enCours = false; });
+          return;
+        }
+
         // Message qui suit un regroupement automatique. Il est garde en memoire :
         // le panier se redessine plusieurs fois et effacerait la carte.
         try {
@@ -384,8 +410,6 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
           return;
         }
 
-        if (!panier.items || panier.items.length < 2) return;
-        var trouve = chercheCoffret(panier);
         if (!trouve) return;
 
         // Moins cher : on regroupe tout seul, le client est informe apres coup.
