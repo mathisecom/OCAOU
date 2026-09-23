@@ -146,14 +146,18 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     return entrees;
   }
 
-  function chercheCoffret(panier) {
-    var deplies = deplie(panier);
+  // Tous les coffrets que le panier peut former, un par un.
+  function candidats(panier) {
+    // Les articles achetes seuls passent avant ceux d'un coffret deja au panier :
+    // on ne defait pas un coffret quand un article libre fait l'affaire.
+    var deplies = deplie(panier).sort(function (a, b) {
+      return (a.issuDunCoffret ? 1 : 0) - (b.issuDunCoffret ? 1 : 0);
+    });
+    var trouves = [];
 
-    // La table va du plus grand coffret au plus petit : le premier qui correspond
-    // est celui qui reunit le plus d'articles.
     for (var i = 0; i < table.coffrets.length; i++) {
       var c = table.coffrets[i];
-      if (panier.items.some(function (it) { return it.product_id === c.id; })) continue;
+      var dejaAuPanier = panier.items.some(function (it) { return it.product_id === c.id; });
 
       var pris = [];
       var variantes = [];
@@ -177,13 +181,20 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       // est deja en train d'etre absorbe : on ne pioche pas dans un coffret intact.
       var lignes = [];
       pris.forEach(function (d) { if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne); });
-      deplies.forEach(function (d) {
-        if (pris.indexOf(d) !== -1) return;
-        if (!c.inclus.some(function (inc) { return inc.variante === d.variante; })) return;
-        if (d.issuDunCoffret && lignes.indexOf(d.ligne) === -1) return;
+      // Un seul exemplaire par article compris, pris d'abord dans ce qui part deja.
+      c.inclus.forEach(function (inc) {
+        var libres = deplies.filter(function (d) {
+          return pris.indexOf(d) === -1 && d.variante === inc.variante &&
+                 (!d.issuDunCoffret || lignes.indexOf(d.ligne) !== -1);
+        });
+        var d = libres.find(function (x) { return lignes.indexOf(x.ligne) !== -1; }) || libres[0];
+        if (!d) return;
         pris.push(d);
         if (lignes.indexOf(d.ligne) === -1) lignes.push(d.ligne);
       });
+
+      // Le coffret deja au panier, seul : rien a regrouper.
+      if (lignes.length === 1 && lignes[0].product_id === c.id) continue;
 
       // Les cadeaux poses par les blocs de packs maison partent avec le regroupement :
       // le coffret officiel porte ses propres cadeaux, sinon le client se retrouve
@@ -217,15 +228,55 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       var valeurAjoutee = enPlus.reduce(function (t, i) { return t + i.prix; }, 0);
 
       if (combi.prix >= actuel && !enPlus.length) continue;
+      // Un coffret plus cher ne se propose pas a qui l'a deja.
+      if (combi.prix >= actuel && dejaAuPanier) continue;
 
-      return {
+      trouves.push({
         coffret: c, combi: combi, lignes: lignes, actuel: actuel,
         economie: actuel - combi.prix,
         avantage: actuel - combi.prix + valeurAjoutee,
         enPlus: enPlus
-      };
+      });
     }
-    return null;
+    return trouves;
+  }
+
+  // Le panier tel qu'il serait apres ce regroupement.
+  function applique(panier, trouve) {
+    var items = [];
+    panier.items.forEach(function (it) {
+      if (trouve.lignes.indexOf(it) === -1) { items.push(it); return; }
+      if (it.quantity > 1) items.push(Object.assign({}, it, { quantity: it.quantity - 1 }));
+    });
+    items.push({
+      product_id: trouve.coffret.id, variant_id: trouve.combi.variante,
+      final_price: trouve.combi.prix, quantity: 1, properties: {}
+    });
+    return { items: items };
+  }
+
+  // Plusieurs coffrets possibles : on garde l'enchainement qui fait payer le moins,
+  // puis, a prix egal, celui qui offre le plus.
+  function meilleur(panier, profondeur) {
+    var rien = { economie: 0, avantage: 0, premier: null };
+    if (profondeur > 6 || panier.items.length < 2) return rien;
+    var mieux = rien;
+    candidats(panier).forEach(function (t) {
+      if (t.economie <= 0) return;
+      var suite = meilleur(applique(panier, t), profondeur + 1);
+      var total = { economie: t.economie + suite.economie, avantage: t.avantage + suite.avantage, premier: t };
+      if (total.economie > mieux.economie ||
+          (total.economie === mieux.economie && total.avantage > mieux.avantage)) mieux = total;
+    });
+    return mieux;
+  }
+
+  // Un regroupement moins cher d'abord ; sinon, le plus grand coffret a proposer.
+  function chercheCoffret(panier) {
+    var plan = meilleur(panier, 0);
+    if (plan.premier) return plan.premier;
+    var tous = candidats(panier);
+    return tous.length ? tous[0] : null;
   }
 
   /* ------------------------------------------------------------ echange */
@@ -252,16 +303,26 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     });
   }
 
+  // Les regroupements s'enchainent : le message les annonce tous ensemble.
+  function infosEnAttente() {
+    var liste = [];
+    try { liste = JSON.parse(sessionStorage.getItem('ocaou-sugg-info') || '[]') || []; } catch (e) {}
+    if (!Array.isArray(liste)) liste = [liste];
+    if (infoCourante) liste = infoCourante.concat(liste);
+    return liste;
+  }
+
   function apres(trouve) {
-    try {
-      sessionStorage.setItem('ocaou-sugg-info', JSON.stringify({
-        titre: trouve.coffret.titre,
-        economie: trouve.economie,
-        avantage: trouve.avantage,
-        offerts: trouve.enPlus,
-        image: trouve.coffret.image
-      }));
-    } catch (e) {}
+    var infos = infosEnAttente();
+    infoCourante = null;
+    infos.push({
+      titre: trouve.coffret.titre,
+      economie: trouve.economie,
+      avantage: trouve.avantage,
+      offerts: trouve.enPlus,
+      image: trouve.coffret.image
+    });
+    try { sessionStorage.setItem('ocaou-sugg-info', JSON.stringify(infos)); } catch (e) {}
     var surLaPagePanier = window.location.pathname.indexOf('/cart') !== -1;
     if (!surLaPagePanier && window.OCAOUCart && window.OCAOUCart.add) { enCours = false; passe(); return; }
     window.location.reload();
@@ -275,21 +336,31 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   function mentionAjouts(items) {
     if (!items || !items.length) return null;
     var cadeaux = [], compris = [];
-    items.forEach(function (i) { (i.offert ? cadeaux : compris).push(i.nom); });
+    var nombre = {};
+    items.forEach(function (i) {
+      if (nombre[i.nom]) { nombre[i.nom]++; return; }
+      nombre[i.nom] = 1;
+      (i.offert ? cadeaux : compris).push(i.nom);
+    });
+    function compte(nom) { return nombre[nom] > 1 ? nom + ' × ' + nombre[nom] : nom; }
+    cadeaux = cadeaux.map(compte);
+    compris = compris.map(compte);
     var bouts = [];
     if (compris.length) bouts.push('Avec ' + liste(compris) + '.');
-    if (cadeaux.length) bouts.push((cadeaux.length > 1 ? 'OFFERTS' : 'OFFERT') + ' : ' + liste(cadeaux) + '.');
+    if (cadeaux.length) bouts.push((items.filter(function (i) { return i.offert; }).length > 1 ? 'OFFERTS' : 'OFFERT') + ' : ' + liste(cadeaux) + '.');
     return bouts.join(' ');
   }
 
-  function carteInfo(info) {
+  function carteInfo(infos) {
     var m = carte({
-      image: info.image,
-      titre: 'Vos articles forment le ' + info.titre,
+      image: infos[0].image,
+      titre: 'Vos articles forment ' + liste(infos.map(function (i) { return 'le ' + i.titre; })),
       prix: null,
-      detail: mentionAjouts(info.offerts)
+      detail: mentionAjouts([].concat.apply([], infos.map(function (i) { return i.offerts || []; })))
     });
-    var avantage = info.avantage != null ? info.avantage : info.economie;
+    var avantage = infos.reduce(function (t, i) {
+      return t + (i.avantage != null ? i.avantage : i.economie);
+    }, 0);
     if (avantage > 0) {
       m.el.querySelector('.ocaou-sugg__txt')
         .appendChild(bloc('ocaou-sugg__prix', 'vous gagnez ' + prix(avantage)));
@@ -352,6 +423,12 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       var f = bouton.closest('form');
       if (f && f.parentElement) hotes.push({ parent: f.parentElement, avant: f, serre: true });
     });
+    // Panier lateral : ses boutons menent a la page panier, pas au paiement.
+    document.querySelectorAll('cart-drawer form.buy-buttons').forEach(function (f) {
+      if (f.parentElement && !hotes.some(function (h) { return h.parent === f.parentElement; })) {
+        hotes.push({ parent: f.parentElement, avant: f, serre: true });
+      }
+    });
     return hotes;
   }
 
@@ -399,25 +476,25 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
           return;
         }
 
+        // Moins cher : on regroupe tout seul, le client est informe apres coup.
+        // Les regroupements s'enchainent jusqu'au meilleur panier possible.
+        if (trouve && trouve.economie > 0) {
+          enCours = true;
+          echange(trouve).then(function () { apres(trouve); }).catch(function () { enCours = false; });
+          return;
+        }
+
         // Message qui suit un regroupement automatique. Il est garde en memoire :
         // le panier se redessine plusieurs fois et effacerait la carte.
-        try {
-          var stocke = JSON.parse(sessionStorage.getItem('ocaou-sugg-info') || 'null');
-          if (stocke) { infoCourante = stocke; sessionStorage.removeItem('ocaou-sugg-info'); }
-        } catch (e) {}
-        if (infoCourante) {
+        var infos = infosEnAttente();
+        try { sessionStorage.removeItem('ocaou-sugg-info'); } catch (e) {}
+        if (infos.length) {
+          infoCourante = infos;
           pose(function () { return carteInfo(infoCourante); });
           return;
         }
 
         if (!trouve) return;
-
-        // Moins cher : on regroupe tout seul, le client est informe apres coup.
-        if (trouve.economie > 0) {
-          enCours = true;
-          echange(trouve).then(function () { apres(trouve); }).catch(function () { enCours = false; });
-          return;
-        }
 
         // Plus cher parce que le coffret ajoute des articles : on ne l'impose pas.
         if (refuses.indexOf(trouve.coffret.id) !== -1) return;
@@ -435,7 +512,21 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       document.addEventListener('cart:change', passe);
       document.addEventListener('cart:refresh', passe);
       var minuteur = null;
-      new MutationObserver(function () {
+      // On ne relit le panier que lorsqu'il se redessine, et jamais pour nos propres
+      // cartes : sinon chaque carte posee relance la lecture, sans fin.
+      var pagePanier = window.location.pathname.indexOf('/cart') !== -1;
+      function nous(n) {
+        return n.nodeType === 1 && (n.hasAttribute('data-ocaou-sugg') || n.closest('[data-ocaou-sugg]'));
+      }
+      new MutationObserver(function (records) {
+        var utile = records.some(function (r) {
+          var cible = r.target.nodeType === 1 ? r.target : r.target.parentElement;
+          if (!cible || nous(cible)) return false;
+          if (!pagePanier && !cible.closest('cart-drawer')) return false;
+          var noeuds = [].slice.call(r.addedNodes).concat([].slice.call(r.removedNodes));
+          return noeuds.some(function (n) { return !nous(n); });
+        });
+        if (!utile) return;
         clearTimeout(minuteur);
         minuteur = setTimeout(passe, 250);
       }).observe(document.body, { childList: true, subtree: true });
