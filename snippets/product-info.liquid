@@ -122,7 +122,7 @@ Supported variables
                   {%- endif -%}
 
                   {%- if shop.shipping_policy.body != blank -%}
-                    {{ 'product.general.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {{ 'product.general.shipping_policy_html' | t: link: '/pages/livraisons-retours' }}
                   {%- endif -%}
                 </p>
               {%- endif -%}
