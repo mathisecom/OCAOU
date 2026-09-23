@@ -448,6 +448,48 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     });
   }
 
+  // Un cadeau achete seul alors qu'un coffret du panier le contient deja :
+  // l'exemplaire paye part, le coffret apporte le sien.
+  function cadeauxEnDouble(panier) {
+    var retraits = [], infos = [];
+    var restant = {};
+    panier.items.forEach(function (it) { restant[it.key] = it.quantity; });
+    panier.items.forEach(function (it) {
+      var c = table.coffrets.find(function (x) { return x.id === it.product_id; });
+      if (!c) return;
+      var combi = null;
+      Object.keys(c.combinaisons).some(function (k) {
+        if (c.combinaisons[k].variante !== it.variant_id) return false;
+        combi = c.combinaisons[k];
+        return true;
+      });
+      var cadeaux = c.inclus.filter(function (inc) { return inc.offert; });
+      var repris = false;
+      cadeaux.forEach(function (inc) {
+        var besoin = it.quantity;
+        panier.items.forEach(function (l) {
+          if (!besoin || l.product_id !== inc.produit || !restant[l.key]) return;
+          var n = Math.min(besoin, restant[l.key]);
+          restant[l.key] -= n;
+          besoin -= n;
+          repris = true;
+        });
+      });
+      if (repris) {
+        var annonce = cadeaux.reduce(function (t, i) { return t + (i.prix || 0); }, 0) +
+                      (combi ? Math.max(0, (combi.prixBarre || 0) - combi.prix) : 0);
+        infos.push({
+          titre: c.titre, avantage: annonce, image: c.image,
+          offerts: cadeaux.map(function (i) { return { nom: i.nom, offert: true, prix: i.prix || 0 }; })
+        });
+      }
+    });
+    panier.items.forEach(function (it) {
+      if (restant[it.key] !== it.quantity) retraits.push({ ligne: it, quantite: restant[it.key] });
+    });
+    return { retraits: retraits, infos: infos };
+  }
+
   // Une seule lecture du panier a la fois : deux lectures paralleles feraient
   // chacune le meme regroupement, et le coffret arriverait en double.
   var enLecture = false, aRelire = false;
@@ -464,6 +506,30 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
 
         // Cadeau « offert avec » un coffret qui n'est plus au panier : il part avec lui.
+        var doubles = cadeauxEnDouble(panier);
+        if (doubles.retraits.length) {
+          enCours = true;
+          var infosDoubles = infosEnAttente().concat(doubles.infos);
+          infoCourante = null;
+          try { sessionStorage.setItem('ocaou-sugg-info', JSON.stringify(infosDoubles)); } catch (e) {}
+          var suiteDoubles = Promise.resolve();
+          doubles.retraits.forEach(function (r) {
+            suiteDoubles = suiteDoubles.then(function () {
+              return fetch(window.Shopify.routes.root + 'cart/change.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: r.ligne.key, quantity: r.quantite })
+              });
+            });
+          });
+          suiteDoubles.then(function () {
+            enCours = false;
+            if (window.location.pathname.indexOf('/cart') !== -1) window.location.reload();
+            else if (window.OCAOUCart && window.OCAOUCart.refresh) window.OCAOUCart.refresh();
+          }, function () { enCours = false; });
+          return;
+        }
+
         var trouve = panier.items && panier.items.length >= 2 ? chercheCoffret(panier) : null;
         // Seul un regroupement automatique les reprend (il les absorbe dans le coffret).
         var orphelins = trouve && trouve.economie > 0 ? [] : (panier.items || []).filter(function (it) {
