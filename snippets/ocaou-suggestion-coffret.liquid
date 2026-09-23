@@ -231,11 +231,18 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       // Un coffret plus cher ne se propose pas a qui l'a deja.
       if (combi.prix >= actuel && dejaAuPanier) continue;
 
+      // Le message du panier reprend le calcul de la fiche coffret : prix barre moins
+      // prix, plus la valeur de tous les cadeaux, deja au panier ou non.
+      var cadeaux = c.inclus.filter(function (inc) { return inc.offert; })
+                            .map(function (inc) { return { nom: inc.nom, offert: true, prix: inc.prix || 0 }; });
+      var annonce = Math.max(0, (combi.prixBarre || 0) - combi.prix) +
+                    cadeaux.reduce(function (t, i) { return t + i.prix; }, 0);
+
       trouves.push({
         coffret: c, combi: combi, lignes: lignes, actuel: actuel,
         economie: actuel - combi.prix,
         avantage: actuel - combi.prix + valeurAjoutee,
-        enPlus: enPlus
+        enPlus: enPlus, cadeaux: cadeaux, annonce: annonce
       });
     }
     return trouves;
@@ -318,8 +325,8 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     infos.push({
       titre: trouve.coffret.titre,
       economie: trouve.economie,
-      avantage: trouve.avantage,
-      offerts: trouve.enPlus,
+      avantage: trouve.annonce,
+      offerts: trouve.enPlus.filter(function (i) { return !i.offert; }).concat(trouve.cadeaux),
       image: trouve.coffret.image
     });
     try { sessionStorage.setItem('ocaou-sugg-info', JSON.stringify(infos)); } catch (e) {}
