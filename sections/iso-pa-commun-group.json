@@ -11,46 +11,6 @@
   "type": "footer",
   "name": "Blocs communs (toutes fiches)",
   "sections": {
-    "rich_text_8WeW6j": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_JPigfW": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_BbgD3z": {
-          "type": "heading",
-          "settings": {
-            "text": "À CHAQUE IMPRÉVU, SA SOLUTION",
-            "heading_tag": "h1",
-            "text_color": "#AF6C67",
-            "gradient": ""
-          }
-        },
-        "richtext_X69k3a": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_JPigfW",
-        "heading_BbgD3z",
-        "richtext_X69k3a"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "moments": {
       "type": "iso-pa-moments",
       "blocks": {
@@ -455,7 +415,6 @@
     }
   },
   "order": [
-    "rich_text_8WeW6j",
     "moments",
     "avis_verts",
     "eventualities"
