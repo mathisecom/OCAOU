@@ -106,6 +106,7 @@
         "complement_1"
       ],
       "settings": {
+        "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
         "titre": "Gourde",
         "accroche": "O'CAOU j'ai faim",
@@ -117,6 +118,7 @@
         "pitch": "Une gourde en silicone qui accompagne votre enfant partout : à la crèche, à la maternelle, au sport, en balade ou en voyage. C’est la gourde des Petits Grands. Pensée pour les petites mains. Imaginée pour les grandes aventures.",
         "puces": "Incassable\nDéveloppe l’autonomie\nSouple & légère\nBouchon anti-fuite",
         "galerie": "",
+        "opt_texte": false,
         "leopard": "Léopard\nGraou",
         "couleurs": "Rose: #E8898A\nsac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED",
         "offre_titre": "Complétez votre Kit Repas Nomade",
@@ -169,9 +171,9 @@
           "coffret-premier-repas",
           "coffret-comme-les-grands",
           "duo-essentiel",
-          "duo-miam",
-          "kit-repas-complet"
+          "duo-miam"
         ],
+        "cols": "auto",
         "bg_color": "#ffffff",
         "filet": true
       }
