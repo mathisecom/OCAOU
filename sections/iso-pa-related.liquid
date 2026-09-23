@@ -10,9 +10,9 @@
 {%- capture tid -%}pa-rel-{{ sid }}{%- endcapture -%}
 {%- assign liste = section.settings.produits -%}
 {%- comment -%}
-  Quatre cartes par ligne, toujours : la ligne se complete toute seule avec des produits de la
-  meme collection quand moins de quatre produits sont choisis, pour ne jamais laisser de case
-  vide (demande du 19/09). Le nombre de cartes par ligne reste reglable dans le panneau.
+  Seuls les produits choisis s'affichent (retour de la cliente du 22/09 : la ligne se completait
+  avec des produits de la collection qu'elle n'avait pas choisis). Les cartes gardent la largeur
+  d'une ligne de quatre et la ligne se centre : pas de carte etiree, pas de trou a droite.
 {%- endcomment -%}
 {%- assign cols = section.settings.cols | default: 'auto' -%}
 {%- if cols == 'auto' -%}{%- assign cols = 4 -%}{%- else -%}{%- assign cols = cols | times: 1 -%}{%- endif -%}
@@ -27,34 +27,15 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- comment -%} Cible : le multiple de `cols` juste au-dessus, plafonne a 12. {%- endcomment -%}
-{%- if nb > 0 -%}
-  {%- assign lignes = nb | plus: cols | minus: 1 | divided_by: cols -%}
-  {%- assign cible = lignes | times: cols -%}
-  {%- if cible > 12 -%}{%- assign cible = 12 -%}{%- endif -%}
-{%- else -%}
-  {%- assign cible = 0 -%}
-{%- endif -%}
-
-{%- comment -%} Complement : produits de la collection choisie, sinon de la premiere collection du produit. {%- endcomment -%}
-{%- assign reste = cible | minus: nb -%}
-{%- if reste > 0 -%}
-  {%- assign src = section.settings.collection -%}
-  {%- if src == blank -%}{%- assign src = product.collections.first -%}{%- endif -%}
-  {%- if src != blank -%}
-    {%- for cp in src.products -%}
-      {%- if reste <= 0 -%}{%- break -%}{%- endif -%}
-      {%- assign cle = cp.handle | append: ',' -%}
-      {%- unless handles contains cle or cp.handle == product.handle -%}
-        {%- assign handles = handles | append: cle -%}
-        {%- assign reste = reste | minus: 1 -%}
-      {%- endunless -%}
-    {%- endfor -%}
-  {%- endif -%}
-{%- endif -%}
 {%- assign cartes = handles | split: ',' -%}
 
 {%- if liste.size > 0 or request.design_mode -%}
+<style>
+  @media screen and (min-width:960px){
+    #shopify-section-{{ sid }} .pa-rel{display:flex;flex-wrap:wrap;justify-content:center;column-gap:24px;row-gap:40px}
+    #shopify-section-{{ sid }} .pa-rel>li{flex:0 0 {% if cols == 1 %}min(360px,100%){% else %}calc((100% - {{ cols | minus: 1 | times: 24 }}px) / {{ cols }}){% endif %}}
+  }
+</style>
 <div class="iso-pa">
 <section class="pa-sec pa-rel-sec{% if section.settings.filet %} pa-rule{% endif %}" aria-labelledby="pa-rel-h-{{ sid }}" style="background:{{ section.settings.bg_color | default: '#FFFFFF' }}"><div class="pa-w">
   <div class="pa-head"><h2 class="pa-h2" id="pa-rel-h-{{ sid }}">{{ section.settings.titre | escape }}</h2></div>
@@ -95,7 +76,7 @@
     { "type": "text", "id": "titre", "label": "Titre", "default": "Souvent achetés ensemble" },
     { "type": "product_list", "id": "produits", "label": "Produits", "info": "Jusqu'à 6 produits, dans l'ordre d'affichage.", "limit": 6 },
     { "type": "select", "id": "cols", "label": "Cartes par ligne (ordinateur)", "default": "auto",
-      "info": "Automatique : la ligne se remplit toute seule, sans case vide.",
+      "info": "Automatique : 4 cartes par ligne, centrées.",
       "options": [
         { "value": "auto", "label": "Automatique" },
         { "value": "2", "label": "2" },
@@ -103,8 +84,6 @@
         { "value": "4", "label": "4" },
         { "value": "5", "label": "5" }
       ] },
-    { "type": "collection", "id": "collection", "label": "Collection pour compléter la ligne",
-      "info": "Sert à remplir la ligne quand moins de produits sont choisis. Vide : la collection du produit affiché." },
     { "type": "color", "id": "bg_color", "label": "Couleur de fond", "default": "#FFFFFF" },
     { "type": "checkbox", "id": "filet", "label": "Trait de séparation au-dessus", "default": false }
   ],
