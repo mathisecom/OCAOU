@@ -11,23 +11,25 @@
   "type": "footer",
   "name": "Blocs communs (toutes fiches)",
   "sections": {
-    "image_with_text_overlay_y4Uy7C": {
-      "type": "image-with-text-overlay",
+    "rich_text_8WeW6j": {
+      "type": "rich-text",
       "blocks": {
-        "subheading_DYdWy6": {
+        "subheading_JPigfW": {
           "type": "subheading",
           "settings": {
             "text": ""
           }
         },
-        "heading_WJDLDE": {
+        "heading_BbgD3z": {
           "type": "heading",
           "settings": {
             "text": "À CHAQUE IMPRÉVU, SA SOLUTION",
-            "heading_tag": "h1"
+            "heading_tag": "h1",
+            "text_color": "#AF6C67",
+            "gradient": ""
           }
         },
-        "richtext_TwVwLc": {
+        "richtext_X69k3a": {
           "type": "richtext",
           "settings": {
             "content": ""
@@ -35,22 +37,18 @@
         }
       },
       "block_order": [
-        "subheading_DYdWy6",
-        "heading_WJDLDE",
-        "richtext_TwVwLc"
+        "subheading_JPigfW",
+        "heading_BbgD3z",
+        "richtext_X69k3a"
       ],
-      "name": "Image with text overlay",
+      "name": "Rich text",
       "settings": {
         "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/tous_les_o_caou_4.png",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 15
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "moments": {
@@ -457,7 +455,7 @@
     }
   },
   "order": [
-    "image_with_text_overlay_y4Uy7C",
+    "rich_text_8WeW6j",
     "moments",
     "avis_verts",
     "eventualities"
