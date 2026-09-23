@@ -281,33 +281,43 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   // Un regroupement moins cher d'abord ; sinon, le plus grand coffret a proposer.
   function chercheCoffret(panier) {
     var plan = meilleur(panier, 0);
-    if (plan.premier) return plan.premier;
-    var tous = candidats(panier);
-    return tous.length ? tous[0] : null;
+    var t = plan.premier || candidats(panier)[0] || null;
+    if (t) t.panier = panier;
+    return t;
   }
 
   /* ------------------------------------------------------------ echange */
 
+  // Les articles repris partent en un seul envoi, et le coffret n'est ajoute que si
+  // le panier renvoye confirme leur depart : sinon le client paierait deux fois.
   function echange(trouve) {
-    var suite = Promise.resolve();
+    var updates = {}, attendu = {}, avant = {};
+    trouve.panier.items.forEach(function (it) {
+      avant[it.variant_id] = (avant[it.variant_id] || 0) + it.quantity;
+    });
     trouve.lignes.forEach(function (l) {
-      suite = suite.then(function () {
-        return fetch(window.Shopify.routes.root + 'cart/change.js', {
+      updates[l.key] = Math.max(0, (updates[l.key] === undefined ? l.quantity : updates[l.key]) - 1);
+      attendu[l.variant_id] = (attendu[l.variant_id] === undefined ? avant[l.variant_id] : attendu[l.variant_id]) - 1;
+    });
+    return fetch(window.Shopify.routes.root + 'cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ updates: updates })
+    })
+      .then(function (r) { if (!r.ok) throw new Error('panier'); return r.json(); })
+      .then(function (panier) {
+        var reste = {};
+        panier.items.forEach(function (it) { reste[it.variant_id] = (reste[it.variant_id] || 0) + it.quantity; });
+        var confirme = Object.keys(attendu).every(function (v) { return (reste[v] || 0) === attendu[v]; });
+        if (!confirme) throw new Error('panier');
+        var lignes = [{ id: trouve.combi.variante, quantity: 1 }];
+        if (window.OCAOUCart && window.OCAOUCart.add) return window.OCAOUCart.add(lignes);
+        return fetch(window.Shopify.routes.root + 'cart/add.js', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: l.key, quantity: Math.max(0, l.quantity - 1) })
+          body: JSON.stringify({ items: lignes })
         });
       });
-    });
-    return suite.then(function () {
-      var lignes = [{ id: trouve.combi.variante, quantity: 1 }];
-      if (window.OCAOUCart && window.OCAOUCart.add) return window.OCAOUCart.add(lignes);
-      return fetch(window.Shopify.routes.root + 'cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: lignes })
-      });
-    });
   }
 
   // Les regroupements s'enchainent : le message les annonce tous ensemble.
@@ -602,7 +612,10 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         // Les regroupements s'enchainent jusqu'au meilleur panier possible.
         if (trouve && trouve.economie > 0) {
           enCours = true;
-          echange(trouve).then(function () { apres(trouve); }).catch(function () { enCours = false; });
+          echange(trouve).then(function () { apres(trouve); }).catch(function () {
+            enCours = false;
+            if (window.OCAOUCart && window.OCAOUCart.refresh) window.OCAOUCart.refresh();
+          });
           return;
         }
 
