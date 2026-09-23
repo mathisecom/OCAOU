@@ -168,7 +168,20 @@ Color swatch specific parameters:
   {%- when 'swatch' -%}
     {%- assign white_label_list = 'general.label.white' | t | replace: ', ', ',' | downcase | split: ',' -%}
 
-    <{{ option_value_tag }} class="color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if white_label_list contains downcase_label %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}" {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}" {{ attributes }}>
+    {%- comment -%}
+      O'CAOU : avec pa_handle (cartes produit, achat rapide), la pastille est celle de la fiche :
+      teinte relevee pour ce produit, motif Graou et Leopard (reglage « leopard » des fiches), anneau.
+    {%- endcomment -%}
+    {%- if pa_handle != blank -%}
+      {%- capture pa_txt -%}{%- render 'iso-pa-couleurs' -%}{%- endcapture -%}
+      {%- assign pa_cfg = pa_txt | strip | newline_to_br | split: '<br />' -%}
+      {%- assign pa_swcfg = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
+    {%- endif -%}
+
+    <{{ option_value_tag }} class="{% if pa_handle != blank %}oc-sw {% endif %}color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if white_label_list contains downcase_label %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}" {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}" {{ attributes }}>
+      {%- if pa_handle != blank -%}
+        {%- render 'iso-pa-sw', val: label, handle: pa_handle, cfg: pa_cfg, swcfg: pa_swcfg, leo: ',léopard,graou,' -%}
+      {%- endif -%}
       <span class="sr-only">{{ label | default: value }}</span>
     </{{ option_value_tag }}>
 
