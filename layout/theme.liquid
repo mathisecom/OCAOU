@@ -186,21 +186,21 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
     {%- if request.path contains '/policies/' -%}
       <style>
         .shopify-policy__body h1 { display: none; }
-        .shopify-policy__body h2,
-        .shopify-policy__body h3 {
+        .shopify-policy__container .shopify-policy__body h2:not(.h1),
+        .shopify-policy__container .shopify-policy__body h3:not(.h1) {
           font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
           font-weight: 600;
           line-height: 1.25;
           margin: 3rem 0 0.75rem;
         }
-        .shopify-policy__body h4 {
+        .shopify-policy__container .shopify-policy__body h4:not(.h1) {
           font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
           font-weight: 600;
           line-height: 1.35;
           margin: 2rem 0 0.5rem;
         }
-        .shopify-policy__body p,
-        .shopify-policy__body li {
+        .shopify-policy__container .shopify-policy__body p:not(.h1),
+        .shopify-policy__container .shopify-policy__body li:not(.h1) {
           font-size: 1rem;
           line-height: 1.6;
         }
