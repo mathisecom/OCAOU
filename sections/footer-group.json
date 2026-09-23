@@ -452,7 +452,7 @@
         "legal_1_texte": "Mentions légales",
         "legal_1_url": "shopify://pages/mentions-legales",
         "legal_2_texte": "Conditions générales de vente",
-        "legal_2_url": "shopify://pages/conditions-generales-de-ventes",
+        "legal_2_url": "/policies/terms-of-sale",
         "legal_3_texte": "Politique de confidentialité",
         "legal_3_url": "shopify://pages/politique-de-confidentialite",
         "cookies_texte": "Cookies",
