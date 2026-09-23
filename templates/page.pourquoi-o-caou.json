@@ -224,46 +224,6 @@
         "padding_bottom_mobile": 48
       }
     },
-    "rich_text_gU8Qdp": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_3FFUnG": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_fD9Gak": {
-          "type": "heading",
-          "settings": {
-            "text": "À CHAQUE IMPRÉVU, SA SOLUTION",
-            "heading_tag": "h1",
-            "text_color": "#af6c67",
-            "gradient": ""
-          }
-        },
-        "richtext_FJgHHU": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_3FFUnG",
-        "heading_fD9Gak",
-        "richtext_FJgHHU"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "#ffffff",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "impact_text_HgAbg3": {
       "type": "impact-text",
       "name": "Impact text",
@@ -287,7 +247,6 @@
   "order": [
     "image_with_text_overlay_3cjydE",
     "ocaoujaibesoin",
-    "rich_text_gU8Qdp",
     "impact_text_HgAbg3"
   ]
 }
