@@ -11,6 +11,48 @@
   "type": "footer",
   "name": "Blocs communs (toutes fiches)",
   "sections": {
+    "image_with_text_overlay_y4Uy7C": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_DYdWy6": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_WJDLDE": {
+          "type": "heading",
+          "settings": {
+            "text": "Pour tous les petits au cas où...du quotidien",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_TwVwLc": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_DYdWy6",
+        "heading_WJDLDE",
+        "richtext_TwVwLc"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/tous_les_o_caou_4.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 15
+      }
+    },
     "moments": {
       "type": "iso-pa-moments",
       "blocks": {
@@ -415,6 +457,7 @@
     }
   },
   "order": [
+    "image_with_text_overlay_y4Uy7C",
     "moments",
     "avis_verts",
     "eventualities"

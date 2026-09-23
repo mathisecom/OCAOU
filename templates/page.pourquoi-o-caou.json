@@ -22,7 +22,7 @@
         "heading_dwYgfc": {
           "type": "heading",
           "settings": {
-            "text": "Pour tous les petits au cas où...du quotidien",
+            "text": "",
             "heading_tag": "h1"
           }
         },
@@ -44,12 +44,12 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/tous_les_o_caou_4.png",
+        "image": "shopify://shop_images/tasses_ocaou.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 15
+        "overlay_opacity": 0
       }
     },
     "ocaoujaibesoin": {
@@ -238,7 +238,7 @@
           "settings": {
             "text": "À CHAQUE IMPRÉVU, SA SOLUTION",
             "heading_tag": "h1",
-            "text_color": "#AF6C67",
+            "text_color": "#af6c67",
             "gradient": ""
           }
         },
@@ -259,7 +259,7 @@
         "full_width": true,
         "content_width": "small",
         "text_position": "center",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": ""
       }
