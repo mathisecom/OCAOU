@@ -31,6 +31,8 @@
 
 {%- if liste.size > 0 or request.design_mode -%}
 <style>
+  /* La case photo reste carree : une photo en portrait parmi celles de la carte l'agrandissait. */
+  #shopify-section-{{ sid }} .pa-pc-img{min-height:0}
   @media screen and (min-width:960px){
     #shopify-section-{{ sid }} .pa-rel{display:flex;flex-wrap:wrap;justify-content:center;column-gap:24px;row-gap:40px}
     #shopify-section-{{ sid }} .pa-rel>li{flex:0 0 {% if cols == 1 %}min(360px,100%){% else %}calc((100% - {{ cols | minus: 1 | times: 24 }}px) / {{ cols }}){% endif %}}
