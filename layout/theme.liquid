@@ -182,6 +182,31 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         }
       });
     </script>
+    {%- comment -%} Pages de politiques : meme echelle que les pages legales du site. {%- endcomment -%}
+    {%- if request.path contains '/policies/' -%}
+      <style>
+        .shopify-policy__body h1 { display: none; }
+        .shopify-policy__body h2,
+        .shopify-policy__body h3 {
+          font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+          font-weight: 600;
+          line-height: 1.25;
+          margin: 3rem 0 0.75rem;
+        }
+        .shopify-policy__body h4 {
+          font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+          font-weight: 600;
+          line-height: 1.35;
+          margin: 2rem 0 0.5rem;
+        }
+        .shopify-policy__body p,
+        .shopify-policy__body li {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+        .shopify-policy__body > :first-child { margin-top: 0; }
+      </style>
+    {%- endif -%}
   </head>
 
   <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
