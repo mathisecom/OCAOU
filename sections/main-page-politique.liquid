@@ -1,8 +1,8 @@
 {%- comment -%}
-  Pages legales : mentions, confidentialite, livraisons et retours, conditions generales.
-  Mentions, confidentialite, livraison et retours viennent des Parametres > Politiques de la
-  boutique : une seule source, et les liens du pied de page y renvoient. Les conditions
-  generales de vente font exception : le texte complet vit dans la page (Contenu > Pages).
+  Pages legales du site : mentions, confidentialite, livraisons et retours. Leur texte vient
+  des Parametres > Politiques de la boutique : une seule source, et les liens du pied de page
+  y renvoient. Les conditions de vente, elles, sont affichees par Shopify sur /policies/, avec
+  la meme echelle, posee dans layout/theme.liquid.
   Si la source correspondante est vide, la page garde son propre contenu (aucune page blanche).
 
   Les cinq pages doivent se lire pareil. Les textes n'ont pas ete ecrits au meme moment et
@@ -34,8 +34,8 @@
     {{ shop.refund_policy }}
 
   {%- else -%}
-    {%- comment -%} Conditions generales de vente. {%- endcomment -%}
-    {{ shop.terms_of_sale }}
+    {%- comment -%} Toute autre page posee sur ce gabarit. {%- endcomment -%}
+    {{ page.content }}
   {%- endif -%}
 {%- endcapture -%}
 
