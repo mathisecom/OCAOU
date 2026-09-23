@@ -270,7 +270,7 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/tous_les_o_caou_4.png",
+        "image": "shopify://shop_images/tous_les_imprevus_bleu.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
