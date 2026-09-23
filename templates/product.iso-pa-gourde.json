@@ -168,10 +168,10 @@
       "settings": {
         "titre": "Souvent achetés ensemble",
         "produits": [
+          "duo-miam",
           "coffret-premier-repas",
-          "coffret-comme-les-grands",
           "duo-essentiel",
-          "duo-miam"
+          "coffret-comme-les-grands"
         ],
         "cols": "auto",
         "bg_color": "#ffffff",
