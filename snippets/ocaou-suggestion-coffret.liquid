@@ -316,7 +316,22 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     try { liste = JSON.parse(sessionStorage.getItem('ocaou-sugg-info') || '[]') || []; } catch (e) {}
     if (!Array.isArray(liste)) liste = [liste];
     if (infoCourante) liste = infoCourante.concat(liste);
-    return liste;
+    // Un meme coffret ne s'annonce qu'une fois, meme si le panier a ete relu plusieurs fois.
+    return liste.filter(function (i, n) {
+      return !liste.slice(n + 1).some(function (j) { return j.titre === i.titre; });
+    });
+  }
+
+  // Coffrets deja vus dans ce panier : un cadeau ajoute apres son coffret est un achat
+  // voulu et reste un produit a part. Seul un cadeau present avant le coffret est repris.
+  var CLE_VUS = 'ocaou-coffrets-vus';
+  function lisVus(panier) {
+    var m = null;
+    try { m = JSON.parse(localStorage.getItem(CLE_VUS) || 'null'); } catch (e) {}
+    return m && m.token === panier.token ? m : null;
+  }
+  function ecrisVus(m) {
+    try { localStorage.setItem(CLE_VUS, JSON.stringify(m)); } catch (e) {}
   }
 
   function apres(trouve) {
@@ -330,6 +345,15 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       image: trouve.coffret.image
     });
     try { sessionStorage.setItem('ocaou-sugg-info', JSON.stringify(infos)); } catch (e) {}
+    // Le coffret forme ici a deja repris ses cadeaux : il compte comme vu.
+    try {
+      var m = JSON.parse(localStorage.getItem(CLE_VUS) || 'null');
+      if (m) {
+        m.formes = m.formes || {};
+        m.formes[trouve.combi.variante] = (m.formes[trouve.combi.variante] || 0) + 1;
+        ecrisVus(m);
+      }
+    } catch (e) {}
     var surLaPagePanier = window.location.pathname.indexOf('/cart') !== -1;
     if (!surLaPagePanier && window.OCAOUCart && window.OCAOUCart.add) { enCours = false; passe(); return; }
     window.location.reload();
@@ -452,11 +476,30 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   // l'exemplaire paye part, le coffret apporte le sien.
   function cadeauxEnDouble(panier) {
     var retraits = [], infos = [];
+    var memo = lisVus(panier);
+    var formes = (memo && memo.formes) || {};
+    var vus = {};
+    panier.items.forEach(function (it) {
+      if (table.coffrets.some(function (x) { return x.id === it.product_id; })) vus[it.key] = it.quantity;
+    });
+    // Premier passage sur ce panier : ce qui est deja la reste tel quel.
+    var nouveaux = {};
+    if (memo) {
+      Object.keys(vus).forEach(function (k) {
+        var ligne = panier.items.find(function (it) { return it.key === k; });
+        var n = vus[k] - ((memo.vus || {})[k] || 0);
+        var dejaFormes = Math.min(Math.max(n, 0), formes[ligne.variant_id] || 0);
+        if (dejaFormes) formes[ligne.variant_id] -= dejaFormes;
+        if (n - dejaFormes > 0) nouveaux[k] = n - dejaFormes;
+      });
+    }
+    ecrisVus({ token: panier.token, vus: vus, formes: formes });
+
     var restant = {};
     panier.items.forEach(function (it) { restant[it.key] = it.quantity; });
     panier.items.forEach(function (it) {
       var c = table.coffrets.find(function (x) { return x.id === it.product_id; });
-      if (!c) return;
+      if (!c || !nouveaux[it.key]) return;
       var combi = null;
       Object.keys(c.combinaisons).some(function (k) {
         if (c.combinaisons[k].variante !== it.variant_id) return false;
@@ -466,7 +509,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       var cadeaux = c.inclus.filter(function (inc) { return inc.offert; });
       var repris = false;
       cadeaux.forEach(function (inc) {
-        var besoin = it.quantity;
+        var besoin = nouveaux[it.key];
         panier.items.forEach(function (l) {
           if (!besoin || l.product_id !== inc.produit || !restant[l.key]) return;
           var n = Math.min(besoin, restant[l.key]);
