@@ -33,12 +33,9 @@
   {%- elsif h contains 'retour' -%}
     {{ shop.refund_policy }}
 
-  {%- elsif h contains 'conditions-generales' -%}
-    {{ page.content | replace: '<h3', '<h2' | replace: '</h3>', '</h2>' }}
-
   {%- else -%}
-    {%- assign source = shop.terms_of_sale | split: '</h1>' | last -%}
-    {{ source | replace: '<h3', '<h2' | replace: '</h3>', '</h2>' }}
+    {%- comment -%} Conditions generales de vente. {%- endcomment -%}
+    {{ shop.terms_of_sale }}
   {%- endif -%}
 {%- endcapture -%}
 
