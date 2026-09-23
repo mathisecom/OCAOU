@@ -441,9 +441,15 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     });
   }
 
+  // Une seule lecture du panier a la fois : deux lectures paralleles feraient
+  // chacune le meme regroupement, et le coffret arriverait en double.
+  var enLecture = false, aRelire = false;
+
   function passe() {
     if (!table || enCours) return;
     if (!hotesPanier().length) return;
+    if (enLecture) { aRelire = true; return; }
+    enLecture = true;
 
     fetch(window.Shopify.routes.root + 'cart.js', { headers: { 'Accept': 'application/json' } })
       .then(function (r) { return r.json(); })
@@ -500,7 +506,11 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         if (refuses.indexOf(trouve.coffret.id) !== -1) return;
         pose(function () { return carteProposition(trouve); });
       })
-      .catch(function () {});
+      .catch(function () {})
+      .then(function () {
+        enLecture = false;
+        if (aRelire) { aRelire = false; setTimeout(passe, 0); }
+      });
   }
 
 
