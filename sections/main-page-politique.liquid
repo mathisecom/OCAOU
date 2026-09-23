@@ -1,31 +1,90 @@
 {%- comment -%}
-  Pages legales. Mentions, confidentialite, livraison et retours viennent des Parametres >
-  Politiques de la boutique : une seule source, et les liens du pied de page y renvoient.
-  Les conditions generales de vente font exception : elles vivent dans la page elle-meme
-  (Contenu > Pages), parce que le texte complet y est ecrit.
+  Pages legales : mentions, confidentialite, livraisons et retours, conditions generales.
+  Mentions, confidentialite, livraison et retours viennent des Parametres > Politiques de la
+  boutique : une seule source, et les liens du pied de page y renvoient. Les conditions
+  generales de vente font exception : le texte complet vit dans la page (Contenu > Pages).
   Si la source correspondante est vide, la page garde son propre contenu (aucune page blanche).
+
+  Les cinq pages doivent se lire pareil. Les textes n'ont pas ete ecrits au meme moment et
+  employaient des niveaux de titre differents (h2 ici, h3 ou h4 ailleurs), donc des tailles
+  differentes d'une page a l'autre. On les ramene ici a deux niveaux, partie et sous-partie,
+  et les tailles sont fixees plus bas : elles ne dependent plus du texte recu.
 {%- endcomment -%}
+
+{%- assign h = page.handle -%}
+
+{%- capture corps -%}
+  {%- if h contains 'mention' -%}
+    {%- comment -%} Le texte redit le titre de la page : on garde ce qui suit. {%- endcomment -%}
+    {%- assign source = shop.legal_notice | split: '</h2>' | last -%}
+    {{ source | replace: '<h3', '<h2' | replace: '</h3>', '</h2>' }}
+
+  {%- elsif h contains 'confidentialite' -%}
+    {{ shop.privacy_policy }}
+
+  {%- elsif h contains 'livraison' -%}
+    {%- comment -%} Livraison : un cran trop bas partout, on remonte les deux niveaux. {%- endcomment -%}
+    {{- shop.shipping_policy
+        | replace: '<h4', '<hx' | replace: '</h4>', '</hx>'
+        | replace: '<h3', '<h2' | replace: '</h3>', '</h2>'
+        | replace: '<hx', '<h3' | replace: '</hx>', '</h3>' -}}
+    <div id="retours">{{ shop.refund_policy }}</div>
+
+  {%- elsif h contains 'retour' -%}
+    {{ shop.refund_policy }}
+
+  {%- elsif h contains 'conditions-generales' -%}
+    {{ page.content | replace: '<h3', '<h2' | replace: '</h3>', '</h2>' }}
+
+  {%- else -%}
+    {%- assign source = shop.terms_of_sale | split: '</h1>' | last -%}
+    {{ source | replace: '<h3', '<h2' | replace: '</h3>', '</h2>' }}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- comment -%} Deux espaces de suite, l'un insecable : coquille de saisie, invisible a la
+  relecture dans l'editeur mais visible sur la page. {%- endcomment -%}
+{%- assign corps = corps | strip | replace: '&nbsp; ', ' ' | replace: ' &nbsp;', ' ' | replace: '  ', ' ' | replace: '  ', ' ' -%}
+
 <style>
   #shopify-section-{{ section.id }} {
     --page-max-width: {{ section.settings.content_width }};
   }
+
   /* Le theme affiche ces fragments de phrase en bloc : l'espace qui les precede disparaissait
      et deux mots se retrouvaient colles. */
   #shopify-section-{{ section.id }} .prose * + span:not(:empty) { display: inline; }
-</style>
 
-{%- assign h = page.handle -%}
-{%- capture corps -%}
-  {%- if h contains 'mention' -%}{{ shop.legal_notice }}
-  {%- elsif h contains 'confidentialite' -%}{{ shop.privacy_policy }}
-  {%- elsif h contains 'livraison' -%}{{ shop.shipping_policy }}<div id="retours">{{ shop.refund_policy }}</div>
-  {%- elsif h contains 'retour' -%}{{ shop.refund_policy }}
-  {%- elsif h contains 'conditions-generales' -%}{{ page.content }}
-  {%- else -%}{{ shop.terms_of_sale }}{%- endif -%}
-{%- endcapture -%}
-{%- comment -%} Deux espaces de suite, l'un insecable : coquille de saisie, invisible a la
-  relecture dans l'editeur mais visible sur la page. {%- endcomment -%}
-{%- assign corps = corps | strip | replace: '&nbsp; ', ' ' | replace: ' &nbsp;', ' ' | replace: '  ', ' ' | replace: '  ', ' ' -%}
+  /* Echelle commune aux cinq pages legales. */
+  #shopify-section-{{ section.id }} .prose h2 {
+    font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 3rem 0 0.75rem;
+  }
+  #shopify-section-{{ section.id }} .prose h3 {
+    font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 2rem 0 0.5rem;
+  }
+  #shopify-section-{{ section.id }} .prose h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 1.5rem 0 0.5rem;
+  }
+  #shopify-section-{{ section.id }} .prose p,
+  #shopify-section-{{ section.id }} .prose li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  #shopify-section-{{ section.id }} .prose p { margin: 0 0 1rem; }
+  #shopify-section-{{ section.id }} .prose ul,
+  #shopify-section-{{ section.id }} .prose ol { margin: 0 0 1rem; }
+  #shopify-section-{{ section.id }} .prose li { margin: 0 0 0.25rem; }
+  #shopify-section-{{ section.id }} .prose > :first-child { margin-top: 0; }
+</style>
 
 <div class="container">
   <div class="page-spacer">
