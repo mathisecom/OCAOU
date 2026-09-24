@@ -22,6 +22,7 @@
   {%- if s.accroche != blank -%}<p class="pa-eyebrow">{{ s.accroche | escape }}</p>{%- endif -%}
   <h2 class="pa-evt-h" id="pa-evt-h-{{ section.id }}">{{ s.titre | escape | replace: '. ', '.<br>' }}</h2>
   {%- if s.texte != blank -%}<p class="pa-lead">{{ s.texte | escape }}</p>{%- endif -%}
+  {%- if s.bouton != blank and s.bouton_lien != blank -%}<p><a class="pa-btn" href="{{ s.bouton_lien }}">{{ s.bouton | escape }}</a></p>{%- endif -%}
 {%- endcapture -%}
 <div class="iso-pa">
 <section class="pa-sec{% if s.filet %} pa-rule{% endif %}" aria-labelledby="pa-evt-h-{{ section.id }}" style="background:{{ s.bg_color | default: '#F4EDE1' }}"><div class="pa-w">
@@ -55,6 +56,8 @@
     { "type": "text", "id": "accroche", "label": "Accroche (petite majuscule)" },
     { "type": "text", "id": "titre", "label": "Titre", "default": "Parés à toutes les éventualités. Juste O'CAOU.", "info": "Retour à la ligne après chaque point." },
     { "type": "textarea", "id": "texte", "label": "Texte" },
+    { "type": "text", "id": "bouton", "label": "Texte du bouton" },
+    { "type": "url", "id": "bouton_lien", "label": "Lien du bouton" },
     { "type": "image_picker", "id": "image", "label": "Grande image" },
     { "type": "text", "id": "alt", "label": "Description de l'image (texte alternatif)" },
     { "type": "range", "id": "cadrage", "label": "Cadrage vertical de l'image", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 50, "info": "0 : haut de la photo, 100 : bas." },
@@ -65,6 +68,7 @@
   "presets": [{ "name": "Éventualités" }]
 }
 {% endschema %}
+
 
 
 

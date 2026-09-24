@@ -383,8 +383,8 @@
           "settings": {
             "titre": "Boutique",
             "menu": "main-menu",
-            "lien_1_texte": "",
-            "lien_1_url": "",
+            "lien_1_texte": "Tous les produits",
+            "lien_1_url": "/collections/all",
             "lien_2_texte": "",
             "lien_2_url": "",
             "lien_3_texte": "",

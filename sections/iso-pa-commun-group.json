@@ -410,7 +410,9 @@
         "cadrage": 55,
         "cote": "gauche",
         "bg_color": "#f4ede1",
-        "filet": false
+        "filet": false,
+        "bouton": "Tous les produits",
+        "bouton_lien": "/collections/all"
       }
     }
   },
