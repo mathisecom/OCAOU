@@ -18,8 +18,21 @@
     <input type="hidden" name="type" value="product">
 
     <predictive-search class="predictive-search" section-id="{{ section.id }}">
-      {%- if section.settings.search_menu.links.size > 0 -%}
+      {%- comment -%}O'CAOU 24/09 : champ vide, des produits sont proposés avant toute saisie.{%- endcomment -%}
+      {%- assign idle_col = section.settings.idle_collection -%}
+      {%- if section.settings.search_menu.links.size > 0 or idle_col.products.size > 0 -%}
         <div slot="idle">
+          {%- if idle_col.products.size > 0 -%}
+            <div class="v-stack gap-4 sm:gap-6">
+              <p class="h5">{{ section.settings.idle_title | default: idle_col.title }}</p>
+              <div class="v-stack gap-4 sm:gap-6">
+                {%- for idle_item in idle_col.products limit: section.settings.idle_count -%}
+                  {%- render 'predictive-search-result-item', item: idle_item, type: 'product' -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.search_menu.links.size > 0 -%}
           <div class="v-stack gap-3 sm:gap-4">
             {%- if section.settings.search_menu_show_title -%}
               <p class="bold text-subdued">{{ section.settings.search_menu.title }}</p>
@@ -35,6 +48,7 @@
               {%- endfor -%}
             </ul>
           </div>
+          {%- endif -%}
         </div>
       {%- endif -%}
 
@@ -266,6 +280,29 @@
       "id": "search_menu_show_title",
       "label": "Show menu title",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Produits proposés avant la recherche"
+    },
+    {
+      "type": "collection",
+      "id": "idle_collection",
+      "label": "Collection affichée quand le champ est vide"
+    },
+    {
+      "type": "text",
+      "id": "idle_title",
+      "label": "Titre (par défaut, le nom de la collection)"
+    },
+    {
+      "type": "range",
+      "id": "idle_count",
+      "label": "Nombre de produits",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 6
     }
   ]
 }
