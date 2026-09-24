@@ -78,14 +78,6 @@
             "label": ""
           }
         },
-        "moment_5": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify://shop_images/margaux_avion.png",
-            "alt": "",
-            "label": ""
-          }
-        },
         "moment_jVEVRi": {
           "type": "moment",
           "settings": {
@@ -150,6 +142,14 @@
             "label": ""
           }
         },
+        "moment_5": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/margaux_avion.png",
+            "alt": "",
+            "label": ""
+          }
+        },
         "moment_3": {
           "type": "moment",
           "settings": {
@@ -161,7 +161,7 @@
         "moment_12": {
           "type": "moment",
           "settings": {
-            "image": "shopify://shop_images/IMG_0538.heic",
+            "image": "shopify://shop_images/ChatGPT_Image_24_sept._2026_13_41_13.png",
             "alt": "",
             "label": ""
           }
@@ -184,7 +184,6 @@
         "moment_6",
         "moment_rUE9zd",
         "moment_8",
-        "moment_5",
         "moment_jVEVRi",
         "moment_1",
         "moment_4",
@@ -193,6 +192,7 @@
         "moment_EYrbH8",
         "moment_QHg9Pa",
         "moment_EJzTaY",
+        "moment_5",
         "moment_3",
         "moment_12",
         "moment_14"
