@@ -453,7 +453,9 @@
           "sac-ocaou",
           "gourde",
           "cabas-ocaou",
-          "sac-isotherme"
+          "sac-isotherme",
+          "veilleuse",
+          "doudou"
         ],
         "full_width": true,
         "stack_products": false,
@@ -503,7 +505,7 @@
         "content": "",
         "link_url": "shopify://collections/les-coffrets",
         "link_text": "Découvrir tous les coffrets",
-        "background": "#F3EDE2",
+        "background": "#f3ede2",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
