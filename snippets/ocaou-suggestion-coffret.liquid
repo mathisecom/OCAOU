@@ -28,7 +28,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
   .ocaou-sugg__actions { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; }
   .ocaou-sugg__cta {
     display: inline-block; padding: 7px 14px; border-radius: 999px; border: 0; cursor: pointer;
-    background: {{ settings.color_accent | default: '#cd9438' }}; color: #fff;
+    background: {{ settings.color_accent | default: '#cd9438' }}; color: #fff; text-decoration: none;
     font: inherit; font-size: .875em; font-weight: 600; line-height: 1.4; white-space: nowrap;
   }
   .ocaou-sugg__cta[disabled] { opacity: .6; cursor: wait; }
@@ -278,10 +278,59 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     return mieux;
   }
 
-  // Un regroupement moins cher d'abord ; sinon, le plus grand coffret a proposer.
+  // Coffrets de trois articles dont le panier contient deja deux : il suffit
+  // d'ajouter le troisieme pour le former (Sac + Doudou, il manque la Gourde).
+  // Le client choisit lui-meme la couleur de l'article manquant sur sa fiche.
+  function aCompleter(panier) {
+    var deplies = deplie(panier);
+    var trouves = [];
+    table.coffrets.forEach(function (c) {
+      if (c.articles.length < 3 || !c.urlsArticles) return;
+      if (panier.items.some(function (it) { return it.product_id === c.id; })) return;
+      var pris = [], manquants = [];
+      c.articles.forEach(function (produitId, n) {
+        var e = deplies.find(function (d) { return d.produit === produitId && pris.indexOf(d) === -1; });
+        if (e) pris.push(e); else manquants.push(n);
+      });
+      if (manquants.length !== 1) return;
+      var presentes = pris.map(function (d) { return String(d.variante); });
+      var combis = Object.keys(c.combinaisons).filter(function (cle) {
+        var parts = cle.split('-');
+        return c.combinaisons[cle].dispo && presentes.every(function (v) { return parts.indexOf(v) !== -1; });
+      }).map(function (cle) { return c.combinaisons[cle]; });
+      if (!combis.length) return;
+      var combi = combis.reduce(function (a, b) { return b.prix < a.prix ? b : a; });
+      var dejaLa = deplies.map(function (d) { return d.variante; });
+      var n = manquants[0];
+      trouves.push({
+        coffret: c, combi: combi, economie: 0, couverts: pris.length,
+        manque: { nom: c.nomsArticles[n], url: c.urlsArticles[n] },
+        enPlus: c.inclus.filter(function (inc) { return dejaLa.indexOf(inc.variante) === -1; })
+                        .map(function (inc) { return { nom: inc.nom, offert: !!inc.offert, prix: inc.prix || 0 }; })
+      });
+    });
+    return trouves;
+  }
+
+  // Un regroupement moins cher d'abord. Sinon, le coffret qui reprend le plus
+  // d'articles du panier : on ne propose pas un coffret qui en laisse un de cote
+  // quand un autre les reprend tous. A egalite, celui qui est deja complet, puis
+  // celui qui ajoute le moins d'articles payants.
   function chercheCoffret(panier) {
     var plan = meilleur(panier, 0);
-    var t = plan.premier || candidats(panier)[0] || null;
+    var t = plan.premier;
+    if (!t) {
+      var payants = function (x) { return x.enPlus.filter(function (i) { return !i.offert; }).length + (x.manque ? 1 : 0); };
+      var liste = candidats(panier).map(function (x) { x.couverts = x.coffret.articles.length; return x; })
+        .concat(aCompleter(panier))
+        .filter(function (x) { return refuses.indexOf(x.coffret.id) === -1; })
+        .map(function (x, rang) { x.rang = rang; return x; });
+      liste.sort(function (a, b) {
+        return (b.couverts - a.couverts) || ((a.manque ? 1 : 0) - (b.manque ? 1 : 0)) ||
+               (payants(a) - payants(b)) || (a.rang - b.rang);
+      });
+      t = liste[0] || null;
+    }
     if (t) t.panier = panier;
     return t;
   }
@@ -424,8 +473,26 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       titre: 'Passez au ' + c.titre,
       prix: trouve.combi.prix,
       barre: trouve.combi.prixBarre,
-      detail: 'Votre article + ' + liste(trouve.enPlus.map(function (i) { return i.nom; })) + '.'
+      // Ce que le client ajoute lui-meme, ce qui est compris, ce qui est offert : trois mentions distinctes.
+      detail: [trouve.manque ? 'À ajouter : ' + trouve.manque.nom + '.' : null, mentionAjouts(trouve.enPlus)]
+                .filter(Boolean).join(' ')
     });
+
+    // Il manque un article : on envoie sur sa fiche, le regroupement se fera a l'ajout.
+    if (trouve.manque) {
+      var lien = bloc('ocaou-sugg__cta', 'Compléter le coffret', 'a');
+      lien.href = trouve.manque.url;
+      var plusTard = bloc('ocaou-sugg__non', 'Compris', 'button');
+      plusTard.type = 'button';
+      plusTard.addEventListener('click', function () {
+        refuses.push(c.id);
+        try { sessionStorage.setItem('ocaou-sugg-refus', JSON.stringify(refuses)); } catch (e) {}
+        m.el.remove();
+      });
+      m.actions.appendChild(plusTard);
+      m.actions.appendChild(lien);
+      return m.el;
+    }
 
     var non = bloc('ocaou-sugg__non', 'Compris', 'button');
     non.type = 'button';
