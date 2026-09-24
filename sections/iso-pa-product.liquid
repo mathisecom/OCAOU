@@ -538,6 +538,8 @@
           {%- endif -%}
         {%- endfor -%}
         {%- if relay -%}<span class="pa-gift">{% render 'iso-pa-icon', name: 'gift' %}<span>Point relais offert</span></span>{%- endif -%}
+        {%- comment -%} Même phrase que l'encadré des cadeaux des fiches coffret. {%- endcomment -%}
+        {%- if adv > 0 -%}<span class="pa-eco">Soit <span class="pa-eco-v">{{ adv | money | replace: ' €', '&nbsp;€' }}</span> d'avantages par rapport à l'achat séparé.</span>{%- endif -%}
       {%- endcapture -%}
       {%- comment -%} La liste des articles reste hors de l'étiquette : une étiquette ne peut contenir qu'une seule case. {%- endcomment -%}
       <div class="pa-opt" {{ b.shopify_attributes }}>
@@ -545,7 +547,7 @@
           <input class="pa-opt-in" type="checkbox" name="pa-off-{{ uid }}" value="{{ oi }}">
           <span class="pa-opt-r" aria-hidden="true"></span>
           <span class="pa-opt-main"><span class="pa-opt-t">{{ b.settings.libelle | escape }}</span>{% if b.settings.badge != blank %}<span class="pa-opt-b">{{ b.settings.badge | escape }}</span>{% endif %}</span>
-          <span class="pa-opt-p"><b>{{ pack | money | replace: ' €', '&nbsp;€' }}</b><s{% if cmp == 0 %} hidden{% endif %}><span class="pa-sr">au lieu de </span><span class="pa-cmp">{% if cmp > 0 %}{{ cmp | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></s><span class="pa-save"{% if adv == 0 %} hidden{% endif %}>{% if adv > 0 %}{{ adv | money | replace: ' €', '&nbsp;€' }} d'avantages{% endif %}</span></span>
+          <span class="pa-opt-p"><b>{{ pack | money | replace: ' €', '&nbsp;€' }}</b><s{% if cmp == 0 %} hidden{% endif %}><span class="pa-sr">au lieu de </span><span class="pa-cmp">{% if cmp > 0 %}{{ cmp | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></s></span>
           <span class="pa-opt-more"><span class="pa-opt-th" aria-hidden="true">
             {%- if mimg -%}<img src="{{ mimg | image_url: width: 120 }}" width="40" height="40" alt="" loading="lazy" decoding="async" data-pa-hero>{%- endif -%}
             {%- for h in hs -%}
@@ -1084,6 +1086,7 @@
   ]
 }
 {% endschema %}
+
 
 
 

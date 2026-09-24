@@ -513,14 +513,18 @@
       offerInputs.forEach(function (inp) {
         var t = totals(+inp.value), lab = inp.closest(".pa-opt");
         if (!lab) return;
-        var b = lab.querySelector(".pa-opt-p b"), s = lab.querySelector(".pa-opt-p s"), c = lab.querySelector(".pa-cmp"), sv = lab.querySelector(".pa-save");
+        var b = lab.querySelector(".pa-opt-p b"), s = lab.querySelector(".pa-opt-p s"), c = lab.querySelector(".pa-cmp");
         if (b) b.textContent = money(t.pack, fmt);
-        if (s && c && sv) {
+        if (s && c) {
           s.hidden = !t.cmp;
-          sv.hidden = !t.adv;
           c.textContent = t.cmp ? money(t.cmp, fmt) : "";
-          sv.textContent = t.adv ? money(t.adv, fmt) + " d'avantages" : "";
         }
+        /* La phrase des avantages suit le coloris choisi, dans la carte ouverte comme fermée. */
+        lab.querySelectorAll(".pa-eco").forEach(function (e) {
+          var v = e.querySelector(".pa-eco-v");
+          e.hidden = !t.adv;
+          if (v && t.adv) v.textContent = money(t.adv, fmt);
+        });
       });
       var oi = offIdx(), cur = totals(oi);
       if (ctaP) ctaP.textContent = money(cur.pack, fmt);
@@ -922,5 +926,6 @@
   /* Éditeur de thème : une section rechargée repart de zéro. */
   document.addEventListener("shopify:section:load", function (e) { init(e.target); });
 })();
+
 
 
