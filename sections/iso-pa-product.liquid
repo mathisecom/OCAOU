@@ -539,7 +539,7 @@
         {%- endfor -%}
         {%- if relay -%}<span class="pa-gift">{% render 'iso-pa-icon', name: 'gift' %}<span>Point relais offert</span></span>{%- endif -%}
         {%- comment -%} Même phrase que l'encadré des cadeaux des fiches coffret. {%- endcomment -%}
-        {%- if adv > 0 -%}<span class="pa-eco">Soit <span class="pa-eco-v">{{ adv | money | replace: ' €', '&nbsp;€' }}</span> d'avantages par rapport à l'achat séparé.</span>{%- endif -%}
+        {%- if adv > 0 -%}<span class="pa-eco">Soit <span class="pa-eco-v">{{ adv | money | replace: ' €', '&nbsp;€' }}</span> d'avantages.</span>{%- endif -%}
       {%- endcapture -%}
       {%- comment -%} La liste des articles reste hors de l'étiquette : une étiquette ne peut contenir qu'une seule case. {%- endcomment -%}
       <div class="pa-opt" {{ b.shopify_attributes }}>
@@ -671,7 +671,7 @@
         {%- endif -%}
       </ul>
       {%- if eco_cadeaux > 0 -%}
-        <p class="ocaou-gifts__eco">Soit {{ eco_cadeaux | money }} d'avantages par rapport à l'achat séparé.</p>
+        <p class="ocaou-gifts__eco">Soit {{ eco_cadeaux | money }} d'avantages.</p>
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -1086,6 +1086,7 @@
   ]
 }
 {% endschema %}
+
 
 
 
