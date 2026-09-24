@@ -461,6 +461,8 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     ok.addEventListener('click', function () {
       infoCourante = null;
       document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
+      // Une carte a la fois : le coffret a completer, s'il y en a un, vient apres.
+      passe();
     });
     m.actions.appendChild(ok);
     return m.el;
@@ -650,7 +652,12 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
           return;
         }
 
-        var trouve = panier.items && panier.items.length >= 2 ? chercheCoffret(panier) : null;
+        // Un coffret seul au panier peut encore se completer (Duo Essentiel + Doudou).
+        var seulCoffret = panier.items && panier.items.length === 1 && table.coffrets.some(function (c) {
+          return c.parVariante && c.parVariante[panier.items[0].variant_id];
+        });
+        var trouve = panier.items && (panier.items.length >= 2 || seulCoffret) ? chercheCoffret(panier) : null;
+        if (seulCoffret && panier.items.length === 1 && trouve && !trouve.manque) trouve = null;
         // Seul un regroupement automatique les reprend (il les absorbe dans le coffret).
         var orphelins = trouve && trouve.economie > 0 ? [] : (panier.items || []).filter(function (it) {
           return Object.keys(it.properties || {}).some(function (k) { return /cadeau offert/i.test(k); });
