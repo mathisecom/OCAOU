@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Comment ça marche",
             "icones": "",
-            "contenu": "<p>Après le paiement, vous recevrez un code par e-mail à transmettre à la personne de votre choix.</p><p>Elle n’aura qu’à l’appliquer lors de sa commande, simple comme bonjour !</p>"
+            "contenu": "<ul><li>Après le paiement, vous recevez votre carte cadeau par e-mail. Vous pouvez la transmettre, l’envoyer directement à la personne de votre choix ou programmer son envoi.</li><li>Le code s’utilise au moment du paiement. Le solde restant est conservé et consultable depuis l’e-mail reçu.</li></ul>"
           }
         }
       },
