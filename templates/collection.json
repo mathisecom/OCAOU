@@ -37,7 +37,7 @@
         "@media (max-width: 699px) {.product-card__info .price-list {font-size: 19px; } .product-card__info .price-list compare-at-price, .product-card__info .price-list s {font-size: 15px; }}"
       ],
       "settings": {
-        "products_per_page": 24,
+        "products_per_page": 48,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 3,
         "filter_layout": "horizontal",
@@ -54,3 +54,4 @@
     "main"
   ]
 }
+
