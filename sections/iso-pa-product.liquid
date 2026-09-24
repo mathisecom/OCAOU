@@ -436,6 +436,21 @@
             assign relay = true
           endif
         endif
+        # Avantage affiche : economie sur le prix plus la valeur des cadeaux, comme sur les fiches coffret.
+        assign adv = 0
+        if cmp > 0
+          assign adv = cmp | minus: pack
+        endif
+        for gi in (1..2)
+          assign gk = 'cadeau_' | append: gi
+          assign gh = b.settings[gk] | strip
+          if gh != blank
+            assign gp = all_products[gh]
+            if gp and gp.id
+              assign adv = adv | plus: gp.selected_or_first_available_variant.price
+            endif
+          endif
+        endfor
       -%}
       {%- comment -%} Ordre des pastilles de la formule : les lignes sont alignées à droite, donc un
         coloris présent dans plusieurs lignes se retrouve dans la même colonne d'une ligne à l'autre.
@@ -530,7 +545,7 @@
           <input class="pa-opt-in" type="checkbox" name="pa-off-{{ uid }}" value="{{ oi }}">
           <span class="pa-opt-r" aria-hidden="true"></span>
           <span class="pa-opt-main"><span class="pa-opt-t">{{ b.settings.libelle | escape }}</span>{% if b.settings.badge != blank %}<span class="pa-opt-b">{{ b.settings.badge | escape }}</span>{% endif %}</span>
-          <span class="pa-opt-p"><b>{{ pack | money | replace: ' €', '&nbsp;€' }}</b><s{% if cmp == 0 %} hidden{% endif %}><span class="pa-sr">au lieu de </span><span class="pa-cmp">{% if cmp > 0 %}{{ cmp | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></s><span class="pa-save"{% if cmp == 0 %} hidden{% endif %}>{% if cmp > 0 %}Économie {{ cmp | minus: pack | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></span>
+          <span class="pa-opt-p"><b>{{ pack | money | replace: ' €', '&nbsp;€' }}</b><s{% if cmp == 0 %} hidden{% endif %}><span class="pa-sr">au lieu de </span><span class="pa-cmp">{% if cmp > 0 %}{{ cmp | money | replace: ' €', '&nbsp;€' }}{% endif %}</span></s><span class="pa-save"{% if adv == 0 %} hidden{% endif %}>{% if adv > 0 %}{{ adv | money | replace: ' €', '&nbsp;€' }} d'avantages{% endif %}</span></span>
           <span class="pa-opt-more"><span class="pa-opt-th" aria-hidden="true">
             {%- if mimg -%}<img src="{{ mimg | image_url: width: 120 }}" width="40" height="40" alt="" loading="lazy" decoding="async" data-pa-hero>{%- endif -%}
             {%- for h in hs -%}
@@ -775,7 +790,7 @@
             {%- assign gh = b.settings[gk] | strip -%}
             {%- if gh != blank -%}
               {%- assign gp = all_products[gh] -%}
-              {%- if gp and gp.id -%}{"id": {{ gp.selected_or_first_available_variant.id }}, "a": {{ gp.selected_or_first_available_variant.available | json }}},{%- endif -%}
+              {%- if gp and gp.id -%}{"id": {{ gp.selected_or_first_available_variant.id }}, "a": {{ gp.selected_or_first_available_variant.available | json }}, "p": {{ gp.selected_or_first_available_variant.price }}},{%- endif -%}
             {%- endif -%}
           {%- endfor -%}
         {%- endcapture -%}
@@ -1069,6 +1084,7 @@
   ]
 }
 {% endschema %}
+
 
 
 

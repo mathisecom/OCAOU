@@ -397,6 +397,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     var infos = infosEnAttente();
     infoCourante = null;
     infos.push({
+      id: trouve.coffret.id,
       titre: trouve.coffret.titre,
       economie: trouve.economie,
       avantage: trouve.annonce,
@@ -601,7 +602,7 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
         var annonce = cadeaux.reduce(function (t, i) { return t + (i.prix || 0); }, 0) +
                       (combi ? Math.max(0, (combi.prixBarre || 0) - combi.prix) : 0);
         infos.push({
-          titre: c.titre, avantage: annonce, image: c.image,
+          id: c.id, titre: c.titre, avantage: annonce, image: c.image,
           offerts: cadeaux.map(function (i) { return { nom: i.nom, offert: true, prix: i.prix || 0 }; })
         });
       }
@@ -695,7 +696,11 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
 
         // Message qui suit un regroupement automatique. Il est garde en memoire :
         // le panier se redessine plusieurs fois et effacerait la carte.
-        var infos = infosEnAttente();
+        // Seul un coffret encore au panier s'annonce : un coffret retire depuis ne l'est plus.
+        var infos = infosEnAttente().filter(function (i) {
+          var id = i.id || (table.coffrets.find(function (c) { return c.titre === i.titre; }) || {}).id;
+          return panier.items.some(function (it) { return it.product_id === id; });
+        });
         try { sessionStorage.removeItem('ocaou-sugg-info'); } catch (e) {}
         if (infos.length) {
           infoCourante = infos;
@@ -747,3 +752,4 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
     .catch(function () { /* le regroupement est un bonus : son absence ne casse rien */ });
 })();
 </script>
+

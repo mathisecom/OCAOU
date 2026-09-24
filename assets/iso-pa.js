@@ -384,7 +384,10 @@
         if (!pv.info || !pv.info.a) ok = false;
       });
       var pack = o.price == null ? sum : o.price;
-      return { pack: pack, cmp: o.price != null && sum > pack ? sum : 0, ok: ok };
+      var cmp = o.price != null && sum > pack ? sum : 0;
+      /* Avantage : economie sur le prix plus la valeur des cadeaux. */
+      var adv = (cmp ? cmp - pack : 0) + (o.gifts || []).reduce(function (t, g) { return t + (g.p || 0); }, 0);
+      return { pack: pack, cmp: cmp, adv: adv, ok: ok };
     }
     /* Ouverture d'une formule : la carte grandit en douceur, les vignettes glissent de la rangée vers la
        liste, puis noms et pastilles apparaissent ; la carte qui se referme fait le chemin inverse.
@@ -513,9 +516,10 @@
         var b = lab.querySelector(".pa-opt-p b"), s = lab.querySelector(".pa-opt-p s"), c = lab.querySelector(".pa-cmp"), sv = lab.querySelector(".pa-save");
         if (b) b.textContent = money(t.pack, fmt);
         if (s && c && sv) {
-          s.hidden = sv.hidden = !t.cmp;
+          s.hidden = !t.cmp;
+          sv.hidden = !t.adv;
           c.textContent = t.cmp ? money(t.cmp, fmt) : "";
-          sv.textContent = t.cmp ? "Économie " + money(t.cmp - t.pack, fmt) : "";
+          sv.textContent = t.adv ? money(t.adv, fmt) + " d'avantages" : "";
         }
       });
       var oi = offIdx(), cur = totals(oi);
@@ -918,4 +922,5 @@
   /* Éditeur de thème : une section rechargée repart de zéro. */
   document.addEventListener("shopify:section:load", function (e) { init(e.target); });
 })();
+
 
