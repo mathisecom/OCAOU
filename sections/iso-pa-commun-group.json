@@ -94,6 +94,14 @@
             "label": ""
           }
         },
+        "moment_12": {
+          "type": "moment",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_24_sept._2026_13_41_13.png",
+            "alt": "",
+            "label": ""
+          }
+        },
         "moment_4": {
           "type": "moment",
           "settings": {
@@ -158,14 +166,6 @@
             "label": ""
           }
         },
-        "moment_12": {
-          "type": "moment",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_24_sept._2026_13_41_13.png",
-            "alt": "",
-            "label": ""
-          }
-        },
         "moment_14": {
           "type": "moment",
           "settings": {
@@ -186,6 +186,7 @@
         "moment_8",
         "moment_jVEVRi",
         "moment_1",
+        "moment_12",
         "moment_4",
         "moment_10",
         "moment_7",
@@ -194,7 +195,6 @@
         "moment_EJzTaY",
         "moment_5",
         "moment_3",
-        "moment_12",
         "moment_14"
       ],
       "settings": {
