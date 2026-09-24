@@ -215,9 +215,9 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 5,
-            "author": "Delphine K.",
-            "title": "coussinets discrets",
-            "content": "<p>Même si on ne les voit pas, ça me fait du bien de porter des beaux coussinets. Ils sont absorbants et très doux. Un plus pour la pochette de transport imperméable.</p>"
+            "author": "Laura C.",
+            "title": "Un vrai coup de cœur pour les coussinets d’allaitement !",
+            "content": "<p>Ils sont doux, discrets, très absorbants et super faciles à laver. J’aime aussi le fait qu’il y en ait plusieurs dans le pochon. Je les glisse même dans mon maillot de bain.</p>"
           }
         },
         "testimonial_hD44TM": {
@@ -226,7 +226,7 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 5,
-            "author": "Laura J.",
+            "author": "Delphine K.",
             "title": "Lingettes pour tout",
             "content": "<p>J'utilise ces lingettes pour moi et ma fille. Utiles pour toutes la famille.</p>"
           }
@@ -405,14 +405,14 @@
         "accroche": "",
         "titre": "Parés à toutes les éventualités. Juste O'CAOU...",
         "texte": "",
+        "bouton": "Tous les produits",
+        "bouton_lien": "/collections/all",
         "image": "shopify://shop_images/no_change_1_af2b05db-2610-4de1-82c5-b7ae5943913f.png",
         "alt": "Cabas léopard O'CAOU « je prends TOUT » porté à l'épaule, gourde accrochée à l'anse",
         "cadrage": 55,
         "cote": "gauche",
         "bg_color": "#f4ede1",
-        "filet": false,
-        "bouton": "Tous les produits",
-        "bouton_lien": "/collections/all"
+        "filet": false
       }
     }
   },
