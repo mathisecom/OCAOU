@@ -53,7 +53,9 @@
         "full_width": false,
         "show_article_category": true,
         "search_menu": "",
-        "search_menu_show_title": true
+        "search_menu_show_title": true,
+        "idle_collection": "les-coffrets",
+        "idle_count": 6
       }
     }
   },
