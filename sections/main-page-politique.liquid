@@ -1,7 +1,9 @@
 {%- comment -%}
   Pages legales du site : mentions, confidentialite, livraisons et retours. Leur texte vient
   des Parametres > Politiques de la boutique : une seule source, et les liens du pied de page
-  y renvoient. Les conditions de vente, elles, sont affichees par Shopify sur /policies/, avec
+  y renvoient. Sauf les retours : Shopify joint en PDF au mail de confirmation toute politique de
+  remboursement ou de service remplie, la cliente n'en veut pas (24/09/2026). Leur texte vit donc
+  dans les pages « Politique de retour et de remboursement » et « Conditions d'utilisation ». Les conditions de vente, elles, sont affichees par Shopify sur /policies/, avec
   la meme echelle, posee dans layout/theme.liquid.
   Si la source correspondante est vide, la page garde son propre contenu (aucune page blanche).
 
@@ -28,10 +30,10 @@
         | replace: '<h4', '<hx' | replace: '</h4>', '</hx>'
         | replace: '<h3', '<h2' | replace: '</h3>', '</h2>'
         | replace: '<hx', '<h3' | replace: '</hx>', '</h3>' -}}
-    <div id="retours">{{ shop.refund_policy }}</div>
+    <div id="retours">{{ pages['politique-de-retour-et-de-remboursement'].content }}</div>
 
   {%- elsif h contains 'retour' -%}
-    {{ shop.refund_policy }}
+    {{ page.content }}
 
   {%- else -%}
     {%- comment -%} Toute autre page posee sur ce gabarit. {%- endcomment -%}
