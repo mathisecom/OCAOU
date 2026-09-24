@@ -33,7 +33,7 @@
         "moment_13": {
           "type": "moment",
           "settings": {
-            "image": "shopify://shop_images/IMG_6301.heic",
+            "image": "shopify://shop_images/matias_veilleuse.png",
             "alt": "",
             "label": ""
           }
@@ -121,7 +121,7 @@
         "moment_EYrbH8": {
           "type": "moment",
           "settings": {
-            "image": "shopify://shop_images/IMG_0062.heic",
+            "image": "shopify://shop_images/eden_brassard.png",
             "alt": "",
             "label": ""
           }
@@ -145,7 +145,7 @@
         "moment_5": {
           "type": "moment",
           "settings": {
-            "image": "shopify://shop_images/20260809_172116.jpg",
+            "image": "shopify://shop_images/margaux_avion.png",
             "alt": "",
             "label": ""
           }
