@@ -1,0 +1,160 @@
+{%- comment -%}
+  Piste R : page liste du blog « Le coin des parents ».
+  Grille 3 colonnes (1 sur mobile), filtre par thème via <template> pré-rendus.
+  Données réelles uniquement : blog.articles, article.tags, article.image, article.excerpt.
+  RGAA : un seul H1, filtres = boutons aria-pressed, grille labelisée, cibles 44 px.
+  Éco : images avec srcset Shopify (widths), lazy loading, JS minimal.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{{ 'iso-blog.css' | asset_url | stylesheet_tag }}
+{%- assign f500 = settings.text_font | font_modify: 'weight', '500' -%}
+{%- assign f600 = settings.text_font | font_modify: 'weight', '600' -%}
+{%- if f500 -%}<style>{{ f500 | font_face: font_display: 'swap' }}</style>{%- endif -%}
+{%- if f600 -%}<style>{{ f600 | font_face: font_display: 'swap' }}</style>{%- endif -%}
+
+{%- comment -%} Collecte tous les tags présents (union ordonnée) {%- endcomment -%}
+{%- assign all_tags = "" -%}
+{%- for article in blog.articles -%}
+  {%- for tag in article.tags -%}
+    {%- unless all_tags contains tag -%}
+      {%- if all_tags == "" -%}
+        {%- assign all_tags = tag -%}
+      {%- else -%}
+        {%- assign all_tags = all_tags | append: "|||" | append: tag -%}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign tags_array = all_tags | split: "|||" -%}
+
+{%- comment -%}
+  Macro de rendu d'une carte article (h2 pour la liste, h3 pour « À lire aussi »).
+  Utilisée ici et clonée dans les <template> de filtrage.
+{%- endcomment -%}
+
+<div class="br">
+
+  {%- comment -%} En-tête du blog {%- endcomment -%}
+  <section class="br-blog-hero br-sec br-cream" aria-labelledby="br-bh-{{ sid }}">
+    <div class="br-w">
+      <h1 class="br-h1 br-blog-h1" id="br-bh-{{ sid }}">{{ blog.title | escape }}</h1>
+      {%- if tags_array.size > 0 or all_tags != "" -%}
+      <div class="br-filters" role="group" aria-label="Filtrer par thème">
+        <button type="button" class="br-fil" data-tag="" aria-pressed="true">Tous</button>
+        {%- for tag in tags_array -%}
+          {%- if tag != "" -%}
+          <button type="button" class="br-fil" data-tag="{{ tag | escape }}" aria-pressed="false">{{ tag | escape }}</button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  {%- comment -%} Grille d'articles {%- endcomment -%}
+  <section class="br-w br-list" aria-label="Tous les articles">
+    <ul class="br-grid" id="br-grid-{{ sid }}">
+      {%- for article in blog.articles -%}
+      <li>
+        <article class="br-card">
+          <div class="br-card-img">
+            {%- if article.image -%}
+              <img
+                src="{{ article.image | image_url: width: 800 }}"
+                srcset="{{ article.image | image_url: width: 400 }} 400w, {{ article.image | image_url: width: 800 }} 800w, {{ article.image | image_url: width: 1200 }} 1200w"
+                sizes="(min-width: 960px) calc((min(1240px, 100vw) - 96px) / 3), calc(100vw - 40px)"
+                alt=""
+                width="800" height="600"
+                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+              >
+            {%- endif -%}
+          </div>
+          <div class="br-card-body">
+            {%- if article.tags.size > 0 -%}
+              <p class="br-card-eyebrow">{{ article.tags | join: " · " | escape }}</p>
+            {%- else -%}
+              <p class="br-card-eyebrow"></p>
+            {%- endif -%}
+            <h2 class="br-card-title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
+            {%- if article.excerpt != blank -%}
+              <p class="br-card-exc">{{ article.excerpt | strip_html | truncatewords: 25 | escape }}</p>
+            {%- elsif article.content != blank -%}
+              <p class="br-card-exc">{{ article.content | strip_html | truncatewords: 25 | escape }}</p>
+            {%- endif -%}
+            {%- comment -%} Temps de lecture estimé (200 mots/min) {%- endcomment -%}
+            {%- assign word_count = article.content | strip_html | split: ' ' | size -%}
+            {%- assign minutes = word_count | divided_by: 200 | at_least: 1 -%}
+            <p class="br-card-min">{{ minutes }} min de lecture</p>
+          </div>
+        </article>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+</div>
+
+{%- comment -%}
+  Templates de filtrage : un <template> par tag + un pour « Tous ».
+  Le JS de iso-blog.js les clone sans jamais générer de HTML en JS.
+{%- endcomment -%}
+<template id="iso-blog-cards-all">
+  {%- for article in blog.articles -%}
+  <li>
+    <article class="br-card">
+      <div class="br-card-img">
+        {%- if article.image -%}
+          <img src="{{ article.image | image_url: width: 800 }}" srcset="{{ article.image | image_url: width: 400 }} 400w, {{ article.image | image_url: width: 800 }} 800w" sizes="(min-width: 960px) calc((min(1240px, 100vw) - 96px) / 3), calc(100vw - 40px)" alt="" width="800" height="600" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div class="br-card-body">
+        {%- if article.tags.size > 0 -%}<p class="br-card-eyebrow">{{ article.tags | join: " · " | escape }}</p>{%- else -%}<p class="br-card-eyebrow"></p>{%- endif -%}
+        <h2 class="br-card-title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
+        {%- if article.excerpt != blank -%}<p class="br-card-exc">{{ article.excerpt | strip_html | truncatewords: 25 | escape }}</p>{%- elsif article.content != blank -%}<p class="br-card-exc">{{ article.content | strip_html | truncatewords: 25 | escape }}</p>{%- endif -%}
+        {%- assign word_count = article.content | strip_html | split: ' ' | size -%}
+        {%- assign minutes = word_count | divided_by: 200 | at_least: 1 -%}
+        <p class="br-card-min">{{ minutes }} min de lecture</p>
+      </div>
+    </article>
+  </li>
+  {%- endfor -%}
+</template>
+
+{%- for tag in tags_array -%}
+  {%- if tag != "" -%}
+  {%- assign tag_slug = tag | downcase | handleize -%}
+  <template id="iso-blog-cards-{{ tag_slug }}">
+    {%- for article in blog.articles -%}
+      {%- if article.tags contains tag -%}
+      <li>
+        <article class="br-card">
+          <div class="br-card-img">
+            {%- if article.image -%}
+              <img src="{{ article.image | image_url: width: 800 }}" srcset="{{ article.image | image_url: width: 400 }} 400w, {{ article.image | image_url: width: 800 }} 800w" sizes="(min-width: 960px) calc((min(1240px, 100vw) - 96px) / 3), calc(100vw - 40px)" alt="" width="800" height="600" loading="lazy">
+            {%- endif -%}
+          </div>
+          <div class="br-card-body">
+            <p class="br-card-eyebrow">{{ article.tags | join: " · " | escape }}</p>
+            <h2 class="br-card-title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
+            {%- if article.excerpt != blank -%}<p class="br-card-exc">{{ article.excerpt | strip_html | truncatewords: 25 | escape }}</p>{%- elsif article.content != blank -%}<p class="br-card-exc">{{ article.content | strip_html | truncatewords: 25 | escape }}</p>{%- endif -%}
+            {%- assign word_count = article.content | strip_html | split: ' ' | size -%}
+            {%- assign minutes = word_count | divided_by: 200 | at_least: 1 -%}
+            <p class="br-card-min">{{ minutes }} min de lecture</p>
+          </div>
+        </article>
+      </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </template>
+  {%- endif -%}
+{%- endfor -%}
+
+<script src="{{ 'iso-blog.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Liste des articles",
+  "tag": "section",
+  "class": "iso-blog-list"
+}
+{% endschema %}

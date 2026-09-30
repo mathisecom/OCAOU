@@ -1,0 +1,287 @@
+/**
+ * Suggestions complémentaires panier O'CAOU — iso-cart.css
+ * Stylise le bloc de suggestions dans le volet et la page panier.
+ * S'appuie sur les variables CSS du thème (--spacing-*, --rounded-button, etc.)
+ */
+
+/* ── Conteneur principal ───────────────────────────────────────────────────── */
+iso-cart-suggestions {
+  display: block;
+  /* Largeur intrinsèque nulle : le carrousel ne peut plus élargir la grille du
+     panier (colonnes auto du thème), puis il reprend toute la largeur disponible. */
+  width: 0;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+iso-cart-suggestions[hidden] {
+  display: none;
+}
+
+.iso-cart-suggestions__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+/* ── En-tête (titre + flèches nav) ─────────────────────────────────────────── */
+.iso-cart-suggestions__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+}
+
+/* Même style que le titre des recommandations existantes dans le volet */
+.iso-cart-suggestions__title {
+  font-size: var(--text-sm-size, 0.875rem);
+  font-weight: var(--text-bold-weight, 700);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── Navigation (flèches) ───────────────────────────────────────────────────── */
+.iso-cart-suggestions__nav[hidden] {
+  display: none;
+}
+
+.iso-cart-suggestions__nav {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-shrink: 0;
+}
+
+/* Cacher les flèches sur mobile (scroll tactile suffisant) */
+@media (max-width: 599px) {
+  .iso-cart-suggestions__nav {
+    display: none;
+  }
+}
+
+/* ── Carrousel horizontal ───────────────────────────────────────────────────── */
+.iso-cart-suggestions__track {
+  /* Contient les textes masqués (sr-only, en absolu) des cartes : sinon ils élargissent la page */
+  position: relative;
+  display: flex;
+  min-width: 0;
+  max-width: 100%;
+  gap: var(--spacing-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Masquer la scrollbar (navigation par flèches ou swipe) */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.iso-cart-suggestions__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Carte produit : image à gauche, titre, prix, bouton empilés ─────────── */
+.iso-cart-suggestions__card {
+  flex: 0 0 auto;
+  width: 330px;
+  max-width: calc(100% - var(--spacing-10, 2.5rem));
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4, 1rem);
+}
+
+.cart-drawer .iso-cart-suggestions__card {
+  width: 290px;
+}
+
+.iso-cart-suggestions__media {
+  flex: 0 0 128px;
+  width: 128px;
+  height: 128px;
+  display: block;
+}
+
+.iso-cart-suggestions__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.iso-cart-suggestions__info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-1, 0.25rem);
+}
+
+.iso-cart-suggestions__name {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--text-bold-weight, 600);
+  line-height: 1.3;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.iso-cart-suggestions__name:hover {
+  text-decoration: underline;
+}
+
+/* Prix barré et prix courant sur une seule ligne */
+.iso-cart-suggestions__info .price-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: var(--spacing-2, 0.5rem);
+}
+
+.iso-cart-suggestions__cta {
+  margin-top: var(--spacing-1, 0.25rem);
+}
+
+/* ── Fond beige clair (pied de page #F4EDE1 éclairci) pour détacher le bloc ── */
+.iso-cart-suggestions__wrapper {
+  background: #FAF6EF;
+  padding: var(--spacing-4, 1rem);
+  border-radius: var(--rounded-sm, 0.5rem);
+}
+
+/* Bouton « + Ajouter » : repris de .pa-comp-add (assets/iso-pa.css, fiches produit), sans le gras */
+.iso-cart-suggestions__btn {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #CD9438;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: background-color .15s;
+}
+
+.iso-cart-suggestions__btn .ic {
+  width: 13px;
+  height: 13px;
+}
+
+.iso-cart-suggestions__btn:not(:disabled):hover {
+  background: #B98331;
+}
+
+.iso-cart-suggestions__btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+/* Info-bulle des pastilles sans gras */
+.iso-cart-suggestions [data-tooltip]::after {
+  font-weight: 400;
+}
+
+/* Respiration entre les articles du panier et les suggestions */
+.shopify-section--main-cart iso-cart-suggestions {
+  margin-block-start: var(--spacing-10, 2.5rem);
+}
+
+
+/* Pastilles de couleur des suggestions (rendu des cartes produit, taille sm) */
+.iso-cart-suggestions__swatches {
+  flex-wrap: wrap;
+  border: 0;
+  margin: var(--spacing-1, 0.25rem) 0 0;
+  padding: 0;
+  min-width: 0;
+}
+
+/* Volet : bloc collé en bas, juste au-dessus du total ; le vide passe entre les articles et le bloc.
+   min-height (pas height) : avec beaucoup d'articles, le volet défile sans chevauchement. */
+.cart-drawer__inner:has(iso-cart-suggestions:not([hidden])) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.cart-drawer__inner > .v-stack:has(iso-cart-suggestions:not([hidden])) {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer iso-cart-suggestions {
+  margin-block-start: auto;
+}
+
+/* ── Volet allégé : suggestions compactes, petit mot et pied resserrés ─────── */
+.cart-drawer .iso-cart-suggestions__wrapper {
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+}
+
+.cart-drawer .iso-cart-suggestions__card {
+  width: 250px;
+  gap: var(--spacing-3);
+}
+
+.cart-drawer .iso-cart-suggestions__media {
+  flex-basis: 88px;
+  width: 88px;
+  height: 88px;
+}
+
+.cart-drawer .iso-cart-suggestions__info {
+  gap: 2px;
+}
+
+.cart-drawer .iso-cart-suggestions__info .price-list {
+  font-size: var(--text-sm, 0.875rem);
+}
+
+.cart-drawer .iso-cart-suggestions__nav .circle-chevron {
+  width: 28px;
+  height: 28px;
+}
+
+/* Petit mot cadeau : titre, champ et bouton à l'échelle du volet */
+.cart-drawer__note-inner {
+  padding: var(--spacing-5) !important;
+}
+
+@media screen and (min-width: 700px) {
+  .cart-drawer__note-inner {
+    padding: var(--spacing-6) var(--spacing-10) !important;
+  }
+}
+
+.iso-cart-note__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.cart-drawer__note textarea {
+  font-size: var(--text-sm, 0.875rem);
+}
+
+/* Pied du volet : moins de marge au-dessus du total */
+@media screen and (min-width: 700px) {
+  .cart-drawer {
+    --drawer-footer-padding: 1.25rem 2.5rem 1.5rem 2.5rem;
+  }
+}
+
+/* Page panier : l'offre coffret prend la largeur de son contenu, centrée sous l'en-tête */
+@media screen and (min-width: 750px) {
+  .shopify-section--main-cart .ocaou-sugg:not(.ocaou-sugg--serre) {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    gap: 24px;
+  }
+}

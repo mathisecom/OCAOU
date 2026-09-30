@@ -1,0 +1,258 @@
+{%- comment -%}
+  Piste R : page article du blog.
+  Données réelles : article.title, article.content, article.image, article.tags, article.author.
+  Transformations du corps : sommaire (H2 avec id), checklist cochable, tables avec data-label,
+  FAQ en accordéons (section H2 « Questions fréquentes »), produits cités (/products/<handle>).
+  Produits cités : parcours du contenu pour extraire les handles, lookup all_products[handle].
+  RGAA : un seul H1, sommaire nav, accordéons details/summary, checkboxes 44 px,
+         focus visible, contrastes, cibles, textes ≥ 13 px.
+{%- endcomment -%}
+{%- assign sid = section.id -%}
+{{ 'iso-blog.css' | asset_url | stylesheet_tag }}
+{%- assign f500 = settings.text_font | font_modify: 'weight', '500' -%}
+{%- assign f600 = settings.text_font | font_modify: 'weight', '600' -%}
+{%- if f500 -%}<style>{{ f500 | font_face: font_display: 'swap' }}</style>{%- endif -%}
+{%- if f600 -%}<style>{{ f600 | font_face: font_display: 'swap' }}</style>{%- endif -%}
+
+{%- comment -%} Extraction des handles de produits cités dans le corps {%- endcomment -%}
+{%- assign body_html = article.content -%}
+{%- assign prod_handles = "" -%}
+{%- assign body_parts = body_html | split: "/products/" -%}
+{%- for part in body_parts offset: 1 -%}
+  {%- assign handle_raw = part | split: '"' | first | split: "'" | first | split: " " | first | split: "<" | first | split: "?" | first | split: "#" | first -%}
+  {%- if handle_raw != "" and handle_raw != "carte-cadeau" -%}
+    {%- assign test_prod = all_products[handle_raw] -%}
+    {%- if test_prod.available -%}
+      {%- if prod_handles == "" -%}
+        {%- assign prod_handles = handle_raw -%}
+      {%- elsif prod_handles contains handle_raw -%}
+      {%- else -%}
+        {%- assign prod_handles = prod_handles | append: "|||" | append: handle_raw -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign valid_prod_handles = prod_handles | split: "|||" -%}
+
+{%- comment -%} Estimation du temps de lecture {%- endcomment -%}
+{%- assign word_count = article.content | strip_html | split: ' ' | size -%}
+{%- assign read_minutes = word_count | plus: 115 | divided_by: 230 | at_least: 1 -%}
+
+{%- comment -%} Fil d'Ariane {%- endcomment -%}
+{%- assign short_title = article.title | truncate: 52 -%}
+
+{%- comment -%} Sélection « À lire aussi » : articles du même blog, même tag en priorité {%- endcomment -%}
+{%- assign also_list = "" -%}
+{%- assign also_count = 0 -%}
+{%- comment -%} Priorité : même tag {%- endcomment -%}
+{%- for a in blog.articles -%}
+  {%- if a.handle == article.handle -%}{%- continue -%}{%- endif -%}
+  {%- assign same_tag = false -%}
+  {%- for tag in article.tags -%}
+    {%- if a.tags contains tag -%}{%- assign same_tag = true -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if same_tag and also_count < 3 -%}
+    {%- assign also_count = also_count | plus: 1 -%}
+    {%- if also_list == "" -%}
+      {%- assign also_list = a.handle -%}
+    {%- else -%}
+      {%- assign also_list = also_list | append: "|||" | append: a.handle -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- comment -%} Compléter avec les autres si besoin {%- endcomment -%}
+{%- for a in blog.articles -%}
+  {%- if a.handle == article.handle or also_list contains a.handle -%}{%- continue -%}{%- endif -%}
+  {%- if also_count < 3 -%}
+    {%- assign also_count = also_count | plus: 1 -%}
+    {%- assign also_list = also_list | append: "|||" | append: a.handle -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign also_handles = also_list | split: "|||" -%}
+
+<div class="br" data-br-article>
+
+  {%- comment -%} En-tête de l'article {%- endcomment -%}
+  <div class="br-art-top br-w">
+
+    {%- comment -%} Fil d'Ariane {%- endcomment -%}
+    <nav class="br-bc" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="/">Accueil</a>{% render 'iso-blog-icon', name: 'chevron-right' %}</li>
+        <li><a href="{{ blog.url }}">{{ blog.title | escape }}</a>{% render 'iso-blog-icon', name: 'chevron-right' %}</li>
+        <li aria-current="page">{{ short_title | escape }}</li>
+      </ol>
+    </nav>
+
+    {%- comment -%} Tags {%- endcomment -%}
+    {%- if article.tags.size > 0 -%}
+    <div class="br-art-tags">
+      {%- for tag in article.tags -%}
+        <span class="br-art-tag">{{ tag | escape }}</span>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+
+    <h1 class="br-h1 br-art-h1">{{ article.title | escape }}</h1>
+
+    <p class="br-art-meta">
+      <span class="br-art-author">{{ article.author | escape }}</span>
+      <span aria-hidden="true">·</span>
+      <span>{{ read_minutes }}&nbsp;min de lecture</span>
+    </p>
+
+    {%- if article.image -%}
+    <div class="br-art-hero">
+      <img
+        src="{{ article.image | image_url: width: 1200 }}"
+        srcset="{{ article.image | image_url: width: 600 }} 600w, {{ article.image | image_url: width: 1200 }} 1200w, {{ article.image | image_url: width: 1800 }} 1800w"
+        sizes="(min-width: 960px) min(880px, 100vw), 100vw"
+        alt="{{ article.image.alt | default: article.title | escape }}"
+        width="1200" height="900"
+        loading="eager"
+      >
+    </div>
+    {%- endif -%}
+
+    {%- comment -%} Sommaire mobile : rempli par iso-blog.js depuis les intertitres {%- endcomment -%}
+    <details class="br-toc-mob" hidden>
+      <summary><span>{{ section.settings.toc_label | default: 'Dans cet article' | escape }}</span><span class="br-pm" aria-hidden="true">{% render 'iso-blog-icon', name: 'plus' %}{% render 'iso-blog-icon', name: 'minus' %}</span></summary>
+      <nav aria-label="{{ section.settings.toc_label | default: 'Dans cet article' | escape }}"><ol data-br-toc></ol></nav>
+    </details>
+
+  </div>{%- comment -%} .br-art-top {%- endcomment -%}
+
+  <div class="br-art-body">
+    <div class="br-w br-art-cols">
+
+      {%- comment -%} Sommaire ordinateur (collant) : rempli par iso-blog.js {%- endcomment -%}
+      <nav class="br-toc-desk" aria-label="{{ section.settings.toc_label | default: 'Dans cet article' | escape }}">
+        <p class="br-toc-desk-title" hidden>{{ section.settings.toc_label | default: 'Dans cet article' | escape }}</p>
+        <ol data-br-toc></ol>
+      </nav>
+
+      <div class="br-art-main">
+        <div class="br-art-prose">
+          {{ article.content }}
+        </div>
+      </div>
+
+      {%- comment -%} Produits cités en colonne collante (ordinateur) {%- endcomment -%}
+      {%- if valid_prod_handles.size > 0 -%}
+      <aside class="br-prod-side" aria-label="Produits cités">
+        <p class="br-prod-side-title">Produits cités</p>
+        <div class="br-prod-card-scroll">
+          {%- for h in valid_prod_handles limit: 4 -%}
+            {%- assign prod = all_products[h] -%}
+            {%- if prod.available -%}
+            <a href="{{ prod.url }}" class="br-prod-card">
+              <div class="br-prod-card-img">
+                {%- if prod.featured_image -%}
+                  <img src="{{ prod.featured_image | image_url: width: 104 }}" alt="" width="52" height="52" loading="lazy">
+                {%- endif -%}
+              </div>
+              <div class="br-prod-card-info">
+                <p class="br-prod-card-name">{{ prod.title | escape }}</p>
+                <p class="br-prod-card-price">{{ prod.price | money | replace: ' €', '&nbsp;€' }}</p>
+              </div>
+            </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </aside>
+      {%- else -%}
+      <div class="br-prod-side"></div>
+      {%- endif -%}
+
+    </div>{%- comment -%} .br-art-cols {%- endcomment -%}
+  </div>{%- comment -%} .br-art-body {%- endcomment -%}
+
+  {%- comment -%} FAQ : la partie « Questions fréquentes » du corps, déplacée ici en accordéons par iso-blog.js {%- endcomment -%}
+  <section class="br-sec br-ivory" aria-labelledby="br-faq-h" data-br-faq hidden><div class="br-w"></div></section>
+
+  {%- comment -%} « À lire aussi » {%- endcomment -%}
+  {%- if also_count > 0 -%}
+  <section class="br-also br-w" aria-label="{{ section.settings.also_label | default: 'À lire aussi' | escape }}">
+    <p class="br-also-title">{{ section.settings.also_label | default: 'À lire aussi' | escape }}</p>
+    <ul class="br-also-grid">
+      {%- for a in blog.articles -%}
+        {%- unless also_handles contains a.handle -%}{%- continue -%}{%- endunless -%}
+        {%- if a.handle == article.handle -%}{%- continue -%}{%- endif -%}
+        <li>
+          <article class="br-card">
+            <div class="br-card-img">
+              {%- if a.image -%}
+                <img src="{{ a.image | image_url: width: 600 }}" srcset="{{ a.image | image_url: width: 400 }} 400w, {{ a.image | image_url: width: 800 }} 800w" sizes="(min-width: 960px) calc((min(1240px, 100vw) - 96px) / 3), calc(100vw - 40px)" alt="" width="600" height="450" loading="lazy">
+              {%- endif -%}
+            </div>
+            <div class="br-card-body">
+              {%- if a.tags.size > 0 -%}<p class="br-card-eyebrow">{{ a.tags | join: " · " | escape }}</p>{%- else -%}<p class="br-card-eyebrow"></p>{%- endif -%}
+              <h3 class="br-card-title"><a href="{{ a.url }}">{{ a.title | escape }}</a></h3>
+              {%- if a.excerpt != blank -%}<p class="br-card-exc">{{ a.excerpt | strip_html | truncatewords: 20 | escape }}</p>{%- elsif a.content != blank -%}<p class="br-card-exc">{{ a.content | strip_html | truncatewords: 20 | escape }}</p>{%- endif -%}
+              {%- assign awc = a.content | strip_html | split: ' ' | size -%}
+              {%- assign amin = awc | plus: 115 | divided_by: 230 | at_least: 1 -%}
+              <p class="br-card-min">{{ amin }}&nbsp;min de lecture</p>
+            </div>
+          </article>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  {%- endif -%}
+
+  {%- comment -%} Carrousel fixé en bas : mobile uniquement (produits cités) {%- endcomment -%}
+  {%- if valid_prod_handles.size > 0 -%}
+  <section class="br-fixbar" role="region" aria-label="Produits cités" aria-hidden="true" inert>
+    <div class="br-fixbar-track{% if valid_prod_handles.size == 1 %} br-fixbar-track--single{% endif %}">
+      {%- for h in valid_prod_handles -%}
+        {%- assign prod = all_products[h] -%}
+        {%- if prod.available -%}
+        <a href="{{ prod.url }}" class="br-fixbar-item">
+          <div class="br-fixbar-img">
+            {%- if prod.featured_image -%}
+              <img src="{{ prod.featured_image | image_url: width: 96 }}" alt="" width="48" height="48" loading="lazy">
+            {%- endif -%}
+          </div>
+          <div class="br-fixbar-info">
+            <p class="br-fixbar-name">{{ prod.title | escape }}</p>
+            <p class="br-fixbar-prices">
+              {%- if prod.compare_at_price > prod.price -%}
+                <span class="br-fixbar-compare">{{ prod.compare_at_price | money | replace: ' €', '&nbsp;€' }}</span>
+              {%- endif -%}
+              <span class="br-fixbar-price">{{ prod.price | money | replace: ' €', '&nbsp;€' }}</span>
+            </p>
+          </div>
+          <span class="br-fixbar-go">{% render 'iso-blog-icon', name: 'chevron-right' %}</span>
+        </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </section>
+  <div class="br-fixbar-spacer" aria-hidden="true" style="display:none"></div>
+  {%- endif -%}
+
+</div>
+
+<script src="{{ 'iso-blog.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "section",
+  "class": "iso-blog-article",
+  "settings": [
+    {
+      "type": "text",
+      "id": "toc_label",
+      "label": "Libellé du sommaire",
+      "default": "Dans cet article"
+    },
+    {
+      "type": "text",
+      "id": "also_label",
+      "label": "Libellé « À lire aussi »",
+      "default": "À lire aussi"
+    }
+  ]
+}
+{% endschema %}

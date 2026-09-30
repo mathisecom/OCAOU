@@ -1,4 +1,6 @@
 {%- comment -%}O'CAOU — les deux boutons du volet tiennent sur une ligne, moitié-moitié{%- endcomment -%}
+{{- 'iso-cart.css' | asset_url | stylesheet_tag -}}
+<script src="{{ 'iso-cart.js' | asset_url }}" defer></script>
 {%- style -%}
   #shopify-section-{{ section.id }} .buy-buttons {
     display: grid;
@@ -111,10 +113,38 @@
             </div>
           </div>
         {%- endif -%}
+
+        {%- comment -%}O'CAOU — Suggestions complémentaires dynamiques (Search & Discovery){%- endcomment -%}
+        {%- if section.settings.iso_suggestions_enabled -%}
+          <iso-cart-suggestions
+            class="iso-cart-suggestions"
+            hidden
+            aria-busy="true"
+            aria-label="{{ section.settings.iso_suggestions_title | escape }}">
+            <div class="iso-cart-suggestions__wrapper">
+              <div class="iso-cart-suggestions__header">
+                {%- if section.settings.iso_suggestions_title != blank -%}
+                  <p class="iso-cart-suggestions__title">{{ section.settings.iso_suggestions_title | escape }}</p>
+                {%- endif -%}
+                <div class="iso-cart-suggestions__nav" hidden>
+                  <button class="iso-cart-suggestions__prev circle-chevron hover:colors" aria-label="{{ 'general.accessibility.previous' | t | escape }}" disabled>
+                    {%- render 'icon' with 'chevron-left-small', direction_aware: true -%}
+                  </button>
+                  <button class="iso-cart-suggestions__next circle-chevron hover:colors" aria-label="{{ 'general.accessibility.next' | t | escape }}">
+                    {%- render 'icon' with 'chevron-right-small', direction_aware: true -%}
+                  </button>
+                </div>
+              </div>
+              <div class="iso-cart-suggestions__track" role="list" aria-label="{{ section.settings.iso_suggestions_title | escape }}">
+                {%- comment -%}Rempli par assets/iso-cart.js via la Recommendations API Shopify{%- endcomment -%}
+              </div>
+            </div>
+          </iso-cart-suggestions>
+        {%- endif -%}
       </div>
     </div>
 
-    <div class="v-stack gap-4 sm:gap-6" slot="footer">
+    <div class="v-stack gap-3 iso-cart-drawer-footer" slot="footer">
       <div class="v-stack gap-1">
         {% for discount_application in cart.cart_level_discount_applications %}
           <div class="h-stack gap-4 justify-between">
@@ -157,17 +187,17 @@
 
           <cart-note-dialog id="cart-drawer-note" class="cart-drawer__note">
             <div class="cart-drawer__note-inner">
-              <div class="v-stack gap-4 sm:gap-6">
-                <p class="h5">{{ 'cart.general.order_note' | t }}</p>
+              <div class="v-stack gap-3">
+                <p class="iso-cart-note__title">{{ 'cart.general.order_note' | t }}</p>
 
-                <cart-note class="v-stack gap-4">
+                <cart-note class="v-stack gap-3">
                   {%- assign order_note = 'cart.general.order_note' | t -%}
                   {%- assign order_save_label = 'cart.general.save_note' | t -%}
 
-                  {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note -%}
+                  {%- render 'input', name: 'note', multiline: 2, label: order_note, value: cart.note -%}
 
                   <div class="justify-self-start">
-                    {%- render 'button', type: 'button', content: order_save_label, size: 'lg', is: 'close-button', secondary: true -%}
+                    {%- render 'button', type: 'button', content: order_save_label, size: 'sm', is: 'close-button', secondary: true -%}
                   </div>
                 </cart-note>
               </div>
@@ -182,16 +212,16 @@
               {%- comment -%}O'CAOU — bouton "Continuer mes achats" : ferme simplement le panier{%- endcomment -%}
         {%- if section.settings.show_continue_shopping_button -%}
           {%- assign continue_label = section.settings.continue_shopping_label | default: 'Continuer mes achats' -%}
-          <button type="button" is="close-button" class="button button--xl button--outline">{{ continue_label }}</button>
+          <button type="button" is="close-button" class="button button--lg button--outline">{{ continue_label }}</button>
         {%- endif -%}
 
         {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
-          <a href="{{ routes.cart_url }}" class="button button--xl {% if section.settings.show_checkout_button %}button--secondary{% endif %}" data-no-instant>
+          <a href="{{ routes.cart_url }}" class="button button--lg {% if section.settings.show_checkout_button %}button--secondary{% endif %}" data-no-instant>
             {{- 'cart.general.view_cart' | t -}}
           </a>
         {%- endif -%}
         {%- if section.settings.show_checkout_button -%}
-          {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl' -%}
+          {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'lg' -%}
         {%- endif -%}
       </form>
     </div>
@@ -273,6 +303,26 @@
       "type": "color",
       "id": "product_card_text_color",
       "label": "Product card text"
+    },
+    {
+      "type": "header",
+      "content": "Suggestions complémentaires (dynamiques)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Utilise l'app Search & Discovery pour suggérer des produits complémentaires selon le contenu du panier."
+    },
+    {
+      "type": "checkbox",
+      "id": "iso_suggestions_enabled",
+      "label": "Activer les suggestions complémentaires",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "iso_suggestions_title",
+      "label": "Titre du bloc",
+      "default": "Ils vont si bien ensemble"
     }
   ]
 }

@@ -1,3 +1,5 @@
+{{- 'iso-cart.css' | asset_url | stylesheet_tag -}}
+<script src="{{ 'iso-cart.js' | asset_url }}" defer></script>
 <div class="container">
   {%- if cart.item_count == 0 -%}
     <div class="empty-state">
@@ -87,6 +89,34 @@
               {%- capture accordion_content -%}{%- render 'shipping-estimator' -%}{%- endcapture -%}
 
               {%- render 'accordion', title: accordion_title, icon: 'picto-box', content: accordion_content, size: 'lg' -%}
+            {%- endif -%}
+
+            {%- comment -%}O'CAOU — Suggestions complémentaires dynamiques (Search & Discovery){%- endcomment -%}
+            {%- if section.settings.iso_suggestions_enabled -%}
+              <iso-cart-suggestions
+                class="iso-cart-suggestions"
+                hidden
+                aria-busy="true"
+                aria-label="{{ section.settings.iso_suggestions_title | escape }}">
+                <div class="iso-cart-suggestions__wrapper">
+                  <div class="iso-cart-suggestions__header">
+                    {%- if section.settings.iso_suggestions_title != blank -%}
+                      <p class="iso-cart-suggestions__title">{{ section.settings.iso_suggestions_title | escape }}</p>
+                    {%- endif -%}
+                    <div class="iso-cart-suggestions__nav" hidden>
+                      <button class="iso-cart-suggestions__prev circle-chevron hover:colors" aria-label="{{ 'general.accessibility.previous' | t | escape }}" disabled>
+                        {%- render 'icon' with 'chevron-left-small', direction_aware: true -%}
+                      </button>
+                      <button class="iso-cart-suggestions__next circle-chevron hover:colors" aria-label="{{ 'general.accessibility.next' | t | escape }}">
+                        {%- render 'icon' with 'chevron-right-small', direction_aware: true -%}
+                      </button>
+                    </div>
+                  </div>
+                  <div class="iso-cart-suggestions__track" role="list" aria-label="{{ section.settings.iso_suggestions_title | escape }}">
+                    {%- comment -%}Rempli par assets/iso-cart.js via la Recommendations API Shopify{%- endcomment -%}
+                  </div>
+                </div>
+              </iso-cart-suggestions>
             {%- endif -%}
           </div>
 
@@ -625,6 +655,35 @@
       "id": "show_payment_icons",
       "label": "Show payment icons",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Suggestions complémentaires (dynamiques)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Utilise l'app Search & Discovery pour suggérer des produits complémentaires selon le contenu du panier."
+    },
+    {
+      "type": "checkbox",
+      "id": "iso_suggestions_enabled",
+      "label": "Activer les suggestions complémentaires",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "iso_suggestions_title",
+      "label": "Titre du bloc",
+      "default": "Ils vont si bien ensemble"
+    },
+    {
+      "type": "range",
+      "id": "iso_suggestions_max",
+      "label": "Nombre maximum de produits affichés",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 6
     }
   ]
 }

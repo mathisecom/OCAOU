@@ -1,0 +1,86 @@
+{%- comment -%}
+  Section de rendu pour les suggestions complémentaires du panier O'CAOU.
+  Appelée uniquement via la Recommendations API Shopify (Search & Discovery).
+
+  URL d'appel :
+    /recommendations/products?product_id=<id>&limit=<n>&intent=complementary&section_id=iso-cart-suggestions
+  ou intent=related pour le repli.
+
+  Choix variants multiples : lien vers la fiche produit (pas de quick-buy-drawer).
+  Raison : le quick-buy-drawer de Focal ne s'initialise pas correctement quand
+  injecté via innerHTML dans le DOM après le chargement initial.
+  Le lien vers la fiche est la solution la plus sobre et la plus accessible.
+{%- endcomment -%}
+
+{%- liquid
+  assign excluded = 'carte-cadeau,supplement-zone-difficile-acces' | split: ','
+-%}
+
+{%- if recommendations.performed? and recommendations.products_count > 0 -%}
+  {%- for product in recommendations.products -%}
+    {%- unless excluded contains product.handle or product.available == false -%}
+      {%- assign first_variant = product.selected_or_first_available_variant -%}
+      {%- comment -%}Photo de la couleur présélectionnée, comme la fiche (sel.featured_media){%- endcomment -%}
+      {%- assign card_media = first_variant.featured_media | default: product.featured_media -%}
+
+      <div class="iso-cart-suggestions__card" data-product-id="{{ product.id }}">
+        <a href="{{ product.url }}" class="iso-cart-suggestions__media" tabindex="-1" aria-hidden="true">
+          {%- if card_media -%}
+            {{- card_media | image_url: width: 256 | image_tag:
+                loading: 'lazy',
+                width: 128, height: 128,
+                sizes: '128px',
+                widths: '128,256',
+                alt: '' -}}
+          {%- endif -%}
+        </a>
+
+        <div class="iso-cart-suggestions__info">
+          <a href="{{ product.url }}" class="iso-cart-suggestions__name">{{ product.title }}</a>
+          {%- render 'price-list', product: product, size: 'sm' -%}
+
+          {%- comment -%}
+            Une seule option de couleur : pastilles (même rendu que les cartes produit, snippet option-value
+            avec pa_handle) puis ajout direct de la couleur choisie. Autres options : lien vers la fiche.
+          {%- endcomment -%}
+          {%- liquid
+            assign color_option = blank
+            if product.options.size == 1 and product.variants.size > 1
+              assign color_label_list = 'general.label.color' | t | replace: ', ', ',' | downcase | split: ','
+              for color_label in color_label_list
+                if product.options_by_name[color_label] != blank
+                  assign color_option = product.options_by_name[color_label]
+                  break
+                endif
+              endfor
+            endif
+          -%}
+
+          {%- if color_option != blank -%}
+            {%- capture param_name -%}swatch-isocart-{{ product.id }}{%- endcapture -%}
+            <fieldset class="iso-cart-suggestions__swatches h-stack gap-0.5">
+              <legend class="sr-only">{{ color_option.name }}</legend>
+              {%- for option_value in color_option.values -%}
+                {%- render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: color_option.position, output_variant_media: true, size: 'sm', pa_handle: product.handle, show_tooltip: true -%}
+              {%- endfor -%}
+            </fieldset>
+          {%- endif -%}
+
+          {%- if product.selling_plan_groups.size == 0 and product.variants.size == 1 or color_option != blank -%}
+            {%- capture form_id -%}iso-sugg-{{ section.id }}-{{ product.id }}{%- endcapture -%}
+            {%- form 'product', product, id: form_id, is: 'product-form', class: 'iso-cart-suggestions__cta' -%}
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="id" value="{{ first_variant.id }}">
+              <button type="submit" class="iso-cart-suggestions__btn" aria-label="Ajouter {{ product.title | escape }} au panier">{% render 'iso-pa-icon', name: 'plus' %}Ajouter</button>
+            {%- endform -%}
+          {%- else -%}
+            {%- comment -%}Plusieurs options (taille, modèle...) : choix sur la fiche{%- endcomment -%}
+            <div class="iso-cart-suggestions__cta">
+              <a href="{{ product.url }}" class="iso-cart-suggestions__btn">Choisir</a>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}
