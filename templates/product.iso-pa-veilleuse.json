@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Pensée pour les bébes et les Petits Grands",
             "icones": "",
-            "contenu": "<ul><li>Rassure au coucher</li><li>Aide à l'endormissement</li><li>Accompagne les réveils nocturnes</li><li>Nomade: facile à tenir grâce à son anse</li><li>Autonomie pour se déplacer</li><li>Toujours à portée de main</li></ul>"
+            "contenu": "<ul><li>Rassure au coucher<\/li><li>Aide à l'endormissement<\/li><li>Accompagne les réveils nocturnes<\/li><li>Nomade: facile à tenir grâce à son anse<\/li><li>Autonomie pour se déplacer<\/li><li>Toujours à portée de main<\/li><\/ul>"
           }
         },
         "accordeon_2": {
@@ -26,7 +26,7 @@
           "settings": {
             "titre": "Caractéristiques",
             "icones": "",
-            "contenu": "<ul><li>Dimensions : 112mm x 126,5mm x 91,5mm</li><li>Poids= : 157g</li><li>Composition : silicone de haute qualité</li><li>Entretien : Nettoyer avec un chiffon doux et humide</li></ul>"
+            "contenu": "<ul><li>Dimensions : 112mm x 126,5mm x 91,5mm<\/li><li>Poids= : 157g<\/li><li>Composition : silicone de haute qualité<\/li><li>Entretien : Nettoyer avec un chiffon doux et humide<\/li><\/ul>"
           }
         }
       },
@@ -47,8 +47,8 @@
         "pitch": "La veilleuse qui rassure les tout-petits et illumine leurs premières nuits. Pensée pour les petites mains. Imaginée pour des nuits plus sereines.",
         "puces": "Minuteur 15'-30'\nTactile\nLumière douce : 2 intensités\nSilicone doux et résistant\nFacile à transporter avec son anse",
         "galerie": "",
-        "leopard": "Graou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Graou: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Graou: motif #E9E5DC\nlunch-box/Graou: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Graou: motif #F1F1ED",
+        "graou": "Graou",
+        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -64,8 +64,8 @@
         "video_1": {
           "type": "video",
           "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/83349d7f434b493bb72be85ee4693c40.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/83349d7f434b493bb72be85ee4693c40.thumbnail.0000000000.jpg?v=1789492821",
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/83349d7f434b493bb72be85ee4693c40.mov",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/83349d7f434b493bb72be85ee4693c40.thumbnail.0000000000.jpg?v=1789492821",
             "titre": ""
           }
         }
@@ -88,7 +88,7 @@
         "image_VR6k8z": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -96,7 +96,7 @@
         "image_QqYbtG": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -104,7 +104,7 @@
         "image_DVxrBH": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -112,7 +112,7 @@
         "image_78Tjqg": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -155,7 +155,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Tezza-4228.jpg",
+            "image": "shopify:\/\/shop_images\/Tezza-4228.jpg",
             "alt": "Veilleuse posée dans le lit à barreaux, bébé endormi à côté",
             "titre": "Un coucher tout en douceur",
             "texte": "Sa lumière douce rassure bébé et crée une ambiance apaisante au moment du coucher.",
@@ -165,7 +165,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/IMG_2803.heic",
+            "image": "shopify:\/\/shop_images\/IMG_2803.heic",
             "alt": "Bébé endormi qui garde la main sur sa veilleuse allumée",
             "titre": "Pensée pour les petites mains",
             "texte": "Sa forme toute ronde est facile à attraper, pour que bébé garde son petit compagnon près de lui.",
@@ -175,7 +175,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/eden_couloir_veilleuse.png",
+            "image": "shopify:\/\/shop_images\/eden_couloir_veilleuse.png",
             "alt": "Enfant qui marche dans le couloir en tirant sa veilleuse par l'anse",
             "titre": "Elle vous suit partout",
             "texte": "Grâce à son anse pratique, la veilleuse accompagne bébé à la maison, en voyage ou chez les grands-parents.",
