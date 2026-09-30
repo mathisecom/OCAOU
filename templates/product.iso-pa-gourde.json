@@ -69,7 +69,7 @@
           "settings": {
             "titre": "Pourquoi choisir la gourde O’CAOU ?",
             "icones": "",
-            "contenu": "<ul><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li><li>Pensé pour durer et accompagner les enfants pendant des années.</li></ul>"
+            "contenu": "<ul><li>Silicone alimentaire LFGB<\/li><li>Sans BPA, PVC ni phtalates<\/li><li>Sans goût ni odeur<\/li><li>Pensé pour durer et accompagner les enfants pendant des années.<\/li><\/ul>"
           }
         },
         "accordeon_2": {
@@ -85,7 +85,7 @@
           "settings": {
             "titre": "Caractéristiques",
             "icones": "",
-            "contenu": "<ul><li>Dimensions : H 190,2 mm</li><li>Capacité : 350 ml</li><li>Composition : silicone alimentaire</li></ul>"
+            "contenu": "<ul><li>Dimensions : H 190,2 mm<\/li><li>Capacité : 350 ml<\/li><li>Composition : silicone alimentaire<\/li><\/ul>"
           }
         },
         "complement_1": {
@@ -119,8 +119,8 @@
         "puces": "Incassable\nDéveloppe l’autonomie\nSouple & légère\nBouchon anti-fuite",
         "galerie": "",
         "opt_texte": false,
-        "leopard": "Léopard\nGraou",
-        "couleurs": "Rose: #E8898A\nsac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED",
+        "leopard": "Graou",
+        "couleurs": "Rose: #E8898A\nsac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED",
         "offre_titre": "Complétez votre Kit Repas Nomade",
         "relais": true,
         "compat": "",
@@ -136,16 +136,16 @@
         "video_1": {
           "type": "video",
           "settings": {
-            "src": "https://cdn.shopify.com/videos/c/vp/e4a7990fdc1245e98ba13ed17ad2b4a0/e4a7990fdc1245e98ba13ed17ad2b4a0.HD-720p-4.5Mbps-94499649.mp4",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/e4a7990fdc1245e98ba13ed17ad2b4a0.thumbnail.0000000000.jpg?v=1789491768",
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/e4a7990fdc1245e98ba13ed17ad2b4a0\/e4a7990fdc1245e98ba13ed17ad2b4a0.HD-720p-4.5Mbps-94499649.mp4",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/e4a7990fdc1245e98ba13ed17ad2b4a0.thumbnail.0000000000.jpg?v=1789491768",
             "titre": ""
           }
         },
         "video_2": {
           "type": "video",
           "settings": {
-            "src": "https://cdn.shopify.com/videos/c/vp/c203730451e74f4d8fd81a2e7d20d893/c203730451e74f4d8fd81a2e7d20d893.HD-720p-4.5Mbps-94565373.mp4",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c203730451e74f4d8fd81a2e7d20d893.thumbnail.0000000000.jpg?v=1789543602",
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/c203730451e74f4d8fd81a2e7d20d893\/c203730451e74f4d8fd81a2e7d20d893.HD-720p-4.5Mbps-94565373.mp4",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/c203730451e74f4d8fd81a2e7d20d893.thumbnail.0000000000.jpg?v=1789543602",
             "titre": ""
           }
         }
@@ -184,8 +184,8 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/souple.png",
-            "alt": "Enfant qui boit à sa gourde léopard",
+            "image": "shopify:\/\/shop_images\/souple.png",
+            "alt": "Enfant qui boit à sa gourde Graou",
             "titre": "Souple",
             "texte": "Silicone flexible et incassable. Une gourde qui résiste aux chutes et aux jeux les plus fous.",
             "badges": ""
@@ -194,7 +194,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPTImage6sept.2026_20_02_28_30564ab5-fe49-4388-9107-36357badb56e.png",
+            "image": "shopify:\/\/shop_images\/ChatGPTImage6sept.2026_20_02_28_30564ab5-fe49-4388-9107-36357badb56e.png",
             "alt": "Bouchons à paille de la gourde, en quatre coloris",
             "titre": "Pratique",
             "texte": "Bouchon anti-fuite et paille amovible. Douce pour les dents, facile à ouvrir, facile à nettoyer.",
@@ -204,7 +204,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPTImage26aout2026_12_12_04.png",
+            "image": "shopify:\/\/shop_images\/ChatGPTImage26aout2026_12_12_04.png",
             "alt": "Base hexagonale de la gourde, marquée 350 ml",
             "titre": "Hygiène",
             "texte": "Passe au lave-vaisselle et se stérilise à l’eau bouillante ou à la vapeur.",
@@ -214,7 +214,7 @@
         "item_4": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPTImage26aout2026_11_53_21.png",
+            "image": "shopify:\/\/shop_images\/ChatGPTImage26aout2026_11_53_21.png",
             "alt": "Les quatre coloris de la gourde O’CAOU",
             "titre": "Protection",
             "texte": "Silicone alimentaire LFGB, sans BPA, sans PVC, sans phtalates. Sans goût ni odeur.",
@@ -240,7 +240,7 @@
         "etape_1": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/a_1_an.png",
+            "image": "shopify:\/\/shop_images\/a_1_an.png",
             "alt": "Enfant qui boit à sa gourde beige",
             "age": "À 1 an",
             "texte": "Il apprend à boire tout seul"
@@ -249,8 +249,8 @@
         "etape_2": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/a_3_ans.png",
-            "alt": "Enfant souriante avec le sac léopard ouvert",
+            "image": "shopify:\/\/shop_images\/a_3_ans.png",
+            "alt": "Enfant souriante avec le sac Graou ouvert",
             "age": "À 3 ans",
             "texte": "Elle l’accompagne à la maternelle"
           }
@@ -258,7 +258,7 @@
         "etape_3": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/a_5_ans.png",
+            "image": "shopify:\/\/shop_images\/a_5_ans.png",
             "alt": "Enfant qui boit à sa gourde près d’une poussette",
             "age": "À 5 ans",
             "texte": "Elle hydrate au sport"
@@ -267,7 +267,7 @@
         "etape_4": {
           "type": "etape",
           "settings": {
-            "image": "shopify://shop_images/IMG_0074.heic",
+            "image": "shopify:\/\/shop_images\/IMG_0074.heic",
             "alt": "Bébé qui tient une gourde rose à la plage",
             "age": "À 7 ans",
             "texte": "Elle voyage avec lui"

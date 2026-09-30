@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Caractéristiques",
             "icones": "",
-            "contenu": "<ul><li>Matière : 100% Polyesther </li><li>Dimension: L30cm</li><li>Entretien: Machine 30°</li></ul>"
+            "contenu": "<ul><li>Matière : 100% Polyesther <\/li><li>Dimension: L30cm<\/li><li>Entretien: Machine 30°<\/li><\/ul>"
           }
         },
         "accordeon_2": {
@@ -26,7 +26,7 @@
           "settings": {
             "titre": "Pensé pour les bébés",
             "icones": "",
-            "contenu": "<ul><li>Rassure au moment du coucher</li><li>Accompagne les premiers câlins</li><li>Doux au toucher</li><li>Léger et Facile à transporter</li><li>S’accroche partout avec  la poignée nomade</li></ul>"
+            "contenu": "<ul><li>Rassure au moment du coucher<\/li><li>Accompagne les premiers câlins<\/li><li>Doux au toucher<\/li><li>Léger et Facile à transporter<\/li><li>S’accroche partout avec  la poignée nomade<\/li><\/ul>"
           }
         },
         "compl_poignee": {
@@ -56,8 +56,8 @@
         "puces": "",
         "galerie": "",
         "opt_texte": false,
-        "leopard": "Léopard\nGraou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Léopard: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Léopard: motif #E9E5DC\nlunch-box/Léopard: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Léopard: motif #F1F1ED",
+        "leopard": "Graou",
+        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -73,32 +73,32 @@
         "video_1": {
           "type": "video",
           "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/c2402815ba83414fa84b7b37d8cbaf8e.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c2402815ba83414fa84b7b37d8cbaf8e.thumbnail.0000000000.jpg?v=1789494653",
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c2402815ba83414fa84b7b37d8cbaf8e.mov",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/c2402815ba83414fa84b7b37d8cbaf8e.thumbnail.0000000000.jpg?v=1789494653",
             "titre": ""
           }
         },
         "video_2": {
           "type": "video",
           "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/5850a5a70746476da2c42e4b2dc374c3.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5850a5a70746476da2c42e4b2dc374c3.thumbnail.0000000000.jpg?v=1789487005",
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5850a5a70746476da2c42e4b2dc374c3.mov",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/5850a5a70746476da2c42e4b2dc374c3.thumbnail.0000000000.jpg?v=1789487005",
             "titre": ""
           }
         },
         "video_3": {
           "type": "video",
           "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/c5a1875eb05048738df3c7b9099e332b.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/c5a1875eb05048738df3c7b9099e332b.thumbnail.0000000000.jpg?v=1789584635",
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c5a1875eb05048738df3c7b9099e332b.mov",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/c5a1875eb05048738df3c7b9099e332b.thumbnail.0000000000.jpg?v=1789584635",
             "titre": ""
           }
         },
         "video_4": {
           "type": "video",
           "settings": {
-            "src": "https://cdn.shopify.com/videos/c/o/v/5dd1349eee07408c9b5332b3566d9d0c.mov",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5dd1349eee07408c9b5332b3566d9d0c.thumbnail.0000000000.jpg?v=1789486921",
+            "src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5dd1349eee07408c9b5332b3566d9d0c.mov",
+            "poster": "https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/4968\/0718\/files\/preview_images\/5dd1349eee07408c9b5332b3566d9d0c.thumbnail.0000000000.jpg?v=1789486921",
             "titre": ""
           }
         }
@@ -139,7 +139,7 @@
         "image_VR6k8z": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -147,7 +147,7 @@
         "image_QqYbtG": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -155,7 +155,7 @@
         "image_DVxrBH": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -163,7 +163,7 @@
         "image_78Tjqg": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -192,7 +192,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/bebe_tient_doudou_dans_poussette.png",
+            "image": "shopify:\/\/shop_images\/bebe_tient_doudou_dans_poussette.png",
             "alt": "Enfant debout qui attrape un doudou rose à deux mains",
             "titre": "Facile à attraper",
             "texte": "Des formes souples pensées pour les petites mains. Des ailes et un bec pour que Bébé puisse facilement l'attraper et le serrer.",
@@ -202,7 +202,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/lumiere-matias_doudou_poussette_copie.png",
+            "image": "shopify:\/\/shop_images\/lumiere-matias_doudou_poussette_copie.png",
             "alt": "Bébé installé dans son siège, doudou bleu contre lui",
             "titre": "Un câlin tout en douceur",
             "texte": "Ultra doux et réconfortant, ce doudou rassure bébé à tout moment de la journée.",
@@ -212,7 +212,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/mayol_epuisette_doudou.png",
+            "image": "shopify:\/\/shop_images\/mayol_epuisette_doudou.png",
             "alt": "Enfant au bord de l'eau, doudou bleu dans son filet",
             "titre": "Un doudou pour durer",
             "texte": "Léger et lavable en machine, il accompagne bébé dès la naissance,mais aussi les petits aventuriers.",
