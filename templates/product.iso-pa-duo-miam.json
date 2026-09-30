@@ -25,8 +25,8 @@
         "pitch": "Un duo pour devenir un vrai Petit Grand et manger tout seul en toute autonomie. En silicone souple et doux, le duo résiste aux hautes et basses températures. Compartimenté, rien ne se mélange, votre petit aventurier peut emporter partout un bon repas équilibré.",
         "puces": "Silicone souple et doux\nLave-vaisselle\nMicro-ondes\nCongélateur",
         "galerie": "",
-        "leopard": "Graou",
-        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Graou: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Graou: motif #E9E5DC\nlunch-box/Graou: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Graou: motif #F1F1ED\nduo-miam/Rose: #E3A5A0\nduo-miam/Bleu: #6C89B2\nduo-miam/Graou: motif #E3D4B5\nduo-miam/Beige: #BBAA96",
+        "graou": "Graou",
+        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED\nduo-miam\/Rose: #E3A5A0\nduo-miam\/Bleu: #6C89B2\nduo-miam\/Graou: motif #E3D4B5\nduo-miam\/Beige: #BBAA96",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -57,7 +57,7 @@
         "logo_1": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -65,7 +65,7 @@
         "logo_2": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -73,7 +73,7 @@
         "logo_3": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -81,7 +81,7 @@
         "logo_4": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -109,7 +109,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/IMG_6827.heic",
+            "image": "shopify:\/\/shop_images\/IMG_6827.heic",
             "alt": "Lunch box ouverte pendant un pique-nique, couvercle Graou tenu à la main",
             "titre": "Pour manger comme un grand",
             "texte": "Préparer son repas devient un jeu d'enfant. Il boit et mange tout seul comme un grand.",
@@ -119,7 +119,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/format_34_11e0bce8-1f1d-4231-817b-f9ca974513d1.png",
+            "image": "shopify:\/\/shop_images\/format_34_11e0bce8-1f1d-4231-817b-f9ca974513d1.png",
             "alt": "Enfant qui boit à sa gourde bleue, sac à dos sur les épaules",
             "titre": "Souple et léger",
             "texte": "Un duo utile à offrir. Pratique il s'emporte partout dans toutes les aventures.",
@@ -129,7 +129,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_7_sept._2026_19_04_26.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_7_sept._2026_19_04_26.png",
             "alt": "Lunch box rincée à l'eau, tenue à la main",
             "titre": "Se nettoie très facilement",
             "texte": "Passe au lave-vaisselle, mais se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.",

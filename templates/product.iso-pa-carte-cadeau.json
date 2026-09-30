@@ -18,7 +18,7 @@
           "settings": {
             "titre": "Comment ça marche",
             "icones": "",
-            "contenu": "<ul><li>Après le paiement, vous recevez votre carte cadeau par e-mail.&nbsp;</li><li>Vous pouvez la transmettre, l’envoyer directement à la personne de votre choix ou programmer son envoi.</li><li>Le code s’utilise au moment du paiement.&nbsp;</li><li>Le solde restant est conservé et consultable depuis l’e-mail reçu.</li></ul>"
+            "contenu": "<ul><li>Après le paiement, vous recevez votre carte cadeau par e-mail.&nbsp;<\/li><li>Vous pouvez la transmettre, l’envoyer directement à la personne de votre choix ou programmer son envoi.<\/li><li>Le code s’utilise au moment du paiement.&nbsp;<\/li><li>Le solde restant est conservé et consultable depuis l’e-mail reçu.<\/li><\/ul>"
           }
         }
       },
@@ -39,7 +39,7 @@
         "puces": "Pas d’erreur\nCode par e-mail\nCadeau idéal\nValable sur toute la boutique",
         "galerie": "",
         "opt_texte": true,
-        "leopard": "",
+        "graou": "",
         "couleurs": "",
         "offre_titre": "",
         "relais": false,
@@ -56,7 +56,7 @@
         "image_VR6k8z": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
+            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -64,7 +64,7 @@
         "image_QqYbtG": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -72,7 +72,7 @@
         "image_DVxrBH": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -80,7 +80,7 @@
         "image_78Tjqg": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }

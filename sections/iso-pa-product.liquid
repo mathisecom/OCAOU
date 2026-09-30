@@ -228,7 +228,7 @@
   # produit), puis color_swatch_config du thème. Rendu par snippets/iso-pa-sw.
   assign swcfg = settings.color_swatch_config | newline_to_br | split: '<br />'
   assign cfg = section.settings.couleurs | newline_to_br | split: '<br />'
-  assign leo_list = section.settings.leopard | downcase | newline_to_br | strip_newlines | replace: '<br />', ',' | prepend: ',' | append: ','
+  assign leo_list = section.settings.graou | downcase | newline_to_br | strip_newlines | replace: '<br />', ',' | prepend: ',' | append: ','
 
   # Ordre des pastilles de la fiche : le coloris de la photo affichée passe en tête, les autres
   # gardent l'ordre de Shopify. opt.values n'est pas touché : la galerie s'y repère par index.
@@ -899,6 +899,12 @@
     {
       "type": "textarea",
       "id": "leopard",
+      "label": "Couleurs à motif Graou (une par ligne)",
+      "default": "Graou"
+    },
+    {
+      "type": "textarea",
+      "id": "graou",
       "label": "Couleurs à motif Graou (une par ligne)",
       "default": "Graou"
     },
