@@ -182,7 +182,7 @@
           <article class="br-card">
             <div class="br-card-img">
               {%- if a.image -%}
-                <img src="{{ a.image | image_url: width: 600 }}" srcset="{{ a.image | image_url: width: 400 }} 400w, {{ a.image | image_url: width: 800 }} 800w" sizes="(min-width: 960px) calc((min(1240px, 100vw) - 96px) / 3), calc(100vw - 40px)" alt="" width="600" height="450" loading="lazy">
+                <img src="{{ a.image | image_url: width: 600 }}" srcset="{{ a.image | image_url: width: 400 }} 400w, {{ a.image | image_url: width: 800 }} 800w" sizes="(min-width: 960px) calc((min(1240px, 100vw) - 96px) / 3), calc(100vw - 40px)" alt="" width="600" height="600" loading="lazy">
               {%- endif -%}
             </div>
             <div class="br-card-body">
