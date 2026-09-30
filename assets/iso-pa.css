@@ -729,7 +729,7 @@
   .iso-pa .pa-ban,.iso-pa .pa-ban-img{min-height:min(460px,38vw)}
 }
 
-/* Prix barré à côté du prix de la fiche ; fond du motif léopard repris de la photo du produit. */
+/* Prix barré à côté du prix de la fiche ; fond du motif Graou repris de la photo du produit. */
 .iso-pa .pa-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
 .iso-pa .pa-price-c{font-size:16px;font-weight:500;color:var(--muted)}
 .iso-pa .pa-price [hidden]{display:none}
