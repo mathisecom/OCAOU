@@ -17,7 +17,7 @@
         "image_tN3Ani": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_24_50.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_24_50.png",
             "url": ""
           }
         },
@@ -30,84 +30,84 @@
         "image_eUWmYp": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_6907.png",
+            "image": "shopify:\/\/shop_images\/IMG_6907.png",
             "url": ""
           }
         },
         "image_DkrWqw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_13_55.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_13_55.png",
             "url": ""
           }
         },
         "image_KWJB43": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/20260809_172116.jpg",
+            "image": "shopify:\/\/shop_images\/20260809_172116.jpg",
             "url": ""
           }
         },
         "image_HPXExF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_6298.heic",
+            "image": "shopify:\/\/shop_images\/IMG_6298.heic",
             "url": ""
           }
         },
         "image_xbeczT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_7538.heic",
+            "image": "shopify:\/\/shop_images\/IMG_7538.heic",
             "url": ""
           }
         },
         "image_7BfKiH": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_12_16.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_12_16.png",
             "url": ""
           }
         },
         "image_hCTqwc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_11_28_18.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_11_28_18.png",
             "url": ""
           }
         },
         "image_ryYMnT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0366.png",
+            "image": "shopify:\/\/shop_images\/IMG_0366.png",
             "url": ""
           }
         },
         "image_XWbcJF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_10_19_35.png",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_10_19_35.png",
             "url": ""
           }
         },
         "image_GCdPNQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0538.heic",
+            "image": "shopify:\/\/shop_images\/IMG_0538.heic",
             "url": ""
           }
         },
         "image_MK3rYP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_6301.heic",
+            "image": "shopify:\/\/shop_images\/IMG_6301.heic",
             "url": ""
           }
         },
         "image_U9YqTk": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/PANA7813.jpg",
+            "image": "shopify:\/\/shop_images\/PANA7813.jpg",
             "url": ""
           }
         }
@@ -173,8 +173,8 @@
         "video_fxCYTT": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Ocaou.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/Ocaou.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -182,8 +182,8 @@
         "video_Cj7DmL": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/lv_0_20250723165810.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/lv_0_20250723165810.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -191,8 +191,8 @@
         "video_EWCWpz": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/le compagnon des vacances apaisées.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/le compagnon des vacances apaisées.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -200,8 +200,8 @@
         "video_YgwTmQ": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/vidéo usages montée.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/vidéo usages montée.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "modal_heading": "",
             "modal_text": ""
           }
@@ -384,7 +384,7 @@
             "titre": "Boutique",
             "menu": "main-menu",
             "lien_1_texte": "Tous les produits",
-            "lien_1_url": "/collections/all",
+            "lien_1_url": "\/collections\/all",
             "lien_2_texte": "",
             "lien_2_url": "",
             "lien_3_texte": "",
@@ -401,13 +401,13 @@
           "type": "colonne",
           "settings": {
             "titre": "La marque",
-            "menu": "",
-            "lien_1_texte": "Pourquoi O’CAOU",
-            "lien_1_url": "shopify://pages/pourquoi-o-caou",
+            "menu": "la-marque",
+            "lien_1_texte": "",
+            "lien_1_url": "",
             "lien_2_texte": "",
             "lien_2_url": "",
-            "lien_3_texte": "Ils parlent de nous",
-            "lien_3_url": "shopify://pages/ils-parlent-de-nous",
+            "lien_3_texte": "",
+            "lien_3_url": "",
             "lien_4_texte": "",
             "lien_4_url": "",
             "lien_5_texte": "",
@@ -422,13 +422,13 @@
             "titre": "Aide",
             "menu": "",
             "lien_1_texte": "Livraisons & retours",
-            "lien_1_url": "shopify://pages/livraisons-retours",
+            "lien_1_url": "shopify:\/\/pages\/livraisons-retours",
             "lien_2_texte": "Retourner un article",
-            "lien_2_url": "/pages/livraisons-retours#retours",
+            "lien_2_url": "\/pages\/livraisons-retours#retours",
             "lien_3_texte": "Mes commandes",
-            "lien_3_url": "https://shopify.com/88049680718/account/orders",
+            "lien_3_url": "https:\/\/shopify.com\/88049680718\/account\/orders",
             "lien_4_texte": "Nous contacter",
-            "lien_4_url": "shopify://pages/contact",
+            "lien_4_url": "shopify:\/\/pages\/contact",
             "lien_5_texte": "",
             "lien_5_url": "",
             "lien_6_texte": "",
@@ -450,11 +450,11 @@
         "email": "hello@ocaou.com",
         "adresse": "2 rue de la Chapelle, résidence Beau Rivage, 83270 Saint-Cyr-sur-Mer",
         "legal_1_texte": "Mentions légales",
-        "legal_1_url": "shopify://pages/mentions-legales",
+        "legal_1_url": "shopify:\/\/pages\/mentions-legales",
         "legal_2_texte": "Conditions générales de vente",
-        "legal_2_url": "/policies/terms-of-sale",
+        "legal_2_url": "\/policies\/terms-of-sale",
         "legal_3_texte": "Politique de confidentialité",
-        "legal_3_url": "shopify://pages/politique-de-confidentialite",
+        "legal_3_url": "shopify:\/\/pages\/politique-de-confidentialite",
         "cookies_texte": "Cookies",
         "marque": "O’CAOU"
       }
