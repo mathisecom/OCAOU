@@ -12,6 +12,37 @@
   "sections": {
     "main": {
       "type": "iso-pa-product",
+      "blocks": {
+        "accordeon_xhinnW": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques Doudou",
+            "icones": "",
+            "contenu": "<ul><li>Matière : 100% Polyesther</li><li>Dimension: L30cm</li><li>Entretien: Machine 30°</li></ul>"
+          }
+        },
+        "accordeon_BknwCt": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques Veilleuse",
+            "icones": "",
+            "contenu": "<ul><li>Dimensions&nbsp;: 112mm x 126,5mm x 91,5mm</li><li>Poids=&nbsp;: 157g</li><li>Composition&nbsp;: silicone de haute qualité</li><li>Entretien&nbsp;: Nettoyer avec un chiffon doux et humide</li></ul>"
+          }
+        },
+        "accordeon_xjCrRk": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques Couverture",
+            "icones": "",
+            "contenu": "<ul><li>Dimensions&nbsp;: 80x100cm</li><li>Composition&nbsp;: 100 % coton (certifié OEKO-TEX® Standard 100)</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "accordeon_xhinnW",
+        "accordeon_BknwCt",
+        "accordeon_xjCrRk"
+      ],
       "settings": {
         "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
@@ -67,7 +98,7 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": false,
         "mf_namespace": "custom",
         "mf_key": "product_videos"
