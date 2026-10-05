@@ -12,6 +12,19 @@
   "sections": {
     "main": {
       "type": "iso-pa-product",
+      "blocks": {
+        "accordeon_RETXWm": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques",
+            "icones": "",
+            "contenu": "<ul><li>Cabas: 45x35x12 cm</li></ul><p>Extérieur : 100 % coton&nbsp;</p><p>Intérieur : 30 % coton / 70 % polyester</p><p>Lavage à 30°</p><p>Ne pas sécher au sèche linge</p><p>Ne pas utiliser d’agent de blanchiment</p><ul><li>Sac isotherme:</li></ul><p>Capacité : 5,2 L</p><p>Isolation thermique</p><p>Dimensions: H 23x diamètre 17cm</p><p>Matière : Polyesther, intérieur PEVA</p><p>Entretien : nettoyage facile avec un chiffon humide</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordeon_RETXWm"
+      ],
       "settings": {
         "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
@@ -57,7 +70,7 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": false,
         "mf_namespace": "custom",
         "mf_key": "product_videos"
