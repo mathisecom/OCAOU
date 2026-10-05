@@ -34,7 +34,7 @@
           "settings": {
             "titre": "Caractéristiques",
             "icones": "",
-            "contenu": "<p><strong>Dimensions<\/strong> : H190,2mm<\/p><p><strong>Capacité<\/strong> : 350ML<\/p><p><strong>Composition<\/strong> : Silicone Alimentaire<\/p>"
+            "contenu": "<p><strong>Dimensions</strong> : H190,2mm</p><p><strong>Capacité</strong> : 350ML</p><p><strong>Composition</strong> : Silicone Alimentaire</p>"
           }
         }
       },
@@ -56,8 +56,9 @@
         "pitch": "Un kit Repas complet pour voyager partout bien équipé. Léger et facile à transporter. Tout pour manger comme un grand en toute autonomie.",
         "puces": "Silicone souple\nDéveloppe l’autonomie\nLéger, facile à nettoyer\nHermétique\nRentre dans le sac isotherme O’CAOU",
         "galerie": "",
-        "leopard": "Graou",
-        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED\ncoffret-premier-repas\/Rose: #E3A5A0\ncoffret-premier-repas\/Bleu: #6C89B2\ncoffret-premier-repas\/Graou: motif #E3D4B5\ncoffret-premier-repas\/Beige: #BBAA96",
+        "opt_texte": false,
+        "graou": "Graou",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Graou: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Graou: motif #E9E5DC\nlunch-box/Graou: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Graou: motif #F1F1ED\ncoffret-premier-repas/Rose: #E3A5A0\ncoffret-premier-repas/Bleu: #6C89B2\ncoffret-premier-repas/Graou: motif #E3D4B5\ncoffret-premier-repas/Beige: #BBAA96",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -67,13 +68,49 @@
         "livraison": "Livraison Suivie"
       }
     },
+    "iso_pa_videos_igUKKC": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_7Ue46X": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/bébé sac isotherme .mov",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        },
+        "video_WMPTiA": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/couvercle LB.mov",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_7Ue46X",
+        "video_WMPTiA"
+      ],
+      "name": "Vidéos",
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#FFFFFF",
+        "filet": false,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
+      }
+    },
     "presse": {
       "type": "iso-presse",
       "blocks": {
         "logo_1": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -81,7 +118,7 @@
         "logo_2": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -89,7 +126,7 @@
         "logo_3": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -97,7 +134,7 @@
         "logo_4": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -125,7 +162,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_6_sept._2026_20_59_04.png",
+            "image": "shopify://shop_images/ChatGPT_Image_6_sept._2026_20_59_04.png",
             "alt": "Gourde, lunch box et couverts O'CAOU posés ensemble",
             "titre": "Un kit repas complet",
             "texte": "Un coffret parfait pour manger en toute autonomie. Les petits vont pouvoir préparer leur repas comme des grands.",
@@ -135,7 +172,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/no_change_3_copie.png",
+            "image": "shopify://shop_images/no_change_3_copie.png",
             "alt": "Le kit repas rangé dans le sac isotherme O'CAOU",
             "titre": "Pratique à transporter",
             "texte": "Le kit complet se glisse facilement dans le sac isotherme O’CAOU. Avec sa sangle il s'accroche partout, poussette, vélo ou siège auto.",
@@ -145,7 +182,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_7_sept._2026_19_04_26.png",
+            "image": "shopify://shop_images/ChatGPT_Image_7_sept._2026_19_04_26.png",
             "alt": "Le kit repas en silicone rincé à l'eau",
             "titre": "Facile à nettoyer",
             "texte": "Passe au lave-vaisselle. En silicone souple et doux, le kit se rince aussi très facilement à l’eau pour un nettoyage rapide au quotidien.",
@@ -167,6 +204,7 @@
   },
   "order": [
     "main",
+    "iso_pa_videos_igUKKC",
     "presse",
     "benefices"
   ],
