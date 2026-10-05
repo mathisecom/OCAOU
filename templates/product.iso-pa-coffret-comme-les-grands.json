@@ -32,9 +32,9 @@
         "accordeon_8Yp6Fa": {
           "type": "accordeon",
           "settings": {
-            "titre": "",
+            "titre": "Caractéristiques Doudou",
             "icones": "",
-            "contenu": ""
+            "contenu": "<ul><li>Matière : 100% Polyesther</li><li>Dimension: L30cm</li><li>Entretien: Machine 30°</li></ul>"
           }
         }
       },
