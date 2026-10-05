@@ -25,8 +25,9 @@
         "pitch": "Un coffret parfait pour se promener en toute sérénité. Un grand sac isotherme pour garder au chaud ou au frais le repas de bébé, et un grand fourre-tout pour ne rien manquer de la journée.",
         "puces": "Grande capacité\nLéger\nSouple et léger\nTrès stylé",
         "galerie": "",
+        "opt_texte": false,
         "graou": "Graou",
-        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED\ncoffret-balades\/Bleu: #97B0D1\ncoffret-balades\/Rose: #E8898A\ncoffret-balades\/Graou: motif #E9E5DC",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Graou: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Graou: motif #E9E5DC\nlunch-box/Graou: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Graou: motif #F1F1ED\ncoffret-balades/Bleu: #97B0D1\ncoffret-balades/Rose: #E8898A\ncoffret-balades/Graou: motif #E9E5DC",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -36,13 +37,39 @@
         "livraison": "Livraison Suivie en France"
       }
     },
+    "iso_pa_videos_8F7F6Q": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_TMCVN3": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/bébé sac isotherme .mov",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_TMCVN3"
+      ],
+      "name": "Vidéos",
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#FFFFFF",
+        "filet": false,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
+      }
+    },
     "presse": {
       "type": "iso-presse",
       "blocks": {
         "logo_1": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -50,7 +77,7 @@
         "logo_2": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -58,7 +85,7 @@
         "logo_3": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -66,7 +93,7 @@
         "logo_4": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -107,7 +134,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/no_change_3_5128d3b5-7d47-4dd3-8fab-79f47bb7d937.png",
+            "image": "shopify://shop_images/no_change_3_5128d3b5-7d47-4dd3-8fab-79f47bb7d937.png",
             "alt": "Sac isotherme rose accroché à la poussette, dans un jardin",
             "titre": "Tout pour la balade",
             "texte": "Un cabas et un sac isotherme pour partir sereinement avec tout ce qu’il faut pour bébé.",
@@ -117,7 +144,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/no_change_3_copie_2.png",
+            "image": "shopify://shop_images/no_change_3_copie_2.png",
             "alt": "Sac isotherme ouvert : lunch box rose, couverts et gourde rangés à l'intérieur",
             "titre": "Pratique et spacieux",
             "texte": "De la place pour le repas, les affaires et les petits indispensables de la journée.",
@@ -127,7 +154,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/no_change_4.png",
+            "image": "shopify://shop_images/no_change_4.png",
             "alt": "Cabas rose porté au bras, gourde accrochée sur le côté",
             "titre": "Beau et facile à emporter",
             "texte": "Un duo léger, souple et stylé, parfait pour les sorties du quotidien.",
@@ -149,6 +176,7 @@
   },
   "order": [
     "main",
+    "iso_pa_videos_8F7F6Q",
     "presse",
     "associes",
     "benefices"
