@@ -12,6 +12,28 @@
   "sections": {
     "main": {
       "type": "iso-pa-product",
+      "blocks": {
+        "accordeon_dUAVWQ": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques",
+            "icones": "",
+            "contenu": "<p><strong>Gourde:</strong></p><ul><li>Dimensions : H 190,2 mm</li><li>Capacité : 350 ml</li><li>Composition : silicone alimentaire</li></ul><p><strong>Lunchbox:</strong></p><ul><li>Dimensions : 183 × 132 × 55 mm</li><li>Capacité : 800 ml (400 + 200 + 200 ml)</li><li>Composition : Silicone alimentaire</li></ul>"
+          }
+        },
+        "accordeon_qh7FFP": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Entretien",
+            "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
+            "contenu": ""
+          }
+        }
+      },
+      "block_order": [
+        "accordeon_dUAVWQ",
+        "accordeon_qh7FFP"
+      ],
       "settings": {
         "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
@@ -67,7 +89,7 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": false,
         "mf_namespace": "custom",
         "mf_key": "product_videos"
