@@ -13,6 +13,14 @@
     "main": {
       "type": "iso-pa-product",
       "blocks": {
+        "accordeon_fn4y3z": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Pourquoi choisir O'CAOU",
+            "icones": "lfgb:Silicone alimentaire LFGB\nbpa-free:Sans BPA, PVC ni phtalates\ncheck:Sans goût ni odeur",
+            "contenu": ""
+          }
+        },
         "accordeon_dUAVWQ": {
           "type": "accordeon",
           "settings": {
@@ -28,20 +36,12 @@
             "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
             "contenu": ""
           }
-        },
-        "accordeon_fn4y3z": {
-          "type": "accordeon",
-          "settings": {
-            "titre": "Pourquoi choisir O'CAOU",
-            "icones": "lfgb:Silicone alimentaire LFGB\nbpa-free:Sans BPA, PVC ni phtalates\ncheck:Sans goût ni odeur",
-            "contenu": ""
-          }
         }
       },
       "block_order": [
+        "accordeon_fn4y3z",
         "accordeon_dUAVWQ",
-        "accordeon_qh7FFP",
-        "accordeon_fn4y3z"
+        "accordeon_qh7FFP"
       ],
       "settings": {
         "photo_bg": "#fbf6ef",
