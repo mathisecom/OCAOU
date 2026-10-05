@@ -68,8 +68,8 @@
           "type": "accordeon",
           "settings": {
             "titre": "Pourquoi choisir la gourde O’CAOU ?",
-            "icones": "",
-            "contenu": "<ul><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li><li>Pensé pour durer et accompagner les enfants pendant des années.</li></ul>"
+            "icones": "lfgb:Silicone alimentaire LFGB\nbpa-free:Sans BPA, PVC ni phtalates\ncheck:Sans goût ni odeur",
+            "contenu": ""
           }
         },
         "accordeon_2": {
