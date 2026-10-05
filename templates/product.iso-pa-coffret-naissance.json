@@ -25,8 +25,9 @@
         "pitch": "Un coffret tout doux pour rassurer bébé : une couverture pour envelopper ses petits pieds, un doudou pour le câliner et une veilleuse pour dormir en toute sérénité.",
         "puces": "DOUCEUR\nRÉCONFORT\nSOMMEIL APAISÉ\nPRÊT À OFFRIR",
         "galerie": "",
+        "opt_texte": false,
         "graou": "Graou",
-        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED\ncoffret-naissance\/Bleu: #3F63B6\ncoffret-naissance\/Rose: #A86C64\ncoffret-naissance\/Blanc: #E4E2EA",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Graou: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Graou: motif #E9E5DC\nlunch-box/Graou: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Graou: motif #F1F1ED\ncoffret-naissance/Bleu: #3F63B6\ncoffret-naissance/Rose: #A86C64\ncoffret-naissance/Blanc: #E4E2EA",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -36,13 +37,49 @@
         "livraison": "Livraison Suivie en France"
       }
     },
+    "iso_pa_videos_6a7VEL": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_FPrKr8": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/bébé avec doudou.mov",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        },
+        "video_DhwENi": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/bébé joue avec veilleuse.mov",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_FPrKr8",
+        "video_DhwENi"
+      ],
+      "name": "Vidéos",
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#FFFFFF",
+        "filet": false,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
+      }
+    },
     "presse": {
       "type": "iso-presse",
       "blocks": {
         "logo_1": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -50,7 +87,7 @@
         "logo_2": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -58,7 +95,7 @@
         "logo_3": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -66,7 +103,7 @@
         "logo_4": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -94,7 +131,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lison.jpg",
+            "image": "shopify://shop_images/lison.jpg",
             "alt": "Bébé endormi, doudou rose posé contre lui",
             "titre": "Pour rassurer bébé",
             "texte": "Une couverture, un doudou et une veilleuse réunis dans un seul coffret tout doux.",
@@ -104,7 +141,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Tezza-3973_a984da25-90a2-43f6-b39a-ff89012f4158.jpg",
+            "image": "shopify://shop_images/Tezza-3973_a984da25-90a2-43f6-b39a-ff89012f4158.jpg",
             "alt": "Couverture tricotée posée dans un couffin en osier",
             "titre": "Pour suivre bébé partout",
             "texte": "Des essentiels pour accompagner bébé à la maison comme en déplacement.",
@@ -114,7 +151,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Tezza-1132.jpg",
+            "image": "shopify://shop_images/Tezza-1132.jpg",
             "alt": "Veilleuse allumée près d'un bébé qui dort",
             "titre": "Une belle idée cadeau",
             "texte": "Un coffret naissance utile, tendre et facile à offrir.",
@@ -136,6 +173,7 @@
   },
   "order": [
     "main",
+    "iso_pa_videos_6a7VEL",
     "presse",
     "benefices"
   ]
