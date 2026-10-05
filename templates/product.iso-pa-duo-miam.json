@@ -99,7 +99,7 @@
         "accroche": "",
         "titre": "{titre} en vidéo",
         "bg_color": "#ffffff",
-        "filet": false,
+        "filet": true,
         "mf_namespace": "custom",
         "mf_key": "product_videos"
       }
