@@ -16,17 +16,17 @@
         "accordeon_1": {
           "type": "accordeon",
           "settings": {
-            "titre": "Dimensions (en cm)",
+            "titre": "Dimensions",
             "icones": "",
-            "contenu": "<ul><li><strong>Dimensions fermées:</strong><br/>L34cm x H27cm x P10cm</li><li><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm </li></ul>"
+            "contenu": "<ul><li><strong>Dimensions fermées:</strong><br/>L34cm x H27cm x P10cm</li><li><strong>Dimensions ouvertes:</strong><br/>L34cm x H62cm&nbsp;</li></ul>"
           }
         },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
-            "titre": "Composition Textile",
+            "titre": "Composition",
             "icones": "",
-            "contenu": "<ul><li>Extérieur: 100% Coton</li><li>Intérieur: 100% coton</li><li>Filet: 100% polyester</li><li>Rembourrage : 100% polyurétane</li></ul><p><strong>Sac sherpa</strong></p><ul><li>Extérieur: 100% polyester</li></ul><p></p>"
+            "contenu": "<ul><li>Extérieur:&nbsp;100% Coton</li><li>Intérieur:&nbsp;100% coton</li><li>Filet:&nbsp;100% polyester</li><li>Rembourrage&nbsp;: 100% polyurétane</li></ul><p><strong>Sac sherpa</strong></p><ul><li>Extérieur:&nbsp;100% polyester</li></ul><p></p>"
           }
         },
         "accordeon_3": {
@@ -98,7 +98,7 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": false,
         "mf_namespace": "custom",
         "mf_key": "product_videos"
