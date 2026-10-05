@@ -13,6 +13,14 @@
     "main": {
       "type": "iso-pa-product",
       "blocks": {
+        "accordeon_RQ6pGE": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques",
+            "icones": "",
+            "contenu": "<p><strong>Gourde:</strong></p><ul><li>Dimensions : H 190,2 mm</li><li>Capacité : 350 ml</li><li>Composition : silicone alimentaire</li></ul><p><strong>Lunchbox:</strong></p><ul><li>Dimensions : 183 × 132 × 55 mm</li><li>Capacité : 800 ml (400 + 200 + 200 ml)</li><li>Composition : Silicone alimentaire</li></ul><p><strong>Couverts</strong></p><ul><li>Poche de rangement&nbsp;: L17cm</li><li>Couvert&nbsp;: L14cm</li><li>Couverts en acier inoxydable&nbsp;</li><li>Manches en silicone alimentaire&nbsp;</li><li>Pochette de protection en silicone</li></ul>"
+          }
+        },
         "accordeon_2": {
           "type": "accordeon",
           "settings": {
@@ -20,10 +28,20 @@
             "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
             "contenu": ""
           }
+        },
+        "accordeon_QhYKLr": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Pourquoi choisir O'CAOU",
+            "icones": "",
+            "contenu": "<ul><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li><li>Pensé pour durer et accompagner les enfants pendant des années.</li></ul>"
+          }
         }
       },
       "block_order": [
-        "accordeon_2"
+        "accordeon_RQ6pGE",
+        "accordeon_2",
+        "accordeon_QhYKLr"
       ],
       "settings": {
         "photo_bg": "#fbf6ef",
@@ -90,7 +108,7 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "filet": false,
         "mf_namespace": "custom",
         "mf_key": "product_videos"
