@@ -12,6 +12,28 @@
   "sections": {
     "main": {
       "type": "iso-pa-product",
+      "blocks": {
+        "accordeon_PKLzC6": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques Sac à Dos",
+            "icones": "",
+            "contenu": "<p><strong>Dimensions</strong></p><ul><li>Fermé : L 34 × H 27 × P 10 cm.</li><li>Ouvert : L 34 × H 62 cm.</li></ul><p><strong>Composition</strong></p><ul><li>Extérieur : 100 % coton (certifié OEKO-TEX® Standard 100)</li><li>Intérieur : 100 % coton (certifié OEKO-TEX® Standard 100)</li><li>Filet : 100 % polyester.</li><li>Rembourrage : 100 % polyuréthane.</li><li>Sac sherpa: extérieur : 100 % polyester.</li></ul><p><strong>Entretien</strong></p><ul><li>Laver séparément, délicatement, à la main, à l’eau froide.</li><li>Ne pas faire tremper.</li><li>Essorer à la main.</li><li>Remodeler avant séchage.</li><li>Séchage à plat.</li><li>Ne pas sécher au sèche-linge.</li><li>Ne pas repasser.</li><li>Ne pas utiliser d’agent de blanchiment.</li></ul>"
+          }
+        },
+        "accordeon_LH4L9b": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques Cabas",
+            "icones": "",
+            "contenu": "<ul><li>Dimensions: 45x35x12 cm</li><li>Composition Extérieur : 100 % coton&nbsp;</li><li>Composition Intérieur : 30 % coton / 70 % polyester</li><li>Lavage à 30°</li><li>Ne pas sécher au sèche linge</li><li>Ne pas utiliser d’agent de blanchiment</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "accordeon_PKLzC6",
+        "accordeon_LH4L9b"
+      ],
       "settings": {
         "photo_bg": "#fbf6ef",
         "bg_color": "#ffffff",
@@ -25,8 +47,9 @@
         "pitch": "Un duo pour emporter vraiment TOUT avec vous. Un sac à dos malin pour les essentiels, et un grand fourre-tout pour compléter au cas où… pour ne rien manquer. Vous aurez vraiment TOUT sous la main, parés à toutes les éventualités.",
         "puces": "Organisation facile\nLéger et molletonné\nNombreuses poches\nEnsemble stylé",
         "galerie": "",
+        "opt_texte": false,
         "graou": "Graou",
-        "couleurs": "sac-ocaou\/Graou: motif #EBE9E3\nsac-ocaou\/Nude: #ECDECC\nsac-ocaou\/Navy: #4E74A4\nsac-ocaou\/Bleu: #81A4CB\nsac-ocaou\/Rose: #CE747F\nsac-ocaou\/Blanc: #E8E1D3\ngourde\/Rose: #E3A5A0\ngourde\/Bleu: #6C89B2\ngourde\/Graou: motif #E3D4B5\ngourde\/Beige: #BBAA96\ncabas-ocaou\/Bleu: #97B0D1\ncabas-ocaou\/Rose: #E8898A\ncabas-ocaou\/Graou: motif #E9E5DC\nlunch-box\/Graou: motif #F5E5D0\nlunch-box\/Rose: #D38C87\nlunch-box\/Bleu: #839AC5\nlunch-box\/Beige: #CFBBB4\ncouverts\/Beige: #BBAA96\ncouverts\/Rose: #E3A5A0\ncouverts\/Bleu: #6C89B2\ncouverts\/Graou: #FBE9CE\ndoudou\/Bleu: #3F63B6\ndoudou\/Rose: #A86C64\ndoudou\/Blanc: #E4E2EA\ncouverture\/Blanc: #ECE9E7\ncouverture\/Bleu: #98B0DA\ncouverture\/Rose: #DAC3C6\npochette-ocaou\/Rose: #DD7573\npochette-ocaou\/Bleu: #6C92C3\npochette-ocaou\/Graou: motif #F1F1ED\nduo-pratique\/Graou: motif #EBE9E3\nduo-pratique\/Nude: #ECDECC\nduo-pratique\/Navy: #4E74A4\nduo-pratique\/Bleu: #81A4CB\nduo-pratique\/Rose: #CE747F\nduo-pratique\/Blanc: #E8E1D3",
+        "couleurs": "sac-ocaou/Graou: motif #EBE9E3\nsac-ocaou/Nude: #ECDECC\nsac-ocaou/Navy: #4E74A4\nsac-ocaou/Bleu: #81A4CB\nsac-ocaou/Rose: #CE747F\nsac-ocaou/Blanc: #E8E1D3\ngourde/Rose: #E3A5A0\ngourde/Bleu: #6C89B2\ngourde/Graou: motif #E3D4B5\ngourde/Beige: #BBAA96\ncabas-ocaou/Bleu: #97B0D1\ncabas-ocaou/Rose: #E8898A\ncabas-ocaou/Graou: motif #E9E5DC\nlunch-box/Graou: motif #F5E5D0\nlunch-box/Rose: #D38C87\nlunch-box/Bleu: #839AC5\nlunch-box/Beige: #CFBBB4\ncouverts/Beige: #BBAA96\ncouverts/Rose: #E3A5A0\ncouverts/Bleu: #6C89B2\ncouverts/Graou: #FBE9CE\ndoudou/Bleu: #3F63B6\ndoudou/Rose: #A86C64\ndoudou/Blanc: #E4E2EA\ncouverture/Blanc: #ECE9E7\ncouverture/Bleu: #98B0DA\ncouverture/Rose: #DAC3C6\npochette-ocaou/Rose: #DD7573\npochette-ocaou/Bleu: #6C92C3\npochette-ocaou/Graou: motif #F1F1ED\nduo-pratique/Graou: motif #EBE9E3\nduo-pratique/Nude: #ECDECC\nduo-pratique/Navy: #4E74A4\nduo-pratique/Bleu: #81A4CB\nduo-pratique/Rose: #CE747F\nduo-pratique/Blanc: #E8E1D3",
         "offre_titre": "",
         "relais": true,
         "compat": "",
@@ -55,7 +78,7 @@
         "logo_1": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/la-maison-des-maternelles.webp",
+            "image": "shopify://shop_images/la-maison-des-maternelles.webp",
             "nom": "La Maison des Maternelles",
             "url": ""
           }
@@ -63,7 +86,7 @@
         "logo_2": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
+            "image": "shopify://shop_images/marie-claire_a0c92f6d-077a-441e-9ead-ff6e4d410f30.png",
             "nom": "Marie Claire",
             "url": ""
           }
@@ -71,7 +94,7 @@
         "logo_3": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
+            "image": "shopify://shop_images/doolittle_be3727f7-54ef-4d18-9c0f-bd825851e89c.png",
             "nom": "Doolittle",
             "url": ""
           }
@@ -79,7 +102,7 @@
         "logo_4": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
+            "image": "shopify://shop_images/yoopala_acd2ef6e-d943-44d4-8ed6-0beebcf77de0.png",
             "nom": "Yoopala",
             "url": ""
           }
@@ -107,7 +130,7 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/no_change_1.jpg",
+            "image": "shopify://shop_images/no_change_1.jpg",
             "alt": "Sac à langer ouvert : affaires de change, biberon et petits jouets rangés",
             "titre": "Pour TOUT prévoir",
             "texte": "Ranger, anticiper? C'est le duo parfait pour vous aider. Des poches partout pour tout ranger.",
@@ -117,7 +140,7 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/no_change_4_dcbd30f5-32ed-40ab-b043-cb560fa179b6.png",
+            "image": "shopify://shop_images/no_change_4_dcbd30f5-32ed-40ab-b043-cb560fa179b6.png",
             "alt": "Adulte de dos portant un enfant dans les bras et le sac à dos bleu",
             "titre": "Léger et molletonné",
             "texte": "Des sacs agréables à porter pour vadrouiller toute la journée.",
@@ -127,7 +150,7 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2026-09-07_a_19.46.21.png",
+            "image": "shopify://shop_images/Capture_d_ecran_2026-09-07_a_19.46.21.png",
             "alt": "Quatre pochettes de coloris différents posées côte à côte",
             "titre": "Ranger en étant stylé",
             "texte": "Des duos à composer vous même, assortis ou dissociés, vous resterez toujours stylés.",
@@ -153,84 +176,84 @@
           "type": "question",
           "settings": {
             "question": "Le sac à dos est-il pour les enfants ou pour les parents ?",
-            "reponse": "<p>Les deux ! Les bretelles sont réglables, parents et enfants peuvent le porter.<\/p>"
+            "reponse": "<p>Les deux ! Les bretelles sont réglables, parents et enfants peuvent le porter.</p>"
           }
         },
         "question_2": {
           "type": "question",
           "settings": {
             "question": "À partir de quel âge un enfant peut-il le porter ?",
-            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il peut préparer son sac TOUT SEUL comme un grand.<\/p>"
+            "reponse": "<p>Dès 2 ans, un enfant peut le porter seul. Il peut préparer son sac TOUT SEUL comme un grand.</p>"
           }
         },
         "question_3": {
           "type": "question",
           "settings": {
             "question": "À quoi sert ce sac à dos ?",
-            "reponse": "<p>Multifonctions : pour langer, crèche, maternelle, nounou, sport, balades, voyages. Évolutif, il s’adapte à chaque étape de l’enfance.<\/p>"
+            "reponse": "<p>Multifonctions : pour langer, crèche, maternelle, nounou, sport, balades, voyages. Évolutif, il s’adapte à chaque étape de l’enfance.</p>"
           }
         },
         "question_7M3rnp": {
           "type": "question",
           "settings": {
             "question": "Comment on accroche le doudou ?",
-            "reponse": "<p>Deux solutions : coincez le doudou sous <strong>l’élastique au centre du sac<\/strong>, ou accrochez-le au <strong>long élastique muni de 2 boucles<\/strong>, adaptées aux petits comme aux gros doudous. Gardez-les <strong>dans <\/strong>le sac ou laissez-les<strong> pendre à l’extérieur<\/strong> : ils restent <strong>faciles à attraper et à ranger<\/strong>.<\/p>"
+            "reponse": "<p>Deux solutions : coincez le doudou sous <strong>l’élastique au centre du sac</strong>, ou accrochez-le au <strong>long élastique muni de 2 boucles</strong>, adaptées aux petits comme aux gros doudous. Gardez-les <strong>dans </strong>le sac ou laissez-les<strong> pendre à l’extérieur</strong> : ils restent <strong>faciles à attraper et à ranger</strong>.</p>"
           }
         },
         "question_4": {
           "type": "question",
           "settings": {
             "question": "Faut-il nécessairement l’ouvrir pour l’utiliser ?",
-            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Toutes les poches sont accessibles en mode sac à dos.<\/p>"
+            "reponse": "<p>Non, il s’utilise aussi comme un sac à dos classique. Toutes les poches sont accessibles en mode sac à dos.</p>"
           }
         },
         "question_5": {
           "type": "question",
           "settings": {
             "question": "Peut-on ranger d’autres affaires que dans les poches ?",
-            "reponse": "<p>Oui, comme dans un sac à dos classique, on met tout dedans.<\/p>"
+            "reponse": "<p>Oui, comme dans un sac à dos classique, on met tout dedans.</p>"
           }
         },
         "question_6": {
           "type": "question",
           "settings": {
             "question": "Comment peut-on accrocher le sac à dos ?",
-            "reponse": "<p>Attaches poussettes intégrées, on peut aussi l'accrocher au siège auto et aux barreaux du lit bébé. Il y a 2 poignées aussi.<\/p>"
+            "reponse": "<p>Attaches poussettes intégrées, on peut aussi l'accrocher au siège auto et aux barreaux du lit bébé. Il y a 2 poignées aussi.</p>"
           }
         },
         "question_7": {
           "type": "question",
           "settings": {
             "question": "Combien y a-t-il de poches de rangement ?",
-            "reponse": "<p>6 poches : une à l'extérieure pour garder l’essentiel à portée de main, et 5 à l'intérieure. <\/p>"
+            "reponse": "<p>6 poches : une à l'extérieure pour garder l’essentiel à portée de main, et 5 à l'intérieure. </p>"
           }
         },
         "question_8": {
           "type": "question",
           "settings": {
             "question": "Pourquoi y a-t-il des étiquettes dans le sac ?",
-            "reponse": "<p>Pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.<\/p>"
+            "reponse": "<p>Pour guider le rangement et aider l’enfant à catégoriser ses affaires. Il apprend à lire en rangeant et gagne en autonomie.</p>"
           }
         },
         "question_9": {
           "type": "question",
           "settings": {
             "question": "Peut-on personnaliser le sac à dos ?",
-            "reponse": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.<\/p>"
+            "reponse": "<p>Oui ! Une étiquette « O’CAOU je le perds » permet d’écrire le prénom de l’enfant.</p>"
           }
         },
         "question_10": {
           "type": "question",
           "settings": {
             "question": "Que faire du surplus de sangle quand l’enfant porte le sac à dos ?",
-            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !<\/p>"
+            "reponse": "<p>Il se glisse dans un passant situé au niveau des bretelles. Rien ne traîne, tout reste bien en place !</p>"
           }
         },
         "question_11": {
           "type": "question",
           "settings": {
             "question": "Quel est le poids du sac à dos ?",
-            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !<\/p>"
+            "reponse": "<p>Entre 360 et 480 grammes selon le modèle. Il est donc parfaitement adapté aux tout-petits !</p>"
           }
         }
       },
