@@ -13,6 +13,14 @@
     "main": {
       "type": "iso-pa-product",
       "blocks": {
+        "accordeon_4BWn86": {
+          "type": "accordeon",
+          "settings": {
+            "titre": "Caractéristiques Sas Isotherme",
+            "icones": "",
+            "contenu": "<ul><li>Sac isotherme:</li></ul><p>Capacité : 5,2 L</p><p>Isolation thermique</p><p>Dimensions: H 23x diamètre 17cm</p><p>Matière : Polyesther, intérieur PEVA</p><p>Entretien : nettoyage facile avec un chiffon humide</p>"
+          }
+        },
         "accordeon_RETXWm": {
           "type": "accordeon",
           "settings": {
@@ -23,6 +31,7 @@
         }
       },
       "block_order": [
+        "accordeon_4BWn86",
         "accordeon_RETXWm"
       ],
       "settings": {
