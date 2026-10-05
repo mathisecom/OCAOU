@@ -24,9 +24,9 @@
         "accordeon_7nUxKi": {
           "type": "accordeon",
           "settings": {
-            "titre": "",
-            "icones": "",
-            "contenu": ""
+            "titre": "Caractéristiques Gourde",
+            "icones": "dishwasher:Passe au lave-vaisselle\nsun:Stérilisable à l'eau bouillante",
+            "contenu": "<ul><li>Dimensions : H 190,2 mm</li><li>Capacité : 350 ml</li><li>Composition : silicone alimentaire</li><li>Silicone alimentaire LFGB</li><li>Sans BPA, PVC ni phtalates</li><li>Sans goût ni odeur</li></ul>"
           }
         },
         "accordeon_8Yp6Fa": {
