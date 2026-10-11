@@ -53,7 +53,7 @@
         "max_width": 1600,
         "desktop_alignment": "center",
         "mobile_layout": "scroll",
-        "bg_color": "#af6c67",
+        "bg_color": "#AF6C67",
         "text_color": "#ffffff",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
@@ -138,9 +138,16 @@
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_20_sept._2026_15_14_05.png",
         "alt": "",
+        "hauteur": "standard",
+        "cadrage": "center",
+        "cadrage_mobile": "center",
         "accroche": "",
         "titre": "",
+        "titre_taille": "normal",
+        "titre_une_ligne": false,
         "texte": "",
+        "bouton_texte": "",
+        "bouton_url": "",
         "voile": 45
       }
     },
