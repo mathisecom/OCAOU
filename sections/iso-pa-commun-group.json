@@ -209,17 +209,6 @@
     "avis_verts": {
       "type": "testimonials",
       "blocks": {
-        "testimonial_DTTqzy": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Melyna D.",
-            "title": "Un vrai coup de cœur pour les coussinets d’allaitement !",
-            "content": "<p>Ils sont géniaux hyper absorbant et très agréable à porter !!</p>"
-          }
-        },
         "testimonial_hD44TM": {
           "type": "testimonial",
           "settings": {
@@ -227,19 +216,8 @@
             "show_rating": true,
             "rating": 5,
             "author": "Elodie B.",
-            "title": "Sa à dos hyper fonctionnel",
+            "title": "Sac à dos hyper fonctionnel",
             "content": "<p>sac à dos offert à une copine, original et super joli, ça change de ce qu’on peut voir d’habitude pour les enfants, le sac est en plus super pratique, car il est vraiment léger mais robuste et hyper fonctionnel!</p>"
-          }
-        },
-        "testimonial_xEqXey": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Sophia M.",
-            "title": "Sac hyper utile et très pratique!",
-            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!</p>"
           }
         },
         "testimonial_PAByn8": {
@@ -251,6 +229,28 @@
             "author": "Elodie O.",
             "title": "Couverts ergonomiques",
             "content": "<p>Ergonomique +++ , taille parfaite (longueur du manche et diamètre cuillère/fourchette) , légers, en inox donc plus solide et plus sain que les couverts en plastique.. bref on les utilise tout le temps !&nbsp;</p>"
+          }
+        },
+        "testimonial_DTTqzy": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Melyna D.",
+            "title": "Un vrai coup de cœur pour les coussinets d’allaitement !",
+            "content": "<p>Ils sont géniaux hyper absorbant et très agréable à porter !!</p>"
+          }
+        },
+        "testimonial_xEqXey": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sophia M.",
+            "title": "Sac hyper utile et très pratique!",
+            "content": "<p>Sac hyper utile et très pratique! Déjà adopté par ma puce qui est très fière de le porter en balade. Tous les compartiments sont bien pensés!</p>"
           }
         },
         "testimonial_DnV3QU": {
@@ -271,8 +271,8 @@
             "show_rating": true,
             "rating": 5,
             "author": "Nadia T.",
-            "title": "Poche couvert idéale",
-            "content": "<p>Je peux enfin ranger les couverts de mon bébé sans avoir à les lécher ou essuyer. Mon sac n'est plus taché...</p>"
+            "title": "Lingettes pratiques",
+            "content": "<p>Pratiques avec le petit pochon, le tissu est tout doux pour essuyer leurs petites bouilles. On peut même le mouiller, ça sèche vite ! Le fait qu’il y en ai 4 permet de faire la rotation quand certaines sont à laver.&nbsp;</p>"
           }
         },
         "testimonial_PE3qw8": {
@@ -365,10 +365,10 @@
         }
       },
       "block_order": [
-        "testimonial_DTTqzy",
         "testimonial_hD44TM",
-        "testimonial_xEqXey",
         "testimonial_PAByn8",
+        "testimonial_DTTqzy",
+        "testimonial_xEqXey",
         "testimonial_DnV3QU",
         "testimonial_WUWxXP",
         "testimonial_PE3qw8",
