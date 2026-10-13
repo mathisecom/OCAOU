@@ -62,6 +62,15 @@
     "iso_pa_videos_8F7F6Q": {
       "type": "iso-pa-videos",
       "blocks": {
+        "video_PfU48X": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/1013 (2).mp4",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        },
         "video_TMCVN3": {
           "type": "video",
           "settings": {
@@ -73,6 +82,7 @@
         }
       },
       "block_order": [
+        "video_PfU48X",
         "video_TMCVN3"
       ],
       "name": "Vidéos",
