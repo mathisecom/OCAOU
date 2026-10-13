@@ -59,6 +59,42 @@
         "livraison": "Livraison Suivie en France"
       }
     },
+    "iso_pa_videos_UzkxQE": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_qTHVbf": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/sac sherpa sac à langer.mp4",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        },
+        "video_EtHCaC": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/1013 (2).mp4",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_qTHVbf",
+        "video_EtHCaC"
+      ],
+      "name": "Vidéos",
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#FFFFFF",
+        "filet": false,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
+      }
+    },
     "associes": {
       "type": "iso-pa-related",
       "settings": {
@@ -280,6 +316,7 @@
   },
   "order": [
     "main",
+    "iso_pa_videos_UzkxQE",
     "associes",
     "presse",
     "benefices",
