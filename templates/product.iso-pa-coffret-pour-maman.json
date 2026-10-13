@@ -68,6 +68,32 @@
         "livraison": "Livraison Suivie en France"
       }
     },
+    "iso_pa_videos_QRpLkB": {
+      "type": "iso-pa-videos",
+      "blocks": {
+        "video_rW8EDK": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/1013 (1).mp4",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_rW8EDK"
+      ],
+      "name": "Vidéos",
+      "settings": {
+        "accroche": "",
+        "titre": "{titre} en vidéo",
+        "bg_color": "#FFFFFF",
+        "filet": false,
+        "mf_namespace": "custom",
+        "mf_key": "product_videos"
+      }
+    },
     "presse": {
       "type": "iso-presse",
       "blocks": {
@@ -276,6 +302,7 @@
   },
   "order": [
     "main",
+    "iso_pa_videos_QRpLkB",
     "presse",
     "benefices",
     "faq"
