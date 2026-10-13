@@ -89,8 +89,8 @@
       "settings": {
         "accroche": "",
         "titre": "{titre} en vidéo",
-        "bg_color": "#FFFFFF",
-        "filet": false,
+        "bg_color": "#ffffff",
+        "filet": true,
         "mf_namespace": "custom",
         "mf_key": "product_videos"
       }
