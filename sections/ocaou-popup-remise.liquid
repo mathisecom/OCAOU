@@ -1,0 +1,175 @@
+{%- comment -%}
+  O'CAOU 16/10 : popup d'inscription, 10 % sur la première commande.
+  Se déclenche après quelques secondes de navigation cumulées (pas à l'arrivée), jamais devant la bannière cookies.
+  Inscrit = tag « newsletter » + « popup-remise » (le second sert de déclencheur au mail du code, côté Brevo).
+  Réglage « Actif » décoché : rien ne s'affiche pour les visiteurs. Test : ajouter ?popup-test à l'adresse d'une page.
+{%- endcomment -%}
+{%- unless request.page_type == 'captcha' or request.page_type == 'password' or request.page_type == 'cart' or customer -%}
+  {%- assign envoye = false -%}
+  {%- assign en_erreur = false -%}
+  {%- capture _temporaire -%}
+    {%- form 'customer', id: 'ocaou-pr-form' -%}
+      {%- assign envoye = form.posted_successfully? -%}
+      {%- if form.errors -%}{%- assign en_erreur = true -%}{%- endif -%}
+    {%- endform -%}
+  {%- endcapture -%}
+
+  <div id="ocaou-pr" class="ocaou-pr" data-actif="{{ section.settings.actif }}" data-delai="{{ section.settings.delai }}" {% if envoye %}data-envoye{% elsif en_erreur %}data-erreur{% endif %}>
+    <dialog class="ocaou-pr__dialog" aria-labelledby="ocaou-pr-titre">
+      <div class="ocaou-pr__corps">
+        <h2 id="ocaou-pr-titre" class="ocaou-pr__titre">{{ section.settings.titre }}</h2>
+        <p class="ocaou-pr__texte">{{ section.settings.texte }}</p>
+
+        {%- form 'customer', id: 'ocaou-pr-form', class: 'ocaou-pr__form' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="ocaou-pr__merci" role="status">{{ section.settings.merci }}</p>
+          {%- else -%}
+            {%- if form.errors -%}
+              <p class="ocaou-pr__erreur" role="alert">{{ section.settings.erreur }}</p>
+            {%- endif -%}
+            <input type="hidden" name="contact[tags]" value="newsletter,popup-remise">
+            <label class="ocaou-pr__etiquette" for="ocaou-pr-prenom">{{ section.settings.prenom }}</label>
+            <input id="ocaou-pr-prenom" class="ocaou-pr__champ" type="text" name="contact[first_name]" placeholder="{{ section.settings.prenom | escape }}" autocomplete="given-name" maxlength="60">
+            <label class="ocaou-pr__etiquette" for="ocaou-pr-mail">{{ section.settings.mail }}</label>
+            <input id="ocaou-pr-mail" class="ocaou-pr__champ" type="email" name="contact[email]" placeholder="{{ section.settings.mail | escape }}" autocomplete="email" required>
+            <button type="submit" class="ocaou-pr__bouton">{{ section.settings.bouton }}</button>
+            <p class="ocaou-pr__mention">{{ section.settings.mention }}</p>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+
+      <div class="ocaou-pr__visuel" aria-hidden="true">
+        <img data-src="{{ 'ocaou-popup-bienvenue.webp' | file_url }}" alt="" width="480" height="640" decoding="async">
+      </div>
+
+      <form method="dialog" class="ocaou-pr__fermer-form">
+        <button type="submit" class="ocaou-pr__fermer" aria-label="{{ 'general.accessibility.close' | t | escape }}">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"><path d="M1.5 1.5l11 11m0-11l-11 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+    </dialog>
+  </div>
+
+  <style>
+    .ocaou-pr__dialog {
+      position: fixed; inset: 0; margin: auto; padding: 0; border: 0; overflow: hidden;
+      width: min(600px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px);
+      background: #faf8f6; color: #1a1a1a; font-family: var(--text-font-family, Poppins, sans-serif);
+    }
+    .ocaou-pr__dialog[open] { display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; animation: ocaou-pr-entree .25s ease-out; }
+    .ocaou-pr__dialog::backdrop { background: rgba(255, 255, 255, .62); }
+    html:has(.ocaou-pr__dialog[open]) { overflow: hidden; }
+    @keyframes ocaou-pr-entree { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .ocaou-pr__corps { display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 28px 24px; text-align: center; overflow-y: auto; }
+    .ocaou-pr__titre { margin: 0; font-family: var(--heading-font-family, Poppins, sans-serif); font-size: 22px; font-weight: 600; line-height: 1.3; color: #1a1a1a; }
+    .ocaou-pr__texte { margin: 0; font-size: 14px; line-height: 1.5; color: #333; }
+    .ocaou-pr__form { display: flex; flex-direction: column; gap: 8px; margin: 0; }
+    .ocaou-pr__etiquette { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .ocaou-pr__champ {
+      box-sizing: border-box; width: 100%; height: 44px; padding: 0 14px; border: 1px solid #d4d0cb; border-radius: 0;
+      background: #fff; color: #1a1a1a; font: inherit; font-size: 16px; outline: none; box-shadow: none; transition: border-color .15s;
+    }
+    .ocaou-pr__champ::placeholder { color: #666; opacity: 1; }
+    .ocaou-pr__champ:focus { border-color: #1a1a1a; outline: none; box-shadow: none; }
+    .ocaou-pr__bouton {
+      box-sizing: border-box; height: 44px; margin-top: 4px; border: 2px solid #1a1a1a; border-radius: 0; background: #1a1a1a; color: #fff; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; outline: none; box-shadow: none; transition: border-color .15s, background-color .15s;
+    }
+    .ocaou-pr__bouton:hover { background: #333; border-color: #333; }
+    .ocaou-pr__bouton:focus-visible { border-color: #cd9438; outline: none; box-shadow: none; }
+    .ocaou-pr__bouton[disabled] { opacity: .6; cursor: default; }
+    .ocaou-pr__mention { margin: 4px 0 0; font-size: 11px; line-height: 1.45; color: #555; }
+    .ocaou-pr__merci { margin: 0; padding: 14px 0; font-size: 15px; font-weight: 600; line-height: 1.4; color: #1a1a1a; }
+    .ocaou-pr__erreur { margin: 0; font-size: 13px; line-height: 1.4; color: #9b2c2c; }
+
+    .ocaou-pr__visuel { position: relative; min-height: 0; background: #f0e6dc; }
+    .ocaou-pr__visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+
+    .ocaou-pr__fermer-form { position: absolute; top: 12px; right: 12px; margin: 0; }
+    .ocaou-pr__fermer {
+      display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 8px solid transparent; border-radius: 50%;
+      background: #fff; background-clip: padding-box; color: #1a1a1a; cursor: pointer; outline: none; box-shadow: none; transition: border-color .15s;
+    }
+    .ocaou-pr__fermer:focus-visible { border-color: #cd9438; background-clip: border-box; outline: none; box-shadow: none; }
+
+    @media (max-width: 639px) {
+      .ocaou-pr__dialog { width: min(380px, calc(100vw - 32px)); }
+      .ocaou-pr__dialog[open] { display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
+      .ocaou-pr__visuel { order: -1; flex: 0 0 150px; }
+      .ocaou-pr__visuel img { object-position: 50% 30%; }
+      .ocaou-pr__corps { flex: 0 0 auto; gap: 12px; padding: 20px 20px 22px; overflow: visible; }
+      .ocaou-pr__titre { font-size: 20px; }
+      .ocaou-pr__fermer-form { top: 8px; right: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .ocaou-pr__dialog[open] { animation: none; } }
+  </style>
+
+  <script>
+    (function () {
+      var racine = document.getElementById('ocaou-pr');
+      if (!racine) return;
+      var dlg = racine.querySelector('dialog');
+      if (!dlg || typeof dlg.showModal !== 'function') return;
+      var K_FERME = 'ocaou:popup-remise:ferme', K_INSCRIT = 'ocaou:popup-remise:inscrit', K_TEMPS = 'ocaou:popup-remise:temps';
+      var test = /[?&]popup-test(=|&|$)/.test(location.search);
+      function lire(s, k) { try { return s.getItem(k); } catch (e) { return null; } }
+      function ecrire(s, k, v) { try { s.setItem(k, v); } catch (e) {} }
+
+      function ouvrir() {
+        var img = dlg.querySelector('img[data-src]');
+        if (img) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); }
+        dlg.showModal();
+      }
+      dlg.addEventListener('close', function () { if (!racine.hasAttribute('data-envoye')) ecrire(localStorage, K_FERME, String(Date.now())); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+      var form = dlg.querySelector('form.ocaou-pr__form');
+      if (form) form.addEventListener('submit', function () {
+        var b = form.querySelector('button[type=submit]');
+        if (b) setTimeout(function () { b.disabled = true; }, 0);
+      });
+
+      if (racine.hasAttribute('data-envoye')) { ecrire(localStorage, K_INSCRIT, '1'); ouvrir(); return; }
+      if (racine.hasAttribute('data-erreur')) { ouvrir(); return; }
+
+      if (!test) {
+        if (racine.getAttribute('data-actif') !== 'true') return;
+        if (lire(localStorage, K_INSCRIT)) return;
+        var ferme = Number(lire(localStorage, K_FERME)) || 0;
+        if (ferme && Date.now() - ferme < 14 * 864e5) return;
+      }
+
+      var delai = test ? 1 : (Number(racine.getAttribute('data-delai')) || 8);
+      var ecoule = test ? 0 : (Number(lire(sessionStorage, K_TEMPS)) || 0);
+      /* Temps de navigation cumulé sur la session, onglet visible seulement ; on attend si la bannière cookies ou un autre volet est ouvert. */
+      var minuteur = setInterval(function () {
+        if (document.visibilityState !== 'visible') return;
+        ecoule += 1;
+        ecrire(sessionStorage, K_TEMPS, String(ecoule));
+        if (ecoule < delai) return;
+        if (document.querySelector('[id^="shopify-pc__"], dialog[open], .drawer[open]')) return;
+        clearInterval(minuteur);
+        ouvrir();
+      }, 1000);
+    })();
+  </script>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Popup remise 10 %",
+  "settings": [
+    { "type": "checkbox", "id": "actif", "label": "Actif", "default": false },
+    { "type": "range", "id": "delai", "min": 3, "max": 30, "step": 1, "unit": "s", "label": "Délai de navigation avant affichage", "default": 8 },
+    { "type": "text", "id": "titre", "label": "Titre", "default": "−10 % sur votre première commande" },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "Profitez de nos essentiels pour parents et enfants." },
+    { "type": "text", "id": "prenom", "label": "Champ prénom", "default": "Votre prénom" },
+    { "type": "text", "id": "mail", "label": "Champ email", "default": "Votre email" },
+    { "type": "text", "id": "bouton", "label": "Bouton", "default": "Recevoir mon code" },
+    { "type": "textarea", "id": "mention", "label": "Mention", "default": "En vous inscrivant, vous acceptez de recevoir nos nouveautés et nos bons plans par mail. Vous pouvez vous désinscrire à tout moment." },
+    { "type": "text", "id": "merci", "label": "Message de confirmation", "default": "Merci, votre code arrive par mail." },
+    { "type": "text", "id": "erreur", "label": "Message d'erreur", "default": "Adresse non valide. Vérifiez-la et réessayez." }
+  ],
+  "presets": []
+}
+{% endschema %}

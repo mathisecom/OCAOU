@@ -57,9 +57,17 @@
         "idle_collection": "les-coffrets",
         "idle_count": 6
       }
+    },
+    "ocaou-popup-remise": {
+      "type": "ocaou-popup-remise",
+      "settings": {
+        "actif": false,
+        "delai": 8
+      }
     }
   },
   "order": [
+    "ocaou-popup-remise",
     "newsletter-popup",
     "privacy-banner",
     "cart-drawer",
