@@ -61,7 +61,7 @@
     "ocaou-popup-remise": {
       "type": "ocaou-popup-remise",
       "settings": {
-        "actif": false,
+        "actif": true,
         "delai": 8
       }
     }
