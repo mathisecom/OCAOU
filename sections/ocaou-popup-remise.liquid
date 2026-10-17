@@ -54,7 +54,7 @@
     .ocaou-pr__dialog {
       position: fixed; inset: 0; margin: auto; padding: 0; border: 0; overflow: hidden;
       width: min(720px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px);
-      border-radius: var(--rounded-lg, 1.5rem); background: #faf8f6; color: #1a1a1a; font-family: var(--text-font-family, Poppins, sans-serif);
+      border-radius: var(--rounded-lg, 1.5rem); background: rgb(244 237 225); color: #333; font-family: var(--text-font-family, Poppins, sans-serif);
     }
     .ocaou-pr__dialog[open] { display: grid; grid-template-columns: 1fr 1fr; min-height: 480px; animation: ocaou-pr-entree .25s ease-out; }
     .ocaou-pr__dialog::backdrop { background: rgba(255, 255, 255, .62); }
@@ -62,34 +62,34 @@
     @keyframes ocaou-pr-entree { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
     .ocaou-pr__corps { display: flex; flex-direction: column; justify-content: center; gap: 17px; padding: 34px 29px; text-align: center; overflow-y: auto; }
-    .ocaou-pr__titre { margin: 0; font-family: var(--heading-font-family, Poppins, sans-serif); font-size: 26px; font-weight: 600; line-height: 1.3; color: #1a1a1a; }
+    .ocaou-pr__titre { margin: 0; font-family: var(--heading-font-family, Poppins, sans-serif); font-size: 26px; font-weight: 600; line-height: 1.3; color: #333; }
     .ocaou-pr__texte { margin: 0; font-size: 17px; line-height: 1.5; color: #333; }
     .ocaou-pr__form { display: flex; flex-direction: column; gap: 10px; margin: 0; }
     .ocaou-pr__etiquette { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     .ocaou-pr__champ {
-      box-sizing: border-box; width: 100%; height: 53px; padding: 0 24px; border: 1px solid #d4d0cb; border-radius: var(--rounded-button, 3.75rem);
-      background: #fff; color: #1a1a1a; font: inherit; font-size: 16px; outline: none; box-shadow: none; transition: border-color .15s;
+      box-sizing: border-box; width: 100%; height: 53px; padding: 0 24px; border: 1px solid #d9cfbd; border-radius: var(--rounded-button, 3.75rem);
+      background: #fff; color: #333; font: inherit; font-size: 16px; outline: none; box-shadow: none; transition: border-color .15s;
     }
     .ocaou-pr__champ::placeholder { color: #666; opacity: 1; }
-    .ocaou-pr__champ:focus { border-color: #1a1a1a; outline: none; box-shadow: none; }
+    .ocaou-pr__champ:focus { border-color: rgb(var(--button-background-primary, 205 148 56)); outline: none; box-shadow: none; }
     .ocaou-pr__bouton {
-      box-sizing: border-box; height: 53px; margin-top: 5px; border: 2px solid #1a1a1a; border-radius: var(--rounded-button, 3.75rem); background: #1a1a1a; color: #fff; cursor: pointer;
+      box-sizing: border-box; height: 53px; margin-top: 5px; border: 2px solid rgb(var(--button-background-primary, 205 148 56)); border-radius: var(--rounded-button, 3.75rem); background: rgb(var(--button-background-primary, 205 148 56)); color: #1a1a1a; cursor: pointer;
       font: inherit; font-size: 16px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; outline: none; box-shadow: none; transition: border-color .15s, background-color .15s;
     }
-    .ocaou-pr__bouton:hover { background: #333; border-color: #333; }
-    .ocaou-pr__bouton:focus-visible { border-color: #cd9438; outline: none; box-shadow: none; }
+    .ocaou-pr__bouton:hover { background: #b8802a; border-color: #b8802a; }
+    .ocaou-pr__bouton:focus-visible { border-color: #333; outline: none; box-shadow: none; }
     .ocaou-pr__bouton[disabled] { opacity: .6; cursor: default; }
     .ocaou-pr__mention { margin: 5px 0 0; font-size: 13px; line-height: 1.45; color: #555; }
-    .ocaou-pr__merci { margin: 0; padding: 17px 0; font-size: 18px; font-weight: 600; line-height: 1.4; color: #1a1a1a; }
+    .ocaou-pr__merci { margin: 0; padding: 17px 0; font-size: 18px; font-weight: 600; line-height: 1.4; color: #333; }
     .ocaou-pr__erreur { margin: 0; font-size: 15px; line-height: 1.4; color: #9b2c2c; }
 
-    .ocaou-pr__visuel { position: relative; min-height: 0; background: #f0e6dc; }
+    .ocaou-pr__visuel { position: relative; min-height: 0; background: rgb(244 237 225); }
     .ocaou-pr__visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
 
     .ocaou-pr__fermer-form { position: absolute; top: 12px; right: 12px; margin: 0; }
     .ocaou-pr__fermer {
       display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 8px solid transparent; border-radius: 50%;
-      background: #fff; background-clip: padding-box; color: #1a1a1a; cursor: pointer; outline: none; box-shadow: none; transition: border-color .15s;
+      background: #fff; background-clip: padding-box; color: #333; cursor: pointer; outline: none; box-shadow: none; transition: border-color .15s;
     }
     .ocaou-pr__fermer:focus-visible { border-color: #cd9438; background-clip: border-box; outline: none; box-shadow: none; }
 
