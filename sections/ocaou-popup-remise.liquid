@@ -54,7 +54,7 @@
     .ocaou-pr__dialog {
       position: fixed; inset: 0; margin: auto; padding: 0; border: 0; overflow: hidden;
       width: min(720px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px);
-      background: #faf8f6; color: #1a1a1a; font-family: var(--text-font-family, Poppins, sans-serif);
+      border-radius: var(--rounded-lg, 1.5rem); background: #faf8f6; color: #1a1a1a; font-family: var(--text-font-family, Poppins, sans-serif);
     }
     .ocaou-pr__dialog[open] { display: grid; grid-template-columns: 1fr 1fr; min-height: 480px; animation: ocaou-pr-entree .25s ease-out; }
     .ocaou-pr__dialog::backdrop { background: rgba(255, 255, 255, .62); }
@@ -67,13 +67,13 @@
     .ocaou-pr__form { display: flex; flex-direction: column; gap: 10px; margin: 0; }
     .ocaou-pr__etiquette { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     .ocaou-pr__champ {
-      box-sizing: border-box; width: 100%; height: 53px; padding: 0 17px; border: 1px solid #d4d0cb; border-radius: 0;
+      box-sizing: border-box; width: 100%; height: 53px; padding: 0 24px; border: 1px solid #d4d0cb; border-radius: var(--rounded-button, 3.75rem);
       background: #fff; color: #1a1a1a; font: inherit; font-size: 16px; outline: none; box-shadow: none; transition: border-color .15s;
     }
     .ocaou-pr__champ::placeholder { color: #666; opacity: 1; }
     .ocaou-pr__champ:focus { border-color: #1a1a1a; outline: none; box-shadow: none; }
     .ocaou-pr__bouton {
-      box-sizing: border-box; height: 53px; margin-top: 5px; border: 2px solid #1a1a1a; border-radius: 0; background: #1a1a1a; color: #fff; cursor: pointer;
+      box-sizing: border-box; height: 53px; margin-top: 5px; border: 2px solid #1a1a1a; border-radius: var(--rounded-button, 3.75rem); background: #1a1a1a; color: #fff; cursor: pointer;
       font: inherit; font-size: 16px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; outline: none; box-shadow: none; transition: border-color .15s, background-color .15s;
     }
     .ocaou-pr__bouton:hover { background: #333; border-color: #333; }
