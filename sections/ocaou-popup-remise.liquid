@@ -23,6 +23,7 @@
         {%- form 'customer', id: 'ocaou-pr-form', class: 'ocaou-pr__form' -%}
           {%- if form.posted_successfully? -%}
             <p class="ocaou-pr__merci" role="status">{{ section.settings.merci }}</p>
+            <p class="ocaou-pr__code">{{ section.settings.code }}</p>
           {%- else -%}
             {%- if form.errors -%}
               <p class="ocaou-pr__erreur" role="alert">{{ section.settings.erreur }}</p>
@@ -81,6 +82,7 @@
     .ocaou-pr__bouton[disabled] { opacity: .6; cursor: default; }
     .ocaou-pr__mention { margin: 5px 0 0; font-size: 13px; line-height: 1.45; color: #555; }
     .ocaou-pr__merci { margin: 0; padding: 17px 0; font-size: 18px; font-weight: 600; line-height: 1.4; color: #333; }
+    .ocaou-pr__code { margin: 0 auto; padding: 12px 28px; border: 2px dashed rgb(var(--button-background-primary, 205 148 56)); border-radius: var(--rounded-button, 3.75rem); background: #fff; font-size: 26px; font-weight: 600; letter-spacing: .08em; color: #333; user-select: all; }
     .ocaou-pr__erreur { margin: 0; font-size: 15px; line-height: 1.4; color: #9b2c2c; }
 
     .ocaou-pr__visuel { position: relative; min-height: 0; background: rgb(244 237 225); }
@@ -171,7 +173,8 @@
     { "type": "text", "id": "mail", "label": "Champ email", "default": "Votre email" },
     { "type": "text", "id": "bouton", "label": "Bouton", "default": "Je m'inscris" },
     { "type": "textarea", "id": "mention", "label": "Mention", "default": "En vous inscrivant, vous acceptez de recevoir nos nouveautés et nos bons plans par mail. Vous pouvez vous désinscrire à tout moment." },
-    { "type": "text", "id": "merci", "label": "Message de confirmation", "default": "Merci, votre code arrive par mail." },
+    { "type": "text", "id": "code", "label": "Code de remise affiché après inscription", "default": "OCAOU10" },
+    { "type": "text", "id": "merci", "label": "Message de confirmation", "default": "Merci, voici votre code." },
     { "type": "text", "id": "erreur", "label": "Message d'erreur", "default": "Adresse non valide. Vérifiez-la et réessayez." }
   ]
 }
