@@ -11,6 +11,21 @@
   "type": "custom.overlay",
   "name": "Overlay group",
   "sections": {
+    "ocaou-popup-remise": {
+      "type": "ocaou-popup-remise",
+      "settings": {
+        "actif": true,
+        "delai": 8,
+        "titre": "-10 % sur votre première commande",
+        "texte": "O'CAOU vous voulez vous faire plaisir ou gâter vos proches avec nos essentiels pour bébé et maman.",
+        "prenom": "Votre prénom",
+        "mail": "Votre email",
+        "bouton": "Je m'inscris",
+        "mention": "En vous inscrivant, vous acceptez de recevoir nos nouveautés et nos bons plans par mail. Vous pouvez vous désinscrire à tout moment.",
+        "merci": "Merci, votre code arrive par mail.",
+        "erreur": "Adresse non valide. Vérifiez-la et réessayez."
+      }
+    },
     "newsletter-popup": {
       "type": "newsletter-popup",
       "disabled": true,
@@ -44,7 +59,9 @@
         "recommendations_title": "Tendance du mois",
         "products": [],
         "product_card_background": "#f2f2f2",
-        "product_card_text_color": ""
+        "product_card_text_color": "",
+        "iso_suggestions_enabled": true,
+        "iso_suggestions_title": "Ils vont si bien ensemble"
       }
     },
     "search-drawer": {
@@ -55,14 +72,8 @@
         "search_menu": "",
         "search_menu_show_title": true,
         "idle_collection": "les-coffrets",
+        "idle_title": "",
         "idle_count": 6
-      }
-    },
-    "ocaou-popup-remise": {
-      "type": "ocaou-popup-remise",
-      "settings": {
-        "actif": true,
-        "delai": 8
       }
     }
   },
