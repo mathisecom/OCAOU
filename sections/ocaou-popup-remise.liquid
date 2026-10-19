@@ -96,18 +96,18 @@
     .ocaou-pr__fermer:focus-visible { border-color: #cd9438; background-clip: border-box; outline: none; box-shadow: none; }
 
     @media (max-width: 639px) {
-      .ocaou-pr__dialog { width: min(380px, calc(100vw - 32px)); }
+      .ocaou-pr__dialog { width: min(460px, calc(100vw - 16px)); max-height: calc(100dvh - 24px); }
       .ocaou-pr__dialog[open] { display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
-      .ocaou-pr__visuel { order: -1; flex: 0 0 180px; }
+      .ocaou-pr__visuel { order: -1; flex: 0 0 auto; aspect-ratio: 19 / 10; }
       .ocaou-pr__img-bureau { display: none; }
       .ocaou-pr__img-mobile { display: block; }
       .ocaou-pr__visuel img { object-position: 50% 50%; }
-      .ocaou-pr__corps { flex: 0 0 auto; gap: 12px; padding: 20px 20px 22px; overflow: visible; }
-      .ocaou-pr__titre { font-size: 20px; }
-      .ocaou-pr__texte { font-size: 14px; }
-      .ocaou-pr__champ, .ocaou-pr__bouton { height: 44px; }
-      .ocaou-pr__bouton { font-size: 13px; }
-      .ocaou-pr__mention { font-size: 11px; }
+      .ocaou-pr__corps { flex: 0 0 auto; gap: 12px; padding: 24px 22px 26px; overflow: visible; }
+      .ocaou-pr__titre { font-size: 24px; }
+      .ocaou-pr__texte { font-size: 16px; }
+      .ocaou-pr__champ, .ocaou-pr__bouton { height: 52px; }
+      .ocaou-pr__bouton { font-size: 14px; }
+      .ocaou-pr__mention { font-size: 12px; }
       .ocaou-pr__fermer-form { top: 8px; right: 8px; }
     }
     @media (prefers-reduced-motion: reduce) { .ocaou-pr__dialog[open] { animation: none; } }
