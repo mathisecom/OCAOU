@@ -1,0 +1,18 @@
+{%- comment -%}
+  Piste A : une carte vidéo du carrousel. Paramètres : src, mime, poster, label (déjà échappé), i, n.
+  Lecture automatique muette pilotée par iso-pa.js : rien ne se charge tant que la carte n'est pas à
+  l'écran (preload="none"), et le bouton rend la main (RGAA 13.8).
+{%- endcomment -%}
+<li class="pa-vid-card" role="group" aria-label="Vidéo {{ i }} sur {{ n }}">
+  <video class="pa-vid-v" playsinline muted loop preload="none" data-pa-vid{% if poster != blank %} poster="{{ poster }}"{% endif %} aria-label="{{ label }}">
+    {%- if src != blank -%}<source src="{{ src }}" type="{{ mime | default: 'video/mp4' }}">{%- endif -%}
+  </video>
+  <button type="button" class="pa-vid-btn" data-pa-vid-btn>
+    <span class="pa-vid-ic pa-vid-ic--pause">{%- render 'iso-pa-icon', name: 'pause' -%}</span>
+    <span class="pa-vid-ic pa-vid-ic--play">{%- render 'iso-pa-icon', name: 'play' -%}</span>
+    <span class="pa-sr" data-pa-vid-lbl>Mettre la vidéo en pause</span>
+  </button>
+  {% if label != blank %}
+  <p class="pa-vid-title">{{ label | escape }}</p>
+{% endif %}
+</li>
