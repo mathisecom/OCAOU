@@ -134,16 +134,7 @@
         dlg.showModal();
       }
       
-document.addEventListener('click', function(e) {
-  var lien = e.target.closest('a[href*="#ocaou-pr"]');
-  if (!lien) return;
 
-  e.preventDefault();
-
-  if (!dlg.open) {
-    ouvrir();
-  }
-});
 
       dlg.addEventListener('close', function () { if (!racine.hasAttribute('data-envoye')) ecrire(localStorage, K_FERME, String(Date.now())); });
       dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
