@@ -39,7 +39,8 @@
       </div>
 
       <div class="ocaou-pr__visuel" aria-hidden="true">
-        <img data-src="{{ 'ocaou-popup-bienvenue-2.webp' | file_url }}" alt="" width="480" height="640" decoding="async">
+        <img class="ocaou-pr__img-bureau" data-src="{{ 'ocaou-popup-bienvenue-2.webp' | file_url }}" alt="" width="480" height="640" decoding="async">
+        <img class="ocaou-pr__img-mobile" data-src="{{ 'ocaou-popup-bienvenue-mobile.webp' | file_url }}" alt="" width="760" height="400" decoding="async">
       </div>
 
       <form method="dialog" class="ocaou-pr__fermer-form">
@@ -84,6 +85,7 @@
     .ocaou-pr__erreur { margin: 0; font-size: 15px; line-height: 1.4; color: #9b2c2c; }
 
     .ocaou-pr__visuel { position: relative; min-height: 0; background: rgb(244 237 225); }
+    .ocaou-pr__img-mobile { display: none; }
     .ocaou-pr__visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
 
     .ocaou-pr__fermer-form { position: absolute; top: 12px; right: 12px; margin: 0; }
@@ -97,7 +99,9 @@
       .ocaou-pr__dialog { width: min(380px, calc(100vw - 32px)); }
       .ocaou-pr__dialog[open] { display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
       .ocaou-pr__visuel { order: -1; flex: 0 0 180px; }
-      .ocaou-pr__visuel img { object-position: 50% 8%; }
+      .ocaou-pr__img-bureau { display: none; }
+      .ocaou-pr__img-mobile { display: block; }
+      .ocaou-pr__visuel img { object-position: 50% 50%; }
       .ocaou-pr__corps { flex: 0 0 auto; gap: 12px; padding: 20px 20px 22px; overflow: visible; }
       .ocaou-pr__titre { font-size: 20px; }
       .ocaou-pr__texte { font-size: 14px; }
@@ -121,8 +125,11 @@
       function ecrire(s, k, v) { try { s.setItem(k, v); } catch (e) {} }
 
       function ouvrir() {
-        var img = dlg.querySelector('img[data-src]');
-        if (img) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); }
+        var imgs = dlg.querySelectorAll('img[data-src]');
+        for (var i = 0; i < imgs.length; i++) {
+          if (getComputedStyle(imgs[i]).display === 'none') continue;
+          imgs[i].src = imgs[i].getAttribute('data-src'); imgs[i].removeAttribute('data-src');
+        }
         dlg.showModal();
       }
       dlg.addEventListener('close', function () { if (!racine.hasAttribute('data-envoye')) ecrire(localStorage, K_FERME, String(Date.now())); });
