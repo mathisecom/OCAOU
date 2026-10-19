@@ -39,8 +39,8 @@
       </div>
 
       <div class="ocaou-pr__visuel" aria-hidden="true">
-        <img class="ocaou-pr__img-bureau" data-src="{{ 'ocaou-popup-bienvenue-2.webp' | file_url }}" alt="" width="480" height="640" decoding="async">
-        <img class="ocaou-pr__img-mobile" data-src="{{ 'ocaou-popup-bienvenue-mobile.webp' | file_url }}" alt="" width="760" height="400" decoding="async">
+        <img class="ocaou-pr__img-bureau" data-src="{% if section.settings.image_bureau != blank %}{{ section.settings.image_bureau | image_url }}{% else %}{{ 'ocaou-popup-bienvenue-2.webp' | file_url }}{% endif %}" alt="" width="480" height="640" decoding="async">
+        <img class="ocaou-pr__img-mobile" data-src="{% if section.settings.image_mobile != blank %}{{ section.settings.image_mobile | image_url }}{% else %}{{ 'ocaou-popup-bienvenue-mobile.webp' | file_url }}{% endif %}" alt="" width="760" height="400" decoding="async">
       </div>
 
       <form method="dialog" class="ocaou-pr__fermer-form">
@@ -173,6 +173,8 @@
   "settings": [
     { "type": "checkbox", "id": "actif", "label": "Actif", "default": false },
     { "type": "range", "id": "delai", "min": 3, "max": 30, "step": 1, "unit": "s", "label": "Délai de navigation avant affichage", "default": 8 },
+    { "type": "image_picker", "id": "image_bureau", "label": "Image ordinateur (vertical 3:4, GIF ou WebP animé)" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Image mobile (rectangle 19:10, GIF ou WebP animé)" },
     { "type": "text", "id": "titre", "label": "Titre", "default": "-10 % sur votre première commande" },
     { "type": "textarea", "id": "texte", "label": "Texte", "default": "Vous voulez vous faire plaisir ou gâter vos proches avec nos essentiels pour bébé et maman." },
     { "type": "text", "id": "prenom", "label": "Champ prénom", "default": "Votre prénom" },
