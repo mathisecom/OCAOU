@@ -15,7 +15,7 @@
       "type": "ocaou-popup-remise",
       "settings": {
         "actif": true,
-        "delai": 8,
+        "delai": 5,
         "titre": "-10 % sur votre première commande",
         "texte": "O'CAOU vous voulez vous faire plaisir ou gâter vos proches avec nos essentiels pour bébé et maman.",
         "prenom": "Votre prénom",
