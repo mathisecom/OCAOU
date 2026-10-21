@@ -23,9 +23,7 @@
         "bouton": "Je m'inscris",
         "mention": "En vous inscrivant, vous acceptez de recevoir nos nouveautés et nos bons plans par mail. Vous pouvez vous désinscrire à tout moment.",
         "merci": "Merci, votre code arrive par mail.",
-        "erreur": "Adresse non valide. Vérifiez-la et réessayez.",
-        "image_bureau": "shopify://shop_images/ocaou-popup-bienvenue-2.webp",
-        "image_mobile": "shopify://shop_images/ocaou-popup-bienvenue-mobile.webp"
+        "erreur": "Adresse non valide. Vérifiez-la et réessayez."
       }
     },
     "newsletter-popup": {

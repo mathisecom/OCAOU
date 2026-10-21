@@ -1,0 +1,307 @@
+{%- comment -%}
+  O'CAOU 21/10 : barre d'annonces unique (remplace la barre avantages et la barre newsletter).
+  Un message : barre fixe. Plusieurs : défilement automatique (pause au survol).
+  Action d'un message : aucune, lien, ouverture de la popup newsletter (section ocaou-popup-remise), ou JavaScript.
+  Onglet latéral : même logique d'action, masqué aux inscrits et là où la popup n'existe pas (panier, compte connecté).
+{%- endcomment -%}
+{%- liquid
+  assign nb = 0
+  for block in section.blocks
+    if block.settings.action == 'popup' and customer and request.design_mode == false and theme.role == 'main'
+      continue
+    endif
+    assign nb = nb | plus: 1
+  endfor
+  assign onglet_action = section.settings.onglet_action
+  assign onglet_balise = 'button'
+  assign onglet_attr = 'type="button"'
+  if onglet_action == 'lien'
+    assign onglet_balise = 'a'
+    assign onglet_url = section.settings.onglet_url | escape
+    assign onglet_attr = 'href="' | append: onglet_url | append: '"'
+  elsif onglet_action == 'popup'
+    assign onglet_attr = 'type="button" data-oa-popup'
+  elsif onglet_action == 'js'
+    assign onglet_js = section.settings.onglet_js | escape
+    assign onglet_attr = 'type="button" data-oa-js="' | append: onglet_js | append: '"'
+  endif
+  assign onglet_visible = false
+  if section.settings.onglet_actif and section.settings.onglet_texte != blank
+    assign onglet_visible = true
+    if onglet_action == 'popup' and customer and request.design_mode == false and theme.role == 'main'
+      assign onglet_visible = false
+    endif
+  endif
+-%}
+
+{%- if nb > 0 -%}
+  <div id="oa-{{ section.id }}" class="oa-bar" data-duree="{{ section.settings.duree }}" style="--oa-fond: {{ section.settings.bg_color }}; --oa-texte: {{ section.settings.text_color }}; --oa-icone-fond: {{ section.settings.icon_bg_color }}; --oa-icone: {{ section.settings.icon_color }}; --oa-taille-pc: {{ section.settings.font_size_desktop }}px; --oa-taille-mobile: {{ section.settings.font_size_mobile }}px;" role="region" aria-roledescription="carrousel" aria-label="Annonces">
+    <div class="oa-bar__in">
+      <ul class="oa-vue" aria-live="off">
+        {%- assign rang = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- liquid
+            if block.settings.action == 'popup' and customer and request.design_mode == false and theme.role == 'main'
+              continue
+            endif
+            assign action = block.settings.action
+            assign balise = 'span'
+            assign attr = ''
+            if action == 'lien' and block.settings.url != blank
+              assign balise = 'a'
+              assign url = block.settings.url | escape
+              assign attr = 'href="' | append: url | append: '"'
+            elsif action == 'popup'
+              assign balise = 'button'
+              assign attr = 'type="button" data-oa-popup'
+            elsif action == 'js' and block.settings.js != blank
+              assign balise = 'button'
+              assign js = block.settings.js | escape
+              assign attr = 'type="button" data-oa-js="' | append: js | append: '"'
+            endif
+          -%}
+          <li class="oa-slide{% if rang == 0 %} is-actif{% endif %}"{% if rang > 0 %} inert aria-hidden="true"{% endif %}{% if action == 'popup' %} data-oa-item-popup{% endif %} role="group" aria-roledescription="annonce" aria-label="{{ rang | plus: 1 }} sur {{ nb }}" {{ block.shopify_attributes }}>
+            <{{ balise }} class="oa-msg{% if balise != 'span' %} oa-lien{% endif %}" {{ attr }}>
+              {%- if block.settings.icon != 'none' and block.settings.icon != blank -%}
+                <span class="oa-icone" aria-hidden="true">{% render 'iso-pa-icon', name: block.settings.icon %}</span>
+              {%- endif -%}
+              <span class="oa-texte">{{ block.settings.text | escape }}</span>
+              {%- if balise != 'span' -%}
+                <svg class="oa-fleche" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"><path d="M2 7h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {%- endif -%}
+            </{{ balise }}>
+          </li>
+          {%- assign rang = rang | plus: 1 -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}
+
+{%- if onglet_visible -%}
+  <div id="oa-onglet-{{ section.id }}" class="oa-onglet-zone{% unless section.settings.onglet_mobile %} oa-onglet-zone--pc{% endunless %}" {% if onglet_action == 'popup' %}hidden{% endif %} style="--oa-onglet-fond: {{ section.settings.onglet_fond }}; --oa-onglet-texte: {{ section.settings.onglet_couleur }};">
+    <{{ onglet_balise }} class="oa-onglet" {{ onglet_attr }}>{{ section.settings.onglet_texte | escape }}</{{ onglet_balise }}>
+  </div>
+{%- endif -%}
+
+<style>
+  .oa-bar { position: relative; background: var(--oa-fond); color: var(--oa-texte); font-family: var(--text-font-family, Poppins, sans-serif); }
+  .oa-bar[hidden] { display: none; }
+  .oa-bar__in { position: relative; display: flex; align-items: center; justify-content: center; max-width: 820px; margin: 0 auto; padding: 8px 16px; }
+  .oa-vue { display: grid; flex: 1; min-width: 0; margin: 0; padding: 0; list-style: none; overflow: hidden; }
+
+  .oa-slide {
+    grid-area: 1 / 1; display: flex; align-items: center; justify-content: center; margin: 0; padding: 0;
+    opacity: 0; visibility: hidden; transform: translateX(calc(var(--oa-s, 1) * 28px));
+    transition: opacity .45s ease, transform .45s ease, visibility 0s .45s;
+  }
+  .oa-slide.is-actif { opacity: 1; visibility: visible; transform: none; transition: opacity .45s ease, transform .45s ease, visibility 0s; }
+  .oa-slide.is-sortie { transform: translateX(calc(var(--oa-s, 1) * -28px)); }
+
+  .oa-msg { display: inline-flex; align-items: center; justify-content: center; gap: 8px; max-width: 100%; margin: 0; padding: 0; border: 0; border-bottom: 2px solid transparent; background: none; color: inherit; font: inherit; font-size: var(--oa-taille-mobile); font-weight: 600; line-height: 1.35; text-align: center; text-decoration: none; }
+  .oa-lien { cursor: pointer; transition: border-color .15s; }
+  .oa-lien:hover, .oa-lien:focus-visible { border-bottom-color: currentColor; outline: none; box-shadow: none; }
+  .oa-fleche { flex: 0 0 auto; }
+
+  .oa-icone { display: flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 999px; background: var(--oa-icone-fond); color: var(--oa-icone); }
+  .oa-icone .ic { display: block; width: 15px; height: 15px; }
+
+
+  .oa-onglet-zone[hidden] { display: none; }
+  .oa-onglet {
+    position: fixed; top: 50%; right: 0; z-index: 18; transform: translateY(-50%);
+    box-sizing: border-box; padding: 13px 7px; border: 2px solid var(--oa-onglet-fond); border-right: 0; border-radius: 12px 0 0 12px;
+    background: var(--oa-onglet-fond); color: var(--oa-onglet-texte); cursor: pointer; outline: none; box-shadow: none;
+    font-family: var(--text-font-family, Poppins, sans-serif); font-size: 11px; font-weight: 600; letter-spacing: .04em; line-height: 1; text-decoration: none; white-space: nowrap;
+    writing-mode: vertical-rl; transition: border-color .15s, padding .15s;
+  }
+  .oa-onglet:hover { padding-right: 10px; }
+  .oa-onglet:focus-visible { border-color: var(--oa-onglet-texte); outline: none; box-shadow: none; }
+
+  @media (min-width: 990px) {
+    .oa-bar__in { padding-top: 12px; padding-bottom: 12px; }
+    .oa-msg { font-size: var(--oa-taille-pc); }
+    .oa-icone { width: 24px; height: 24px; }
+    .oa-icone .ic { width: 16px; height: 16px; }
+    .oa-onglet { font-size: 12px; padding: 15px 8px; }
+  }
+  @media (max-width: 989px) { .oa-onglet-zone--pc { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .oa-slide, .oa-slide.is-actif { transition: none; } }
+  @media print { .oa-onglet-zone { display: none; } }
+
+  /* Badge « Protégé par hCaptcha » injecté par Shopify sur les formulaires (popup, pied de page) : masqué à la demande de Florent, 21/10 */
+  #shop-hcaptcha-badge-container { display: none !important; }
+
+  /* Ombre légère et permanente sous la barre de navigation (en haut de page comme au défilement) */
+  .shopify-section--header .header__wrapper { box-shadow: 0 2px 8px rgba(0, 0, 0, .08); }
+</style>
+
+<script>
+  (function () {
+    var racine = document.getElementById('oa-{{ section.id }}');
+    var zone = document.getElementById('oa-onglet-{{ section.id }}');
+    /* Éditeur, thème brouillon ou ?popup-test : tout reste affiché pour pouvoir tester */
+    var editeur = !!(window.Shopify && window.Shopify.designMode) || '{{ theme.role }}' !== 'main' || /[?&]popup-test(=|&|$)/.test(location.search);
+
+    function inscrit() { try { return !!localStorage.getItem('ocaou:popup-remise:inscrit'); } catch (e) { return false; } }
+    function popupDispo() { return !!(window.ocaouPopupRemise && window.ocaouPopupRemise.ouvrir); }
+    function ouvrirPopup() { if (popupDispo()) window.ocaouPopupRemise.ouvrir(); }
+    function lancerJs(code) { try { (new Function(code))(); } catch (e) { if (window.console) console.error('Annonce : JavaScript invalide', e); } }
+
+    function brancher(zoneBouton) {
+      zoneBouton.addEventListener('click', function (e) {
+        var cible = e.target.closest('[data-oa-popup], [data-oa-js]');
+        if (!cible) return;
+        e.preventDefault();
+        if (cible.hasAttribute('data-oa-popup')) ouvrirPopup(); else lancerJs(cible.getAttribute('data-oa-js'));
+      });
+    }
+
+    function demarrer() {
+      var masquerPopup = !editeur && (!popupDispo() || inscrit());
+
+      if (zone) {
+        brancher(zone);
+        if (zone.hasAttribute('hidden') && (editeur || !masquerPopup)) zone.removeAttribute('hidden');
+        if (masquerPopup && zone.querySelector('[data-oa-popup]')) zone.setAttribute('hidden', '');
+      }
+      if (!racine) return;
+      brancher(racine);
+
+      if (masquerPopup) {
+        var retirer = racine.querySelectorAll('[data-oa-item-popup]');
+        for (var r = 0; r < retirer.length; r++) retirer[r].parentNode.removeChild(retirer[r]);
+      }
+      var slides = [].slice.call(racine.querySelectorAll('.oa-slide'));
+      var n = slides.length;
+      if (!n) { racine.hidden = true; return; }
+      slides.forEach(function (s, i) {
+        s.setAttribute('aria-label', (i + 1) + ' sur ' + n);
+        s.classList.toggle('is-actif', i === 0);
+        if (i === 0) { s.removeAttribute('inert'); s.removeAttribute('aria-hidden'); } else { s.setAttribute('inert', ''); s.setAttribute('aria-hidden', 'true'); }
+      });
+      if (n < 2) return;
+
+      var vue = racine.querySelector('.oa-vue');
+      var duree = (Number(racine.getAttribute('data-duree')) || 6) * 1000;
+      var cur = 0, minuteur = null, survol = false, focus = false;
+
+      function aller(i, sens) {
+        if (i === cur) return;
+        var a = slides[cur], b = slides[i];
+        racine.style.setProperty('--oa-s', sens);
+        a.classList.remove('is-actif'); a.classList.add('is-sortie'); a.setAttribute('inert', ''); a.setAttribute('aria-hidden', 'true');
+        b.classList.remove('is-sortie'); b.classList.add('is-actif'); b.removeAttribute('inert'); b.removeAttribute('aria-hidden');
+        cur = i;
+        setTimeout(function () { a.classList.remove('is-sortie'); }, 600);
+      }
+      function suivant() { aller((cur + 1) % n, 1); }
+      function arreter() { if (minuteur) { clearInterval(minuteur); minuteur = null; } }
+      function relancer() {
+        arreter();
+        if (!survol && !focus && document.visibilityState === 'visible') minuteur = setInterval(suivant, duree);
+      }
+
+      racine.addEventListener('mouseenter', function () { survol = true; relancer(); });
+      racine.addEventListener('mouseleave', function () { survol = false; relancer(); });
+      racine.addEventListener('focusin', function () { focus = true; relancer(); });
+      racine.addEventListener('focusout', function () { focus = false; relancer(); });
+      document.addEventListener('visibilitychange', relancer);
+
+      document.addEventListener('shopify:block:select', function (e) {
+        if (!racine.isConnected || !racine.contains(e.target)) return;
+        var i = slides.indexOf(e.target.closest('.oa-slide'));
+        if (i > -1) { survol = true; aller(i, i > cur ? 1 : -1); relancer(); }
+      });
+      document.addEventListener('shopify:block:deselect', function () { if (racine.isConnected) { survol = false; relancer(); } });
+
+      relancer();
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', demarrer); else demarrer();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Barre d'annonces",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "header", "content": "Défilement" },
+    { "type": "range", "id": "duree", "min": 3, "max": 15, "step": 1, "unit": "s", "label": "Durée d'affichage d'un message", "default": 6 },
+
+    { "type": "header", "content": "Onglet sur le côté" },
+    { "type": "checkbox", "id": "onglet_actif", "label": "Afficher l'onglet", "default": true },
+    { "type": "text", "id": "onglet_texte", "label": "Texte", "default": "-10 % offerts" },
+    {
+      "type": "select", "id": "onglet_action", "label": "Au clic", "default": "popup",
+      "options": [
+        { "value": "popup", "label": "Ouvrir la popup newsletter" },
+        { "value": "lien", "label": "Aller vers un lien" },
+        { "value": "js", "label": "Lancer du JavaScript" }
+      ]
+    },
+    { "type": "url", "id": "onglet_url", "label": "Lien", "visible_if": "{{ section.settings.onglet_action == 'lien' }}" },
+    { "type": "text", "id": "onglet_js", "label": "JavaScript", "info": "Exemple : window.ocaouPopupRemise.ouvrir()", "visible_if": "{{ section.settings.onglet_action == 'js' }}" },
+    { "type": "checkbox", "id": "onglet_mobile", "label": "Afficher sur mobile", "default": true },
+    { "type": "color", "id": "onglet_fond", "label": "Fond de l'onglet", "default": "#000000" },
+    { "type": "color", "id": "onglet_couleur", "label": "Texte de l'onglet", "default": "#ffffff" },
+
+    { "type": "header", "content": "Couleurs de la barre" },
+    { "type": "color", "id": "bg_color", "label": "Fond", "default": "#f4ede1" },
+    { "type": "color", "id": "text_color", "label": "Texte", "default": "#333333" },
+    { "type": "color", "id": "icon_bg_color", "label": "Fond des icônes", "default": "#ffffff" },
+    { "type": "color", "id": "icon_color", "label": "Icônes", "default": "#af6c67" },
+
+    { "type": "header", "content": "Taille du texte" },
+    { "type": "range", "id": "font_size_desktop", "min": 11, "max": 20, "step": 1, "unit": "px", "label": "Ordinateur", "default": 13 },
+    { "type": "range", "id": "font_size_mobile", "min": 10, "max": 16, "step": 1, "unit": "px", "label": "Mobile", "default": 12 }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texte", "default": "Nouveau message" },
+        {
+          "type": "select", "id": "icon", "label": "Icône", "default": "none",
+          "options": [
+            { "value": "none", "label": "Aucune" },
+            { "value": "relay", "label": "Boutique (point relais)" },
+            { "value": "truck", "label": "Livraison" },
+            { "value": "card", "label": "Paiement" },
+            { "value": "return", "label": "Retour" },
+            { "value": "gift", "label": "Cadeau" },
+            { "value": "lock", "label": "Sécurité" },
+            { "value": "shield", "label": "Garantie" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "check", "label": "Coche" }
+          ]
+        },
+        {
+          "type": "select", "id": "action", "label": "Au clic", "default": "none",
+          "options": [
+            { "value": "none", "label": "Rien" },
+            { "value": "popup", "label": "Ouvrir la popup newsletter" },
+            { "value": "lien", "label": "Aller vers un lien" },
+            { "value": "js", "label": "Lancer du JavaScript" }
+          ]
+        },
+        { "type": "url", "id": "url", "label": "Lien", "visible_if": "{{ block.settings.action == 'lien' }}" },
+        { "type": "text", "id": "js", "label": "JavaScript", "info": "Exemple : window.ocaouPopupRemise.ouvrir()", "visible_if": "{{ block.settings.action == 'js' }}" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barre d'annonces",
+      "blocks": [
+        { "type": "message", "settings": { "text": "Inscrivez-vous à notre newsletter et profitez de -10 %", "action": "popup" } },
+        { "type": "message", "settings": { "text": "Point relais offert à partir de 79€", "icon": "relay" } },
+        { "type": "message", "settings": { "text": "Paiement en 3x", "icon": "card" } },
+        { "type": "message", "settings": { "text": "Retour facile sous 14 jours", "icon": "return" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

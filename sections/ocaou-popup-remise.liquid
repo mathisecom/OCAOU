@@ -4,7 +4,7 @@
   Inscrit = tag « newsletter » + « popup-remise » (le second sert de déclencheur au mail du code, côté Brevo).
   Réglage « Actif » décoché : rien ne s'affiche pour les visiteurs. Test : ajouter ?popup-test à l'adresse d'une page.
 {%- endcomment -%}
-{%- unless request.page_type == 'captcha' or request.page_type == 'password' or request.page_type == 'cart' or customer -%}
+{%- unless request.page_type == 'captcha' or request.page_type == 'password' or request.page_type == 'cart' or customer and theme.role == 'main' -%}
   {%- assign envoye = false -%}
   {%- assign en_erreur = false -%}
   {%- capture _temporaire -%}
@@ -39,8 +39,16 @@
       </div>
 
       <div class="ocaou-pr__visuel" aria-hidden="true">
-        <img class="ocaou-pr__img-bureau" data-src="{% if section.settings.image_bureau != blank %}{{ section.settings.image_bureau | image_url }}{% else %}{{ 'ocaou-popup-bienvenue-2.webp' | file_url }}{% endif %}" alt="" width="480" height="640" decoding="async">
-        <img class="ocaou-pr__img-mobile" data-src="{% if section.settings.image_mobile != blank %}{{ section.settings.image_mobile | image_url }}{% else %}{{ 'ocaou-popup-bienvenue-mobile.webp' | file_url }}{% endif %}" alt="" width="760" height="400" decoding="async">
+        {%- for i in (1..3) -%}
+          {%- assign cle = 'image_bureau_' | append: i -%}
+          {%- assign fichier = 'ocaou-popup-newsletter-bureau-' | append: i | append: '.webp' -%}
+          <img class="ocaou-pr__fond ocaou-pr__img-bureau" data-src="{% if section.settings[cle] != blank %}{{ section.settings[cle] | image_url: width: 720 }}{% else %}{{ fichier | file_url }}{% endif %}" alt="" width="720" height="960" decoding="async">
+        {%- endfor -%}
+        {%- for i in (1..3) -%}
+          {%- assign cle = 'image_mobile_' | append: i -%}
+          {%- assign fichier = 'ocaou-popup-newsletter-mobile-' | append: i | append: '.webp' -%}
+          <img class="ocaou-pr__fond ocaou-pr__img-mobile" data-src="{% if section.settings[cle] != blank %}{{ section.settings[cle] | image_url: width: 920 }}{% else %}{{ fichier | file_url }}{% endif %}" alt="" width="920" height="484" decoding="async">
+        {%- endfor -%}
       </div>
 
       <form method="dialog" class="ocaou-pr__fermer-form">
@@ -87,6 +95,11 @@
     .ocaou-pr__visuel { position: relative; min-height: 0; background: rgb(244 237 225); }
     .ocaou-pr__img-mobile { display: none; }
     .ocaou-pr__visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+    .ocaou-pr__fond { animation: ocaou-pr-fondu 9s infinite both; }
+    .ocaou-pr__fond:nth-of-type(3n+2) { animation-delay: -6s; }
+    .ocaou-pr__fond:nth-of-type(3n) { animation-delay: -3s; }
+    @keyframes ocaou-pr-fondu { 0%, 31% { opacity: 1; } 36%, 94% { opacity: 0; } 100% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .ocaou-pr__fond { animation: none; opacity: 0; } .ocaou-pr__fond:nth-of-type(3n+1) { opacity: 1; } }
 
     .ocaou-pr__fermer-form { position: absolute; top: 12px; right: 12px; margin: 0; }
     .ocaou-pr__fermer {
@@ -133,9 +146,8 @@
         }
         dlg.showModal();
       }
-      
-
-
+      /* Ouverture à la demande (barre d'annonces, onglet latéral) : window.ocaouPopupRemise.ouvrir() */
+      window.ocaouPopupRemise = { ouvrir: ouvrir };
       dlg.addEventListener('close', function () { if (!racine.hasAttribute('data-envoye')) ecrire(localStorage, K_FERME, String(Date.now())); });
       dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
       var form = dlg.querySelector('form.ocaou-pr__form');
@@ -176,8 +188,12 @@
   "settings": [
     { "type": "checkbox", "id": "actif", "label": "Actif", "default": false },
     { "type": "range", "id": "delai", "min": 3, "max": 30, "step": 1, "unit": "s", "label": "Délai de navigation avant affichage", "default": 8 },
-    { "type": "image_picker", "id": "image_bureau", "label": "Image ordinateur (vertical 3:4, GIF ou WebP animé)" },
-    { "type": "image_picker", "id": "image_mobile", "label": "Image mobile (rectangle 19:10, GIF ou WebP animé)" },
+    { "type": "image_picker", "id": "image_bureau_1", "label": "Image ordinateur 1 (vertical 3:4)" },
+    { "type": "image_picker", "id": "image_bureau_2", "label": "Image ordinateur 2 (vertical 3:4)" },
+    { "type": "image_picker", "id": "image_bureau_3", "label": "Image ordinateur 3 (vertical 3:4)" },
+    { "type": "image_picker", "id": "image_mobile_1", "label": "Image mobile 1 (rectangle 19:10)" },
+    { "type": "image_picker", "id": "image_mobile_2", "label": "Image mobile 2 (rectangle 19:10)" },
+    { "type": "image_picker", "id": "image_mobile_3", "label": "Image mobile 3 (rectangle 19:10)" },
     { "type": "text", "id": "titre", "label": "Titre", "default": "-10 % sur votre première commande" },
     { "type": "textarea", "id": "texte", "label": "Texte", "default": "Vous voulez vous faire plaisir ou gâter vos proches avec nos essentiels pour bébé et maman." },
     { "type": "text", "id": "prenom", "label": "Champ prénom", "default": "Votre prénom" },

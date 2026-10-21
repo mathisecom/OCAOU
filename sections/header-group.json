@@ -11,75 +11,6 @@
   "type": "header",
   "name": "Header group",
   "sections": {
-    "barreannonce_YMpT9q": {
-      "type": "barreannonce",
-      "blocks": {
-        "announcement_yQBFit": {
-          "type": "announcement",
-          "settings": {
-            "show_icon": true,
-            "icon": "truck",
-            "text": "Point relais offert à partir de 79€",
-            "link": ""
-          }
-        },
-        "announcement_m4CXfr": {
-          "type": "announcement",
-          "settings": {
-            "show_icon": true,
-            "icon": "payment",
-            "text": "Paiement en 3x",
-            "link": ""
-          }
-        },
-        "announcement_wdbLqm": {
-          "type": "announcement",
-          "settings": {
-            "show_icon": true,
-            "icon": "return",
-            "text": "Retour facile sous 14 jours",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_yQBFit",
-        "announcement_m4CXfr",
-        "announcement_wdbLqm"
-      ],
-      "name": "Barre annonce avantages",
-      "settings": {
-        "desktop_full_width": true,
-        "max_width": 1600,
-        "desktop_alignment": "center",
-        "mobile_layout": "scroll",
-        "bg_color": "#af6c67",
-        "text_color": "#ffffff",
-        "icon_bg_color": "#ffffff",
-        "icon_color": "#af6c67",
-        "font_size_desktop": 13,
-        "font_size_mobile": 11,
-        "font_weight": "600",
-        "icon_circle_size_desktop": 24,
-        "icon_circle_size_mobile": 22,
-        "icon_size_desktop": 14,
-        "icon_size_mobile": 15,
-        "icon_text_gap": 8,
-        "icon_text_gap_mobile": 7,
-        "padding_top_desktop": 12,
-        "padding_bottom_desktop": 12,
-        "padding_top_mobile": 8,
-        "padding_bottom_mobile": 8,
-        "side_padding_desktop": 24,
-        "side_padding_mobile": 14,
-        "item_gap_desktop": 42,
-        "item_gap_mobile": 26,
-        "show_separators": true,
-        "separator_color": "#ffffff",
-        "separator_height": 15,
-        "separator_opacity": 40
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
@@ -103,32 +34,6 @@
         "reduce_padding": true,
         "background_opacity": 100,
         "background_blur_radius": 0
-      }
-    },
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "message": {
-          "type": "message",
-          "settings": {
-            "text": "INSCRIVEZ-VOUS À NOTRE NEWSLETTER ET PROFITEZ DE  –10 %",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "message"
-      ],
-      "settings": {
-        "enable_sticky": false,
-        "autoplay": false,
-        "cycle_speed": 6,
-        "text_size": "text-xs",
-        "navigation_mode": "arrows",
-        "scrolling_speed": 10,
-        "background": "#cf9a2e",
-        "background_gradient": "",
-        "text_color": "#ffffff"
       }
     },
     "iso_pa_banner_ycLfYX": {
@@ -155,12 +60,51 @@
       "type": "_blocks",
       "name": "Produits achetés ensemble",
       "settings": {}
+    },
+    "ocaou_annonces": {
+      "type": "ocaou-annonces",
+      "blocks": {
+        "m_newsletter": {
+          "type": "message",
+          "settings": {
+            "text": "Inscrivez-vous à notre newsletter et profitez de -10 %",
+            "action": "popup"
+          }
+        },
+        "m_livraison": {
+          "type": "message",
+          "settings": {
+            "text": "Point relais offert à partir de 79€",
+            "icon": "relay"
+          }
+        },
+        "m_paiement": {
+          "type": "message",
+          "settings": {
+            "text": "Paiement en 3x",
+            "icon": "card"
+          }
+        },
+        "m_retour": {
+          "type": "message",
+          "settings": {
+            "text": "Retour facile sous 14 jours",
+            "icon": "return"
+          }
+        }
+      },
+      "block_order": [
+        "m_newsletter",
+        "m_livraison",
+        "m_paiement",
+        "m_retour"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "barreannonce_YMpT9q",
+    "ocaou_annonces",
     "header",
-    "announcement-bar",
     "iso_pa_banner_ycLfYX",
     "blocks_PNGETL"
   ]
