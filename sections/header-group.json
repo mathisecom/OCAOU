@@ -11,6 +11,77 @@
   "type": "header",
   "name": "Header group",
   "sections": {
+    "ocaou_annonces": {
+      "type": "ocaou-annonces",
+      "blocks": {
+        "m_newsletter": {
+          "type": "message",
+          "settings": {
+            "text": "Inscrivez-vous à notre newsletter et profitez de -10 %",
+            "icon": "none",
+            "action": "popup",
+            "url": "",
+            "js": ""
+          }
+        },
+        "m_livraison": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "Point relais offert à partir de 79€",
+            "icon": "relay",
+            "action": "none",
+            "url": "",
+            "js": ""
+          }
+        },
+        "m_paiement": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "Paiement en 3x",
+            "icon": "card",
+            "action": "none",
+            "url": "",
+            "js": ""
+          }
+        },
+        "m_retour": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "Retour facile sous 14 jours",
+            "icon": "return",
+            "action": "none",
+            "url": "",
+            "js": ""
+          }
+        }
+      },
+      "block_order": [
+        "m_newsletter",
+        "m_livraison",
+        "m_paiement",
+        "m_retour"
+      ],
+      "settings": {
+        "duree": 6,
+        "onglet_actif": true,
+        "onglet_texte": "-10 % offerts",
+        "onglet_action": "popup",
+        "onglet_url": "",
+        "onglet_js": "",
+        "onglet_mobile": true,
+        "onglet_fond": "#000000",
+        "onglet_couleur": "#ffffff",
+        "bg_color": "#f4ede1",
+        "text_color": "#333333",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#af6c67",
+        "font_size_desktop": 13,
+        "font_size_mobile": 12
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -59,46 +130,6 @@
     "blocks_PNGETL": {
       "type": "_blocks",
       "name": "Produits achetés ensemble",
-      "settings": {}
-    },
-    "ocaou_annonces": {
-      "type": "ocaou-annonces",
-      "blocks": {
-        "m_newsletter": {
-          "type": "message",
-          "settings": {
-            "text": "Inscrivez-vous à notre newsletter et profitez de -10 %",
-            "action": "popup"
-          }
-        },
-        "m_livraison": {
-          "type": "message",
-          "settings": {
-            "text": "Point relais offert à partir de 79€",
-            "icon": "relay"
-          }
-        },
-        "m_paiement": {
-          "type": "message",
-          "settings": {
-            "text": "Paiement en 3x",
-            "icon": "card"
-          }
-        },
-        "m_retour": {
-          "type": "message",
-          "settings": {
-            "text": "Retour facile sous 14 jours",
-            "icon": "return"
-          }
-        }
-      },
-      "block_order": [
-        "m_newsletter",
-        "m_livraison",
-        "m_paiement",
-        "m_retour"
-      ],
       "settings": {}
     }
   },
