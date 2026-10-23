@@ -126,12 +126,11 @@
             "titre": ""
           }
         },
-        "video_h6z9iW": {
+        "video_5": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/sherpa mode sac à langer.mp4",
-            "src": "",
-            "poster": "",
+            "src": "https://cdn.shopify.com/videos/c/vp/ff997877065f489e901412361c64ab3d/ff997877065f489e901412361c64ab3d.HD-720p-4.5Mbps-94560597.mp4",
+            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/ff997877065f489e901412361c64ab3d.thumbnail.0000000000.jpg?v=1789541064",
             "titre": ""
           }
         },
@@ -151,19 +150,20 @@
             "titre": ""
           }
         },
+        "video_h6z9iW": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/sherpa mode sac à langer.mp4",
+            "src": "",
+            "poster": "",
+            "titre": ""
+          }
+        },
         "video_4": {
           "type": "video",
           "settings": {
             "src": "https://cdn.shopify.com/videos/c/vp/5d065e00e9844caa88f4f42a05d20eb4/5d065e00e9844caa88f4f42a05d20eb4.HD-720p-4.5Mbps-94560535.mp4",
             "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/5d065e00e9844caa88f4f42a05d20eb4.thumbnail.0000000000.jpg?v=1789541007",
-            "titre": ""
-          }
-        },
-        "video_5": {
-          "type": "video",
-          "settings": {
-            "src": "https://cdn.shopify.com/videos/c/vp/ff997877065f489e901412361c64ab3d/ff997877065f489e901412361c64ab3d.HD-720p-4.5Mbps-94560597.mp4",
-            "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/ff997877065f489e901412361c64ab3d.thumbnail.0000000000.jpg?v=1789541064",
             "titre": ""
           }
         },
@@ -178,11 +178,11 @@
       },
       "block_order": [
         "video_1",
-        "video_h6z9iW",
+        "video_5",
         "video_2",
         "video_3",
+        "video_h6z9iW",
         "video_4",
-        "video_5",
         "video_6"
       ],
       "settings": {
