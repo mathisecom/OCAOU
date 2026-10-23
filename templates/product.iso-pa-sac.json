@@ -120,7 +120,7 @@
         "video_1": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/ouverture sac sans son.mov",
+            "video": "shopify://files/videos/autonomie film court.mp4",
             "src": "https://cdn.shopify.com/videos/c/vp/51a7490505004bd5aec54a3588ff4dfe/51a7490505004bd5aec54a3588ff4dfe.HD-720p-4.5Mbps-94560348.mp4",
             "poster": "https://cdn.shopify.com/s/files/1/0880/4968/0718/files/preview_images/51a7490505004bd5aec54a3588ff4dfe.thumbnail.0000000000.jpg?v=1789540857",
             "titre": ""
@@ -130,15 +130,6 @@
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/sherpa mode sac à langer.mp4",
-            "src": "",
-            "poster": "",
-            "titre": ""
-          }
-        },
-        "video_G97g9A": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/le sac des petits aventuriers.mov",
             "src": "",
             "poster": "",
             "titre": ""
@@ -188,7 +179,6 @@
       "block_order": [
         "video_1",
         "video_h6z9iW",
-        "video_G97g9A",
         "video_2",
         "video_3",
         "video_4",
