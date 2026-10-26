@@ -740,7 +740,8 @@
       "type": "iso-hero-video",
       "name": "Bandeau d'accueil vidéo",
       "settings": {
-        "video": "shopify://files/videos/Clip 3 Film de marque sans son.mp4",
+        "video": "shopify://files/videos/2 EN 1.mp4",
+        "mobile_video": "shopify://files/videos/2 EN 1 MOBILE.mp4",
         "title": "",
         "heading_tag": "h1",
         "title_size_desktop": 32,
