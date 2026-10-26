@@ -1,5 +1,5 @@
 {%- comment -%}
-  Piste A : une carte vidéo du carrousel. Paramètres : src, mime, poster, label (déjà échappé), i, n.
+  Piste A : une carte vidéo du carrousel. Paramètres : src, mime, poster, label (déjà échappé, lecteurs d'écran), titre (déjà échappé, texte visible, vide = rien d'affiché), i, n.
   Lecture automatique muette pilotée par iso-pa.js : rien ne se charge tant que la carte n'est pas à
   l'écran (preload="none"), et le bouton rend la main (RGAA 13.8).
 {%- endcomment -%}
@@ -12,4 +12,5 @@
     <span class="pa-vid-ic pa-vid-ic--play">{%- render 'iso-pa-icon', name: 'play' -%}</span>
     <span class="pa-sr" data-pa-vid-lbl>Mettre la vidéo en pause</span>
   </button>
+  {%- if titre != blank -%}<p class="pa-vid-title">{{ titre }}</p>{%- endif -%}
 </li>

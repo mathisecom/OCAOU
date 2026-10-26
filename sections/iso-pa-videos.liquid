@@ -1,3 +1,4 @@
+{{ 'iso-pa.css' | asset_url | stylesheet_tag }}
 {%- comment -%}
   Piste A : vidéos du produit, format vertical, défilement horizontal.
   Deux sources, dans cet ordre :
@@ -66,8 +67,9 @@
             assign poster = poster | append: '&width=540'
           endif
           assign lbl = block.settings.titre | default: nom | escape
+          assign vtitre = block.settings.titre | escape
         -%}
-        {%- render 'iso-pa-vidcard', src: src, mime: mime, poster: poster, label: lbl, i: forloop.index, n: nb -%}
+        {%- render 'iso-pa-vidcard', src: src, mime: mime, poster: poster, label: lbl, titre: vtitre, i: forloop.index, n: nb -%}
       {%- endfor -%}
     {%- else -%}
       {%- for v in mfv -%}
@@ -96,8 +98,9 @@
             assign poster = v.preview_image | image_url: width: 540
           endif
           assign lbl = v.alt | default: nom | escape
+          assign vtitre = v.alt | escape
         -%}
-        {%- render 'iso-pa-vidcard', src: src, mime: mime, poster: poster, label: lbl, i: forloop.index, n: nb -%}
+        {%- render 'iso-pa-vidcard', src: src, mime: mime, poster: poster, label: lbl, titre: vtitre, i: forloop.index, n: nb -%}
       {%- endfor -%}
     {%- endif -%}
   </ul>
