@@ -740,8 +740,8 @@
       "type": "iso-hero-video",
       "name": "Bandeau d'accueil vidéo",
       "settings": {
-        "video": "shopify://files/videos/2 EN 1.mp4",
-        "mobile_video": "shopify://files/videos/2 EN 1 MOBILE.mp4",
+        "video": "shopify://files/videos/2  en 1 ordi.mp4",
+        "mobile_video": "shopify://files/videos/2 en 1 tél.mp4",
         "title": "",
         "heading_tag": "h1",
         "title_size_desktop": 32,
