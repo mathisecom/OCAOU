@@ -209,6 +209,17 @@
     "avis_verts": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_BpQWPf": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Camille",
+            "title": "Ce sac à langer c'est du génie!",
+            "content": "<p>Ce sac à langer c'est du génie!</p>"
+          }
+        },
         "testimonial_hD44TM": {
           "type": "testimonial",
           "settings": {
@@ -286,17 +297,6 @@
             "content": "<p>Elle est top ! On a abandonné toutes les autres pour n’utiliser plus que celle la ! L’autonomie permet de l’utiliser pendant quasi une semaine sans avoir à la charger. &nbsp;L’intensité de lumière permet de l’utiliser comme lampe de chevet pour l’histoire du soir. Coup de cœur !&nbsp;</p>"
           }
         },
-        "testimonial_BpQWPf": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Anne-Claire P.",
-            "title": "Polyvalent",
-            "content": "<p>Polyvalent! Aussi bien pour aller à la plage, à la piscine que chez la nounou!</p>"
-          }
-        },
         "testimonial_cdKCDw": {
           "type": "testimonial",
           "settings": {
@@ -365,6 +365,7 @@
         }
       },
       "block_order": [
+        "testimonial_BpQWPf",
         "testimonial_hD44TM",
         "testimonial_PAByn8",
         "testimonial_DTTqzy",
@@ -372,7 +373,6 @@
         "testimonial_DnV3QU",
         "testimonial_WUWxXP",
         "testimonial_PE3qw8",
-        "testimonial_BpQWPf",
         "testimonial_cdKCDw",
         "testimonial_DzKV7A",
         "testimonial_VmiL9x",
