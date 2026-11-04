@@ -230,12 +230,18 @@
   assign cfg = section.settings.couleurs | newline_to_br | split: '<br />'
   assign leo_list = section.settings.graou | downcase | newline_to_br | strip_newlines | replace: '<br />', ',' | prepend: ',' | append: ','
 
-  # Ordre des pastilles de la fiche : ordre fixe, le même partout (snippets/iso-couleurs-ordre).
-  # opt.values n'est pas touché : la galerie s'y repère par index.
-  capture vals_main_txt
-    render 'iso-couleurs-ordre', values: opt.values
-  endcapture
-  assign vals_main = vals_main_txt | split: '|~|'
+  # Ordre des pastilles de la fiche : le coloris de la photo affichée passe en tête, les autres
+  # gardent l'ordre de Shopify. opt.values n'est pas touché : la galerie s'y repère par index.
+  assign vals_main = ''
+  if opt.values contains sel.option1
+    assign vals_main = sel.option1 | append: '|~|'
+  endif
+  for val in opt.values
+    unless val == sel.option1
+      assign vals_main = vals_main | append: val | append: '|~|'
+    endunless
+  endfor
+  assign vals_main = vals_main | split: '|~|'
 -%}
 <div class="iso-pa" id="pa-achat" data-pa-product style="background:{{ section.settings.bg_color | default: '#FFFFFF' }};--pa-photo-bg:{{ section.settings.photo_bg | default: '#FBF6EF' }}">
 <div class="pa-w pa-buy">
@@ -364,9 +370,7 @@
       {%- for ox in product.options_with_values offset: 1 -%}
         <fieldset class="pa-colors-x" data-pos="{{ forloop.index }}"><legend class="pa-lg">{{ ox.name | escape }}&nbsp;: <b class="pa-cname-x">{{ ox.selected_value | escape }}</b></legend>
           <div class="pa-sws">
-            {%- capture ox_txt -%}{%- render 'iso-couleurs-ordre', values: ox.values -%}{%- endcapture -%}
-            {%- assign ox_ordre = ox_txt | split: '|~|' -%}
-            {%- for val in ox_ordre -%}
+            {%- for val in ox.values -%}
               <label class="pa-sw{% if section.settings.opt_texte %} pa-swt{% endif %}"><input type="radio" name="pa-col-{{ uid }}-{{ forloop.parentloop.index }}" value="{{ val | escape }}"{% if ox.selected_value == val %} checked{% endif %}>{%- if section.settings.opt_texte -%}<span class="pa-swt-c">{{ val | escape }}</span>{%- else -%}{%- render 'iso-pa-sw', val: val, handle: product.handle, cfg: cfg, swcfg: swcfg, leo: leo_list -%}{%- endif -%}<span class="pa-sr">{{ val | escape }}</span></label>
             {%- endfor -%}
           </div>
@@ -498,11 +502,27 @@
             endunless
           endfor
         endfor
-        assign univ_liste = univ | split: ','
-        capture ordre_txt
-          render 'iso-couleurs-ordre', values: univ_liste
-        endcapture
-        assign ordre = ordre_txt | split: '|~|'
+        assign ordre = ''
+        assign nr = rowsa.size
+        for lvl in (1..nr)
+          assign us = univ | split: ','
+          for c in us
+            if c == blank
+              continue
+            endif
+            assign ck = ',' | append: c | append: ','
+            assign cnt = 0
+            for r in rowsa
+              if r contains ck
+                assign cnt = cnt | plus: 1
+              endif
+            endfor
+            if cnt == lvl
+              assign ordre = ordre | append: c | append: ','
+            endif
+          endfor
+        endfor
+        assign ordre = ordre | split: ','
       -%}
       {%- capture gifts -%}
         {%- for gi in (1..2) -%}
