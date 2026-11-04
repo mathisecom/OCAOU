@@ -153,7 +153,16 @@ Supported variables
               {% liquid
                 assign name = form_id | append: '-option' | append: option.position
 
-                for option_value in option.values
+                capture ocaou_ordre
+                  render 'iso-couleurs-ordre', values: option.values
+                endcapture
+                assign ocaou_ordre = ocaou_ordre | split: '|~|'
+
+                for ocaou_nom in ocaou_ordre
+                 for option_value in option.values
+                  unless option_value.name == ocaou_nom
+                    continue
+                  endunless
                   case resolved_option_selector_style
                     when 'variant_image'
                       render 'option-value', type: 'thumbnail', form: form_id, option_value: option_value, param_name: name, option_position: option.position, hide_if_disabled: hide_sold_out_variants, reload_page_for_combined_products: update_url, id_prefix: forloop.index, bordered: true
@@ -164,6 +173,7 @@ Supported variables
                     when 'block_swatch'
                       render 'option-value', type: 'block', form: form_id, option_value: option_value, param_name: name, option_position: option.position, show_swatch: true, hide_if_disabled: hide_sold_out_variants, reload_page_for_combined_products: update_url, id_prefix: forloop.index
                   endcase
+                 endfor
                 endfor
               %}
             </div>

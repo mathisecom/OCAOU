@@ -176,6 +176,41 @@
                       {%- assign order_note = 'cart.general.order_note' | t -%}
                       {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note, maxlength: block.settings.maxlength -%}
                     </cart-note>
+                    {%- comment -%}
+                      Le bloc Point relais capte le clic sur « Passer la commande » et ouvre le paiement sans envoyer le formulaire.
+                      Un mot cadeau tapé juste avant le clic n'est alors jamais enregistré : on l'enregistre d'abord, puis on rejoue le clic.
+                    {%- endcomment -%}
+                    <script>
+                      (function () {
+                        if (window.isoNoteGuard) return;
+                        window.isoNoteGuard = true;
+                        var busy = false;
+                        window.addEventListener('click', function (event) {
+                          var button = event.target.closest && event.target.closest('button[name="checkout"], input[name="checkout"]');
+                          if (!button || button.hasAttribute('data-iso-note-ok')) return;
+                          var scope = button.form || button.closest('form') || document;
+                          var field = scope.querySelector('textarea[name="note"]');
+                          if (!field || field.value === field.defaultValue) return;
+                          event.preventDefault();
+                          event.stopImmediatePropagation();
+                          if (busy) return;
+                          busy = true;
+                          var root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
+                          var save = fetch(root + 'cart/update.js', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ note: field.value })
+                          });
+                          var wait = new Promise(function (resolve) { setTimeout(resolve, 5000); });
+                          Promise.race([save, wait]).catch(function () {}).then(function () {
+                            busy = false;
+                            button.setAttribute('data-iso-note-ok', '');
+                            button.click();
+                            button.removeAttribute('data-iso-note-ok');
+                          });
+                        }, true);
+                      })();
+                    </script>
       {%- endif -%}
 
                   {%- when 'text' -%}

@@ -60,8 +60,13 @@
             {%- capture param_name -%}swatch-isocart-{{ product.id }}{%- endcapture -%}
             <fieldset class="iso-cart-suggestions__swatches h-stack gap-0.5">
               <legend class="sr-only">{{ color_option.name }}</legend>
+              {%- capture ocaou_ordre -%}{%- render 'iso-couleurs-ordre', values: color_option.values -%}{%- endcapture -%}
+              {%- assign ocaou_ordre = ocaou_ordre | split: '|~|' -%}
+              {%- for ocaou_nom in ocaou_ordre -%}
               {%- for option_value in color_option.values -%}
+              {%- unless option_value.name == ocaou_nom -%}{%- continue -%}{%- endunless -%}
                 {%- render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: color_option.position, output_variant_media: true, size: 'sm', pa_handle: product.handle, show_tooltip: true -%}
+              {%- endfor -%}
               {%- endfor -%}
             </fieldset>
           {%- endif -%}

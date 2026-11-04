@@ -193,8 +193,17 @@ Supported variables
                   {%- capture param_name -%}swatch-{{ quick_buy_context }}-{{ section.id }}-{{ product.id }}-{{ product_option.position }}{%- endcapture -%}
 
                   {%- liquid
-                    for option_value in product_option.values limit: 4
-                      render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: product_option.position, output_variant_media: true, size: 'sm', pa_handle: product.handle
+                    capture ocaou_ordre
+                      render 'iso-couleurs-ordre', values: product_option.values
+                    endcapture
+                    assign ocaou_ordre = ocaou_ordre | split: '|~|'
+                    for ocaou_nom in ocaou_ordre limit: 4
+                      for option_value in product_option.values
+                        unless option_value.name == ocaou_nom
+                          continue
+                        endunless
+                        render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: product_option.position, output_variant_media: true, size: 'sm', pa_handle: product.handle
+                      endfor
                     endfor
                   -%}
 
