@@ -18,6 +18,7 @@ Supported variables
 * option_position: the position of the option in the list of options [REQUIRED FOR PRODUCT OPTION]
 * output_variant_media: if set to true, the variant media will be outputted as a data attribute of the associated form control. This is
                         done on card swatches to allow for a quick preview of the variant media.
+* media_apres: if set to true, the card swatch previews the media that follows the variant media (ocaou, home card). [OPTIONAL]
 * url: if defined, option value will be used as a plain link tag instead of an input. If passing an option_value object, the product_url
        will be used as the link target automatically. [OPTIONAL]
 * reload_page_for_combined_products: if set to true, when a given option value is connected to a combined product, the option will be generated
@@ -130,7 +131,9 @@ Color swatch specific parameters:
 {%- if url == blank -%}
   {%- capture variant_attributes -%}
     {%- if output_variant_media and option_value != blank and variant != blank -%}
-      data-variant-id="{{ variant.id }}" {% if variant.featured_media %}data-variant-media="{{ variant.featured_media | json | escape }}"{% endif %}
+      {%- assign ocaou_vm = variant.featured_media -%}
+      {%- if media_apres and ocaou_vm -%}{%- assign ocaou_vm = variant.product.media[ocaou_vm.position] | default: ocaou_vm -%}{%- endif -%}
+      data-variant-id="{{ variant.id }}" {% if ocaou_vm %}data-variant-media="{{ ocaou_vm | json | escape }}"{% endif %}
     {%- endif -%}
   {%- endcapture -%}
 

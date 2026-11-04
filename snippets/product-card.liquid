@@ -29,6 +29,16 @@ Supported variables
 {%- assign show_secondary_image = show_secondary_image | default: settings.show_secondary_image, allow_false: true -%}
 {%- assign text_alignment = text_alignment | default: settings.product_info_alignment -%}
 
+{%- comment -%}
+  Accueil : la carte du sac montre la vue ouvert + fermé (photo qui suit celle du coloris), la photo du coloris
+  passe au survol et sur la pastille. Pour un autre produit, ajouter son handle à la liste.
+{%- endcomment -%}
+{%- assign ocaou_handles = 'sac-ocaou' | split: ',' -%}
+{%- assign ocaou_decale = false -%}
+{%- if request.page_type == 'index' and ocaou_handles contains product.handle and product.media.size > 1 -%}
+  {%- assign ocaou_decale = true -%}
+{%- endif -%}
+
 {%- if stacked and section.settings.products_per_row_mobile == '2' -%}
   {%- assign mobile_reduced = true -%}
 {%- endif -%}
@@ -84,10 +94,16 @@ Supported variables
         -%}
 
         {%- capture main_image_classes -%}product-card__image product-card__image--primary {% if settings.product_image_aspect_ratio contains 'crop' %}object-fill-safe{% endif %} aspect-{{ settings.product_image_aspect_ratio | split: '_' | first }}{%- endcapture -%}
-        {{- product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: main_media_loading_strategy, sizes: sizes, widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800', class: main_image_classes -}}
+        {%- assign main_media = product.featured_media -%}
+        {%- assign next_media = product.media[product.featured_media.position] | default: product.media[1] -%}
+        {%- if ocaou_decale -%}
+          {%- assign ocaou_echange = main_media -%}
+          {%- assign main_media = next_media -%}
+          {%- assign next_media = ocaou_echange -%}
+        {%- endif -%}
+        {{- main_media | image_url: width: main_media.width | image_tag: loading: main_media_loading_strategy, sizes: sizes, widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800', class: main_image_classes -}}
 
         {%- if show_secondary_image and product.media.size > 1 -%}
-          {%- assign next_media = product.media[product.featured_media.position] | default: product.media[1] -%}
           {{- next_media | image_url: width: next_media.width | image_tag: class: 'product-card__image product-card__image--secondary object-fill', loading: 'lazy', fetchpriority: 'low', sizes: sizes, widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800' -}}
         {%- endif -%}
       </a>
@@ -194,7 +210,7 @@ Supported variables
 
                   {%- liquid
                     for option_value in product_option.values limit: 4
-                      render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: product_option.position, output_variant_media: true, size: 'sm', pa_handle: product.handle
+                      render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: product_option.position, output_variant_media: true, media_apres: ocaou_decale, size: 'sm', pa_handle: product.handle
                     endfor
                   -%}
 
