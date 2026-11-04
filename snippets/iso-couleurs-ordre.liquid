@@ -5,7 +5,7 @@
   Pour changer l'ordre, modifier la ligne « rang » et nulle part ailleurs (« leo » est le motif Graou des formules).
 {%- endcomment -%}
 {%- liquid
-  assign rang_brut = 'bleu,blanc,beige,rose,graou,leo,léopard,leopard,nude,navy'
+  assign rang_brut = 'bleu,blanc,rose,graou,leo,léopard,leopard,nude,beige,navy'
   assign rang = rang_brut | split: ','
   assign rang_txt = ',' | append: rang_brut | append: ','
   assign sortie = ''
