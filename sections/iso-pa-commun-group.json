@@ -220,6 +220,94 @@
             "content": "<p>Ce sac à langer c'est du génie!</p>"
           }
         },
+        "testimonial_jdgSop": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sophie L.",
+            "title": "Super découverte ! 😍",
+            "content": "<p>J'ai acheté deux ensembles lunch box + gourde, un léopard et un bleu, pour mes enfants, et ils adorent ! De mon côté, je suis tout aussi ravie : c'est joli, hyper pratique au quotidien, facile à nettoyer et surtout de très belle qualité ! Une chouette marque que j'ai découverte grâce à une amie et que je recommande sans hésiter ! Merci ! 🥰</p>"
+          }
+        },
+        "testimonial_jdgFlo": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Florine",
+            "title": "",
+            "content": "<p>Incassable vraiment top 👍🏼</p>"
+          }
+        },
+        "testimonial_jdgMar": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Marie-Claude T.",
+            "title": "",
+            "content": "<p>Conforme à mes espérances</p>"
+          }
+        },
+        "testimonial_jdgAnn": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Anne-Sophie J.",
+            "title": "je ne le quitte plus!",
+            "content": "<p>Format hyper pratique et j'adore le design, il m'accompagne partout!!</p>"
+          }
+        },
+        "testimonial_jdgSan": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sandrine D.",
+            "title": "De belle qualité et très pratique!",
+            "content": "<p>Saura s'adapter aux différents âges de notre fille. Je suis ravie!</p>"
+          }
+        },
+        "testimonial_jdgNic": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Nicolas",
+            "title": "",
+            "content": "<p>Trooooop beau et très pratique ! Tout simplement génial.</p>"
+          }
+        },
+        "testimonial_jdgElo": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Elodie B.",
+            "title": "Super jolie et très pratique",
+            "content": "<p>A porter en pochette dans un sac ou même en sac directement.</p>"
+          }
+        },
+        "testimonial_jdgFra": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "François G.",
+            "title": "J'adore",
+            "content": "<p>Très joli design du produit. Utilisation pratique et parfaitement adapté aux enfants. Livraison rapide et très bonne communication. Je recommande.</p>"
+          }
+        },
         "testimonial_hD44TM": {
           "type": "testimonial",
           "settings": {
@@ -362,106 +450,18 @@
             "title": "Il est encore plus génial en vrai !",
             "content": "<p>On a reçu le sac à dos malin, elle adore et ne le quitte plus 🤩. Il est encore plus génial en vrai ! Une belle idée cadeau à offrir aux (futurs) parents pour leurs minis.</p>"
           }
-        },
-        "testimonial_jdgFlo": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Florine",
-            "title": "",
-            "content": "<p>Incassable vraiment top 👍🏼</p>"
-          }
-        },
-        "testimonial_jdgSop": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Sophie L.",
-            "title": "Super découverte ! 😍",
-            "content": "<p>J'ai acheté deux ensembles lunch box + gourde, un léopard et un bleu, pour mes enfants, et ils adorent ! De mon côté, je suis tout aussi ravie : c'est joli, hyper pratique au quotidien, facile à nettoyer et surtout de très belle qualité ! Une chouette marque que j'ai découverte grâce à une amie et que je recommande sans hésiter ! Merci ! 🥰</p>"
-          }
-        },
-        "testimonial_jdgMar": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Marie-Claude T.",
-            "title": "",
-            "content": "<p>Conforme à mes espérances</p>"
-          }
-        },
-        "testimonial_jdgAnn": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Anne-Sophie J.",
-            "title": "je ne le quitte plus!",
-            "content": "<p>Format hyper pratique et j'adore le design, il m'accompagne partout!!</p>"
-          }
-        },
-        "testimonial_jdgSan": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Sandrine D.",
-            "title": "De belle qualité et très pratique!",
-            "content": "<p>Saura s'adapter aux différents âges de notre fille. Je suis ravie!</p>"
-          }
-        },
-        "testimonial_jdgNic": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Nicolas",
-            "title": "",
-            "content": "<p>Trooooop beau et très pratique ! Tout simplement génial.</p>"
-          }
-        },
-        "testimonial_jdgElo": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Elodie B.",
-            "title": "Super jolie et très pratique",
-            "content": "<p>A porter en pochette dans un sac ou même en sac directement.</p>"
-          }
-        },
-        "testimonial_jdgFra": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "François G.",
-            "title": "J'adore",
-            "content": "<p>Très joli design du produit. Utilisation pratique et parfaitement adapté aux enfants. Livraison rapide et très bonne communication. Je recommande.</p>"
-          }
         }
       },
       "block_order": [
-        "testimonial_jdgFlo",
+        "testimonial_BpQWPf",
         "testimonial_jdgSop",
+        "testimonial_jdgFlo",
         "testimonial_jdgMar",
         "testimonial_jdgAnn",
         "testimonial_jdgSan",
         "testimonial_jdgNic",
         "testimonial_jdgElo",
         "testimonial_jdgFra",
-        "testimonial_BpQWPf",
         "testimonial_hD44TM",
         "testimonial_PAByn8",
         "testimonial_DTTqzy",
