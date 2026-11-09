@@ -107,6 +107,42 @@
         "background_blur_radius": 0
       }
     },
+    "ocaou_annonces_BxD4hR": {
+      "type": "ocaou-annonces",
+      "blocks": {
+        "message_Jdn6bY": {
+          "type": "message",
+          "settings": {
+            "text": "🚚 LIVRAISON OFFERTE EN POINT RELAIS JUSQU’AU 16 NOVEMBRE INCLUS ! 🎁",
+            "icon": "none",
+            "action": "none",
+            "url": "",
+            "js": ""
+          }
+        }
+      },
+      "block_order": [
+        "message_Jdn6bY"
+      ],
+      "name": "Barre d'annonces",
+      "settings": {
+        "duree": 6,
+        "onglet_actif": true,
+        "onglet_texte": "-10 % offerts",
+        "onglet_action": "popup",
+        "onglet_url": "",
+        "onglet_js": "",
+        "onglet_mobile": true,
+        "onglet_fond": "#FFFFFF",
+        "onglet_couleur": "#F3EDE2",
+        "bg_color": "#CF9A2E",
+        "text_color": "#F3EDE2",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#af6c67",
+        "font_size_desktop": 13,
+        "font_size_mobile": 12
+      }
+    },
     "iso_pa_banner_ycLfYX": {
       "type": "iso-pa-banner",
       "disabled": true,
@@ -136,6 +172,7 @@
   "order": [
     "ocaou_annonces",
     "header",
+    "ocaou_annonces_BxD4hR",
     "iso_pa_banner_ycLfYX",
     "blocks_PNGETL"
   ]
