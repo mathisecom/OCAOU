@@ -54,7 +54,7 @@
         "show_shipping_text": false,
         "show_view_cart_button": false,
         "show_checkout_button": false,
-        "show_continue_shopping_button": true,
+        "show_continue_shopping_button": false,
         "continue_shopping_label": "Continuer mes achats",
         "recommendations_title": "Tendance du mois",
         "products": [],
