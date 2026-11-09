@@ -18,8 +18,22 @@
   {%- else -%}
     <div class="page-spacer">
       <div class="cart">
+        {%- unless section.settings.iso_lignes_visibles -%}
+        <style>
+          .cart { gap: var(--spacing-5, 20px); }
+          .cart-header { gap: var(--spacing-3, 12px); }
+          .cart-order { gap: 0; }
+          .cart-order__summary { display: none; }
+          /* mobile : marges et remplissages réduits, ils prenaient 90 px sur 375 */
+          @media (max-width: 699px) {
+            .shopify-section--main-cart .container { margin-inline: 8px; }
+            .shopify-section--main-cart .cart-form { padding: 12px; row-gap: 8px; }
+            .shopify-section--main-cart .point-relais--nouveau { margin-top: 0; }
+          }
+        </style>
+        {%- endunless -%}
         <div class="cart-header">
-          <h1 class="h2">{{ 'cart.general.title' | t }}</h1>
+          <h1 class="h2">{%- if section.settings.iso_titre_page != blank -%}{{ section.settings.iso_titre_page | escape }}{%- else -%}{{ 'cart.general.title' | t }}{%- endif -%}</h1>
 
           {%- if settings.cart_show_free_shipping_threshold -%}
             {%- render 'free-shipping-bar' -%}
@@ -33,6 +47,7 @@
             ORDER SUMMARY
             ----------------------------------------------------------------------------------------------------------------
             {%- endcomment -%}
+            {%- if section.settings.iso_lignes_visibles -%}
             <table class="order-summary">
               <thead class="order-summary__header">
                 <tr>
@@ -77,6 +92,7 @@
                 {%- endfor -%}
               </tbody>
             </table>
+            {%- endif -%}
 
             {%- comment -%}
             ----------------------------------------------------------------------------------------------------------------
@@ -698,6 +714,17 @@
     {
       "type": "paragraph",
       "content": "Utilise l'app Search & Discovery pour suggérer des produits complémentaires selon le contenu du panier."
+    },
+    {
+      "type": "checkbox",
+      "id": "iso_lignes_visibles",
+      "label": "Afficher les lignes produits",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "iso_titre_page",
+      "label": "Titre de la page (vide = titre d'origine)"
     },
     {
       "type": "checkbox",

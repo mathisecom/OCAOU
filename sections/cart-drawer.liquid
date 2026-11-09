@@ -206,7 +206,7 @@
         {%- endif -%}
       </div>
 
-      <form action="{{ routes.cart_url }}" method="POST" class="buy-buttons {% if section.settings.show_checkout_button %}buy-buttons--compact{% endif %}">
+      <form action="{{ routes.cart_url }}" method="POST" class="buy-buttons {% if section.settings.show_checkout_button %}buy-buttons--compact{% endif %}"{% unless section.settings.show_continue_shopping_button %} style="grid-template-columns: minmax(0, 1fr);"{% endunless %}>
         {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
               {%- comment -%}O'CAOU — bouton "Continuer mes achats" : ferme simplement le panier{%- endcomment -%}
@@ -217,7 +217,7 @@
 
         {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
           <a href="{{ routes.cart_url }}" class="button button--lg {% if section.settings.show_checkout_button %}button--secondary{% endif %}" data-no-instant>
-            {{- 'cart.general.view_cart' | t -}}
+            Commander et payer
           </a>
         {%- endif -%}
         {%- if section.settings.show_checkout_button -%}
