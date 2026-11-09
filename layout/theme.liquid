@@ -240,14 +240,15 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
           Les pages qui passent par cette mise en page l'affichaient en double exemplaire,
           avec son propre texte et son propre nombre de parents. Un seul endroit a modifier.
         {%- endcomment -%}
-        {%- sections 'iso-pa-commun-group' -%}
+        {%- unless template.name == 'cart' -%}{%- sections 'iso-pa-commun-group' -%}{%- endunless -%}
+        {%- if template.name == 'cart' -%}<style>[id$="__avisvideo_XnyWnq"], [id$="__reassurance"] { display: none !important; }</style>{%- endif -%}
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
     {%- comment -%}O'CAOU — helper panier pour les blocs bundle{%- endcomment -%}
     {%- render 'ocaou-cart-add' -%}
     {%- comment -%}O'CAOU — suggestion de coffret (fiche produit et panier){%- endcomment -%}
-    {%- render 'ocaou-suggestion-coffret' -%}
+    {%- unless template.name == 'cart' -%}{%- render 'ocaou-suggestion-coffret' -%}{%- endunless -%}
     {%- render 'ocaou-detail-panier' -%}
     {%- render 'ocaou-photo-coffret' -%}
     {%- comment -%}O'CAOU — correctifs d'affichage transversaux{%- endcomment -%}
