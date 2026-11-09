@@ -16,7 +16,8 @@
           "type": "shopify://apps/point-relais-isomorph/blocks/point-relais/01a08fa5-e84c-7f8e-8d2b-cbc4b0d93138",
           "settings": {
             "api_url": "https://shopify-point-relais-proxy.vercel.app",
-            "variante_supplement": "60861573071182"
+            "variante_supplement": "60861573071182",
+            "nouvelle_presentation": true
           }
         },
         "totals": {
@@ -38,7 +39,12 @@
         "cart_note",
         "checkout_button"
       ],
-      "settings": {}
+      "settings": {
+        "show_shipping_estimator": false,
+        "iso_lignes_visibles": false,
+        "iso_suggestions_enabled": false,
+        "iso_titre_page": "Information de livraison"
+      }
     }
   },
   "order": [
