@@ -113,7 +113,7 @@
         "message_Jdn6bY": {
           "type": "message",
           "settings": {
-            "text": "🚚 LIVRAISON OFFERTE EN POINT RELAIS JUSQU’AU 16 NOVEMBRE INCLUS ! 🎁",
+            "text": "🚚 Livraison offerte en France en POINT RELAIS jusqu'au 16 NOVEMBRE inclus ! 🎁",
             "icon": "none",
             "action": "none",
             "url": "",
@@ -133,10 +133,10 @@
         "onglet_url": "",
         "onglet_js": "",
         "onglet_mobile": true,
-        "onglet_fond": "#FFFFFF",
-        "onglet_couleur": "#F3EDE2",
-        "bg_color": "#CF9A2E",
-        "text_color": "#F3EDE2",
+        "onglet_fond": "#ffffff",
+        "onglet_couleur": "#f3ede2",
+        "bg_color": "#cf9a2e",
+        "text_color": "#f3ede2",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
         "font_size_desktop": 13,
