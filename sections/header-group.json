@@ -133,7 +133,7 @@
         "onglet_url": "",
         "onglet_js": "",
         "onglet_mobile": true,
-        "onglet_fond": "#ffffff",
+        "onglet_fond": "#000000",
         "onglet_couleur": "#f3ede2",
         "bg_color": "#cf9a2e",
         "text_color": "#f3ede2",
