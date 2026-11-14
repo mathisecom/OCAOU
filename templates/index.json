@@ -49,6 +49,26 @@
         "voile": 20
       }
     },
+    "iso_pa_banner_EPzj9b": {
+      "type": "iso-pa-banner",
+      "disabled": true,
+      "name": "Bandeau",
+      "settings": {
+        "image": "shopify://shop_images/1_sac_achete_1_pochette_offerte.png",
+        "alt": "",
+        "hauteur": "haute",
+        "cadrage": "center",
+        "cadrage_mobile": "center",
+        "accroche": "",
+        "titre": "Pour Tout Achat contenant 1 Sac à Dos = 1 Pochette OFFERTE",
+        "titre_taille": "grand",
+        "titre_une_ligne": true,
+        "texte": "Du 16 Novembre au 22 novembre inclus",
+        "bouton_texte": "Découvrir la collection",
+        "bouton_url": "#nos-collections",
+        "voile": 5
+      }
+    },
     "heromedia_zwA498": {
       "type": "heromedia",
       "blocks": {
@@ -1493,6 +1513,7 @@
   "order": [
     "iso_pa_banner_pEpiUR",
     "iso_pa_banner_N9qJah",
+    "iso_pa_banner_EPzj9b",
     "heromedia_zwA498",
     "video_8TEnKB",
     "logoscroll_WxkMyg",
