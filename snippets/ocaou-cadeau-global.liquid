@@ -1,0 +1,210 @@
+{%- comment -%}
+  O'CAOU : cadeau au choix, styles et comportement communs (tiroir, page panier, fiche produit).
+  Rendu dans <head> des deux mises en page : l'écouteur de clic doit passer avant celui de l'app Point relais.
+  Données : snippets ocaou-cadeau-choix (tiroir, panier), ocaou-cadeau-fiche (fiche), ocaou-cadeau-actif.
+{%- endcomment -%}
+<style>
+  .ocaou-cadeau { background: #FAF6EF; border-radius: .5rem; padding: 12px; display: flex; flex-direction: column; gap: 12px; scroll-margin: 12px; outline: 0; transition: box-shadow .2s; }
+  .ocaou-cadeau.is-alerte { box-shadow: 0 0 0 2px #9A6B16; }
+  .ocaou-cadeau__titre { font-size: 16px; font-weight: 600; line-height: 1.3; margin: 0; }
+  .ocaou-cadeau__carte, .ocaou-cadeau-fiche__corps { display: flex; align-items: center; gap: 12px; }
+  .ocaou-cadeau__media { flex: 0 0 88px; width: 88px; height: 88px; }
+  .ocaou-cadeau__media img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .ocaou-cadeau__info { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+  /* nom en haut, pastilles à gauche, bouton à droite sur la même ligne */
+  .ocaou-cadeau__carte .ocaou-cadeau__info { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 12px; row-gap: 6px; }
+  .ocaou-cadeau__carte .ocaou-cadeau__nom { flex: 0 0 100%; }
+  .ocaou-cadeau__carte .ocaou-cadeau__btn { margin-left: auto; }
+  .ocaou-cadeau [data-tooltip]::after, .ocaou-cadeau-fiche [data-tooltip]::after { font-weight: 400; }
+  .ocaou-cadeau__nom { font-size: 14px; font-weight: 600; line-height: 1.3; margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .ocaou-cadeau__offert { padding: 1px 8px; border-radius: 999px; background: #9A6B16; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+  .ocaou-cadeau__couleur { font-weight: 400; opacity: .7; }
+  .ocaou-cadeau__couleur:not(:empty)::before { content: "· "; }
+  .ocaou-cadeau__pastilles { flex-wrap: wrap; border: 0; margin: 0; padding: 0; min-width: 0; }
+  .ocaou-cadeau__pastilles .color-swatch { --swatch-size: 24px; }
+  /* aucune pastille cerclée avant le premier choix (la première variante est cochée par défaut) */
+  .ocaou-cadeau__carte:not([data-choisi]) .color-swatch::before,
+  .ocaou-cadeau-fiche:not([data-choisi]) .color-swatch::before { opacity: 0 !important; }
+  .ocaou-cadeau__texte { display: inline-flex; padding: 4px 10px; border: 1px solid rgba(58,44,34,.3); border-radius: 999px; font-size: 13px; cursor: pointer; }
+  .ocaou-cadeau__texte:has(:checked) { border-color: #9A6B16; box-shadow: 0 0 0 1px #9A6B16; }
+  .ocaou-cadeau__btn { height: 32px; padding: 0 14px; border-radius: 999px; background: #9A6B16; color: #fff; font-size: 13px; display: inline-flex; align-items: center; transition: background-color .15s; }
+  .ocaou-cadeau__btn:not(:disabled):hover { background: #7E5710; }
+  .ocaou-cadeau__btn:disabled { opacity: .6; cursor: not-allowed; }
+  .ocaou-cadeau-fiche { margin-top: 16px; padding: 12px 14px; border: 1px solid rgba(58,44,34,.18); border-radius: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .ocaou-cadeau-fiche__titre { margin: 0; }
+  .shopify-section--main-cart .ocaou-cadeau { margin-block: 12px; }
+  [data-ocaou-bloque] { opacity: .55; cursor: not-allowed; }
+</style>
+<script>
+  (function () {
+    if (window.OCAOUCadeau) return;
+    var CIBLES = 'button[name="checkout"],input[name="checkout"],[data-ocaou-pay]';
+    var etat = { choix: null };
+
+    function racine() { return (window.Shopify && Shopify.routes && Shopify.routes.root) || '/'; }
+    function surPagePanier() { return location.pathname.replace(/\/+$/, '') === racine().replace(/\/+$/, '') + '/cart'; }
+    function proprietes(titre) { return { '_cadeau': '1', 'Cadeau offert avec': titre || '' }; }
+
+    function manque() {
+      var n = 0;
+      document.querySelectorAll('[data-ocaou-cadeau-etat]').forEach(function (m) { n += parseInt(m.getAttribute('data-manque'), 10) || 0; });
+      return n;
+    }
+
+    function photo(zone, radio) {
+      var img = zone.querySelector('.ocaou-cadeau__media img');
+      if (!img || !radio.dataset.variantMedia) return;
+      try {
+        var src = JSON.parse(radio.dataset.variantMedia).preview_image.src;
+        var u = new URL(src, location.href);
+        u.searchParams.set('width', '176');
+        img.removeAttribute('srcset'); img.removeAttribute('sizes');
+        img.src = u.toString();
+      } catch (_) { /* photo inchangée */ }
+    }
+
+    function marquer(zone, radio) {
+      zone.querySelectorAll('.color-swatch.is-selected').forEach(function (l) { l.classList.remove('is-selected'); });
+      var label = zone.querySelector('label[for="' + CSS.escape(radio.id) + '"]');
+      if (label) label.classList.add('is-selected');
+      zone.setAttribute('data-choisi', '1');
+      photo(zone, radio);
+    }
+
+    function nomVariante(radio) {
+      var label = radio.id && document.querySelector('label[for="' + CSS.escape(radio.id) + '"]');
+      return (label && (label.getAttribute('data-tooltip') || label.textContent.trim())) || radio.value || '';
+    }
+
+    function ajouter(carte, bouton) {
+      var id = parseInt(carte.getAttribute('data-variante'), 10);
+      if (!id) return;
+      bouton.disabled = true;
+      bouton.textContent = 'Ajout en cours…';
+      var lignes = [{ id: id, quantity: 1, properties: proprietes(carte.getAttribute('data-declencheur')) }];
+      var envoi;
+      if (surPagePanier() || !window.OCAOUCart) {
+        envoi = fetch(racine() + 'cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+          body: JSON.stringify({ items: lignes })
+        }).then(function (r) { if (!r.ok) throw new Error('panier'); location.reload(); });
+      } else {
+        envoi = window.OCAOUCart.add(lignes);
+      }
+      envoi.catch(function () { bouton.disabled = false; bouton.textContent = 'Erreur, réessayez'; });
+    }
+
+    document.addEventListener('click', function (e) {
+      var cible = e.target;
+      if (!cible || !cible.closest) return;
+      var radio = cible.closest('input[type="radio"]');
+      if (radio && !radio.disabled) {
+        var carte = radio.closest('[data-ocaou-cadeau-carte]');
+        if (carte) {
+          carte.setAttribute('data-variante', radio.getAttribute('data-variant-id') || '');
+          marquer(carte, radio);
+          var b = carte.querySelector('[data-ocaou-cadeau-ajouter]');
+          if (b) { b.disabled = false; b.textContent = 'Ajouter mon cadeau'; }
+          return;
+        }
+        var fiche = radio.closest('[data-ocaou-cadeau-fiche]');
+        if (fiche) {
+          etat.choix = { id: radio.getAttribute('data-variant-id') };
+          marquer(fiche, radio);
+          var c = fiche.querySelector('[data-ocaou-cadeau-couleur]');
+          if (c) c.textContent = nomVariante(radio);
+          return;
+        }
+      }
+      var ajout = cible.closest('[data-ocaou-cadeau-ajouter]');
+      if (ajout && !ajout.disabled) ajouter(ajout.closest('[data-ocaou-cadeau-carte]'), ajout);
+    });
+
+    /* Le cadeau choisi sur la fiche part avec le bouton principal (appelé par assets/iso-pa.js). */
+    window.OCAOUCadeau = {
+      joindre: function (lignes) {
+        var fiche = document.querySelector('[data-ocaou-cadeau-fiche]');
+        if (!fiche) return lignes;
+        var id = parseInt(etat.choix ? etat.choix.id : fiche.getAttribute('data-variante'), 10);
+        if (!id) return lignes;
+        lignes.push({ id: id, quantity: 1, properties: proprietes(fiche.getAttribute('data-titre')) });
+        etat.choix = null;
+        fiche.removeAttribute('data-choisi');
+        fiche.querySelectorAll('input[type="radio"]:checked').forEach(function (r) { r.checked = false; });
+        fiche.querySelectorAll('.is-selected').forEach(function (l) { l.classList.remove('is-selected'); });
+        var c = fiche.querySelector('[data-ocaou-cadeau-couleur]');
+        if (c) c.textContent = '';
+        return lignes;
+      }
+    };
+
+    /* Paiement bloqué tant qu'un cadeau manque : le clic ramène sur le choix. */
+    function montrer() {
+      var zone = document.querySelector('[data-ocaou-cadeau-bloc]');
+      if (!zone) return;
+      zone.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      zone.focus({ preventScroll: true });
+      zone.classList.add('is-alerte');
+      setTimeout(function () { zone.classList.remove('is-alerte'); }, 1400);
+    }
+    function bloquer(e) {
+      if (manque() === 0) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      montrer();
+    }
+    window.addEventListener('click', function (e) {
+      var b = e.target && e.target.closest && e.target.closest(CIBLES);
+      if (b) bloquer(e);
+    }, true);
+    window.addEventListener('submit', function (e) {
+      var s = e.submitter;
+      if (s && s.matches && s.matches(CIBLES)) bloquer(e);
+    }, true);
+
+    function synchroniser() {
+      var bloque = manque() > 0;
+      document.querySelectorAll(CIBLES).forEach(function (b) {
+        if (bloque) {
+          b.setAttribute('data-ocaou-bloque', '');
+          if (b.hasAttribute('data-ocaou-pay')) b.setAttribute('aria-disabled', 'true');
+        } else if (b.hasAttribute('data-ocaou-bloque')) {
+          b.removeAttribute('data-ocaou-bloque');
+          if (b.hasAttribute('data-ocaou-pay')) b.removeAttribute('aria-disabled');
+        }
+      });
+    }
+
+    /* Cadeau en trop (produit déclencheur retiré) : la ligne est réduite ou retirée. */
+    var dernier = '';
+    function nettoyer() {
+      var m = document.querySelector('[data-surplus-key]');
+      if (!m) { dernier = ''; return; }
+      var cle = m.getAttribute('data-surplus-key'), q = parseInt(m.getAttribute('data-surplus-qte'), 10) || 0;
+      var signature = cle + ':' + q;
+      if (signature === dernier) return;
+      dernier = signature;
+      fetch(racine() + 'cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body: JSON.stringify({ id: cle, quantity: q })
+      }).then(function () {
+        if (surPagePanier()) location.reload();
+        else if (window.OCAOUCart) window.OCAOUCart.refresh(false);
+      }).catch(function () {});
+    }
+
+    var minuteur = null;
+    function passe() { synchroniser(); nettoyer(); }
+    function demarrer() {
+      passe();
+      document.addEventListener('cart:change', passe);
+      document.addEventListener('cart:refresh', passe);
+      new MutationObserver(function () { clearTimeout(minuteur); minuteur = setTimeout(passe, 100); })
+        .observe(document.body, { childList: true, subtree: true });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', demarrer);
+    else demarrer();
+  })();
+</script>

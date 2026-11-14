@@ -1,0 +1,24 @@
+{%- comment -%}
+  Cadeau au choix : l'offre d'un produit est-elle en cours ? Rend « true » ou « false ».
+  Paramètre : produit. Métachamps lus (tous facultatifs) : custom.cadeau_debut, custom.cadeau_fin.
+  Sans date, l'offre est toujours en cours. Même fenêtre que la remise automatique de la boutique.
+{%- endcomment -%}
+{%- liquid
+  assign ok = true
+  assign maintenant = 'now' | date: '%s' | plus: 0
+  assign debut = produit.metafields.custom.cadeau_debut.value
+  assign fin = produit.metafields.custom.cadeau_fin.value
+  if debut != blank
+    assign t_debut = debut | date: '%s' | plus: 0
+    if t_debut > maintenant
+      assign ok = false
+    endif
+  endif
+  if fin != blank
+    assign t_fin = fin | date: '%s' | plus: 0
+    if t_fin < maintenant
+      assign ok = false
+    endif
+  endif
+-%}
+{{- ok -}}

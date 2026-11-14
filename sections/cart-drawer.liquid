@@ -1,4 +1,8 @@
 {%- comment -%}O'CAOU — les deux boutons du volet tiennent sur une ligne, moitié-moitié{%- endcomment -%}
+{%- comment -%}O'CAOU — cadeau au choix : bloc « Choisissez votre cadeau » et état du paiement{%- endcomment -%}
+{%- capture cadeau_html -%}{%- if section.settings.cadeau_actif -%}{%- render 'ocaou-cadeau-choix', titre: section.settings.cadeau_titre -%}{%- endif -%}{%- endcapture -%}
+{%- assign cadeau_manque = false -%}
+{%- if cadeau_html contains 'data-ocaou-cadeau-carte' -%}{%- assign cadeau_manque = true -%}{%- endif -%}
 {{- 'iso-cart.css' | asset_url | stylesheet_tag -}}
 <script src="{{ 'iso-cart.js' | asset_url }}" defer></script>
 {%- style -%}
@@ -114,8 +118,10 @@
           </div>
         {%- endif -%}
 
-        {%- comment -%}O'CAOU — Suggestions complémentaires dynamiques (Search & Discovery){%- endcomment -%}
-        {%- if section.settings.iso_suggestions_enabled -%}
+        {{- cadeau_html -}}
+
+        {%- comment -%}O'CAOU — Suggestions complémentaires dynamiques (Search & Discovery) : remplacées par « Choisissez votre cadeau » tant qu'un cadeau manque{%- endcomment -%}
+        {%- if section.settings.iso_suggestions_enabled and cadeau_manque == false -%}
           <iso-cart-suggestions
             class="iso-cart-suggestions"
             hidden
@@ -216,7 +222,7 @@
         {%- endif -%}
 
         {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
-          <a href="{{ routes.cart_url }}" class="button button--lg {% if section.settings.show_checkout_button %}button--secondary{% endif %}" data-no-instant>
+          <a href="{{ routes.cart_url }}" class="button button--lg {% if section.settings.show_checkout_button %}button--secondary{% endif %}" data-no-instant data-ocaou-pay{% if cadeau_manque %} data-ocaou-bloque aria-disabled="true"{% endif %}>
             Commander et payer
           </a>
         {%- endif -%}
@@ -303,6 +309,23 @@
       "type": "color",
       "id": "product_card_text_color",
       "label": "Product card text"
+    },
+    {
+      "type": "header",
+      "content": "Cadeau au choix"
+    },
+    {
+      "type": "checkbox",
+      "id": "cadeau_actif",
+      "label": "Afficher « Choisissez votre cadeau »",
+      "info": "Se règle produit par produit : métachamp « Cadeau au choix » (custom.cadeau_au_choix). Bloque « Commander et payer » tant que le cadeau n'est pas choisi.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cadeau_titre",
+      "label": "Titre du bloc cadeau",
+      "default": "Choisissez votre cadeau"
     },
     {
       "type": "header",

@@ -1,0 +1,160 @@
+{%- comment -%}
+  O'CAOU : « Choisissez votre cadeau » dans le tiroir et sur la page panier.
+
+  Fonctionnement, administrable sans toucher au thème :
+  - un produit déclencheur porte le métachamp custom.cadeau_au_choix (produit cadeau) ;
+  - chaque unité de ce produit dans le panier donne droit à un cadeau, à choisir parmi les variantes du produit cadeau ;
+  - le cadeau est ajouté avec la propriété cachée _cadeau (et « Cadeau offert avec » pour l'affichage) :
+    une pochette achetée et une pochette offerte restent deux lignes distinctes ;
+  - tant qu'un cadeau manque, data-manque > 0 : « Commander et payer » est bloqué (assets : ocaou-cadeau-global) ;
+  - un cadeau en trop (déclencheur retiré) est retiré tout seul (data-surplus-key).
+  Le prix à 0 vient de la remise automatique de la boutique (Achetez X, obtenez Y offert), pas du thème.
+
+  Paramètre : titre (texte du bloc).
+{%- endcomment -%}
+{%- liquid
+  assign entrees = ''
+  assign poignees = ','
+  for ligne in cart.items
+    assign cadeau = ligne.product.metafields.custom.cadeau_au_choix.value
+    if cadeau == blank or cadeau.available == false
+      continue
+    endif
+    capture actif
+      render 'ocaou-cadeau-actif', produit: ligne.product
+    endcapture
+    if actif contains 'false'
+      continue
+    endif
+    assign entrees = entrees | append: cadeau.handle | append: '~' | append: ligne.quantity | append: '~' | append: ligne.product.title | append: '§'
+    assign cle_p = ',' | append: cadeau.handle | append: ','
+    unless poignees contains cle_p
+      assign poignees = poignees | append: cadeau.handle | append: ','
+    endunless
+  endfor
+
+  assign total_manque = 0
+  assign surplus_cle = ''
+  assign surplus_qte = 0
+  assign liste_p = poignees | split: ','
+  capture cartes
+    for handle in liste_p
+      if handle == blank
+        continue
+      endif
+      assign du = 0
+      assign declencheur = ''
+      assign liste_e = entrees | split: '§'
+      for e in liste_e
+        assign pe = e | split: '~'
+        if pe[0] == handle
+          assign du = du | plus: pe[1]
+          if declencheur == blank
+            assign declencheur = pe[2]
+          endif
+        endif
+      endfor
+      comment
+        Un cadeau par unité de produit déclencheur. Un cadeau déjà posé par les packs maison
+        (propriété « Cadeau offert avec », sans _cadeau) compte comme donné.
+      endcomment
+      assign donne = 0
+      assign derniere_cle = ''
+      assign derniere_qte = 0
+      for ligne in cart.items
+        if ligne.product.handle == handle
+          if ligne.properties['_cadeau'] != blank
+            assign donne = donne | plus: ligne.quantity
+            assign derniere_cle = ligne.key
+            assign derniere_qte = ligne.quantity
+          elsif ligne.properties['Cadeau offert avec'] != blank
+            assign donne = donne | plus: ligne.quantity
+          endif
+        endif
+      endfor
+      assign manque = du | minus: donne
+      if manque < 0 and surplus_cle == blank and derniere_cle != blank
+        assign trop = 0 | minus: manque
+        if trop > derniere_qte
+          assign trop = derniere_qte
+        endif
+        assign surplus_cle = derniere_cle
+        assign surplus_qte = derniere_qte | minus: trop
+      endif
+      if manque > 0
+        assign total_manque = total_manque | plus: manque
+        assign g = all_products[handle]
+        assign multi = false
+        if g.variants.size > 1
+          assign multi = true
+        endif
+        for n in (1..manque)
+          assign uid = 'cadeau-' | append: handle | append: '-' | append: n
+          assign declencheur_html = declencheur | escape
+          echo '<div class="ocaou-cadeau__carte" data-ocaou-cadeau-carte data-declencheur="' | append: declencheur_html | append: '"'
+          if multi == false
+            echo ' data-choisi="1" data-variante="' | append: g.variants.first.id | append: '"'
+          endif
+          echo '>'
+          echo '<div class="ocaou-cadeau__media">'
+          if g.featured_image
+            echo g.featured_image | image_url: width: 176 | image_tag: loading: 'lazy', width: 88, height: 88, sizes: '88px', alt: ''
+          endif
+          echo '</div><div class="ocaou-cadeau__info"><p class="ocaou-cadeau__nom">'
+          echo g.title | escape
+          echo ' <span class="ocaou-cadeau__offert">Offert</span></p>'
+          if multi
+            echo '<fieldset class="ocaou-cadeau__pastilles h-stack gap-0.5"><legend class="sr-only">'
+            echo g.options[0] | escape
+            echo '</legend>'
+            if g.options.size == 1
+              for option_value in g.options_with_values[0].values
+                render 'option-value', type: 'swatch', option_value: option_value, param_name: uid, option_position: 1, output_variant_media: true, size: 'sm', pa_handle: g.handle, show_tooltip: true
+              endfor
+            else
+              for v in g.variants
+                assign titre_v = v.title | escape
+                echo '<label class="ocaou-cadeau__texte"><input class="sr-only" type="radio" name="' | append: uid | append: '" data-variant-id="' | append: v.id | append: '"'
+                if v.available == false
+                  echo ' disabled'
+                endif
+                echo '><span>' | append: titre_v | append: '</span></label>'
+              endfor
+            endif
+            echo '</fieldset>'
+          endif
+          echo '<button type="button" class="ocaou-cadeau__btn" data-ocaou-cadeau-ajouter'
+          if multi
+            echo ' disabled>Choisir une couleur'
+          else
+            echo '>Ajouter mon cadeau'
+          endif
+          echo '</button></div></div>'
+        endfor
+      endif
+    endfor
+  endcapture
+
+  comment
+    Cadeau dont plus aucun déclencheur n'est au panier : à retirer.
+  endcomment
+  if surplus_cle == blank
+    for ligne in cart.items
+      if ligne.properties['_cadeau'] != blank
+        assign cle_orphelin = ',' | append: ligne.product.handle | append: ','
+        unless poignees contains cle_orphelin
+          assign surplus_cle = ligne.key
+          assign surplus_qte = 0
+          break
+        endunless
+      endif
+    endfor
+  endif
+-%}
+<span hidden data-ocaou-cadeau-etat data-manque="{{ total_manque }}"{% if surplus_cle != blank %} data-surplus-key="{{ surplus_cle }}" data-surplus-qte="{{ surplus_qte }}"{% endif %}></span>
+{%- if total_manque > 0 -%}
+  <section class="ocaou-cadeau" data-ocaou-cadeau-bloc tabindex="-1" aria-labelledby="ocaou-cadeau-titre-{{ section.id }}">
+    <p class="ocaou-cadeau__titre" id="ocaou-cadeau-titre-{{ section.id }}">{{ titre | default: 'Choisissez votre cadeau' | escape }}</p>
+    {{- cartes -}}
+  </section>
+{%- endif -%}

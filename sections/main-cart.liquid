@@ -40,6 +40,12 @@
           {%- endif -%}
         </div>
 
+        {%- comment -%}O'CAOU — cadeau au choix : « Choisissez votre cadeau », paiement bloqué tant qu'il manque{%- endcomment -%}
+        {%- capture cadeau_html -%}{%- if section.settings.cadeau_actif -%}{%- render 'ocaou-cadeau-choix', titre: section.settings.cadeau_titre -%}{%- endif -%}{%- endcapture -%}
+        {%- assign cadeau_manque = false -%}
+        {%- if cadeau_html contains 'data-ocaou-cadeau-carte' -%}{%- assign cadeau_manque = true -%}{%- endif -%}
+        {{- cadeau_html -}}
+
         <div class="cart-order">
           <div class="cart-order__summary">
             {%- comment -%}
@@ -107,8 +113,8 @@
               {%- render 'accordion', title: accordion_title, icon: 'picto-box', content: accordion_content, size: 'lg' -%}
             {%- endif -%}
 
-            {%- comment -%}O'CAOU — Suggestions complémentaires dynamiques (Search & Discovery){%- endcomment -%}
-            {%- if section.settings.iso_suggestions_enabled -%}
+            {%- comment -%}O'CAOU — Suggestions complémentaires dynamiques (Search & Discovery) : remplacées par « Choisissez votre cadeau » tant qu'un cadeau manque{%- endcomment -%}
+            {%- if section.settings.iso_suggestions_enabled and cadeau_manque == false -%}
               <iso-cart-suggestions
                 class="iso-cart-suggestions"
                 hidden
@@ -706,6 +712,23 @@
       "id": "show_payment_icons",
       "label": "Show payment icons",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Cadeau au choix"
+    },
+    {
+      "type": "checkbox",
+      "id": "cadeau_actif",
+      "label": "Afficher « Choisissez votre cadeau »",
+      "info": "Se règle produit par produit : métachamp « Cadeau au choix » (custom.cadeau_au_choix). Bloque le paiement tant que le cadeau n'est pas choisi.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cadeau_titre",
+      "label": "Titre du bloc cadeau",
+      "default": "Choisissez votre cadeau"
     },
     {
       "type": "header",

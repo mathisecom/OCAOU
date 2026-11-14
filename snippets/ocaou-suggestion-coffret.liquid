@@ -627,6 +627,8 @@ _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en dur i
       .then(function (r) { return r.json(); })
       .then(function (panier) {
         document.querySelectorAll('[data-ocaou-sugg="panier"]').forEach(function (n) { n.remove(); });
+        // Cadeau au choix (propriété cachée _cadeau) : ni regroupé, ni retiré par cette logique.
+        panier.items = (panier.items || []).filter(function (it) { return !(it.properties && it.properties._cadeau); });
 
         // Cadeau « offert avec » un coffret qui n'est plus au panier : il part avec lui.
         var doubles = cadeauxEnDouble(panier);

@@ -1,0 +1,43 @@
+{%- comment -%}
+  O'CAOU : « Offert avec ce produit » sous le bouton « Ajouter au panier » de la fiche.
+  Les pastilles sont les variantes du produit cadeau (métachamp custom.cadeau_au_choix du produit).
+  Le choix part avec le bouton principal (assets : ocaou-cadeau-global, OCAOUCadeau.joindre) ;
+  sans choix, le tiroir du panier le demande. Paramètre : product.
+{%- endcomment -%}
+{%- liquid
+  assign cadeau = product.metafields.custom.cadeau_au_choix.value
+  capture actif
+    render 'ocaou-cadeau-actif', produit: product
+  endcapture
+-%}
+{%- if cadeau != blank and cadeau.available and actif contains 'true' -%}
+  {%- assign multi = false -%}
+  {%- if cadeau.variants.size > 1 -%}{%- assign multi = true -%}{%- endif -%}
+  <div class="ocaou-cadeau-fiche" data-ocaou-cadeau-fiche data-produit="{{ cadeau.handle }}" data-titre="{{ product.title | escape }}"{% unless multi %} data-variante="{{ cadeau.variants.first.id }}"{% endunless %}>
+    <p class="ocaou-cadeau-fiche__titre pa-comp-h">Offert avec ce produit</p>
+    <div class="ocaou-cadeau-fiche__corps">
+      <div class="ocaou-cadeau__media">
+        {%- if cadeau.featured_image -%}
+          {{- cadeau.featured_image | image_url: width: 176 | image_tag: loading: 'lazy', width: 88, height: 88, sizes: '88px', alt: '' -}}
+        {%- endif -%}
+      </div>
+      <div class="ocaou-cadeau__info">
+        <p class="ocaou-cadeau__nom">{{ cadeau.title | escape }}<span class="ocaou-cadeau__offert">Offert</span><span class="ocaou-cadeau__couleur" data-ocaou-cadeau-couleur></span></p>
+        {%- if multi -%}
+          <fieldset class="ocaou-cadeau__pastilles h-stack gap-0.5">
+            <legend class="sr-only">{{ cadeau.options[0] | escape }}</legend>
+            {%- if cadeau.options.size == 1 -%}
+              {%- for option_value in cadeau.options_with_values[0].values -%}
+                {%- render 'option-value', type: 'swatch', option_value: option_value, param_name: 'cadeau-fiche', option_position: 1, output_variant_media: true, size: 'sm', pa_handle: cadeau.handle, show_tooltip: true -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- for v in cadeau.variants -%}
+                <label class="ocaou-cadeau__texte"><input class="sr-only" type="radio" name="cadeau-fiche" data-variant-id="{{ v.id }}"{% unless v.available %} disabled{% endunless %}><span>{{ v.title | escape }}</span></label>
+              {%- endfor -%}
+            {%- endif -%}
+          </fieldset>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
