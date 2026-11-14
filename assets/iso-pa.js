@@ -763,7 +763,9 @@
         if (sbarB) sbarB.disabled = true;
         if (ctaL) ctaL.textContent = "Ajout en cours…";
         say("");
-        (o ? enCoffret(o, items) : Promise.resolve(items)).then(addToCart).then(function () {
+        (o ? enCoffret(o, items) : Promise.resolve(items)).then(function (lignes) {
+          return Promise.resolve(window.OCAOUCadeau ? window.OCAOUCadeau.joindre(lignes) : lignes).then(addToCart);
+        }).then(function () {
           busy = false;
           say("Ajouté au panier");
           refresh();

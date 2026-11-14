@@ -182,7 +182,11 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         }
       });
     </script>
-  </head>
+    {%- comment -%}O'CAOU : cadeau au choix (styles et comportement communs){%- endcomment -%}
+    {%- render 'ocaou-cadeau-global' -%}
+    {%- comment -%}O'CAOU : champs de formulaire à 16 px sur mobile et tablette, sinon Android zoome au toucher{%- endcomment -%}
+  <style>@media (max-width:1024px){input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),select,textarea{font-size:16px!important}}</style>
+</head>
 
   <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
     {%- render 'shadow-dom-templates' -%}
