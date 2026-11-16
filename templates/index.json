@@ -59,8 +59,8 @@
         "onglet_mobile": true,
         "onglet_fond": "#000000",
         "onglet_couleur": "#ffffff",
-        "bg_color": "#CF9A2E",
-        "text_color": "#F3EDE2",
+        "bg_color": "#cf9a2e",
+        "text_color": "#f3ede2",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
         "font_size_desktop": 13,
@@ -69,7 +69,6 @@
     },
     "iso_pa_banner_EPzj9b": {
       "type": "iso-pa-banner",
-      "disabled": true,
       "name": "Bandeau",
       "settings": {
         "image": "shopify://shop_images/Pour_tout_achat_contenant_1_sac_a_dos_1_pochette_offerte_au_choix_copie_4.png",
@@ -89,6 +88,7 @@
     },
     "iso_pa_banner_N9qJah": {
       "type": "iso-pa-banner",
+      "disabled": true,
       "name": "Bandeau",
       "settings": {
         "image": "shopify://shop_images/Design_sans_titre_3_copie.png",
