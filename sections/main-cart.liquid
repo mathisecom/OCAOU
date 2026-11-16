@@ -111,7 +111,11 @@
             {%- endif -%}
 
             {%- comment -%}O'CAOU — Suggestions complémentaires dynamiques (Search & Discovery) : remplacées par « Choisissez votre cadeau » tant qu'un cadeau manque{%- endcomment -%}
-            {%- if section.settings.iso_suggestions_enabled and cadeau_manque == false -%}
+            {%- assign promo_maintenant = 'now' | date: '%s' | plus: 0 -%}
+            {%- comment -%}Pas de suggestions pendant la promo cadeau (16/11 00:00 au 22/11 23:59, heure de Paris) : elles reviennent seules après{%- endcomment -%}
+            {%- assign promo_en_cours = false -%}
+            {%- if promo_maintenant >= 1794783600 and promo_maintenant <= 1795388399 -%}{%- assign promo_en_cours = true -%}{%- endif -%}
+            {%- if section.settings.iso_suggestions_enabled and cadeau_manque == false and promo_en_cours == false -%}
               <iso-cart-suggestions
                 class="iso-cart-suggestions"
                 hidden
