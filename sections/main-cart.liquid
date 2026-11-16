@@ -40,11 +40,8 @@
           {%- endif -%}
         </div>
 
-        {%- comment -%}O'CAOU — cadeau au choix : « Choisissez votre cadeau », paiement bloqué tant qu'il manque{%- endcomment -%}
-        {%- capture cadeau_html -%}{%- if section.settings.cadeau_actif -%}{%- render 'ocaou-cadeau-choix', titre: section.settings.cadeau_titre -%}{%- endif -%}{%- endcapture -%}
+        {%- comment -%}O'CAOU : cette page n'affiche que la carte de livraison. Le choix du cadeau se fait dans le tiroir du panier, jamais ici.{%- endcomment -%}
         {%- assign cadeau_manque = false -%}
-        {%- if cadeau_html contains 'data-ocaou-cadeau-carte' -%}{%- assign cadeau_manque = true -%}{%- endif -%}
-        {{- cadeau_html -}}
 
         <div class="cart-order">
           <div class="cart-order__summary">
