@@ -20,7 +20,9 @@
   .ocaou-cadeau__offert { padding: 1px 8px; border-radius: 999px; background: #9A6B16; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
   .ocaou-cadeau__couleur { font-weight: 400; opacity: .7; }
   .ocaou-cadeau__couleur:not(:empty)::before { content: "· "; }
-  .ocaou-cadeau__pastilles { flex-wrap: wrap; border: 0; margin: 0; padding: 0; min-width: 0; }
+  .ocaou-cadeau__pastilles { flex-wrap: wrap; border: 0; margin: 0; padding: 0; min-width: 0; position: relative; }
+  .ocaou-cadeau__pastilles > legend { width: 1px; max-width: 1px; }
+  .ocaou-cadeau__texte { position: relative; }
   .ocaou-cadeau__pastilles .color-swatch { --swatch-size: 24px; }
   /* aucune pastille cerclée avant le premier choix (la première variante est cochée par défaut) */
   .ocaou-cadeau__carte:not([data-choisi]) .color-swatch::before,
