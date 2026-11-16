@@ -123,13 +123,10 @@
             endif
             echo '</fieldset>'
           endif
-          echo '<button type="button" class="ocaou-cadeau__btn" data-ocaou-cadeau-ajouter'
-          if multi
-            echo ' disabled>Choisir une couleur'
-          else
-            echo '>Ajouter mon cadeau'
-          endif
-          echo '</button></div></div>'
+          unless multi
+            echo '<button type="button" class="ocaou-cadeau__btn" data-ocaou-cadeau-ajouter>Ajouter mon cadeau</button>'
+          endunless
+          echo '</div></div>'
         endfor
       endif
     endfor

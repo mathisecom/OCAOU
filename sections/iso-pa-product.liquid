@@ -410,6 +410,7 @@
     </div>
   {%- endif -%}
   {%- endcapture -%}
+  {%- render 'ocaou-cadeau-fiche', product: product -%}
   {%- if comp_haut -%}{{ comp_html }}{%- endif -%}
 
   {%- if valid != ',' -%}
@@ -700,7 +701,6 @@
   {%- endif -%}
   <button type="button" class="pa-cta"{% unless sel.available %} disabled{% endunless %}>{% render 'iso-pa-icon', name: 'bag' %}<span class="pa-cta-l">{% if sel.available %}Ajouter au panier{% else %}Épuisé{% endif %}</span><span class="pa-cta-sep" aria-hidden="true">·</span><span class="pa-cta-p">{{ first_pack | money | replace: ' €', '&nbsp;€' }}</span></button>
   <p class="pa-sr" role="status" data-pa-status></p>
-  {%- render 'ocaou-cadeau-fiche', product: product -%}
   {%- comment -%} Tâche 5 : accordéon avec grille d'icônes administrable. {%- endcomment -%}
   {%- assign accs = section.blocks | where: 'type', 'accordeon' -%}
   {%- if accs.size > 0 -%}

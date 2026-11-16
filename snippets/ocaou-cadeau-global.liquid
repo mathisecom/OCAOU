@@ -21,6 +21,7 @@
   .ocaou-cadeau__couleur { font-weight: 400; opacity: .7; }
   .ocaou-cadeau__couleur:not(:empty)::before { content: "· "; }
   .ocaou-cadeau__pastilles { flex-wrap: wrap; border: 0; margin: 0; padding: 0; min-width: 0; position: relative; }
+  .ocaou-cadeau__carte[data-envoi] .ocaou-cadeau__pastilles { opacity: .6; pointer-events: none; }
   .ocaou-cadeau__pastilles > legend { width: 1px; max-width: 1px; }
   .ocaou-cadeau__texte { position: relative; }
   .ocaou-cadeau__pastilles .color-swatch { --swatch-size: 24px; }
@@ -81,8 +82,9 @@
     function ajouter(carte, bouton) {
       var id = parseInt(carte.getAttribute('data-variante'), 10);
       if (!id) return;
-      bouton.disabled = true;
-      bouton.textContent = 'Ajout en cours…';
+      if (carte.hasAttribute('data-envoi')) return;
+      carte.setAttribute('data-envoi', '1');
+      if (bouton) { bouton.disabled = true; bouton.textContent = 'Ajout en cours…'; }
       var lignes = [{ id: id, quantity: 1, properties: proprietes(carte.getAttribute('data-declencheur')) }];
       var envoi;
       if (surPagePanier() || !window.OCAOUCart) {
@@ -94,7 +96,7 @@
       } else {
         envoi = window.OCAOUCart.add(lignes);
       }
-      envoi.catch(function () { bouton.disabled = false; bouton.textContent = 'Erreur, réessayez'; });
+      envoi.catch(function () { carte.removeAttribute('data-envoi'); if (bouton) { bouton.disabled = false; bouton.textContent = 'Erreur, réessayez'; } });
     }
 
     document.addEventListener('click', function (e) {
@@ -106,8 +108,8 @@
         if (carte) {
           carte.setAttribute('data-variante', radio.getAttribute('data-variant-id') || '');
           marquer(carte, radio);
-          var b = carte.querySelector('[data-ocaou-cadeau-ajouter]');
-          if (b) { b.disabled = false; b.textContent = 'Ajouter mon cadeau'; }
+          /* le clic sur une couleur suffit : le cadeau est ajouté tout de suite */
+          ajouter(carte, carte.querySelector('[data-ocaou-cadeau-ajouter]'));
           return;
         }
         var fiche = radio.closest('[data-ocaou-cadeau-fiche]');
