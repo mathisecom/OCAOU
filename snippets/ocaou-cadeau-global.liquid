@@ -99,11 +99,51 @@
       envoi.catch(function () { carte.removeAttribute('data-envoi'); if (bouton) { bouton.disabled = false; bouton.textContent = 'Erreur, réessayez'; } });
     }
 
+    /* Cadeau déjà choisi : un clic sur une autre couleur remplace la ligne. */
+    function changer(carte, radio) {
+      if (carte.hasAttribute('data-envoi')) return;
+      var id = parseInt(radio.getAttribute('data-variant-id'), 10);
+      if (!id) return;
+      carte.setAttribute('data-envoi', '1');
+      marquer(carte, radio);
+      var qte = parseInt(carte.getAttribute('data-qte'), 10) || 1;
+      var lignes = [{ id: id, quantity: 1, properties: proprietes(carte.getAttribute('data-declencheur')) }];
+      fetch(racine() + 'cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body: JSON.stringify({ id: carte.getAttribute('data-cle'), quantity: qte - 1 })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('panier');
+        if (surPagePanier() || !window.OCAOUCart) {
+          return fetch(racine() + 'cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+            body: JSON.stringify({ items: lignes })
+          }).then(function (a) { if (!a.ok) throw new Error('panier'); location.reload(); });
+        }
+        return window.OCAOUCart.add(lignes);
+      }).catch(function () { carte.removeAttribute('data-envoi'); });
+    }
+
+    function marquerActuel() {
+      document.querySelectorAll('[data-ocaou-cadeau-modif]:not([data-pret])').forEach(function (c) {
+        var id = c.getAttribute('data-actuelle');
+        var radio = Array.prototype.find.call(c.querySelectorAll('input[type="radio"]'), function (r) { return r.getAttribute('data-variant-id') === id; });
+        if (radio) { radio.checked = true; marquer(c, radio); }
+        c.setAttribute('data-pret', '1');
+      });
+    }
+
     document.addEventListener('click', function (e) {
       var cible = e.target;
       if (!cible || !cible.closest) return;
       var radio = cible.closest('input[type="radio"]');
       if (radio && !radio.disabled) {
+        var modif = radio.closest('[data-ocaou-cadeau-modif]');
+        if (modif) {
+          if (radio.getAttribute('data-variant-id') !== modif.getAttribute('data-actuelle')) changer(modif, radio);
+          return;
+        }
         var carte = radio.closest('[data-ocaou-cadeau-carte]');
         if (carte) {
           carte.setAttribute('data-variante', radio.getAttribute('data-variant-id') || '');
@@ -200,7 +240,7 @@
     }
 
     var minuteur = null;
-    function passe() { synchroniser(); nettoyer(); }
+    function passe() { synchroniser(); nettoyer(); marquerActuel(); }
     function demarrer() {
       passe();
       document.addEventListener('cart:change', passe);

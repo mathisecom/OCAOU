@@ -133,6 +133,50 @@
   endcapture
 
   comment
+    Cadeau déjà choisi : sa carte reste affichée avec la couleur actuelle cochée,
+    un clic sur une autre pastille remplace la ligne (data-ocaou-cadeau-modif).
+  endcomment
+  capture modifs
+    for ligne in cart.items
+      if ligne.properties['_cadeau'] == blank
+        continue
+      endif
+      assign g = ligne.product
+      if g.variants.size < 2
+        continue
+      endif
+      assign uid = 'cadeau-modif-' | append: forloop.index
+      assign declencheur_modif = ligne.properties['Cadeau offert avec'] | escape
+      echo '<div class="ocaou-cadeau__carte" data-ocaou-cadeau-modif data-choisi="1" data-cle="' | append: ligne.key | append: '" data-qte="' | append: ligne.quantity | append: '" data-actuelle="' | append: ligne.variant.id | append: '" data-declencheur="' | append: declencheur_modif | append: '">'
+      echo '<div class="ocaou-cadeau__media">'
+      if ligne.image
+        echo ligne.image | image_url: width: 176 | image_tag: loading: 'lazy', width: 88, height: 88, sizes: '88px', alt: ''
+      endif
+      echo '</div><div class="ocaou-cadeau__info"><p class="ocaou-cadeau__nom">'
+      echo g.title | escape
+      echo ' <span class="ocaou-cadeau__offert">Offert</span></p>'
+      echo '<fieldset class="ocaou-cadeau__pastilles h-stack gap-0.5"><legend class="sr-only">'
+      echo g.options[0] | escape
+      echo '</legend>'
+      if g.options.size == 1
+        for option_value in g.options_with_values[0].values
+          render 'option-value', type: 'swatch', option_value: option_value, param_name: uid, option_position: 1, output_variant_media: true, size: 'sm', pa_handle: g.handle, show_tooltip: true
+        endfor
+      else
+        for v in g.variants
+          assign titre_v = v.title | escape
+          echo '<label class="ocaou-cadeau__texte"><input class="sr-only" type="radio" name="' | append: uid | append: '" data-variant-id="' | append: v.id | append: '"'
+          if v.available == false
+            echo ' disabled'
+          endif
+          echo '><span>' | append: titre_v | append: '</span></label>'
+        endfor
+      endif
+      echo '</fieldset></div></div>'
+    endfor
+  endcapture
+
+  comment
     Cadeau dont plus aucun déclencheur n'est au panier : à retirer.
   endcomment
   if surplus_cle == blank
@@ -149,9 +193,10 @@
   endif
 -%}
 <span hidden data-ocaou-cadeau-etat data-manque="{{ total_manque }}"{% if surplus_cle != blank %} data-surplus-key="{{ surplus_cle }}" data-surplus-qte="{{ surplus_qte }}"{% endif %}></span>
-{%- if total_manque > 0 -%}
+{%- if total_manque > 0 or modifs != blank -%}
   <section class="ocaou-cadeau" data-ocaou-cadeau-bloc tabindex="-1" aria-labelledby="ocaou-cadeau-titre-{{ section.id }}">
-    <p class="ocaou-cadeau__titre" id="ocaou-cadeau-titre-{{ section.id }}">{{ titre | default: 'Choisissez votre cadeau' | escape }}</p>
+    <p class="ocaou-cadeau__titre" id="ocaou-cadeau-titre-{{ section.id }}">{% if total_manque > 0 %}{{ titre | default: 'Choisissez votre cadeau' | escape }}{% else %}Votre cadeau{% endif %}</p>
+    {{- modifs -}}
     {{- cartes -}}
   </section>
 {%- endif -%}
