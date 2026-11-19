@@ -209,6 +209,17 @@
     "avis_verts": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_jdgMar": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Céline",
+            "title": "Ce sac est juste génial !",
+            "content": "<p><em>Ce sac est juste génial ! je l'utilise comme sac à langer, chaque chose est à sa place grâce à ses différents compartiments, tout est parfaitement organisé, et il va évoluer avec ma fille. j'adore !</em></p>"
+          }
+        },
         "testimonial_BpQWPf": {
           "type": "testimonial",
           "settings": {
@@ -240,17 +251,6 @@
             "author": "Florine",
             "title": "",
             "content": "<p>Incassable vraiment top 👍🏼</p>"
-          }
-        },
-        "testimonial_jdgMar": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Céline",
-            "title": "",
-            "content": "<p><em>Ce sac est juste génial ! je l'utilise comme sac à langer, chaque chose est à sa place grâce à ses différents compartiments, tout est parfaitement organisé, et il va évoluer avec ma fille. j'adore !</em></p>"
           }
         },
         "testimonial_jdgAnn": {
@@ -453,10 +453,10 @@
         }
       },
       "block_order": [
+        "testimonial_jdgMar",
         "testimonial_BpQWPf",
         "testimonial_jdgSop",
         "testimonial_jdgFlo",
-        "testimonial_jdgMar",
         "testimonial_jdgAnn",
         "testimonial_jdgSan",
         "testimonial_jdgNic",
