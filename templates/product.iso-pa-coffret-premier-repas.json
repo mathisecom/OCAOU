@@ -71,10 +71,10 @@
     "iso_pa_videos_fpqJBp": {
       "type": "iso-pa-videos",
       "blocks": {
-        "video_neKc6q": {
+        "video_Ptir8K": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/bébé gourde.mov",
+            "video": "shopify://files/videos/4 set repas.mp4",
             "src": "",
             "poster": "",
             "titre": ""
@@ -100,7 +100,7 @@
         }
       },
       "block_order": [
-        "video_neKc6q",
+        "video_Ptir8K",
         "video_agHtHH",
         "video_zCBg7J"
       ],
