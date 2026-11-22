@@ -18,7 +18,7 @@
           "settings": {
             "libelle": "Gourde + Lunchbox",
             "badge": "DUO MIAM",
-            "prix": 4990,
+            "prix": 3992,
             "produits": "lunch-box",
             "nom_offre": "Duo Miam",
             "cadeau_1": "poignee-nomade",
@@ -35,7 +35,7 @@
           "settings": {
             "libelle": "+ Les couverts",
             "badge": "COFFRET PREMIER REPAS",
-            "prix": 6990,
+            "prix": 5592,
             "produits": "lunch-box, couverts",
             "nom_offre": "Kit Repas Nomade + couverts",
             "cadeau_1": "pochon",
@@ -52,7 +52,7 @@
           "settings": {
             "libelle": "+ Sac isotherme",
             "badge": "KIT REPAS COMPLET",
-            "prix": 9990,
+            "prix": 7972,
             "produits": "lunch-box, couverts, sac-isotherme",
             "nom_offre": "Kit Repas Nomade complet",
             "cadeau_1": "poignee-nomade",
