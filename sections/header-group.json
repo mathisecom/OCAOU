@@ -89,9 +89,9 @@
         "message_NbnDJQ": {
           "type": "message",
           "settings": {
-            "text": "✨ BLACK FRIDAY - 20% SUR TOUT LE SITE DU 23 AU 30 NOVEMBRE ! Remise automatique au panier ✨",
+            "text": "✨ BLACK FRIDAY - 20% SUR TOUT LE SITE DU 23 AU 30 NOVEMBRE ! ✨",
             "icon": "none",
-            "action": "lien",
+            "action": "none",
             "url": "shopify://collections/all",
             "js": ""
           }
@@ -105,14 +105,14 @@
         "duree": 6,
         "onglet_actif": true,
         "onglet_texte": "-10 % offerts",
-        "onglet_action": "popup",
+        "onglet_action": "lien",
         "onglet_url": "",
         "onglet_js": "",
         "onglet_mobile": true,
         "onglet_fond": "#000000",
         "onglet_couleur": "#ffffff",
         "bg_color": "#151515",
-        "text_color": "#F3EDE2",
+        "text_color": "#f3ede2",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
         "font_size_desktop": 13,

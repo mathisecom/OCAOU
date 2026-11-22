@@ -99,7 +99,7 @@
         "onglet_fond": "#000000",
         "onglet_couleur": "#ffffff",
         "bg_color": "#151515",
-        "text_color": "#F4EDE1",
+        "text_color": "#f4ede1",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
         "font_size_desktop": 13,
@@ -139,7 +139,7 @@
         "titre": "BLACK FRIDAY -20% sur tout le site -   COFFRETS INCLUS  🖤",
         "titre_taille": "grand",
         "titre_une_ligne": false,
-        "texte": "Du 23 au 30 novembre, remise automatique au panier",
+        "texte": "Du 23 au 30 novembre",
         "bouton_texte": "Je profite des -20%",
         "bouton_url": "shopify://collections/all",
         "voile": 50
