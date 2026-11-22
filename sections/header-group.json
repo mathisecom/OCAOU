@@ -64,6 +64,7 @@
         "m_paiement",
         "m_retour"
       ],
+      "disabled": true,
       "settings": {
         "duree": 6,
         "onglet_actif": true,
@@ -76,6 +77,42 @@
         "onglet_couleur": "#ffffff",
         "bg_color": "#f4ede1",
         "text_color": "#333333",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#af6c67",
+        "font_size_desktop": 13,
+        "font_size_mobile": 12
+      }
+    },
+    "ocaou_annonces_rELA7X": {
+      "type": "ocaou-annonces",
+      "blocks": {
+        "message_NbnDJQ": {
+          "type": "message",
+          "settings": {
+            "text": "✨ BLACK FRIDAY - 20% SUR TOUT LE SITE DU 23 AU 30 NOVEMBRE ! Remise automatique au panier ✨",
+            "icon": "none",
+            "action": "lien",
+            "url": "shopify://collections/all",
+            "js": ""
+          }
+        }
+      },
+      "block_order": [
+        "message_NbnDJQ"
+      ],
+      "name": "Barre d'annonces",
+      "settings": {
+        "duree": 6,
+        "onglet_actif": true,
+        "onglet_texte": "-10 % offerts",
+        "onglet_action": "popup",
+        "onglet_url": "",
+        "onglet_js": "",
+        "onglet_mobile": true,
+        "onglet_fond": "#000000",
+        "onglet_couleur": "#ffffff",
+        "bg_color": "#151515",
+        "text_color": "#F3EDE2",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
         "font_size_desktop": 13,
@@ -172,6 +209,7 @@
   },
   "order": [
     "ocaou_annonces",
+    "ocaou_annonces_rELA7X",
     "header",
     "ocaou_annonces_BxD4hR",
     "iso_pa_banner_ycLfYX",

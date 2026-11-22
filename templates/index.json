@@ -35,6 +35,7 @@
       "blocks": {
         "message_wqjqAV": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "text": "🎁 1 POCHETTE OFFERTE !  Pour toute commande d'un Sac à dos, SEUL ou en COFFRET. DU 16 au 22 Novembre.",
             "icon": "none",
@@ -47,6 +48,45 @@
       "block_order": [
         "message_wqjqAV"
       ],
+      "disabled": true,
+      "name": "Barre d'annonces",
+      "settings": {
+        "duree": 6,
+        "onglet_actif": false,
+        "onglet_texte": "-10 % offerts",
+        "onglet_action": "popup",
+        "onglet_url": "",
+        "onglet_js": "",
+        "onglet_mobile": false,
+        "onglet_fond": "#000000",
+        "onglet_couleur": "#ffffff",
+        "bg_color": "#af6c67",
+        "text_color": "#f3ede2",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#af6c67",
+        "font_size_desktop": 13,
+        "font_size_mobile": 12
+      }
+    },
+    "ocaou_annonces_AwziBy": {
+      "type": "ocaou-annonces",
+      "blocks": {
+        "message_DF7Bbd": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "✨ BLACK FRIDAY - 20% SUR TOUT LE SITE DU 23 AU 30 NOVEMBRE ! Remise automatique au panier ✨",
+            "icon": "none",
+            "action": "none",
+            "url": "",
+            "js": ""
+          }
+        }
+      },
+      "block_order": [
+        "message_DF7Bbd"
+      ],
+      "disabled": true,
       "name": "Barre d'annonces",
       "settings": {
         "duree": 6,
@@ -58,8 +98,8 @@
         "onglet_mobile": true,
         "onglet_fond": "#000000",
         "onglet_couleur": "#ffffff",
-        "bg_color": "#AF6C67",
-        "text_color": "#f3ede2",
+        "bg_color": "#151515",
+        "text_color": "#F4EDE1",
         "icon_bg_color": "#ffffff",
         "icon_color": "#af6c67",
         "font_size_desktop": 13,
@@ -68,6 +108,7 @@
     },
     "iso_pa_banner_EPzj9b": {
       "type": "iso-pa-banner",
+      "disabled": true,
       "name": "Bandeau",
       "settings": {
         "image": "shopify://shop_images/Pour_tout_achat_contenant_1_sac_a_dos_1_pochette_offerte_au_choix_copie_4.png",
@@ -83,6 +124,25 @@
         "bouton_texte": "J'en profite",
         "bouton_url": "shopify://products/sac-ocaou",
         "voile": 25
+      }
+    },
+    "iso_pa_banner_eTUTFH": {
+      "type": "iso-pa-banner",
+      "name": "Bandeau",
+      "settings": {
+        "image": "shopify://shop_images/Pour_tout_achat_contenant_1_sac_a_dos_1_pochette_offerte_au_choix_copie_2_1e7807a8-783d-488c-9f9c-bc357d7163b1.png",
+        "alt": "",
+        "hauteur": "haute",
+        "cadrage": "center",
+        "cadrage_mobile": "center",
+        "accroche": "",
+        "titre": "BLACK FRIDAY -20% sur tout le site -   COFFRETS INCLUS  🖤",
+        "titre_taille": "grand",
+        "titre_une_ligne": false,
+        "texte": "Du 23 au 30 novembre, remise automatique au panier",
+        "bouton_texte": "Je profite des -20%",
+        "bouton_url": "shopify://collections/all",
+        "voile": 50
       }
     },
     "iso_pa_banner_N9qJah": {
@@ -1549,7 +1609,9 @@
   "order": [
     "iso_pa_banner_pEpiUR",
     "ocaou_annonces_Vi3gCE",
+    "ocaou_annonces_AwziBy",
     "iso_pa_banner_EPzj9b",
+    "iso_pa_banner_eTUTFH",
     "iso_pa_banner_N9qJah",
     "heromedia_zwA498",
     "video_8TEnKB",
