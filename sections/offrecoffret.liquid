@@ -331,12 +331,21 @@
 
           if v1 != blank
             assign total = total | plus: v1.price
+            if v1.compare_at_price > v1.price
+              assign total = total | plus: v1.compare_at_price | minus: v1.price
+            endif
           endif
           if v2 != blank
             assign total = total | plus: v2.price
+            if v2.compare_at_price > v2.price
+              assign total = total | plus: v2.compare_at_price | minus: v2.price
+            endif
           endif
           if v3 != blank
             assign total = total | plus: v3.price
+            if v3.compare_at_price > v3.price
+              assign total = total | plus: v3.compare_at_price | minus: v3.price
+            endif
           endif
 
           assign coffret_cents = 0

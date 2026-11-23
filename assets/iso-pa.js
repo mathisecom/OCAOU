@@ -385,6 +385,7 @@
       });
       var pack = o.price == null ? sum : o.price;
       var cmp = o.price != null && sum > pack ? sum : 0;
+      if (o.price != null && o.base && o.base > pack) cmp = o.base;
       /* Avantage : economie sur le prix plus la valeur des cadeaux. */
       var adv = (cmp ? cmp - pack : 0) + (o.gifts || []).reduce(function (t, g) { return t + (g.p || 0); }, 0);
       return { pack: pack, cmp: cmp, adv: adv, ok: ok };

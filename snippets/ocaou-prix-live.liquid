@@ -1,0 +1,31 @@
+{%- comment -%}
+  O'CAOU : prix en direct pour la table des coffrets (assets/ocaou-coffrets.json, figée à sa génération).
+  Les prix des coffrets et la valeur des cadeaux viennent de la boutique à chaque affichage : un changement de prix
+  n'oblige plus à régénérer la table. Clé = identifiant du produit, valeur = [prix, prix barré] en centimes.
+{%- endcomment -%}
+<script>
+(function () {
+  if (window.ocaouPrixLive) return;
+  var L = {
+  {%- assign sep = '' -%}
+  {%- for p in collections.all.products -%}
+    {{ sep }}"{{ p.id }}":[{{ p.price }},{{ p.compare_at_price | default: 0 }}]
+    {%- assign sep = ',' -%}
+  {%- endfor -%}
+  };
+  window.ocaouPrixLive = function (t) {
+    (t.coffrets || []).forEach(function (c) {
+      var l = L[c.id];
+      if (l) Object.keys(c.combinaisons).forEach(function (k) {
+        c.combinaisons[k].prix = l[0];
+        c.combinaisons[k].prixBarre = l[1] > l[0] ? l[1] : 0;
+      });
+      (c.inclus || []).forEach(function (inc) {
+        var g = L[inc.produit];
+        if (g) inc.prix = g[1] > g[0] ? g[1] : g[0];
+      });
+    });
+    return t;
+  };
+})();
+</script>

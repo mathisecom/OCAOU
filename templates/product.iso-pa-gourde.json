@@ -27,7 +27,8 @@
             "cadeau_2": "",
             "cadeau_2_texte": "",
             "cadeau_2_valeur": false,
-            "vignette_cadeau": false
+            "vignette_cadeau": false,
+            "prix_base": 4990
           }
         },
         "formule_3": {
@@ -44,7 +45,8 @@
             "cadeau_2": "poignee-nomade",
             "cadeau_2_texte": "Poignée nomade offerte",
             "cadeau_2_valeur": true,
-            "vignette_cadeau": false
+            "vignette_cadeau": false,
+            "prix_base": 6990
           }
         },
         "formule_4": {
@@ -61,7 +63,8 @@
             "cadeau_2": "pochon",
             "cadeau_2_texte": "Pochon O’CAOU offert",
             "cadeau_2_valeur": true,
-            "vignette_cadeau": true
+            "vignette_cadeau": true,
+            "prix_base": 9990
           }
         },
         "accordeon_1": {

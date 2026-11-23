@@ -468,6 +468,9 @@
           if sum > pack
             assign cmp = sum
           endif
+          if b.settings.prix_base > pack
+            assign cmp = b.settings.prix_base
+          endif
           if section.settings.relais and pack >= seuil
             assign relay = true
           endif
@@ -483,7 +486,11 @@
           if gh != blank
             assign gp = all_products[gh]
             if gp and gp.id
-              assign adv = adv | plus: gp.selected_or_first_available_variant.price
+              assign gv = gp.selected_or_first_available_variant.price
+              if gp.selected_or_first_available_variant.compare_at_price > gv
+                assign gv = gp.selected_or_first_available_variant.compare_at_price
+              endif
+              assign adv = adv | plus: gv
             endif
           endif
         endfor
@@ -568,8 +575,8 @@
             {%- assign gp = all_products[gh] -%}
             {%- if gp and gp.id -%}
               {%- assign gtk = gk | append: '_texte' -%}
-              {%- assign gvk = gk | append: '_valeur' -%}
-              <span class="pa-gift">{% render 'iso-pa-icon', name: 'gift' %}<span>{{ b.settings[gtk] | default: gp.title | escape }}{% if b.settings[gvk] %} ({{ gp.selected_or_first_available_variant.price | money | replace: ' €', '&nbsp;€' }}){% endif %}</span></span>
+              {%- assign gvk = gk | append: '_valeur' -%}{%- assign gval = gp.selected_or_first_available_variant.price -%}{%- if gp.selected_or_first_available_variant.compare_at_price > gval -%}{%- assign gval = gp.selected_or_first_available_variant.compare_at_price -%}{%- endif -%}
+              <span class="pa-gift">{% render 'iso-pa-icon', name: 'gift' %}<span>{{ b.settings[gtk] | default: gp.title | escape }}{% if b.settings[gvk] %} ({{ gval | money | replace: ' €', '&nbsp;€' }}){% endif %}</span></span>
             {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
@@ -693,14 +700,18 @@
         assign eco_cadeaux = product.compare_at_price | minus: product.price
       endif
       for cadeau in cadeaux_inclus
-        assign eco_cadeaux = eco_cadeaux | plus: cadeau.price
+        assign cv = cadeau.price
+        if cadeau.compare_at_price > cv
+          assign cv = cadeau.compare_at_price
+        endif
+        assign eco_cadeaux = eco_cadeaux | plus: cv
       endfor
     -%}
     <div class="ocaou-gifts">
       <p class="ocaou-gifts__title">Vos cadeaux inclus</p>
       <ul class="ocaou-gifts__list">
         {%- for cadeau in cadeaux_inclus -%}
-          <li>Cadeau inclus&nbsp;: <strong>{{ cadeau.title | escape }}</strong> <span>(valeur {{ cadeau.price | money }})</span></li>
+          <li>Cadeau inclus&nbsp;: <strong>{{ cadeau.title | escape }}</strong> <span>(valeur {% if cadeau.compare_at_price > cadeau.price %}{{ cadeau.compare_at_price | money }}{% else %}{{ cadeau.price | money }}{% endif %})</span></li>
         {%- endfor -%}
         {%- if product.price >= seuil -%}
           <li>La <strong>livraison en point relais</strong> offerte</li>
@@ -811,7 +822,7 @@
       {%- assign bkey = ',' | append: b.id | append: ',' -%}
       {%- unless valid contains bkey -%}{%- continue -%}{%- endunless -%}
       {%- assign hs = b.settings.produits | remove: ' ' | split: ',' -%}
-      {{ sep }}{"price": {% if b.settings.prix != blank %}{{ b.settings.prix }}{% else %}null{% endif %}, "name": {{ b.settings.nom_offre | default: b.settings.libelle | json }}, "parts": [
+      {{ sep }}{"price": {% if b.settings.prix != blank %}{{ b.settings.prix }}{% else %}null{% endif %}, "base": {% if b.settings.prix_base > 0 %}{{ b.settings.prix_base }}{% else %}null{% endif %}, "name": {{ b.settings.nom_offre | default: b.settings.libelle | json }}, "parts": [
         {%- for h in hs -%}
           {%- assign pp = all_products[h] -%}
           {"def": {{ pp.selected_or_first_available_variant.id }}, "v": {
@@ -828,7 +839,7 @@
             {%- assign gh = b.settings[gk] | strip -%}
             {%- if gh != blank -%}
               {%- assign gp = all_products[gh] -%}
-              {%- if gp and gp.id -%}{"id": {{ gp.selected_or_first_available_variant.id }}, "a": {{ gp.selected_or_first_available_variant.available | json }}, "p": {{ gp.selected_or_first_available_variant.price }}},{%- endif -%}
+              {%- if gp and gp.id -%}{%- assign gpb = gp.selected_or_first_available_variant.price -%}{%- if gp.selected_or_first_available_variant.compare_at_price > gpb -%}{%- assign gpb = gp.selected_or_first_available_variant.compare_at_price -%}{%- endif -%}{"id": {{ gp.selected_or_first_available_variant.id }}, "a": {{ gp.selected_or_first_available_variant.available | json }}, "p": {{ gpb }}},{%- endif -%}
             {%- endif -%}
           {%- endfor -%}
         {%- endcapture -%}
@@ -1028,6 +1039,12 @@
           "id": "prix",
           "label": "Prix de la formule (en centimes)",
           "info": "Ex. 4990 = 49,90 €. Vide : somme des prix réels, sans prix barré."
+        },
+        {
+          "type": "number",
+          "id": "prix_base",
+          "label": "Prix de base de la formule, barré (en centimes)",
+          "info": "Prix d'avant la promotion, ex. 8900 = 89,00 €. Affiché barré et utilisé pour le total des avantages tant qu'il dépasse le prix de la formule. Vide : somme des prix des articles."
         },
         {
           "type": "text",

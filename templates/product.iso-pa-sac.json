@@ -27,7 +27,8 @@
             "cadeau_2": "",
             "cadeau_2_texte": "",
             "cadeau_2_valeur": false,
-            "vignette_cadeau": true
+            "vignette_cadeau": true,
+            "prix_base": 8900
           }
         },
         "formule_3": {
@@ -44,7 +45,8 @@
             "cadeau_2": "",
             "cadeau_2_texte": "",
             "cadeau_2_valeur": false,
-            "vignette_cadeau": true
+            "vignette_cadeau": true,
+            "prix_base": 9900
           }
         },
         "accordeon_1": {

@@ -1,3 +1,4 @@
+{%- render 'ocaou-prix-live' -%}
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 O'CAOU — DETAIL DU COFFRET DANS LE PANIER
@@ -182,7 +183,7 @@ par _scripts/ocaou-coffrets.py cote ISOMORPH. Aucun identifiant n'est ecrit en d
   fetch(SOURCE)
     .then(function (r) { return r.json(); })
     .then(function (t) {
-      table = t;
+      table = window.ocaouPrixLive ? window.ocaouPrixLive(t) : t;
       passe();
       document.addEventListener('cart:change', passe);
       document.addEventListener('cart:refresh', passe);
