@@ -67,7 +67,7 @@
       "disabled": true,
       "settings": {
         "duree": 6,
-        "onglet_actif": true,
+        "onglet_actif": false,
         "onglet_texte": "-10 % offerts",
         "onglet_action": "popup",
         "onglet_url": "",
@@ -103,7 +103,7 @@
       "name": "Barre d'annonces",
       "settings": {
         "duree": 6,
-        "onglet_actif": true,
+        "onglet_actif": false,
         "onglet_texte": "-10 % offerts",
         "onglet_action": "lien",
         "onglet_url": "",
@@ -165,7 +165,7 @@
       "name": "Barre d'annonces",
       "settings": {
         "duree": 6,
-        "onglet_actif": true,
+        "onglet_actif": false,
         "onglet_texte": "-10 % offerts",
         "onglet_action": "popup",
         "onglet_url": "",
