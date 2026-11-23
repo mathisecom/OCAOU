@@ -86,7 +86,42 @@
   endif
   assign ends = ''
   assign commun = ''
+
+  # Blocs de même taille (24/11) : quand chaque couleur a autant de photos et que la photo de chaque couleur
+  # tombe dans un bloc différent, le bloc entier appartient à la couleur, dans l'ordre de Shopify. N'importe
+  # quelle photo du bloc peut alors passer en tête sans changer la photo de la couleur (sac à dos : le sac
+  # ouvert et fermé en premier, la photo de face restant celle des cartes, du panier et des coffrets).
+  assign blocs = false
   if grouped
+    assign reste = nmed | modulo: ncol
+    if reste == 0
+      assign bl = nmed | divided_by: ncol
+      assign blocs = true
+      assign vus = ','
+      assign nheads = ''
+      assign hl = heads | remove_last: ',' | split: ','
+      for h in hl
+        assign b = h | plus: 0 | minus: 1 | divided_by: bl
+        assign key = ',' | append: b | append: ','
+        if vus contains key
+          assign blocs = false
+          break
+        endif
+        assign vus = vus | append: b | append: ','
+        assign deb = b | times: bl | plus: 1
+        assign fin = b | times: bl | plus: bl
+        assign nheads = nheads | append: deb | append: ','
+        assign ends = ends | append: fin | append: ','
+      endfor
+      if blocs
+        assign heads = nheads | remove_last: ',' | split: ','
+      else
+        assign ends = ''
+      endif
+    endif
+  endif
+
+  if grouped and blocs == false
     assign heads = heads | remove_last: ',' | split: ','
     assign first_head = nmed
     for h in heads
